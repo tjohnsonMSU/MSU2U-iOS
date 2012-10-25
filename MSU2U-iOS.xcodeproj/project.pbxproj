@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D062FDA1638B61600064956 /* theWichitan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D062FD91638B61600064956 /* theWichitan.jpg */; };
+		1D062FDD1638DF3F00064956 /* 19-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D062FDC1638DF3F00064956 /* 19-gear.png */; };
 		1D1CEAD8162B4D230059BC1F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1CEAD7162B4D230059BC1F /* UIKit.framework */; };
 		1D1CEADA162B4D230059BC1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1CEAD9162B4D230059BC1F /* Foundation.framework */; };
 		1D1CEADC162B4D230059BC1F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1CEADB162B4D230059BC1F /* CoreGraphics.framework */; };
@@ -60,6 +62,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D062FD91638B61600064956 /* theWichitan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = theWichitan.jpg; sourceTree = "<group>"; };
+		1D062FDC1638DF3F00064956 /* 19-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-gear.png"; sourceTree = "<group>"; };
 		1D1CEAD3162B4D230059BC1F /* MSU2U-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MSU2U-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1CEAD7162B4D230059BC1F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1D1CEAD9162B4D230059BC1F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -226,6 +230,7 @@
 		1D1CEB00162B4E690059BC1F /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				1D062FDC1638DF3F00064956 /* 19-gear.png */,
 				1D1CEB01162B4E690059BC1F /* 01-refresh.png */,
 				1D1CEB02162B4E690059BC1F /* 07-map-marker.png */,
 				1D1CEB03162B4E690059BC1F /* 101-gameplan.png */,
@@ -267,6 +272,7 @@
 		1D1CEB45162B4E750059BC1F /* image */ = {
 			isa = PBXGroup;
 			children = (
+				1D062FD91638B61600064956 /* theWichitan.jpg */,
 				1D1CEB46162B4E750059BC1F /* coloredMapMSU.png */,
 				1D1CEB47162B4E750059BC1F /* mainMenu.png */,
 				1D1CEB48162B4E750059BC1F /* navigationBar.png */,
@@ -376,6 +382,8 @@
 				1D1CEB49162B4E750059BC1F /* coloredMapMSU.png in Resources */,
 				1D1CEB4A162B4E750059BC1F /* mainMenu.png in Resources */,
 				1D1CEB4B162B4E750059BC1F /* navigationBar.png in Resources */,
+				1D062FDA1638B61600064956 /* theWichitan.jpg in Resources */,
+				1D062FDD1638DF3F00064956 /* 19-gear.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +506,7 @@
 				1D1CEAF9162B4D230059BC1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
