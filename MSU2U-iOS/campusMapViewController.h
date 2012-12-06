@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface campusMapViewController : UIViewController
-
+@property (weak, nonatomic) NSString * requestedLocation;
 @end

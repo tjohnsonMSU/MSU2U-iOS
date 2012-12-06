@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface mainMenuViewController : UITableViewController
+
+@interface mainMenuViewController : UITableViewController <UIScrollViewDelegate>
 
 @end

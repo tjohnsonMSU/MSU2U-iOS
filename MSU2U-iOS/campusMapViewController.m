@@ -30,6 +30,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    if([self.requestedLocation length] == 0)
+    {
+        self.title = @"Campus Map";
+    }
+    else
+    {
+        self.title = self.requestedLocation;
+    }
 }
 
 - (void)didReceiveMemoryWarning

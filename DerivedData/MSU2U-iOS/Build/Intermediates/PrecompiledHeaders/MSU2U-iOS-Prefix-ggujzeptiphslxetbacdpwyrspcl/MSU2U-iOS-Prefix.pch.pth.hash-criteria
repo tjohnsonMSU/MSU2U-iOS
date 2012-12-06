@@ -1,0 +1,30 @@
+Contents of /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/MSU2U-iOS-Prefix.pch
+4.1 (tags/Apple/clang-421.11.66) (based on LLVM 3.1svn)
+arm-apple-darwin12.2.1
+-x
+objective-c
+-arch
+armv7s
+-fmessage-length=0
+-std=gnu99
+-fobjc-arc
+-fpascal-strings
+-Os
+-isysroot
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk
+-g
+-fvisibility=hidden
+-DIBOutlet=__attribute__((iboutlet))
+-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))
+-DIBAction=void)__attribute__((ibaction)
+-miphoneos-version-min=6.0
+-iquote
+-iquote
+-I/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Release-iphoneos/include
+-I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+-I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+-I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+-F/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Release-iphoneos
+-F/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS
+-DNS_BLOCK_ASSERTIONS=1
+SDK_PRODUCT_BUILD_VERSION=10A403

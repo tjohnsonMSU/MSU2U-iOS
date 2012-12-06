@@ -1,1026 +1,0 @@
-TMSU2U-iOS
-v5
-r1
-cCheck dependencies
-cProcessInfoPlistFile /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Info.plist MSU2U-iOS/MSU2U-iOS-Info.plist
-cProcessPCH /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/PrecompiledHeaders/MSU2U-iOS-Prefix-bmtmpadmopamzybmvkqkndlwsibn/MSU2U-iOS-Prefix.pch.pth MSU2U-iOS/MSU2U-iOS-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/AppDelegate.o /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/main.o /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cLd /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/MSU2U-iOS normal i386
-cGenerateDSYMFile /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app.dSYM /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/MSU2U-iOS
-cCpResource MSU2U-iOS/Default.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default.png
-cCpResource MSU2U-iOS/Default@2x.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default@2x.png
-cCopyStringsFile /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/en.lproj/InfoPlist.strings MSU2U-iOS/en.lproj/InfoPlist.strings
-cCompileStoryboard /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/MainStoryboard.storyboard
-cCpResource MSU2U-iOS/Default-568h@2x.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default-568h@2x.png
-cCpResource MSU2U-iOS/icons/01-refresh.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/01-refresh.png
-cCpResource MSU2U-iOS/icons/07-map-marker.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/07-map-marker.png
-cCpResource MSU2U-iOS/icons/101-gameplan.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/101-gameplan.png
-cCpResource MSU2U-iOS/icons/105-piano.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/105-piano.png
-cCpResource MSU2U-iOS/icons/103-map.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/103-map.png
-cCpResource MSU2U-iOS/icons/110-bug.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/110-bug.png
-cCpResource MSU2U-iOS/icons/112-group.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/112-group.png
-cCpResource MSU2U-iOS/icons/117-todo.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/117-todo.png
-cCpResource MSU2U-iOS/icons/121-landscape.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/121-landscape.png
-cCpResource MSU2U-iOS/icons/140-gradhat.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/140-gradhat.png
-cCpResource MSU2U-iOS/icons/123-id-card.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/123-id-card.png
-cCpResource MSU2U-iOS/icons/16-line-chart.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/16-line-chart.png
-cCpResource MSU2U-iOS/icons/166-newspaper.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/166-newspaper.png
-cCpResource MSU2U-iOS/icons/176-ipad.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/176-ipad.png
-cCpResource MSU2U-iOS/icons/178-city.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/178-city.png
-cCpResource MSU2U-iOS/icons/190-bank.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/190-bank.png
-cCpResource MSU2U-iOS/icons/194-note-2.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/194-note-2.png
-cCpResource MSU2U-iOS/icons/195-barcode.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/195-barcode.png
-cCpResource MSU2U-iOS/icons/20-gear-2.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/20-gear-2.png
-cCpResource MSU2U-iOS/icons/208-facebook.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/208-facebook.png
-cCpResource MSU2U-iOS/icons/209-twitter.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/209-twitter.png
-cCpResource MSU2U-iOS/icons/265-download.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/265-download.png
-cCpResource MSU2U-iOS/icons/29-heart.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/29-heart.png
-cCpResource MSU2U-iOS/icons/271-dramamasks.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/271-dramamasks.png
-cCpResource MSU2U-iOS/icons/291-idcard.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/291-idcard.png
-cCpResource MSU2U-iOS/icons/32-iphone.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/32-iphone.png
-cCpResource MSU2U-iOS/icons/38-airplane.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/38-airplane.png
-cCpResource MSU2U-iOS/icons/42-photos.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/42-photos.png
-cCpResource MSU2U-iOS/icons/73-radar.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/73-radar.png
-cCpResource MSU2U-iOS/icons/53-house.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/53-house.png
-cCpResource MSU2U-iOS/icons/83-calendar.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/83-calendar.png
-cCpResource MSU2U-iOS/icons/92-test-tube.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/92-test-tube.png
-cCpResource MSU2U-iOS/icons/96-book.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/96-book.png
-cCpResource MSU2U-iOS/image/coloredMapMSU.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/coloredMapMSU.png
-cCpResource MSU2U-iOS/icons/98-palette.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/98-palette.png
-cCpResource MSU2U-iOS/image/mainMenu.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/mainMenu.png
-cCpResource MSU2U-iOS/image/navigationBar.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/navigationBar.png
-cTouch /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk
-c00000000506CEC650000000000000110
-t1349315685
-s272
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c00000000505B47C00000000000228FD0
-t1348159424
-s2265040
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c00000000505B47C200000000003DCEF0
-t1348159426
-s4050672
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
-c00000000505B47C200000000000015F7
-t1348159426
-s5623
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
-c00000000505B47C70000000000000E8D
-t1348159431
-s3725
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c00000000505B47C90000000000AB3D60
-t1348159433
-s11222368
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/usr/include/Availability.h
-c00000000505B47DB0000000000001B54
-t1348159451
-s6996
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/AppDelegate.o
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/MSU2U-iOS.LinkFileList
-c00000000507B170C000000000000014F
-t1350244108
-s335
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/ViewController.o
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/main.o
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/PrecompiledHeaders/MSU2U-iOS-Prefix-bmtmpadmopamzybmvkqkndlwsibn/MSU2U-iOS-Prefix.pch.pth
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app.dSYM
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/01-refresh.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/07-map-marker.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/101-gameplan.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/103-map.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/105-piano.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/110-bug.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/112-group.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/117-todo.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/121-landscape.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/123-id-card.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/140-gradhat.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/16-line-chart.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/166-newspaper.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/176-ipad.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/178-city.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/190-bank.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/194-note-2.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/195-barcode.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/20-gear-2.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/208-facebook.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/209-twitter.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/265-download.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/271-dramamasks.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/29-heart.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/291-idcard.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/32-iphone.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/38-airplane.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/42-photos.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/53-house.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/73-radar.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/83-calendar.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/92-test-tube.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/96-book.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/98-palette.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default-568h@2x.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default@2x.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Info.plist
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/MSU2U-iOS
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/MainStoryboard.storyboardc
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/PkgInfo
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/coloredMapMSU.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/en.lproj/InfoPlist.strings
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/en.lproj/MainStoryboard.storyboardc
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/mainMenu.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/navigationBar.png
-t2
-s0
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/AppDelegate.m
-c00000000507B15A300000000000007E0
-t1350243747
-s2016
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/Default-568h@2x.png
-c0000000050262AB100000000000048A2
-t1344678577
-s18594
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/Default.png
-c0000000050262AB1000000000000198C
-t1344678577
-s6540
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/Default@2x.png
-c0000000050262AB10000000000003EEB
-t1344678577
-s16107
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/MSU2U-iOS-Prefix.pch
-c00000000507B15A30000000000000141
-t1350243747
-s321
-i<Availability.h>
-i<UIKit/UIKit.h>
-i<Foundation/Foundation.h>
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/MainStoryboard.storyboard
-c00000000507B16FE0000000000030B21
-t1350244094
-s199457
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/ViewController.m
-c00000000507B15A300000000000001F6
-t1350243747
-s502
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/en.lproj/InfoPlist.strings
-c00000000507B15A3000000000000002D
-t1350243747
-s45
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/en.lproj/MainStoryboard.storyboard
-c00000000507B15A30000000000000603
-t1350243747
-s1539
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/01-refresh.png
-c000000004E6D3D7200000000000005EA
-t1315782002
-s1514
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/07-map-marker.png
-c000000004E6D3D72000000000000052D
-t1315782002
-s1325
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/101-gameplan.png
-c000000004E6D3D72000000000000063B
-t1315782002
-s1595
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/103-map.png
-c000000004E6D3D7200000000000005C4
-t1315782002
-s1476
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/105-piano.png
-c000000004E6D3D7200000000000003A3
-t1315782002
-s931
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/110-bug.png
-c000000004E6D3D72000000000000061B
-t1315782002
-s1563
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/112-group.png
-c000000004E6D3D72000000000000055E
-t1315782002
-s1374
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/117-todo.png
-c000000004E6D3D720000000000000477
-t1315782002
-s1143
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/121-landscape.png
-c000000004E6D3D720000000000000468
-t1315782002
-s1128
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/123-id-card.png
-c000000004E6D3D72000000000000042A
-t1315782002
-s1066
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/140-gradhat.png
-c000000004E6D3D7200000000000005C8
-t1315782002
-s1480
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/16-line-chart.png
-c000000004E6D3D7200000000000005A0
-t1315782002
-s1440
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/166-newspaper.png
-c000000004E6D3D7200000000000004A1
-t1315782002
-s1185
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/176-ipad.png
-c000000004E6D3D7200000000000003BB
-t1315782002
-s955
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/178-city.png
-c000000004E6D3D72000000000000040E
-t1315782002
-s1038
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/190-bank.png
-c000000004E6D3D72000000000000044A
-t1315782002
-s1098
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/194-note-2.png
-c000000004E6D3D7200000000000004A1
-t1315782002
-s1185
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/195-barcode.png
-c000000004E6D3D72000000000000037E
-t1315782002
-s894
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/20-gear-2.png
-c000000004E6D3D7200000000000005AE
-t1315782002
-s1454
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/208-facebook.png
-c000000004E6D3D7200000000000000E3
-t1315782002
-s227
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/209-twitter.png
-c000000004E6D3D720000000000000134
-t1315782002
-s308
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/265-download.png
-c000000004E6D3D72000000000000011F
-t1315782002
-s287
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/271-dramamasks.png
-c000000004E6D3D7200000000000002EE
-t1315782002
-s750
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/29-heart.png
-c000000004E6D3D72000000000000049C
-t1315782002
-s1180
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/291-idcard.png
-c000000004E6D3D720000000000000137
-t1315782002
-s311
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/32-iphone.png
-c000000004E6D3D7200000000000003C5
-t1315782002
-s965
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/38-airplane.png
-c000000004E6D3D72000000000000049E
-t1315782002
-s1182
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/42-photos.png
-c000000004E6D3D7200000000000003A9
-t1315782002
-s937
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/53-house.png
-c000000004E6D3D7200000000000003ED
-t1315782002
-s1005
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/73-radar.png
-c000000004E6D3D72000000000000079A
-t1315782002
-s1946
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/83-calendar.png
-c000000004E6D3D7200000000000003DE
-t1315782002
-s990
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/92-test-tube.png
-c000000004E6D3D720000000000000418
-t1315782002
-s1048
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/96-book.png
-c000000004E6D3D7200000000000004D8
-t1315782002
-s1240
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/98-palette.png
-c000000004E6D3D72000000000000058C
-t1315782002
-s1420
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/image/coloredMapMSU.png
-c000000005067B6FD0000000000165028
-t1348974333
-s1462312
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/image/mainMenu.png
-c00000000505E89110000000000082E4A
-t1348372753
-s536138
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/image/navigationBar.png
-c000000005067AD3C0000000000003241
-t1348971836
-s12865
-
-N/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/main.m
-c00000000507B15A30000000000000159
-t1350243747
-s345
-
-NMSU2U-iOS/MSU2U-iOS-Info.plist
-c00000000507B15A300000000000004E2
-t1350243747
-s1250
-
-CBuild AST from /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/AppDelegate.m
-r0
-
-CBuild AST from /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/ViewController.m
-r0
-
-CBuild AST from /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/main.m
-r0
-
-CCheck dependencies
-r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies0af80d8c4e2bb641^4776198c4e2bb641^---0#1#0#--18"Check dependencies36"BE801A0C-B6F5-47FB-B6E2-7BBACD63A2CF-
-
-CCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/AppDelegate.o /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s371936908.344910
-e371936908.393809
-r1
-xCompileC
-xDerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/AppDelegate.o
-x/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/AppDelegate.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection72"Compile /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/AppDelegate.m8271588c4e2bb641^31d1648c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@80"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/AppDelegate.m0000000000000000^4033"CompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/AppDelegate.o MSU2U-iOS/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=6.0 -iquote /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/MSU2U-iOS-generated-files.hmap -I/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/MSU2U-iOS-own-target-headers.hmap -I/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/MSU2U-iOS-all-target-headers.hmap -iquote /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/MSU2U-iOS-project-headers.hmap -I/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/DerivedSources/i386 -I/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/DerivedSources -F/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator -include /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/PrecompiledHeaders/MSU2U-iOS-Prefix-bmtmpadmopamzybmvkqkndlwsibn/MSU2U-iOS-Prefix.pch -MMD -MT dependencies -MF /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/AppDelegate.d --serialize-diagnostics /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/AppDelegate.dia -c /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/AppDelegate.m -o /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/AppDelegate.o36"7A852BEA-55A5-4841-BD75-F2D4E1F79FC9-
-
-CCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/ViewController.o /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/ViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-r0
-
-CCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/main.o /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s371936908.344904
-e371936908.365454
-r1
-xCompileC
-xDerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/main.o
-x/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/main.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection65"Compile /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/main.m9371588c4e2bb641^eb8e5d8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@73"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/main.m0000000000000000^3991"CompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/main.o MSU2U-iOS/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=6.0 -iquote /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/MSU2U-iOS-generated-files.hmap -I/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/MSU2U-iOS-own-target-headers.hmap -I/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/MSU2U-iOS-all-target-headers.hmap -iquote /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/MSU2U-iOS-project-headers.hmap -I/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/DerivedSources/i386 -I/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/DerivedSources -F/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator -include /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/PrecompiledHeaders/MSU2U-iOS-Prefix-bmtmpadmopamzybmvkqkndlwsibn/MSU2U-iOS-Prefix.pch -MMD -MT dependencies -MF /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/main.d --serialize-diagnostics /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/main.dia -c /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/main.m -o /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/main.o36"6930D8EB-3E14-4C91-BB6A-4C46F25DD2E8-
-
-CCompileStoryboard /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/MainStoryboard.storyboard
-s371936908.453144
-e371936910.341169
-r1
-xCompileStoryboard
-x/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/MainStoryboard.storyboard
-o2012-10-14 14:48:30.030 Interface Builder Cocoa Touch Tool[1505:4503] ADDRESPONSE - ADDING TO MEMORY ONLY: http://gsp1.apple.com/pep/gcc
-o2012-10-14 14:48:30.032 Interface Builder Cocoa Touch Tool[1505:f07] __GEORegisterNetworkDefaults_block_invoke_0: Could not connect to geod on com.apple.geod.defaults
-o/* com.apple.ibtool.document.warnings */
-o/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/MainStoryboard.storyboard:nng-W5-nTx: warning: Prototype table cells must have reuse identifiers [9]
-o/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/MainStoryboard.storyboard:eys-Vd-4uf: warning: Prototype table cells must have reuse identifiers [9]
-o/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/MainStoryboard.storyboard:4b7-lt-5FS: warning: Prototype table cells must have reuse identifiers [9]
-o/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/MainStoryboard.storyboard:l0J-YG-LdM: warning: Prototype table cells must have reuse identifiers [9]
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection53"CompileStoryboard MSU2U-iOS/MainStoryboard.storyboard2426748c4e2bb641^8257578e4e2bb641^-342"2012-10-14 14:48:30.030 Interface Builder Cocoa Touch Tool[1505:4503] ADDRESPONSE - ADDING TO MEMORY ONLY: http://gsp1.apple.com/pep/gcc2012-10-14 14:48:30.032 Interface Builder Cocoa Touch Tool[1505:f07] __GEORegisterNetworkDefaults_block_invoke_0: Could not connect to geod on com.apple.geod.defaults/* com.apple.ibtool.document.warnings */4(21%IDEActivityLogMessage2@49"Prototype table cells must have reuse identifiers-371936910#18446744073709551615#0#-1#-23%DVTTextDocumentLocation3@92"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/MainStoryboard.storyboard0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#25"Unsupported Configuration--2@49"Prototype table cells must have reuse identifiers-371936910#18446744073709551615#0#-1#-3@92"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/MainStoryboard.storyboard0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#25"Unsupported Configuration--2@49"Prototype table cells must have reuse identifiers-371936910#18446744073709551615#0#-1#-3@92"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/MainStoryboard.storyboard0000000000000000^3#18446744073709551615#3#18446744073709551615#18446744073709551615#0#25"Unsupported Configuration--2@49"Prototype table cells must have reuse identifiers-371936910#18446744073709551615#0#-1#-3@92"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/MainStoryboard.storyboard0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#25"Unsupported Configuration--0#0#0#-19%DVTDocumentLocation4@92"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/MainStoryboard.storyboard0000000000000000^960"CompileStoryboard MSU2U-iOS/MainStoryboard.storyboard    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv IBSC_MINIMUM_COMPATIBILITY_VERSION 6.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/MainStoryboard.storyboardc /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/MainStoryboard.storyboard --sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk36"A8D0C723-BFB9-44B1-86DE-47EBCDF8D526-
-
-CCompileStoryboard /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/en.lproj/MainStoryboard.storyboard
-r0
-
-CCopyStringsFile /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/en.lproj/InfoPlist.strings MSU2U-iOS/en.lproj/InfoPlist.strings
-s371936908.453125
-e371936908.465536
-r1
-xCopyStringsFile
-x/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/en.lproj/InfoPlist.strings
-xMSU2U-iOS/en.lproj/InfoPlist.strings
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Copy MSU2U-iOS/en.lproj/InfoPlist.strings2925748c4e2bb641^3e7a778c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@93"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/en.lproj/InfoPlist.strings0000000000000000^649"CopyStringsFile DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/en.lproj/InfoPlist.strings MSU2U-iOS/en.lproj/InfoPlist.strings    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/en.lproj -- MSU2U-iOS/en.lproj/InfoPlist.strings36"D2A23E43-964A-4C7D-A5B6-7AD02B85423B-
-
-CCpResource MSU2U-iOS/Default-568h@2x.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default-568h@2x.png
-s371936908.453168
-e371936908.457946
-r1
-xCpResource
-xMSU2U-iOS/Default-568h@2x.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default-568h@2x.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection97"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default-568h@2x.pngff22748c4e2bb641^253c758c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@149"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default-568h@2x.png000000000080d041^680"CpResource "MSU2U-iOS/Default-568h@2x.png" "DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default-568h@2x.png"    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/Default-568h@2x.png" /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"3DAF1A1F-B381-44D0-87D3-2BFF59598473-
-
-CCpResource MSU2U-iOS/Default.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default.png
-s371936908.453119
-e371936908.456679
-r1
-xCpResource
-xMSU2U-iOS/Default.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default.png6c21748c4e2bb641^60e9748c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@141"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default.png000000000080d041^650"CpResource MSU2U-iOS/Default.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/Default.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"E73111ED-D854-4E8B-8D1B-6E57560A7402-
-
-CCpResource MSU2U-iOS/Default@2x.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default@2x.png
-s371936908.453126
-e371936908.459029
-r1
-xCpResource
-xMSU2U-iOS/Default@2x.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default@2x.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default@2x.png1c24748c4e2bb641^4183758c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@144"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default@2x.png000000000080d041^665"CpResource "MSU2U-iOS/Default@2x.png" "DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default@2x.png"    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/Default@2x.png" /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"495C09A6-6EF7-4B3E-9B42-D38CA77AD6C8-
-
-CCpResource MSU2U-iOS/icons/01-refresh.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/01-refresh.png
-s371936908.453188
-e371936908.460129
-r1
-xCpResource
-xMSU2U-iOS/icons/01-refresh.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/01-refresh.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/01-refresh.pngea23748c4e2bb641^25cb758c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@144"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/01-refresh.png000000000080d041^671"CpResource MSU2U-iOS/icons/01-refresh.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/01-refresh.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/01-refresh.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"A8BF9D96-1498-48DC-9BB8-3BA77951B7C6-
-
-CCpResource MSU2U-iOS/icons/07-map-marker.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/07-map-marker.png
-s371936908.453206
-e371936908.455959
-r1
-xCpResource
-xMSU2U-iOS/icons/07-map-marker.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/07-map-marker.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/07-map-marker.pngd520748c4e2bb641^dcb9748c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@147"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/07-map-marker.png000000000080d041^680"CpResource MSU2U-iOS/icons/07-map-marker.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/07-map-marker.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/07-map-marker.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"812D15F8-EBFE-43EE-B2B9-D0B69084ABD8-
-
-CCpResource MSU2U-iOS/icons/101-gameplan.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/101-gameplan.png
-s371936908.453401
-e371936908.466954
-r1
-xCpResource
-xMSU2U-iOS/icons/101-gameplan.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/101-gameplan.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/101-gameplan.png0a2c748c4e2bb641^b18a778c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@146"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/101-gameplan.png000000000080d041^677"CpResource MSU2U-iOS/icons/101-gameplan.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/101-gameplan.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/101-gameplan.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"288F89CF-B0C7-4A47-9CF2-12CE71FA3A98-
-
-CCpResource MSU2U-iOS/icons/103-map.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/103-map.png
-s371936908.457244
-e371936908.467855
-r1
-xCpResource
-xMSU2U-iOS/icons/103-map.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/103-map.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/103-map.pnga81e758c4e2bb641^c5c7778c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@141"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/103-map.png000000000080d041^662"CpResource MSU2U-iOS/icons/103-map.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/103-map.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/103-map.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"094836D5-F863-4BF0-80FF-A4D3CA7E2512-
-
-CCpResource MSU2U-iOS/icons/105-piano.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/105-piano.png
-s371936908.457235
-e371936908.467026
-r1
-xCpResource
-xMSU2U-iOS/icons/105-piano.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/105-piano.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/105-piano.png7e1c758c4e2bb641^c591778c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@143"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/105-piano.png000000000080d041^668"CpResource MSU2U-iOS/icons/105-piano.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/105-piano.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/105-piano.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"418E90D9-ED4C-44B7-875B-5ABE170586C6-
-
-CCpResource MSU2U-iOS/icons/110-bug.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/110-bug.png
-s371936908.459120
-e371936908.476624
-r1
-xCpResource
-xMSU2U-iOS/icons/110-bug.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/110-bug.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/110-bug.png9696758c4e2bb641^03057a8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@141"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/110-bug.png000000000080d041^662"CpResource MSU2U-iOS/icons/110-bug.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/110-bug.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/110-bug.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"3F66E330-E4CE-481C-B89D-6BF0FA66C721-
-
-CCpResource MSU2U-iOS/icons/112-group.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/112-group.png
-s371936908.459138
-e371936908.476634
-r1
-xCpResource
-xMSU2U-iOS/icons/112-group.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/112-group.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/112-group.pngd597758c4e2bb641^4a087a8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@143"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/112-group.png000000000080d041^668"CpResource MSU2U-iOS/icons/112-group.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/112-group.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/112-group.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"4506ADFE-443B-4C0C-A347-0B8BC4604B08-
-
-CCpResource MSU2U-iOS/icons/117-todo.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/117-todo.png
-s371936908.461235
-e371936908.478681
-r1
-xCpResource
-xMSU2U-iOS/icons/117-todo.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/117-todo.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/117-todo.pngab20768c4e2bb641^a48a7a8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@142"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/117-todo.png000000000080d041^665"CpResource MSU2U-iOS/icons/117-todo.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/117-todo.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/117-todo.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"190369DC-819A-42BC-B58E-37E6DB84F9E9-
-
-CCpResource MSU2U-iOS/icons/121-landscape.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/121-landscape.png
-s371936908.467020
-e371936908.478889
-r1
-xCpResource
-xMSU2U-iOS/icons/121-landscape.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/121-landscape.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/121-landscape.png7fa5778c4e2bb641^46987a8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@147"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/121-landscape.png000000000080d041^680"CpResource MSU2U-iOS/icons/121-landscape.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/121-landscape.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/121-landscape.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"B8A55037-7F10-4CA9-ADAA-9F028BD459DB-
-
-CCpResource MSU2U-iOS/icons/123-id-card.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/123-id-card.png
-s371936908.475935
-e371936908.479861
-r1
-xCpResource
-xMSU2U-iOS/icons/123-id-card.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/123-id-card.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/123-id-card.pnge5f0798c4e2bb641^49d97a8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@145"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/123-id-card.png000000000080d041^674"CpResource MSU2U-iOS/icons/123-id-card.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/123-id-card.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/123-id-card.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"7887B1F4-44FF-4943-95D8-49259D35052C-
-
-CCpResource MSU2U-iOS/icons/140-gradhat.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/140-gradhat.png
-s371936908.468150
-e371936908.481028
-r1
-xCpResource
-xMSU2U-iOS/icons/140-gradhat.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/140-gradhat.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/140-gradhat.png01f6798c4e2bb641^cd237b8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@145"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/140-gradhat.png000000000080d041^674"CpResource MSU2U-iOS/icons/140-gradhat.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/140-gradhat.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/140-gradhat.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"704070FF-260F-4B85-A234-9A3DDF46ACE1-
-
-CCpResource MSU2U-iOS/icons/16-line-chart.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/16-line-chart.png
-s371936908.476059
-e371936908.482031
-r1
-xCpResource
-xMSU2U-iOS/icons/16-line-chart.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/16-line-chart.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/16-line-chart.pngcbf6798c4e2bb641^b6667b8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@147"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/16-line-chart.png000000000080d041^680"CpResource MSU2U-iOS/icons/16-line-chart.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/16-line-chart.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/16-line-chart.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"BA2186EA-9F65-49DE-A81D-BF83A32110A8-
-
-CCpResource MSU2U-iOS/icons/166-newspaper.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/166-newspaper.png
-s371936908.478114
-e371936908.484237
-r1
-xCpResource
-xMSU2U-iOS/icons/166-newspaper.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/166-newspaper.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/166-newspaper.png338d7a8c4e2bb641^8cf77b8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@147"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/166-newspaper.png000000000080d041^680"CpResource MSU2U-iOS/icons/166-newspaper.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/166-newspaper.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/166-newspaper.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"78F77F1B-383B-416B-AFA0-167A50563587-
-
-CCpResource MSU2U-iOS/icons/176-ipad.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/176-ipad.png
-s371936908.478145
-e371936908.483147
-r1
-xCpResource
-xMSU2U-iOS/icons/176-ipad.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/176-ipad.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/176-ipad.png22897a8c4e2bb641^a7af7b8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@142"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/176-ipad.png000000000080d041^665"CpResource MSU2U-iOS/icons/176-ipad.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/176-ipad.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/176-ipad.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"01056021-0088-4FCC-8C39-B894FC1FBDB8-
-
-CCpResource MSU2U-iOS/icons/178-city.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/178-city.png
-s371936908.479918
-e371936908.485365
-r1
-xCpResource
-xMSU2U-iOS/icons/178-city.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/178-city.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/178-city.png78ed7a8c4e2bb641^9e407c8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@142"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/178-city.png000000000080d041^665"CpResource MSU2U-iOS/icons/178-city.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/178-city.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/178-city.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"25386E51-03F0-414D-BFE7-277E82A9AE38-
-
-CCpResource MSU2U-iOS/icons/190-bank.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/190-bank.png
-s371936908.479934
-e371936908.486500
-r1
-xCpResource
-xMSU2U-iOS/icons/190-bank.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/190-bank.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/190-bank.pnge5ef7a8c4e2bb641^768b7c8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@142"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/190-bank.png000000000080d041^665"CpResource MSU2U-iOS/icons/190-bank.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/190-bank.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/190-bank.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"3CB1B329-AB8A-4838-92BE-70F3312D0D4C-
-
-CCpResource MSU2U-iOS/icons/194-note-2.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/194-note-2.png
-s371936908.481021
-e371936908.487560
-r1
-xCpResource
-xMSU2U-iOS/icons/194-note-2.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/194-note-2.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/194-note-2.png38327b8c4e2bb641^85d17c8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@144"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/194-note-2.png000000000080d041^671"CpResource MSU2U-iOS/icons/194-note-2.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/194-note-2.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/194-note-2.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"7F725835-2DB0-4469-9DCC-ECE92C4CE16D-
-
-CCpResource MSU2U-iOS/icons/195-barcode.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/195-barcode.png
-s371936908.482167
-e371936908.488637
-r1
-xCpResource
-xMSU2U-iOS/icons/195-barcode.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/195-barcode.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/195-barcode.png077b7b8c4e2bb641^a4177d8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@145"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/195-barcode.png000000000080d041^674"CpResource MSU2U-iOS/icons/195-barcode.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/195-barcode.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/195-barcode.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"B5BB3C25-274F-4C4F-A961-8B027A6A47F0-
-
-CCpResource MSU2U-iOS/icons/20-gear-2.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/20-gear-2.png
-s371936908.482173
-e371936908.489780
-r1
-xCpResource
-xMSU2U-iOS/icons/20-gear-2.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/20-gear-2.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/20-gear-2.png247c7b8c4e2bb641^d0627d8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@143"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/20-gear-2.png000000000080d041^668"CpResource MSU2U-iOS/icons/20-gear-2.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/20-gear-2.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/20-gear-2.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"658D1D77-E17D-4D5A-9971-F7E4188C3C4D-
-
-CCpResource MSU2U-iOS/icons/208-facebook.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/208-facebook.png
-s371936908.484287
-e371936908.490908
-r1
-xCpResource
-xMSU2U-iOS/icons/208-facebook.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/208-facebook.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/208-facebook.pngf2067c8c4e2bb641^8aac7d8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@146"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/208-facebook.png000000000080d041^677"CpResource MSU2U-iOS/icons/208-facebook.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/208-facebook.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/208-facebook.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"F02B1738-FFF0-40AB-9074-85C655E3F82E-
-
-CCpResource MSU2U-iOS/icons/209-twitter.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/209-twitter.png
-s371936908.485372
-e371936908.492013
-r1
-xCpResource
-xMSU2U-iOS/icons/209-twitter.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/209-twitter.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/209-twitter.pnga54e7c8c4e2bb641^49f57d8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@145"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/209-twitter.png000000000080d041^674"CpResource MSU2U-iOS/icons/209-twitter.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/209-twitter.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/209-twitter.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"7F529761-EC8C-46C6-8C1C-253B6F637627-
-
-CCpResource MSU2U-iOS/icons/265-download.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/265-download.png
-s371936908.486519
-e371936908.493204
-r1
-xCpResource
-xMSU2U-iOS/icons/265-download.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/265-download.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/265-download.pnga9a27c8c4e2bb641^5b427e8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@146"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/265-download.png000000000080d041^677"CpResource MSU2U-iOS/icons/265-download.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/265-download.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/265-download.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"21E45699-EE9E-4635-BB57-3F220FFEFDC1-
-
-CCpResource MSU2U-iOS/icons/271-dramamasks.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/271-dramamasks.png
-s371936908.487686
-e371936908.495333
-r1
-xCpResource
-xMSU2U-iOS/icons/271-dramamasks.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/271-dramamasks.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection96"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/271-dramamasks.png7de67c8c4e2bb641^57ce7e8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@148"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/271-dramamasks.png000000000080d041^683"CpResource MSU2U-iOS/icons/271-dramamasks.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/271-dramamasks.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/271-dramamasks.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"0506DDD7-ECD4-47F2-998B-C1B19BF40CF4-
-
-CCpResource MSU2U-iOS/icons/29-heart.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/29-heart.png
-s371936908.487682
-e371936908.494236
-r1
-xCpResource
-xMSU2U-iOS/icons/29-heart.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/29-heart.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/29-heart.png4fe57c8c4e2bb641^72867e8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@142"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/29-heart.png000000000080d041^665"CpResource MSU2U-iOS/icons/29-heart.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/29-heart.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/29-heart.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"FE7A1232-3339-4F64-9213-6160BC72B2AD-
-
-CCpResource MSU2U-iOS/icons/291-idcard.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/291-idcard.png
-s371936908.489767
-e371936908.496483
-r1
-xCpResource
-xMSU2U-iOS/icons/291-idcard.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/291-idcard.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/291-idcard.png976f7d8c4e2bb641^d6197f8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@144"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/291-idcard.png000000000080d041^671"CpResource MSU2U-iOS/icons/291-idcard.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/291-idcard.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/291-idcard.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"6EFD644F-4583-499B-975F-80D2A6051E82-
-
-CCpResource MSU2U-iOS/icons/32-iphone.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/32-iphone.png
-s371936908.490902
-e371936908.497743
-r1
-xCpResource
-xMSU2U-iOS/icons/32-iphone.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/32-iphone.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/32-iphone.pngd8b97d8c4e2bb641^376c7f8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@143"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/32-iphone.png000000000080d041^668"CpResource MSU2U-iOS/icons/32-iphone.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/32-iphone.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/32-iphone.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"C3FEEC1B-9584-4026-A226-98894C8EA614-
-
-CCpResource MSU2U-iOS/icons/38-airplane.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/38-airplane.png
-s371936908.492045
-e371936908.498944
-r1
-xCpResource
-xMSU2U-iOS/icons/38-airplane.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/38-airplane.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/38-airplane.png57057e8c4e2bb641^06b97f8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@145"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/38-airplane.png000000000080d041^674"CpResource MSU2U-iOS/icons/38-airplane.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/38-airplane.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/38-airplane.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"BCE46553-6C26-4B50-BD21-9C98C802E1D7-
-
-CCpResource MSU2U-iOS/icons/42-photos.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/42-photos.png
-s371936908.493155
-e371936908.499945
-r1
-xCpResource
-xMSU2U-iOS/icons/42-photos.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/42-photos.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/42-photos.pngd34d7e8c4e2bb641^dbfc7f8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@143"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/42-photos.png000000000080d041^668"CpResource MSU2U-iOS/icons/42-photos.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/42-photos.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/42-photos.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"486CE9A0-8CB4-411B-93D3-450539472D46-
-
-CCpResource MSU2U-iOS/icons/53-house.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/53-house.png
-s371936908.494394
-e371936908.502041
-r1
-xCpResource
-xMSU2U-iOS/icons/53-house.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/53-house.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/53-house.pngcfa37e8c4e2bb641^3886808c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@142"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/53-house.png000000000080d041^665"CpResource MSU2U-iOS/icons/53-house.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/53-house.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/53-house.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"F09FAB9A-10B7-443F-93DC-BA571A4143AE-
-
-CCpResource MSU2U-iOS/icons/73-radar.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/73-radar.png
-s371936908.494356
-e371936908.500945
-r1
-xCpResource
-xMSU2U-iOS/icons/73-radar.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/73-radar.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/73-radar.png63997e8c4e2bb641^213e808c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@142"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/73-radar.png000000000080d041^665"CpResource MSU2U-iOS/icons/73-radar.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/73-radar.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/73-radar.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"940DBE53-F3A2-4BF6-BD98-20485D428483-
-
-CCpResource MSU2U-iOS/icons/83-calendar.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/83-calendar.png
-s371936908.496464
-e371936908.503057
-r1
-xCpResource
-xMSU2U-iOS/icons/83-calendar.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/83-calendar.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/83-calendar.pngd5257f8c4e2bb641^efc8808c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@145"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/83-calendar.png000000000080d041^674"CpResource MSU2U-iOS/icons/83-calendar.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/83-calendar.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/83-calendar.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"B06F0896-422D-479D-B363-4D87991713C2-
-
-CCpResource MSU2U-iOS/icons/92-test-tube.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/92-test-tube.png
-s371936908.497622
-e371936908.504231
-r1
-xCpResource
-xMSU2U-iOS/icons/92-test-tube.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/92-test-tube.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/92-test-tube.pngc9757f8c4e2bb641^be15818c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@146"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/92-test-tube.png000000000080d041^677"CpResource MSU2U-iOS/icons/92-test-tube.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/92-test-tube.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/92-test-tube.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"B0AE3179-2B54-4738-97E2-07D607AE8A98-
-
-CCpResource MSU2U-iOS/icons/96-book.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/96-book.png
-s371936908.498955
-e371936908.505397
-r1
-xCpResource
-xMSU2U-iOS/icons/96-book.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/96-book.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/96-book.pngbccd7f8c4e2bb641^2862818c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@141"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/96-book.png000000000080d041^662"CpResource MSU2U-iOS/icons/96-book.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/96-book.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/96-book.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"DEA6ECE5-E37E-4E40-AC69-B34100BDEE06-
-
-CCpResource MSU2U-iOS/icons/98-palette.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/98-palette.png
-s371936908.500101
-e371936908.507897
-r1
-xCpResource
-xMSU2U-iOS/icons/98-palette.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/98-palette.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/98-palette.pngce1a808c4e2bb641^c407828c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@144"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/98-palette.png000000000080d041^671"CpResource MSU2U-iOS/icons/98-palette.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/98-palette.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/icons/98-palette.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"08D983A5-D464-419B-BCC7-A6AAE9750F7C-
-
-CCpResource MSU2U-iOS/image/coloredMapMSU.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/coloredMapMSU.png
-s371936908.500092
-e371936908.507875
-r1
-xCpResource
-xMSU2U-iOS/image/coloredMapMSU.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/coloredMapMSU.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/coloredMapMSU.png8318808c4e2bb641^5c04828c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@147"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/coloredMapMSU.png000000000080d041^680"CpResource MSU2U-iOS/image/coloredMapMSU.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/coloredMapMSU.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/image/coloredMapMSU.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"F815174E-F756-47E5-9ED9-A56C390ADD50-
-
-CCpResource MSU2U-iOS/image/mainMenu.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/mainMenu.png
-s371936908.502131
-e371936908.509604
-r1
-xCpResource
-xMSU2U-iOS/image/mainMenu.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/mainMenu.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/mainMenu.pngbf9d808c4e2bb641^4775828c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@142"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/mainMenu.png000000000080d041^665"CpResource MSU2U-iOS/image/mainMenu.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/mainMenu.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/image/mainMenu.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"A17BAE49-8FAA-4BD5-9028-A92812E75139-
-
-CCpResource MSU2U-iOS/image/navigationBar.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/navigationBar.png
-s371936908.503184
-e371936908.510146
-r1
-xCpResource
-xMSU2U-iOS/image/navigationBar.png
-xDerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/navigationBar.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Copy DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/navigationBar.pnge0db808c4e2bb641^5299828c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@147"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/navigationBar.png000000000080d041^680"CpResource MSU2U-iOS/image/navigationBar.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/navigationBar.png    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/image/navigationBar.png /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"74BDAD14-C746-428F-A01C-586E4352A28C-
-
-CGenerateDSYMFile /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app.dSYM /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/MSU2U-iOS
-s371936908.430008
-e371936908.444871
-r1
-xGenerateDSYMFile
-x/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app.dSYM
-x/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/MSU2U-iOS
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection129"Generating /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app.dSYM95296e8c4e2bb641^efe2718c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@134"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app.dSYM000000000080d041^767"GenerateDSYMFile DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app.dSYM DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/MSU2U-iOS    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/MSU2U-iOS -o /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app.dSYM36"2C3E79DF-7ACA-47BC-96BB-408CE3D476DE-
-
-CLd /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/MSU2U-iOS normal i386
-s371936908.400805
-e371936908.423206
-r1
-xLd
-x/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/MSU2U-iOS
-xnormal
-xi386
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection128"Link /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/MSU2U-iOS07b6668c4e2bb641^c1576c8c4e2bb641^---0#0#0#--1331"Ld DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/MSU2U-iOS normal i386    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv IPHONEOS_DEPLOYMENT_TARGET 6.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -L/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator -F/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator -filelist /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/MSU2U-iOS.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -fobjc-arc -fobjc-link-runtime -Xlinker -no_implicit_dylibs -mios-simulator-version-min=6.0 -framework UIKit -framework Foundation -framework CoreGraphics -o /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/MSU2U-iOS36"BCD85827-2C7A-4CE9-8322-E2905624A741-
-
-CProcessInfoPlistFile /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Info.plist MSU2U-iOS/MSU2U-iOS-Info.plist
-s371936908.110249
-e371936908.114063
-r1
-xProcessInfoPlistFile
-x/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Info.plist
-xMSU2U-iOS/MSU2U-iOS-Info.plist
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection38"Process MSU2U-iOS/MSU2U-iOS-Info.plist895c1c8c4e2bb641^f5651d8c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@87"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/MSU2U-iOS-Info.plist0000000000000000^763"ProcessInfoPlistFile DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Info.plist MSU2U-iOS/MSU2U-iOS-Info.plist    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility MSU2U-iOS/MSU2U-iOS-Info.plist -genpkginfo /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Info.plist36"60FE6089-8E4A-4837-9E0C-22D5080B86AA-
-
-CProcessPCH /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/PrecompiledHeaders/MSU2U-iOS-Prefix-bmtmpadmopamzybmvkqkndlwsibn/MSU2U-iOS-Prefix.pch.pth MSU2U-iOS/MSU2U-iOS-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s371936908.122428
-e371936908.337862
-r1
-xProcessPCH
-x/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/PrecompiledHeaders/MSU2U-iOS-Prefix-bmtmpadmopamzybmvkqkndlwsibn/MSU2U-iOS-Prefix.pch.pth
-xMSU2U-iOS/MSU2U-iOS-Prefix.pch
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Precompile MSU2U-iOS/MSU2U-iOS-Prefix.pch6a871f8c4e2bb641^207e568c4e2bb641^---0#0#0#-19%DVTDocumentLocation2@87"file://localhost/Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/MSU2U-iOS-Prefix.pch0000000000000000^3882"ProcessPCH DerivedData/MSU2U-iOS/Build/Intermediates/PrecompiledHeaders/MSU2U-iOS-Prefix-bmtmpadmopamzybmvkqkndlwsibn/MSU2U-iOS-Prefix.pch.pth MSU2U-iOS/MSU2U-iOS-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=6.0 -iquote /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/MSU2U-iOS-generated-files.hmap -I/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/MSU2U-iOS-own-target-headers.hmap -I/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/MSU2U-iOS-all-target-headers.hmap -iquote /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/MSU2U-iOS-project-headers.hmap -I/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/DerivedSources/i386 -I/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/DerivedSources -F/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator --serialize-diagnostics /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/PrecompiledHeaders/MSU2U-iOS-Prefix-bmtmpadmopamzybmvkqkndlwsibn/MSU2U-iOS-Prefix.pch.dia -c /Users/matthewfarmer/Developer/MSU2U-iOS/MSU2U-iOS/MSU2U-iOS-Prefix.pch -o /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/PrecompiledHeaders/MSU2U-iOS-Prefix-bmtmpadmopamzybmvkqkndlwsibn/MSU2U-iOS-Prefix.pch.pth -MMD -MT dependencies -MF /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/PrecompiledHeaders/MSU2U-iOS-Prefix-bmtmpadmopamzybmvkqkndlwsibn/MSU2U-iOS-Prefix.pch.d36"3AE1EDA1-3D49-4B38-AAFE-53118D0E1F7D-
-
-CProcessPCH /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Index/PrecompiledHeaders/MSU2U-iOS-Prefix-bwvmdenoldioszfkhzraunmfomuv_ast/MSU2U-iOS-Prefix.pch.pth MSU2U-iOS/MSU2U-iOS-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
-r0
-
-CTouch /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app
-s371936910.349223
-e371936910.354421
-r1
-xTouch
-x/Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection119"Touch /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.appc075598e4e2bb641^d3bd5a8e4e2bb641^---0#0#0#--458"Touch DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app    cd /Users/matthewfarmer/Developer/MSU2U-iOS    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/matthewfarmer/Developer/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app36"6809DE5D-93B9-4FEC-A3E9-56120D57D4E2-
-

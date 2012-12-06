@@ -10,33 +10,27 @@
 
 @implementation AppDelegate
 
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    //Set the color of the navigation bars
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:(55.0/255.0) green:(7.0/255.0) blue:(16.0/255.0) alpha:1]];
     
-    // Create image for navigation background - portrait
-    UIImage *NavigationPortraitBackground = [[UIImage imageNamed:@"navigationBar.png"]
-                                             resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    //Change the color of the tabs
+    [[UITabBar appearance]setTintColor:[UIColor colorWithRed:(55.0/255.0) green:(7.0/255.0) blue:(16.0/255.0) alpha:1]];
     
-    // Set the background image for all UINavigationBars
-    [[UINavigationBar appearance] setBackgroundImage:NavigationPortraitBackground
-                                       forBarMetrics:UIBarMetricsDefault];
-    
-    // Set the text appearance for navbar
-    [[UINavigationBar appearance] setTitleTextAttributes:
-     [NSDictionary dictionaryWithObjectsAndKeys:
-      [UIColor whiteColor], UITextAttributeTextColor,
-      [UIColor redColor], UITextAttributeTextShadowColor,
-      [NSValue valueWithUIOffset:UIOffsetMake(0, 0)], UITextAttributeTextShadowOffset,
-      [UIFont fontWithName:@"Verdana-Pro" size:16], UITextAttributeFont,
-      nil]];
+    //Change the color of the selected tab icon
+    [[UITabBar appearance] setSelectionIndicatorImage:
+     [UIImage imageNamed:@"tab_select_indicator"]];
+    [[UITabBar appearance] setSelectedImageTintColor:[UIColor colorWithRed:(185.0/255.0) green:(142.0/255.0) blue:(47.0/255.0) alpha:1]];
     
     //Make the back buttons on the navigation bar red as well.
     [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:(55.0/255.0) green:(7.0/255.0) blue:(16.0/255.0) alpha:1]];
     
     //Set the search bars to be a gold color
     [[UISearchBar appearance] setTintColor:[UIColor colorWithRed:(185.0/255.0) green:(142.0/255.0) blue:(47.0/255.0) alpha:1]];
-
+    
     return YES;
 }
 							
