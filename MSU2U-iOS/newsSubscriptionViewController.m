@@ -18,7 +18,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     self.subscriptionSwitch = [[NSArray alloc] initWithObjects:self.wichitanNewsSwitch,self.sportsNewsSwitch,self.campusNewsSwitch,nil];
-    self.userDefaultKey = [[NSArray alloc] initWithObjects:@"wichitanNewsIsOn",@"sportsNewsIsOn",@"campusNewsSwitch",nil];
+    self.userDefaultKey = [[NSArray alloc] initWithObjects:@"wichitanNewsIsOn",@"sportsNewsIsOn",@"campusNewsIsOn",nil];
     
     [self determineIfSwitchShouldBeOnOrOff];
 }

@@ -37,6 +37,7 @@
         event.evlocation = [info objectForKey:@"evlocation"];
         event.startDate = [info objectForKey:@"StartDate"];
         event.endDate = [info objectForKey:@"EndDate"];
+        event.category = [info objectForKey:@"category"];
     }
     else
     {

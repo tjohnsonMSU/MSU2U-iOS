@@ -434,12 +434,47 @@
                 cell.imageView.image = [UIImage imageNamed:@"volleyball.jpeg"];
             else if([[self.dataObject sportType] isEqualToString:@"Softball"])
                 cell.imageView.image = [UIImage imageNamed:@"softball.jpeg"];
-            else if([[self.dataObject sportType] isEqualToString:@"Basketball"])
+            else if([[self.dataObject sportType] isEqualToString:@"BasketballMen"] || [[self.dataObject sportType] isEqualToString:@"BasketballWomen"])
                 cell.imageView.image = [UIImage imageNamed:@"basketball.jpeg"];
-            else if([[self.dataObject sportType] isEqualToString:@"Tennis"])
+            else if([[self.dataObject sportType] isEqualToString:@"TennisMen"] || [[self.dataObject sportType] isEqualToString:@"TennisWomen"])
                 cell.imageView.image = [UIImage imageNamed:@"tennis.jpeg"];
-            else if([[self.dataObject sportType] isEqualToString:@"Soccer"])
+            else if([[self.dataObject sportType] isEqualToString:@"SoccerMen"] || [[self.dataObject sportType] isEqualToString:@"SoccerWomen"])
                 cell.imageView.image = [UIImage imageNamed:@"soccer.jpeg"];
+            else if([[self.dataObject sportType] isEqualToString:@"Cross Country"])
+                cell.imageView.image = [UIImage imageNamed:@"crossCountry.jpeg"];
+            else if([[self.dataObject sportType] isEqualToString:@"GolfMen"] || [[self.dataObject sportType] isEqualToString:@"GolfWomen"])
+                cell.imageView.image = [UIImage imageNamed:@"golf.jpeg"];
+        }
+        else if(self.childNumber == [NSNumber numberWithInt:2])
+        {
+            if([[self.dataObject category] isEqualToString:@"art"])
+            {
+                cell.imageView.image = [UIImage imageNamed:@"art.jpeg"];
+            }
+            else if([[self.dataObject category] isEqualToString:@"campus"])
+            {
+                cell.imageView.image = [UIImage imageNamed:@"campus.jpeg"];
+            }
+            else if([[self.dataObject category] isEqualToString:@"personnel"])
+            {
+                cell.imageView.image = [UIImage imageNamed:@"personnel.jpeg"];
+            }
+            else if([[self.dataObject category] isEqualToString:@"music"])
+            {
+                cell.imageView.image = [UIImage imageNamed:@"music.jpeg"];
+            }
+            else if([[self.dataObject category] isEqualToString:@"theater"])
+            {
+                cell.imageView.image = [UIImage imageNamed:@"theater.jpeg"];
+            }
+            else if([[self.dataObject category] isEqualToString:@"academic"])
+            {
+                cell.imageView.image = [UIImage imageNamed:@"academic.jpeg"];
+            }
+            else if([[self.dataObject category] isEqualToString:@"museum"])
+            {
+                cell.imageView.image = [UIImage imageNamed:@"museum.jpeg"];
+            }
         }
     }
     else if(self.childNumber == [NSNumber numberWithInt:4] || self.childNumber == [NSNumber numberWithInt:5] || self.childNumber == [NSNumber numberWithInt:6])

@@ -3,46 +3,46 @@
 <plist version="1.0">
 <dict>
 	<key>academicIsOn</key>
-	<false/>
+	<true/>
 	<key>artIsOn</key>
-	<false/>
+	<true/>
 	<key>campusIsOn</key>
-	<false/>
+	<true/>
 	<key>museumIsOn</key>
-	<false/>
+	<true/>
 	<key>musicIsOn</key>
-	<false/>
+	<true/>
 	<key>personnelIsOn</key>
-	<false/>
+	<true/>
 	<key>theaterIsOn</key>
-	<false/>
+	<true/>
 	<key>crossCountryIsOn</key>
-	<false/>
+	<true/>
 	<key>basketballMenIsOn</key>
-	<false/>
+	<true/>
 	<key>basketballWomenIsOn</key>
-	<false/>
+	<true/>
 	<key>footballIsOn</key>
-	<false/>
+	<true/>
 	<key>golfMenIsOn</key>
-	<false/>
+	<true/>
 	<key>golfWomenIsOn</key>
-	<false/>
+	<true/>
 	<key>soccerMenIsOn</key>
-	<false/>
+	<true/>
 	<key>soccerWomenIsOn</key>
-	<false/>
+	<true/>
 	<key>softballIsOn</key>
-	<false/>
+	<true/>
 	<key>tennisMenIsOn</key>
-	<false/>
+	<true/>
 	<key>tennisWomenIsOn</key>
-	<false/>
+	<true/>
 	<key>wichitanNewsIsOn</key>
-	<false/>
+	<true/>
 	<key>sportsNewsIsOn</key>
-	<false/>
+	<true/>
 	<key>campusNewsIsOn</key>
-	<false/>
+	<true/>
 </dict>
 </plist>
