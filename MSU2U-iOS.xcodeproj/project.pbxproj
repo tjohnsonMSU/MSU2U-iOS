@@ -73,8 +73,6 @@
 		1D82B33116780F35006564F8 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D82B33016780F35006564F8 /* News.m */; };
 		1D82B33D16781B6A006564F8 /* MustangsIconSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D82B33C16781B6A006564F8 /* MustangsIconSmall.png */; };
 		1D82B33F16781B7E006564F8 /* MustangsIconLarge.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D82B33E16781B7E006564F8 /* MustangsIconLarge.png */; };
-		1D82B341167823D2006564F8 /* logo_nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D82B340167823D2006564F8 /* logo_nav.png */; };
-		1D82B343167823D9006564F8 /* nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D82B342167823D9006564F8 /* nav.png */; };
 		1D887F63164B703600854F9A /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D887F62164B703600854F9A /* SDWebImage.framework */; };
 		1D887F65164B706800854F9A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D887F64164B706800854F9A /* ImageIO.framework */; };
 		1D924FC2163B158100D7E3B0 /* 98-palette@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D924FC1163B158100D7E3B0 /* 98-palette@2x.png */; };
@@ -84,7 +82,6 @@
 		1D9702AD165D4ACD00505F7C /* historyDirectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9702AC165D4ACD00505F7C /* historyDirectoryViewController.m */; };
 		1D98D0E01651C9E5002F2DD4 /* sportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D98D0DF1651C9E5002F2DD4 /* sportViewController.m */; };
 		1D98D0E41651C9F6002F2DD4 /* detailSportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D98D0E31651C9F6002F2DD4 /* detailSportViewController.m */; };
-		1D98D0E81651DF03002F2DD4 /* paperBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D98D0E71651DF03002F2DD4 /* paperBG.png */; };
 		1D98D0EB165202E6002F2DD4 /* eventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D98D0EA165202E6002F2DD4 /* eventViewController.m */; };
 		1D98D0EE165202F3002F2DD4 /* detailEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D98D0ED165202F3002F2DD4 /* detailEventViewController.m */; };
 		1D9CA134166C798B00D0D0E0 /* noStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D9CA133166C798B00D0D0E0 /* noStar.png */; };
@@ -103,7 +100,6 @@
 		1DDE56F5163B023B008830A8 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1DDE56F3163B023B008830A8 /* Model.xcdatamodeld */; };
 		1DDE5732163B04E6008830A8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DDE5731163B04E6008830A8 /* CoreData.framework */; };
 		1DED1E7116520B54003D6721 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DED1E7016520B54003D6721 /* Default.png */; };
-		1DED1E7416520B7D003D6721 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DED1E7216520B6A003D6721 /* Default@2x.png */; };
 		1DED1E7616521CC2003D6721 /* directoryBackdrop.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DED1E7516521CC2003D6721 /* directoryBackdrop.png */; };
 /* End PBXBuildFile section */
 
@@ -191,8 +187,6 @@
 		1D82B33016780F35006564F8 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		1D82B33C16781B6A006564F8 /* MustangsIconSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MustangsIconSmall.png; sourceTree = "<group>"; };
 		1D82B33E16781B7E006564F8 /* MustangsIconLarge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MustangsIconLarge.png; sourceTree = "<group>"; };
-		1D82B340167823D2006564F8 /* logo_nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_nav.png; path = ../../../logo_nav.png; sourceTree = "<group>"; };
-		1D82B342167823D9006564F8 /* nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nav.png; path = ../../../nav.png; sourceTree = "<group>"; };
 		1D887F62164B703600854F9A /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "MSU2U-iOS/SDWebImage.framework"; sourceTree = "<group>"; };
 		1D887F64164B706800854F9A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		1D924FC1163B158100D7E3B0 /* 98-palette@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "98-palette@2x.png"; sourceTree = "<group>"; };
@@ -206,7 +200,6 @@
 		1D98D0DF1651C9E5002F2DD4 /* sportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sportViewController.m; sourceTree = "<group>"; };
 		1D98D0E21651C9F6002F2DD4 /* detailSportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailSportViewController.h; sourceTree = "<group>"; };
 		1D98D0E31651C9F6002F2DD4 /* detailSportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailSportViewController.m; sourceTree = "<group>"; };
-		1D98D0E71651DF03002F2DD4 /* paperBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = paperBG.png; path = ../paperBG.png; sourceTree = "<group>"; };
 		1D98D0E9165202E6002F2DD4 /* eventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventViewController.h; sourceTree = "<group>"; };
 		1D98D0EA165202E6002F2DD4 /* eventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventViewController.m; sourceTree = "<group>"; };
 		1D98D0EC165202F3002F2DD4 /* detailEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailEventViewController.h; sourceTree = "<group>"; };
@@ -231,7 +224,6 @@
 		1DDE56F4163B023B008830A8 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1DDE5731163B04E6008830A8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		1DED1E7016520B54003D6721 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		1DED1E7216520B6A003D6721 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../../Default@2x.png"; sourceTree = "<group>"; };
 		1DED1E7516521CC2003D6721 /* directoryBackdrop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = directoryBackdrop.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -407,10 +399,6 @@
 		1D1CEB45162B4E750059BC1F /* image */ = {
 			isa = PBXGroup;
 			children = (
-				1D82B342167823D9006564F8 /* nav.png */,
-				1D82B340167823D2006564F8 /* logo_nav.png */,
-				1DED1E7216520B6A003D6721 /* Default@2x.png */,
-				1D98D0E71651DF03002F2DD4 /* paperBG.png */,
 				1DB63E3D16604EBD00A21649 /* basketball.jpeg */,
 				1DB63E3E16604EBD00A21649 /* softball.jpeg */,
 				1DB63E3F16604EBD00A21649 /* tennis.jpeg */,
@@ -698,9 +686,7 @@
 				1DA3C340164CD8D4007C3895 /* test.png in Resources */,
 				1D5B15BC164F4A030005C0A2 /* 125-food@2x.png in Resources */,
 				1D5B15BE164F4C570005C0A2 /* 125-food.png in Resources */,
-				1D98D0E81651DF03002F2DD4 /* paperBG.png in Resources */,
 				1DED1E7116520B54003D6721 /* Default.png in Resources */,
-				1DED1E7416520B7D003D6721 /* Default@2x.png in Resources */,
 				1DED1E7616521CC2003D6721 /* directoryBackdrop.png in Resources */,
 				1DDB39C81652CF6E00252053 /* footballBanner.png in Resources */,
 				1D95545A165C37DD00E9E7B9 /* star.png in Resources */,
@@ -714,8 +700,6 @@
 				1D9CA134166C798B00D0D0E0 /* noStar.png in Resources */,
 				1D82B33D16781B6A006564F8 /* MustangsIconSmall.png in Resources */,
 				1D82B33F16781B7E006564F8 /* MustangsIconLarge.png in Resources */,
-				1D82B341167823D2006564F8 /* logo_nav.png in Resources */,
-				1D82B343167823D9006564F8 /* nav.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1522,11 +1522,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="paperBG.png" translatesAutoresizingMaskIntoConstraints="NO" id="bwS-2q-u4x">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="405" id="qG7-kV-z0s"/>
-                                </constraints>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="X5a-6w-JFr">
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
@@ -1608,7 +1603,6 @@
                             <constraint firstItem="7i5-nC-rG1" firstAttribute="leading" secondItem="WWh-tz-brD" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Ier-rg-w83"/>
                             <constraint firstItem="X5a-6w-JFr" firstAttribute="leading" secondItem="43D-pE-tiB" secondAttribute="leading" type="default" id="N64-ER-9OJ"/>
                             <constraint firstItem="ukl-bT-Vij" firstAttribute="top" secondItem="43D-pE-tiB" secondAttribute="top" type="default" id="Ppf-qt-1mB"/>
-                            <constraint firstItem="bwS-2q-u4x" firstAttribute="top" secondItem="43D-pE-tiB" secondAttribute="top" constant="100" id="TV2-OW-oED"/>
                             <constraint firstAttribute="trailing" secondItem="7i5-nC-rG1" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="VKE-Jb-tyS"/>
                             <constraint firstItem="ukl-bT-Vij" firstAttribute="leading" secondItem="43D-pE-tiB" secondAttribute="leading" type="default" id="XoR-t6-G6r"/>
                             <constraint firstItem="WWh-tz-brD" firstAttribute="top" secondItem="43D-pE-tiB" secondAttribute="top" constant="42" id="aHY-Be-r01"/>
@@ -1617,10 +1611,8 @@
                             <constraint firstItem="X5a-6w-JFr" firstAttribute="top" secondItem="WWh-tz-brD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ebB-Z4-lWG"/>
                             <constraint firstItem="X5a-6w-JFr" firstAttribute="top" secondItem="PbM-Lf-f2e" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ixB-8o-HYF"/>
                             <constraint firstItem="X5a-6w-JFr" firstAttribute="trailing" secondItem="43D-pE-tiB" secondAttribute="trailing" type="default" id="n4j-Tl-kEF"/>
-                            <constraint firstItem="bwS-2q-u4x" firstAttribute="trailing" secondItem="43D-pE-tiB" secondAttribute="trailing" type="default" id="p0b-fc-dbI"/>
                             <constraint firstItem="OsI-2j-fw9" firstAttribute="leading" secondItem="WWh-tz-brD" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="q8a-5n-0h9"/>
                             <constraint firstItem="wEd-Cl-x3O" firstAttribute="trailing" secondItem="43D-pE-tiB" secondAttribute="trailing" type="default" id="uCb-vT-gWi"/>
-                            <constraint firstItem="bwS-2q-u4x" firstAttribute="leading" secondItem="43D-pE-tiB" secondAttribute="leading" type="default" id="x1z-LK-Rmg"/>
                             <constraint firstAttribute="trailing" secondItem="PbM-Lf-f2e" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ztT-Qj-V0o"/>
                         </constraints>
                     </view>
@@ -1821,17 +1813,16 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleAspectFill" image="coloredMapMSU.png" translatesAutoresizingMaskIntoConstraints="NO" id="Quq-C7-Uza">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="499" id="AmC-im-cHp"/>
-                                </constraints>
-                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="[ Map image goes here]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgZ-dL-4zj">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Quq-C7-Uza" firstAttribute="top" secondItem="hhT-bV-L5p" secondAttribute="top" type="default" id="KAx-f7-HQs"/>
-                            <constraint firstItem="Quq-C7-Uza" firstAttribute="trailing" secondItem="hhT-bV-L5p" secondAttribute="trailing" type="default" id="NdY-eG-Q6J"/>
-                            <constraint firstItem="Quq-C7-Uza" firstAttribute="leading" secondItem="hhT-bV-L5p" secondAttribute="leading" type="default" id="zRC-AP-rbR"/>
+                            <constraint firstItem="UgZ-dL-4zj" firstAttribute="centerX" secondItem="hhT-bV-L5p" secondAttribute="centerX" type="default" id="Sts-m4-eSb"/>
+                            <constraint firstItem="UgZ-dL-4zj" firstAttribute="centerY" secondItem="hhT-bV-L5p" secondAttribute="centerY" type="default" id="VkP-jT-Fda"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Image" image="103-map.png" id="Zmp-iU-eFx"/>
@@ -2424,9 +2415,7 @@
         <image name="73-radar.png" width="27" height="27"/>
         <image name="83-calendar.png" width="23" height="25"/>
         <image name="96-book.png" width="18" height="26"/>
-        <image name="coloredMapMSU.png" width="2490" height="1680"/>
         <image name="directoryBackdrop.png" width="320" height="102"/>
-        <image name="paperBG.png" width="640" height="960"/>
         <image name="star.png" width="400" height="400"/>
         <image name="theWichitan.jpg" width="180" height="180"/>
     </resources>
