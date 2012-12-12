@@ -71,6 +71,10 @@
 		1D7253F1163A31660057B33F /* 02-redo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D7253F0163A31660057B33F /* 02-redo.png */; };
 		1D82B32E16780F27006564F8 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D82B32D16780F27006564F8 /* Employee.m */; };
 		1D82B33116780F35006564F8 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D82B33016780F35006564F8 /* News.m */; };
+		1D82B33D16781B6A006564F8 /* MustangsIconSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D82B33C16781B6A006564F8 /* MustangsIconSmall.png */; };
+		1D82B33F16781B7E006564F8 /* MustangsIconLarge.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D82B33E16781B7E006564F8 /* MustangsIconLarge.png */; };
+		1D82B341167823D2006564F8 /* logo_nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D82B340167823D2006564F8 /* logo_nav.png */; };
+		1D82B343167823D9006564F8 /* nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D82B342167823D9006564F8 /* nav.png */; };
 		1D887F63164B703600854F9A /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D887F62164B703600854F9A /* SDWebImage.framework */; };
 		1D887F65164B706800854F9A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D887F64164B706800854F9A /* ImageIO.framework */; };
 		1D924FC2163B158100D7E3B0 /* 98-palette@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D924FC1163B158100D7E3B0 /* 98-palette@2x.png */; };
@@ -185,6 +189,10 @@
 		1D82B32D16780F27006564F8 /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
 		1D82B32F16780F35006564F8 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		1D82B33016780F35006564F8 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
+		1D82B33C16781B6A006564F8 /* MustangsIconSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MustangsIconSmall.png; sourceTree = "<group>"; };
+		1D82B33E16781B7E006564F8 /* MustangsIconLarge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MustangsIconLarge.png; sourceTree = "<group>"; };
+		1D82B340167823D2006564F8 /* logo_nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_nav.png; path = ../../../logo_nav.png; sourceTree = "<group>"; };
+		1D82B342167823D9006564F8 /* nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nav.png; path = ../../../nav.png; sourceTree = "<group>"; };
 		1D887F62164B703600854F9A /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "MSU2U-iOS/SDWebImage.framework"; sourceTree = "<group>"; };
 		1D887F64164B706800854F9A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		1D924FC1163B158100D7E3B0 /* 98-palette@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "98-palette@2x.png"; sourceTree = "<group>"; };
@@ -249,6 +257,8 @@
 		1D1CEAC8162B4D230059BC1F = {
 			isa = PBXGroup;
 			children = (
+				1D82B33E16781B7E006564F8 /* MustangsIconLarge.png */,
+				1D82B33C16781B6A006564F8 /* MustangsIconSmall.png */,
 				1D1CEADD162B4D230059BC1F /* MSU2U-iOS */,
 				1D1CEAD6162B4D230059BC1F /* Frameworks */,
 				1D1CEAD4162B4D230059BC1F /* Products */,
@@ -397,6 +407,8 @@
 		1D1CEB45162B4E750059BC1F /* image */ = {
 			isa = PBXGroup;
 			children = (
+				1D82B342167823D9006564F8 /* nav.png */,
+				1D82B340167823D2006564F8 /* logo_nav.png */,
 				1DED1E7216520B6A003D6721 /* Default@2x.png */,
 				1D98D0E71651DF03002F2DD4 /* paperBG.png */,
 				1DB63E3D16604EBD00A21649 /* basketball.jpeg */,
@@ -700,6 +712,10 @@
 				1DB63E4716604EBD00A21649 /* soccer.jpeg in Resources */,
 				1DB63E4816604EBD00A21649 /* volleyball.jpeg in Resources */,
 				1D9CA134166C798B00D0D0E0 /* noStar.png in Resources */,
+				1D82B33D16781B6A006564F8 /* MustangsIconSmall.png in Resources */,
+				1D82B33F16781B7E006564F8 /* MustangsIconLarge.png in Resources */,
+				1D82B341167823D2006564F8 /* logo_nav.png in Resources */,
+				1D82B343167823D9006564F8 /* nav.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

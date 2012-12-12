@@ -17,6 +17,12 @@
     //Set the color of the navigation bars
     [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:(55.0/255.0) green:(7.0/255.0) blue:(16.0/255.0) alpha:1]];
     
+    /*### Either the navigation bars will be colored programmatically (above) or will use a user defined image (below)
+    //Set the background image of ALL navigation bars
+    [[UINavigationBar appearance] setBackgroundImage:YOUR_IMAGE_GOES_HERE forBarMetrics:UIBarMetricsDefault];
+    */
+     
+     
     //Change the color of the tabs
     [[UITabBar appearance]setTintColor:[UIColor colorWithRed:(55.0/255.0) green:(7.0/255.0) blue:(16.0/255.0) alpha:1]];
     
