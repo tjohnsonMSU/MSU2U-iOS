@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>academicIsOn</key>
+	<false/>
+	<key>artIsOn</key>
+	<false/>
+	<key>campusIsOn</key>
+	<false/>
+	<key>museumIsOn</key>
+	<false/>
+	<key>musicIsOn</key>
+	<false/>
+	<key>personnelIsOn</key>
+	<false/>
+	<key>theaterIsOn</key>
+	<false/>
+	<key>crossCountryIsOn</key>
+	<false/>
+	<key>basketballMenIsOn</key>
+	<false/>
+	<key>basketballWomenIsOn</key>
+	<false/>
+	<key>footballIsOn</key>
+	<false/>
+	<key>golfMenIsOn</key>
+	<false/>
+	<key>golfWomenIsOn</key>
+	<false/>
+	<key>soccerMenIsOn</key>
+	<false/>
+	<key>soccerWomenIsOn</key>
+	<false/>
+	<key>softballIsOn</key>
+	<false/>
+	<key>tennisMenIsOn</key>
+	<false/>
+	<key>tennisWomenIsOn</key>
+	<false/>
+	<key>wichitanNewsIsOn</key>
+	<false/>
+	<key>sportsNewsIsOn</key>
+	<false/>
+	<key>campusNewsIsOn</key>
+	<false/>
+</dict>
+</plist>

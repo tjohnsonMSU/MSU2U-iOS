@@ -425,7 +425,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C88-9c-JGv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4567" y="1534"/>
+            <point key="canvasLocation" x="-4731" y="1562"/>
         </scene>
         <!--Sport View Controller - Sports-->
         <scene sceneID="R8P-w2-ifj">
@@ -479,6 +479,7 @@
                         <outlet property="searchBar" destination="8o0-5p-Gvu" id="Iop-ce-jxA"/>
                         <outlet property="searchDisplayControl" destination="uD5-Wo-OOc" id="NO3-el-2Al"/>
                         <outlet property="searchDisplayController" destination="uD5-Wo-OOc" id="IBt-Fm-NUk"/>
+                        <segue destination="vwZ-ij-Hgs" kind="push" identifier="toSubscriptions" id="xsN-Cx-0YI"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7yD-Kx-4aP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -492,7 +493,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-5931" y="-86"/>
+            <point key="canvasLocation" x="-5933" y="130"/>
         </scene>
         <!--Detail Sport View Controller-->
         <scene sceneID="5Wc-TB-Hla">
@@ -607,7 +608,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfL-oz-8Vu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4678" y="-86"/>
+            <point key="canvasLocation" x="-4946" y="-2"/>
         </scene>
         <!--News View Controller - News-->
         <scene sceneID="QAN-6o-FBA">
@@ -668,6 +669,7 @@
                         <outlet property="searchBar" destination="XfL-ng-m5n" id="8vE-c4-kfJ"/>
                         <outlet property="searchDisplayControl" destination="0DM-mP-U6n" id="u3g-dr-CWC"/>
                         <outlet property="searchDisplayController" destination="0DM-mP-U6n" id="J9V-DH-p32"/>
+                        <segue destination="vwZ-ij-Hgs" kind="push" identifier="toSubscriptions" id="2q8-i8-unJ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xpr-QO-ID7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -681,7 +683,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-5295" y="760"/>
+            <point key="canvasLocation" x="-6064" y="959"/>
         </scene>
         <!--Event View Controller - Events-->
         <scene sceneID="W20-J2-YhD">
@@ -735,6 +737,7 @@
                         <outlet property="searchBar" destination="gFN-cw-2FK" id="954-Nz-7lJ"/>
                         <outlet property="searchDisplayControl" destination="0q9-Iu-Yva" id="cf9-Yg-O1R"/>
                         <outlet property="searchDisplayController" destination="0q9-Iu-Yva" id="Vbe-ib-ZYm"/>
+                        <segue destination="vwZ-ij-Hgs" kind="push" identifier="toSubscriptions" id="iZw-wf-6YV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xVs-fy-uCH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -748,7 +751,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-5295" y="1534"/>
+            <point key="canvasLocation" x="-6159" y="1846"/>
         </scene>
         <!--Detail News View Controller - The Wichitan-->
         <scene sceneID="ctQ-C3-5zp">
@@ -891,12 +894,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QDB-vs-0dZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4567" y="760"/>
+            <point key="canvasLocation" x="-4535" y="804"/>
         </scene>
-        <!--Table View Controller - Events-->
+        <!--Event Subscription View Controller - Events-->
         <scene sceneID="UNw-nq-9sN">
             <objects>
-                <tableViewController restorationIdentifier="Event Subscriptions" id="nkp-wX-DJI" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="Event Subscriptions" id="nkp-wX-DJI" customClass="eventSubscriptionViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="xaS-tA-10y">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1096,21 +1099,26 @@
                                 </cells>
                             </tableViewSection>
                         </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="nkp-wX-DJI" id="tbD-TI-6tl"/>
-                            <outlet property="delegate" destination="nkp-wX-DJI" id="FHP-dc-fUs"/>
-                        </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Events" image="112-group.png" id="I1d-ZN-0rX"/>
+                    <connections>
+                        <outlet property="academicSwitch" destination="r8c-FU-A9q" id="5YZ-f9-flV"/>
+                        <outlet property="artSwitch" destination="oS5-TT-Kac" id="Orc-EU-bmB"/>
+                        <outlet property="campusSwitch" destination="9f1-40-ACi" id="KJG-TY-592"/>
+                        <outlet property="museumSwitch" destination="sXn-w1-ZYS" id="nSZ-ma-Zuw"/>
+                        <outlet property="musicSwitch" destination="KQ2-HH-UPn" id="Us0-S0-mCm"/>
+                        <outlet property="personnelSwitch" destination="ndC-Nz-Fs9" id="3yM-0u-Eqz"/>
+                        <outlet property="theaterSwitch" destination="MUA-MK-zqt" id="Ou1-U4-Iy1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bir-tB-zDL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6053" y="1804"/>
+            <point key="canvasLocation" x="-4373" y="2332"/>
         </scene>
-        <!--Table View Controller - News-->
+        <!--News Subscription View Controller - News-->
         <scene sceneID="U4H-Ax-lwD">
             <objects>
-                <tableViewController restorationIdentifier="News Subscriptions" id="YV2-gg-l3q" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="News Subscriptions" id="YV2-gg-l3q" customClass="newsSubscriptionViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="6aH-1d-e7H">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1196,15 +1204,20 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="News" image="166-newspaper.png" id="4aM-HO-aq6"/>
+                    <connections>
+                        <outlet property="campusNewsSwitch" destination="cxF-fx-77T" id="e2f-mL-hJo"/>
+                        <outlet property="sportsNewsSwitch" destination="gyF-Xx-3zm" id="83b-4Q-u3Z"/>
+                        <outlet property="wichitanNewsSwitch" destination="D4a-JW-4py" id="ahh-6j-cXA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l4v-yi-6ic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6053" y="3182"/>
+            <point key="canvasLocation" x="-4373" y="3710"/>
         </scene>
-        <!--Table View Controller - Sports-->
+        <!--Sport Subscription View Controller - Sports-->
         <scene sceneID="Vdt-gG-OCA">
             <objects>
-                <tableViewController restorationIdentifier="Sport Subscriptions" id="cu1-da-tYx" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="Sport Subscriptions" id="cu1-da-tYx" customClass="sportSubscriptionViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="rHl-Vi-3sf">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1488,15 +1501,28 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Sports" image="101-gameplan.png" id="6cx-Pn-Sqc"/>
+                    <connections>
+                        <outlet property="basketballMenSwitch" destination="YVl-U8-P2a" id="4ma-4M-0WZ"/>
+                        <outlet property="basketballWomenSwitch" destination="N9C-cb-TeP" id="ZH2-7B-ql3"/>
+                        <outlet property="crossCountrySwitch" destination="05l-dc-6sy" id="r8j-G8-7wH"/>
+                        <outlet property="footballSwitch" destination="grW-Mc-SL9" id="DuF-Va-WXH"/>
+                        <outlet property="golfMenSwitch" destination="rk5-GX-1im" id="u0S-xR-TOf"/>
+                        <outlet property="golfWomenSwitch" destination="Qrc-jr-nV4" id="jAq-55-aW4"/>
+                        <outlet property="soccerMenSwitch" destination="Vca-st-TmP" id="5ZP-h7-TWy"/>
+                        <outlet property="soccerWomenSwitch" destination="3bv-xG-zRX" id="Pac-0e-UCI"/>
+                        <outlet property="softballSwitch" destination="RXP-AZ-578" id="dPY-fE-amg"/>
+                        <outlet property="tennisMenSwitch" destination="Eia-ye-r8W" id="Ayh-Bf-Yfd"/>
+                        <outlet property="tennisWomenSwitch" destination="JTG-oT-rCc" id="BS2-j6-3bA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K33-e8-FAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6053" y="2496"/>
+            <point key="canvasLocation" x="-4373" y="3024"/>
         </scene>
         <!--Tab Bar Controller - Subscribe-->
         <scene sceneID="Vu5-uc-XF9">
             <objects>
-                <tabBarController restorationIdentifier="Subscriptions" definesPresentationContext="YES" id="vwZ-ij-Hgs" sceneMemberID="viewController">
+                <tabBarController restorationIdentifier="Subscriptions" storyboardIdentifier="subscriptionView" definesPresentationContext="YES" id="vwZ-ij-Hgs" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Subscribe" id="j9U-KM-mhy"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Wg9-dg-IsI">
@@ -1505,14 +1531,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="nkp-wX-DJI" kind="relationship" relationship="viewControllers" id="01K-7O-yPC"/>
                         <segue destination="cu1-da-tYx" kind="relationship" relationship="viewControllers" id="swK-GB-hYB"/>
                         <segue destination="YV2-gg-l3q" kind="relationship" relationship="viewControllers" id="gdd-sc-efM"/>
+                        <segue destination="nkp-wX-DJI" kind="relationship" relationship="viewControllers" id="7Pw-Vr-gka"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HhO-6O-QhO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6649" y="2251"/>
+            <point key="canvasLocation" x="-5043" y="2667"/>
         </scene>
         <!--Detail Directory View Controller - Directory-->
         <scene sceneID="Rnm-vL-Wno">
@@ -2357,13 +2383,7 @@
         <scene sceneID="30L-jD-bg0">
             <objects>
                 <tabBarController restorationIdentifier="My Feed" definesPresentationContext="YES" id="L3K-3G-aB4" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="My Feed" id="XWc-Ex-znE">
-                        <barButtonItem key="rightBarButtonItem" image="19-gear.png" id="Sa8-Tg-wq6">
-                            <connections>
-                                <segue destination="vwZ-ij-Hgs" kind="push" id="Fwm-yf-fcE"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="My Feed" id="XWc-Ex-znE"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="ixx-A0-F6N">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -2404,7 +2424,6 @@
         <image name="112-group.png" width="32" height="21"/>
         <image name="166-newspaper.png" width="28" height="23"/>
         <image name="176-ipad.png" width="22" height="28"/>
-        <image name="19-gear.png" width="26" height="26"/>
         <image name="194-note-2.png" width="23" height="23"/>
         <image name="195-barcode.png" width="24" height="18"/>
         <image name="208-facebook.png" width="22" height="22"/>
@@ -2479,6 +2498,18 @@
                 <relationship kind="outlet" name="searchDisplayControl" candidateClass="UISearchDisplayController"/>
             </relationships>
         </class>
+        <class className="eventSubscriptionViewController" superclassName="subscriptionsViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/eventSubscriptionViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="academicSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="artSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="campusSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="museumSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="musicSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="personnelSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="theaterSwitch" candidateClass="UISwitch"/>
+            </relationships>
+        </class>
         <class className="eventViewController" superclassName="genericTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/eventViewController.h"/>
             <relationships>
@@ -2506,11 +2537,35 @@
         <class className="mainMenuViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/mainMenuViewController.h"/>
         </class>
+        <class className="newsSubscriptionViewController" superclassName="subscriptionsViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/newsSubscriptionViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="campusNewsSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="sportsNewsSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="wichitanNewsSwitch" candidateClass="UISwitch"/>
+            </relationships>
+        </class>
         <class className="newsViewController" superclassName="genericTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/newsViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
                 <relationship kind="outlet" name="searchDisplayControl" candidateClass="UISearchDisplayController"/>
+            </relationships>
+        </class>
+        <class className="sportSubscriptionViewController" superclassName="subscriptionsViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/sportSubscriptionViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="basketballMenSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="basketballWomenSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="crossCountrySwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="footballSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="golfMenSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="golfWomenSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="soccerMenSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="soccerWomenSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="softballSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="tennisMenSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="tennisWomenSwitch" candidateClass="UISwitch"/>
             </relationships>
         </class>
         <class className="sportViewController" superclassName="genericTableViewController">
@@ -2520,6 +2575,9 @@
                 <relationship kind="outlet" name="searchDisplayControl" candidateClass="UISearchDisplayController"/>
             </relationships>
         </class>
+        <class className="subscriptionsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/subscriptionsViewController.h"/>
+        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -2527,6 +2585,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="xsN-Cx-0YI"/>
         <segue reference="1HE-v0-AxB"/>
         <segue reference="R1W-Pk-Kbl"/>
     </inferredMetricsTieBreakers>

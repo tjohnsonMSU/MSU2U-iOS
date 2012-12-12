@@ -37,6 +37,16 @@
     //Set the search bars to be a gold color
     [[UISearchBar appearance] setTintColor:[UIColor colorWithRed:(185.0/255.0) green:(142.0/255.0) blue:(47.0/255.0) alpha:1]];
     
+    //Set the switches to be gold when ON
+    [[UISwitch appearance] setOnTintColor:[UIColor colorWithRed:(185.0/255.0) green:(142.0/255.0) blue:(47.0/255.0) alpha:1]];
+    [[UISwitch appearance] setTintColor:[UIColor colorWithRed:(55.0/255.0) green:(7.0/255.0) blue:(16.0/255.0) alpha:1]];
+    
+    //Initialize user defaults
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"defaults" ofType:@"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:dict];
+    
+    NSLog(@"Testing registerDefaults: %@\n",[[NSUserDefaults standardUserDefaults] objectForKey:@"artIsOn"]);
     return YES;
 }
 							

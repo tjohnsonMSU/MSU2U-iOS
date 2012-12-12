@@ -11,4 +11,9 @@
 
 @interface mainMenuViewController : UITableViewController <UIScrollViewDelegate>
 
+//Switches (on/off)
+
+//--Events
+
+
 @end

@@ -179,7 +179,7 @@
     NSLog(@"genericViewController: View will appear\n");
     
     //Should I setup any navigation bar buttons for this view? Put all of the rules here for your table view controllers
-    if(self.childNumber != [NSNumber numberWithInt:5] && self.childNumber != [NSNumber numberWithInt:6])
+    if(self.childNumber == [NSNumber numberWithInt:4])
     {
         //Don't show a bar button item for these views
         NSLog(@"I don't want to show a bar button item in the top right corner because this is childNumber=%@\n",self.childNumber);
@@ -192,6 +192,13 @@
         NSLog(@"I'm trying to show a 'Done' button in the top right corner of the screen because this is childNumber=%@\n",self.childNumber);
         rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Clear"
                                                                          style:UIBarButtonSystemItemDone target:self action:@selector(clearMyTable)];
+        self.tabBarController.navigationItem.rightBarButtonItem = rightButton;
+    }
+    else if(self.childNumber == [NSNumber numberWithInt:1] || self.childNumber == [NSNumber numberWithInt:2] || self.childNumber == [NSNumber numberWithInt:3])
+    {
+        NSLog(@"I'm trying to show a 'Subscribe' button in the top right corner of the screen because this is childNumber=%@\n",self.childNumber);
+        rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Subscribe"
+                                                       style:UIBarButtonSystemItemDone target:self action:@selector(goToMySubscriptionView)];
         self.tabBarController.navigationItem.rightBarButtonItem = rightButton;
     }
     else
@@ -238,6 +245,17 @@
     if (buttonIndex == 1) {
         NSLog(@"I pressed button 1");
     }
+}
+
+-(void)goToMySubscriptionView
+{
+    NSLog(@"gotToMySubscriptionView\n");
+    
+    //Segue over to the subscription view
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    UITableViewController *yourViewController = (UITableViewController *)[storyboard instantiateViewControllerWithIdentifier:@"subscriptionView"];
+    [self.navigationController pushViewController:yourViewController animated:YES];
+    
 }
 
 -(void) clearMyTable
