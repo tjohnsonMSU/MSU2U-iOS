@@ -19,7 +19,7 @@ dependencies: \
   /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Sport.h \
   /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/detailDirectoryViewController.h \
   /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Employee+Create.h \
-  /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/../Employee.h \
+  /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Employee.h \
   /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/detailNewsViewController.h \
   /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/News+Create.h \
-  /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/../News.h
+  /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/News.h

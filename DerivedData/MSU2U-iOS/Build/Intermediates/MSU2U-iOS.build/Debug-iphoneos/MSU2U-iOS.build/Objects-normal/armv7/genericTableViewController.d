@@ -13,12 +13,12 @@ dependencies: \
   /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Sport.h \
   /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/detailDirectoryViewController.h \
   /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Employee+Create.h \
-  /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/../Employee.h \
+  /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Employee.h \
   /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/MYDocumentHandler.h \
   /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/detailEventViewController.h \
   /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Event+Create.h \
   /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Event.h \
   /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/detailNewsViewController.h \
   /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/News+Create.h \
-  /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/../News.h \
+  /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/News.h \
   /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/CoreDataTableViewController.h
