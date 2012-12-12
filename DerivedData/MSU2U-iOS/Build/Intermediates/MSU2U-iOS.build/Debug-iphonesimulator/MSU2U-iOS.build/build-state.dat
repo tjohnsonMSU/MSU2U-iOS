@@ -5,93 +5,93 @@ cCheck dependencies
 cProcessInfoPlistFile /Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Info.plist MSU2U-iOS/MSU2U-iOS-Info.plist
 cDataModelVersionCompile /Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Model.momd /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Model.xcdatamodeld
 cProcessPCH /Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/PrecompiledHeaders/MSU2U-iOS-Prefix-detujuqwlwmzfzepsezdedvnzykp/MSU2U-iOS-Prefix.pch.pth MSU2U-iOS/MSU2U-iOS-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/main.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/detailNewsViewController.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/detailNewsViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/detailSportViewController.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/detailSportViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/Sport+Create.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Sport+Create.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/favoriteDirectoryViewController.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/favoriteDirectoryViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/historyDirectoryViewController.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/historyDirectoryViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/genericTableViewController.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/genericTableViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/Employee.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Employee.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/AppDelegate.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/campusMapViewController.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/campusMapViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/mainMenuViewController.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/mainMenuViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/directoryViewController.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/directoryViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/detailDirectoryViewController.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/detailDirectoryViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/detailEventViewController.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/detailEventViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/CoreDataTableViewController.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/CoreDataTableViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/Sport.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Sport.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/campusMapViewController.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/campusMapViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/Event.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Event.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/Employee.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Employee.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/AppDelegate.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/main.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/detailNewsViewController.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/detailNewsViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/newsViewController.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/newsViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/sportViewController.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/sportViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/detailSportViewController.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/detailSportViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/eventViewController.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/eventViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/detailEventViewController.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/detailEventViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/Employee+Create.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Employee+Create.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/CoreDataTableViewController.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/CoreDataTableViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/detailDirectoryViewController.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/detailDirectoryViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/Sport+Create.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Sport+Create.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/MYDocumentHandler.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/MYDocumentHandler.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/Sport.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Sport.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/News+Create.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/News+Create.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/Event.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Event.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/historyDirectoryViewController.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/historyDirectoryViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/Employee+Create.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Employee+Create.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/Event+Create.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Event+Create.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/favoriteDirectoryViewController.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/favoriteDirectoryViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/genericTableViewController.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/genericTableViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/News.o /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/News.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cLd /Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/MSU2U-iOS normal i386
 cGenerateDSYMFile /Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app.dSYM /Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/MSU2U-iOS
 cCopyStringsFile /Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/en.lproj/InfoPlist.strings MSU2U-iOS/en.lproj/InfoPlist.strings
 cCompileStoryboard /Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/MainStoryboard.storyboard
 cCpResource MSU2U-iOS/Default-568h@2x.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default-568h@2x.png
+cCpResource MSU2U-iOS/icons/101-gameplan.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/101-gameplan.png
 cCpResource MSU2U-iOS/icons/07-map-marker.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/07-map-marker.png
 cCpResource MSU2U-iOS/icons/105-piano.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/105-piano.png
-cCpResource MSU2U-iOS/icons/101-gameplan.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/101-gameplan.png
-cCpResource MSU2U-iOS/icons/103-map.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/103-map.png
 cCpResource MSU2U-iOS/icons/110-bug.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/110-bug.png
+cCpResource MSU2U-iOS/icons/103-map.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/103-map.png
 cCpResource MSU2U-iOS/icons/112-group.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/112-group.png
-cCpResource MSU2U-iOS/icons/121-landscape.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/121-landscape.png
-cCpResource MSU2U-iOS/icons/123-id-card.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/123-id-card.png
 cCpResource MSU2U-iOS/icons/117-todo.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/117-todo.png
+cCpResource MSU2U-iOS/icons/123-id-card.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/123-id-card.png
+cCpResource MSU2U-iOS/icons/121-landscape.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/121-landscape.png
 cCpResource MSU2U-iOS/icons/140-gradhat.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/140-gradhat.png
-cCpResource MSU2U-iOS/icons/176-ipad.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/176-ipad.png
 cCpResource MSU2U-iOS/icons/166-newspaper.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/166-newspaper.png
 cCpResource MSU2U-iOS/icons/16-line-chart.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/16-line-chart.png
+cCpResource MSU2U-iOS/icons/176-ipad.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/176-ipad.png
 cCpResource MSU2U-iOS/icons/178-city.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/178-city.png
 cCpResource MSU2U-iOS/icons/190-bank.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/190-bank.png
-cCpResource MSU2U-iOS/icons/194-note-2.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/194-note-2.png
-cCpResource MSU2U-iOS/icons/195-barcode.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/195-barcode.png
 cCpResource MSU2U-iOS/icons/208-facebook.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/208-facebook.png
 cCpResource MSU2U-iOS/icons/209-twitter.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/209-twitter.png
-cCpResource MSU2U-iOS/icons/20-gear-2.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/20-gear-2.png
+cCpResource MSU2U-iOS/icons/195-barcode.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/195-barcode.png
 cCpResource MSU2U-iOS/icons/265-download.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/265-download.png
+cCpResource MSU2U-iOS/icons/194-note-2.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/194-note-2.png
+cCpResource MSU2U-iOS/icons/20-gear-2.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/20-gear-2.png
 cCpResource MSU2U-iOS/icons/271-dramamasks.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/271-dramamasks.png
 cCpResource MSU2U-iOS/icons/29-heart.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/29-heart.png
 cCpResource MSU2U-iOS/icons/291-idcard.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/291-idcard.png
-cCpResource MSU2U-iOS/icons/32-iphone.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/32-iphone.png
 cCpResource MSU2U-iOS/icons/38-airplane.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/38-airplane.png
-cCpResource MSU2U-iOS/icons/42-photos.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/42-photos.png
 cCpResource MSU2U-iOS/icons/53-house.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/53-house.png
+cCpResource MSU2U-iOS/icons/32-iphone.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/32-iphone.png
+cCpResource MSU2U-iOS/icons/42-photos.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/42-photos.png
 cCpResource MSU2U-iOS/icons/73-radar.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/73-radar.png
 cCpResource MSU2U-iOS/icons/83-calendar.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/83-calendar.png
-cCpResource MSU2U-iOS/icons/96-book.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/96-book.png
 cCpResource MSU2U-iOS/icons/92-test-tube.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/92-test-tube.png
-cCpResource MSU2U-iOS/image/mainMenu.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/mainMenu.png
-cCpResource MSU2U-iOS/image/theWichitan.jpg DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/theWichitan.jpg
 cCpResource MSU2U-iOS/icons/98-palette.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/98-palette.png
+cCpResource MSU2U-iOS/image/mainMenu.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/mainMenu.png
+cCpResource MSU2U-iOS/icons/96-book.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/96-book.png
 cCpResource MSU2U-iOS/icons/01-refresh.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/01-refresh.png
+cCpResource MSU2U-iOS/image/theWichitan.jpg DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/theWichitan.jpg
 cCpResource MSU2U-iOS/icons/19-gear.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/19-gear.png
-cCpResource MSU2U-iOS/icons/98-palette@2x.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/98-palette@2x.png
-cCpResource MSU2U-iOS/icons/02-redo.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/02-redo.png
 cCpResource MSU2U-iOS/icons/../../../../Pictures/GlyphishPro/icons/icons-gray/125-food@2x.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/125-food@2x.png
+cCpResource MSU2U-iOS/icons/02-redo.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/02-redo.png
+cCpResource MSU2U-iOS/icons/98-palette@2x.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/98-palette@2x.png
+cCpResource MSU2U-iOS/image/Default.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default.png
 cCpResource MSU2U-iOS/image/test.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/test.png
 cCpResource MSU2U-iOS/image/../paperBG.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/paperBG.png
 cCpResource MSU2U-iOS/icons/../../../../Pictures/GlyphishPro/icons/icons-gray/125-food.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/125-food.png
 cCpResource MSU2U-iOS/image/../../Default@2x.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default@2x.png
-cCpResource MSU2U-iOS/image/Default.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Default.png
 cCpResource MSU2U-iOS/image/directoryBackdrop.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/directoryBackdrop.png
-cCpResource MSU2U-iOS/image/star.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/star.png
 cCpResource MSU2U-iOS/image/footballBanner.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/footballBanner.png
+cCpResource MSU2U-iOS/image/star.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/star.png
 cCpResource MSU2U-iOS/image/06-magnify.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/06-magnify.png
-cCpResource MSU2U-iOS/image/basketball.jpeg DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/basketball.jpeg
 cCpResource MSU2U-iOS/image/softball.jpeg DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/softball.jpeg
 cCpResource MSU2U-iOS/image/tennis.jpeg DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/tennis.jpeg
 cCpResource MSU2U-iOS/image/football.jpeg DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/football.jpeg
-cCpResource MSU2U-iOS/image/volleyball.jpeg DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/volleyball.jpeg
-cCpResource MSU2U-iOS/image/noStar.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/noStar.png
-cCpResource MSU2U-iOS/image/Untitled.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Untitled.png
+cCpResource MSU2U-iOS/image/basketball.jpeg DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/basketball.jpeg
 cCpResource MSU2U-iOS/image/soccer.jpeg DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/soccer.jpeg
+cCpResource MSU2U-iOS/image/noStar.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/noStar.png
+cCpResource MSU2U-iOS/image/volleyball.jpeg DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/volleyball.jpeg
+cCpResource MSU2U-iOS/image/Untitled.png DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/Untitled.png
 cTouch /Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app
 
 N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk
@@ -1217,28 +1217,28 @@ t2
 s0
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/AppDelegate.o
-t1354775603
-s89656
+t1355271460
+s89528
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/CoreDataTableViewController.o
-t1354775603
-s102696
+t1355271460
+s102576
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/Employee+Create.o
-t1354775603
-s19000
+t1355271460
+s18784
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/Employee.o
-t1354775603
-s3340
+t1355271460
+s3212
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/Event+Create.o
-t1354775603
-s18264
+t1355271460
+s18136
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/Event.o
-t1354775603
-s3220
+t1355271460
+s3100
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/MSU2U-iOS.LinkFileList
 c0000000050C7CD23000000000000112B
@@ -1246,91 +1246,91 @@ t1355271459
 s4395
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/MYDocumentHandler.o
-t1354775603
-s30752
+t1355271460
+s30624
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/News+Create.o
-t1354775603
-s18460
+t1355271460
+s18244
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/News.o
-t1354775603
-s3256
+t1355271460
+s3128
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/Sport+Create.o
-t1354775603
-s18912
+t1355271460
+s18784
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/Sport.o
-t1354775603
-s3324
+t1355271460
+s3204
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/campusMapViewController.o
-t1354775603
-s80800
+t1355271460
+s80672
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/detailDirectoryViewController.o
-t1354775603
-s152924
+t1355271460
+s152700
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/detailEventViewController.o
-t1354775603
-s95544
+t1355271460
+s95432
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/detailNewsViewController.o
-t1354775603
-s95196
+t1355271460
+s94988
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/detailSportViewController.o
-t1354775603
-s114868
+t1355271460
+s114740
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/directoryViewController.o
-t1354775603
-s90276
+t1355271460
+s90156
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/eventViewController.o
-t1354775603
-s90100
+t1355271460
+s89980
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/favoriteDirectoryViewController.o
-t1354775603
-s90488
+t1355271460
+s90368
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/genericTableViewController.o
-t1354775603
-s189120
+t1355271460
+s188896
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/historyDirectoryViewController.o
-t1354775603
-s90524
+t1355271460
+s90396
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/main.o
-t1354775603
-s3424
+t1355271460
+s3304
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/mainMenuViewController.o
-t1354775603
-s72392
+t1355271460
+s72272
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/newsViewController.o
-t1354775603
-s90068
+t1355271460
+s89948
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/sportViewController.o
-t1354775603
-s90108
+t1355271460
+s89988
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Intermediates/PrecompiledHeaders/MSU2U-iOS-Prefix-detujuqwlwmzfzepsezdedvnzykp/MSU2U-iOS-Prefix.pch.pth
-t2
-s0
+t1355271459
+s5069708
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app
-t1354775606
+t1355271460
 s2584
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app.dSYM
-t1354775603
+t1355271460
 s102
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/01-refresh.png
@@ -1510,8 +1510,8 @@ t1354775602
 s1130
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/MSU2U-iOS
-t1354775603
-s337728
+t1355271460
+s334684
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Debug-iphonesimulator/MSU2U-iOS.app/MainStoryboard.storyboardc
 t1354775606
@@ -1589,10 +1589,20 @@ N/Users/matthewfarmer/Desktop/MSU2U-iOS/DerivedData/MSU2U-iOS/Build/Products/Deb
 t1354775604
 s2844
 
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/AppDelegate.h
+c0000000050A47410000000000000011E
+t1352954896
+s286
+
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/AppDelegate.m
 c0000000050BD7DAA0000000000000B93
 t1354595754
 s2963
+
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/CoreDataTableViewController.h
+c000000004EBAF2970000000000000AFF
+t1320874647
+s2815
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/CoreDataTableViewController.m
 c000000004EBAF32E00000000000019AE
@@ -1604,20 +1614,40 @@ c0000000050262AB100000000000048A2
 t1344678577
 s18594
 
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Employee+Create.h
+c0000000050A492D10000000000000138
+t1352962769
+s312
+
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Employee+Create.m
 c0000000050BC454F00000000000007A6
 t1354515791
 s1958
+
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Employee.h
+c0000000050BC54090000000000000320
+t1354519561
+s800
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Employee.m
 c0000000050AC82C20000000000000188
 t1353482946
 s392
 
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Event+Create.h
+c0000000050A7229A0000000000000129
+t1353130650
+s297
+
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Event+Create.m
 c0000000050AB1997000000000000063A
 t1353390487
 s1594
+
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Event.h
+c0000000050AB19B8000000000000028A
+t1353390520
+s650
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Event.m
 c0000000050A72211000000000000014F
@@ -1632,6 +1662,11 @@ i<Availability.h>
 i<UIKit/UIKit.h>
 i<Foundation/Foundation.h>
 i<CoreData/CoreData.h>
+
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/MYDocumentHandler.h
+c0000000050A7089700000000000001D1
+t1353123991
+s465
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/MYDocumentHandler.m
 c0000000050BCF66E0000000000000C99
@@ -1648,55 +1683,135 @@ c0000000050BC54140000000000000066
 t1354519572
 s102
 
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/News+Create.h
+c0000000050A722A50000000000000124
+t1353130661
+s292
+
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/News+Create.m
 c0000000050B014880000000000000615
 t1353716872
 s1557
+
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/News.h
+c0000000050B0147200000000000002B0
+t1353716850
+s688
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/News.m
 c0000000050B0147A0000000000000154
 t1353716858
 s340
 
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/SDWebImage.framework/Headers/SDImageCacheDelegate.h
+c000000005095AAB80000000000000451
+t1351985848
+s1105
+
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/SDWebImage.framework/Headers/SDWebImageCompat.h
+c000000005095AAB8000000000000091F
+t1351985848
+s2335
+
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/SDWebImage.framework/Headers/SDWebImageDownloaderDelegate.h
+c000000005095AAB8000000000000052C
+t1351985848
+s1324
+
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/SDWebImage.framework/Headers/SDWebImageManager.h
+c000000005095AAB800000000000018EE
+t1351985848
+s6382
+
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/SDWebImage.framework/Headers/SDWebImageManagerDelegate.h
+c000000005095AAB800000000000008D1
+t1351985848
+s2257
+
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/SDWebImage.framework/Headers/UIImageView+WebCache.h
+c000000005095AAB80000000000001366
+t1351985848
+s4966
+
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/SDWebImage.framework/SDWebImage
 c000000005095AABD000000000010FB4C
 t1351985853
 s1112908
+
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Sport+Create.h
+c0000000050A7228F0000000000000129
+t1353130639
+s297
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Sport+Create.m
 c0000000050B0166900000000000006B6
 t1353717353
 s1718
 
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Sport.h
+c0000000050B0164E000000000000032A
+t1353717326
+s810
+
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/Sport.m
 c0000000050B01656000000000000018F
 t1353717334
 s399
+
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/campusMapViewController.h
+c0000000050BD7DAA000000000000012B
+t1354595754
+s299
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/campusMapViewController.m
 c0000000050BD7DAA00000000000003F2
 t1354595754
 s1010
 
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/detailDirectoryViewController.h
+c0000000050AD109C0000000000000451
+t1353519260
+s1105
+
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/detailDirectoryViewController.m
 c0000000050BC54700000000000002D7A
 t1354519664
 s11642
+
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/detailEventViewController.h
+c0000000050AA8719000000000000028F
+t1353352985
+s655
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/detailEventViewController.m
 c0000000050AB1C8800000000000007D4
 t1353391240
 s2004
 
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/detailNewsViewController.h
+c0000000050A72D16000000000000029B
+t1353133334
+s667
+
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/detailNewsViewController.m
 c0000000050A72CF900000000000006CC
 t1353133305
 s1740
 
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/detailSportViewController.h
+c0000000050AD234400000000000002AA
+t1353524036
+s682
+
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/detailSportViewController.m
 c0000000050B0232100000000000012C9
 t1353720609
 s4809
+
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/directoryViewController.h
+c0000000050BB9B7B000000000000028D
+t1354472315
+s653
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/directoryViewController.m
 c0000000050AFAFB40000000000000334
@@ -1708,20 +1823,40 @@ c00000000507B15A3000000000000002D
 t1350243747
 s45
 
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/eventViewController.h
+c0000000050AFA8A40000000000000275
+t1353689252
+s629
+
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/eventViewController.m
 c0000000050AFA7E40000000000000305
 t1353689060
 s773
+
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/favoriteDirectoryViewController.h
+c0000000050BBE24500000000000001E2
+t1354490437
+s482
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/favoriteDirectoryViewController.m
 c0000000050B00BC6000000000000032F
 t1353714630
 s815
 
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/genericTableViewController.h
+c0000000050BC554C0000000000000565
+t1354519884
+s1381
+
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/genericTableViewController.m
 c0000000050BCF62E000000000000625A
 t1354561070
 s25178
+
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/historyDirectoryViewController.h
+c0000000050B00BA5000000000000020E
+t1353714597
+s526
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/historyDirectoryViewController.m
 c0000000050BC55530000000000000329
@@ -2018,15 +2153,30 @@ c0000000050AFCFFD0000000000000159
 t1353699325
 s345
 
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/mainMenuViewController.h
+c0000000050BD7DAA000000000000010D
+t1354595754
+s269
+
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/mainMenuViewController.m
 c0000000050BD7DAA0000000000000264
 t1354595754
 s612
 
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/newsViewController.h
+c0000000050AFABD00000000000000271
+t1353690064
+s625
+
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/newsViewController.m
 c0000000050AFAC300000000000000306
 t1353690160
 s774
+
+N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/sportViewController.h
+c0000000050AFA89C0000000000000275
+t1353689244
+s629
 
 N/Users/matthewfarmer/Desktop/MSU2U-iOS/MSU2U-iOS/sportViewController.m
 c0000000050AFA84E000000000000030D
@@ -2190,7 +2340,7 @@ r0
 
 CCheck dependencies
 r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies58c973a30478b641^726baaa30478b641^---0#1#0#--18"Check dependencies36"145A2541-2B88-4882-B5D5-0A4BE8D25CB9-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciesdf4f6dfc0b78b641^fe0e91fc0b78b641^---0#1#0#--18"Check dependencies36"0A0F8300-7DB2-4CB9-87F6-1BD00742F069-
 
 CCompileC DerivedData/MSU2U-iOS/Build/Intermediates/MSU2U-iOS.build/Debug-iphonesimulator/MSU2U-iOS.build/Objects-normal/i386/AppDelegate.o "/Users/matthewfarmer/Desktop/MSU2U-iOS tableView inheritance rocks (original 2)/MSU2U-iOS/AppDelegate.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s376468403.258399
