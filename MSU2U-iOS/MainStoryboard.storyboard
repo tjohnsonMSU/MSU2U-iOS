@@ -919,7 +919,11 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="r8c-FU-A9q"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="r8c-FU-A9q">
+                                                    <connections>
+                                                        <action selector="academicFlipped:" destination="nkp-wX-DJI" eventType="valueChanged" id="6GT-RH-Ds6"/>
+                                                    </connections>
+                                                </switch>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -942,7 +946,11 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oS5-TT-Kac"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oS5-TT-Kac">
+                                                    <connections>
+                                                        <action selector="artFlipped:" destination="nkp-wX-DJI" eventType="valueChanged" id="8aE-jX-9IL"/>
+                                                    </connections>
+                                                </switch>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -965,7 +973,11 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9f1-40-ACi"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9f1-40-ACi">
+                                                    <connections>
+                                                        <action selector="campusFlipped:" destination="nkp-wX-DJI" eventType="valueChanged" id="2yB-lt-aph"/>
+                                                    </connections>
+                                                </switch>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -988,7 +1000,11 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sXn-w1-ZYS"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sXn-w1-ZYS">
+                                                    <connections>
+                                                        <action selector="museumFlipped:" destination="nkp-wX-DJI" eventType="valueChanged" id="0sz-IO-ZLj"/>
+                                                    </connections>
+                                                </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Museum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBb-gn-cCe">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1018,7 +1034,11 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KQ2-HH-UPn"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KQ2-HH-UPn">
+                                                    <connections>
+                                                        <action selector="musicFlipped:" destination="nkp-wX-DJI" eventType="valueChanged" id="YHV-0a-cha"/>
+                                                    </connections>
+                                                </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Music" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAA-tW-RGM">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1048,7 +1068,11 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ndC-Nz-Fs9"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ndC-Nz-Fs9">
+                                                    <connections>
+                                                        <action selector="personnelFlipped:" destination="nkp-wX-DJI" eventType="valueChanged" id="ckU-j1-FdV"/>
+                                                    </connections>
+                                                </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Personnel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVB-kd-bNR">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1078,7 +1102,11 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MUA-MK-zqt"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MUA-MK-zqt">
+                                                    <connections>
+                                                        <action selector="theaterFlipped:" destination="nkp-wX-DJI" eventType="valueChanged" id="xaD-Br-d0I"/>
+                                                    </connections>
+                                                </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Theater" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eF2-Xa-eUV">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1138,7 +1166,11 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="D4a-JW-4py"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="D4a-JW-4py">
+                                                    <connections>
+                                                        <action selector="wichitanNewsFlipped:" destination="YV2-gg-l3q" eventType="valueChanged" id="bnp-MI-UH7"/>
+                                                    </connections>
+                                                </switch>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -1161,7 +1193,11 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gyF-Xx-3zm"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gyF-Xx-3zm">
+                                                    <connections>
+                                                        <action selector="sportsNewsFlipped:" destination="YV2-gg-l3q" eventType="valueChanged" id="izT-SA-n5h"/>
+                                                    </connections>
+                                                </switch>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -1184,7 +1220,11 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cxF-fx-77T"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cxF-fx-77T">
+                                                    <connections>
+                                                        <action selector="campusNewsFlipped:" destination="YV2-gg-l3q" eventType="valueChanged" id="yVk-kc-9Uk"/>
+                                                    </connections>
+                                                </switch>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -1217,6 +1257,7 @@
         <!--Sport Subscription View Controller - Sports-->
         <scene sceneID="Vdt-gG-OCA">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K33-e8-FAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController restorationIdentifier="Sport Subscriptions" id="cu1-da-tYx" customClass="sportSubscriptionViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="rHl-Vi-3sf">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
@@ -1225,27 +1266,31 @@
                         <sections>
                             <tableViewSection id="6x5-5V-A1Z">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="xN2-Bg-gSg">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="SoE-ID-PKu">
                                         <rect key="frame" x="0.0" y="10" width="320" height="45"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="05l-dc-6sy"/>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cross Country" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jge-0N-1ed">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cross Country" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRE-mb-vZv">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Usu-BL-IcU">
+                                                    <connections>
+                                                        <action selector="crossCountryFlipped:" destination="cu1-da-tYx" eventType="valueChanged" id="jhf-MR-GAo"/>
+                                                    </connections>
+                                                </switch>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="jge-0N-1ed" firstAttribute="leading" secondItem="xN2-Bg-gSg" secondAttribute="leading" constant="30" id="0B9-Xp-50U"/>
-                                            <constraint firstItem="05l-dc-6sy" firstAttribute="centerY" secondItem="jge-0N-1ed" secondAttribute="centerY" type="default" id="3c5-Ij-9Gt"/>
-                                            <constraint firstAttribute="trailing" secondItem="05l-dc-6sy" secondAttribute="trailing" constant="30" id="Qrx-JS-9YY"/>
-                                            <constraint firstItem="jge-0N-1ed" firstAttribute="centerY" secondItem="xN2-Bg-gSg" secondAttribute="centerY" type="default" id="fIL-Zu-fpE"/>
+                                            <constraint firstItem="wRE-mb-vZv" firstAttribute="leading" secondItem="SoE-ID-PKu" secondAttribute="leading" constant="30" id="Gqt-ZN-2EM"/>
+                                            <constraint firstItem="wRE-mb-vZv" firstAttribute="centerY" secondItem="SoE-ID-PKu" secondAttribute="centerY" type="default" id="ccH-ob-nNb"/>
+                                            <constraint firstItem="Usu-BL-IcU" firstAttribute="centerY" secondItem="wRE-mb-vZv" secondAttribute="centerY" type="default" id="xId-ta-XEs"/>
+                                            <constraint firstAttribute="trailing" secondItem="Usu-BL-IcU" secondAttribute="trailing" constant="30" id="xhy-co-j4R"/>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="vQL-hb-KXL">
@@ -1255,7 +1300,11 @@
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YVl-U8-P2a"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YVl-U8-P2a">
+                                                    <connections>
+                                                        <action selector="basketballMenFlipped:" destination="cu1-da-tYx" eventType="valueChanged" id="8qo-QH-heD"/>
+                                                    </connections>
+                                                </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Basketball (Men)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3K-5k-v8b">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1266,8 +1315,8 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="U3K-5k-v8b" firstAttribute="centerY" secondItem="YVl-U8-P2a" secondAttribute="centerY" type="default" id="ED3-KQ-XBC"/>
-                                            <constraint firstItem="YVl-U8-P2a" firstAttribute="top" secondItem="vQL-hb-KXL" secondAttribute="top" constant="8" id="kP1-oQ-98S"/>
                                             <constraint firstItem="U3K-5k-v8b" firstAttribute="leading" secondItem="vQL-hb-KXL" secondAttribute="leading" constant="30" id="mAx-Gl-fV2"/>
+                                            <constraint firstItem="YVl-U8-P2a" firstAttribute="centerY" secondItem="vQL-hb-KXL" secondAttribute="centerY" type="default" id="pfb-OQ-cJk"/>
                                             <constraint firstAttribute="trailing" secondItem="YVl-U8-P2a" secondAttribute="trailing" constant="30" id="tuQ-XN-qFK"/>
                                         </constraints>
                                     </tableViewCell>
@@ -1278,7 +1327,11 @@
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="N9C-cb-TeP"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="N9C-cb-TeP">
+                                                    <connections>
+                                                        <action selector="basketballWomenFlipped:" destination="cu1-da-tYx" eventType="valueChanged" id="w1C-HO-fHj"/>
+                                                    </connections>
+                                                </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Basketball (Women)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eng-Nr-jz9">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1301,7 +1354,11 @@
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="grW-Mc-SL9"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="grW-Mc-SL9">
+                                                    <connections>
+                                                        <action selector="footballFlipped:" destination="cu1-da-tYx" eventType="valueChanged" id="tnD-Ty-7if"/>
+                                                    </connections>
+                                                </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Football" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylN-Su-1BT">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1324,7 +1381,11 @@
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rk5-GX-1im"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rk5-GX-1im">
+                                                    <connections>
+                                                        <action selector="golfMenFlipped:" destination="cu1-da-tYx" eventType="valueChanged" id="hbM-MF-xIj"/>
+                                                    </connections>
+                                                </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Golf (Men)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eb-kL-1Cd">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1347,7 +1408,11 @@
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Qrc-jr-nV4"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Qrc-jr-nV4">
+                                                    <connections>
+                                                        <action selector="golfWomenFlipped:" destination="cu1-da-tYx" eventType="valueChanged" id="KrA-Uq-Icn"/>
+                                                    </connections>
+                                                </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Golf (Women)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzd-PQ-uP9">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1370,7 +1435,11 @@
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vca-st-TmP"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vca-st-TmP">
+                                                    <connections>
+                                                        <action selector="soccerMenFlipped:" destination="cu1-da-tYx" eventType="valueChanged" id="0S5-lx-Wkr"/>
+                                                    </connections>
+                                                </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Soccer (Men)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yL2-qk-UD1">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1393,7 +1462,11 @@
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3bv-xG-zRX"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3bv-xG-zRX">
+                                                    <connections>
+                                                        <action selector="soccerWomenFlipped:" destination="cu1-da-tYx" eventType="valueChanged" id="JdG-Io-xmA"/>
+                                                    </connections>
+                                                </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Soccer (Women)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGU-8L-sZB">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1416,7 +1489,11 @@
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RXP-AZ-578"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RXP-AZ-578">
+                                                    <connections>
+                                                        <action selector="softballFlipped:" destination="cu1-da-tYx" eventType="valueChanged" id="i3M-1S-VBY"/>
+                                                    </connections>
+                                                </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Softball" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoz-Bi-vPK">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1439,7 +1516,11 @@
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Eia-ye-r8W"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Eia-ye-r8W">
+                                                    <connections>
+                                                        <action selector="tennisMenFlipped:" destination="cu1-da-tYx" eventType="valueChanged" id="YP8-CN-DaH"/>
+                                                    </connections>
+                                                </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIg-jU-RSF">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1463,13 +1544,17 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="L2O-fN-hDP">
-                                        <rect key="frame" x="0.0" y="451" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="451" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JTG-oT-rCc"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JTG-oT-rCc">
+                                                    <connections>
+                                                        <action selector="tennisWomenFlipped:" destination="cu1-da-tYx" eventType="valueChanged" id="2c9-sa-oOw"/>
+                                                    </connections>
+                                                </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kop-Fi-LaZ">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1486,10 +1571,44 @@
                                         <constraints>
                                             <constraint firstItem="M3T-mC-RBw" firstAttribute="leading" secondItem="kop-Fi-LaZ" secondAttribute="leading" type="default" id="3Y6-AP-hoF"/>
                                             <constraint firstItem="M3T-mC-RBw" firstAttribute="leading" secondItem="L2O-fN-hDP" secondAttribute="leading" constant="30" id="ek7-uP-XKb"/>
-                                            <constraint firstItem="kop-Fi-LaZ" firstAttribute="centerY" secondItem="L2O-fN-hDP" secondAttribute="centerY" type="default" id="nOn-Qb-cUN"/>
+                                            <constraint firstAttribute="bottom" secondItem="kop-Fi-LaZ" secondAttribute="bottom" constant="21" id="iXL-ju-TXA"/>
                                             <constraint firstItem="JTG-oT-rCc" firstAttribute="top" secondItem="L2O-fN-hDP" secondAttribute="top" constant="8" id="oHs-aT-R5O"/>
                                             <constraint firstItem="M3T-mC-RBw" firstAttribute="centerY" secondItem="JTG-oT-rCc" secondAttribute="centerY" type="default" id="u1T-fl-jbc"/>
                                             <constraint firstAttribute="trailing" secondItem="JTG-oT-rCc" secondAttribute="trailing" constant="30" id="uxk-8p-T6k"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ByV-SP-1tI">
+                                        <rect key="frame" x="0.0" y="495" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="a45-D1-07X">
+                                                    <connections>
+                                                        <action selector="volleyballFlipped:" destination="cu1-da-tYx" eventType="valueChanged" id="bfE-qp-gX1"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JR3-Y5-f8N">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Volleyball" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbC-V0-wQu">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="a45-D1-07X" firstAttribute="top" secondItem="ByV-SP-1tI" secondAttribute="top" constant="8" id="Uus-Wf-rvo"/>
+                                            <constraint firstAttribute="trailing" secondItem="a45-D1-07X" secondAttribute="trailing" constant="30" id="Vzu-Zi-1jA"/>
+                                            <constraint firstItem="JR3-Y5-f8N" firstAttribute="centerY" secondItem="ByV-SP-1tI" secondAttribute="centerY" type="default" id="fl9-qp-h9a"/>
+                                            <constraint firstItem="fbC-V0-wQu" firstAttribute="leading" secondItem="ByV-SP-1tI" secondAttribute="leading" constant="30" id="gAe-zd-479"/>
+                                            <constraint firstItem="fbC-V0-wQu" firstAttribute="centerY" secondItem="a45-D1-07X" secondAttribute="centerY" type="default" id="h4u-vP-jSs"/>
+                                            <constraint firstItem="fbC-V0-wQu" firstAttribute="leading" secondItem="JR3-Y5-f8N" secondAttribute="leading" type="default" id="ot2-nf-O05"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -1504,7 +1623,7 @@
                     <connections>
                         <outlet property="basketballMenSwitch" destination="YVl-U8-P2a" id="4ma-4M-0WZ"/>
                         <outlet property="basketballWomenSwitch" destination="N9C-cb-TeP" id="ZH2-7B-ql3"/>
-                        <outlet property="crossCountrySwitch" destination="05l-dc-6sy" id="r8j-G8-7wH"/>
+                        <outlet property="crossCountrySwitch" destination="Usu-BL-IcU" id="sQi-DE-DLG"/>
                         <outlet property="footballSwitch" destination="grW-Mc-SL9" id="DuF-Va-WXH"/>
                         <outlet property="golfMenSwitch" destination="rk5-GX-1im" id="u0S-xR-TOf"/>
                         <outlet property="golfWomenSwitch" destination="Qrc-jr-nV4" id="jAq-55-aW4"/>
@@ -1513,9 +1632,9 @@
                         <outlet property="softballSwitch" destination="RXP-AZ-578" id="dPY-fE-amg"/>
                         <outlet property="tennisMenSwitch" destination="Eia-ye-r8W" id="Ayh-Bf-Yfd"/>
                         <outlet property="tennisWomenSwitch" destination="JTG-oT-rCc" id="BS2-j6-3bA"/>
+                        <outlet property="volleyballSwitch" destination="a45-D1-07X" id="RKh-hO-Oca"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K33-e8-FAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4373" y="3024"/>
         </scene>
@@ -2501,6 +2620,13 @@
         <class className="eventSubscriptionViewController" superclassName="subscriptionsViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/eventSubscriptionViewController.h"/>
             <relationships>
+                <relationship kind="action" name="academicFlipped:" candidateClass="UISwitch"/>
+                <relationship kind="action" name="artFlipped:" candidateClass="UISwitch"/>
+                <relationship kind="action" name="campusFlipped:" candidateClass="UISwitch"/>
+                <relationship kind="action" name="museumFlipped:" candidateClass="UISwitch"/>
+                <relationship kind="action" name="musicFlipped:" candidateClass="UISwitch"/>
+                <relationship kind="action" name="personnelFlipped:" candidateClass="UISwitch"/>
+                <relationship kind="action" name="theaterFlipped:" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="academicSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="artSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="campusSwitch" candidateClass="UISwitch"/>
@@ -2540,6 +2666,9 @@
         <class className="newsSubscriptionViewController" superclassName="subscriptionsViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/newsSubscriptionViewController.h"/>
             <relationships>
+                <relationship kind="action" name="campusNewsFlipped:" candidateClass="UISwitch"/>
+                <relationship kind="action" name="sportsNewsFlipped:" candidateClass="UISwitch"/>
+                <relationship kind="action" name="wichitanNewsFlipped:" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="campusNewsSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="sportsNewsSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="wichitanNewsSwitch" candidateClass="UISwitch"/>
@@ -2555,6 +2684,18 @@
         <class className="sportSubscriptionViewController" superclassName="subscriptionsViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/sportSubscriptionViewController.h"/>
             <relationships>
+                <relationship kind="action" name="basketballMenFlipped:" candidateClass="UISwitch"/>
+                <relationship kind="action" name="basketballWomenFlipped:" candidateClass="UISwitch"/>
+                <relationship kind="action" name="crossCountryFlipped:" candidateClass="UISwitch"/>
+                <relationship kind="action" name="footballFlipped:" candidateClass="UISwitch"/>
+                <relationship kind="action" name="golfMenFlipped:" candidateClass="UISwitch"/>
+                <relationship kind="action" name="golfWomenFlipped:" candidateClass="UISwitch"/>
+                <relationship kind="action" name="soccerMenFlipped:" candidateClass="UISwitch"/>
+                <relationship kind="action" name="soccerWomenFlipped:" candidateClass="UISwitch"/>
+                <relationship kind="action" name="softballFlipped:" candidateClass="UISwitch"/>
+                <relationship kind="action" name="tennisMenFlipped:" candidateClass="UISwitch"/>
+                <relationship kind="action" name="tennisWomenFlipped:" candidateClass="UISwitch"/>
+                <relationship kind="action" name="volleyballFlipped:" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="basketballMenSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="basketballWomenSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="crossCountrySwitch" candidateClass="UISwitch"/>
@@ -2566,6 +2707,7 @@
                 <relationship kind="outlet" name="softballSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="tennisMenSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="tennisWomenSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="volleyballSwitch" candidateClass="UISwitch"/>
             </relationships>
         </class>
         <class className="sportViewController" superclassName="genericTableViewController">

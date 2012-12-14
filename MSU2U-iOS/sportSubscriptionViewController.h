@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "subscriptionsViewController.h"
 
-@interface sportSubscriptionViewController : subscriptionsViewController
+@interface sportSubscriptionViewController : subscriptionsViewController{
+    UIBarButtonItem * rightButton;
+    BOOL allSwitchesAreOn;
+}
 
 @property (strong, nonatomic) IBOutlet UISwitch *crossCountrySwitch;
 @property (strong, nonatomic) IBOutlet UISwitch *basketballMenSwitch;
@@ -22,5 +25,19 @@
 @property (strong, nonatomic) IBOutlet UISwitch *softballSwitch;
 @property (strong, nonatomic) IBOutlet UISwitch *tennisMenSwitch;
 @property (strong, nonatomic) IBOutlet UISwitch *tennisWomenSwitch;
+@property (strong, nonatomic) IBOutlet UISwitch *volleyballSwitch;
+
+- (IBAction)crossCountryFlipped:(UISwitch *)sender;
+- (IBAction)basketballMenFlipped:(UISwitch *)sender;
+- (IBAction)basketballWomenFlipped:(UISwitch *)sender;
+- (IBAction)footballFlipped:(UISwitch *)sender;
+- (IBAction)golfMenFlipped:(UISwitch *)sender;
+- (IBAction)golfWomenFlipped:(UISwitch *)sender;
+- (IBAction)soccerMenFlipped:(UISwitch *)sender;
+- (IBAction)soccerWomenFlipped:(UISwitch *)sender;
+- (IBAction)softballFlipped:(UISwitch *)sender;
+- (IBAction)tennisMenFlipped:(UISwitch *)sender;
+- (IBAction)tennisWomenFlipped:(UISwitch *)sender;
+- (IBAction)volleyballFlipped:(UISwitch *)sender;
 
 @end

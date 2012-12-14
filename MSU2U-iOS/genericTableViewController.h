@@ -17,6 +17,7 @@
 //Custom Libraries
 #import "CoreDataTableViewController.h"
 #import "MYDocumentHandler.h"
+#import "imageModification.h"
 
 #import "Sport+Create.h"
 #import "News+Create.h"

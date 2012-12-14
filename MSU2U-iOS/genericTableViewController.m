@@ -88,6 +88,231 @@
                                   @"history != nil"];
         [request setPredicate:predicate];
     }
+    //Filter News/Sports/Events Tables based upon user defaults?
+    else if(self.childNumber == [NSNumber numberWithInt:3])
+    {
+        //Check the user defaults
+        NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+        
+        //CHECK THE SWITCHES. SEE WHAT PREDICATE I SHOULD APPLY TO THESE TABLES!
+        NSString * myPredicate = @"";
+        
+        if([defaults boolForKey:@"wichitanNewsIsOn"])
+        {
+            myPredicate = [myPredicate stringByAppendingString:@"publication LIKE[c] 'The Wichitan'"];
+        }
+        if([defaults boolForKey:@"sportsNewsIsOn"])
+        {
+            //If I already started my predicate string, then I need to concatenate ||.
+            if([myPredicate length] > 0)
+            {
+                myPredicate = [myPredicate stringByAppendingString:@" || "];
+            }
+            myPredicate = [myPredicate stringByAppendingString:@"publication LIKE[c] 'Sports News'"];
+        }
+        if([defaults boolForKey:@"campusNewsIsOn"])
+        {
+            //If I already started my predicate string, then I need to concatenate ||.
+            if([myPredicate length] > 0)
+            {
+                myPredicate = [myPredicate stringByAppendingString:@" || "];
+            }
+            myPredicate = [myPredicate stringByAppendingString:@"publication LIKE[c] 'Campus News'"];
+        }
+        NSLog(@"My constructed predicate is %@\n",myPredicate);
+        
+        //Only if I actually added some text to myPredicate due to a switch being on will I set my request's predicate.
+        if([myPredicate length] == 0)
+        {
+            //There is no such thing as a sport of type "NOTHING" so effectively this will return no one, which is what I want
+            //  since all of the news switches have been disable.
+            myPredicate = [myPredicate stringByAppendingString:@"publication LIKE[c] 'NOTHING'"];
+        }
+        
+        //set the predicate to your constructed predicate string
+        NSPredicate * predicate = [NSPredicate predicateWithFormat:myPredicate];
+        [request setPredicate:predicate];
+    }
+    else if(self.childNumber == [NSNumber numberWithInt:2])
+    {
+        NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+        NSString * myPredicate = @"";
+        
+        if([defaults boolForKey:@"artIsOn"])
+        {
+            myPredicate = [myPredicate stringByAppendingString:@"category LIKE[c] 'art'"];
+        }
+        if([defaults boolForKey:@"academicIsOn"])
+        {
+            if([myPredicate length] > 0)
+            {
+                myPredicate = [myPredicate stringByAppendingString:@" || "];
+            }
+            myPredicate = [myPredicate stringByAppendingString:@"category LIKE[c] 'academic'"];
+        }
+        if([defaults boolForKey:@"campusIsOn"])
+        {
+            if([myPredicate length] > 0)
+            {
+                myPredicate = [myPredicate stringByAppendingString:@" || "];
+            }
+            myPredicate = [myPredicate stringByAppendingString:@"category LIKE[c] 'campus'"];
+        }
+        if([defaults boolForKey:@"museumIsOn"])
+        {
+            if([myPredicate length] > 0)
+            {
+                myPredicate = [myPredicate stringByAppendingString:@" || "];
+            }
+            myPredicate = [myPredicate stringByAppendingString:@"category LIKE[c] 'museum'"];
+        }
+        if([defaults boolForKey:@"musicIsOn"])
+        {
+            if([myPredicate length] > 0)
+            {
+                myPredicate = [myPredicate stringByAppendingString:@" || "];
+            }
+            myPredicate = [myPredicate stringByAppendingString:@"category LIKE[c] 'music'"];
+        }
+        if([defaults boolForKey:@"personnelIsOn"])
+        {
+            if([myPredicate length] > 0)
+            {
+                myPredicate = [myPredicate stringByAppendingString:@" || "];
+            }
+            myPredicate = [myPredicate stringByAppendingString:@"category LIKE[c] 'personnel'"];
+        }
+        if([defaults boolForKey:@"theaterIsOn"])
+        {
+            if([myPredicate length] > 0)
+            {
+                myPredicate = [myPredicate stringByAppendingString:@" || "];
+            }
+            myPredicate = [myPredicate stringByAppendingString:@"category LIKE[c] 'theater'"];
+        }
+        NSLog(@"My constructed predicate is %@\n",myPredicate);
+        
+        if([myPredicate length] == 0)
+        {
+            //There is no such thing as a sport of type "NOTHING" so effectively this will return no one, which is what I want
+            //  since all of the news switches have been disable.
+            myPredicate = [myPredicate stringByAppendingString:@"category LIKE[c] 'NOTHING'"];
+        }
+        
+        //set the predicate to your constructed predicate string
+        NSPredicate * predicate = [NSPredicate predicateWithFormat:myPredicate];
+        [request setPredicate:predicate];
+    }
+    else if(self.childNumber == [NSNumber numberWithInt:1])
+    {
+        NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+        NSString * myPredicate = @"";
+        
+        if([defaults boolForKey:@"crossCountryIsOn"])
+        {
+            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE [c] 'Cross Country'"];
+        }
+        if([defaults boolForKey:@"basketballMenIsOn"])
+        {
+            if([myPredicate length] > 0)
+            {
+                myPredicate = [myPredicate stringByAppendingString:@" || "];
+            }
+            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE[c] 'BasketballMen'"];
+        }
+        if([defaults boolForKey:@"basketballWomenIsOn"])
+        {
+            if([myPredicate length] > 0)
+            {
+                myPredicate = [myPredicate stringByAppendingString:@" || "];
+            }
+            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE[c] 'BasketballWomen'"];
+        }
+        if([defaults boolForKey:@"footballIsOn"])
+        {
+            if([myPredicate length] > 0)
+            {
+                myPredicate = [myPredicate stringByAppendingString:@" || "];
+            }
+            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE[c] 'Football'"];
+        }
+        if([defaults boolForKey:@"golfMenIsOn"])
+        {
+            if([myPredicate length] > 0)
+            {
+                myPredicate = [myPredicate stringByAppendingString:@" || "];
+            }
+            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE[c] 'GolfMen'"];
+        }
+        if([defaults boolForKey:@"golfWomenIsOn"])
+        {
+            if([myPredicate length] > 0)
+            {
+                myPredicate = [myPredicate stringByAppendingString:@" || "];
+            }
+            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE[c] 'GolfWomen'"];
+        }
+        if([defaults boolForKey:@"soccerMenIsOn"])
+        {
+            if([myPredicate length] > 0)
+            {
+                myPredicate = [myPredicate stringByAppendingString:@" || "];
+            }
+            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE[c] 'SoccerMen'"];
+        }
+        if([defaults boolForKey:@"soccerWomenIsOn"])
+        {
+            if([myPredicate length] > 0)
+            {
+                myPredicate = [myPredicate stringByAppendingString:@" || "];
+            }
+            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE[c] 'SoccerWomen'"];
+        }
+        if([defaults boolForKey:@"softballIsOn"])
+        {
+            if([myPredicate length] > 0)
+            {
+                myPredicate = [myPredicate stringByAppendingString:@" || "];
+            }
+            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE[c] 'Softball'"];
+        }
+        if([defaults boolForKey:@"tennisMenIsOn"])
+        {
+            if([myPredicate length] > 0)
+            {
+                myPredicate = [myPredicate stringByAppendingString:@" || "];
+            }
+            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE[c] 'TennisMen'"];
+        }
+        if([defaults boolForKey:@"tennisWomenIsOn"])
+        {
+            if([myPredicate length] > 0)
+            {
+                myPredicate = [myPredicate stringByAppendingString:@" || "];
+            }
+            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE[c] 'TennisWomen'"];
+        }
+        if([defaults boolForKey:@"volleyballIsOn"])
+        {
+            if([myPredicate length] > 0)
+            {
+                myPredicate = [myPredicate stringByAppendingString:@" || "];
+            }
+            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE[c] 'Volleyball'"];
+        }
+        NSLog(@"My constructed predicate is %@\n",myPredicate);
+
+        if([myPredicate length] == 0)
+        {
+            //There is no such thing as a sport of type "NOTHING" so effectively this will return no one, which is what I want
+            //  since all of the news switches have been disable.
+            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE[c] 'NOTHING'"];
+        }
+        
+        //set the predicate to your constructed predicate string
+        NSPredicate * predicate = [NSPredicate predicateWithFormat:myPredicate];
+        [request setPredicate:predicate];
+    }
     
     //Fetch all of the data. Be sure to sort the data correctly depending on which child is currently being viewed
     if(self.childNumber != [NSNumber numberWithInt:6])
@@ -187,16 +412,12 @@
     }
     else if(self.childNumber == [NSNumber numberWithInt:5] || self.childNumber == [NSNumber numberWithInt:6])
     {
-        //Of course, I could have just made this an else statement, however if I ever add more table view controllers later I don't want them to obey this rule, therefore I like to be more specific to make sure that
-        //  the program is correctly acknowledging the childNumbers of the table view controllers I'm interested in.
-        NSLog(@"I'm trying to show a 'Done' button in the top right corner of the screen because this is childNumber=%@\n",self.childNumber);
         rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Clear"
                                                                          style:UIBarButtonSystemItemDone target:self action:@selector(clearMyTable)];
         self.tabBarController.navigationItem.rightBarButtonItem = rightButton;
     }
     else if(self.childNumber == [NSNumber numberWithInt:1] || self.childNumber == [NSNumber numberWithInt:2] || self.childNumber == [NSNumber numberWithInt:3])
     {
-        NSLog(@"I'm trying to show a 'Subscribe' button in the top right corner of the screen because this is childNumber=%@\n",self.childNumber);
         rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Subscribe"
                                                        style:UIBarButtonSystemItemDone target:self action:@selector(goToMySubscriptionView)];
         self.tabBarController.navigationItem.rightBarButtonItem = rightButton;
@@ -222,6 +443,7 @@
     else
     {
         NSLog(@"I already have a managed docoument for this view.\n");
+        [self setupFetchedResultsController];
     }
 }
 

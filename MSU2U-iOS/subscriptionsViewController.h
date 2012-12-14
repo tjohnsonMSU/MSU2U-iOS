@@ -17,5 +17,6 @@
 //Public methods
 -(void)determineIfSwitchShouldBeOnOrOff;
 -(void)savedCurrentSwitchStatuses;
+-(void)saveSwitchChange:(UISwitch*)mySwitch forKey:(NSString*)myKey;
 
 @end

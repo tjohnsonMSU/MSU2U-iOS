@@ -27,6 +27,21 @@
     }
 }
 
+-(void)saveSwitchChange:(UISwitch*)mySwitch forKey:(NSString*)myKey
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if([mySwitch isOn])
+    {
+        [defaults setBool:YES forKey:myKey];
+    }
+    else
+    {
+        [defaults setBool:NO forKey:myKey];
+    }
+    [defaults synchronize];
+    NSLog(@"Synchronized data for key %@\n",myKey);
+}
+
 -(void)savedCurrentSwitchStatuses
 {
     //Grab the standard user defaults so that changes may be made if necessary
@@ -45,6 +60,11 @@
     }
     
     //Save these user setting changes!
+    dispatch_queue_t fetchQ = dispatch_queue_create("Data Fetcher", NULL);
+    
+    dispatch_async(fetchQ,^{
+        
+    });
     [defaults synchronize];
     NSLog(@"Data saved");
 }
