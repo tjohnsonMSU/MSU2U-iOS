@@ -104,6 +104,7 @@
         }
         if([defaults boolForKey:@"sportsNewsIsOn"])
         {
+            
             //If I already started my predicate string, then I need to concatenate ||.
             if([myPredicate length] > 0)
             {
@@ -212,7 +213,6 @@
             
             //Now put myPredicate2 onto the end of myPredicate
             myPredicate = [myPredicate stringByAppendingString:myPredicate2];
-            
         }
         if([defaults boolForKey:@"campusNewsIsOn"])
         {
@@ -240,181 +240,17 @@
     else if(self.childNumber == [NSNumber numberWithInt:2])
     {
         NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-        NSString * myPredicate = @"";
-        
-        if([defaults boolForKey:@"artIsOn"])
-        {
-            myPredicate = [myPredicate stringByAppendingString:@"category LIKE[c] 'art'"];
-        }
-        if([defaults boolForKey:@"academicIsOn"])
-        {
-            if([myPredicate length] > 0)
-            {
-                myPredicate = [myPredicate stringByAppendingString:@" || "];
-            }
-            myPredicate = [myPredicate stringByAppendingString:@"category LIKE[c] 'academic'"];
-        }
-        if([defaults boolForKey:@"campusIsOn"])
-        {
-            if([myPredicate length] > 0)
-            {
-                myPredicate = [myPredicate stringByAppendingString:@" || "];
-            }
-            myPredicate = [myPredicate stringByAppendingString:@"category LIKE[c] 'campus'"];
-        }
-        if([defaults boolForKey:@"museumIsOn"])
-        {
-            if([myPredicate length] > 0)
-            {
-                myPredicate = [myPredicate stringByAppendingString:@" || "];
-            }
-            myPredicate = [myPredicate stringByAppendingString:@"category LIKE[c] 'museum'"];
-        }
-        if([defaults boolForKey:@"musicIsOn"])
-        {
-            if([myPredicate length] > 0)
-            {
-                myPredicate = [myPredicate stringByAppendingString:@" || "];
-            }
-            myPredicate = [myPredicate stringByAppendingString:@"category LIKE[c] 'music'"];
-        }
-        if([defaults boolForKey:@"personnelIsOn"])
-        {
-            if([myPredicate length] > 0)
-            {
-                myPredicate = [myPredicate stringByAppendingString:@" || "];
-            }
-            myPredicate = [myPredicate stringByAppendingString:@"category LIKE[c] 'personnel'"];
-        }
-        if([defaults boolForKey:@"theaterIsOn"])
-        {
-            if([myPredicate length] > 0)
-            {
-                myPredicate = [myPredicate stringByAppendingString:@" || "];
-            }
-            myPredicate = [myPredicate stringByAppendingString:@"category LIKE[c] 'theater'"];
-        }
-        NSLog(@"My constructed predicate is %@\n",myPredicate);
-        
-        if([myPredicate length] == 0)
-        {
-            //There is no such thing as a sport of type "NOTHING" so effectively this will return no one, which is what I want
-            //  since all of the news switches have been disable.
-            myPredicate = [myPredicate stringByAppendingString:@"category LIKE[c] 'NOTHING'"];
-        }
-        
-        //set the predicate to your constructed predicate string
-        NSPredicate * predicate = [NSPredicate predicateWithFormat:myPredicate];
+        NSArray * keys = [defaults objectForKey:@"userDefaultsEventsKey"];
+        NSArray * searchWords = [defaults objectForKey:@"typesOfEvents"];
+        NSPredicate * predicate = [NSPredicate predicateWithFormat:[self createPredicateForKeys:keys usingSearchWords:searchWords forAttribute:@"category"]];
         [request setPredicate:predicate];
     }
     else if(self.childNumber == [NSNumber numberWithInt:1])
     {
         NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-        NSString * myPredicate = @"";
-        
-        if([defaults boolForKey:@"crossCountryIsOn"])
-        {
-            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE [c] 'Cross Country'"];
-        }
-        if([defaults boolForKey:@"basketballMenIsOn"])
-        {
-            if([myPredicate length] > 0)
-            {
-                myPredicate = [myPredicate stringByAppendingString:@" || "];
-            }
-            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE[c] 'BasketballMen'"];
-        }
-        if([defaults boolForKey:@"basketballWomenIsOn"])
-        {
-            if([myPredicate length] > 0)
-            {
-                myPredicate = [myPredicate stringByAppendingString:@" || "];
-            }
-            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE[c] 'BasketballWomen'"];
-        }
-        if([defaults boolForKey:@"footballIsOn"])
-        {
-            if([myPredicate length] > 0)
-            {
-                myPredicate = [myPredicate stringByAppendingString:@" || "];
-            }
-            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE[c] 'Football'"];
-        }
-        if([defaults boolForKey:@"golfMenIsOn"])
-        {
-            if([myPredicate length] > 0)
-            {
-                myPredicate = [myPredicate stringByAppendingString:@" || "];
-            }
-            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE[c] 'GolfMen'"];
-        }
-        if([defaults boolForKey:@"golfWomenIsOn"])
-        {
-            if([myPredicate length] > 0)
-            {
-                myPredicate = [myPredicate stringByAppendingString:@" || "];
-            }
-            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE[c] 'GolfWomen'"];
-        }
-        if([defaults boolForKey:@"soccerMenIsOn"])
-        {
-            if([myPredicate length] > 0)
-            {
-                myPredicate = [myPredicate stringByAppendingString:@" || "];
-            }
-            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE[c] 'SoccerMen'"];
-        }
-        if([defaults boolForKey:@"soccerWomenIsOn"])
-        {
-            if([myPredicate length] > 0)
-            {
-                myPredicate = [myPredicate stringByAppendingString:@" || "];
-            }
-            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE[c] 'SoccerWomen'"];
-        }
-        if([defaults boolForKey:@"softballIsOn"])
-        {
-            if([myPredicate length] > 0)
-            {
-                myPredicate = [myPredicate stringByAppendingString:@" || "];
-            }
-            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE[c] 'Softball'"];
-        }
-        if([defaults boolForKey:@"tennisMenIsOn"])
-        {
-            if([myPredicate length] > 0)
-            {
-                myPredicate = [myPredicate stringByAppendingString:@" || "];
-            }
-            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE[c] 'TennisMen'"];
-        }
-        if([defaults boolForKey:@"tennisWomenIsOn"])
-        {
-            if([myPredicate length] > 0)
-            {
-                myPredicate = [myPredicate stringByAppendingString:@" || "];
-            }
-            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE[c] 'TennisWomen'"];
-        }
-        if([defaults boolForKey:@"volleyballIsOn"])
-        {
-            if([myPredicate length] > 0)
-            {
-                myPredicate = [myPredicate stringByAppendingString:@" || "];
-            }
-            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE[c] 'Volleyball'"];
-        }
-        NSLog(@"My constructed predicate is %@\n",myPredicate);
-
-        if([myPredicate length] == 0)
-        {
-            //There is no such thing as a sport of type "NOTHING" so effectively this will return no one, which is what I want
-            //  since all of the news switches have been disable.
-            myPredicate = [myPredicate stringByAppendingString:@"sportType LIKE[c] 'NOTHING'"];
-        }
-        
-        //set the predicate to your constructed predicate string
-        NSPredicate * predicate = [NSPredicate predicateWithFormat:myPredicate];
+        NSArray * keys = [defaults objectForKey:@"userDefaultsSportsKey"];
+        NSArray * searchWords = [defaults objectForKey:@"typesOfSports"];
+        NSPredicate * predicate = [NSPredicate predicateWithFormat:[self createPredicateForKeys:keys usingSearchWords:searchWords forAttribute:@"sportType"]];
         [request setPredicate:predicate];
     }
     
@@ -453,15 +289,19 @@
 -(NSString*)createPredicateForKeys:(NSArray*)myKeys usingSearchWords:(NSArray*)mySearchWords forAttribute:(NSString*)myAttribute
 {
     NSString * myPredicate = @"";
-    
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    BOOL specialCase = NO;
     for(int i=0; i<[myKeys count]; i++)
     {
-        if([myKeys objectAtIndex:i])
+        NSLog(@"### My key: %@\n",[myKeys objectAtIndex:i]);
+        if([defaults boolForKey:[myKeys objectAtIndex:i]])
         {
             if([myPredicate length] > 0)
             {
                 myPredicate = [myPredicate stringByAppendingString:@" || "];
             }
+            NSLog(@"### My attribute: %@\n",myAttribute);
+            NSLog(@"### My Search Word: %@\n",[mySearchWords objectAtIndex:i]);
             myPredicate = [myPredicate stringByAppendingString:myAttribute];
             myPredicate = [myPredicate stringByAppendingString:@" LIKE[c] "];
             myPredicate = [myPredicate stringByAppendingString:@"'"];
@@ -477,7 +317,9 @@
     }
     else
     {
-        return @"nothing LIKE[c] 'nothing'";
+        NSString * returnStatement = myAttribute;
+        returnStatement = [returnStatement stringByAppendingString:@" LIKE[c] 'nothing'"];
+        return returnStatement;
     }
 }
 

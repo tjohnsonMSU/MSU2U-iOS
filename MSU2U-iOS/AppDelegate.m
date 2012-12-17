@@ -49,7 +49,7 @@
     NSArray * typesOfEvents = [[NSArray alloc] initWithObjects:@"academic",@"art",@"campus",@"museum",@"music",@"personnel",@"theater",nil];
     
     NSArray * userDefaultSportsKey = [[NSArray alloc] initWithObjects:@"crossCountryIsOn",@"basketballMenIsOn",@"basketballWomenIsOn",@"footballIsOn",@"golfMenIsOn",@"golfWomenIsOn",@"soccerMenIsOn",@"soccerWomenIsOn",@"softballIsOn",@"tennisMenIsOn",@"tennisWomenIsOn",@"volleyballIsOn",nil];
-    NSArray * typesOfSports = [[NSArray alloc] initWithObjects:@"Cross Country",@"BasketballWomen",@"Football",@"GolfMen",@"GolfWomen",@"SoccerMen",@"SoccerWomen",@"Softball",@"TennisMen",@"TennisWomen",@"Volleyball", nil];
+    NSArray * typesOfSports = [[NSArray alloc] initWithObjects:@"Cross Country",@"BasketballMen",@"BasketballWomen",@"Football",@"GolfMen",@"GolfWomen",@"SoccerMen",@"SoccerWomen",@"Softball",@"TennisMen",@"TennisWomen",@"Volleyball", nil];
     
     NSArray * userDefaultNewsKey = [[NSArray alloc] initWithObjects:@"wichitanNewsIsOn",@"sportsNewsIsOn",@"campusNewsIsOn",nil];
     NSArray * typesOfNews = [[NSArray alloc] initWithObjects:@"The Wichitan", @"Sports News", @"Event News", nil];
@@ -59,6 +59,9 @@
     [defaults setObject:userDefaultEventsKey forKey:@"userDefaultsEventsKey"];
     [defaults setObject:userDefaultSportsKey forKey:@"userDefaultsSportsKey"];
     [defaults setObject:userDefaultNewsKey forKey:@"userDefaultsNewsKey"];
+    [defaults setObject:typesOfEvents forKey:@"typesOfEvents"];
+    [defaults setObject:typesOfSports forKey:@"typesOfSports"];
+    [defaults setObject:typesOfNews forKey:@"typesOfNews"];
     [defaults synchronize];
 
     return YES;
