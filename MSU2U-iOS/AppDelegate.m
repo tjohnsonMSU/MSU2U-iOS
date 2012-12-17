@@ -10,8 +10,6 @@
 
 @implementation AppDelegate
 
-
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //Set the color of the navigation bars
@@ -46,7 +44,23 @@
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
     [[NSUserDefaults standardUserDefaults] registerDefaults:dict];
     
-    NSLog(@"Testing registerDefaults: %@\n",[[NSUserDefaults standardUserDefaults] objectForKey:@"artIsOn"]);
+    //These are my user keys and search terms for the subscription tables
+    NSArray * userDefaultEventsKey = [[NSArray alloc] initWithObjects:@"academicIsOn",@"artIsOn",@"campusIsOn",@"museumIsOn",@"musicIsOn",@"personnelIsOn",@"theaterIsOn",nil];
+    NSArray * typesOfEvents = [[NSArray alloc] initWithObjects:@"academic",@"art",@"campus",@"museum",@"music",@"personnel",@"theater",nil];
+    
+    NSArray * userDefaultSportsKey = [[NSArray alloc] initWithObjects:@"crossCountryIsOn",@"basketballMenIsOn",@"basketballWomenIsOn",@"footballIsOn",@"golfMenIsOn",@"golfWomenIsOn",@"soccerMenIsOn",@"soccerWomenIsOn",@"softballIsOn",@"tennisMenIsOn",@"tennisWomenIsOn",@"volleyballIsOn",nil];
+    NSArray * typesOfSports = [[NSArray alloc] initWithObjects:@"Cross Country",@"BasketballWomen",@"Football",@"GolfMen",@"GolfWomen",@"SoccerMen",@"SoccerWomen",@"Softball",@"TennisMen",@"TennisWomen",@"Volleyball", nil];
+    
+    NSArray * userDefaultNewsKey = [[NSArray alloc] initWithObjects:@"wichitanNewsIsOn",@"sportsNewsIsOn",@"campusNewsIsOn",nil];
+    NSArray * typesOfNews = [[NSArray alloc] initWithObjects:@"The Wichitan", @"Sports News", @"Event News", nil];
+    
+    //Setup the user default keys and search keywords that are used throughout the app
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:userDefaultEventsKey forKey:@"userDefaultsEventsKey"];
+    [defaults setObject:userDefaultSportsKey forKey:@"userDefaultsSportsKey"];
+    [defaults setObject:userDefaultNewsKey forKey:@"userDefaultsNewsKey"];
+    [defaults synchronize];
+
     return YES;
 }
 							

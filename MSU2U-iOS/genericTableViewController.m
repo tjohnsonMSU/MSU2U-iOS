@@ -96,6 +96,7 @@
         
         //CHECK THE SWITCHES. SEE WHAT PREDICATE I SHOULD APPLY TO THESE TABLES!
         NSString * myPredicate = @"";
+        NSString * myPredicate2 = @"";
         
         if([defaults boolForKey:@"wichitanNewsIsOn"])
         {
@@ -108,7 +109,110 @@
             {
                 myPredicate = [myPredicate stringByAppendingString:@" || "];
             }
-            myPredicate = [myPredicate stringByAppendingString:@"publication LIKE[c] 'Sports News'"];
+            myPredicate = [myPredicate stringByAppendingString:@"(publication LIKE[c] 'Sports News' && ("];
+            
+            //Also, we need to check and see which sports the person has selected in the Sports tab. We will check the category of the news article to see if the user is likely to be interested in the story before putting it into the table so let's add some more filters.
+            
+            if([defaults boolForKey:@"crossCountryIsOn"])
+            {
+                myPredicate2 = [myPredicate2 stringByAppendingString:@"category LIKE [c] 'Cross Country'"];
+            }
+            if([defaults boolForKey:@"basketballMenIsOn"])
+            {
+                if([myPredicate2 length] > 0)
+                {
+                    myPredicate2 = [myPredicate2 stringByAppendingString:@" || "];
+                }
+                myPredicate2 = [myPredicate2 stringByAppendingString:@"category LIKE[c] 'BasketballMen'"];
+            }
+            if([defaults boolForKey:@"basketballWomenIsOn"])
+            {
+                if([myPredicate2 length] > 0)
+                {
+                    myPredicate2 = [myPredicate2 stringByAppendingString:@" || "];
+                }
+                myPredicate2 = [myPredicate2 stringByAppendingString:@"category LIKE[c] 'BasketballWomen'"];
+            }
+            if([defaults boolForKey:@"footballIsOn"])
+            {
+                if([myPredicate2 length] > 0)
+                {
+                    myPredicate2 = [myPredicate2 stringByAppendingString:@" || "];
+                }
+                myPredicate2 = [myPredicate2 stringByAppendingString:@"category LIKE[c] 'Football'"];
+            }
+            if([defaults boolForKey:@"golfMenIsOn"])
+            {
+                if([myPredicate2 length] > 0)
+                {
+                    myPredicate2 = [myPredicate2 stringByAppendingString:@" || "];
+                }
+                myPredicate2 = [myPredicate2 stringByAppendingString:@"category LIKE[c] 'GolfMen'"];
+            }
+            if([defaults boolForKey:@"golfWomenIsOn"])
+            {
+                if([myPredicate2 length] > 0)
+                {
+                    myPredicate2 = [myPredicate2 stringByAppendingString:@" || "];
+                }
+                myPredicate2 = [myPredicate2 stringByAppendingString:@"category LIKE[c] 'GolfWomen'"];
+            }
+            if([defaults boolForKey:@"soccerMenIsOn"])
+            {
+                if([myPredicate2 length] > 0)
+                {
+                    myPredicate2 = [myPredicate2 stringByAppendingString:@" || "];
+                }
+                myPredicate2 = [myPredicate2 stringByAppendingString:@"category LIKE[c] 'SoccerMen'"];
+            }
+            if([defaults boolForKey:@"soccerWomenIsOn"])
+            {
+                if([myPredicate2 length] > 0)
+                {
+                    myPredicate2 = [myPredicate2 stringByAppendingString:@" || "];
+                }
+                myPredicate2 = [myPredicate2 stringByAppendingString:@"category LIKE[c] 'SoccerWomen'"];
+            }
+            if([defaults boolForKey:@"softballIsOn"])
+            {
+                if([myPredicate2 length] > 0)
+                {
+                    myPredicate2 = [myPredicate2 stringByAppendingString:@" || "];
+                }
+                myPredicate2 = [myPredicate2 stringByAppendingString:@"category LIKE[c] 'Softball'"];
+            }
+            if([defaults boolForKey:@"tennisMenIsOn"])
+            {
+                if([myPredicate2 length] > 0)
+                {
+                    myPredicate2 = [myPredicate2 stringByAppendingString:@" || "];
+                }
+                myPredicate2 = [myPredicate2 stringByAppendingString:@"category LIKE[c] 'TennisMen'"];
+            }
+            if([defaults boolForKey:@"tennisWomenIsOn"])
+            {
+                if([myPredicate2 length] > 0)
+                {
+                    myPredicate2 = [myPredicate2 stringByAppendingString:@" || "];
+                }
+                myPredicate2 = [myPredicate2 stringByAppendingString:@"category LIKE[c] 'TennisWomen'"];
+            }
+            if([defaults boolForKey:@"volleyballIsOn"])
+            {
+                if([myPredicate2 length] > 0)
+                {
+                    myPredicate2 = [myPredicate2 stringByAppendingString:@" || "];
+                }
+                myPredicate2 = [myPredicate2 stringByAppendingString:@"category LIKE[c] 'Volleyball'"];
+            }
+            if([myPredicate2 length] > 0)
+            {
+                myPredicate2 = [myPredicate2 stringByAppendingString:@"))"];
+            }
+            
+            //Now put myPredicate2 onto the end of myPredicate
+            myPredicate = [myPredicate stringByAppendingString:myPredicate2];
+            
         }
         if([defaults boolForKey:@"campusNewsIsOn"])
         {
@@ -343,6 +447,37 @@
     {
         //I know there are items in the database already.
         NSLog(@"Looks like I have data already in my database, I'll just load what I've got.\n");
+    }
+}
+
+-(NSString*)createPredicateForKeys:(NSArray*)myKeys usingSearchWords:(NSArray*)mySearchWords forAttribute:(NSString*)myAttribute
+{
+    NSString * myPredicate = @"";
+    
+    for(int i=0; i<[myKeys count]; i++)
+    {
+        if([myKeys objectAtIndex:i])
+        {
+            if([myPredicate length] > 0)
+            {
+                myPredicate = [myPredicate stringByAppendingString:@" || "];
+            }
+            myPredicate = [myPredicate stringByAppendingString:myAttribute];
+            myPredicate = [myPredicate stringByAppendingString:@" LIKE[c] "];
+            myPredicate = [myPredicate stringByAppendingString:@"'"];
+            myPredicate = [myPredicate stringByAppendingString:[mySearchWords objectAtIndex:i]];
+            myPredicate = [myPredicate stringByAppendingString:@"'"];
+        }
+    }
+    NSLog(@"My constructed predicate is %@\n",myPredicate);
+    
+    if([myPredicate length] > 0)
+    {
+        return myPredicate;
+    }
+    else
+    {
+        return @"nothing LIKE[c] 'nothing'";
     }
 }
 

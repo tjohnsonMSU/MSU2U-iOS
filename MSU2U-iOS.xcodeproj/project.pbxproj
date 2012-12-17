@@ -15,7 +15,6 @@
 		1D1CEAE2162B4D230059BC1F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D1CEAE0162B4D230059BC1F /* InfoPlist.strings */; };
 		1D1CEAE4162B4D230059BC1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1CEAE3162B4D230059BC1F /* main.m */; };
 		1D1CEAE8162B4D230059BC1F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1CEAE7162B4D230059BC1F /* AppDelegate.m */; };
-		1D1CEAEE162B4D230059BC1F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D1CEAED162B4D230059BC1F /* Default-568h@2x.png */; };
 		1D1CEAFF162B4DBB0059BC1F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D1CEAFE162B4DBB0059BC1F /* MainStoryboard.storyboard */; };
 		1D1CEB24162B4E690059BC1F /* 07-map-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D1CEB02162B4E690059BC1F /* 07-map-marker.png */; };
 		1D1CEB25162B4E690059BC1F /* 101-gameplan.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D1CEB03162B4E690059BC1F /* 101-gameplan.png */; };
@@ -130,7 +129,6 @@
 		1D1CEAE5162B4D230059BC1F /* MSU2U-iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MSU2U-iOS-Prefix.pch"; sourceTree = "<group>"; };
 		1D1CEAE6162B4D230059BC1F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D1CEAE7162B4D230059BC1F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1D1CEAED162B4D230059BC1F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1D1CEAFE162B4DBB0059BC1F /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		1D1CEB02162B4E690059BC1F /* 07-map-marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "07-map-marker.png"; sourceTree = "<group>"; };
 		1D1CEB03162B4E690059BC1F /* 101-gameplan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "101-gameplan.png"; sourceTree = "<group>"; };
@@ -342,7 +340,6 @@
 				1D1CEAE0162B4D230059BC1F /* InfoPlist.strings */,
 				1D1CEAE3162B4D230059BC1F /* main.m */,
 				1D1CEAE5162B4D230059BC1F /* MSU2U-iOS-Prefix.pch */,
-				1D1CEAED162B4D230059BC1F /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -359,8 +356,8 @@
 		1D1CEAFB162B4D310059BC1F /* News & Events */ = {
 			isa = PBXGroup;
 			children = (
-				1DB63E31165FDDCC00A21649 /* genericTableViewController.m */,
 				1DB63E30165FDDCC00A21649 /* genericTableViewController.h */,
+				1DB63E31165FDDCC00A21649 /* genericTableViewController.m */,
 				1D82B34816784928006564F8 /* Subscriptions */,
 				1D592EA3164D60CA00CBB292 /* Sport */,
 				1D592EA2164D60C400CBB292 /* Event */,
@@ -775,7 +772,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D1CEAE2162B4D230059BC1F /* InfoPlist.strings in Resources */,
-				1D1CEAEE162B4D230059BC1F /* Default-568h@2x.png in Resources */,
 				1D1CEAFF162B4DBB0059BC1F /* MainStoryboard.storyboard in Resources */,
 				1D1CEB24162B4E690059BC1F /* 07-map-marker.png in Resources */,
 				1D1CEB25162B4E690059BC1F /* 101-gameplan.png in Resources */,

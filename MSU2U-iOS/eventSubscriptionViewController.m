@@ -10,7 +10,6 @@
 
 @interface eventSubscriptionViewController ()
 @property (strong, nonatomic) NSArray * newsSwitch;
-@property (strong, nonatomic) NSArray * userDefaultNewsKey;
 @end
 
 @implementation eventSubscriptionViewController

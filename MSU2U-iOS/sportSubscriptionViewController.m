@@ -10,7 +10,6 @@
 
 @interface sportSubscriptionViewController ()
 @property (strong, nonatomic) NSArray * newsSwitch;
-@property (strong, nonatomic) NSArray * userDefaultNewsKey;
 @end
 
 @implementation sportSubscriptionViewController
