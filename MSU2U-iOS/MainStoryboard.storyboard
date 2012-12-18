@@ -2464,7 +2464,7 @@
                                             <constraint firstItem="iKa-gr-W5j" firstAttribute="centerX" secondItem="Li9-wo-Tp1" secondAttribute="centerX" type="default" id="ndv-OP-Pxa"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="111" id="1RN-dT-Bnt">
+                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="111" id="1RN-dT-Bnt">
                                         <rect key="frame" x="0.0" y="372" width="320" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">

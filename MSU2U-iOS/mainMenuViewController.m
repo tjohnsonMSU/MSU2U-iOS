@@ -25,6 +25,7 @@
     //Set the color of the navigation bars
 }
 
+
 - (IBAction)openMyMWSUapp {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.com/apps/mymwsu"]];
 }
