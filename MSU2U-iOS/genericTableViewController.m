@@ -96,7 +96,6 @@
         
         //CHECK THE SWITCHES. SEE WHAT PREDICATE I SHOULD APPLY TO THESE TABLES!
         NSString * myPredicate = @"";
-        NSString * myPredicate2 = @"";
         
         if([defaults boolForKey:@"wichitanNewsIsOn"])
         {
@@ -113,106 +112,12 @@
             myPredicate = [myPredicate stringByAppendingString:@"(publication LIKE[c] 'Sports News' && ("];
             
             //Also, we need to check and see which sports the person has selected in the Sports tab. We will check the category of the news article to see if the user is likely to be interested in the story before putting it into the table so let's add some more filters.
+            NSArray * keys = [defaults objectForKey:@"userDefaultsSportsKey"];
+            NSArray * searchWords = [defaults objectForKey:@"typesOfSports"];
             
-            if([defaults boolForKey:@"crossCountryIsOn"])
-            {
-                myPredicate2 = [myPredicate2 stringByAppendingString:@"category LIKE [c] 'Cross Country'"];
-            }
-            if([defaults boolForKey:@"basketballMenIsOn"])
-            {
-                if([myPredicate2 length] > 0)
-                {
-                    myPredicate2 = [myPredicate2 stringByAppendingString:@" || "];
-                }
-                myPredicate2 = [myPredicate2 stringByAppendingString:@"category LIKE[c] 'BasketballMen'"];
-            }
-            if([defaults boolForKey:@"basketballWomenIsOn"])
-            {
-                if([myPredicate2 length] > 0)
-                {
-                    myPredicate2 = [myPredicate2 stringByAppendingString:@" || "];
-                }
-                myPredicate2 = [myPredicate2 stringByAppendingString:@"category LIKE[c] 'BasketballWomen'"];
-            }
-            if([defaults boolForKey:@"footballIsOn"])
-            {
-                if([myPredicate2 length] > 0)
-                {
-                    myPredicate2 = [myPredicate2 stringByAppendingString:@" || "];
-                }
-                myPredicate2 = [myPredicate2 stringByAppendingString:@"category LIKE[c] 'Football'"];
-            }
-            if([defaults boolForKey:@"golfMenIsOn"])
-            {
-                if([myPredicate2 length] > 0)
-                {
-                    myPredicate2 = [myPredicate2 stringByAppendingString:@" || "];
-                }
-                myPredicate2 = [myPredicate2 stringByAppendingString:@"category LIKE[c] 'GolfMen'"];
-            }
-            if([defaults boolForKey:@"golfWomenIsOn"])
-            {
-                if([myPredicate2 length] > 0)
-                {
-                    myPredicate2 = [myPredicate2 stringByAppendingString:@" || "];
-                }
-                myPredicate2 = [myPredicate2 stringByAppendingString:@"category LIKE[c] 'GolfWomen'"];
-            }
-            if([defaults boolForKey:@"soccerMenIsOn"])
-            {
-                if([myPredicate2 length] > 0)
-                {
-                    myPredicate2 = [myPredicate2 stringByAppendingString:@" || "];
-                }
-                myPredicate2 = [myPredicate2 stringByAppendingString:@"category LIKE[c] 'SoccerMen'"];
-            }
-            if([defaults boolForKey:@"soccerWomenIsOn"])
-            {
-                if([myPredicate2 length] > 0)
-                {
-                    myPredicate2 = [myPredicate2 stringByAppendingString:@" || "];
-                }
-                myPredicate2 = [myPredicate2 stringByAppendingString:@"category LIKE[c] 'SoccerWomen'"];
-            }
-            if([defaults boolForKey:@"softballIsOn"])
-            {
-                if([myPredicate2 length] > 0)
-                {
-                    myPredicate2 = [myPredicate2 stringByAppendingString:@" || "];
-                }
-                myPredicate2 = [myPredicate2 stringByAppendingString:@"category LIKE[c] 'Softball'"];
-            }
-            if([defaults boolForKey:@"tennisMenIsOn"])
-            {
-                if([myPredicate2 length] > 0)
-                {
-                    myPredicate2 = [myPredicate2 stringByAppendingString:@" || "];
-                }
-                myPredicate2 = [myPredicate2 stringByAppendingString:@"category LIKE[c] 'TennisMen'"];
-            }
-            if([defaults boolForKey:@"tennisWomenIsOn"])
-            {
-                if([myPredicate2 length] > 0)
-                {
-                    myPredicate2 = [myPredicate2 stringByAppendingString:@" || "];
-                }
-                myPredicate2 = [myPredicate2 stringByAppendingString:@"category LIKE[c] 'TennisWomen'"];
-            }
-            if([defaults boolForKey:@"volleyballIsOn"])
-            {
-                if([myPredicate2 length] > 0)
-                {
-                    myPredicate2 = [myPredicate2 stringByAppendingString:@" || "];
-                }
-                myPredicate2 = [myPredicate2 stringByAppendingString:@"category LIKE[c] 'Volleyball'"];
-            }
-            if([myPredicate2 length] > 0)
-            {
-                myPredicate2 = [myPredicate2 stringByAppendingString:@"))"];
-            }
-            
-            //Now put myPredicate2 onto the end of myPredicate
-            myPredicate = [myPredicate stringByAppendingString:myPredicate2];
+            //Add the sports predicate to the existing predicate (if any)
+            myPredicate = [myPredicate stringByAppendingString:[self createPredicateForKeys:keys usingSearchWords:searchWords forAttribute:@"category"]];
+            myPredicate = [myPredicate stringByAppendingString:@"))"];
         }
         if([defaults boolForKey:@"campusNewsIsOn"])
         {
@@ -274,10 +179,11 @@
         NSLog(@"There were 0 objects in my table... I will attempt an update from online!\n");
         
         //IF I'M IN DIRECTORY FAVORITES (5) OR DIRECTORY HISTORY (6), I DON'T WANT TO DOWNLOAD ANYTHING!
-        if(self.childNumber != [NSNumber numberWithInt:5] && self.childNumber != [NSNumber numberWithInt:6])
+        /*if(self.childNumber != [NSNumber numberWithInt:5] && self.childNumber != [NSNumber numberWithInt:6])
         {
             [self fetchDataFromOnline:self.myDatabase];
-        }
+        }*/
+        [self refresh];
     }
     else
     {
@@ -290,7 +196,7 @@
 {
     NSString * myPredicate = @"";
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-    BOOL specialCase = NO;
+
     for(int i=0; i<[myKeys count]; i++)
     {
         NSLog(@"### My key: %@\n",[myKeys objectAtIndex:i]);
@@ -371,11 +277,22 @@
     }
 }
 
-
 -(void)viewWillAppear:(BOOL)animated
 {
-    
     [super viewWillAppear:animated];
+    
+    //Refresh Control
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.tintColor = [UIColor colorWithRed:(55.0/255.0) green:(7.0/255.0) blue:(16.0/255.0) alpha:1];
+    
+    //Retrieve the user defaults so that the last update for this table may be retrieved and shown to the user
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray * refreshControlString = [defaults objectForKey:@"attributableRefreshControlString"];
+    
+    //Set the refresh control attributed string to the retrieved last update
+    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[refreshControlString objectAtIndex:[self.childNumber integerValue]]];
+    [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
     
     //Identify in the output window what method I am in for debuggin purposes
     NSLog(@"genericViewController: View will appear\n");
@@ -512,6 +429,28 @@
     }
     //Save!!!
     //[self.directoryDatabase updateChangeCount:UIDocumentChangeDone];
+}
+
+-(void) refresh
+{
+    //I don't want the Directory Favorites and Directory History to refresh their tables since they don't actually download anything from the web.
+    [self fetchDataFromOnline:self.myDatabase];
+    
+    //Set the attributable string for the refresh control
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMM d, h:mm a"];
+    NSString *lastUpdated = [NSString stringWithFormat:@"Last updated on %@",[formatter stringFromDate:[NSDate date]]];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
+    
+    //Save this update string to the user defaults
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray * refreshControlString = [[NSMutableArray alloc] initWithArray:[defaults objectForKey:@"attributableRefreshControlString"]];
+    
+    [refreshControlString replaceObjectAtIndex:[self.childNumber integerValue] withObject:lastUpdated];
+    [defaults setObject:refreshControlString forKey:@"attributableRefreshControlString"];
+    [defaults synchronize];
+    
+    [self.refreshControl endRefreshing];
 }
 
 //######################################################################################

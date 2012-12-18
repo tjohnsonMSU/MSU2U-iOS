@@ -21,7 +21,7 @@
     */
      
      
-    //Change the color of the tabs
+    //Change the color of the tabs to red
     [[UITabBar appearance]setTintColor:[UIColor colorWithRed:(55.0/255.0) green:(7.0/255.0) blue:(16.0/255.0) alpha:1]];
     
     //Change the color of the selected tab icon
@@ -62,6 +62,13 @@
     [defaults setObject:typesOfEvents forKey:@"typesOfEvents"];
     [defaults setObject:typesOfSports forKey:@"typesOfSports"];
     [defaults setObject:typesOfNews forKey:@"typesOfNews"];
+    
+    //Let's create an array to store the attributed strings of the refresh controls for all of the applicable tables.
+    //  The table child numbers (1-6) will have their respective attribute strings be located in the same index value as their child number, so since there is no child number 0, index 0 will not be used thus I'll just put the string 'placeholder' here.
+    NSMutableArray * attributableRefreshControlString = [[NSArray alloc] initWithObjects:@"placeholder",@"Pull to Refresh",@"Pull to Refresh",@"Pull to Refresh",@"Pull to Refresh",@"Pull to Refresh",@"Pull to Refresh", nil];
+    [defaults setObject:attributableRefreshControlString forKey:@"attributableRefreshControlString"];
+    
+    //Save these defaults
     [defaults synchronize];
 
     return YES;
