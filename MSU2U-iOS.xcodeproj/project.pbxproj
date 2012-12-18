@@ -97,7 +97,9 @@
 		1D98D0EB165202E6002F2DD4 /* eventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D98D0EA165202E6002F2DD4 /* eventViewController.m */; };
 		1D98D0EE165202F3002F2DD4 /* detailEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D98D0ED165202F3002F2DD4 /* detailEventViewController.m */; };
 		1D9CA134166C798B00D0D0E0 /* noStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D9CA133166C798B00D0D0E0 /* noStar.png */; };
-		1D9DD2AA1680243900E92D74 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D9DD2A91680243900E92D74 /* Default.png */; };
+		1D9DD2AC168025A500E92D74 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D9DD2AB168025A500E92D74 /* Default.png */; };
+		1D9DD2AE168025C800E92D74 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D9DD2AD168025C800E92D74 /* Default-568h@2x.png */; };
+		1D9DD2B0168025D000E92D74 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D9DD2AF168025D000E92D74 /* Default@2x.png */; };
 		1DA7B97F167A434C0046FF8F /* golf.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1DA7B97E167A434C0046FF8F /* golf.jpeg */; };
 		1DA7B981167A43540046FF8F /* crossCountry.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1DA7B980167A43540046FF8F /* crossCountry.jpeg */; };
 		1DB63E32165FDDCC00A21649 /* genericTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB63E31165FDDCC00A21649 /* genericTableViewController.m */; };
@@ -236,7 +238,9 @@
 		1D98D0EC165202F3002F2DD4 /* detailEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailEventViewController.h; sourceTree = "<group>"; };
 		1D98D0ED165202F3002F2DD4 /* detailEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailEventViewController.m; sourceTree = "<group>"; };
 		1D9CA133166C798B00D0D0E0 /* noStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noStar.png; sourceTree = "<group>"; };
-		1D9DD2A91680243900E92D74 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		1D9DD2AB168025A500E92D74 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		1D9DD2AD168025C800E92D74 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		1D9DD2AF168025D000E92D74 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1DA7B97E167A434C0046FF8F /* golf.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = golf.jpeg; sourceTree = "<group>"; };
 		1DA7B980167A43540046FF8F /* crossCountry.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = crossCountry.jpeg; sourceTree = "<group>"; };
 		1DB63E30165FDDCC00A21649 /* genericTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = genericTableViewController.h; sourceTree = "<group>"; };
@@ -338,6 +342,8 @@
 				1D1CEB00162B4E690059BC1F /* icons */,
 				1D1CEADF162B4D230059BC1F /* MSU2U-iOS-Info.plist */,
 				1D1CEAE0162B4D230059BC1F /* InfoPlist.strings */,
+				1D9DD2AD168025C800E92D74 /* Default-568h@2x.png */,
+				1D9DD2AF168025D000E92D74 /* Default@2x.png */,
 				1D1CEAE3162B4D230059BC1F /* main.m */,
 				1D1CEAE5162B4D230059BC1F /* MSU2U-iOS-Prefix.pch */,
 			);
@@ -491,7 +497,7 @@
 		1D339A8F1679305300D84A20 /* splashScreen */ = {
 			isa = PBXGroup;
 			children = (
-				1D9DD2A91680243900E92D74 /* Default.png */,
+				1D9DD2AB168025A500E92D74 /* Default.png */,
 			);
 			name = splashScreen;
 			sourceTree = "<group>";
@@ -837,7 +843,9 @@
 				1D339A9F1679341D00D84A20 /* personnel.jpeg in Resources */,
 				1DA7B97F167A434C0046FF8F /* golf.jpeg in Resources */,
 				1DA7B981167A43540046FF8F /* crossCountry.jpeg in Resources */,
-				1D9DD2AA1680243900E92D74 /* Default.png in Resources */,
+				1D9DD2AC168025A500E92D74 /* Default.png in Resources */,
+				1D9DD2AE168025C800E92D74 /* Default-568h@2x.png in Resources */,
+				1D9DD2B0168025D000E92D74 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
