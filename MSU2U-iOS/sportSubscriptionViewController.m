@@ -16,7 +16,6 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    allSwitchesAreOn = NO;
     self.subscriptionSwitch = [[NSArray alloc] initWithObjects:self.crossCountrySwitch,self.basketballMenSwitch,self.basketballWomenSwitch,self.footballSwitch,self.golfMenSwitch,self.golfWomenSwitch,self.soccerMenSwitch,self.soccerWomenSwitch,self.softballSwitch,self.tennisMenSwitch,self.tennisWomenSwitch,self.volleyballSwitch,nil];
     self.userDefaultKey = [[NSArray alloc] initWithObjects:@"crossCountryIsOn",@"basketballMenIsOn",@"basketballWomenIsOn",@"footballIsOn",@"golfMenIsOn",@"golfWomenIsOn",@"soccerMenIsOn",@"soccerWomenIsOn",@"softballIsOn",@"tennisMenIsOn",@"tennisWomenIsOn",@"volleyballIsOn",nil];
     
@@ -30,41 +29,21 @@
 
 -(void)toggleAllSwitches
 {
-    //Set all switches to OFF
-    if(!allSwitchesAreOn)
-    {
-        [self.crossCountrySwitch setOn:NO];
-        [self.basketballMenSwitch setOn:NO];
-        [self.basketballWomenSwitch setOn:NO];
-        [self.footballSwitch setOn:NO];
-        [self.golfMenSwitch setOn:NO];
-        [self.golfWomenSwitch setOn:NO];
-        [self.soccerMenSwitch setOn:NO];
-        [self.soccerWomenSwitch setOn:NO];
-        [self.softballSwitch setOn:NO];
-        [self.tennisMenSwitch setOn:NO];
-        [self.tennisWomenSwitch setOn:NO];
-        [self.volleyballSwitch setOn:NO];
-        allSwitchesAreOn = YES;
-    }
-    //Set all switches to ON
-    else
-    {
-        [self.crossCountrySwitch setOn:YES];
-        [self.basketballMenSwitch setOn:YES];
-        [self.basketballWomenSwitch setOn:YES];
-        [self.footballSwitch setOn:YES];
-        [self.golfMenSwitch setOn:YES];
-        [self.golfWomenSwitch setOn:YES];
-        [self.soccerMenSwitch setOn:YES];
-        [self.soccerWomenSwitch setOn:YES];
-        [self.softballSwitch setOn:YES];
-        [self.tennisMenSwitch setOn:YES];
-        [self.tennisWomenSwitch setOn:YES];
-        [self.volleyballSwitch setOn:YES];
-        
-        allSwitchesAreOn = NO;
-    }
+    turnAllSwitchesOn = [self determineIfAllSwitchesAreOn];
+    
+    [self.crossCountrySwitch setOn:turnAllSwitchesOn];
+    [self.basketballMenSwitch setOn:turnAllSwitchesOn];
+    [self.basketballWomenSwitch setOn:turnAllSwitchesOn];
+    [self.footballSwitch setOn:turnAllSwitchesOn];
+    [self.golfMenSwitch setOn:turnAllSwitchesOn];
+    [self.golfWomenSwitch setOn:turnAllSwitchesOn];
+    [self.soccerMenSwitch setOn:turnAllSwitchesOn];
+    [self.soccerWomenSwitch setOn:turnAllSwitchesOn];
+    [self.softballSwitch setOn:turnAllSwitchesOn];
+    [self.tennisMenSwitch setOn:turnAllSwitchesOn];
+    [self.tennisWomenSwitch setOn:turnAllSwitchesOn];
+    [self.volleyballSwitch setOn:turnAllSwitchesOn];
+
     
     //Saved the state of these switches that were just flipped en masse
     [self crossCountryFlipped:self.crossCountrySwitch];
@@ -75,6 +54,7 @@
     [self golfWomenFlipped:self.golfWomenSwitch];
     [self soccerMenFlipped:self.soccerMenSwitch];
     [self soccerWomenFlipped:self.soccerWomenSwitch];
+    [self softballFlipped:self.softballSwitch];
     [self tennisMenFlipped:self.tennisMenSwitch];
     [self tennisWomenFlipped:self.tennisWomenSwitch];
     [self volleyballFlipped:self.volleyballSwitch];
@@ -126,7 +106,6 @@
 }
 
 - (IBAction)volleyballFlipped:(UISwitch *)sender {
-    NSLog(@"I pressed volleyball switch! I'm going to send the key: %@\n",[self.userDefaultKey objectAtIndex:11]);
     [self saveSwitchChange:sender forKey:[self.userDefaultKey objectAtIndex:11]];
 }
 

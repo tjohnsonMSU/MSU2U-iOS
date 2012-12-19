@@ -16,7 +16,6 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    allSwitchesAreOff = NO;
     self.subscriptionSwitch = [[NSArray alloc] initWithObjects:self.wichitanNewsSwitch,self.sportsNewsSwitch,self.campusNewsSwitch,nil];
     self.userDefaultKey = [[NSArray alloc] initWithObjects:@"wichitanNewsIsOn",@"sportsNewsIsOn",@"campusNewsIsOn",nil];
     
@@ -30,23 +29,13 @@
 
 -(void)toggleAllSwitches
 {
-    //Set all switches to OFF
-    if(!allSwitchesAreOff)
-    {
-        [self.wichitanNewsSwitch setOn:NO];
-        [self.sportsNewsSwitch setOn:NO];
-        [self.campusNewsSwitch setOn:NO];
-        allSwitchesAreOff = YES;
-    }
-    //Set all switches to ON
-    else
-    {
-        [self.wichitanNewsSwitch setOn:YES];
-        [self.sportsNewsSwitch setOn:YES];
-        [self.campusNewsSwitch setOn:YES];
-        allSwitchesAreOff = NO;
-    }
+    turnOnAllSwitches = [self determineIfAllSwitchesAreOn];
     
+    //Set all switches to OFF
+    [self.wichitanNewsSwitch setOn:turnOnAllSwitches];
+    [self.sportsNewsSwitch setOn:turnOnAllSwitches];
+    [self.campusNewsSwitch setOn:turnOnAllSwitches];
+
     //Saved the state of these switches that were just flipped en masse
     [self wichitanNewsFlipped:self.wichitanNewsSwitch];
     [self sportsNewsFlipped:self.sportsNewsSwitch];

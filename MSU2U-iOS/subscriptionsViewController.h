@@ -18,5 +18,5 @@
 -(void)determineIfSwitchShouldBeOnOrOff;
 -(void)savedCurrentSwitchStatuses;
 -(void)saveSwitchChange:(UISwitch*)mySwitch forKey:(NSString*)myKey;
-
+-(BOOL)determineIfAllSwitchesAreOn;
 @end

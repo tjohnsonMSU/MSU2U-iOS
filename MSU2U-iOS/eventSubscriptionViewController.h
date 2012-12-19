@@ -11,7 +11,7 @@
 
 @interface eventSubscriptionViewController : subscriptionsViewController{
     UIBarButtonItem * rightButton;
-    BOOL allSwitchesAreOn;
+    BOOL turnAllSwitchesOn;
 }
 
 @property (strong, nonatomic) IBOutlet UISwitch *academicSwitch;

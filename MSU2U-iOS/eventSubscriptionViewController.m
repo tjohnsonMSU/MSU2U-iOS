@@ -16,7 +16,6 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    allSwitchesAreOn = NO;
     self.subscriptionSwitch = [[NSArray alloc] initWithObjects:self.academicSwitch,self.artSwitch,self.campusSwitch,self.museumSwitch,self.musicSwitch,self.personnelSwitch,self.theaterSwitch,nil];
     self.userDefaultKey = [[NSArray alloc] initWithObjects:@"academicIsOn",@"artIsOn",@"campusIsOn",@"museumIsOn",@"musicIsOn",@"personnelIsOn",@"theaterIsOn",nil];
     
@@ -30,30 +29,16 @@
 
 -(void)toggleAllSwitches
 {
-    //Set all switches to OFF
-    if(!allSwitchesAreOn)
-    {
-        [self.academicSwitch setOn:NO];
-        [self.artSwitch setOn:NO];
-        [self.campusSwitch setOn:NO];
-        [self.museumSwitch setOn:NO];
-        [self.musicSwitch setOn:NO];
-        [self.personnelSwitch setOn:NO];
-        [self.theaterSwitch setOn:NO];
-        allSwitchesAreOn = YES;
-    }
-    //Set all switches to ON
-    else
-    {
-        [self.academicSwitch setOn:YES];
-        [self.artSwitch setOn:YES];
-        [self.campusSwitch setOn:YES];
-        [self.museumSwitch setOn:YES];
-        [self.musicSwitch setOn:YES];
-        [self.personnelSwitch setOn:YES];
-        [self.theaterSwitch setOn:YES];
-        allSwitchesAreOn = NO;
-    }
+    turnAllSwitchesOn = [self determineIfAllSwitchesAreOn];
+
+    [self.academicSwitch setOn:turnAllSwitchesOn];
+    [self.artSwitch setOn:turnAllSwitchesOn];
+    [self.campusSwitch setOn:turnAllSwitchesOn];
+    [self.museumSwitch setOn:turnAllSwitchesOn];
+    [self.musicSwitch setOn:turnAllSwitchesOn];
+    [self.personnelSwitch setOn:turnAllSwitchesOn];
+    [self.theaterSwitch setOn:turnAllSwitchesOn];
+
     
     //Saved the state of these switches that were just flipped en masse
     [self academicFlipped:self.academicSwitch];

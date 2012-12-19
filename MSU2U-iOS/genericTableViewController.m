@@ -173,23 +173,107 @@
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:self.myDatabase.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     NSLog(@"I'm leaving setupFetchedResultsController...\n");
     
-    //Making sure I have information in my database already. If not, then I should download!
+    //Making sure I have information in my database already. If not, then I need to determine whether I should download or leave the table empty.
     if([[[self.fetchedResultsController sections] objectAtIndex:0] numberOfObjects] == 0)
     {
-        NSLog(@"There were 0 objects in my table... I will attempt an update from online!\n");
+        NSLog(@"There were 0 objects in my table... has the user switched everything off, or should I download items?\n");
         
-        //IF I'M IN DIRECTORY FAVORITES (5) OR DIRECTORY HISTORY (6), I DON'T WANT TO DOWNLOAD ANYTHING!
-        /*if(self.childNumber != [NSNumber numberWithInt:5] && self.childNumber != [NSNumber numberWithInt:6])
+        //As long as I'm not the Directory-Favorites or Directory-History tables, I'll continue.
+        if(self.childNumber != [NSNumber numberWithInt:5] && self.childNumber != [NSNumber numberWithInt:6])
         {
-            [self fetchDataFromOnline:self.myDatabase];
-        }*/
-        [self refresh];
+            if(self.childNumber == [NSNumber numberWithInt:1])
+            {
+                NSLog(@"I am in the Sports table.\n");
+                //I am the Sports table
+                if(![self switchesAreAllOffFor:@"userDefaultsSportsKey"])
+                {
+                    NSLog(@"There is at least one Sport switch turned ON, so I'll try and update.\n");
+                    [self refresh];
+                }
+            }
+            else if(self.childNumber == [NSNumber numberWithInt:2])
+            {
+                NSLog(@"I am in the Events table.\n");
+                //I am the Events table
+                if(![self switchesAreAllOffFor:@"userDefaultsEventsKey"])
+                {
+                    NSLog(@"There is at least one Event switch turned on, so I'll try and update.\n");
+                    [self refresh];
+                }
+            }
+            else if(self.childNumber == [NSNumber numberWithInt:3])
+            {
+                NSLog(@"I am in the News table.\n");
+                //I am the News table
+                //News is a special case because if the user is subscribed to sports news, yet has not chosen any sports to subscribe to in the sports table, there will not be any news shown.
+                if(![self switchesAreAllOffFor:@"userDefaultsNewsKey"])
+                {
+                    NSLog(@"There is at least one News switch turned on. Let's see which one(s) are...\n");
+                    //Ok, so there is at least one News switch turned on, is it the sports news switch? If it is, I need to see if I am subscribed to any sports.
+                    if(![self switchIsOffAtIndex:[NSNumber numberWithInt:1] forKey:@"userDefaultsNewsKey"] && [self switchIsOffAtIndex:[NSNumber numberWithInt:2] forKey:@"userDefaultsNewsKey"] && [self switchIsOffAtIndex:[NSNumber numberWithInt:0] forKey:@"userDefaultsNewsKey"])
+                    {
+                        NSLog(@"The Sports News switch is ON, and the Wichitan/Campus News switches are OFF.\n");
+                        //The Sports News switch is on and the Wichitan/Campus News are off. Therefore, if there are ANY sport switches turned on, then I will attempt an update. Otherwise, I won't.
+                        if(![self switchesAreAllOffFor:@"userDefaultsSportsKey"])
+                        {
+                            NSLog(@"At least one sport switch is turned on, so I need to try and update by downloading new information!\n");
+                            [self refresh];
+                        }
+                        else
+                        {
+                            NSLog(@"None of my sport switches are turned on, which explains why there isn't any Sports News to show. I will not download.\n");
+                        }
+                    }
+                    else
+                    {
+                        NSLog(@"Oh, either my Sport News is OFF or my Wichitan/Campus News is ON. Since there's nothing to show in my table, I will need to update in either case.\n");
+                        //Oh, so then either the sports news is not turned on OR the Wichitan/Campus News is turned on. Because I have nothing to show in my table, I will attempt an update to see if there's anything available.
+                        [self refresh];
+                    }
+                }
+            }
+            else if(self.childNumber == [NSNumber numberWithInt:4])
+            {
+                NSLog(@"I'm in the Directory. Since there's no one to show, I should try and update!\n");
+                //This is the directory, which means there is no ability for the user to filter the listing and thus these must be refreshed
+                [self refresh];
+            }
+        }
+    }
+    else if(self.childNumber == [NSNumber numberWithInt:5] || self.childNumber == [NSNumber numberWithInt:6])
+    {
+        NSLog(@"I am in either Directory-Favorites or Directory-History, so I don't ever need to download anything.\n");
     }
     else
     {
         //I know there are items in the database already.
         NSLog(@"Looks like I have data already in my database, I'll just load what I've got.\n");
     }
+}
+
+-(BOOL) switchIsOffAtIndex:(NSNumber*)myIndex forKey:(NSString*)myKey
+{
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    NSArray * objects = [defaults objectForKey:myKey];
+    
+    return (![defaults boolForKey:[objects objectAtIndex:[myIndex integerValue]]]);
+}
+
+//Get a yes or not answer as to whether all of the switches are on
+-(BOOL) switchesAreAllOffFor:(NSString*)myKey
+{
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    NSArray * objects = [defaults objectForKey:myKey];
+    for(int i=0; i<[objects count]; i++)
+    {
+        if([defaults boolForKey:[objects objectAtIndex:i]])
+        {
+            return NO;
+        }
+    }
+    //If I get to this point, then all my switches were on
+    NSLog(@"All of my %@ switches are off, so that's why there isn't anything to show. I won't bother downloading anything, either.",myKey);
+    return YES;
 }
 
 -(NSString*)createPredicateForKeys:(NSArray*)myKeys usingSearchWords:(NSArray*)mySearchWords forAttribute:(NSString*)myAttribute
@@ -449,7 +533,7 @@
     [refreshControlString replaceObjectAtIndex:[self.childNumber integerValue] withObject:lastUpdated];
     [defaults setObject:refreshControlString forKey:@"attributableRefreshControlString"];
     [defaults synchronize];
-    
+
     [self.refreshControl endRefreshing];
 }
 
@@ -546,7 +630,26 @@
     {
         //Sports, News, and Events all have titles and contents to show in their cell
         cell.textLabel.text = [self.dataObject title];
-        cell.detailTextLabel.text = [self.dataObject content];
+        if(self.childNumber == [NSNumber numberWithInt:3] || self.childNumber == [NSNumber numberWithInt:2])
+        {
+            cell.detailTextLabel.text = [self.dataObject content];
+        }
+        else
+        {
+            //Sports should show the date in the detail label
+            NSString * sDate = @"(no date)";
+            NSString * sTime = @"(no time)";
+            if([[self.dataObject startDate] length] >  0)
+            {
+                sDate = [self.dataObject startDate];
+            }
+            if([[self.dataObject startTime] length] > 0)
+            {
+                sTime = [self.dataObject startTime];
+            }
+            NSString * timeAndDate = [sDate stringByAppendingString:[@" " stringByAppendingString:sTime]];
+            cell.detailTextLabel.text = timeAndDate;
+        }
         
         //THIS IS A NEWS CELL, SO LET'S FIGURE OUT WHICH IMAGE TO SHOW IN THE CELL ROW
         if(self.childNumber == [NSNumber numberWithInt:3])

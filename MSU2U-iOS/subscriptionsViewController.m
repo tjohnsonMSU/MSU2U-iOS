@@ -27,6 +27,43 @@
     }
 }
 
+-(BOOL)determineIfAllSwitchesAreOn
+{
+    //If most of the switches are ON, I'll turn them all ON. If most switches are OFF, I'll turn them OFF. If there is a tie, I'll turn them ON.
+    float onSwitchCount = 0;
+    for(int i=0; i<[self.subscriptionSwitch count]; i++)
+    {
+        if([[self.subscriptionSwitch objectAtIndex:i] isOn])
+        {
+            onSwitchCount++;
+        }
+    }
+    float percentage = onSwitchCount/[self.subscriptionSwitch count];
+    NSLog(@"There are %f switches ON out of %i switches = %f\n",onSwitchCount,[self.subscriptionSwitch count],percentage);
+    
+    //Do I have a majority of ON switches?
+    if(onSwitchCount == 0)
+    {
+        NSLog(@"All switches are OFF. Toggle switch will turn all switches ON.\n");
+        return YES;
+    }
+    else if(onSwitchCount == [self.subscriptionSwitch count])
+    {
+        NSLog(@"All switches are ON. Toggle switch will turn al switches OFF.\n");
+        return NO;
+    }
+    else if(percentage >= 0.5)
+    {
+        NSLog(@"A majority of the switches is ON. Toggle switch will turn all switches ON.\n");
+        return YES;
+    }
+    else
+    {
+        NSLog(@"A majority of the switches is OFF. Toggle switch will turn all switches OFF.\n");
+        return NO;
+    }
+}
+
 -(void)saveSwitchChange:(UISwitch*)mySwitch forKey:(NSString*)myKey
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

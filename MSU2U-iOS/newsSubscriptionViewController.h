@@ -11,7 +11,7 @@
 
 @interface newsSubscriptionViewController : subscriptionsViewController{
     UIBarButtonItem * rightButton;
-    BOOL allSwitchesAreOff;
+    BOOL turnOnAllSwitches;
 }
 
 @property (strong, nonatomic) IBOutlet UISwitch *wichitanNewsSwitch;
