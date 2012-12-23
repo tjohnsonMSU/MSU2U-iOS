@@ -44,29 +44,27 @@
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
     [[NSUserDefaults standardUserDefaults] registerDefaults:dict];
     
-    //These are my user keys and search terms for the subscription tables
+    //These are my user keys and search terms for the subscription tables. These are necessary for the Sports/News/Events tables to determine whether they should refresh given the current switch values in the subscription table.
     NSArray * userDefaultEventsKey = [[NSArray alloc] initWithObjects:@"academicIsOn",@"artIsOn",@"campusIsOn",@"museumIsOn",@"musicIsOn",@"personnelIsOn",@"theaterIsOn",nil];
     NSArray * typesOfEvents = [[NSArray alloc] initWithObjects:@"academic",@"art",@"campus",@"museum",@"music",@"personnel",@"theater",nil];
     
+     
     NSArray * userDefaultSportsKey = [[NSArray alloc] initWithObjects:@"crossCountryIsOn",@"basketballMenIsOn",@"basketballWomenIsOn",@"footballIsOn",@"golfMenIsOn",@"golfWomenIsOn",@"soccerMenIsOn",@"soccerWomenIsOn",@"softballIsOn",@"tennisMenIsOn",@"tennisWomenIsOn",@"volleyballIsOn",nil];
     NSArray * typesOfSports = [[NSArray alloc] initWithObjects:@"Cross Country",@"BasketballMen",@"BasketballWomen",@"Football",@"GolfMen",@"GolfWomen",@"SoccerMen",@"SoccerWomen",@"Softball",@"TennisMen",@"TennisWomen",@"Volleyball", nil];
     
     NSArray * userDefaultNewsKey = [[NSArray alloc] initWithObjects:@"wichitanNewsIsOn",@"sportsNewsIsOn",@"campusNewsIsOn",nil];
     NSArray * typesOfNews = [[NSArray alloc] initWithObjects:@"The Wichitan", @"Sports News", @"Event News", nil];
     
+     
     //Setup the user default keys and search keywords that are used throughout the app
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
     [defaults setObject:userDefaultEventsKey forKey:@"userDefaultsEventsKey"];
     [defaults setObject:userDefaultSportsKey forKey:@"userDefaultsSportsKey"];
     [defaults setObject:userDefaultNewsKey forKey:@"userDefaultsNewsKey"];
     [defaults setObject:typesOfEvents forKey:@"typesOfEvents"];
     [defaults setObject:typesOfSports forKey:@"typesOfSports"];
     [defaults setObject:typesOfNews forKey:@"typesOfNews"];
-    
-    //Let's create an array to store the attributed strings of the refresh controls for all of the applicable tables.
-    //  The table child numbers (1-6) will have their respective attribute strings be located in the same index value as their child number, so since there is no child number 0, index 0 will not be used thus I'll just put the string 'placeholder' here.
-    NSMutableArray * attributableRefreshControlString = [[NSArray alloc] initWithObjects:@"placeholder",@"Pull to Refresh",@"Pull to Refresh",@"Pull to Refresh",@"Pull to Refresh",@"Pull to Refresh",@"Pull to Refresh", nil];
-    [defaults setObject:attributableRefreshControlString forKey:@"attributableRefreshControlString"];
     
     //Save these defaults
     [defaults synchronize];

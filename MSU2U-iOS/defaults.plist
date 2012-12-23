@@ -44,5 +44,13 @@
 	<true/>
 	<key>campusNewsIsOn</key>
 	<true/>
+	<key>sportsRefreshTime</key>
+	<string>Pull to Refresh</string>
+	<key>newsRefreshTime</key>
+	<string>Pull to Refresh</string>
+	<key>directoryRefreshTime</key>
+	<string>Pull to Refresh</string>
+	<key>eventsRefreshTime</key>
+	<string>Pull to Refresh</string>
 </dict>
 </plist>

@@ -96,12 +96,6 @@
         }
     }
     
-    //Save these user setting changes!
-    dispatch_queue_t fetchQ = dispatch_queue_create("Data Fetcher", NULL);
-    
-    dispatch_async(fetchQ,^{
-        
-    });
     [defaults synchronize];
     NSLog(@"Data saved");
 }

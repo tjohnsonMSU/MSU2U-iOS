@@ -371,10 +371,19 @@
     
     //Retrieve the user defaults so that the last update for this table may be retrieved and shown to the user
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-    NSMutableArray * refreshControlString = [defaults objectForKey:@"attributableRefreshControlString"];
     
     //Set the refresh control attributed string to the retrieved last update
-    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[refreshControlString objectAtIndex:[self.childNumber integerValue]]];
+    NSLog(@"sportsRefreshTime: %@\n",[defaults objectForKey:@"sportsRefreshTime"]);
+    NSLog(@"eventsRefreshTime: %@\n",[defaults objectForKey:@"eventsRefreshTime"]);
+    NSLog(@"newsRefreshTime: %@\n",[defaults objectForKey:@"newsRefreshTime"]);
+    NSLog(@"directoryRefreshTime: %@\n",[defaults objectForKey:@"directoryRefreshTime"]);
+    switch([self.childNumber integerValue])
+    {
+        case 1:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"sportsRefreshTime"]];break;
+        case 2:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"eventsRefreshTime"]];break;
+        case 3:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"newsRefreshTime"]];break;
+        case 4:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"directoryRefreshTime"]];break;
+    }
     [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
     
@@ -517,7 +526,6 @@
 
 -(void) refresh
 {
-    //I don't want the Directory Favorites and Directory History to refresh their tables since they don't actually download anything from the web.
     [self fetchDataFromOnline:self.myDatabase];
     
     //Set the attributable string for the refresh control
@@ -527,14 +535,31 @@
     self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
     
     //Save this update string to the user defaults
-    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-    NSMutableArray * refreshControlString = [[NSMutableArray alloc] initWithArray:[defaults objectForKey:@"attributableRefreshControlString"]];
+    [self saveRefreshTime:lastUpdated];
     
-    [refreshControlString replaceObjectAtIndex:[self.childNumber integerValue] withObject:lastUpdated];
-    [defaults setObject:refreshControlString forKey:@"attributableRefreshControlString"];
-    [defaults synchronize];
-
     [self.refreshControl endRefreshing];
+}
+
+-(void)saveRefreshTime:(NSString*)refreshTime
+{
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    NSLog(@"The integer value is %i\n",[self.childNumber integerValue]);
+    NSLog(@"sportsRefreshTime: %@\n",[defaults objectForKey:@"sportsRefreshTime"]);
+    NSLog(@"eventsRefreshTime: %@\n",[defaults objectForKey:@"eventsRefreshTime"]);
+    NSLog(@"newsRefreshTime: %@\n",[defaults objectForKey:@"newsRefreshTime"]);
+    NSLog(@"directoryRefreshTime: %@\n",[defaults objectForKey:@"directoryRefreshTime"]);
+    switch([self.childNumber integerValue])
+    {
+        case 1:[defaults setObject:refreshTime forKey:@"sportsRefreshTime"];NSLog(@"I'm in case 1\n");break;
+        case 2:[defaults setObject:refreshTime forKey:@"eventsRefreshTime"];NSLog(@"I'm in case 2\n");break;
+        case 3:[defaults setObject:refreshTime forKey:@"newsRefreshTime"];NSLog(@"I'm in case 3\n");break;
+        case 4:[defaults setObject:refreshTime forKey:@"directoryRefreshTime"];NSLog(@"I'm in case 4\n");break;
+    }
+    [defaults synchronize];
+    NSLog(@"sportsRefreshTime: %@\n",[defaults objectForKey:@"sportsRefreshTime"]);
+    NSLog(@"eventsRefreshTime: %@\n",[defaults objectForKey:@"eventsRefreshTime"]);
+    NSLog(@"newsRefreshTime: %@\n",[defaults objectForKey:@"newsRefreshTime"]);
+    NSLog(@"directoryRefreshTime: %@\n",[defaults objectForKey:@"directoryRefreshTime"]);
 }
 
 //######################################################################################
