@@ -21,14 +21,20 @@
 
 @implementation detailEventViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+-(void) viewWillAppear:(BOOL)animated
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    [super viewWillAppear:animated];
+    
+    rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Share"
+                                                   style:UIBarButtonSystemItemDone target:self action:@selector(shareEvent)];
+    self.navigationItem.rightBarButtonItem = rightButton;
 }
+
+-(void) shareEvent
+{
+    //Write the code to add the event to the iPhone's calendar
+}
+
 
 - (void)viewDidLoad
 {

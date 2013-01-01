@@ -45,7 +45,7 @@
         <attribute name="sportType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startDate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startTime" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="steamLogo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="steamlogo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>

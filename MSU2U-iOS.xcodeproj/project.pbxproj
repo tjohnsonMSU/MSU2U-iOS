@@ -102,6 +102,8 @@
 		1D9DD2B0168025D000E92D74 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D9DD2AF168025D000E92D74 /* Default@2x.png */; };
 		1DA7B97F167A434C0046FF8F /* golf.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1DA7B97E167A434C0046FF8F /* golf.jpeg */; };
 		1DA7B981167A43540046FF8F /* crossCountry.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1DA7B980167A43540046FF8F /* crossCountry.jpeg */; };
+		1DA92C371693A52500AB71F1 /* Midwestern_St.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1DA92C361693A52500AB71F1 /* Midwestern_St.gif */; };
+		1DA92C3B1693AD7100AB71F1 /* softball1.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 1DA92C3A1693AD7100AB71F1 /* softball1.JPG */; };
 		1DB63E32165FDDCC00A21649 /* genericTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB63E31165FDDCC00A21649 /* genericTableViewController.m */; };
 		1DB63E4316604EBD00A21649 /* basketball.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1DB63E3D16604EBD00A21649 /* basketball.jpeg */; };
 		1DB63E4416604EBD00A21649 /* softball.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1DB63E3E16604EBD00A21649 /* softball.jpeg */; };
@@ -243,6 +245,8 @@
 		1D9DD2AF168025D000E92D74 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1DA7B97E167A434C0046FF8F /* golf.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = golf.jpeg; sourceTree = "<group>"; };
 		1DA7B980167A43540046FF8F /* crossCountry.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = crossCountry.jpeg; sourceTree = "<group>"; };
+		1DA92C361693A52500AB71F1 /* Midwestern_St.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Midwestern_St.gif; sourceTree = "<group>"; };
+		1DA92C3A1693AD7100AB71F1 /* softball1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = softball1.JPG; sourceTree = "<group>"; };
 		1DB63E30165FDDCC00A21649 /* genericTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = genericTableViewController.h; sourceTree = "<group>"; };
 		1DB63E31165FDDCC00A21649 /* genericTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = genericTableViewController.m; sourceTree = "<group>"; };
 		1DB63E3D16604EBD00A21649 /* basketball.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = basketball.jpeg; sourceTree = "<group>"; };
@@ -463,12 +467,14 @@
 		1D339A8A16792FE100D84A20 /* sport */ = {
 			isa = PBXGroup;
 			children = (
+				1DA92C391693AD2000AB71F1 /* banner */,
 				1DA7B980167A43540046FF8F /* crossCountry.jpeg */,
 				1DA7B97E167A434C0046FF8F /* golf.jpeg */,
 				1DDB39C71652CF6E00252053 /* footballBanner.png */,
 				1DB63E3D16604EBD00A21649 /* basketball.jpeg */,
 				1DB63E3E16604EBD00A21649 /* softball.jpeg */,
 				1DB63E3F16604EBD00A21649 /* tennis.jpeg */,
+				1DA92C361693A52500AB71F1 /* Midwestern_St.gif */,
 				1DB63E4016604EBD00A21649 /* football.jpeg */,
 				1DB63E4116604EBD00A21649 /* soccer.jpeg */,
 				1DB63E4216604EBD00A21649 /* volleyball.jpeg */,
@@ -715,6 +721,14 @@
 			name = History;
 			sourceTree = "<group>";
 		};
+		1DA92C391693AD2000AB71F1 /* banner */ = {
+			isa = PBXGroup;
+			children = (
+				1DA92C3A1693AD7100AB71F1 /* softball1.JPG */,
+			);
+			name = banner;
+			sourceTree = "<group>";
+		};
 		1DBA0E2D1648BA2C00A42CB6 /* News */ = {
 			isa = PBXGroup;
 			children = (
@@ -846,6 +860,8 @@
 				1D9DD2AC168025A500E92D74 /* Default.png in Resources */,
 				1D9DD2AE168025C800E92D74 /* Default-568h@2x.png in Resources */,
 				1D9DD2B0168025D000E92D74 /* Default@2x.png in Resources */,
+				1DA92C371693A52500AB71F1 /* Midwestern_St.gif in Resources */,
+				1DA92C3B1693AD7100AB71F1 /* softball1.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

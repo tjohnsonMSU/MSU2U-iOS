@@ -11,7 +11,9 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "campusMapViewController.h"
 
-@interface detailEventViewController : UITableViewController
+@interface detailEventViewController : UITableViewController {
+    UIBarButtonItem * rightButton;
+}
 
 -(void)sendEventInformation:(Event*)eventInfo;
 

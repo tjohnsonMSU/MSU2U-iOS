@@ -15,10 +15,12 @@
 @interface detailSportViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
     NSArray* tableLabel;
     NSArray* tableContent;
+    UIBarButtonItem * rightButton;
 }
 
 @property (weak, nonatomic) IBOutlet UIImageView *awayPhoto;
 @property (weak, nonatomic) IBOutlet UIImageView *homePhoto;
+@property (weak, nonatomic) IBOutlet UIImageView *bannerPhoto;
 @property (weak, nonatomic) IBOutlet UITableView *sportTable;
 -(void)sendSportInformation:(Sport*)sportInfo;
 

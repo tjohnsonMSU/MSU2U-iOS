@@ -23,6 +23,20 @@
 
 @implementation detailSportViewController
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Share"
+                                                   style:UIBarButtonSystemItemDone target:self action:@selector(shareEvent)];
+    self.navigationItem.rightBarButtonItem = rightButton;
+}
+
+-(void) shareEvent
+{
+    //Write the code to add the event to the iPhone's calendar
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -39,7 +53,6 @@
     self.title = self.receivedStartDate;
     
     //Setup all the images
-    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
                                              (unsigned long)NULL), ^(void) {
         [self downloadImage];
@@ -56,7 +69,7 @@
     self.receivedEvlocation = sportInfo.evlocation;
     self.receivedStartDate = sportInfo.startDate;
     self.receivedEndDate = sportInfo.endDate;
-    self.receivedSteamLogo = sportInfo.steamLogo;
+    self.receivedSteamLogo = sportInfo.steamlogo;
     self.receivedSopponentLogo = sportInfo.sopponentlogo;
     
     //For my table content, make sure the received information is not null or blank. If so, set it to N/A so my table view won't crash.
@@ -90,27 +103,43 @@
 
 
 //TABLE METHODS
+
 -(int)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    if(section == 0)
+    {
+        return 4;
+    }
+    else
+    {
+        return 1;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Identifier for retrieving reusable cells
     NSString * cellIdentifier;
-    if(indexPath.row != 3)
+    
+    if(indexPath.section == 0)
     {
-        cellIdentifier = @"sportCell";
+        if(indexPath.row != 3 && indexPath.row != 4)
+        {
+            cellIdentifier = @"sportCell";
+        }
+        else if(indexPath.row == 3)
+        {
+            cellIdentifier = @"athleticLocationCell";
+        }
     }
     else
     {
-        cellIdentifier = @"athleticLocationCell";
+        cellIdentifier = @"addEventToCalendarCell";
     }
     
     // Attempt to request the reusable cell.
@@ -123,8 +152,15 @@
     }
     
     // Set the text of the cell to the row index.
-    cell.textLabel.text = [tableContent objectAtIndex:indexPath.row];
-    cell.detailTextLabel.text = [tableLabel objectAtIndex:indexPath.row];
+    if(indexPath.section == 0)
+    {
+        cell.textLabel.text = [tableContent objectAtIndex:indexPath.row];
+        cell.detailTextLabel.text = [tableLabel objectAtIndex:indexPath.row];
+    }
+    else
+    {
+        cell.textLabel.text = @"Add Event to Calendar";
+    }
     
     return cell;
 }

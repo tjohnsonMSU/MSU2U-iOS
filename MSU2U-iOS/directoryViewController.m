@@ -42,5 +42,4 @@
     [self.searchDisplayControl setActive:NO];
 }
 
-
 @end

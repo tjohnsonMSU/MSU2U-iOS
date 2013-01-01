@@ -36,7 +36,7 @@
         sport.evlocation = [info objectForKey:@"evlocation"];
         sport.startDate = [info objectForKey:@"StartDate"];
         sport.endDate = [info objectForKey:@"EndDate"];
-        sport.steamLogo = [info objectForKey:@"steamLogo"];
+        sport.steamlogo = [info objectForKey:@"steamlogo"];
         sport.sopponentlogo = [info objectForKey:@"sopponentlogo"];
         sport.sportType = [info objectForKey:@"sportType"];
     }

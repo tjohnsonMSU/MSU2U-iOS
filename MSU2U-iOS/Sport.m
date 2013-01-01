@@ -18,7 +18,7 @@
 @dynamic evlocation;
 @dynamic startDate;
 @dynamic endDate;
-@dynamic steamLogo;
+@dynamic steamlogo;
 @dynamic startTime;
 @dynamic sopponentlogo;
 @dynamic sportType;

@@ -19,7 +19,7 @@
 @property (nonatomic, retain) NSString * evlocation;
 @property (nonatomic, retain) NSString * startDate;
 @property (nonatomic, retain) NSString * endDate;
-@property (nonatomic, retain) NSString * steamLogo;
+@property (nonatomic, retain) NSString * steamlogo;
 @property (nonatomic, retain) NSString * startTime;
 @property (nonatomic, retain) NSString * sopponentlogo;
 @property (nonatomic, retain) NSString * sportType;
