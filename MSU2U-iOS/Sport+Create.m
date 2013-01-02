@@ -41,6 +41,8 @@
         sport.steamlogo = [info objectForKey:@"steamlogo"];
         sport.sopponentlogo = [info objectForKey:@"sopponentlogo"];
         sport.sportType = [info objectForKey:@"sportType"];
+        sport.homeTeam = [info objectForKey:@"homeTeam"];
+        sport.awayTeam = [info objectForKey:@"awayTeam"];
     }
     else
     {

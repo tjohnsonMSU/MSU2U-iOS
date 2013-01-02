@@ -23,5 +23,7 @@
 @property (nonatomic, retain) NSString * startTime;
 @property (nonatomic, retain) NSString * sopponentlogo;
 @property (nonatomic, retain) NSString * sportType;
+@property (nonatomic, retain) NSString * homeTeam;
+@property (nonatomic, retain) NSString * awayTeam;
 
 @end

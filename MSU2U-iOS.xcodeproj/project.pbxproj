@@ -66,6 +66,8 @@
 		1D4EB6E51654C77B005F9D8D /* Employee+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4EB6E41654C77B005F9D8D /* Employee+Create.m */; };
 		1D4EB6E61654D387005F9D8D /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4EB6E21654B88E005F9D8D /* CoreDataTableViewController.m */; };
 		1D52AED31694B4C200D59D33 /* addEventToCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D52AED21694B4C200D59D33 /* addEventToCalendar.m */; };
+		1D52AED51694CD4000D59D33 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D52AED41694CD4000D59D33 /* Default@2x.png */; };
+		1D52AED71694CD4700D59D33 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D52AED61694CD4700D59D33 /* Default-568h@2x.png */; };
 		1D5B15B5164F3B140005C0A2 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5B15B4164F3B140005C0A2 /* MessageUI.framework */; };
 		1D5B15BC164F4A030005C0A2 /* 125-food@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D5B15BB164F4A030005C0A2 /* 125-food@2x.png */; };
 		1D5B15BE164F4C570005C0A2 /* 125-food.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D5B15BD164F4C570005C0A2 /* 125-food.png */; };
@@ -195,6 +197,8 @@
 		1D4EB6E41654C77B005F9D8D /* Employee+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Employee+Create.m"; sourceTree = "<group>"; };
 		1D52AED11694B4C200D59D33 /* addEventToCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addEventToCalendar.h; sourceTree = "<group>"; };
 		1D52AED21694B4C200D59D33 /* addEventToCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addEventToCalendar.m; sourceTree = "<group>"; };
+		1D52AED41694CD4000D59D33 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		1D52AED61694CD4700D59D33 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1D5B15B4164F3B140005C0A2 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		1D5B15BB164F4A030005C0A2 /* 125-food@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "125-food@2x.png"; path = "../../../../Pictures/GlyphishPro/icons/icons-gray/125-food@2x.png"; sourceTree = "<group>"; };
 		1D5B15BD164F4C570005C0A2 /* 125-food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "125-food.png"; path = "../../../../Pictures/GlyphishPro/icons/icons-gray/125-food.png"; sourceTree = "<group>"; };
@@ -298,6 +302,8 @@
 		1D1CEAC8162B4D230059BC1F = {
 			isa = PBXGroup;
 			children = (
+				1D52AED61694CD4700D59D33 /* Default-568h@2x.png */,
+				1D52AED41694CD4000D59D33 /* Default@2x.png */,
 				1D82B33E16781B7E006564F8 /* MustangsIconLarge.png */,
 				1D82B33C16781B6A006564F8 /* MustangsIconSmall.png */,
 				1D1CEADD162B4D230059BC1F /* MSU2U-iOS */,
@@ -892,6 +898,8 @@
 				1D9DD2B0168025D000E92D74 /* Default@2x.png in Resources */,
 				1DA92C371693A52500AB71F1 /* Midwestern_St.gif in Resources */,
 				1DA92C3B1693AD7100AB71F1 /* softball1.JPG in Resources */,
+				1D52AED51694CD4000D59D33 /* Default@2x.png in Resources */,
+				1D52AED71694CD4700D59D33 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

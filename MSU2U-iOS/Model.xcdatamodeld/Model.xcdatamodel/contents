@@ -36,10 +36,12 @@
         <attribute name="unique" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <entity name="Sport" representedClassName="Sport" syncable="YES">
+        <attribute name="awayTeam" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="endDate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="evgameid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="evlocation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="homeTeam" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sopponentlogo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sportType" optional="YES" attributeType="String" syncable="YES"/>
@@ -52,6 +54,6 @@
         <element name="Employee" positionX="-7454" positionY="-2439" width="128" height="210"/>
         <element name="Event" positionX="-7598" positionY="-2440" width="128" height="180"/>
         <element name="News" positionX="-7598" positionY="-2250" width="128" height="178"/>
-        <element name="Sport" positionX="-7749" positionY="-2439" width="128" height="208"/>
+        <element name="Sport" positionX="-7749" positionY="-2439" width="128" height="238"/>
     </elements>
 </model>

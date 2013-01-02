@@ -19,6 +19,8 @@
 @property (weak, nonatomic) NSString* receivedEndDate;
 @property (weak, nonatomic) NSString* receivedSteamLogo;
 @property (weak, nonatomic) NSString* receivedSopponentLogo;
+@property (weak, nonatomic) NSString* receivedHomeTeam;
+@property (weak, nonatomic) NSString* receivedAwayTeam;
 @end
 
 @implementation detailSportViewController
@@ -55,8 +57,8 @@
     self.displayedLocation.text = self.receivedEvlocation;
     self.displayedStartDate.text = self.receivedStartDate;
     self.displayedStartTime.text = self.receivedStartTime;
-    self.homeUniversityName.text = @"Home Team University";
-    self.awayUniversityName.text = @"Away Team University";
+    self.homeUniversityName.text = self.receivedHomeTeam;
+    self.awayUniversityName.text = self.receivedAwayTeam;
 }
 
 -(void)sendSportInformation:(Sport *)sportInfo
@@ -71,6 +73,8 @@
     self.receivedEndDate = sportInfo.endDate;
     self.receivedSteamLogo = sportInfo.steamlogo;
     self.receivedSopponentLogo = sportInfo.sopponentlogo;
+    self.receivedHomeTeam = sportInfo.homeTeam;
+    self.receivedAwayTeam = sportInfo.awayTeam;
     
     //For my table content, make sure the received information is not null or blank. If so, set it to N/A so my table view won't crash.
     if([self.receivedTitle length] == 0) self.receivedTitle = @"N/A";
