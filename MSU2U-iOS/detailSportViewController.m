@@ -41,15 +41,8 @@
 {
     [super viewDidLoad];
     eventStore = [[EKEventStore alloc] init];
-    //Remove the default background from my table view
-    self.sportTable.backgroundColor = [UIColor clearColor];
-    self.sportTable.opaque = NO;
-    self.sportTable.backgroundView = nil;
     
-    //Initialize my arrays which will be used to populate data into my table rows
-    tableLabel = [[NSArray alloc]initWithObjects:@"title",@"start date",@"start time",@"location",nil];
-    tableContent = [[NSArray alloc]initWithObjects:self.receivedTitle,self.receivedStartDate,self.receivedStartTime,self.receivedEvlocation,nil];
-    
+    //Set the Title of your View
     self.title = self.receivedStartDate;
     
     //Setup all the images
@@ -57,6 +50,13 @@
                                              (unsigned long)NULL), ^(void) {
         [self downloadImage];
     });
+    
+    //Set the table labels up based upon the received information
+    self.displayedLocation.text = self.receivedEvlocation;
+    self.displayedStartDate.text = self.receivedStartDate;
+    self.displayedStartTime.text = self.receivedStartTime;
+    self.homeUniversityName.text = @"Home Team University";
+    self.awayUniversityName.text = @"Away Team University";
 }
 
 -(void)sendSportInformation:(Sport *)sportInfo
@@ -77,6 +77,14 @@
     if([self.receivedStartDate length] == 0) self.receivedStartDate = @"N/A";
     if([self.receivedStartTime length] == 0) self.receivedStartTime = @"N/A";
     if([self.receivedEvlocation length] == 0) self.receivedEvlocation = @"N/A";
+    
+    //Send the addEventToCalendar class your information so that it will know how to add this event to the calendar if necessary
+    self.title = self.receivedDescription;
+    self.startTime = self.receivedStartTime;
+    self.startDate = self.receivedStartDate;
+}
+
+- (IBAction)sharePressed:(UIBarButtonItem *)sender {
 }
 
 -(void)downloadImage
@@ -87,88 +95,20 @@
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
-    [self.homePhoto setImageWithURL:[NSURL URLWithString:self.receivedSteamLogo]
+    [self.homeLogo setImageWithURL:[NSURL URLWithString:self.receivedSteamLogo]
                placeholderImage:[UIImage imageNamed:@"Default.png"]];
-    [self.awayPhoto setImageWithURL:[NSURL URLWithString:self.receivedSopponentLogo]
+    [self.awayLogo setImageWithURL:[NSURL URLWithString:self.receivedSopponentLogo]
                    placeholderImage:[UIImage imageNamed:@"Default.png"]];
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
 //TABLE METHODS
-
--(int)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 2;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    if(section == 0)
-    {
-        return 4;
-    }
-    else
-    {
-        return 1;
-    }
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Identifier for retrieving reusable cells
-    NSString * cellIdentifier;
-    
-    if(indexPath.section == 0)
-    {
-        if(indexPath.row != 3 && indexPath.row != 4)
-        {
-            cellIdentifier = @"sportCell";
-        }
-        else if(indexPath.row == 3)
-        {
-            cellIdentifier = @"athleticLocationCell";
-        }
-    }
-    else
-    {
-        cellIdentifier = @"addEventToCalendarCell";
-    }
-    
-    // Attempt to request the reusable cell.
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-    // No cell available - create one.
-    if(cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                      reuseIdentifier:cellIdentifier];
-    }
-    
-    // Set the text of the cell to the row index.
-    if(indexPath.section == 0)
-    {
-        cell.textLabel.text = [tableContent objectAtIndex:indexPath.row];
-        cell.detailTextLabel.text = [tableLabel objectAtIndex:indexPath.row];
-    }
-    else
-    {
-        cell.textLabel.text = @"Add Event to Calendar";
-    }
-    
-    return cell;
-}
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //Did the Add Event to Calendar cell get selected?
-    if(indexPath.section == 1 && indexPath.row == 0)
+    if(indexPath.section == 2 && indexPath.row == 0)
     {
         if([eventStore respondsToSelector:@selector(requestAccessToEntityType:completion:)])
         {
@@ -183,120 +123,6 @@
             [self addEventToMainCalendar];
         }
     }
-    else
-    {
-        NSLog(@"Did not select Add Event to Calendar, btw.\n");
-    }
-}
-
--(void) addEventToMainCalendar
-{
-    NSLog(@"Attempting to add this event to calendar: %@, %@\n",self.receivedTitle,self.receivedStartDate);
-    
-    EKEvent *event  = [EKEvent eventWithEventStore:eventStore];
-    event.title     = self.receivedTitle;
-    
-    //Get the Date prepared
-    NSCalendar *greg = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *comps = [[NSDateComponents alloc] init];
-    
-    //Rip apart my receivedStartDate (2013-1-1) to 2013 1 1
-    NSArray *dateBits = [self.receivedStartDate componentsSeparatedByString: @"-"];
-    NSArray *timeBits;
-    NSArray *amOrPm;
-    if([self.receivedStartTime isEqualToString:@"N/A"])
-    {
-        NSLog(@"There is no start time...\n");
-        timeBits = [[NSArray alloc]initWithObjects:@"12", nil];
-    }
-    else
-    {
-        NSLog(@"Start time is %@...\n",self.receivedStartTime);
-        timeBits = [self.receivedStartTime componentsSeparatedByString: @":"];
-        amOrPm = [[timeBits objectAtIndex:1] componentsSeparatedByString:@" "];
-        NSLog(@"amOrPm at index 1 is %@...\n",[amOrPm objectAtIndex:1]);
-    }
-    
-    NSLog(@"My bits: year is %d, month is %d, day is %d, time is %d, am or pm is %@\n",[[dateBits objectAtIndex:0]intValue],[[dateBits objectAtIndex:1]intValue],[[dateBits objectAtIndex:2]intValue],[[timeBits objectAtIndex:0]intValue],[amOrPm objectAtIndex:1]);
-    
-    comps.day = [[dateBits objectAtIndex:2] intValue];
-    comps.month = [[dateBits objectAtIndex:1] intValue];
-    comps.year = [[dateBits objectAtIndex:0] intValue];
-
-    //What should the hour be?
-    if([[timeBits objectAtIndex:0] intValue] >= 0 && [[timeBits objectAtIndex:0]intValue] <= 24)
-    {
-        if([[amOrPm objectAtIndex:1]isEqualToString:@"PM"])
-        {
-            //convert to military time
-            comps.hour = [[timeBits objectAtIndex:0]intValue]+12;
-        }
-        else
-        {
-            //leave as is because this is in the morning and is already in military time
-            comps.hour = [[timeBits objectAtIndex:0] intValue];
-        }
-        event.allDay = NO;
-    }
-    else
-    {
-        NSLog(@"The start time for this event is < 0 or > 24 which is screwy, so I'll just this is an all day event...\n");
-        event.allDay = YES;
-    }
-    
-    NSDate *eventDate = [greg dateFromComponents:comps];
-    
-    event.startDate = eventDate;
-    
-    //time interval is in seconds. I need to know an end time to calculate this, but for now I'll just say an hour.
-    event.endDate   = [[NSDate alloc] initWithTimeInterval:3600 sinceDate:event.startDate];
-    
-    
-    [event setCalendar:[eventStore defaultCalendarForNewEvents]];
-    NSError *err;
-    
-    //Figure out if this event date is in the past. If so, don't add it and let the user know you didn't add it and why!
-    UIAlertView *alert;
-    if([self isFutureDay:eventDate])
-    {
-        [eventStore saveEvent:event span:EKSpanThisEvent error:&err];
-        
-        if (!err)
-        {
-            alert = [[UIAlertView alloc]
-                                  initWithTitle:@"Event Created Successfully!"
-                                  message:self.receivedTitle
-                                  delegate:nil
-                                  cancelButtonTitle:@"OK"
-                                  otherButtonTitles:nil];
-        }
-    }
-    else
-    {
-        alert = [[UIAlertView alloc]
-                              initWithTitle:@"Event Creation Failed"
-                              message:@"Can't add a past event to calendar"
-                              delegate:nil
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil];
-    }
-    [alert show];
-}
-
-- (BOOL)isFutureDay:(NSDate*)eventDate
-{
-    NSDate *today = [NSDate date]; // it will give you current date
-    NSDate *newDate = eventDate; // your date
-    
-    NSComparisonResult result;
-    //has three possible values: NSOrderedSame,NSOrderedDescending, NSOrderedAscending
-    
-    result = [today compare:newDate]; // comparing two dates
-    
-    if(result==NSOrderedDescending)
-        return false;
-    else
-        return true;
 }
 
 @end

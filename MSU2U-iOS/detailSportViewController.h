@@ -10,19 +10,28 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "campusMapViewController.h"
 #import "Sport+Create.h"
-#import <EventKit/EventKit.h>
+#import "addEventToCalendar.h"
 
 
-@interface detailSportViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
-    NSArray * tableLabel;
-    NSArray * tableContent;
+@interface detailSportViewController : addEventToCalendar{
     UIBarButtonItem * rightButton;
-    EKEventStore * eventStore;
 }
 
-@property (weak, nonatomic) IBOutlet UIImageView *awayPhoto;
-@property (weak, nonatomic) IBOutlet UIImageView *homePhoto;
-@property (weak, nonatomic) IBOutlet UITableView *sportTable;
+//Properties
+@property (strong, nonatomic) IBOutlet UIImageView *bannerImage;
+@property (strong, nonatomic) IBOutlet UIImageView *homeLogo;
+@property (strong, nonatomic) IBOutlet UIImageView *awayLogo;
+@property (strong, nonatomic) IBOutlet UILabel *homeUniversityName;
+@property (strong, nonatomic) IBOutlet UILabel *awayUniversityName;
+@property (strong, nonatomic) IBOutlet UILabel *displayedStartTime;
+@property (strong, nonatomic) IBOutlet UILabel *displayedStartDate;
+@property (strong, nonatomic) IBOutlet UILabel *displayedLocation;
+
+
+
+
+//Public Methods
 -(void)sendSportInformation:(Sport*)sportInfo;
+- (IBAction)sharePressed:(UIBarButtonItem *)sender;
 
 @end

@@ -67,12 +67,41 @@
     self.receivedStartTime = eventInfo.startTime;
     self.receivedStartDate = eventInfo.startDate;
     self.receivedEvlocation = eventInfo.evlocation;
+    
+    //Give the addEventToCalendarClass the event information so that the event can be added to the calendar if required
+    self.title = self.receivedTitle;
+    self.startDate = self.receivedStartDate;
+    self.startTime = self.receivedStartTime;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //Did the Add Event to Calendar cell get selected?
+    if(indexPath.section == 2 && indexPath.row == 0)
+    {
+        if([eventStore respondsToSelector:@selector(requestAccessToEntityType:completion:)])
+        {
+            //This is iOS 6.0 and above, so I have to ask the user for permission to access their calendar before adding the event!
+            [eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+                [self performSelectorOnMainThread:@selector(addEventToMainCalendar) withObject:nil waitUntilDone:YES];
+            }];
+        }
+        else
+        {
+            //This is iOS 5.0 and below, so I don't need to ask the user for permission first to access their calendar(s).
+            [self addEventToMainCalendar];
+        }
+    }
+    else
+    {
+        NSLog(@"Did not select Add Event to Calendar, btw.\n");
+    }
 }
 
 @end

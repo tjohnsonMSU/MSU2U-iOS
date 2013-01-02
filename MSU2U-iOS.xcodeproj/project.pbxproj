@@ -65,6 +65,7 @@
 		1D339A9F1679341D00D84A20 /* personnel.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1D339A981679341D00D84A20 /* personnel.jpeg */; };
 		1D4EB6E51654C77B005F9D8D /* Employee+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4EB6E41654C77B005F9D8D /* Employee+Create.m */; };
 		1D4EB6E61654D387005F9D8D /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4EB6E21654B88E005F9D8D /* CoreDataTableViewController.m */; };
+		1D52AED31694B4C200D59D33 /* addEventToCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D52AED21694B4C200D59D33 /* addEventToCalendar.m */; };
 		1D5B15B5164F3B140005C0A2 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5B15B4164F3B140005C0A2 /* MessageUI.framework */; };
 		1D5B15BC164F4A030005C0A2 /* 125-food@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D5B15BB164F4A030005C0A2 /* 125-food@2x.png */; };
 		1D5B15BE164F4C570005C0A2 /* 125-food.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D5B15BD164F4C570005C0A2 /* 125-food.png */; };
@@ -192,6 +193,8 @@
 		1D4EB6E21654B88E005F9D8D /* CoreDataTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		1D4EB6E31654C77B005F9D8D /* Employee+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Employee+Create.h"; sourceTree = "<group>"; };
 		1D4EB6E41654C77B005F9D8D /* Employee+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Employee+Create.m"; sourceTree = "<group>"; };
+		1D52AED11694B4C200D59D33 /* addEventToCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addEventToCalendar.h; sourceTree = "<group>"; };
+		1D52AED21694B4C200D59D33 /* addEventToCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addEventToCalendar.m; sourceTree = "<group>"; };
 		1D5B15B4164F3B140005C0A2 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		1D5B15BB164F4A030005C0A2 /* 125-food@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "125-food@2x.png"; path = "../../../../Pictures/GlyphishPro/icons/icons-gray/125-food@2x.png"; sourceTree = "<group>"; };
 		1D5B15BD164F4C570005C0A2 /* 125-food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "125-food.png"; path = "../../../../Pictures/GlyphishPro/icons/icons-gray/125-food.png"; sourceTree = "<group>"; };
@@ -374,6 +377,7 @@
 		1D1CEAFB162B4D310059BC1F /* News & Events */ = {
 			isa = PBXGroup;
 			children = (
+				1D52AECF1694B4AE00D59D33 /* Add Event to Calendar */,
 				1DB63E30165FDDCC00A21649 /* genericTableViewController.h */,
 				1DB63E31165FDDCC00A21649 /* genericTableViewController.m */,
 				1D82B34816784928006564F8 /* Subscriptions */,
@@ -536,6 +540,15 @@
 				1D339A981679341D00D84A20 /* personnel.jpeg */,
 			);
 			name = event;
+			sourceTree = "<group>";
+		};
+		1D52AECF1694B4AE00D59D33 /* Add Event to Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				1D52AED11694B4C200D59D33 /* addEventToCalendar.h */,
+				1D52AED21694B4C200D59D33 /* addEventToCalendar.m */,
+			);
+			name = "Add Event to Calendar";
 			sourceTree = "<group>";
 		};
 		1D592EA0164D5FE300CBB292 /* Core Data */ = {
@@ -922,6 +935,7 @@
 				1D339A8516792A1500D84A20 /* Event.m in Sources */,
 				1D9310F9167A788E00285435 /* imageModification.m in Sources */,
 				1D28C0251693BFE400BFDD96 /* appFeedbackViewController.m in Sources */,
+				1D52AED31694B4C200D59D33 /* addEventToCalendar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

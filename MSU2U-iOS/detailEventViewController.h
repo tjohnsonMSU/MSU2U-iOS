@@ -10,8 +10,9 @@
 #import "Event+Create.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "campusMapViewController.h"
+#import "addEventToCalendar.h"
 
-@interface detailEventViewController : UITableViewController {
+@interface detailEventViewController : addEventToCalendar{
     UIBarButtonItem * rightButton;
 }
 
