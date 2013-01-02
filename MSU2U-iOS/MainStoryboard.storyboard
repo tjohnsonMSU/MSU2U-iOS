@@ -1191,7 +1191,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bir-tB-zDL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4373" y="2332"/>
+            <point key="canvasLocation" x="-4261" y="1594"/>
         </scene>
         <!--News Subscription View Controller - News-->
         <scene sceneID="U4H-Ax-lwD">
@@ -1302,7 +1302,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l4v-yi-6ic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4373" y="3710"/>
+            <point key="canvasLocation" x="-4261" y="2972"/>
         </scene>
         <!--Sport Subscription View Controller - Sports-->
         <scene sceneID="Vdt-gG-OCA">
@@ -1686,7 +1686,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K33-e8-FAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4373" y="3024"/>
+            <point key="canvasLocation" x="-4261" y="2286"/>
         </scene>
         <!--Tab Bar Controller - Subscribe-->
         <scene sceneID="Vu5-uc-XF9">

@@ -24,6 +24,7 @@
     if(!sports || ([sports count] > 1))
     {
         //handle error
+        NSLog(@"Error in sportWithInfo!!!\n");
     }
     else if(![sports count])
     {
@@ -35,6 +36,7 @@
         sport.evgameid = [info objectForKey:@"evgameid"];
         sport.evlocation = [info objectForKey:@"evlocation"];
         sport.startDate = [info objectForKey:@"StartDate"];
+        sport.startTime = [info objectForKey:@"StartTime"];
         sport.endDate = [info objectForKey:@"EndDate"];
         sport.steamlogo = [info objectForKey:@"steamlogo"];
         sport.sopponentlogo = [info objectForKey:@"sopponentlogo"];

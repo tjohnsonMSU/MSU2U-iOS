@@ -10,12 +10,14 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "campusMapViewController.h"
 #import "Sport+Create.h"
+#import <EventKit/EventKit.h>
 
 
 @interface detailSportViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
-    NSArray* tableLabel;
-    NSArray* tableContent;
+    NSArray * tableLabel;
+    NSArray * tableContent;
     UIBarButtonItem * rightButton;
+    EKEventStore * eventStore;
 }
 
 @property (weak, nonatomic) IBOutlet UIImageView *awayPhoto;
