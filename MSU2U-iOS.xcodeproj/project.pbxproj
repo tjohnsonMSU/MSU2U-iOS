@@ -54,6 +54,7 @@
 		1D1CEB50162B4F7A0059BC1F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1CEB4F162B4F7A0059BC1F /* MapKit.framework */; };
 		1D1CEB54162B512B0059BC1F /* mainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1CEB53162B512B0059BC1F /* mainMenuViewController.m */; };
 		1D2656F71639E5D500FBF6E1 /* directoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2656F61639E5D500FBF6E1 /* directoryViewController.m */; };
+		1D28C0251693BFE400BFDD96 /* appFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D28C0241693BFE400BFDD96 /* appFeedbackViewController.m */; };
 		1D339A8516792A1500D84A20 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D339A8416792A1500D84A20 /* Event.m */; };
 		1D339A991679341D00D84A20 /* academic.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1D339A921679341D00D84A20 /* academic.jpeg */; };
 		1D339A9A1679341D00D84A20 /* museum.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1D339A931679341D00D84A20 /* museum.jpeg */; };
@@ -175,6 +176,8 @@
 		1D1CEB53162B512B0059BC1F /* mainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainMenuViewController.m; sourceTree = "<group>"; };
 		1D2656F51639E5D500FBF6E1 /* directoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = directoryViewController.h; sourceTree = "<group>"; };
 		1D2656F61639E5D500FBF6E1 /* directoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = directoryViewController.m; sourceTree = "<group>"; };
+		1D28C0231693BFE400BFDD96 /* appFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appFeedbackViewController.h; sourceTree = "<group>"; };
+		1D28C0241693BFE400BFDD96 /* appFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = appFeedbackViewController.m; sourceTree = "<group>"; };
 		1D339A8316792A1500D84A20 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		1D339A8416792A1500D84A20 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		1D339A921679341D00D84A20 /* academic.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = academic.jpeg; sourceTree = "<group>"; };
@@ -327,6 +330,7 @@
 				1D82B34C167867B0006564F8 /* defaults.plist */,
 				1D1CEAE6162B4D230059BC1F /* AppDelegate.h */,
 				1D1CEAE7162B4D230059BC1F /* AppDelegate.m */,
+				1DA92C3C1693BE9D00AB71F1 /* App Feedback */,
 				1D709B30165B456E00475A8E /* External Libraries */,
 				1D592EA0164D5FE300CBB292 /* Core Data */,
 				1D1CEB51162B510A0059BC1F /* Main Menu */,
@@ -729,6 +733,15 @@
 			name = banner;
 			sourceTree = "<group>";
 		};
+		1DA92C3C1693BE9D00AB71F1 /* App Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				1D28C0231693BFE400BFDD96 /* appFeedbackViewController.h */,
+				1D28C0241693BFE400BFDD96 /* appFeedbackViewController.m */,
+			);
+			name = "App Feedback";
+			sourceTree = "<group>";
+		};
 		1DBA0E2D1648BA2C00A42CB6 /* News */ = {
 			isa = PBXGroup;
 			children = (
@@ -904,6 +917,7 @@
 				1D960C221679242E00A9EBDE /* eventSubscriptionViewController.m in Sources */,
 				1D339A8516792A1500D84A20 /* Event.m in Sources */,
 				1D9310F9167A788E00285435 /* imageModification.m in Sources */,
+				1D28C0251693BFE400BFDD96 /* appFeedbackViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

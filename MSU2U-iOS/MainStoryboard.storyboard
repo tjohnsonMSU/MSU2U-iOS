@@ -532,11 +532,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pl0-gm-etP">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="TJt-CK-S5B"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jha-B8-gRS">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="rB2-qi-rUh"/>
@@ -641,17 +636,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Jha-B8-gRS" firstAttribute="leading" secondItem="grM-Ij-R9i" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0nN-Qx-NQH"/>
-                            <constraint firstItem="Pl0-gm-etP" firstAttribute="trailing" secondItem="grM-Ij-R9i" secondAttribute="trailing" type="default" id="5R4-yC-cnI"/>
                             <constraint firstItem="cST-MZ-dgi" firstAttribute="top" secondItem="Jha-B8-gRS" secondAttribute="top" type="default" id="8JV-SO-OQJ"/>
-                            <constraint firstItem="Pl0-gm-etP" firstAttribute="leading" secondItem="grM-Ij-R9i" secondAttribute="leading" type="default" id="9cZ-ZH-ICO"/>
                             <constraint firstItem="cST-MZ-dgi" firstAttribute="leading" secondItem="GIz-uf-SvG" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="BHy-ut-op9"/>
                             <constraint firstAttribute="trailing" secondItem="cST-MZ-dgi" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="BTG-pg-E55"/>
                             <constraint firstItem="dHX-bi-t3J" firstAttribute="top" secondItem="cST-MZ-dgi" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="BrT-T4-KhW"/>
+                            <constraint firstItem="GIz-uf-SvG" firstAttribute="centerX" secondItem="dHX-bi-t3J" secondAttribute="centerX" type="default" id="HNU-nb-XK4"/>
                             <constraint firstItem="dHX-bi-t3J" firstAttribute="leading" secondItem="grM-Ij-R9i" secondAttribute="leading" type="default" id="STc-wK-5Im"/>
                             <constraint firstItem="dHX-bi-t3J" firstAttribute="trailing" secondItem="grM-Ij-R9i" secondAttribute="trailing" type="default" id="T28-Rr-fN8"/>
-                            <constraint firstItem="Pl0-gm-etP" firstAttribute="top" secondItem="grM-Ij-R9i" secondAttribute="top" type="default" id="Z7K-x8-fd1"/>
                             <constraint firstItem="GIz-uf-SvG" firstAttribute="top" secondItem="grM-Ij-R9i" secondAttribute="top" constant="72" id="dHl-lk-C54"/>
-                            <constraint firstItem="Pl0-gm-etP" firstAttribute="centerX" secondItem="GIz-uf-SvG" secondAttribute="centerX" type="default" id="ffl-ll-Ccz"/>
                             <constraint firstItem="GIz-uf-SvG" firstAttribute="leading" secondItem="Jha-B8-gRS" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="gKX-jj-LHR"/>
                             <constraint firstItem="Jha-B8-gRS" firstAttribute="top" secondItem="grM-Ij-R9i" secondAttribute="top" constant="33" id="gci-2f-gLM"/>
                             <constraint firstItem="dHX-bi-t3J" firstAttribute="top" secondItem="Jha-B8-gRS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="v2k-Yb-aSi"/>
@@ -660,7 +652,6 @@
                     <navigationItem key="navigationItem" id="PV7-gT-m35"/>
                     <connections>
                         <outlet property="awayPhoto" destination="cST-MZ-dgi" id="0J4-G3-lBD"/>
-                        <outlet property="bannerPhoto" destination="Pl0-gm-etP" id="VSU-nS-t2t"/>
                         <outlet property="homePhoto" destination="Jha-B8-gRS" id="QT9-pv-63D"/>
                         <outlet property="sportTable" destination="dHX-bi-t3J" id="2mH-u0-vpZ"/>
                     </connections>
@@ -2343,10 +2334,10 @@
             </objects>
             <point key="canvasLocation" x="-7133" y="1148"/>
         </scene>
-        <!--Table View Controller - App Feedback-->
+        <!--App Feedback View Controller - App Feedback-->
         <scene sceneID="mJW-nv-eYO">
             <objects>
-                <tableViewController id="Ipy-Y2-1ih" sceneMemberID="viewController">
+                <tableViewController id="Ipy-Y2-1ih" customClass="appFeedbackViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="2BS-n7-Grs">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2494,7 +2485,7 @@
                                             <constraint firstItem="iKa-gr-W5j" firstAttribute="centerX" secondItem="Li9-wo-Tp1" secondAttribute="centerX" type="default" id="ndv-OP-Pxa"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="111" id="1RN-dT-Bnt">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="111" id="1RN-dT-Bnt">
                                         <rect key="frame" x="0.0" y="372" width="320" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -2623,6 +2614,9 @@
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
+        <class className="appFeedbackViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/appFeedbackViewController.h"/>
+        </class>
         <class className="campusMapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/campusMapViewController.h"/>
             <relationships>
@@ -2665,7 +2659,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/detailSportViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="awayPhoto" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="bannerPhoto" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="homePhoto" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="sportTable" candidateClass="UITableView"/>
             </relationships>
