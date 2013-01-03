@@ -21,12 +21,9 @@
     UIImageView *imageView = [[UIImageView alloc]
                               initWithImage:[UIImage imageNamed:@"mainMenu.png"]];
     [self.tableView setBackgroundView:imageView];
-    
-    //Set the color of the navigation bars
 }
 
-
-- (IBAction)openMyMWSUapp {
+- (void)openMyMWSUapp {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.com/apps/mymwsu"]];
 }
 

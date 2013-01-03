@@ -11,4 +11,6 @@
 
 @interface mainMenuViewController : UITableViewController <UIScrollViewDelegate>
 
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+
 @end
