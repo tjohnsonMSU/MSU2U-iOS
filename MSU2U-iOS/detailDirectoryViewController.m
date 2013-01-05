@@ -323,12 +323,12 @@
     UIAlertView *alert;
     if(error != NULL)
     {
-        NSLog(@"Danger Will Robinson! Danger! Error in my Add to Contacts! %@\n",error);
+        NSLog(@"Error in my Add to Contacts! %@\n",error);
         alert = [[UIAlertView alloc]
                  initWithTitle:@"Oops!"
                  message:@"An error occurred in the code."
                  delegate:nil
-                 cancelButtonTitle:@"Well, shit.."
+                 cancelButtonTitle:@"OK"
                  otherButtonTitles:nil];
         //send the error to the app developers!
     }
