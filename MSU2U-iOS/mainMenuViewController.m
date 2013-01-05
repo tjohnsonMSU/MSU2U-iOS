@@ -38,4 +38,17 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    UIView *v = [[UIView alloc] init];
+    v.backgroundColor = [UIColor colorWithRed:(55.0/255.0) green:(7.0/255.0) blue:(16.0/255.0) alpha:0.7];
+    cell.selectedBackgroundView = v;
+    
+    [[cell detailTextLabel] setTextColor:[UIColor colorWithRed:(185.0/255.0) green:(142.0/255.0) blue:(47.0/255.0) alpha:1]];
+    [[cell textLabel] setTextColor:[UIColor colorWithRed:(0.0/255.0) green:(0.0/255.0) blue:(0.0/255.0) alpha:0.7]];
+    cell.backgroundColor = [UIColor colorWithRed:(255.0/255.0) green:(255.0/255.0) blue:(255.0/255.0) alpha:0.7];
+     [[cell textLabel] setBackgroundColor:[UIColor clearColor]];
+     [[cell detailTextLabel] setBackgroundColor:[UIColor clearColor]];
+}
+
 @end

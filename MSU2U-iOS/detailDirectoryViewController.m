@@ -397,6 +397,17 @@
     //[self.directoryDatabase updateChangeCount:UIDocumentChangeDone];
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [[cell detailTextLabel] setTextColor:[UIColor colorWithRed:(55.0/255.0) green:(7.0/255.0) blue:(16.0/255.0) alpha:1]];
+    /*
+    cell.backgroundColor = [UIColor grayColor];
+    [[cell textLabel] setBackgroundColor:[UIColor clearColor]];
+    [[cell detailTextLabel] setBackgroundColor:[UIColor clearColor]];
+    cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photoFrame.png"]];
+    cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photoFrame.png"]];
+     */
+}
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
