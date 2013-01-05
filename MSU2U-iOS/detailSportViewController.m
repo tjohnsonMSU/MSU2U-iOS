@@ -89,6 +89,7 @@
 }
 
 - (IBAction)sharePressed:(UIBarButtonItem *)sender {
+    //do something
 }
 
 -(void)downloadImage

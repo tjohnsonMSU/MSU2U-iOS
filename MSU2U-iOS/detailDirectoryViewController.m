@@ -149,13 +149,21 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 6;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Identifier for retrieving reusable cells.
-    static NSString *cellIdentifier = @"contactCell";
+    static NSString * cellIdentifier;
+    if(indexPath.row != 5)
+    {
+        cellIdentifier = @"contactCell";
+    }
+    else
+    {
+        cellIdentifier = @"actionCell";
+    }
     
     // Attempt to request the reusable cell.
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -167,8 +175,15 @@
     }
     
     // Set the text of the cell to the row index.
-    cell.textLabel.text = [tableContent objectAtIndex:indexPath.row];
-    cell.detailTextLabel.text = [tableLabel objectAtIndex:indexPath.row];
+    if(indexPath.row != 5)
+    {
+        cell.textLabel.text = [tableContent objectAtIndex:indexPath.row];
+        cell.detailTextLabel.text = [tableLabel objectAtIndex:indexPath.row];
+    }
+    else
+    {
+        cell.textLabel.text = @"Add to Contacts";
+    }
     
     return cell;
 }
@@ -203,6 +218,135 @@
             NSLog(@"Oops! Can't send e-mail!");
         }
     }
+    else if(indexPath.row == 5)
+    {
+        NSLog(@"I pressed the 'Add to Contacts' button!\n");
+        [self addToContacts];
+    }
+}
+
+- (void) addToContactsPressed
+{
+    // Request authorization to Address Book
+    ABAddressBookRef addressBookRef = ABAddressBookCreateWithOptions(NULL, NULL);
+    
+    if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusNotDetermined) {
+        ABAddressBookRequestAccessWithCompletion(addressBookRef, ^(bool granted, CFErrorRef error) {
+            // First time access has been granted, add the contact
+            [self addToContacts];
+        });
+    }
+    else if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
+        // The user has previously given access, add the contact
+        [self addToContacts];
+    }
+    else {
+        // The user has previously denied access
+        // Send an alert telling user to change privacy setting in settings app
+    }
+}
+
+- (void) addToContacts
+{
+    ABAddressBookRef addressBook = ABAddressBookCreate();
+    
+    NSMutableArray *array = nil;
+    __block BOOL accessGranted = NO;
+    
+    if (ABAddressBookRequestAccessWithCompletion != NULL) { // we're on iOS 6
+        dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+        
+        ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
+            accessGranted = granted;
+            dispatch_semaphore_signal(sema);
+        });
+        dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+    }
+    else { // we're on iOS 5 or older
+        accessGranted = YES;
+    }
+    if (accessGranted) {
+        [self createContact:addressBook];
+    }
+    else
+    {
+        NSLog(@"Address Book access is not granted. Please enable access to contacts in your Settings App to use this feature.");
+    }
+}
+
+- (void)createContact:(ABAddressBookRef)addressBook
+{
+    NSLog(@"Creating a contact...\n");
+    CFErrorRef error = NULL;
+    ABRecordRef newPerson = ABPersonCreate();
+    
+    NSLog(@"Preparing name,dept,position...\n");
+    ABRecordSetValue(newPerson,kABPersonFirstNameProperty,(__bridge CFTypeRef)(self.receivedName),&error);
+    ABRecordSetValue(newPerson,kABPersonLastNameProperty,@"!!!",&error);
+    ABRecordSetValue(newPerson,kABPersonOrganizationProperty,(__bridge CFTypeRef)(self.receivedDepartment),&error);
+    ABRecordSetValue(newPerson,kABPersonJobTitleProperty,(__bridge CFTypeRef)(self.receivedPosition),&error);
+    
+    //Phone Information
+    NSLog(@"Preparing phone...");
+    ABMutableMultiValueRef multiPhone = ABMultiValueCreateMutable(kABMultiStringPropertyType);
+    ABMultiValueAddValueAndLabel(multiPhone,(__bridge CFTypeRef)(self.receivedPhone), kABPersonPhoneMainLabel, NULL);
+    ABRecordSetValue(newPerson, kABPersonPhoneProperty, multiPhone, nil);
+    CFRelease(multiPhone);
+    
+    //Email
+    NSLog(@"Preparing email...\n");
+    ABMutableMultiValueRef multiEmail = ABMultiValueCreateMutable(kABMultiStringPropertyType);
+    ABMultiValueAddValueAndLabel(multiEmail,(__bridge CFTypeRef)(self.receivedEmail),kABWorkLabel,NULL);
+    ABRecordSetValue(newPerson, kABPersonEmailProperty, multiEmail, nil);
+    CFRelease(multiEmail);
+    
+    //Address
+    NSLog(@"Preparing address...\n");
+    ABMutableMultiValueRef multiAddress = ABMultiValueCreateMutable(kABMultiDictionaryPropertyType);
+    NSMutableDictionary * addressDictionary = [[NSMutableDictionary alloc] init];
+    [addressDictionary setObject:@"3410 Taft Blvd" forKey:(NSString *)kABPersonAddressStreetKey];
+    [addressDictionary setObject:@"Wichita Falls" forKey:(NSString*)kABPersonAddressCityKey];
+    [addressDictionary setObject:@"Texas" forKey:(NSString*)kABPersonAddressStateKey];
+    [addressDictionary setObject:@"76308" forKey:(NSString*)kABPersonAddressZIPKey];
+    [addressDictionary setObject:@"United States" forKey:(NSString*)kABPersonAddressCountryKey];
+    
+    ABMultiValueAddValueAndLabel(multiAddress, (__bridge CFTypeRef)(addressDictionary), kABWorkLabel, nil);
+    ABRecordSetValue(newPerson, kABPersonAddressProperty, multiAddress, &error);
+    CFRelease(multiAddress);
+    
+    //Actually add the person record to the phone's contact book
+    NSLog(@"Saving person to contacts...\n");
+    ABAddressBookAddRecord(addressBook, newPerson, &error);
+    ABAddressBookSave(addressBook, &error);
+    
+    NSLog(@"Were there errors?\n");
+    UIAlertView *alert;
+    if(error != NULL)
+    {
+        NSLog(@"Danger Will Robinson! Danger! Error in my Add to Contacts! %@\n",error);
+        alert = [[UIAlertView alloc]
+                 initWithTitle:@"Oops!"
+                 message:@"An error occurred in the code."
+                 delegate:nil
+                 cancelButtonTitle:@"Well, shit.."
+                 otherButtonTitles:nil];
+        //send the error to the app developers!
+    }
+    else
+    {
+        NSLog(@"OK, you successfully added a contact!\n");
+        NSString * dialogMessage = self.receivedName;
+        dialogMessage = [dialogMessage stringByAppendingString:@" has been added to your contacts."];
+        
+        alert = [[UIAlertView alloc]
+                 initWithTitle:@"Success!"
+                 message:dialogMessage
+                 delegate:nil
+                 cancelButtonTitle:@"OK"
+                 otherButtonTitles:nil];
+    }
+    [alert show];
+    NSLog(@"Exiting functions...");
 }
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller

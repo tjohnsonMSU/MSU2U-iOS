@@ -11,7 +11,8 @@
 #import <MessageUI/MFMailComposeViewController.h>
 #import "Employee+Create.h"
 #import "MYDocumentHandler.h"
-
+#import <AddressBookUI/AddressBookUI.h>
+#import <AddressBook/AddressBook.h>
 @interface detailDirectoryViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
     NSArray* tableLabel;
     NSArray* tableContent;
