@@ -2110,6 +2110,52 @@
             </objects>
             <point key="canvasLocation" x="-6325" y="-1466"/>
         </scene>
+        <!--Voices Table View Controller - Voices-->
+        <scene sceneID="K8z-KH-pP9">
+            <objects>
+                <tableViewController id="QHW-5D-zzP" customClass="voicesTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="91" sectionHeaderHeight="22" sectionFooterHeight="22" id="cbO-Y9-ZDU">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="voicesCell" textLabel="8sZ-Ml-DN8" detailTextLabel="enl-GP-NJj" imageView="1sO-jK-Lun" rowHeight="91" style="IBUITableViewCellStyleSubtitle" id="cFT-It-c2B">
+                                <rect key="frame" x="0.0" y="22" width="320" height="91"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="1977" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sZ-Ml-DN8">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="41 Pages (Bookmarked at Pg 3)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enl-GP-NJj">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="1977.png" id="1sO-jK-Lun">
+                                            <rect key="frame" x="0.0" y="0.0" width="70" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="QHW-5D-zzP" id="1uL-nP-bmd"/>
+                            <outlet property="delegate" destination="QHW-5D-zzP" id="Je5-og-117"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Voices" id="jgS-cP-qxR"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gl6-KH-jnh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-6365" y="-690"/>
+        </scene>
         <!--View Controller - Image-->
         <scene sceneID="zRh-gv-2iY">
             <objects>
@@ -2308,7 +2354,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="CY0-R1-Onz" kind="push" id="c90-o2-KAQ"/>
+                                            <segue destination="QHW-5D-zzP" kind="push" id="Z0b-Am-SMd"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="twitterCell" textLabel="h4v-me-VbF" detailTextLabel="2dH-Sn-0gs" imageView="TSo-tm-STS" style="IBUITableViewCellStyleSubtitle" id="ixG-mZ-EtI">
@@ -2337,9 +2383,6 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <connections>
-                                            <segue destination="CY0-R1-Onz" kind="push" id="QqT-e5-Oci"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -2504,21 +2547,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cyc-wb-WpA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-6965" y="-484"/>
-        </scene>
-        <!--View Controller - [PDF Viewer]-->
-        <scene sceneID="oIV-NS-U3b">
-            <objects>
-                <viewController id="CY0-R1-Onz" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Lae-SH-QnP">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="[PDF Viewer]" id="5gc-Fr-RsO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kdp-so-M6C" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-5829" y="-860"/>
         </scene>
         <!--App Feedback View Controller - App Feedback-->
         <scene sceneID="mJW-nv-eYO">
@@ -2780,6 +2808,7 @@
         <image name="166-newspaper.png" width="28" height="23"/>
         <image name="176-ipad.png" width="22" height="28"/>
         <image name="194-note-2.png" width="23" height="23"/>
+        <image name="1977.png" width="70" height="90"/>
         <image name="208-facebook.png" width="22" height="22"/>
         <image name="209-twitter.png" width="22" height="22"/>
         <image name="29-heart.png" width="24" height="21"/>
@@ -2971,6 +3000,9 @@
         <class className="subscriptionsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/subscriptionsViewController.h"/>
         </class>
+        <class className="voicesTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/voicesTableViewController.h"/>
+        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -2978,10 +3010,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="uKY-xo-jyr"/>
-        <segue reference="c90-o2-KAQ"/>
+        <segue reference="iZw-wf-6YV"/>
         <segue reference="sIm-rJ-Scf"/>
         <segue reference="WQW-ZX-Pe2"/>
-        <segue reference="iZw-wf-6YV"/>
+        <segue reference="uKY-xo-jyr"/>
     </inferredMetricsTieBreakers>
 </document>
