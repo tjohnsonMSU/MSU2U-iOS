@@ -286,32 +286,6 @@
             </objects>
             <point key="canvasLocation" x="-5039" y="-2420"/>
         </scene>
-        <!--View Controller - [Web View]-->
-        <scene sceneID="6Rm-fH-HlJ">
-            <objects>
-                <viewController restorationIdentifier="Web View" id="WRq-Zd-qb7" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1kX-ph-HPW">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MFu-AO-TNZ">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="MFu-AO-TNZ" firstAttribute="leading" secondItem="1kX-ph-HPW" secondAttribute="leading" type="default" id="ArP-lj-2m1"/>
-                            <constraint firstItem="MFu-AO-TNZ" firstAttribute="bottom" secondItem="1kX-ph-HPW" secondAttribute="bottom" type="default" id="SdG-dJ-IQD"/>
-                            <constraint firstItem="MFu-AO-TNZ" firstAttribute="top" secondItem="1kX-ph-HPW" secondAttribute="top" type="default" id="UUZ-Jy-I6U"/>
-                            <constraint firstItem="MFu-AO-TNZ" firstAttribute="trailing" secondItem="1kX-ph-HPW" secondAttribute="trailing" type="default" id="bTY-wU-vfa"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="[Web View]" id="9gz-PB-JVy"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BpL-gv-cl8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-5141" y="-256"/>
-        </scene>
         <!--Detail Event View Controller - Event Type Here-->
         <scene sceneID="PfM-uM-0Lg">
             <objects>
@@ -847,9 +821,6 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <connections>
-                                            <segue destination="WRq-Zd-qb7" kind="push" id="x1o-47-BGe"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -965,9 +936,6 @@
                                             <constraint firstItem="oD7-YI-Lvx" firstAttribute="top" secondItem="gr0-ri-w8B" secondAttribute="top" constant="7" id="hZT-nN-P3K"/>
                                             <constraint firstItem="oD7-YI-Lvx" firstAttribute="leading" secondItem="gr0-ri-w8B" secondAttribute="leading" constant="20" type="default" id="uUs-ZN-8Z0"/>
                                         </constraints>
-                                        <connections>
-                                            <segue destination="WRq-Zd-qb7" kind="push" id="6k7-fV-5u8"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="294" id="LFC-Mr-3ln">
                                         <rect key="frame" x="0.0" y="285" width="320" height="294"/>
@@ -2119,11 +2087,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="voicesCell" textLabel="8sZ-Ml-DN8" detailTextLabel="enl-GP-NJj" imageView="1sO-jK-Lun" rowHeight="91" style="IBUITableViewCellStyleSubtitle" id="cFT-It-c2B">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="voicesCell" textLabel="8sZ-Ml-DN8" detailTextLabel="enl-GP-NJj" imageView="1sO-jK-Lun" rowHeight="91" style="IBUITableViewCellStyleSubtitle" id="cFT-It-c2B">
                                 <rect key="frame" x="0.0" y="22" width="320" height="91"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="1977" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sZ-Ml-DN8">
@@ -2131,7 +2099,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="41 Pages (Bookmarked at Pg 3)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enl-GP-NJj">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Editor: Name Here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enl-GP-NJj">
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2151,10 +2119,28 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Voices" id="jgS-cP-qxR"/>
+                    <connections>
+                        <segue destination="vRl-3M-1sy" kind="push" identifier="showVoicesWebView" id="gxF-Ja-c3F"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gl6-KH-jnh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6365" y="-690"/>
+            <point key="canvasLocation" x="-5845" y="-1038"/>
+        </scene>
+        <!--Web View Controller - [Web View]-->
+        <scene sceneID="pCe-V0-hef">
+            <objects>
+                <viewController id="vRl-3M-1sy" customClass="webViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hhm-ZN-WQ1">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="[Web View]" id="klm-qn-yxi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iFb-gN-TyH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5233" y="-600"/>
         </scene>
         <!--View Controller - Image-->
         <scene sceneID="zRh-gv-2iY">
@@ -2474,9 +2460,6 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <connections>
-                                            <segue destination="WRq-Zd-qb7" kind="push" id="QEa-5S-tLA"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="galleryCell" textLabel="zAD-1D-5x5" detailTextLabel="oRr-RR-gqk" style="IBUITableViewCellStyleSubtitle" id="k8O-Hv-Oph">
                                         <rect key="frame" x="0.0" y="499" width="320" height="44"/>
@@ -2502,9 +2485,6 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <connections>
-                                            <segue destination="WRq-Zd-qb7" kind="push" id="sIm-rJ-Scf"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="galleryCell" textLabel="Pw0-pg-ztT" detailTextLabel="qKD-6g-VaL" style="IBUITableViewCellStyleSubtitle" id="rG0-mW-ePP">
                                         <rect key="frame" x="0.0" y="543" width="320" height="45"/>
@@ -2530,9 +2510,6 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <connections>
-                                            <segue destination="WRq-Zd-qb7" kind="push" id="g6A-6l-YfV"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -3003,6 +2980,9 @@
         <class className="voicesTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/voicesTableViewController.h"/>
         </class>
+        <class className="webViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/webViewController.h"/>
+        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -3011,8 +2991,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="iZw-wf-6YV"/>
-        <segue reference="sIm-rJ-Scf"/>
-        <segue reference="WQW-ZX-Pe2"/>
-        <segue reference="uKY-xo-jyr"/>
+        <segue reference="B6C-Gu-TUK"/>
+        <segue reference="NYs-zL-r1X"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -95,6 +95,7 @@
 		1D44B01416A5D8E000445FE7 /* 1994.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D44B00816A5D8E000445FE7 /* 1994.png */; };
 		1D44B01516A5D8E000445FE7 /* 2010.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D44B00916A5D8E000445FE7 /* 2010.png */; };
 		1D44B01616A5D8E000445FE7 /* 2011.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D44B00A16A5D8E000445FE7 /* 2011.png */; };
+		1D44B03816A5EAD700445FE7 /* webViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D44B03716A5EAD700445FE7 /* webViewController.m */; };
 		1D4EB6E51654C77B005F9D8D /* Employee+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4EB6E41654C77B005F9D8D /* Employee+Create.m */; };
 		1D4EB6E61654D387005F9D8D /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4EB6E21654B88E005F9D8D /* CoreDataTableViewController.m */; };
 		1D52AED31694B4C200D59D33 /* addEventToCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D52AED21694B4C200D59D33 /* addEventToCalendar.m */; };
@@ -110,7 +111,6 @@
 		1D82B33116780F35006564F8 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D82B33016780F35006564F8 /* News.m */; };
 		1D82B33D16781B6A006564F8 /* MustangsIconSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D82B33C16781B6A006564F8 /* MustangsIconSmall.png */; };
 		1D82B33F16781B7E006564F8 /* MustangsIconLarge.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D82B33E16781B7E006564F8 /* MustangsIconLarge.png */; };
-		1D82B346167848F0006564F8 /* userDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D82B345167848F0006564F8 /* userDefaults.m */; };
 		1D82B34B1678493F006564F8 /* subscriptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D82B34A1678493F006564F8 /* subscriptionsViewController.m */; };
 		1D82B34D167867B0006564F8 /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D82B34C167867B0006564F8 /* defaults.plist */; };
 		1D887F63164B703600854F9A /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D887F62164B703600854F9A /* SDWebImage.framework */; };
@@ -274,6 +274,8 @@
 		1D44B00816A5D8E000445FE7 /* 1994.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1994.png; sourceTree = "<group>"; };
 		1D44B00916A5D8E000445FE7 /* 2010.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2010.png; sourceTree = "<group>"; };
 		1D44B00A16A5D8E000445FE7 /* 2011.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2011.png; sourceTree = "<group>"; };
+		1D44B03616A5EAD700445FE7 /* webViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = webViewController.h; sourceTree = "<group>"; };
+		1D44B03716A5EAD700445FE7 /* webViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = webViewController.m; sourceTree = "<group>"; };
 		1D4EB6E11654B88E005F9D8D /* CoreDataTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		1D4EB6E21654B88E005F9D8D /* CoreDataTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		1D4EB6E31654C77B005F9D8D /* Employee+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Employee+Create.h"; sourceTree = "<group>"; };
@@ -299,8 +301,6 @@
 		1D82B33016780F35006564F8 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		1D82B33C16781B6A006564F8 /* MustangsIconSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MustangsIconSmall.png; sourceTree = "<group>"; };
 		1D82B33E16781B7E006564F8 /* MustangsIconLarge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MustangsIconLarge.png; sourceTree = "<group>"; };
-		1D82B344167848F0006564F8 /* userDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userDefaults.h; sourceTree = "<group>"; };
-		1D82B345167848F0006564F8 /* userDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userDefaults.m; sourceTree = "<group>"; };
 		1D82B3491678493F006564F8 /* subscriptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = subscriptionsViewController.h; sourceTree = "<group>"; };
 		1D82B34A1678493F006564F8 /* subscriptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = subscriptionsViewController.m; sourceTree = "<group>"; };
 		1D82B34C167867B0006564F8 /* defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaults.plist; sourceTree = "<group>"; };
@@ -386,7 +386,6 @@
 		1D1CEAC8162B4D230059BC1F = {
 			isa = PBXGroup;
 			children = (
-				1D44AFBB16A5D7F000445FE7 /* QuartzCore.framework */,
 				1D82B33E16781B7E006564F8 /* MustangsIconLarge.png */,
 				1D82B33C16781B6A006564F8 /* MustangsIconSmall.png */,
 				1D1CEADD162B4D230059BC1F /* MSU2U-iOS */,
@@ -406,6 +405,7 @@
 		1D1CEAD6162B4D230059BC1F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D44AFBB16A5D7F000445FE7 /* QuartzCore.framework */,
 				1DF014791697BBF400435975 /* AddressBook.framework */,
 				1D8C297916977997005DE855 /* AddressBookUI.framework */,
 				1DD8F3621693CF2F009F0FC3 /* EventKit.framework */,
@@ -480,6 +480,7 @@
 		1D1CEAFC162B4D380059BC1F /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				1D44B03516A5EAC200445FE7 /* Web View */,
 				1D44AFB716A5D6B800445FE7 /* Voices */,
 			);
 			name = Media;
@@ -714,6 +715,15 @@
 			path = "PDF Covers";
 			sourceTree = "<group>";
 		};
+		1D44B03516A5EAC200445FE7 /* Web View */ = {
+			isa = PBXGroup;
+			children = (
+				1D44B03616A5EAD700445FE7 /* webViewController.h */,
+				1D44B03716A5EAD700445FE7 /* webViewController.m */,
+			);
+			name = "Web View";
+			sourceTree = "<group>";
+		};
 		1D52AECF1694B4AE00D59D33 /* Add Event to Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -825,8 +835,6 @@
 		1D82B347167848F4006564F8 /* userDefaults */ = {
 			isa = PBXGroup;
 			children = (
-				1D82B344167848F0006564F8 /* userDefaults.h */,
-				1D82B345167848F0006564F8 /* userDefaults.m */,
 			);
 			name = userDefaults;
 			sourceTree = "<group>";
@@ -1108,7 +1116,6 @@
 				1DB63E32165FDDCC00A21649 /* genericTableViewController.m in Sources */,
 				1D82B32E16780F27006564F8 /* Employee.m in Sources */,
 				1D82B33116780F35006564F8 /* News.m in Sources */,
-				1D82B346167848F0006564F8 /* userDefaults.m in Sources */,
 				1D82B34B1678493F006564F8 /* subscriptionsViewController.m in Sources */,
 				1D960C181679206200A9EBDE /* newsSubscriptionViewController.m in Sources */,
 				1D960C1F1679241F00A9EBDE /* sportSubscriptionViewController.m in Sources */,
@@ -1138,6 +1145,7 @@
 				1D44AFF816A5D86700445FE7 /* ThumbsMainToolbar.m in Sources */,
 				1D44AFF916A5D86700445FE7 /* ThumbsViewController.m in Sources */,
 				1D44AFFA16A5D86700445FE7 /* UIXToolbarView.m in Sources */,
+				1D44B03816A5EAD700445FE7 /* webViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

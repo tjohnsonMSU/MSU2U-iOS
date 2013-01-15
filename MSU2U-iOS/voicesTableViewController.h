@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "webViewController.h"
 
 @interface voicesTableViewController : UITableViewController{
     NSArray * voicesYear;
+    int chosenRow;
 }
 
 @end
