@@ -67,8 +67,6 @@
 		1D4EB6E61654D387005F9D8D /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4EB6E21654B88E005F9D8D /* CoreDataTableViewController.m */; };
 		1D52AED31694B4C200D59D33 /* addEventToCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D52AED21694B4C200D59D33 /* addEventToCalendar.m */; };
 		1D5B15B5164F3B140005C0A2 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5B15B4164F3B140005C0A2 /* MessageUI.framework */; };
-		1D5B15BC164F4A030005C0A2 /* 125-food@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D5B15BB164F4A030005C0A2 /* 125-food@2x.png */; };
-		1D5B15BE164F4C570005C0A2 /* 125-food.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D5B15BD164F4C570005C0A2 /* 125-food.png */; };
 		1D62DD8416573FCC00A60534 /* MYDocumentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D62DD8316573FCC00A60534 /* MYDocumentHandler.m */; };
 		1D62DD93165758DD00A60534 /* Sport.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D62DD92165758DD00A60534 /* Sport.m */; };
 		1D62DD991657593200A60534 /* Sport+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D62DD981657593200A60534 /* Sport+Create.m */; };
@@ -198,8 +196,6 @@
 		1D52AED11694B4C200D59D33 /* addEventToCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addEventToCalendar.h; sourceTree = "<group>"; };
 		1D52AED21694B4C200D59D33 /* addEventToCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addEventToCalendar.m; sourceTree = "<group>"; };
 		1D5B15B4164F3B140005C0A2 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		1D5B15BB164F4A030005C0A2 /* 125-food@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "125-food@2x.png"; path = "../../../../Pictures/GlyphishPro/icons/icons-gray/125-food@2x.png"; sourceTree = "<group>"; };
-		1D5B15BD164F4C570005C0A2 /* 125-food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "125-food.png"; path = "../../../../Pictures/GlyphishPro/icons/icons-gray/125-food.png"; sourceTree = "<group>"; };
 		1D62DD8216573FCC00A60534 /* MYDocumentHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYDocumentHandler.h; sourceTree = "<group>"; };
 		1D62DD8316573FCC00A60534 /* MYDocumentHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYDocumentHandler.m; sourceTree = "<group>"; };
 		1D62DD91165758DD00A60534 /* Sport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sport.h; sourceTree = "<group>"; };
@@ -417,8 +413,6 @@
 			isa = PBXGroup;
 			children = (
 				1D9702A9165D42AB00505F7C /* 06-magnify.png */,
-				1D5B15BD164F4C570005C0A2 /* 125-food.png */,
-				1D5B15BB164F4A030005C0A2 /* 125-food@2x.png */,
 				1D924FC1163B158100D7E3B0 /* 98-palette@2x.png */,
 				1D7253F0163A31660057B33F /* 02-redo.png */,
 				1D7253EE163A30D10057B33F /* 01-refresh.png */,
@@ -870,8 +864,6 @@
 				1D7253EF163A30D10057B33F /* 01-refresh.png in Resources */,
 				1D7253F1163A31660057B33F /* 02-redo.png in Resources */,
 				1D924FC2163B158100D7E3B0 /* 98-palette@2x.png in Resources */,
-				1D5B15BC164F4A030005C0A2 /* 125-food@2x.png in Resources */,
-				1D5B15BE164F4C570005C0A2 /* 125-food.png in Resources */,
 				1DED1E7616521CC2003D6721 /* directoryBackdrop.png in Resources */,
 				1DDB39C81652CF6E00252053 /* footballBanner.png in Resources */,
 				1D95545A165C37DD00E9E7B9 /* star.png in Resources */,
