@@ -52,7 +52,7 @@
 {
     //chosenRow is a private variable I can use with a scope that can be used in any function I desire. It is needed in the prepareForSegue method since that method does not have access to indexPath.row
     chosenRow = indexPath.row;
-    [self performSegueWithIdentifier:@"showVoicesWebView" sender:tableView];
+    [self performSegueWithIdentifier:@"toWebView" sender:tableView];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

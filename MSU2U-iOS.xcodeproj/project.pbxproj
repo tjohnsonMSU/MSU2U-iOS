@@ -96,6 +96,7 @@
 		1D44B01516A5D8E000445FE7 /* 2010.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D44B00916A5D8E000445FE7 /* 2010.png */; };
 		1D44B01616A5D8E000445FE7 /* 2011.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D44B00A16A5D8E000445FE7 /* 2011.png */; };
 		1D44B03816A5EAD700445FE7 /* webViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D44B03716A5EAD700445FE7 /* webViewController.m */; };
+		1D44B04816A606F200445FE7 /* mediaMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D44B04716A606F200445FE7 /* mediaMenuViewController.m */; };
 		1D4EB6E51654C77B005F9D8D /* Employee+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4EB6E41654C77B005F9D8D /* Employee+Create.m */; };
 		1D4EB6E61654D387005F9D8D /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4EB6E21654B88E005F9D8D /* CoreDataTableViewController.m */; };
 		1D52AED31694B4C200D59D33 /* addEventToCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D52AED21694B4C200D59D33 /* addEventToCalendar.m */; };
@@ -276,6 +277,8 @@
 		1D44B00A16A5D8E000445FE7 /* 2011.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2011.png; sourceTree = "<group>"; };
 		1D44B03616A5EAD700445FE7 /* webViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = webViewController.h; sourceTree = "<group>"; };
 		1D44B03716A5EAD700445FE7 /* webViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = webViewController.m; sourceTree = "<group>"; };
+		1D44B04616A606F200445FE7 /* mediaMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mediaMenuViewController.h; sourceTree = "<group>"; };
+		1D44B04716A606F200445FE7 /* mediaMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mediaMenuViewController.m; sourceTree = "<group>"; };
 		1D4EB6E11654B88E005F9D8D /* CoreDataTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		1D4EB6E21654B88E005F9D8D /* CoreDataTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		1D4EB6E31654C77B005F9D8D /* Employee+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Employee+Create.h"; sourceTree = "<group>"; };
@@ -480,6 +483,8 @@
 		1D1CEAFC162B4D380059BC1F /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				1D44B04616A606F200445FE7 /* mediaMenuViewController.h */,
+				1D44B04716A606F200445FE7 /* mediaMenuViewController.m */,
 				1D44B03516A5EAC200445FE7 /* Web View */,
 				1D44AFB716A5D6B800445FE7 /* Voices */,
 			);
@@ -1146,6 +1151,7 @@
 				1D44AFF916A5D86700445FE7 /* ThumbsViewController.m in Sources */,
 				1D44AFFA16A5D86700445FE7 /* UIXToolbarView.m in Sources */,
 				1D44B03816A5EAD700445FE7 /* webViewController.m in Sources */,
+				1D44B04816A606F200445FE7 /* mediaMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

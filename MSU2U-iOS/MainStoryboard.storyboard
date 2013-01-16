@@ -2120,12 +2120,12 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Voices" id="jgS-cP-qxR"/>
                     <connections>
-                        <segue destination="vRl-3M-1sy" kind="push" identifier="showVoicesWebView" id="gxF-Ja-c3F"/>
+                        <segue destination="vRl-3M-1sy" kind="push" identifier="toWebView" id="gxF-Ja-c3F"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gl6-KH-jnh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5845" y="-1038"/>
+            <point key="canvasLocation" x="-6325" y="-706"/>
         </scene>
         <!--Web View Controller - [Web View]-->
         <scene sceneID="pCe-V0-hef">
@@ -2140,7 +2140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iFb-gN-TyH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5233" y="-600"/>
+            <point key="canvasLocation" x="-5759" y="-248"/>
         </scene>
         <!--View Controller - Image-->
         <scene sceneID="zRh-gv-2iY">
@@ -2244,10 +2244,10 @@
             </objects>
             <point key="canvasLocation" x="-4573" y="-3079"/>
         </scene>
-        <!--Table View Controller - Media-->
+        <!--Media Menu View Controller - Media-->
         <scene sceneID="XtB-Dz-gYj">
             <objects>
-                <tableViewController id="JC0-QR-8Xz" sceneMemberID="viewController">
+                <tableViewController id="JC0-QR-8Xz" customClass="mediaMenuViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="8Td-et-rkm">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2339,9 +2339,6 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <connections>
-                                            <segue destination="QHW-5D-zzP" kind="push" id="Z0b-Am-SMd"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="twitterCell" textLabel="h4v-me-VbF" detailTextLabel="2dH-Sn-0gs" imageView="TSo-tm-STS" style="IBUITableViewCellStyleSubtitle" id="ixG-mZ-EtI">
                                         <rect key="frame" x="0.0" y="227" width="320" height="45"/>
@@ -2520,10 +2517,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Media" id="jiV-wg-HGt"/>
+                    <connections>
+                        <segue destination="QHW-5D-zzP" kind="push" identifier="toVoicesMenu" id="DTp-2o-MXC"/>
+                        <segue destination="vRl-3M-1sy" kind="push" identifier="toWebView" id="Ti9-Ag-xF6"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cyc-wb-WpA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6965" y="-484"/>
+            <point key="canvasLocation" x="-7041" y="-248"/>
         </scene>
         <!--App Feedback View Controller - App Feedback-->
         <scene sceneID="mJW-nv-eYO">
@@ -2920,6 +2921,9 @@
         <class className="mainMenuViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/mainMenuViewController.h"/>
         </class>
+        <class className="mediaMenuViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/mediaMenuViewController.h"/>
+        </class>
         <class className="newsSubscriptionViewController" superclassName="subscriptionsViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/newsSubscriptionViewController.h"/>
             <relationships>
@@ -2990,8 +2994,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="iZw-wf-6YV"/>
         <segue reference="B6C-Gu-TUK"/>
         <segue reference="NYs-zL-r1X"/>
+        <segue reference="iZw-wf-6YV"/>
+        <segue reference="Ti9-Ag-xF6"/>
     </inferredMetricsTieBreakers>
 </document>
