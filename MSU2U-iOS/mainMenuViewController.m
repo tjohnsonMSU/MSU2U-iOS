@@ -19,7 +19,7 @@
 
     //Load the background image for the main menu
     UIImageView *imageView = [[UIImageView alloc]
-                              initWithImage:[UIImage imageNamed:@"mainMenu.png"]];
+                              initWithImage:[UIImage imageNamed:@"mainBG.png"]];
     [self.tableView setBackgroundView:imageView];
 }
 

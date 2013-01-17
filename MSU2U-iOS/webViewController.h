@@ -10,4 +10,5 @@
 
 @interface webViewController : UIViewController
 -(void)sendWebsiteToVisit:(NSString *)websiteURL;
+- (IBAction)shareButton:(id)sender;
 @end

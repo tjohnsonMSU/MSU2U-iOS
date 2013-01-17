@@ -2136,11 +2136,17 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="[Web View]" id="klm-qn-yxi"/>
+                    <navigationItem key="navigationItem" title="[Web View]" id="klm-qn-yxi">
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="0er-ov-T2L">
+                            <connections>
+                                <action selector="shareButton:" destination="vRl-3M-1sy" id="HH5-Si-wHg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iFb-gN-TyH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5759" y="-248"/>
+            <point key="canvasLocation" x="-5345" y="-420"/>
         </scene>
         <!--View Controller - Image-->
         <scene sceneID="zRh-gv-2iY">
@@ -2986,6 +2992,9 @@
         </class>
         <class className="webViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/webViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="shareButton:"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
