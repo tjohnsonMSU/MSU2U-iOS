@@ -21,11 +21,17 @@
     UIImageView *imageView = [[UIImageView alloc]
                               initWithImage:[UIImage imageNamed:@"mainBG.png"]];
     [self.tableView setBackgroundView:imageView];
+    
+    //Load a navigation bar image for the main menu
+    //[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navBarDemo.png"] forBarMetrics:UIBarMetricsDefault];
 }
 
+//KEEP THIS COMMENTED UNTIL YOU ADD A MENU OPTION THAT ALLOWS THE USER TO GO TO THE MYMWSU APP DIRECTLY FROM OUR APP
+/*
 - (void)openMyMWSUapp {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.com/apps/mymwsu"]];
 }
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -37,6 +43,7 @@
         [self openMyMWSUapp];
     }
 }
+*/
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 

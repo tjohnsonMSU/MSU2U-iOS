@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>campusLatitude</key>
+	<real>33.874041</real>
+	<key>campusLongitude</key>
+	<real>-98.521035</real>
 	<key>volleyballIsOn</key>
 	<true/>
 	<key>academicIsOn</key>

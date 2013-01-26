@@ -60,4 +60,19 @@
     self.receivedLink = news.link;
 }
 
+- (IBAction)sharePressed:(UIBarButtonItem *)sender {
+    // Create the item to share (in this example, a url)
+    NSURL *url = [NSURL URLWithString:self.receivedLink];
+    SHKItem *item = [SHKItem URL:url title:self.receivedTitle contentType:SHKURLContentTypeWebpage];
+    
+    // Get the ShareKit action sheet
+    SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
+    
+    // ShareKit detects top view controller (the one intended to present ShareKit UI) automatically,
+    // but sometimes it may not find one. To be safe, set it explicitly
+    [SHK setRootViewController:self];
+    
+    // Display the action sheet
+    [actionSheet showInView:self.view];
+}
 @end

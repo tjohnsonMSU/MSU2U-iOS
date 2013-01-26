@@ -11,6 +11,8 @@
 #import "campusMapViewController.h"
 #import "Sport+Create.h"
 #import "addEventToCalendar.h"
+//ShareKit
+#import "SHK.h"
 
 
 @interface detailSportViewController : addEventToCalendar{
@@ -26,12 +28,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *displayedStartTime;
 @property (strong, nonatomic) IBOutlet UILabel *displayedStartDate;
 @property (strong, nonatomic) IBOutlet UILabel *displayedLocation;
-
-
-
+- (IBAction)sharePressed:(UIBarButtonItem *)sender;
 
 //Public Methods
 -(void)sendSportInformation:(Sport*)sportInfo;
-- (IBAction)sharePressed:(UIBarButtonItem *)sender;
 
 @end

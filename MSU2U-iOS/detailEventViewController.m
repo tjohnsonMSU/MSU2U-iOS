@@ -24,10 +24,6 @@
 -(void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Share"
-                                                   style:UIBarButtonSystemItemDone target:self action:@selector(shareEvent)];
-    self.navigationItem.rightBarButtonItem = rightButton;
 }
 
 -(void) shareEvent
@@ -104,4 +100,19 @@
     }
 }
 
+- (IBAction)sharePressed:(UIBarButtonItem *)sender {
+    // Create the item to share (in this example, a url)
+    NSURL *url = [NSURL URLWithString:self.receivedLink];
+    SHKItem *item = [SHKItem URL:url title:self.receivedTitle contentType:SHKURLContentTypeWebpage];
+    
+    // Get the ShareKit action sheet
+    SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
+    
+    // ShareKit detects top view controller (the one intended to present ShareKit UI) automatically,
+    // but sometimes it may not find one. To be safe, set it explicitly
+    [SHK setRootViewController:self];
+    
+    // Display the action sheet
+    [actionSheet showInView:self.view];
+}
 @end

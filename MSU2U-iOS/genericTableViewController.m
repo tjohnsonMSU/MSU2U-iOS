@@ -366,27 +366,32 @@
     [super viewWillAppear:animated];
     
     //Refresh Control
-    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-    refreshControl.tintColor = [UIColor colorWithRed:(55.0/255.0) green:(7.0/255.0) blue:(16.0/255.0) alpha:1];
-    
-    //Retrieve the user defaults so that the last update for this table may be retrieved and shown to the user
-    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-    
-    //Set the refresh control attributed string to the retrieved last update
-    NSLog(@"sportsRefreshTime: %@\n",[defaults objectForKey:@"sportsRefreshTime"]);
-    NSLog(@"eventsRefreshTime: %@\n",[defaults objectForKey:@"eventsRefreshTime"]);
-    NSLog(@"newsRefreshTime: %@\n",[defaults objectForKey:@"newsRefreshTime"]);
-    NSLog(@"directoryRefreshTime: %@\n",[defaults objectForKey:@"directoryRefreshTime"]);
-    switch([self.childNumber integerValue])
+    //Make sure the Directory Favorites and Directory History do NOT have the refresh control.
+    if(self.childNumber != [NSNumber numberWithInt:5] && self.childNumber != [NSNumber numberWithInt:6])
     {
-        case 1:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"sportsRefreshTime"]];break;
-        case 2:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"eventsRefreshTime"]];break;
-        case 3:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"newsRefreshTime"]];break;
-        case 4:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"directoryRefreshTime"]];break;
+        UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+        refreshControl.tintColor = [UIColor colorWithRed:(55.0/255.0) green:(7.0/255.0) blue:(16.0/255.0) alpha:1];
+        
+        //Retrieve the user defaults so that the last update for this table may be retrieved and shown to the user
+        NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+        
+        //Set the refresh control attributed string to the retrieved last update
+        NSLog(@"sportsRefreshTime: %@\n",[defaults objectForKey:@"sportsRefreshTime"]);
+        NSLog(@"eventsRefreshTime: %@\n",[defaults objectForKey:@"eventsRefreshTime"]);
+        NSLog(@"newsRefreshTime: %@\n",[defaults objectForKey:@"newsRefreshTime"]);
+        NSLog(@"directoryRefreshTime: %@\n",[defaults objectForKey:@"directoryRefreshTime"]);
+        switch([self.childNumber integerValue])
+        {
+            case 1:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"sportsRefreshTime"]];break;
+            case 2:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"eventsRefreshTime"]];break;
+            case 3:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"newsRefreshTime"]];break;
+            case 4:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"directoryRefreshTime"]];break;
+        }
+        
+        [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+        
+        self.refreshControl = refreshControl;
     }
-    [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
-    self.refreshControl = refreshControl;
-    
     //Identify in the output window what method I am in for debuggin purposes
     NSLog(@"genericViewController: View will appear\n");
     

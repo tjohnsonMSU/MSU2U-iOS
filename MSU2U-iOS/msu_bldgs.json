@@ -1,0 +1,18 @@
+ [
+  {"name":"Walthamstow Central", "latitude":51.58293, "longitude":-0.01996},
+  {"name":"Blackhorse Road", "latitude":51.58698, "longitude":-0.04104},
+  {"name":"Tottenham Hale", "latitude":51.58888, "longitude":-0.05981},
+  {"name":"Seven Sisters", "latitude":51.58318, "longitude":-0.07495},
+  {"name":"Finsbury Park", "latitude":51.56498, "longitude":-0.10543},
+  {"name":"Highbury & Islington", "latitude":51.54502, "longitude":-0.10752},
+  {"name":"King's Cross St. Pancras", "latitude":51.53057, "longitude":-0.12399},
+  {"name":"Euston", "latitude":51.52774, "longitude":-0.13303},
+  {"name":"Warren Street", "latitude":51.52450, "longitude":-0.13810},
+  {"name":"Oxford Circus", "latitude":51.51517, "longitude":-0.14119},
+  {"name":"Green Park", "latitude":51.50674, "longitude":-0.14276},
+  {"name":"Victoria", "latitude":51.49663, "longitude":-0.14401},
+  {"name":"Pimlico", "latitude":51.48908, "longitude":-0.13304},
+  {"name":"Vauxhall", "latitude":51.48603, "longitude":-0.12369},
+  {"name":"Stockwell", "latitude":51.47224, "longitude":-0.12270},
+  {"name":"Brixton", "latitude":51.46239, "longitude":-0.11542}
+  ]

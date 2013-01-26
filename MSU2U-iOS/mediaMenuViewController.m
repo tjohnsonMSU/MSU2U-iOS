@@ -119,7 +119,7 @@
         {
             NSLog(@"!!! Unexpected section number of %i in Media Menu View Controller...\n",chosenSection);
         }
-        [segue.destinationViewController sendWebsiteToVisit:stringURL];
+        [segue.destinationViewController sendWebsiteToVisit:stringURL andTitle:@"MSU Link"];
     }
 }
 

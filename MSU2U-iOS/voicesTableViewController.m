@@ -64,7 +64,7 @@
     stringURL = [stringURL stringByAppendingString:@".pdf"];
     NSLog(@"My constructed URL for the Voices PDF is %@\n",stringURL);
     
-    [segue.destinationViewController sendWebsiteToVisit:stringURL];
+    [segue.destinationViewController sendWebsiteToVisit:stringURL andTitle:[@"Voices " stringByAppendingString:[voicesYear objectAtIndex:chosenRow]]];
 }
 
 @end

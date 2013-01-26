@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "News+Create.h"
+//ShareKit
+#import "SHK.h"
 
 @interface detailNewsViewController : UITableViewController
 
@@ -19,4 +21,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (weak, nonatomic) IBOutlet UITextView *description;
 @property (weak, nonatomic) IBOutlet UIImageView *photo;
+- (IBAction)sharePressed:(UIBarButtonItem *)sender;
 @end

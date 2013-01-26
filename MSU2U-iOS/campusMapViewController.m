@@ -2,42 +2,41 @@
 //  campusMapViewController.m
 //  MSU2U-iOS
 //
-//  Created by Matthew Farmer on 10/14/12.
-//  Copyright (c) 2012 Matthew Farmer. All rights reserved.
+//  Created by Matthew Farmer on 1/22/13.
+//  Copyright (c) 2013 Matthew Farmer. All rights reserved.
 //
 
 #import "campusMapViewController.h"
-#import <MapKit/MapKit.h>
 
-@interface campusMapViewController () <MKMapViewDelegate>{
-}
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
-
+@interface campusMapViewController ()
 @end
 
 @implementation campusMapViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+- (void)viewDidLoad {
+    
+    [super viewDidLoad];
+    
+    // initialize default map view properties
+    defaultCenter = CLLocationCoordinate2DMake(33.732894,-118.091718);
+    defaultSpan = MKCoordinateSpanMake(0.028270, 0.0465364);
+    
+    // Setup MapView's inital region
+    defaultRegion = MKCoordinateRegionMake(defaultCenter, defaultSpan);
+    
+    // create the map view
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    myMapView = [[MKMapView alloc] initWithFrame:screenRect];
+    
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    if([self.requestedLocation length] == 0)
-    {
-        self.title = @"Campus Map";
-    }
-    else
-    {
-        self.title = self.requestedLocation;
-    }
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    // update map's initial view
+    [myMapView setRegion:defaultRegion animated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning

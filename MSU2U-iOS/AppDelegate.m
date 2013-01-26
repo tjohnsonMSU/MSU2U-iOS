@@ -69,6 +69,10 @@
     //Save these defaults
     [defaults synchronize];
 
+    
+    //For ShareKit
+    DefaultSHKConfigurator *configurator = [[DefaultSHKConfigurator alloc] init];
+    [SHKConfiguration sharedInstanceWithConfigurator:configurator];
     return YES;
 }
 							

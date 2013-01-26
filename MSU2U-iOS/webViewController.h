@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+//ShareKit
+#import "SHK.h"
 
 @interface webViewController : UIViewController
--(void)sendWebsiteToVisit:(NSString *)websiteURL;
+-(void)sendWebsiteToVisit:(NSString *)websiteURL andTitle:(NSString *)websiteTitle;
 - (IBAction)shareButton:(id)sender;
 @end

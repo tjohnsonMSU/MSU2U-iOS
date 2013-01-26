@@ -11,6 +11,8 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "campusMapViewController.h"
 #import "addEventToCalendar.h"
+//ShareKit
+#import "SHK.h"
 
 @interface detailEventViewController : addEventToCalendar{
     UIBarButtonItem * rightButton;
@@ -22,5 +24,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+- (IBAction)sharePressed:(UIBarButtonItem *)sender;
 
 @end
