@@ -42,20 +42,37 @@
     chosenSection = indexPath.section;
     
     //Assume I'm going to the toWebView unless I get caught in the if/else/switch below
-    NSString * mySegueIdentifier = @"toWebView";
 
     //Print Media
-    if(chosenSection == 1)
+    if(chosenSection == 0)
     {
         switch(chosenRow)
         {
             //Voices
-            case 0:mySegueIdentifier = @"toVoicesMenu"; break;
+            case 0:[self performSegueWithIdentifier:@"toVoicesMenu" sender:tableView];break;
             default:break;
         }
     }
-    
-    [self performSegueWithIdentifier:mySegueIdentifier sender:tableView];
+    else if(chosenSection == 1)
+    {
+        switch(chosenRow)
+        {
+            case 0:[self performSegueWithIdentifier:@"toWebView" sender:tableView];break;
+            case 1:break;
+        }
+    }
+    else if(chosenSection == 2)
+    {
+        switch(chosenRow)
+        {
+            case 0:[self performSegueWithIdentifier:@"toWebView" sender:tableView];break;
+            case 1:break;
+        }
+    }
+    else
+    {
+        NSLog(@"ERROR: Media View Controller: There is no code that specifies what to do for this row!!!\n");
+    }
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

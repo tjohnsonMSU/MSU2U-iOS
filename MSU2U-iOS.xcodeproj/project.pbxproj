@@ -165,14 +165,15 @@
 		1DD49E3416ADD6B100EB7827 /* navBarDemo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DD49E3316ADD6B100EB7827 /* navBarDemo.png */; };
 		1DD8F3631693CF2F009F0FC3 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD8F3621693CF2F009F0FC3 /* EventKit.framework */; };
 		1DDB39C81652CF6E00252053 /* footballBanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDB39C71652CF6E00252053 /* footballBanner.png */; };
-		1DDC26DC16AF19D2000DBA92 /* msu_bldgs.json in Resources */ = {isa = PBXBuildFile; fileRef = 1DDC26DB16AF19D2000DBA92 /* msu_bldgs.json */; };
 		1DDE56F5163B023B008830A8 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1DDE56F3163B023B008830A8 /* Model.xcdatamodeld */; };
 		1DDE5732163B04E6008830A8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DDE5731163B04E6008830A8 /* CoreData.framework */; };
-		1DEAA66A16AF0E4B009620DB /* campusMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEAA66916AF0E4B009620DB /* campusMapViewController.m */; };
+		1DE4C30716B63A8300977CF9 /* buildings.json in Resources */ = {isa = PBXBuildFile; fileRef = 1DE4C30616B63A8300977CF9 /* buildings.json */; };
 		1DED1E7616521CC2003D6721 /* directoryBackdrop.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DED1E7516521CC2003D6721 /* directoryBackdrop.png */; };
 		1DF0147A1697BBF400435975 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF014791697BBF400435975 /* AddressBook.framework */; };
 		1DF0147F1697C77200435975 /* dirBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DF0147E1697C77200435975 /* dirBg.png */; };
 		1DF014811697C7D400435975 /* photoFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DF014801697C7D400435975 /* photoFrame.png */; };
+		1DF849AE16B64FB6009F7785 /* MSUBuilding.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF849AD16B64FB6009F7785 /* MSUBuilding.m */; };
+		1DFCFCD416B63CEC00515EFD /* campusMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFCFCD316B63CEC00515EFD /* campusMapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -646,15 +647,17 @@
 		1DD49E3316ADD6B100EB7827 /* navBarDemo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navBarDemo.png; sourceTree = "<group>"; };
 		1DD8F3621693CF2F009F0FC3 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		1DDB39C71652CF6E00252053 /* footballBanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = footballBanner.png; sourceTree = "<group>"; };
-		1DDC26DB16AF19D2000DBA92 /* msu_bldgs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = msu_bldgs.json; sourceTree = "<group>"; };
 		1DDE56F4163B023B008830A8 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1DDE5731163B04E6008830A8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		1DEAA66816AF0E4B009620DB /* campusMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = campusMapViewController.h; sourceTree = "<group>"; };
-		1DEAA66916AF0E4B009620DB /* campusMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = campusMapViewController.m; sourceTree = "<group>"; };
+		1DE4C30616B63A8300977CF9 /* buildings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = buildings.json; sourceTree = "<group>"; };
 		1DED1E7516521CC2003D6721 /* directoryBackdrop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = directoryBackdrop.png; sourceTree = "<group>"; };
 		1DF014791697BBF400435975 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		1DF0147E1697C77200435975 /* dirBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dirBg.png; sourceTree = "<group>"; };
 		1DF014801697C7D400435975 /* photoFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photoFrame.png; sourceTree = "<group>"; };
+		1DF849AC16B64FB6009F7785 /* MSUBuilding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSUBuilding.h; sourceTree = "<group>"; };
+		1DF849AD16B64FB6009F7785 /* MSUBuilding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSUBuilding.m; sourceTree = "<group>"; };
+		1DFCFCD216B63CEC00515EFD /* campusMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = campusMapViewController.h; sourceTree = "<group>"; };
+		1DFCFCD316B63CEC00515EFD /* campusMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = campusMapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -662,6 +665,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D1CEB50162B4F7A0059BC1F /* MapKit.framework in Frameworks */,
 				1D12175716AD04DA00164FA7 /* Social.framework in Frameworks */,
 				1D12178C16AD06A000164FA7 /* Accounts.framework in Frameworks */,
 				1D12178A16AD069900164FA7 /* libsqlite3.dylib in Frameworks */,
@@ -680,7 +684,6 @@
 				1D8C297A16977997005DE855 /* AddressBookUI.framework in Frameworks */,
 				1DD8F3631693CF2F009F0FC3 /* EventKit.framework in Frameworks */,
 				1DDE5732163B04E6008830A8 /* CoreData.framework in Frameworks */,
-				1D1CEB50162B4F7A0059BC1F /* MapKit.framework in Frameworks */,
 				1D1CEAD8162B4D230059BC1F /* UIKit.framework in Frameworks */,
 				1D1CEADA162B4D230059BC1F /* Foundation.framework in Frameworks */,
 				1D1CEADC162B4D230059BC1F /* CoreGraphics.framework in Frameworks */,
@@ -796,9 +799,9 @@
 			isa = PBXGroup;
 			children = (
 				1D0E7C7716B11D29009E672D /* Emergency Numbers */,
-				1DDC26DB16AF19D2000DBA92 /* msu_bldgs.json */,
 				1D1CEAFE162B4DBB0059BC1F /* MainStoryboard.storyboard */,
 				1D82B34C167867B0006564F8 /* defaults.plist */,
+				1DE4C30616B63A8300977CF9 /* buildings.json */,
 				1D477E6A16A73089001B2C89 /* employees.xml */,
 				1D1CEAE6162B4D230059BC1F /* AppDelegate.h */,
 				1D1CEAE7162B4D230059BC1F /* AppDelegate.m */,
@@ -832,8 +835,10 @@
 		1D1CEAFA162B4D2B0059BC1F /* Campus Map */ = {
 			isa = PBXGroup;
 			children = (
-				1DEAA66816AF0E4B009620DB /* campusMapViewController.h */,
-				1DEAA66916AF0E4B009620DB /* campusMapViewController.m */,
+				1DFCFCD216B63CEC00515EFD /* campusMapViewController.h */,
+				1DFCFCD316B63CEC00515EFD /* campusMapViewController.m */,
+				1DF849AC16B64FB6009F7785 /* MSUBuilding.h */,
+				1DF849AD16B64FB6009F7785 /* MSUBuilding.m */,
 			);
 			name = "Campus Map";
 			sourceTree = "<group>";
@@ -1715,7 +1720,7 @@
 				1D9D287416A89CC200FC5A95 /* Default.png in Resources */,
 				1D9D287616A89EC700FC5A95 /* slideSample.png in Resources */,
 				1DD49E3416ADD6B100EB7827 /* navBarDemo.png in Resources */,
-				1DDC26DC16AF19D2000DBA92 /* msu_bldgs.json in Resources */,
+				1DE4C30716B63A8300977CF9 /* buildings.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1781,9 +1786,10 @@
 				1D44AFFA16A5D86700445FE7 /* UIXToolbarView.m in Sources */,
 				1D44B03816A5EAD700445FE7 /* webViewController.m in Sources */,
 				1D44B04816A606F200445FE7 /* mediaMenuViewController.m in Sources */,
-				1DEAA66A16AF0E4B009620DB /* campusMapViewController.m in Sources */,
 				1D0E7C7A16B11D44009E672D /* emergencyNumbersViewController.m in Sources */,
 				1D246BE716B1D931005CCFDE /* moreEmergencyContactsTableViewController.m in Sources */,
+				1DFCFCD416B63CEC00515EFD /* campusMapViewController.m in Sources */,
+				1DF849AE16B64FB6009F7785 /* MSUBuilding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
