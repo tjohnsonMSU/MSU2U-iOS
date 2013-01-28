@@ -17,7 +17,7 @@
 -(void)viewDidLoad
 {
     //Load the Buildings Array
-    buildings = [[NSArray alloc]initWithObjects:@"Bridwell Courts",@"Bolin Hall",@"Redwine Fitness Center",nil];
+    buildings = [[NSArray alloc]initWithObjects:@"Bridwell Courts",@"Bolin Hall",@"Redwine Fitness Center",@"Moffett Library",nil];
     self.campusMap.mapType = MKMapTypeHybrid;
 }
 
@@ -103,6 +103,10 @@ shouldReloadTableForSearchString:(NSString *)searchString
         else if([[searchResults objectAtIndex:indexPath.row] isEqualToString:@"Redwine Fitness Center"])
         {
             latitude=33.869992;longitude=-98.523706;
+        }
+        else if([[searchResults objectAtIndex:indexPath.row] isEqualToString:@"Moffett Library"])
+        {
+            latitude=33.874855;longitude=-98.519200;
         }
         
         coordinate = CLLocationCoordinate2DMake(latitude,longitude);
