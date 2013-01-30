@@ -434,7 +434,7 @@
     }
     else
     {
-        NSLog(@"I already have a managed docoument for this view.\n");
+        NSLog(@"I already have a managed document for this view.\n");
         [self setupFetchedResultsController];
     }
 }

@@ -14,11 +14,37 @@
 
 @implementation campusMapViewController
 
+- (NSArray *)executeDataFetch:(NSString *)query
+{
+    NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:query] encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error = nil;
+    NSArray *results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
+    if (error) NSLog(@"[%@ %@] JSON error: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error.localizedDescription);
+    NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results);
+    return results;
+}
+
 -(void)viewDidLoad
 {
     //Load the Buildings Array
-    buildings = [[NSArray alloc]initWithObjects:@"Bridwell Courts",@"Bolin Hall",@"Redwine Fitness Center",@"Moffett Library",nil];
+    //buildings = [[NSArray alloc]initWithObjects:@"Bridwell Courts",@"Bolin Hall",@"Redwine Fitness Center",@"Moffett Library",nil];
     self.campusMap.mapType = MKMapTypeHybrid;
+    
+    //Allocate arrays
+    self.buildingName = [[NSMutableArray alloc]init];
+    self.buildingCoordinate = [[NSMutableArray alloc]init];
+    
+    //Download the JSON data
+    buildings = [self executeDataFetch:@"http://www.matthewfarmer.net/buildings.json"];
+    
+    for(NSDictionary * dataInfo in buildings)
+    {
+        [self.buildingName addObject:[dataInfo objectForKey:@"name"]];
+        [self.buildingCoordinate addObject:[[NSArray alloc]initWithObjects:[dataInfo objectForKey:@"latitude"],[dataInfo objectForKey:@"longitude"], nil]];
+    }
+    
+    //Place the organized JSON data into a dictionary format that can be more easily worked with later
+    self.buildingList = [[NSMutableDictionary alloc]initWithObjects:self.buildingCoordinate forKeys:self.buildingName];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -28,13 +54,17 @@
     [self.campusMap setRegion:adjustedRegion animated:NO];
 }
 
--(void)addPinWithTitle:(NSString*)title atLocation:(CLLocationCoordinate2D) coordinate
+-(void)addPinWithTitle:(NSString*)title atLocation:(NSArray*) coordinate
 {
     MSUBuilding * testBuilding = [[MSUBuilding alloc] init];
-    NSLog(@"Received coordinate: %f,%f\n",coordinate.latitude,coordinate.longitude);
+    NSLog(@"Received coordinate: %@,%@\n",[coordinate objectAtIndex:0],[coordinate objectAtIndex:1]);
+    
     //Create information for this test site
     testBuilding.title = title;
-    testBuilding.coordinate = coordinate;
+    
+    CLLocationCoordinate2D myCoordinate = CLLocationCoordinate2DMake([[coordinate objectAtIndex:0]floatValue], [[coordinate objectAtIndex:1]floatValue]);
+    
+    testBuilding.coordinate = myCoordinate;
     
     //Add annotation to the map
     [self.campusMap addAnnotation:testBuilding];
@@ -48,8 +78,7 @@
         return [searchResults count];
         
     } else {
-        return [buildings count];
-        
+        return [self.buildingName count];
     }
 }
 
@@ -60,7 +89,7 @@
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         cell.textLabel.text = [searchResults objectAtIndex:indexPath.row];
     } else {
-        cell.textLabel.text = [buildings objectAtIndex:indexPath.row];
+        cell.textLabel.text = [self.buildingName objectAtIndex:indexPath.row];
     }
     return cell;
 }
@@ -71,7 +100,7 @@
                                     predicateWithFormat:@"SELF contains[cd] %@",
                                     searchText];
     
-    searchResults = [buildings filteredArrayUsingPredicate:resultPredicate];
+    searchResults = [self.buildingName filteredArrayUsingPredicate:resultPredicate];
 }
 
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller
@@ -88,30 +117,15 @@ shouldReloadTableForSearchString:(NSString *)searchString
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CLLocationCoordinate2D coordinate;
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        
-        float latitude = 0, longitude = 0;
-        
-        if([[searchResults objectAtIndex:indexPath.row] isEqualToString:@"Bridwell Courts"])
-        {
-            latitude=33.877163;longitude=-98.524114;
-        }
-        else if([[searchResults objectAtIndex:indexPath.row] isEqualToString:@"Bolin Hall"])
-        {
-            latitude=33.873962;longitude=-98.519436;
-        }
-        else if([[searchResults objectAtIndex:indexPath.row] isEqualToString:@"Redwine Fitness Center"])
-        {
-            latitude=33.869992;longitude=-98.523706;
-        }
-        else if([[searchResults objectAtIndex:indexPath.row] isEqualToString:@"Moffett Library"])
-        {
-            latitude=33.874855;longitude=-98.519200;
-        }
-        
-        coordinate = CLLocationCoordinate2DMake(latitude,longitude);
-        [self addPinWithTitle:[searchResults objectAtIndex:indexPath.row] atLocation:coordinate];
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+    {
+        [self addPinWithTitle:[searchResults objectAtIndex:indexPath.row] atLocation:[self.buildingList objectForKey:[searchResults objectAtIndex:indexPath.row]]];
     }
+    float latitude = [[[self.buildingList objectForKey:[searchResults objectAtIndex:indexPath.row]] objectAtIndex:0] floatValue];
+    float longitude = [[[self.buildingList objectForKey:[searchResults objectAtIndex:indexPath.row]]objectAtIndex:1] floatValue];
+    
+    coordinate = CLLocationCoordinate2DMake(latitude,longitude);
+                                              
     MKCoordinateRegion adjustedRegion = [self.campusMap regionThatFits:MKCoordinateRegionMakeWithDistance(coordinate, 1000, 1000)];
     [self.searchDisplayController setActive:NO animated:YES];
     [self.campusMap setRegion:adjustedRegion animated:YES];
