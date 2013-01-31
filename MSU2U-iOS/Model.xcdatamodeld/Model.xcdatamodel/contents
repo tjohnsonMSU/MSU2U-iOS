@@ -24,11 +24,6 @@
         <attribute name="startTime" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Location" representedClassName="Entity" syncable="YES">
-        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-    </entity>
     <entity name="News" representedClassName="News" syncable="YES">
         <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
@@ -60,6 +55,5 @@
         <element name="Event" positionX="-7598" positionY="-2440" width="128" height="180"/>
         <element name="News" positionX="-7598" positionY="-2250" width="128" height="178"/>
         <element name="Sport" positionX="-7749" positionY="-2439" width="128" height="238"/>
-        <element name="Location" positionX="-7758" positionY="-2151" width="128" height="88"/>
     </elements>
 </model>

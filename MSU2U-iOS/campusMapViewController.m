@@ -16,11 +16,14 @@
 
 - (NSArray *)executeDataFetch:(NSString *)query
 {
-    NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:query] encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *error = nil;
+    NSString * textPath = [[NSBundle mainBundle]pathForResource:@"buildings" ofType:@"json"];
+    NSError * error;
+    NSData *jsonData = [[NSString stringWithContentsOfFile:textPath encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
+
     NSArray *results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
     if (error) NSLog(@"[%@ %@] JSON error: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error.localizedDescription);
     NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results);
+     
     return results;
 }
 
@@ -35,7 +38,7 @@
     self.buildingCoordinate = [[NSMutableArray alloc]init];
     
     //Download the JSON data
-    buildings = [self executeDataFetch:@"http://www.matthewfarmer.net/buildings.json"];
+    buildings = [self executeDataFetch:@"buildings.json"];
     
     for(NSDictionary * dataInfo in buildings)
     {
