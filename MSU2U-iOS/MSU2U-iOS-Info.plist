@@ -25,7 +25,7 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>MustangsIconLarge.png</string>
+				<string>msu2u_icon.png</string>
 				<string>MustangsIconSmall.png</string>
 			</array>
 		</dict>

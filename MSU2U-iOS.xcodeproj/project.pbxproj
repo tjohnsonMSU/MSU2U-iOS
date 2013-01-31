@@ -67,6 +67,7 @@
 		1D2656F71639E5D500FBF6E1 /* directoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2656F61639E5D500FBF6E1 /* directoryViewController.m */; };
 		1D28C0251693BFE400BFDD96 /* appFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D28C0241693BFE400BFDD96 /* appFeedbackViewController.m */; };
 		1D2B5DA816BA40D200F1F3DB /* buildings.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D2B5DA716BA40D200F1F3DB /* buildings.json */; };
+		1D2B5DAA16BA5E0800F1F3DB /* msu2u_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2B5DA916BA5E0800F1F3DB /* msu2u_icon.png */; };
 		1D339A8516792A1500D84A20 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D339A8416792A1500D84A20 /* Event.m */; };
 		1D339A991679341D00D84A20 /* academic.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1D339A921679341D00D84A20 /* academic.jpeg */; };
 		1D339A9A1679341D00D84A20 /* museum.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1D339A931679341D00D84A20 /* museum.jpeg */; };
@@ -499,6 +500,7 @@
 		1D28C0231693BFE400BFDD96 /* appFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appFeedbackViewController.h; sourceTree = "<group>"; };
 		1D28C0241693BFE400BFDD96 /* appFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = appFeedbackViewController.m; sourceTree = "<group>"; };
 		1D2B5DA716BA40D200F1F3DB /* buildings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = buildings.json; sourceTree = "<group>"; };
+		1D2B5DA916BA5E0800F1F3DB /* msu2u_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msu2u_icon.png; sourceTree = "<group>"; };
 		1D339A8316792A1500D84A20 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		1D339A8416792A1500D84A20 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		1D339A921679341D00D84A20 /* academic.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = academic.jpeg; sourceTree = "<group>"; };
@@ -748,6 +750,7 @@
 			children = (
 				1D1216D116AD014800164FA7 /* ShareKit.xcodeproj */,
 				1D82B33E16781B7E006564F8 /* MustangsIconLarge.png */,
+				1D2B5DA916BA5E0800F1F3DB /* msu2u_icon.png */,
 				1D82B33C16781B6A006564F8 /* MustangsIconSmall.png */,
 				1D1CEADD162B4D230059BC1F /* MSU2U-iOS */,
 				1D1CEAD6162B4D230059BC1F /* Frameworks */,
@@ -1716,6 +1719,7 @@
 				1D9D287616A89EC700FC5A95 /* slideSample.png in Resources */,
 				1DD49E3416ADD6B100EB7827 /* navBarDemo.png in Resources */,
 				1D2B5DA816BA40D200F1F3DB /* buildings.json in Resources */,
+				1D2B5DAA16BA5E0800F1F3DB /* msu2u_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
