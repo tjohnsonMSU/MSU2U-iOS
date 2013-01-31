@@ -126,7 +126,7 @@ shouldReloadTableForSearchString:(NSString *)searchString
     
     coordinate = CLLocationCoordinate2DMake(latitude,longitude);
                                               
-    MKCoordinateRegion adjustedRegion = [self.campusMap regionThatFits:MKCoordinateRegionMakeWithDistance(coordinate, 1000, 1000)];
+    MKCoordinateRegion adjustedRegion = [self.campusMap regionThatFits:MKCoordinateRegionMakeWithDistance(coordinate, 250, 250)];
     [self.searchDisplayController setActive:NO animated:YES];
     [self.campusMap setRegion:adjustedRegion animated:YES];
 }
