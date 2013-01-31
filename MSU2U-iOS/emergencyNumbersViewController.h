@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "webViewController.h"
-@interface emergencyNumbersViewController : UITableViewController{
+#import <CoreLocation/CoreLocation.h>
+
+@interface emergencyNumbersViewController : UITableViewController <CLLocationManagerDelegate>{
     NSArray * emergencyNumber;
     int chosenRow, chosenSection;
+    CLLocationManager *locationManager;
 }
+@property (weak, nonatomic) IBOutlet UILabel *myCoordinate;
+@property (weak, nonatomic) IBOutlet UILabel *myAddress;
 
 @end

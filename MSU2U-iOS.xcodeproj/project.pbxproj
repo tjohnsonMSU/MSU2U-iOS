@@ -795,13 +795,13 @@
 		1D1CEADD162B4D230059BC1F /* MSU2U-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				1D0E7C7716B11D29009E672D /* Emergency Numbers */,
 				1D1CEAFE162B4DBB0059BC1F /* MainStoryboard.storyboard */,
 				1D82B34C167867B0006564F8 /* defaults.plist */,
 				1D477E6A16A73089001B2C89 /* employees.xml */,
 				1D2B5DA716BA40D200F1F3DB /* buildings.json */,
 				1D1CEAE6162B4D230059BC1F /* AppDelegate.h */,
 				1D1CEAE7162B4D230059BC1F /* AppDelegate.m */,
+				1D0E7C7716B11D29009E672D /* Emergency Numbers */,
 				1D709B30165B456E00475A8E /* External Libraries */,
 				1DA92C3C1693BE9D00AB71F1 /* App Feedback */,
 				1D592EA0164D5FE300CBB292 /* Core Data */,
