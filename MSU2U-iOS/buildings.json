@@ -53,5 +53,10 @@
 {"name":"Carriage House", "latitude":33.868545, "longitude":-98.521201},
 {"name":"Alumni Center", "latitude":33.868454, "longitude":-98.521566},
 {"name":"Daniel Bldg - Physical Plant", "latitude":33.875876, "longitude":-98.522357},
- {"name":"Post Office","latitude":33.874618,"longitude":-98.520757}
+ {"name":"Post Office","latitude":33.874618,"longitude":-98.520757},
+ {"name":"Outdoor Swimming Pool","latitude":33.869702,"longitude":-98.523775},
+ {"name":"Sand Volleyball Pit","latitude":33.869826,"longitude":-98.524139},
+ {"name":"Sikes Lake","latitude":33.866845,"longitude":-98.523022},
+ {"name":"Sikes Center Mall","latitude":33.869167,"longitude":-98.533255},
+ {"name":"Cinemark 14 Movie Theatre","latitude":33.884373,"longitude":-98.524613},
 ]

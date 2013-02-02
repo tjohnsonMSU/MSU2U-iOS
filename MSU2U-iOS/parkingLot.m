@@ -10,6 +10,9 @@
 
 @implementation parkingLot
 
+//###############################################################
+//# COMMUTER LOTS
+//###############################################################
 -(void)drawCommuterParkingLots:(MKMapView*)mapView
 {
     //Moffett Library Parking Lot (Commuters)
@@ -197,8 +200,77 @@
     };
     parkingPolygon=[MKPolygon polygonWithCoordinates:fainWestCommuterCoords count:5];
     [mapView addOverlay:parkingPolygon];
+    
+    //Power Plant South
+    CLLocationCoordinate2D powerPlantSouthCoords[5]={
+        CLLocationCoordinate2DMake(33.872957,-98.52062),
+        CLLocationCoordinate2DMake(33.87295,-98.520409),
+        CLLocationCoordinate2DMake(33.872896,-98.520408),
+        CLLocationCoordinate2DMake(33.872898,-98.520619),
+        CLLocationCoordinate2DMake(33.872957,-98.52062)
+    };
+    parkingPolygon=[MKPolygon polygonWithCoordinates:powerPlantSouthCoords count:5];
+    [mapView addOverlay:parkingPolygon];
+    
+    //DL Ligon Street West
+    CLLocationCoordinate2D dlLigonStreetWestCoords[5]={
+        CLLocationCoordinate2DMake(33.872773,-98.520433),
+        CLLocationCoordinate2DMake(33.872772,-98.520388),
+        CLLocationCoordinate2DMake(33.870832,-98.520386),
+        CLLocationCoordinate2DMake(33.870804,-98.520442),
+        CLLocationCoordinate2DMake(33.872773,-98.520433)
+    };
+    parkingPolygon=[MKPolygon polygonWithCoordinates:dlLigonStreetWestCoords count:5];
+    [mapView addOverlay:parkingPolygon];
+    
+    //DL Ligon Street South East
+    CLLocationCoordinate2D dlLigonStreetSouthEastCoords[5]={
+        CLLocationCoordinate2DMake(33.871046,-98.520277),
+        CLLocationCoordinate2DMake(33.871078,-98.520227),
+        CLLocationCoordinate2DMake(33.870782,-98.520226),
+        CLLocationCoordinate2DMake(33.87075,-98.520282),
+        CLLocationCoordinate2DMake(33.871046,-98.520277)
+    };
+    parkingPolygon=[MKPolygon polygonWithCoordinates:dlLigonStreetSouthEastCoords count:5];
+    [mapView addOverlay:parkingPolygon];
+    
+    //DL Ligon Street North West
+    CLLocationCoordinate2D dlLigonStreetNorthWestCoords[5]={
+        CLLocationCoordinate2DMake(33.872826,-98.520118),
+        CLLocationCoordinate2DMake(33.872834,-98.519123),
+        CLLocationCoordinate2DMake(33.87281,-98.519122),
+        CLLocationCoordinate2DMake(33.872802,-98.520115),
+        CLLocationCoordinate2DMake(33.872826,-98.520118)
+    };
+    parkingPolygon=[MKPolygon polygonWithCoordinates:dlLigonStreetNorthWestCoords count:5];
+    [mapView addOverlay:parkingPolygon];
+    
+    //DL Ligon Street North East
+    CLLocationCoordinate2D dlLigonStreetNorthEastCoords[5]={
+        CLLocationCoordinate2DMake(33.872836,-98.519022),
+        CLLocationCoordinate2DMake(33.87282,-98.518684),
+        CLLocationCoordinate2DMake(33.872789,-98.518648),
+        CLLocationCoordinate2DMake(33.872807,-98.519021),
+        CLLocationCoordinate2DMake(33.872836,-98.519022)
+    };
+    parkingPolygon=[MKPolygon polygonWithCoordinates:dlLigonStreetNorthEastCoords count:5];
+    [mapView addOverlay:parkingPolygon];
+    
+    //Soccer Softball
+    CLLocationCoordinate2D soccerSoftballSouthCoords[5]={
+        CLLocationCoordinate2DMake(33.872426,-98.523716),
+        CLLocationCoordinate2DMake(33.872425,-98.523502),
+        CLLocationCoordinate2DMake(33.871621,-98.523508),
+        CLLocationCoordinate2DMake(33.871614,-98.523717),
+        CLLocationCoordinate2DMake(33.872426,-98.523716)
+    };
+    parkingPolygon=[MKPolygon polygonWithCoordinates:soccerSoftballSouthCoords count:5];
+    [mapView addOverlay:parkingPolygon];
 }
 
+//###############################################################
+//# RESERVED LOTS
+//###############################################################
 -(void)drawReservedParkingLots:(MKMapView*)mapView
 {
     //Moffett Library Parking Lot (Reserved)
@@ -523,7 +595,138 @@
     };
     parkingPolygon=[MKPolygon polygonWithCoordinates:bolinStreetReservedCoords count:5];
     [mapView addOverlay:parkingPolygon];
+    
+    //Fain West Reserved
+    CLLocationCoordinate2D fainWestReservedCoords[16]={
+        CLLocationCoordinate2DMake(33.875974,-98.521891),
+        CLLocationCoordinate2DMake(33.875988,-98.521872),
+        CLLocationCoordinate2DMake(33.875956,-98.521838),
+        CLLocationCoordinate2DMake(33.875733,-98.52184),
+        CLLocationCoordinate2DMake(33.875681,-98.521924),
+        CLLocationCoordinate2DMake(33.875411,-98.521935),
+        CLLocationCoordinate2DMake(33.875469,-98.522014),
+        CLLocationCoordinate2DMake(33.875556,-98.522014),
+        CLLocationCoordinate2DMake(33.87561,-98.5221),
+        CLLocationCoordinate2DMake(33.876033,-98.522098),
+        CLLocationCoordinate2DMake(33.876046,-98.522042),
+        CLLocationCoordinate2DMake(33.876088,-98.522079),
+        CLLocationCoordinate2DMake(33.876103,-98.522055),
+        CLLocationCoordinate2DMake(33.876103,-98.521939),
+        CLLocationCoordinate2DMake(33.876056,-98.52189),
+        CLLocationCoordinate2DMake(33.875974,-98.521891)
+    };
+    parkingPolygon=[MKPolygon polygonWithCoordinates:fainWestReservedCoords count:16];
+    [mapView addOverlay:parkingPolygon];
+    
+    //Daniel Building South
+    CLLocationCoordinate2D danielBuildingSouthCoords[11]={
+        CLLocationCoordinate2DMake(33.875494,-98.522611),
+        CLLocationCoordinate2DMake(33.875547,-98.522555),
+        CLLocationCoordinate2DMake(33.875548,-98.52224),
+        CLLocationCoordinate2DMake(33.875527,-98.522217),
+        CLLocationCoordinate2DMake(33.875503,-98.52224),
+        CLLocationCoordinate2DMake(33.875435,-98.522236),
+        CLLocationCoordinate2DMake(33.875412,-98.522209),
+        CLLocationCoordinate2DMake(33.875393,-98.522232),
+        CLLocationCoordinate2DMake(33.875394,-98.52254),
+        CLLocationCoordinate2DMake(33.875446,-98.522596),
+        CLLocationCoordinate2DMake(33.875494,-98.522611)
+    };
+    parkingPolygon=[MKPolygon polygonWithCoordinates:danielBuildingSouthCoords count:11];
+    [mapView addOverlay:parkingPolygon];
+    
+    //DL Ligon Street East Middle
+    CLLocationCoordinate2D dlLigonStreetEastMiddleCoords[5]={
+        CLLocationCoordinate2DMake(33.87176,-98.520273),
+        CLLocationCoordinate2DMake(33.871783,-98.520223),
+        CLLocationCoordinate2DMake(33.871081,-98.520226),
+        CLLocationCoordinate2DMake(33.871047,-98.520278),
+        CLLocationCoordinate2DMake(33.871753,-98.520274)
+    };
+    parkingPolygon=[MKPolygon polygonWithCoordinates:dlLigonStreetEastMiddleCoords count:5];
+    [mapView addOverlay:parkingPolygon];
+    
+    //DL Ligon Street East Middle
+    CLLocationCoordinate2D dlLigonStreetEastNorthCoords[5]={
+        CLLocationCoordinate2DMake(33.872549,-98.52027),
+        CLLocationCoordinate2DMake(33.872552,-98.520219),
+        CLLocationCoordinate2DMake(33.87194,-98.520221),
+        CLLocationCoordinate2DMake(33.871908,-98.520274),
+        CLLocationCoordinate2DMake(33.872549,-98.52027)
+    };
+    parkingPolygon=[MKPolygon polygonWithCoordinates:dlLigonStreetEastNorthCoords count:5];
+    [mapView addOverlay:parkingPolygon];
+    
+    //DL Ligon Street North
+    CLLocationCoordinate2D dlLigonStreetNorthCoords[5]={
+        CLLocationCoordinate2DMake(33.872834,-98.519123),
+        CLLocationCoordinate2DMake(33.872836,-98.519022),
+        CLLocationCoordinate2DMake(33.872807,-98.519021),
+        CLLocationCoordinate2DMake(33.87281,-98.519122),
+        CLLocationCoordinate2DMake(33.872834,-98.519123)
+    };
+    parkingPolygon=[MKPolygon polygonWithCoordinates:dlLigonStreetNorthCoords count:5];
+    [mapView addOverlay:parkingPolygon];
+    
+    //Soccer Softball North
+    CLLocationCoordinate2D soccerSoftballNorthCoords[5]={
+        CLLocationCoordinate2DMake(33.872615,-98.523702),
+        CLLocationCoordinate2DMake(33.872654,-98.523493),
+        CLLocationCoordinate2DMake(33.872425,-98.523502),
+        CLLocationCoordinate2DMake(33.872426,-98.523716),
+        CLLocationCoordinate2DMake(33.872615,-98.523702)
+    };
+    parkingPolygon=[MKPolygon polygonWithCoordinates:soccerSoftballNorthCoords count:5];
+    [mapView addOverlay:parkingPolygon];
+    
+    //Wellness Center North
+    CLLocationCoordinate2D wellnessCenterNorthCoords[5]={
+        CLLocationCoordinate2DMake(33.870006,-98.523093),
+        CLLocationCoordinate2DMake(33.870005,-98.523033),
+        CLLocationCoordinate2DMake(33.869877,-98.523034),
+        CLLocationCoordinate2DMake(33.869881,-98.52309),
+        CLLocationCoordinate2DMake(33.870006,-98.523093)
+    };
+    parkingPolygon=[MKPolygon polygonWithCoordinates:wellnessCenterNorthCoords count:5];
+    [mapView addOverlay:parkingPolygon];
+    
+    //Wellness Center South
+    CLLocationCoordinate2D wellnessCenterSouthCoords[5]={
+        CLLocationCoordinate2DMake(33.86982,-98.523091),
+        CLLocationCoordinate2DMake(33.869819,-98.523034),
+        CLLocationCoordinate2DMake(33.869538,-98.523029),
+        CLLocationCoordinate2DMake(33.869544,-98.523087),
+        CLLocationCoordinate2DMake(33.86982,-98.523091)
+    };
+    parkingPolygon=[MKPolygon polygonWithCoordinates:wellnessCenterSouthCoords count:5];
+    [mapView addOverlay:parkingPolygon];
+    
+    //Sundancer North
+    CLLocationCoordinate2D sundancerNorthCoords[5]={
+        CLLocationCoordinate2DMake(33.871216,-98.525003),
+        CLLocationCoordinate2DMake(33.871219,-98.52495),
+        CLLocationCoordinate2DMake(33.87114,-98.524948),
+        CLLocationCoordinate2DMake(33.871142,-98.52501),
+        CLLocationCoordinate2DMake(33.871216,-98.525003)
+    };
+    parkingPolygon=[MKPolygon polygonWithCoordinates:sundancerNorthCoords count:5];
+    [mapView addOverlay:parkingPolygon];
+    
+    //Sundancer South
+    CLLocationCoordinate2D sundancerSouthCoords[5]={
+        CLLocationCoordinate2DMake(33.870874,-98.525012),
+        CLLocationCoordinate2DMake(33.870872,-98.524955),
+        CLLocationCoordinate2DMake(33.870798,-98.524951),
+        CLLocationCoordinate2DMake(33.870797,-98.525013),
+        CLLocationCoordinate2DMake(33.870874,-98.525012)
+    };
+    parkingPolygon=[MKPolygon polygonWithCoordinates:sundancerSouthCoords count:5];
+    [mapView addOverlay:parkingPolygon];
 }
+
+//###############################################################
+//# RESIDENTIAL LOTS
+//###############################################################
 
 -(void)drawResidentialParkingLots:(MKMapView*)mapView
 {
@@ -611,8 +814,83 @@
     };
     parkingPolygon=[MKPolygon polygonWithCoordinates:bridwellCourtsCoords count:13];
     [mapView addOverlay:parkingPolygon];
+    
+    //Sunwatcher Street North
+    CLLocationCoordinate2D sunwatcherStreetNorthCoords[5]={
+        CLLocationCoordinate2DMake(33.874694,-98.523767),
+        CLLocationCoordinate2DMake(33.874716,-98.523739),
+        CLLocationCoordinate2DMake(33.874513,-98.523738),
+        CLLocationCoordinate2DMake(33.874516,-98.523769),
+        CLLocationCoordinate2DMake(33.874694,-98.523767)
+    };
+    parkingPolygon=[MKPolygon polygonWithCoordinates:sunwatcherStreetNorthCoords count:5];
+    [mapView addOverlay:parkingPolygon];
+    
+    //Sunwatcher Street South
+    CLLocationCoordinate2D sunwatcherStreetSouthCoords[5]={
+        CLLocationCoordinate2DMake(33.874418,-98.523769),
+        CLLocationCoordinate2DMake(33.874418,-98.523741),
+        CLLocationCoordinate2DMake(33.874186,-98.52374),
+        CLLocationCoordinate2DMake(33.874184,-98.523771),
+        CLLocationCoordinate2DMake(33.874418,-98.523769)
+    };
+    parkingPolygon=[MKPolygon polygonWithCoordinates:sunwatcherStreetSouthCoords count:5];
+    [mapView addOverlay:parkingPolygon];
+    
+    //Sundance Court
+    CLLocationCoordinate2D sundanceCourtCoords[44]={
+        CLLocationCoordinate2DMake(33.871006,-98.526123),
+        CLLocationCoordinate2DMake(33.871196,-98.525611),
+        CLLocationCoordinate2DMake(33.871155,-98.525586),
+        CLLocationCoordinate2DMake(33.871172,-98.525552),
+        CLLocationCoordinate2DMake(33.871212,-98.525584),
+        CLLocationCoordinate2DMake(33.871308,-98.525424),
+        CLLocationCoordinate2DMake(33.87127,-98.525388),
+        CLLocationCoordinate2DMake(33.871289,-98.525357),
+        CLLocationCoordinate2DMake(33.871334,-98.525358),
+        CLLocationCoordinate2DMake(33.871335,-98.525158),
+        CLLocationCoordinate2DMake(33.871286,-98.525155),
+        CLLocationCoordinate2DMake(33.871286,-98.525088),
+        CLLocationCoordinate2DMake(33.871388,-98.525088),
+        CLLocationCoordinate2DMake(33.871438,-98.525145),
+        CLLocationCoordinate2DMake(33.871482,-98.525082),
+        CLLocationCoordinate2DMake(33.871544,-98.525033),
+        CLLocationCoordinate2DMake(33.871712,-98.524758),
+        CLLocationCoordinate2DMake(33.871724,-98.524657),
+        CLLocationCoordinate2DMake(33.871776,-98.524653),
+        CLLocationCoordinate2DMake(33.871771,-98.523972),
+        CLLocationCoordinate2DMake(33.871608,-98.52397),
+        CLLocationCoordinate2DMake(33.87166,-98.524709),
+        CLLocationCoordinate2DMake(33.871483,-98.525006),
+        CLLocationCoordinate2DMake(33.871434,-98.525007),
+        CLLocationCoordinate2DMake(33.87144,-98.524929),
+        CLLocationCoordinate2DMake(33.871219,-98.52495),//1
+        CLLocationCoordinate2DMake(33.871216,-98.525003),//
+        CLLocationCoordinate2DMake(33.871142,-98.52501),//
+        CLLocationCoordinate2DMake(33.87114,-98.524948),//
+        CLLocationCoordinate2DMake(33.870872,-98.524955),//2
+        CLLocationCoordinate2DMake(33.870874,-98.525012),//
+        CLLocationCoordinate2DMake(33.870797,-98.525013),//
+        CLLocationCoordinate2DMake(33.870798,-98.524951),//
+        CLLocationCoordinate2DMake(33.870752,-98.525012),
+        CLLocationCoordinate2DMake(33.870724,-98.525014),
+        CLLocationCoordinate2DMake(33.870729,-98.525119),
+        CLLocationCoordinate2DMake(33.870683,-98.52512),
+        CLLocationCoordinate2DMake(33.870682,-98.526101),
+        CLLocationCoordinate2DMake(33.870741,-98.526101),
+        CLLocationCoordinate2DMake(33.870742,-98.526167),
+        CLLocationCoordinate2DMake(33.870939,-98.526166),
+        CLLocationCoordinate2DMake(33.87094,-98.526105),
+        CLLocationCoordinate2DMake(33.870961,-98.526098),
+        CLLocationCoordinate2DMake(33.871006,-98.526123)
+    };
+    parkingPolygon=[MKPolygon polygonWithCoordinates:sundanceCourtCoords count:44];
+    [mapView addOverlay:parkingPolygon];
 }
 
+//###############################################################
+//# HYBRID LOTS
+//###############################################################
 -(void)drawHybridParkingLots:(MKMapView*)mapView
 {
     //Bolin Parking Lot 2 (Reserved)

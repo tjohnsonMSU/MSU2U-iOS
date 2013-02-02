@@ -5,7 +5,7 @@
 	<key>campusMapSettings</key>
 	<false/>
 	<key>campusMapSettingsParkingLot</key>
-	<false/>
+	<true/>
 	<key>campusMapSettingsMapRowChecked</key>
 	<string>Hybrid</string>
 	<key>volleyballIsOn</key>
