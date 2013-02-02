@@ -138,6 +138,7 @@
 		1D960C181679206200A9EBDE /* newsSubscriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D960C171679206200A9EBDE /* newsSubscriptionViewController.m */; };
 		1D960C1F1679241F00A9EBDE /* sportSubscriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D960C1E1679241F00A9EBDE /* sportSubscriptionViewController.m */; };
 		1D960C221679242E00A9EBDE /* eventSubscriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D960C211679242E00A9EBDE /* eventSubscriptionViewController.m */; };
+		1D968C5F16BC8A47004AB866 /* parkingLot.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D968C5E16BC8A47004AB866 /* parkingLot.m */; };
 		1D9702A4165D3D4F00505F7C /* favoriteDirectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9702A3165D3D4F00505F7C /* favoriteDirectoryViewController.m */; };
 		1D9702AA165D42AB00505F7C /* 06-magnify.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D9702A9165D42AB00505F7C /* 06-magnify.png */; };
 		1D9702AD165D4ACD00505F7C /* historyDirectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9702AC165D4ACD00505F7C /* historyDirectoryViewController.m */; };
@@ -175,7 +176,7 @@
 		1DF2022E16BAEA9C000369C8 /* msu2u-border.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DF2022D16BAEA9C000369C8 /* msu2u-border.png */; };
 		1DF2025116BAF9A8000369C8 /* msu-rounded.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DF2025016BAF9A8000369C8 /* msu-rounded.png */; };
 		1DF2025416BAFE01000369C8 /* campusMapSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF2025316BAFE01000369C8 /* campusMapSettingsViewController.m */; };
-		1DF849AE16B64FB6009F7785 /* MSUBuilding.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF849AD16B64FB6009F7785 /* MSUBuilding.m */; };
+		1DF849AE16B64FB6009F7785 /* MSULocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF849AD16B64FB6009F7785 /* MSULocation.m */; };
 		1DFCFCD416B63CEC00515EFD /* campusMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFCFCD316B63CEC00515EFD /* campusMapViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -612,6 +613,8 @@
 		1D960C1E1679241F00A9EBDE /* sportSubscriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sportSubscriptionViewController.m; sourceTree = "<group>"; };
 		1D960C201679242E00A9EBDE /* eventSubscriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventSubscriptionViewController.h; sourceTree = "<group>"; };
 		1D960C211679242E00A9EBDE /* eventSubscriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventSubscriptionViewController.m; sourceTree = "<group>"; };
+		1D968C5D16BC8A47004AB866 /* parkingLot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parkingLot.h; sourceTree = "<group>"; };
+		1D968C5E16BC8A47004AB866 /* parkingLot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = parkingLot.m; sourceTree = "<group>"; };
 		1D9702A2165D3D4F00505F7C /* favoriteDirectoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = favoriteDirectoryViewController.h; sourceTree = "<group>"; };
 		1D9702A3165D3D4F00505F7C /* favoriteDirectoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = favoriteDirectoryViewController.m; sourceTree = "<group>"; };
 		1D9702A9165D42AB00505F7C /* 06-magnify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "06-magnify.png"; path = "../image/06-magnify.png"; sourceTree = "<group>"; };
@@ -660,8 +663,8 @@
 		1DF2025016BAF9A8000369C8 /* msu-rounded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "msu-rounded.png"; sourceTree = "<group>"; };
 		1DF2025216BAFE01000369C8 /* campusMapSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = campusMapSettingsViewController.h; sourceTree = "<group>"; };
 		1DF2025316BAFE01000369C8 /* campusMapSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = campusMapSettingsViewController.m; sourceTree = "<group>"; };
-		1DF849AC16B64FB6009F7785 /* MSUBuilding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSUBuilding.h; sourceTree = "<group>"; };
-		1DF849AD16B64FB6009F7785 /* MSUBuilding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSUBuilding.m; sourceTree = "<group>"; };
+		1DF849AC16B64FB6009F7785 /* MSULocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSULocation.h; sourceTree = "<group>"; };
+		1DF849AD16B64FB6009F7785 /* MSULocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSULocation.m; sourceTree = "<group>"; };
 		1DFCFCD216B63CEC00515EFD /* campusMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = campusMapViewController.h; sourceTree = "<group>"; };
 		1DFCFCD316B63CEC00515EFD /* campusMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = campusMapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -846,10 +849,12 @@
 			children = (
 				1DFCFCD216B63CEC00515EFD /* campusMapViewController.h */,
 				1DFCFCD316B63CEC00515EFD /* campusMapViewController.m */,
-				1DF849AC16B64FB6009F7785 /* MSUBuilding.h */,
-				1DF849AD16B64FB6009F7785 /* MSUBuilding.m */,
+				1DF849AC16B64FB6009F7785 /* MSULocation.h */,
+				1DF849AD16B64FB6009F7785 /* MSULocation.m */,
 				1DF2025216BAFE01000369C8 /* campusMapSettingsViewController.h */,
 				1DF2025316BAFE01000369C8 /* campusMapSettingsViewController.m */,
+				1D968C5D16BC8A47004AB866 /* parkingLot.h */,
+				1D968C5E16BC8A47004AB866 /* parkingLot.m */,
 			);
 			name = "Campus Map";
 			sourceTree = "<group>";
@@ -1800,8 +1805,9 @@
 				1D0E7C7A16B11D44009E672D /* emergencyNumbersViewController.m in Sources */,
 				1D246BE716B1D931005CCFDE /* moreEmergencyContactsTableViewController.m in Sources */,
 				1DFCFCD416B63CEC00515EFD /* campusMapViewController.m in Sources */,
-				1DF849AE16B64FB6009F7785 /* MSUBuilding.m in Sources */,
+				1DF849AE16B64FB6009F7785 /* MSULocation.m in Sources */,
 				1DF2025416BAFE01000369C8 /* campusMapSettingsViewController.m in Sources */,
+				1D968C5F16BC8A47004AB866 /* parkingLot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

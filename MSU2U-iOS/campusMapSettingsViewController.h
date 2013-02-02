@@ -11,5 +11,8 @@
 @interface campusMapSettingsViewController : UITableViewController{
     NSUserDefaults * defaults;
 }
+@property (weak, nonatomic) IBOutlet UISwitch *parkingZoneSwitch;
 
+- (IBAction)parkingZoneFlipped:(UISwitch *)sender;
+- (IBAction)campusBorderFlipped:(UISwitch *)sender;
 @end

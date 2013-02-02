@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Matthew Farmer. All rights reserved.
 //
 
-#import "MSUBuilding.h"
+#import "MSULocation.h"
 #import <AddressBook/AddressBook.h>
 
-@implementation MSUBuilding
+@implementation MSULocation
 
 - (MKMapItem*)mapItem {
     // 1

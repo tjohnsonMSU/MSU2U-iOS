@@ -14,6 +14,8 @@
 
 @implementation campusMapViewController
 
+@synthesize campusMap = _campusMap;
+
 - (NSArray *)executeDataFetch:(NSString *)query
 {
     NSString * textPath = [[NSBundle mainBundle]pathForResource:@"buildings" ofType:@"json"];
@@ -29,8 +31,11 @@
 
 -(void)viewDidLoad
 {
+    [super viewDidLoad];
     //Load the Buildings Array
     //buildings = [[NSArray alloc]initWithObjects:@"Bridwell Courts",@"Bolin Hall",@"Redwine Fitness Center",@"Moffett Library",nil];
+    
+    //Set map type
     self.campusMap.mapType = MKMapTypeHybrid;
     
     //Allocate arrays
@@ -50,16 +55,74 @@
     self.buildingList = [[NSMutableDictionary alloc]initWithObjects:self.buildingCoordinate forKeys:self.buildingName];
 }
 
+-(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay{
+    NSLog(@"I'm in mapview view for overlay...\n");
+	if([overlay isKindOfClass:[MKPolygon class]]){
+        NSLog(@"I'm an MKPolygon class...\n");
+		MKPolygonView *view = [[MKPolygonView alloc] initWithOverlay:overlay];
+		view.lineWidth=1;
+		//view.strokeColor=[UIColor yellowColor];
+		view.strokeColor = _parkingLotColor;
+        //view.fillColor=[[UIColor yellowColor] colorWithAlphaComponent:0.5];
+        view.fillColor = [_parkingLotColor colorWithAlphaComponent:0.5];
+        return view;
+	}
+	return nil;
+}
+
 -(void)viewDidAppear:(BOOL)animated
 {
-    CLLocationCoordinate2D startCoord = CLLocationCoordinate2DMake(33.871841,-98.521914);
-    MKCoordinateRegion adjustedRegion = [self.campusMap regionThatFits:MKCoordinateRegionMakeWithDistance(startCoord, 1000, 1000)];
-    [self.campusMap setRegion:adjustedRegion animated:NO];
+    //Define map view region
+    MKCoordinateSpan span;
+	span.latitudeDelta=.01;
+	span.longitudeDelta=.01;
+    
+	MKCoordinateRegion region;
+	region.span=span;
+	region.center=CLLocationCoordinate2DMake(33.871841, -98.521914);
+    
+    [_campusMap setRegion:region animated:NO];
+	[_campusMap regionThatFits:region];
+    
+    //Draw Parking Lots
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    if([defaults boolForKey:@"campusMapSettingsParkingLot"])
+    {
+        parkingLot * pl = [[parkingLot alloc]init];
+        _parkingLotColor = [UIColor yellowColor];
+        [pl drawCommuterParkingLots:_campusMap];
+        _parkingLotColor = [UIColor blueColor];
+        [pl drawReservedParkingLots:_campusMap];
+        _parkingLotColor = [UIColor redColor];
+        [pl drawResidentialParkingLots:_campusMap];
+        _parkingLotColor = [UIColor orangeColor];
+        [pl drawHybridParkingLots:_campusMap];
+    }
+    else
+    {
+        [_campusMap removeOverlays:[_campusMap overlays]];
+    }
+    
+    NSLog(@"My map type should be %@\n",[defaults objectForKey:@"campusMapSettingsMapRowChecked"]);
+    if([[defaults objectForKey:@"campusMapSettingsMapRowChecked"] isEqualToString:@"Hybrid"])
+    {
+        self.campusMap.mapType = MKMapTypeHybrid;
+    }
+    else if([[defaults objectForKey:@"campusMapSettingsMapRowChecked"]isEqualToString:@"Satellite Only"])
+    {
+        self.campusMap.mapType = MKMapTypeSatellite;
+    }
+    else if([[defaults objectForKey:@"campusMapSettingsMapRowChecked"]isEqualToString:@"Roads Only"])
+    {
+        self.campusMap.mapType = MKMapTypeStandard;
+    }
+    
+    [super viewDidLoad];
 }
 
 -(void)addPinWithTitle:(NSString*)title atLocation:(NSArray*) coordinate
 {
-    MSUBuilding * testBuilding = [[MSUBuilding alloc] init];
+    MSULocation * testBuilding = [[MSULocation alloc] init];
     NSLog(@"Received coordinate: %@,%@\n",[coordinate objectAtIndex:0],[coordinate objectAtIndex:1]);
     
     //Create information for this test site

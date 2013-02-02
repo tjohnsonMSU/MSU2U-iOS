@@ -29,7 +29,10 @@
     defaults = [NSUserDefaults standardUserDefaults];
     
     NSLog(@"%@\n",[defaults valueForKey:@"campusMapSettingsMapRowChecked"]);
-    
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
     //Set up the settings options as they are in the user defaults
     if([[defaults valueForKey:@"campusMapSettingsMapRowChecked"] isEqualToString:@"Satellite Only"])
     {
@@ -40,6 +43,13 @@
         [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:1]].accessoryType = UITableViewCellAccessoryCheckmark;
     else
         [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]].accessoryType = UITableViewCellAccessoryCheckmark;
+    
+    if([defaults boolForKey:@"campusMapSettingsParkingLot"])
+    {
+        //turn on that switch
+        [self.parkingZoneSwitch setOn:TRUE];
+    }
+    
 }
 
 #pragma mark - Table view delegate
@@ -83,4 +93,20 @@
     [defaults synchronize];
 }
 
+- (IBAction)parkingZoneFlipped:(UISwitch *)sender {
+    if(sender.isOn)
+    {
+        NSLog(@"Setting parking lot as TRUE in defaults...\n");
+        [defaults setBool:YES forKey:@"campusMapSettingsParkingLot"];
+    }
+    else
+    {
+        NSLog(@"Setting parking lot as FALSE in defaults...\n");
+        [defaults setBool:NO forKey:@"campusMapSettingsParkingLot"];
+    }
+    [defaults synchronize];
+}
+
+- (IBAction)campusBorderFlipped:(UISwitch *)sender {
+}
 @end

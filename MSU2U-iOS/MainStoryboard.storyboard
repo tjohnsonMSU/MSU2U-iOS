@@ -235,7 +235,7 @@
             <objects>
                 <viewController id="iUY-HR-2IB" customClass="campusMapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lJ8-ss-0lF">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="6pT-rQ-SsN">
@@ -244,7 +244,11 @@
                                     <outlet property="delegate" destination="iUY-HR-2IB" id="ZHp-lI-2za"/>
                                 </connections>
                             </searchBar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cuU-oX-DP7"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cuU-oX-DP7">
+                                <connections>
+                                    <outlet property="delegate" destination="iUY-HR-2IB" id="u5W-hz-nSJ"/>
+                                </connections>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -287,7 +291,7 @@
             <objects>
                 <tableViewController id="Iew-9Z-FEp" customClass="campusMapSettingsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="iF3-PE-4Ln">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -305,7 +309,11 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bvn-qg-7Lk"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bvn-qg-7Lk">
+                                                    <connections>
+                                                        <action selector="parkingZoneFlipped:" destination="Iew-9Z-FEp" eventType="valueChanged" id="ytg-W8-wsn"/>
+                                                    </connections>
+                                                </switch>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -328,7 +336,11 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="J3L-qf-kzq"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="J3L-qf-kzq">
+                                                    <connections>
+                                                        <action selector="campusBorderFlipped:" destination="Iew-9Z-FEp" eventType="valueChanged" id="WRQ-Ws-rjZ"/>
+                                                    </connections>
+                                                </switch>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -412,6 +424,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="kJx-Ba-hvI"/>
+                    <connections>
+                        <outlet property="parkingZoneSwitch" destination="Bvn-qg-7Lk" id="e7g-Eb-F9w"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dMY-y0-vPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3477,6 +3492,10 @@
         </class>
         <class className="campusMapSettingsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/campusMapSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="campusBorderFlipped:" candidateClass="UISwitch"/>
+                <relationship kind="action" name="parkingZoneFlipped:" candidateClass="UISwitch"/>
+            </relationships>
         </class>
         <class className="campusMapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/campusMapViewController.h"/>
@@ -3671,8 +3690,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="4TH-w0-xJm"/>
         <segue reference="8kf-WW-rHa"/>
+        <segue reference="HP2-9l-pq3"/>
         <segue reference="2q8-i8-unJ"/>
         <segue reference="R1W-Pk-Kbl"/>
     </inferredMetricsTieBreakers>
