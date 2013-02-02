@@ -52,5 +52,6 @@
 {"name":"Sikes Cottage", "latitude":33.868545, "longitude":-98.521201},
 {"name":"Carriage House", "latitude":33.868545, "longitude":-98.521201},
 {"name":"Alumni Center", "latitude":33.868454, "longitude":-98.521566},
-{"name":"Daniel Bldg - Physical Plant", "latitude":33.875876, "longitude":-98.522357}
+{"name":"Daniel Bldg - Physical Plant", "latitude":33.875876, "longitude":-98.522357},
+ {"name":"Post Office","latitude":33.874618,"longitude":-98.520757}
 ]
