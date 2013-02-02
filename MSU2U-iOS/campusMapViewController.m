@@ -32,8 +32,7 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    //Load the Buildings Array
-    //buildings = [[NSArray alloc]initWithObjects:@"Bridwell Courts",@"Bolin Hall",@"Redwine Fitness Center",@"Moffett Library",nil];
+    //Remove map overlays if any.
     
     //Set map type
     self.campusMap.mapType = MKMapTypeHybrid;
@@ -72,6 +71,7 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
+    [self.campusMap removeOverlays:[_campusMap overlays]];
     //Define map view region
     MKCoordinateSpan span;
 	span.latitudeDelta=.01;
@@ -91,7 +91,7 @@
         parkingLot * pl = [[parkingLot alloc]init];
         _parkingLotColor = [UIColor yellowColor];
         [pl drawCommuterParkingLots:_campusMap];
-        _parkingLotColor = [UIColor blueColor];
+        _parkingLotColor = [UIColor cyanColor];
         [pl drawReservedParkingLots:_campusMap];
         _parkingLotColor = [UIColor redColor];
         [pl drawResidentialParkingLots:_campusMap];

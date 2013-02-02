@@ -228,7 +228,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-8616" y="-738"/>
+            <point key="canvasLocation" x="-13024" y="-2458"/>
         </scene>
         <!--Campus Map View Controller - Map-->
         <scene sceneID="XwM-6U-FXN">
@@ -284,7 +284,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-4437" y="1023"/>
+            <point key="canvasLocation" x="-8845" y="-697"/>
         </scene>
         <!--Campus Map Settings View Controller - Settings-->
         <scene sceneID="pPY-0d-64S">
@@ -305,7 +305,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Parking Zones" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGO-98-5H0">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="122" id="1b1-oM-UbK"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
@@ -332,7 +335,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Campus Border" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arU-PO-gw8">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="134" id="vfd-d4-ubE"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
@@ -346,7 +352,7 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="J3L-qf-kzq" firstAttribute="centerY" secondItem="arU-PO-gw8" secondAttribute="centerY" type="default" id="7oG-mQ-4y9"/>
-                                            <constraint firstItem="J3L-qf-kzq" firstAttribute="top" secondItem="moR-0W-yJS" secondAttribute="top" constant="8" id="Gnn-Ur-ygT"/>
+                                            <constraint firstItem="J3L-qf-kzq" firstAttribute="top" secondItem="moR-0W-yJS" secondAttribute="top" constant="8" id="Fow-l8-VDC"/>
                                             <constraint firstAttribute="trailing" secondItem="J3L-qf-kzq" secondAttribute="trailing" constant="30" id="Pme-h1-QPW"/>
                                             <constraint firstItem="arU-PO-gw8" firstAttribute="leading" secondItem="moR-0W-yJS" secondAttribute="leading" constant="30" id="qgR-Ky-63n"/>
                                         </constraints>
@@ -355,65 +361,69 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Map Type" id="w1O-LY-Rvf">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="BiD-nj-LAj">
-                                        <rect key="frame" x="0.0" y="182" width="320" height="45"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="EqR-SW-OTl" imageView="uZM-J6-6Bk" rowHeight="42" style="IBUITableViewCellStyleDefault" id="BiD-nj-LAj">
+                                        <rect key="frame" x="0.0" y="182" width="320" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="41"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Hybrid" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRM-Hb-Xqr">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Hybrid" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EqR-SW-OTl">
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="hybridMap.png" id="uZM-J6-6Bk">
+                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="41"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="gRM-Hb-Xqr" firstAttribute="centerY" secondItem="BiD-nj-LAj" secondAttribute="centerY" type="default" id="IvU-zL-jG9"/>
-                                            <constraint firstItem="gRM-Hb-Xqr" firstAttribute="leading" secondItem="BiD-nj-LAj" secondAttribute="leading" constant="30" id="VUe-Vt-dx2"/>
-                                        </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="aYc-bJ-SuG">
-                                        <rect key="frame" x="0.0" y="227" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="qGd-7m-yY0" imageView="qSR-vd-hG3" rowHeight="42" style="IBUITableViewCellStyleDefault" id="HQe-Hn-J8R">
+                                        <rect key="frame" x="0.0" y="225" width="320" height="42"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <rect key="frame" x="10" y="0.0" width="300" height="41"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Satellite" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgt-r8-rGf">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Satellite Only" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qGd-7m-yY0">
+                                                    <rect key="frame" x="52" y="0.0" width="238" height="41"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="satelliteMap.png" id="qSR-vd-hG3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="41"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="Dgt-r8-rGf" firstAttribute="top" secondItem="aYc-bJ-SuG" secondAttribute="top" constant="11" id="8Kz-uY-F6y"/>
-                                            <constraint firstItem="Dgt-r8-rGf" firstAttribute="leading" secondItem="aYc-bJ-SuG" secondAttribute="leading" constant="30" id="qYw-ag-J3P"/>
-                                        </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="XvY-EP-47V">
-                                        <rect key="frame" x="0.0" y="271" width="320" height="45"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="xJf-qB-sv2" imageView="Xk4-lI-QUg" rowHeight="42" style="IBUITableViewCellStyleDefault" id="eDW-ej-yR6">
+                                        <rect key="frame" x="0.0" y="267" width="320" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <rect key="frame" x="10" y="0.0" width="300" height="41"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Road Only" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4s-2s-vLa">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Roads Only" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xJf-qB-sv2">
+                                                    <rect key="frame" x="56" y="0.0" width="234" height="41"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="standardMap.png" id="Xk4-lI-QUg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="46" height="41"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="B4s-2s-vLa" firstAttribute="leading" secondItem="XvY-EP-47V" secondAttribute="leading" constant="30" id="Gd9-ZK-mVv"/>
-                                            <constraint firstItem="B4s-2s-vLa" firstAttribute="top" secondItem="XvY-EP-47V" secondAttribute="top" constant="11" id="RQL-l4-uBz"/>
-                                        </constraints>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -430,7 +440,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dMY-y0-vPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3930" y="1023"/>
+            <point key="canvasLocation" x="-8424" y="-703"/>
         </scene>
         <!--Emergency Numbers View Controller - Public Safety-->
         <scene sceneID="n3I-d5-0AF">
@@ -582,7 +592,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1gT-AX-CEU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7717" y="-1022"/>
+            <point key="canvasLocation" x="-12125" y="-2742"/>
         </scene>
         <!--Table View Controller - Public Safety-->
         <scene sceneID="dDy-jZ-Ld5">
@@ -757,7 +767,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UZi-f4-Vmi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7158" y="-1943"/>
+            <point key="canvasLocation" x="-11566" y="-3663"/>
         </scene>
         <!--Directory View Controller - Directory-->
         <scene sceneID="fQ8-Sf-I76">
@@ -827,7 +837,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-5075" y="-2668"/>
+            <point key="canvasLocation" x="-9483" y="-4388"/>
         </scene>
         <!--Detail Event View Controller - Event Type Here-->
         <scene sceneID="PfM-uM-0Lg">
@@ -980,7 +990,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C88-9c-JGv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4975" y="1827"/>
+            <point key="canvasLocation" x="-9383" y="107"/>
         </scene>
         <!--Sport View Controller - Sports-->
         <scene sceneID="R8P-w2-ifj">
@@ -1050,7 +1060,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-6847" y="722"/>
+            <point key="canvasLocation" x="-11255" y="-998"/>
         </scene>
         <!--News View Controller - News-->
         <scene sceneID="QAN-6o-FBA">
@@ -1125,7 +1135,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-7016" y="2007"/>
+            <point key="canvasLocation" x="-11424" y="287"/>
         </scene>
         <!--Event View Controller - Events-->
         <scene sceneID="W20-J2-YhD">
@@ -1195,7 +1205,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-7023" y="2902"/>
+            <point key="canvasLocation" x="-11431" y="1182"/>
         </scene>
         <!--Detail Sport View Controller-->
         <scene sceneID="MvO-tN-vdu">
@@ -1399,7 +1409,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LwG-yj-Mme" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5819" y="948"/>
+            <point key="canvasLocation" x="-10227" y="-772"/>
         </scene>
         <!--Detail News View Controller - The Wichitan-->
         <scene sceneID="ctQ-C3-5zp">
@@ -1524,7 +1534,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QDB-vs-0dZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6479" y="1684"/>
+            <point key="canvasLocation" x="-10887" y="-36"/>
         </scene>
         <!--Event Subscription View Controller - Events-->
         <scene sceneID="UNw-nq-9sN">
@@ -1771,7 +1781,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bir-tB-zDL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4437" y="2122"/>
+            <point key="canvasLocation" x="-8845" y="402"/>
         </scene>
         <!--News Subscription View Controller - News-->
         <scene sceneID="U4H-Ax-lwD">
@@ -1882,7 +1892,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l4v-yi-6ic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4437" y="3500"/>
+            <point key="canvasLocation" x="-8845" y="1780"/>
         </scene>
         <!--Sport Subscription View Controller - Sports-->
         <scene sceneID="Vdt-gG-OCA">
@@ -2266,7 +2276,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K33-e8-FAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4437" y="2814"/>
+            <point key="canvasLocation" x="-8845" y="1094"/>
         </scene>
         <!--Tab Bar Controller - Subscribe-->
         <scene sceneID="Vu5-uc-XF9">
@@ -2287,7 +2297,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HhO-6O-QhO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5207" y="2811"/>
+            <point key="canvasLocation" x="-9615" y="1091"/>
         </scene>
         <!--Detail Directory View Controller - Directory-->
         <scene sceneID="Rnm-vL-Wno">
@@ -2437,7 +2447,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zay-14-bAS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4253" y="-2149"/>
+            <point key="canvasLocation" x="-8661" y="-3869"/>
         </scene>
         <!--Favorite Directory View Controller - Directory-->
         <scene sceneID="2iM-ag-GQ7">
@@ -2510,7 +2520,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-5523" y="-2188"/>
+            <point key="canvasLocation" x="-9931" y="-3908"/>
         </scene>
         <!--History Directory View Controller - History-->
         <scene sceneID="95r-7b-yga">
@@ -2583,7 +2593,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-4821" y="-1480"/>
+            <point key="canvasLocation" x="-9229" y="-3200"/>
         </scene>
         <!--Tab Bar Controller - Directory-->
         <scene sceneID="6Yu-Sr-uUK">
@@ -2606,7 +2616,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="imR-IB-l2W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7501" y="-2614"/>
+            <point key="canvasLocation" x="-11909" y="-4334"/>
         </scene>
         <!--More Emergency Contacts Table View Controller - Emergency Contacts-->
         <scene sceneID="w2P-UJ-4B7">
@@ -3013,7 +3023,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oNt-Fv-rgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6696" y="-1304"/>
+            <point key="canvasLocation" x="-11104" y="-3024"/>
         </scene>
         <!--Voices Table View Controller - Voices-->
         <scene sceneID="K8z-KH-pP9">
@@ -3062,7 +3072,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gl6-KH-jnh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5345" y="175"/>
+            <point key="canvasLocation" x="-9753" y="-1545"/>
         </scene>
         <!--Web View Controller - [Web View]-->
         <scene sceneID="pCe-V0-hef">
@@ -3083,7 +3093,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iFb-gN-TyH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4821" y="-496"/>
+            <point key="canvasLocation" x="-9229" y="-2216"/>
         </scene>
         <!--Media Menu View Controller - Media-->
         <scene sceneID="XtB-Dz-gYj">
@@ -3201,7 +3211,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cyc-wb-WpA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6229" y="-230"/>
+            <point key="canvasLocation" x="-10637" y="-1950"/>
         </scene>
         <!--App Feedback View Controller - App Feedback-->
         <scene sceneID="mJW-nv-eYO">
@@ -3415,7 +3425,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KeC-9W-m4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7942" y="175"/>
+            <point key="canvasLocation" x="-12350" y="-1545"/>
         </scene>
         <!--Tab Bar Controller - My Feed-->
         <scene sceneID="30L-jD-bg0">
@@ -3436,7 +3446,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fk7-1D-mCn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-8153" y="1006"/>
+            <point key="canvasLocation" x="-12561" y="-714"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="V5H-fZ-v5b">
@@ -3451,7 +3461,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vBJ-jp-qTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9092" y="-738"/>
+            <point key="canvasLocation" x="-13500" y="-2458"/>
         </scene>
     </scenes>
     <resources>
@@ -3471,8 +3481,11 @@
         <image name="96-book.png" width="18" height="26"/>
         <image name="98-palette.png" width="24" height="20"/>
         <image name="dirBg.png" width="320" height="74"/>
+        <image name="hybridMap.png" width="188" height="184"/>
         <image name="photoFrame.png" width="85" height="100"/>
+        <image name="satelliteMap.png" width="250" height="246"/>
         <image name="softball1.JPG" width="607" height="405"/>
+        <image name="standardMap.png" width="174" height="156"/>
         <image name="star.png" width="400" height="400"/>
         <image name="tennis.jpeg" width="204" height="204"/>
         <image name="theWichitan.jpg" width="180" height="180"/>
@@ -3495,6 +3508,7 @@
             <relationships>
                 <relationship kind="action" name="campusBorderFlipped:" candidateClass="UISwitch"/>
                 <relationship kind="action" name="parkingZoneFlipped:" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="parkingZoneSwitch" candidateClass="UISwitch"/>
             </relationships>
         </class>
         <class className="campusMapViewController" superclassName="UIViewController">
@@ -3690,9 +3704,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="8kf-WW-rHa"/>
         <segue reference="HP2-9l-pq3"/>
-        <segue reference="2q8-i8-unJ"/>
-        <segue reference="R1W-Pk-Kbl"/>
+        <segue reference="iZw-wf-6YV"/>
+        <segue reference="Ti9-Ag-xF6"/>
+        <segue reference="uKY-xo-jyr"/>
     </inferredMetricsTieBreakers>
 </document>
