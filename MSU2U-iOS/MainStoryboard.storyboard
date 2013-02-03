@@ -314,7 +314,7 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bvn-qg-7Lk">
                                                     <connections>
-                                                        <action selector="parkingZoneFlipped:" destination="Iew-9Z-FEp" eventType="valueChanged" id="ytg-W8-wsn"/>
+                                                        <action selector="parkingZoneFlipped:" destination="Iew-9Z-FEp" eventType="valueChanged" id="eR5-B4-GtC"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -344,7 +344,7 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="J3L-qf-kzq">
                                                     <connections>
-                                                        <action selector="campusBorderFlipped:" destination="Iew-9Z-FEp" eventType="valueChanged" id="WRQ-Ws-rjZ"/>
+                                                        <action selector="campusBorderFlipped:" destination="Iew-9Z-FEp" eventType="valueChanged" id="QuJ-nv-lO6"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -371,7 +371,7 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CGt-kj-M8q">
                                                     <connections>
-                                                        <action selector="campusBorderFlipped:" destination="Iew-9Z-FEp" eventType="valueChanged" id="e0V-ST-inD"/>
+                                                        <action selector="busTransitRouteFlipped:" destination="Iew-9Z-FEp" eventType="valueChanged" id="FND-n5-pim"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -462,6 +462,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="kJx-Ba-hvI"/>
                     <connections>
+                        <outlet property="busTransitRouteSwitch" destination="CGt-kj-M8q" id="uha-I9-wQa"/>
+                        <outlet property="campusBorderSwitch" destination="J3L-qf-kzq" id="y7J-b7-ABj"/>
                         <outlet property="parkingZoneSwitch" destination="Bvn-qg-7Lk" id="e7g-Eb-F9w"/>
                     </connections>
                 </tableViewController>
@@ -3769,8 +3771,11 @@
         <class className="campusMapSettingsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/campusMapSettingsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="busTransitRouteFlipped:" candidateClass="UISwitch"/>
                 <relationship kind="action" name="campusBorderFlipped:" candidateClass="UISwitch"/>
-                <relationship kind="action" name="parkingZoneFlipped:" candidateClass="UISwitch"/>
+                <relationship kind="action" name="parkingZoneFlipped:"/>
+                <relationship kind="outlet" name="busTransitRouteSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="campusBorderSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="parkingZoneSwitch" candidateClass="UISwitch"/>
             </relationships>
         </class>

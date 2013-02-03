@@ -49,6 +49,14 @@
         //turn on that switch
         [self.parkingZoneSwitch setOn:TRUE];
     }
+    if([defaults boolForKey:@"campusMapSettingsCampusBorder"])
+    {
+        [self.campusBorderSwitch setOn:TRUE];
+    }
+    if([defaults boolForKey:@"campusMapSettingsBusRoute"])
+    {
+        [self.busTransitRouteSwitch setOn:TRUE];
+    }
     
 }
 
@@ -108,5 +116,29 @@
 }
 
 - (IBAction)campusBorderFlipped:(UISwitch *)sender {
+    if(sender.isOn)
+    {
+        NSLog(@"Setting campus border as TRUE in defaults...\n");
+        [defaults setBool:YES forKey:@"campusMapSettingsCampusBorder"];
+    }
+    else
+    {
+        NSLog(@"Setting campus border as FALSE in defaults...\n");
+        [defaults setBool:NO forKey:@"campusMapSettingsCampusBorder"];
+    }
+    [defaults synchronize];
+}
+- (IBAction)busTransitRouteFlipped:(UISwitch *)sender {
+    if(sender.isOn)
+    {
+        NSLog(@"Setting bus transit route as TRUE in defaults...\n");
+        [defaults setBool:YES forKey:@"campusMapSettingsBusRoute"];
+    }
+    else
+    {
+        NSLog(@"Setting parking lot as FALSE in defaults...\n");
+        [defaults setBool:NO forKey:@"campusMapSettingsBusRoute"];
+    }
+    [defaults synchronize];
 }
 @end

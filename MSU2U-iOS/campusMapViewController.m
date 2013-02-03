@@ -66,6 +66,23 @@
         view.fillColor = [_parkingLotColor colorWithAlphaComponent:0.5];
         return view;
 	}
+    else if([overlay isKindOfClass:[MKPolyline class]]){
+        MKPolylineView * view = [[MKPolylineView alloc]initWithPolyline:overlay];
+        view.lineWidth=5;
+        view.strokeColor = _polylineColor;
+        if(_polylineColor == [UIColor purpleColor])
+        {
+            //bus
+            view.tag = 1;
+        }
+        else if(_polylineColor == [UIColor greenColor])
+        {
+            //campus border
+            view.tag = 2;
+        }
+        return view;
+    }
+    NSLog(@"ERROR: Overlay was not of type MKPolygon OR MKPolylineView\n");
 	return nil;
 }
 
@@ -84,11 +101,15 @@
     [_campusMap setRegion:region animated:NO];
 	[_campusMap regionThatFits:region];
     
-    //Draw Parking Lots
+    //#####
+    //####
+    //### Draw Overlays!
+    //##
+    //#
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
     if([defaults boolForKey:@"campusMapSettingsParkingLot"])
     {
-        parkingLot * pl = [[parkingLot alloc]init];
+        overlay * pl = [[overlay alloc]init];
         _parkingLotColor = [UIColor yellowColor];
         [pl drawCommuterParkingLots:_campusMap];
         _parkingLotColor = [UIColor cyanColor];
@@ -103,6 +124,35 @@
         [_campusMap removeOverlays:[_campusMap overlays]];
     }
     
+    if([defaults boolForKey:@"campusMapSettingsBusRoute"])
+    {
+        overlay * pk = [[overlay alloc]init];
+        _polylineColor = [UIColor purpleColor];
+        [pk busRoute:_campusMap];
+    }
+    else
+    {
+        //Remove only the bus route tag
+        [[self.view.window viewWithTag:1] removeFromSuperview];
+    }
+    
+    if([defaults boolForKey:@"campusMapSettingsCampusBorder"])
+    {
+        overlay * pc = [[overlay alloc]init];
+        _polylineColor = [UIColor greenColor];
+        [pc campusBorder:_campusMap];
+    }
+    else
+    {
+        //Remove only the campus border
+        [[self.view.window viewWithTag:2] removeFromSuperview];
+    }
+    
+    //#####
+    //####
+    //### Draw appropriate may type!
+    //##
+    //#
     NSLog(@"My map type should be %@\n",[defaults objectForKey:@"campusMapSettingsMapRowChecked"]);
     if([[defaults objectForKey:@"campusMapSettingsMapRowChecked"] isEqualToString:@"Hybrid"])
     {

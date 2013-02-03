@@ -12,7 +12,10 @@
     NSUserDefaults * defaults;
 }
 @property (weak, nonatomic) IBOutlet UISwitch *parkingZoneSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *campusBorderSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *busTransitRouteSwitch;
 
-- (IBAction)parkingZoneFlipped:(UISwitch *)sender;
+- (IBAction)parkingZoneFlipped:(id)sender;
 - (IBAction)campusBorderFlipped:(UISwitch *)sender;
+- (IBAction)busTransitRouteFlipped:(UISwitch *)sender;
 @end

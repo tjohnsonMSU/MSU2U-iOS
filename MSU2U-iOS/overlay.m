@@ -1,14 +1,14 @@
 //
-//  parkingLot.m
+//  overlay.m
 //  MSU2U-iOS
 //
 //  Created by Matthew Farmer on 2/1/13.
 //  Copyright (c) 2013 Matthew Farmer. All rights reserved.
 //
 
-#import "parkingLot.h"
+#import "overlay.h"
 
-@implementation parkingLot
+@implementation overlay
 
 //###############################################################
 //# COMMUTER LOTS
@@ -928,4 +928,116 @@
     parkingPolygon=[MKPolygon polygonWithCoordinates:louisRodiguezCoords count:5];
     [mapView addOverlay:parkingPolygon];
 }
+
+-(void)busRoute:(MKMapView*)mapView
+{
+    //Bolin Parking Lot 2 (Reserved)
+    CLLocationCoordinate2D busRouteCoords[38]={
+        CLLocationCoordinate2DMake(33.875292,-98.523679),
+        CLLocationCoordinate2DMake(33.875296,-98.518476),
+        CLLocationCoordinate2DMake(33.871674,-98.518546),
+        CLLocationCoordinate2DMake(33.871084,-98.518567),
+        CLLocationCoordinate2DMake(33.870252,-98.51854),
+        CLLocationCoordinate2DMake(33.868548,-98.518395),
+        CLLocationCoordinate2DMake(33.866647,-98.518382),
+        CLLocationCoordinate2DMake(33.865573,-98.51853),
+        CLLocationCoordinate2DMake(33.860768,-98.518524),
+        CLLocationCoordinate2DMake(33.859434,-98.518806),
+        CLLocationCoordinate2DMake(33.858738,-98.519329),
+        CLLocationCoordinate2DMake(33.858352,-98.519825),
+        CLLocationCoordinate2DMake(33.857943,-98.520477),
+        CLLocationCoordinate2DMake(33.857543,-98.520831),
+        CLLocationCoordinate2DMake(33.857209,-98.520984),
+        CLLocationCoordinate2DMake(33.857818,-98.525932),
+        CLLocationCoordinate2DMake(33.85791,-98.527048),
+        CLLocationCoordinate2DMake(33.857892,-98.528371),
+        CLLocationCoordinate2DMake(33.857902,-98.530889),
+        CLLocationCoordinate2DMake(33.858782,-98.530908),
+        CLLocationCoordinate2DMake(33.859429,-98.531093),
+        CLLocationCoordinate2DMake(33.86063,-98.531935),
+        CLLocationCoordinate2DMake(33.86138,-98.532096),
+        CLLocationCoordinate2DMake(33.862175,-98.531876),
+        CLLocationCoordinate2DMake(33.862849,-98.5312),
+        CLLocationCoordinate2DMake(33.863368,-98.530347),
+        CLLocationCoordinate2DMake(33.863905,-98.529269),
+        CLLocationCoordinate2DMake(33.864641,-98.528762),
+        CLLocationCoordinate2DMake(33.865325,-98.528773),
+        CLLocationCoordinate2DMake(33.866194,-98.52913),
+        CLLocationCoordinate2DMake(33.86682,-98.529234),
+        CLLocationCoordinate2DMake(33.867456,-98.529103),
+        CLLocationCoordinate2DMake(33.868545,-98.528593),
+        CLLocationCoordinate2DMake(33.870449,-98.528542),
+        CLLocationCoordinate2DMake(33.870454,-98.523797),
+        CLLocationCoordinate2DMake(33.873095,-98.52376),
+        CLLocationCoordinate2DMake(33.873505,-98.523653),
+        CLLocationCoordinate2DMake(33.875292,-98.523679)
+    };
+    route = [MKPolyline polylineWithCoordinates:busRouteCoords count:38];
+    [mapView addOverlay:route];
+}
+
+-(void)campusBorder:(MKMapView*)mapView
+{
+    //Bolin Parking Lot 2 (Reserved)
+    CLLocationCoordinate2D campusBorderCoords[55]={
+        CLLocationCoordinate2DMake(33.877905,-98.524554),
+        CLLocationCoordinate2DMake(33.877916,-98.522899),
+        CLLocationCoordinate2DMake(33.877965,-98.522464),
+        CLLocationCoordinate2DMake(33.87772,-98.521783),
+        CLLocationCoordinate2DMake(33.877701,-98.518513),
+        CLLocationCoordinate2DMake(33.871463,-98.518564),
+        CLLocationCoordinate2DMake(33.870757,-98.518602),
+        CLLocationCoordinate2DMake(33.868828,-98.518436),
+        CLLocationCoordinate2DMake(33.868275,-98.518425),
+        CLLocationCoordinate2DMake(33.868164,-98.519192),
+        CLLocationCoordinate2DMake(33.868013,-98.519828),
+        CLLocationCoordinate2DMake(33.868003,-98.520477),
+        CLLocationCoordinate2DMake(33.867894,-98.520938),
+        CLLocationCoordinate2DMake(33.867659,-98.521292),
+        CLLocationCoordinate2DMake(33.867142,-98.521598),
+        CLLocationCoordinate2DMake(33.867142,-98.521598),
+        CLLocationCoordinate2DMake(33.866709,-98.521362),
+        CLLocationCoordinate2DMake(33.86617,-98.521544),
+        CLLocationCoordinate2DMake(33.866202,-98.52174),
+        CLLocationCoordinate2DMake(33.864457,-98.521952),
+        CLLocationCoordinate2DMake(33.864911,-98.523199),
+        CLLocationCoordinate2DMake(33.864535,-98.524559),
+        CLLocationCoordinate2DMake(33.864631,-98.526973),
+        CLLocationCoordinate2DMake(33.866162,-98.526812),
+        CLLocationCoordinate2DMake(33.866141,-98.525498),
+        CLLocationCoordinate2DMake(33.866617,-98.524103),
+        CLLocationCoordinate2DMake(33.867387,-98.523926),
+        CLLocationCoordinate2DMake(33.868231,-98.524471),
+        CLLocationCoordinate2DMake(33.868492,-98.524417),
+        CLLocationCoordinate2DMake(33.868469,-98.525806),
+        CLLocationCoordinate2DMake(33.869092,-98.525806),
+        CLLocationCoordinate2DMake(33.869108,-98.525391),
+        CLLocationCoordinate2DMake(33.869247,-98.525289),
+        CLLocationCoordinate2DMake(33.869495,-98.525259),
+        CLLocationCoordinate2DMake(33.869535,-98.525125),
+        CLLocationCoordinate2DMake(33.86991,-98.525144),
+        CLLocationCoordinate2DMake(33.869938,-98.525257),
+        CLLocationCoordinate2DMake(33.870114,-98.525265),
+        CLLocationCoordinate2DMake(33.870582,-98.525726),
+        CLLocationCoordinate2DMake(33.870605,-98.526195),
+        CLLocationCoordinate2DMake(33.87098,-98.526211),
+        CLLocationCoordinate2DMake(33.871215,-98.5256),
+        CLLocationCoordinate2DMake(33.871752,-98.524731),
+        CLLocationCoordinate2DMake(33.871833,-98.524527),
+        CLLocationCoordinate2DMake(33.871833,-98.524369),
+        CLLocationCoordinate2DMake(33.872752,-98.52516),
+        CLLocationCoordinate2DMake(33.873546,-98.525152),
+        CLLocationCoordinate2DMake(33.873553,-98.524661),
+        CLLocationCoordinate2DMake(33.875375,-98.524653),
+        CLLocationCoordinate2DMake(33.875372,-98.524455),
+        CLLocationCoordinate2DMake(33.875778,-98.524449),
+        CLLocationCoordinate2DMake(33.875775,-98.524331),
+        CLLocationCoordinate2DMake(33.876879,-98.524328),
+        CLLocationCoordinate2DMake(33.876882,-98.52457),
+        CLLocationCoordinate2DMake(33.877905,-98.524554)
+    };
+    route = [MKPolyline polylineWithCoordinates:campusBorderCoords count:55];
+    [mapView addOverlay:route];
+}
+
 @end

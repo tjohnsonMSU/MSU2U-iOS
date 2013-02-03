@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "MSULocation.h"
-#import "parkingLot.h"
+#import "overlay.h"
 
 @interface campusMapViewController : UIViewController<MKMapViewDelegate>{
     NSArray *buildings;
     NSArray *searchResults;
     MKMapView * _campusMap;
     UIColor * _parkingLotColor;
+    UIColor * _polylineColor;
 }
 @property (strong,nonatomic) NSDictionary * buildingList;
 
