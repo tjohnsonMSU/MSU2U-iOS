@@ -20,6 +20,8 @@
 @property (nonatomic, copy) NSString * addressZIPKey;
 @property (nonatomic, copy) NSString * phoneNumber;
 @property (nonatomic, copy) NSString * addressUrl;
+@property (nonatomic, copy) NSString * description;
+@property (nonatomic, copy) NSString * imageUrl;
 
 - (MKMapItem*)mapItem;
 

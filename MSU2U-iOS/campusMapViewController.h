@@ -11,6 +11,7 @@
 #import "MSULocation.h"
 #import "overlay.h"
 #import <AddressBook/AddressBook.h>
+#import "campusMapInfoViewController.h"
 
 @interface campusMapViewController : UIViewController<MKMapViewDelegate, UIActionSheetDelegate>{
     NSArray *buildings;

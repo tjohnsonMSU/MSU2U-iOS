@@ -186,16 +186,17 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
                            launchOptions:launchOptions];
             
         } else if (buttonIndex == 1) {
-            // 3
+            // REMOVE PIN HERE
             
         } else if (buttonIndex == 2) {
-            // 4
+            // SHOW MORE INFO CODE HERE
         }
     }
     
     // 5
     _selectedLocation = nil;
 }
+
 
 -(void)viewDidAppear:(BOOL)animated
 {
