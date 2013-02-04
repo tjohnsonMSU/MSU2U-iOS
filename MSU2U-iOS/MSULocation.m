@@ -12,24 +12,21 @@
 @implementation MSULocation
 
 - (MKMapItem*)mapItem {
-    // 1
     NSDictionary *addressDict = @{
-                                  (NSString*)kABPersonAddressCountryKey : @"UK",
-                                  (NSString*)kABPersonAddressCityKey : @"London",
-                                  (NSString*)kABPersonAddressStreetKey : @"10 Downing Street",
-                                  (NSString*)kABPersonAddressZIPKey : @"SW1A 2AA"};
-    
+                                  (NSString*)kABPersonAddressCountryKey : self.countryKey,
+                                  (NSString*)kABPersonAddressCityKey : self.addressCityKey,
+                                  (NSString*)kABPersonAddressStreetKey : self.addressStreetKey,
+                                  (NSString*)kABPersonAddressZIPKey : self.addressZIPKey};
     // 2
     MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:self.coordinate addressDictionary:addressDict];
     
     // 3
     MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
     mapItem.name = self.title;
-    mapItem.phoneNumber = @"+44-20-8123-4567";
-    mapItem.url = [NSURL URLWithString:@"http://www.raywenderlich.com/"];
+    mapItem.phoneNumber = self.phoneNumber;
+    mapItem.url = [NSURL URLWithString:self.addressUrl];
     
     return mapItem;
 }
-
 
 @end

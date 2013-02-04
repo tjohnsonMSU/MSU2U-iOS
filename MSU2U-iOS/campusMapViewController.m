@@ -8,8 +8,11 @@
 
 #import "campusMapViewController.h"
 
-@interface campusMapViewController ()
+typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
 
+@interface campusMapViewController (){
+    RWLocationCallback _foundLocationCallback;
+}
 @end
 
 @implementation campusMapViewController
@@ -40,18 +43,48 @@
     //Allocate arrays
     self.buildingName = [[NSMutableArray alloc]init];
     self.buildingCoordinate = [[NSMutableArray alloc]init];
+    self.buildingAddress = [[NSMutableArray alloc]init];
     
     //Download the JSON data
     buildings = [self executeDataFetch:@"buildings.json"];
     
+    NSLog(@"About to stuff buildings into datainfo...\n");
     for(NSDictionary * dataInfo in buildings)
     {
+        NSLog(@"Add item to buildingName array...\n");
         [self.buildingName addObject:[dataInfo objectForKey:@"name"]];
+        NSLog(@"Add item to buildingCoordinate array...\n");
         [self.buildingCoordinate addObject:[[NSArray alloc]initWithObjects:[dataInfo objectForKey:@"latitude"],[dataInfo objectForKey:@"longitude"], nil]];
+        NSLog(@"Add item to buildingAddress array...\n");
+        [self.buildingAddress addObject:[[NSArray alloc]initWithObjects:
+                                         [dataInfo objectForKey:@"addressCountryCode"],
+                                         [dataInfo objectForKey:@"addressStreetCode"],
+                                         [dataInfo objectForKey:@"addressStateCode"],
+                                         [dataInfo objectForKey:@"addressCityCode"],
+                                         [dataInfo objectForKey:@"addressZIPCode"],
+                                         nil]];
     }
-    
     //Place the organized JSON data into a dictionary format that can be more easily worked with later
-    self.buildingList = [[NSMutableDictionary alloc]initWithObjects:self.buildingCoordinate forKeys:self.buildingName];
+    self.coordinateLookup = [[NSMutableDictionary alloc]initWithObjects:self.buildingCoordinate forKeys:self.buildingName];
+    self.addressLookup = [[NSMutableDictionary alloc]initWithObjects:self.buildingAddress forKeys:self.buildingName];
+}
+
+- (MKAnnotationView*)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    if ([annotation isKindOfClass:[MSULocation class]]) {
+        static NSString *const kPinIdentifier = @"MSULocation";
+        MKPinAnnotationView *view = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:kPinIdentifier];
+        if (!view) {
+            view = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:kPinIdentifier];
+            view.canShowCallout = YES;
+            view.calloutOffset = CGPointMake(-5, 5);
+            view.animatesDrop = NO;
+        }
+        
+        view.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        
+        return view;
+    }
+    return nil;
 }
 
 -(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay{
@@ -84,6 +117,84 @@
     }
     NSLog(@"ERROR: Overlay was not of type MKPolygon OR MKPolylineView\n");
 	return nil;
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    _selectedLocation = (MSULocation*)view.annotation;
+    
+    // 1
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@""
+                                                       delegate:self
+                                              cancelButtonTitle:@"Cancel"
+                                         destructiveButtonTitle:nil
+                                              otherButtonTitles:@"Show Directions",@"Remove Pin",@"Show Location Info", nil];
+    
+    // 3
+    sheet.cancelButtonIndex = sheet.numberOfButtons - 1;
+    // 4
+    [sheet showInView:self.view];
+}
+
+- (void)performAfterFindingLocation:(RWLocationCallback)callback {
+    if (self.campusMap.userLocation != nil) {
+        if (callback) {
+            callback(self.campusMap.userLocation.coordinate);
+        }
+    } else {
+        _foundLocationCallback = [callback copy];
+    }
+}
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    if (_foundLocationCallback) {
+        _foundLocationCallback(userLocation.coordinate);
+    }
+    _foundLocationCallback = nil;
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    // 1
+    if (buttonIndex != actionSheet.cancelButtonIndex) {
+        if (buttonIndex == 0) {
+            // Open Apple Maps and 
+            /*MKMapItem *mapItem = [_selectedLocation mapItem];
+            NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking};
+            [mapItem openInMapsWithLaunchOptions:launchOptions];
+             */
+            // Create an MKMapItem to pass to the Apple Maps app
+            NSDictionary *addressDict = @{
+                                          (NSString *) kABPersonAddressStreetKey : _selectedLocation.addressStreetKey,
+                                          (NSString *) kABPersonAddressCityKey : _selectedLocation.addressCityKey,
+                                          (NSString *) kABPersonAddressStateKey : _selectedLocation.addressStateKey,
+                                          (NSString *) kABPersonAddressZIPKey : _selectedLocation.addressZIPKey,
+                                          (NSString *) kABPersonAddressCountryKey : _selectedLocation.countryKey
+                                          };
+            
+            MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:[_selectedLocation coordinate]
+                                                           addressDictionary:addressDict];
+            MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+            [mapItem setName:[_selectedLocation title]];
+            
+            // Set the directions mode to "Walking"
+            // Can use MKLaunchOptionsDirectionsModeDriving instead
+            NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving};
+            // Get the "Current User Location" MKMapItem
+            MKMapItem *currentLocationMapItem = [MKMapItem mapItemForCurrentLocation];
+            // Pass the current location and destination map items to the Maps app
+            // Set the direction mode in the launchOptions dictionary
+            [MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem] 
+                           launchOptions:launchOptions];
+            
+        } else if (buttonIndex == 1) {
+            // 3
+            
+        } else if (buttonIndex == 2) {
+            // 4
+        }
+    }
+    
+    // 5
+    _selectedLocation = nil;
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -170,15 +281,25 @@
     [super viewDidLoad];
 }
 
--(void)addPinWithTitle:(NSString*)title atLocation:(NSArray*) coordinate
+-(void)addPinWithTitle:(NSString*)title atLocation:(NSArray*)locationInfo atAddress:(NSArray*)addressInfo
 {
+    NSLog(@"I'm in addPinWithTitle");
+    //locationInfo:
+    //Index 0 is an array with two elements: latitude and longitude
+    //Index 1 is an array with five elements: country code, street, state, city, ZIP
+    //Therefore, to get the street for example, I need to go to index 1 of the object at index 1 of locationInfo
     MSULocation * testBuilding = [[MSULocation alloc] init];
-    NSLog(@"Received coordinate: %@,%@\n",[coordinate objectAtIndex:0],[coordinate objectAtIndex:1]);
+    NSLog(@"Received coordinate: %@,%@\n",[locationInfo objectAtIndex:0],[locationInfo objectAtIndex:1]);
     
     //Create information for this test site
     testBuilding.title = title;
+    testBuilding.countryKey = [addressInfo objectAtIndex:0];
+    testBuilding.addressStreetKey = [addressInfo objectAtIndex:1];
+    testBuilding.addressStateKey = [addressInfo objectAtIndex:2];
+    testBuilding.addressCityKey = [addressInfo objectAtIndex:3];
+    testBuilding.addressZIPKey = [addressInfo objectAtIndex:4];
     
-    CLLocationCoordinate2D myCoordinate = CLLocationCoordinate2DMake([[coordinate objectAtIndex:0]floatValue], [[coordinate objectAtIndex:1]floatValue]);
+    CLLocationCoordinate2D myCoordinate = CLLocationCoordinate2DMake([[locationInfo objectAtIndex:0]floatValue], [[locationInfo objectAtIndex:1]floatValue]);
     
     testBuilding.coordinate = myCoordinate;
     
@@ -235,10 +356,11 @@ shouldReloadTableForSearchString:(NSString *)searchString
     CLLocationCoordinate2D coordinate;
     if (tableView == self.searchDisplayController.searchResultsTableView)
     {
-        [self addPinWithTitle:[searchResults objectAtIndex:indexPath.row] atLocation:[self.buildingList objectForKey:[searchResults objectAtIndex:indexPath.row]]];
+        [self addPinWithTitle:[searchResults objectAtIndex:indexPath.row] atLocation:[self.coordinateLookup objectForKey:[searchResults objectAtIndex:indexPath.row]] atAddress:[self.addressLookup objectForKey:[searchResults objectAtIndex:indexPath.row]]];
     }
-    float latitude = [[[self.buildingList objectForKey:[searchResults objectAtIndex:indexPath.row]] objectAtIndex:0] floatValue];
-    float longitude = [[[self.buildingList objectForKey:[searchResults objectAtIndex:indexPath.row]]objectAtIndex:1] floatValue];
+    
+    float latitude = [[[self.coordinateLookup objectForKey:[searchResults objectAtIndex:indexPath.row]] objectAtIndex:0] floatValue];
+    float longitude = [[[self.coordinateLookup objectForKey:[searchResults objectAtIndex:indexPath.row]]objectAtIndex:1] floatValue];
     
     coordinate = CLLocationCoordinate2DMake(latitude,longitude);
                                               
