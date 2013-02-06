@@ -18,7 +18,8 @@
 
 -(void)viewDidLoad
 {
-    self.jsonURL = @"http://www.matthewfarmer.net/wichitan.json";
+    //self.jsonURL = @"http://www.matthewfarmer.net/wichitan.json";
+    self.jsonURL = @"http://www.matthewfarmer.net/parser/myScript.php";
     self.entityName = @"News";
     self.sortDescriptorKey = @"title";
     self.cellIdentifier = @"article";
