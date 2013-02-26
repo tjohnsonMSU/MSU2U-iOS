@@ -38,11 +38,11 @@
         NSLog(@"amOrPm at index 1 is %@...\n",[amOrPm objectAtIndex:1]);
     }
     
-    NSLog(@"My bits: year is %d, month is %d, day is %d, time is %d, am or pm is %@\n",[[dateBits objectAtIndex:0]intValue],[[dateBits objectAtIndex:1]intValue],[[dateBits objectAtIndex:2]intValue],[[timeBits objectAtIndex:0]intValue],[amOrPm objectAtIndex:1]);
+    NSLog(@"My bits: year is %d, month is %d, day is %d, time is %d, am or pm is %@\n",[[dateBits objectAtIndex:2]intValue],[[dateBits objectAtIndex:0]intValue],[[dateBits objectAtIndex:1]intValue],[[timeBits objectAtIndex:0]intValue],[amOrPm objectAtIndex:1]);
     
-    comps.day = [[dateBits objectAtIndex:2] intValue];
-    comps.month = [[dateBits objectAtIndex:1] intValue];
-    comps.year = [[dateBits objectAtIndex:0] intValue];
+    comps.day = [[dateBits objectAtIndex:1] intValue];
+    comps.month = [[dateBits objectAtIndex:0] intValue];
+    comps.year = [[dateBits objectAtIndex:2] intValue];
     
     //What should the hour be?
     if([[timeBits objectAtIndex:0] intValue] >= 0 && [[timeBits objectAtIndex:0]intValue] <= 24)
@@ -107,7 +107,9 @@
 - (BOOL)isFutureDay:(NSDate*)eventDate
 {
     NSDate *today = [NSDate date]; // it will give you current date
+    NSLog(@"Today's Date: %@\n",today);
     NSDate *newDate = eventDate; // your date
+    NSLog(@"Event Date: %@\n",eventDate);
     
     NSComparisonResult result;
     //has three possible values: NSOrderedSame,NSOrderedDescending, NSOrderedAscending

@@ -33,7 +33,6 @@
         news.link = [info objectForKey:@"link"];
         news.date = [info objectForKey:@"date"];
         news.category = [info objectForKey:@"category"];
-        news.link = [info objectForKey:@"link"];
         news.content = [info objectForKey:@"description"];
         news.author = [info objectForKey:@"author"];
         news.publication = [info objectForKey:@"publication"];

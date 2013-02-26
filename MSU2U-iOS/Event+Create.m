@@ -29,7 +29,7 @@
     {
         event = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:context];
         
-        event.startDate = [info objectForKey:@"StartTime"];
+        event.startTime = [info objectForKey:@"StartTime"];
         event.title = [info objectForKey:@"title"];
         event.content = [info objectForKey:@"description"];
         event.link = [info objectForKey:@"link"];
