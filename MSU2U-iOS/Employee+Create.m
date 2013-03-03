@@ -58,10 +58,28 @@
             employee.office_bldg_id_2 = [info objectForKey:@"Office_Bldg_2"];
             employee.office_rm_num_1 = [info objectForKey:@"Office_Rm_Num_1"];
             employee.office_rm_num_2 = [info objectForKey:@"Office_Rm_Num_2"];
-            employee.phone1 = [info objectForKey:@"Phone1"];
-            employee.fax1 = [info objectForKey:@"Fax1"];
-            employee.phone2 = [info objectForKey:@"Phone2"];
-            employee.fax2 = [info objectForKey:@"Fax2"];
+            
+            //I need to make sure these guys aren't bad numbers
+            if([[info objectForKey:@"Phone1"] length]<12)
+                employee.phone1 = @"";
+            else
+                employee.phone1 = [info objectForKey:@"Phone1"];
+            
+            if([[info objectForKey:@"Fax1"] length]<12)
+                employee.fax1 = @"";
+            else
+                employee.fax1 = [info objectForKey:@"Fax1"];
+            
+            if([[info objectForKey:@"Phone2"] length]<12)
+                employee.phone2 = @"";
+            else
+                employee.phone2 = [info objectForKey:@"Phone2"];
+            
+            if([[info objectForKey:@"Fax2"] length]<12)
+                employee.fax2 = @"";
+            else
+                employee.fax2 = [info objectForKey:@"Fax2"];
+            
             employee.link_to_more_info = [info objectForKey:@"Link_To_More_Info"];
             employee.picture = [info objectForKey:@"Picture"];
             

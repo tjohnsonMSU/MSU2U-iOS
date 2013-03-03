@@ -25,7 +25,7 @@
     NSError *error = nil;
     NSArray *results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
     if (error) NSLog(@"[%@ %@] JSON error: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error.localizedDescription);
-    NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results);
+    //NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results);
     return results;
 }
 
@@ -44,26 +44,43 @@
     dispatch_async(fetchQ,^{
         NSLog(@"I'm in the dispatch_async...\n");
         
-        NSArray * myData = [self downloadCurrentData:self.jsonURL];
         
-        //I'm blocking because I'm in the directory fetcher thread, and I can't otherwise access the context because it was created in a different thread.
-        [document.managedObjectContext performBlock:^{
-            for(NSDictionary * dataInfo in myData)
-            {
-                NSLog(@"in the for loop.... inserting data into my database...\n");
+        
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        
+            hud.labelText = @"Downloading...";
+            NSArray * myData = [self downloadCurrentData:self.jsonURL];
+            hud.labelText = @"Loading...";
+            //I'm blocking because I'm in the directory fetcher thread, and I can't otherwise access the context because it was created in a different thread.
+            [document.managedObjectContext performBlock:^{
+                for(NSDictionary * dataInfo in myData)
+                {
+                    NSLog(@"in the for loop.... inserting data into my database...\n");
+                    
+                    //DEPENDS ON THE CHILD THAT I'M WORKING WITH
+                    if(self.childNumber == [NSNumber numberWithInt:1])
+                        [Sport sportWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+                    else if(self.childNumber == [NSNumber numberWithInt:2])
+                        [Event eventWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+                    else if(self.childNumber == [NSNumber numberWithInt:3])
+                        [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+                    else if(self.childNumber == [NSNumber numberWithInt:4])
+                        [Employee employeeWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+                }
+            }];
+            
                 
-                //DEPENDS ON THE CHILD THAT I'M WORKING WITH
-                if(self.childNumber == [NSNumber numberWithInt:1])
-                    [Sport sportWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
-                else if(self.childNumber == [NSNumber numberWithInt:2])
-                    [Event eventWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
-                else if(self.childNumber == [NSNumber numberWithInt:3])
-                    [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
-                else if(self.childNumber == [NSNumber numberWithInt:4])
-                    [Employee employeeWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
-            }
-        }];
+                
+                
+                
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            });
+        });
+    
     });
+    
     NSLog(@"I'm leaving fetchDataFromOnline...\n");
 }
 
