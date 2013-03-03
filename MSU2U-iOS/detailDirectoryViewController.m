@@ -9,15 +9,29 @@
 #import "detailDirectoryViewController.h"
 
 @interface detailDirectoryViewController ()
-@property (weak,nonatomic) NSString * receivedName;
-@property (weak,nonatomic) NSString * receivedPosition;
-@property (weak,nonatomic) NSString * receivedDepartment;
-@property (weak,nonatomic) NSString * receivedPhone;
+@property (weak,nonatomic) NSString * receivedFName;
+@property (weak,nonatomic) NSString * receivedMiddle;
+@property (weak,nonatomic) NSString * receivedLName;
+@property (weak,nonatomic) NSString * receivedPersonID;
+@property (weak,nonatomic) NSString * receivedLastChanged;
+@property (weak,nonatomic) NSString * deleted;
+@property (weak,nonatomic) NSString * receivedPosition1;
+@property (weak,nonatomic) NSString * receivedPosition2;
+@property (weak,nonatomic) NSString * receivedNamePrefix;
 @property (weak,nonatomic) NSString * receivedEmail;
-@property (weak,nonatomic) NSString * receivedWebsite;
-@property (weak,nonatomic) NSString * receivedLocation;
-@property (weak,nonatomic) NSString * receivedImage;
-@property (weak,nonatomic) NSString * receivedFax;
+@property (weak,nonatomic) NSString * receivedDeptID1;
+@property (weak,nonatomic) NSString * receivedDeptID2;
+@property (weak,nonatomic) NSString * receivedOfficeBldgID1;
+@property (weak,nonatomic) NSString * receivedOfficeBldgID2;
+@property (weak,nonatomic) NSString * receivedOfficeRmNum1;
+@property (weak,nonatomic) NSString * receivedOfficeRmNum2;
+@property (weak,nonatomic) NSString * receivedPhone1;
+@property (weak,nonatomic) NSString * receivedFax1;
+@property (weak,nonatomic) NSString * receivedPhone2;
+@property (weak,nonatomic) NSString * receivedFax2;
+@property (weak,nonatomic) NSString * receivedLinkToMoreInfo;
+@property (weak,nonatomic) NSString * receivedPicture;
+
 @property (weak,nonatomic) NSString * receivedFavorite;
 @property (weak,nonatomic) NSDate * receivedHistory;
 @end
@@ -35,17 +49,28 @@
     self.contactTable.opaque = NO;
     self.contactTable.backgroundView = nil;
     
+    NSLog(@"Here is what I got: %@ (name), %@ (position), %@ (department), %@ (phone), %@ (email), %@ (website), %@ (location), %@ (image), %@ (fax), %@ (favorite), %@ (history)\n",self.receivedLName,self.receivedPosition1,self.receivedDeptID1,self.receivedPhone1,self.receivedEmail,self.receivedLinkToMoreInfo,self.receivedOfficeBldgID1,self.receivedPicture,self.receivedFax1,self.receivedFavorite,self.receivedHistory);
+    
+    //Combine the building and office information into something known as a location.
+    NSString * location1 = [NSString stringWithFormat:@"%@ %@",self.receivedOfficeBldgID1,self.receivedOfficeRmNum1];
+    NSString * location2 = [NSString stringWithFormat:@"%@ %@",self.receivedOfficeBldgID2,self.receivedOfficeRmNum2];
+    location1 = [location1 stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    location2 = [location2 stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    
     //Initialize my arrays
-    tableLabel = [[NSArray alloc]initWithObjects:@"phone",@"email",@"website",@"fax",@"location",nil];
-    
-    NSLog(@"Here is what I got: %@ (name), %@ (position), %@ (department), %@ (phone), %@ (email), %@ (website), %@ (location), %@ (image), %@ (fax), %@ (favorite), %@ (history)\n",self.receivedName,self.receivedPosition,self.receivedDepartment,self.receivedPhone,self.receivedEmail,self.receivedWebsite,self.receivedLocation,self.receivedImage,self.receivedFax,self.receivedFavorite,self.receivedHistory);
-    
-    tableContent = [[NSArray alloc]initWithObjects:self.receivedPhone,self.receivedEmail,self.receivedWebsite,self.receivedFax,self.receivedLocation,nil];
+    tableLabel = [[NSArray alloc]initWithObjects:@"Phone1",@"Phone2",@"Email",@"Website",@"Fax1",@"Fax2",@"Location1",@"Location2",nil];
+    tableContent = [[NSArray alloc]initWithObjects:self.receivedPhone1,self.receivedPhone2,self.receivedEmail,self.receivedLinkToMoreInfo,self.receivedFax1,self.receivedFax2,location1,location2,nil];
     
     //Set all of the text labels
-    self.fullnameLabel.text = self.receivedName;
-    self.positionLabel.text = self.receivedPosition;
-    self.department.text = self.receivedDepartment;
+    self.fullnameLabel.text = [NSString stringWithFormat:@"%@ %@ %@ %@",self.receivedNamePrefix,self.receivedFName,self.receivedMiddle,self.receivedLName];
+    self.positionLabel.text = [NSString stringWithFormat:@"%@ | %@",self.receivedPosition1,self.receivedPosition2];
+    self.department.text = [NSString stringWithFormat:@"%@ | %@",self.receivedDeptID1,self.receivedDeptID2];
+    
+    for(int i=0; i<[tableContent count]; i++)
+    {
+        NSLog(@"tableContent[%d]=%@\n",i,[tableContent objectAtIndex:i]);
+        NSLog(@"tableLabel[%d]=%@\n",i,[tableLabel objectAtIndex:i]);
+    }
     
     //Initialize my favorite image view
     self.favoriteView = [[UIImageView alloc] initWithFrame:CGRectMake(265, 10, 50, 50)];
@@ -74,7 +99,7 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     
     //I only want the employee that has this current employee's name which I'm showing on the detail view
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"fullname == %@", self.receivedName];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"person_id == %@", self.receivedPersonID];
     [request setPredicate:predicate];
     
     //Alright, let's put the request into action on the "Employee" entity
@@ -90,47 +115,55 @@
     currentEmployee.history = [NSDateFormatter localizedStringFromDate:[NSDate date]
                                                              dateStyle:NSDateFormatterShortStyle
                                                              timeStyle:NSDateFormatterFullStyle];
-    NSLog(@"Is %@ in my history? %@\n",currentEmployee.fullname,currentEmployee.history);
+    NSLog(@"Is %@ in my history? %@\n",self.receivedLName,currentEmployee.history);
 }
 
 -(void)sendEmployeeInformation:(Employee *)employeeInfo
 {
     self.receivedEmail = employeeInfo.email;
-    self.receivedDepartment = employeeInfo.department;
-    self.receivedName = employeeInfo.fullname;
-    self.receivedImage = employeeInfo.image;
-    self.receivedPosition = employeeInfo.position;
-    self.receivedLocation = employeeInfo.location;
-    self.receivedWebsite = employeeInfo.website;
-    self.receivedFax = employeeInfo.fax;
-    self.receivedPhone = employeeInfo.phone;
+    self.receivedDeptID1 = employeeInfo.dept_id_1;
+    self.receivedDeptID2 = employeeInfo.dept_id_2;
+    self.receivedFName = employeeInfo.fname;
+    self.receivedMiddle = employeeInfo.middle;
+    self.receivedLName = employeeInfo.lname;
+    self.receivedPersonID = employeeInfo.person_id;
+    self.receivedLastChanged = employeeInfo.last_changed;
+    self.receivedPosition1 = employeeInfo.position_title_1;
+    self.receivedPosition2 = employeeInfo.position_title_2;
+    self.receivedNamePrefix = employeeInfo.name_prefix;
+    self.receivedEmail = employeeInfo.email;
+    self.receivedDeptID1 = employeeInfo.dept_id_1;
+    self.receivedDeptID2 = employeeInfo.dept_id_2;
+    self.receivedOfficeBldgID1 = employeeInfo.office_bldg_id_1;
+    self.receivedOfficeBldgID2 = employeeInfo.office_bldg_id_2;
+    self.receivedOfficeRmNum1 = employeeInfo.office_rm_num_1;
+    self.receivedOfficeRmNum2 = employeeInfo.office_rm_num_2;
+    self.receivedPhone1 = employeeInfo.phone1;
+    self.receivedPhone2 = employeeInfo.phone2;
+    self.receivedFax1 = employeeInfo.fax1;
+    self.receivedFax2 = employeeInfo.fax2;
+    self.receivedLinkToMoreInfo = employeeInfo.link_to_more_info;
+    self.receivedPicture = employeeInfo.picture;
     self.receivedFavorite = employeeInfo.favorite;
     self.receivedHistory = employeeInfo.history;
-    
-    //Makek sure none of these are empty
-    if([self.receivedEmail length] == 0)self.receivedEmail = @"N/A";
-    if([self.receivedLocation length] == 0)self.receivedLocation = @"N/A";
-    if([self.receivedWebsite length] == 0)self.receivedWebsite = @"N/A";
-    if([self.receivedFax length] == 0)self.receivedFax = @"N/A";
-    if([self.receivedPhone length] == 0)self.receivedPhone = @"N/A";
 }
 
 -(void)downloadImage
 {
-    self.receivedImage = [self.receivedImage stringByReplacingOccurrencesOfString:@" " withString:@""];
+    self.receivedPicture = [self.receivedPicture stringByReplacingOccurrencesOfString:@" " withString:@""];
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
-    [self.photo setImageWithURL:[NSURL URLWithString:self.receivedImage]
-                   placeholderImage:[UIImage imageNamed:@"Default.png"]];
+    [self.photo setImageWithURL:[NSURL URLWithString:self.receivedPicture]
+                   placeholderImage:[UIImage imageNamed:@"Unknown.jpg"]];
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
--(void)makePhoneCall
+-(void)makePhoneCall:(NSString*)phoneNumber
 {
     //Remove all unwanted characters from phone number
-    NSString *cleanedString = [[self.receivedPhone componentsSeparatedByCharactersInSet:[[NSCharacterSet characterSetWithCharactersInString:@"0123456789-+()"] invertedSet]] componentsJoinedByString:@""];
+    NSString *cleanedString = [[phoneNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet characterSetWithCharactersInString:@"0123456789-+()"] invertedSet]] componentsJoinedByString:@""];
     
     //Prepare to make the call. Once call is completed, the screen will return to the app.
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"telprompt:%@", cleanedString]]];
@@ -149,14 +182,37 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;
+    //Let's find out how many rows I need in my table
+    showInTableContent = [[NSMutableArray alloc]init];
+    showInTableLabel = [[NSMutableArray alloc]init];
+    
+    //I will figure out what information this person has available and place it into my showInTable array
+    for(int i=0; i<[tableContent count]; i++)
+    {
+        if([[tableContent objectAtIndex:i] length]>0)
+        {
+            NSLog(@"I think I will show %@...\n",[tableContent objectAtIndex:i]);
+            [showInTableContent addObject:[tableContent objectAtIndex:i]];
+            [showInTableLabel addObject:[tableLabel objectAtIndex:i]];
+        }
+    }
+    
+    for(int i=0; i<[showInTableContent count]; i++)
+        NSLog(@"HERE IS WHAT I WILL SHOW IN MY TABLE: %@-%@\n",[showInTableContent objectAtIndex:i],[showInTableLabel objectAtIndex:i]);
+    
+    NSLog(@"I think I will show %d fields!\n",[showInTableContent count]);
+    return [showInTableContent count]+1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Identifier for retrieving reusable cells.
     static NSString * cellIdentifier;
-    if(indexPath.row != 5)
+    
+    NSLog(@"I'm putting my cells in the table at indexPath.row=%d\n",indexPath.row);
+    
+    //Is this the Add to Contacts cell? It would be the last item in the table. If there are five items to show in the table, Add to Contacts would be the at index 5 because the five table items are 0-4.
+    if(indexPath.row != ([showInTableContent count]))
     {
         cellIdentifier = @"contactCell";
     }
@@ -175,10 +231,10 @@
     }
     
     // Set the text of the cell to the row index.
-    if(indexPath.row != 5)
+    if(indexPath.row != [showInTableContent count])
     {
-        cell.textLabel.text = [tableContent objectAtIndex:indexPath.row];
-        cell.detailTextLabel.text = [tableLabel objectAtIndex:indexPath.row];
+        cell.textLabel.text = [showInTableContent objectAtIndex:indexPath.row];
+        cell.detailTextLabel.text = [showInTableLabel objectAtIndex:indexPath.row];
     }
     else
     {
@@ -191,13 +247,19 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"You pressed row with indexPath.row of %i\n",indexPath.row);
-    if(indexPath.row == 0)
+    
+    if(indexPath.row == [showInTableContent count])
+    {
+        NSLog(@"I pressed the 'Add to Contacts' button!\n");
+        [self addToContacts];
+    }
+    else if([[showInTableLabel objectAtIndex:indexPath.row]isEqualToString:@"Phone1"] || [[showInTableLabel objectAtIndex:indexPath.row]isEqualToString:@"Phone2"])
     {
         NSLog(@"I pressed the phone button!\n");
         //[self askUserForCallPermission];
-        [self makePhoneCall];
+        [self makePhoneCall:self.receivedPhone1];
     }
-    else if(indexPath.row == 1)
+    else if([[showInTableLabel objectAtIndex:indexPath.row] isEqualToString:@"Email"])
     {
         if([MFMailComposeViewController canSendMail])
         {
@@ -208,8 +270,7 @@
             controller.mailComposeDelegate = self;
             [controller setToRecipients:[NSArray arrayWithObject:self.receivedEmail]];
             [controller setSubject:@""];
-            NSString * openingStatement = self.receivedName;
-            openingStatement = [openingStatement stringByAppendingString:@",\n\n"];
+            NSString * openingStatement = [NSString stringWithFormat:@"%@ %@,\n\n",self.receivedNamePrefix,self.receivedLName];
             [controller setMessageBody:openingStatement isHTML:NO];
             if (controller) [self presentModalViewController:controller animated:YES];
         }
@@ -217,11 +278,6 @@
         {
             NSLog(@"Oops! Can't send e-mail!");
         }
-    }
-    else if(indexPath.row == 5)
-    {
-        NSLog(@"I pressed the 'Add to Contacts' button!\n");
-        [self addToContacts];
     }
 }
 
@@ -281,15 +337,18 @@
     ABRecordRef newPerson = ABPersonCreate();
     
     NSLog(@"Preparing name,dept,position...\n");
-    ABRecordSetValue(newPerson,kABPersonFirstNameProperty,(__bridge CFTypeRef)(self.receivedName),&error);
-    ABRecordSetValue(newPerson,kABPersonLastNameProperty,@"!!!",&error);
-    ABRecordSetValue(newPerson,kABPersonOrganizationProperty,(__bridge CFTypeRef)(self.receivedDepartment),&error);
-    ABRecordSetValue(newPerson,kABPersonJobTitleProperty,(__bridge CFTypeRef)(self.receivedPosition),&error);
+
+    ABRecordSetValue(newPerson,kABPersonFirstNameProperty,(__bridge CFTypeRef)(self.receivedFName),&error);
+    ABRecordSetValue(newPerson,kABPersonMiddleNameProperty,(__bridge CFTypeRef)(self.receivedMiddle),&error);
+    ABRecordSetValue(newPerson,kABPersonLastNameProperty,(__bridge CFTypeRef)(self.receivedLName),&error);
+
+    ABRecordSetValue(newPerson,kABPersonOrganizationProperty,(__bridge CFTypeRef)(self.receivedDeptID1),&error);
+    ABRecordSetValue(newPerson,kABPersonJobTitleProperty,(__bridge CFTypeRef)(self.receivedPosition1),&error);
     
     //Phone Information
     NSLog(@"Preparing phone...");
     ABMutableMultiValueRef multiPhone = ABMultiValueCreateMutable(kABMultiStringPropertyType);
-    ABMultiValueAddValueAndLabel(multiPhone,(__bridge CFTypeRef)(self.receivedPhone), kABPersonPhoneMainLabel, NULL);
+    ABMultiValueAddValueAndLabel(multiPhone,(__bridge CFTypeRef)(self.receivedPhone1), kABPersonPhoneMainLabel, NULL);
     ABRecordSetValue(newPerson, kABPersonPhoneProperty, multiPhone, nil);
     CFRelease(multiPhone);
     
@@ -335,7 +394,7 @@
     else
     {
         NSLog(@"OK, you successfully added a contact!\n");
-        NSString * dialogMessage = self.receivedName;
+        NSString * dialogMessage = [NSString stringWithFormat:@"%@ %@",self.receivedNamePrefix,self.receivedLName];
         dialogMessage = [dialogMessage stringByAppendingString:@" has been added to your contacts."];
         
         alert = [[UIAlertView alloc]
@@ -365,7 +424,7 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     
     //I only want the employee that has this current employee's name which I'm showing on the detail view
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"fullname == %@", self.receivedName];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"person_id == %@", self.receivedPersonID];
     [request setPredicate:predicate];
     
     //Alright, let's put the request into action on the "Employee" entity
@@ -379,7 +438,7 @@
     
     if([currentEmployee.favorite isEqualToString:@"no"])
     {
-        NSLog(@"%@ favorite employee: no\n",self.receivedName);
+        NSLog(@"%@ favorite employee: no\n",self.receivedLName);
         currentEmployee.favorite = @"yes";
         
         //Put a star on the banner of this person's directory page
@@ -388,7 +447,7 @@
     }
     else
     {
-        NSLog(@"%@ favorite employee: yes\n",self.receivedName);
+        NSLog(@"%@ favorite employee: yes\n",self.receivedLName);
         currentEmployee.favorite = @"no";
         [self.favoriteView setImage:[UIImage imageNamed:@"noStar.png"]];
         
@@ -426,7 +485,7 @@
         NSLog(@"Yes it is, do nothing...\n");
     }
     //Since I visited this person, I should put them into my history
-    NSLog(@"%@ history is %@\n",self.receivedName,self.receivedHistory);
+    NSLog(@"%@ history is %@\n",self.receivedLName,self.receivedHistory);
     if(!self.receivedHistory)
     {
         //Going to put this person into my history

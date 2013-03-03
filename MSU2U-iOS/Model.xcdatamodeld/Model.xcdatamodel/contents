@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12C3006" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Employee" representedClassName="Employee" syncable="YES">
-        <attribute name="department" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="deleted" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dept_id_1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dept_id_2" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="favorite" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="fax" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="fullname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fax1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fax2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="history" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="last_changed" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link_to_more_info" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="position" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="middle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name_prefix" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="office_bldg_id_1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="office_bldg_id_2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="office_rm_num_1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="office_rm_num_2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="person_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="picture" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="position_title_1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="position_title_2" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="website" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Event" representedClassName="Event" syncable="YES">
@@ -51,7 +66,7 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Employee" positionX="-7454" positionY="-2439" width="128" height="210"/>
+        <element name="Employee" positionX="-7454" positionY="-2439" width="128" height="433"/>
         <element name="Event" positionX="-7598" positionY="-2440" width="128" height="180"/>
         <element name="News" positionX="-7598" positionY="-2250" width="128" height="178"/>
         <element name="Sport" positionX="-7749" positionY="-2439" width="128" height="238"/>

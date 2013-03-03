@@ -20,10 +20,10 @@
 {
     self.jsonURL = nil;
     self.entityName = @"Employee";
-    self.sortDescriptorKey = @"fullname";
+    self.sortDescriptorKey = @"lname";
     self.cellIdentifier = @"favoriteDirectoryCell";
     self.segueIdentifier = @"toEmployeeDetail";
-    self.keyToSearchOn = @"fullname";
+    self.keyToSearchOn = @"lname";
     self.childNumber = [NSNumber numberWithInt:5];
 }
 

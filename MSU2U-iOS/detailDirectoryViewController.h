@@ -16,6 +16,8 @@
 @interface detailDirectoryViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
     NSArray* tableLabel;
     NSArray* tableContent;
+    NSMutableArray* showInTableContent;
+    NSMutableArray* showInTableLabel;
 }
 
 -(void)sendEmployeeInformation:(Employee*)employeeInfo;

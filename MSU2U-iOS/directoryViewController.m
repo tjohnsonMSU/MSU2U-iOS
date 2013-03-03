@@ -18,12 +18,13 @@
 
 -(void)viewDidLoad
 {
-    self.jsonURL = @"http://www.matthewfarmer.net/directory.json";
+    //self.jsonURL = @"http://www.matthewfarmer.net/directory.json";
+    self.jsonURL = @"http://www.matthewfarmer.net/real_directory.json";
     self.entityName = @"Employee";
-    self.sortDescriptorKey = @"fullname";
+    self.sortDescriptorKey = @"lname";
     self.cellIdentifier = @"directoryCell";
     self.segueIdentifier = @"toEmployeeDetail";
-    self.keyToSearchOn = @"fullname";
+    self.keyToSearchOn = @"lname";
     self.childNumber = [NSNumber numberWithInt:4];
     
 

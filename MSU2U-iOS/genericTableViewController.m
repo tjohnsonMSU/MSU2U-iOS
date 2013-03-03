@@ -507,7 +507,7 @@
         {
             if([currentEmployee.favorite isEqualToString:@"yes"])
             {
-                NSLog(@"%@ is being changed from favorite 'yes' to \n",currentEmployee.fullname);
+                NSLog(@"%@ is being changed from favorite 'yes' to \n",currentEmployee.lname);
                 currentEmployee.favorite = @"no";
                 NSLog(@"no");
             }
@@ -519,7 +519,7 @@
         {
             if(currentEmployee.history)
             {
-                NSLog(@"%@ is being changed from %@ to \n",currentEmployee.fullname,currentEmployee.history);
+                NSLog(@"%@ is being changed from %@ to \n",currentEmployee.lname,currentEmployee.history);
                 currentEmployee.history = nil;
                 NSLog(@"nil");
             }
@@ -751,12 +751,37 @@
     else if(self.childNumber == [NSNumber numberWithInt:4] || self.childNumber == [NSNumber numberWithInt:5] || self.childNumber == [NSNumber numberWithInt:6])
     {
         NSLog(@"I must be a directory item...childNumber %@\n",self.childNumber);
+        
         //Directory cells, Directory Favorites, and Directory History
-        cell.textLabel.text = [self.dataObject fullname];
-        cell.detailTextLabel.text = [self.dataObject position];
+        NSString * directoryName = [self concatenatePrefix:[self.dataObject name_prefix] firstName:[self.dataObject fname] middleName:[self.dataObject middle] lastName:[self.dataObject lname]];
+        
+        cell.textLabel.text = directoryName;
+        cell.detailTextLabel.text = [self.dataObject position_title_1];
     }
     
     return cell;
+}
+
+-(NSString*)concatenatePrefix:(NSString*)name_prefix firstName:(NSString*)firstName middleName:(NSString*)middleName lastName:(NSString*)lastName
+{
+    //If they are null, make them empty
+    if([name_prefix length] == 0)
+        name_prefix = @"";
+    else
+        name_prefix = [name_prefix stringByAppendingString:@" "];
+    if([firstName length] == 0)
+        firstName = @"";
+    else
+        firstName = [firstName stringByAppendingString:@" "];
+    if([middleName length] == 0)
+        middleName = @"";
+    else
+        middleName = [middleName stringByAppendingString:@" "];
+    if([lastName length] == 0)
+        lastName = @"";
+    
+    //Combine them now
+    return [[NSString stringWithFormat:@"%@%@%@%@",name_prefix,firstName,middleName,lastName] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
