@@ -3,7 +3,7 @@ MSU2U-iOS
 
 How to use:
 
-1. Create a folder somewhere on your computer to store the project. 'mkdir MSU2U-iOS' for example.
+1. Create a folder somewhere on your computer to store the project. If using the Terminal, type 'mkdir MSU2U-iOS' for example.
 2. Create a local repository in that folder by navigating to it using the Terminal and typing the command 'git init'. If git is not installed, open XCode, and in the Menu Bar click/navigate to the following XCode->Preferences->Downloads, and click on the 'Install' button next to the Command Line Tools which will install git and other useful command line tools.
 3. Make sure you are currently in the directory you created in step 1 within the terminal and clone the project to your computer by typing the following command:
     git clone --recursive git://github.com/tjohnson1965/MSU2U-iOS.git
