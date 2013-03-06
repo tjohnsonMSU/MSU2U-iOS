@@ -19,7 +19,8 @@
 -(void)viewDidLoad
 {
     //self.jsonURL = @"http://www.matthewfarmer.net/directory.json";
-    self.jsonURL = @"http://www.matthewfarmer.net/real_directory.json";
+    //self.jsonURL = @"http://www.matthewfarmer.net/real_directory.json";
+    self.jsonURL = @"http://cs2.mwsu.edu/~msu2u/get_contacts_from_db.php";
     self.entityName = @"Employee";
     self.sortDescriptorKey = @"lname";
     self.cellIdentifier = @"directoryCell";
