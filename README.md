@@ -1,12 +1,13 @@
-MSU2U-iOS
-=========
+<b>MSU2U-iOS</b>
+<b>=========</b>
 
-About:
+<b>About:</b>
+
 MSU2U-iOS is an iOS application developed by students for Midwestern State University. The application seeks to provide a functional and convenient means of easily accessing faculty directories, news, maps, sports, campus events, social media, and other such information. The MSU2U project provides the student developers with a valuable experience in which fundamentals of mobile application development are learned in the context of a team environment.
 
 An Android version of the application is also concurrently being developed, and may be found at https://github.com/MSU2U/MSU2U-Android.
 
-How to use:
+<b>How to use:</b>
 
 1. Create a folder somewhere on your computer to store the project. If using the Terminal, type 'mkdir MSU2U-iOS' for example.
 2. Create a local repository in that folder by navigating to it using the Terminal and typing the command 'git init'. If git is not installed, open XCode, and in the Menu Bar click/navigate to the following XCode->Preferences->Downloads, and click on the 'Install' button next to the Command Line Tools which will install git and other useful command line tools.
