@@ -58,6 +58,12 @@
             employee.office_bldg_id_2 = [info objectForKey:@"Office_Bldg_2"];
             employee.office_rm_num_1 = [info objectForKey:@"Office_Rm_Num_1"];
             employee.office_rm_num_2 = [info objectForKey:@"Office_Rm_Num_2"];
+            employee.link_to_more_info = [info objectForKey:@"Link_To_More_Info"];
+            employee.picture = [info objectForKey:@"Picture"];
+            
+            //These are attributes I'm interested in on the iOS side, thus will not be found from the server
+            employee.favorite = @"no";
+            employee.history = nil;
             
             //I need to make sure these guys aren't bad numbers
             if([[info objectForKey:@"Phone1"] length]<12)
@@ -94,14 +100,6 @@
             }
             if([employee.dept_id_1 isEqualToString:employee.dept_id_2])
                 employee.dept_id_2 = @"";
-            
-            
-            employee.link_to_more_info = [info objectForKey:@"Link_To_More_Info"];
-            employee.picture = [info objectForKey:@"Picture"];
-            
-            //These are attributes I'm interested in on the iOS side, thus will not be found from the server
-            employee.favorite = @"no";
-            employee.history = nil;
         }
     }
     else
