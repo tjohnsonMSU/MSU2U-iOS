@@ -18,6 +18,7 @@
     NSArray* tableContent;
     NSMutableArray* showInTableContent;
     NSMutableArray* showInTableLabel;
+    Employee * myCurrentEmployee;
 }
 
 -(void)sendEmployeeInformation:(Employee*)employeeInfo;

@@ -58,6 +58,14 @@
             employee.office_bldg_id_2 = [info objectForKey:@"Office_Bldg_2"];
             employee.office_rm_num_1 = [info objectForKey:@"Office_Rm_Num_1"];
             employee.office_rm_num_2 = [info objectForKey:@"Office_Rm_Num_2"];
+            employee.link_to_more_info = [info objectForKey:@"Link_To_More_Info"];
+            employee.website1 = [info objectForKey:@"Website_Link_1"];
+            employee.website2 = [info objectForKey:@"Website_Link_2"];
+            employee.picture = [info objectForKey:@"Picture"];
+            
+            //These are attributes I'm interested in on the iOS side, thus will not be found from the server
+            employee.favorite = @"no";
+            employee.history = nil;
             
             //I need to make sure these guys aren't bad numbers
             if([[info objectForKey:@"Phone1"] length]<12)
@@ -79,7 +87,8 @@
                 employee.fax2 = @"";
             else
                 employee.fax2 = [info objectForKey:@"Fax2"];
-                
+            
+            
             //If two phone numbers, fax numbers, office numbers, etc. are the same, I will suppress the second by making it == ""
             if([employee.phone1 isEqualToString:employee.phone2])
                 employee.phone2 = @"";
@@ -94,14 +103,8 @@
             }
             if([employee.dept_id_1 isEqualToString:employee.dept_id_2])
                 employee.dept_id_2 = @"";
-            
-            
-            employee.link_to_more_info = [info objectForKey:@"Link_To_More_Info"];
-            employee.picture = [info objectForKey:@"Picture"];
-            
-            //These are attributes I'm interested in on the iOS side, thus will not be found from the server
-            employee.favorite = @"no";
-            employee.history = nil;
+            if([employee.website1 isEqualToString:employee.website2])
+                employee.website2 = @"";
         }
     }
     else

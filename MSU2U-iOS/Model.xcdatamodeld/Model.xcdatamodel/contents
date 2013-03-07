@@ -26,7 +26,8 @@
         <attribute name="picture" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="position_title_1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="position_title_2" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="website" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="website1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="website2" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Event" representedClassName="Event" syncable="YES">
         <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
@@ -66,7 +67,7 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Employee" positionX="-7454" positionY="-2439" width="128" height="433"/>
+        <element name="Employee" positionX="-7454" positionY="-2439" width="128" height="450"/>
         <element name="Event" positionX="-7598" positionY="-2440" width="128" height="180"/>
         <element name="News" positionX="-7598" positionY="-2250" width="128" height="178"/>
         <element name="Sport" positionX="-7749" positionY="-2439" width="128" height="238"/>

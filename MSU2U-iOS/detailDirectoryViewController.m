@@ -9,88 +9,96 @@
 #import "detailDirectoryViewController.h"
 
 @interface detailDirectoryViewController ()
-@property (weak,nonatomic) NSString * receivedFName;
-@property (weak,nonatomic) NSString * receivedMiddle;
-@property (weak,nonatomic) NSString * receivedLName;
-@property (weak,nonatomic) NSString * receivedPersonID;
-@property (weak,nonatomic) NSString * receivedLastChanged;
-@property (weak,nonatomic) NSString * deleted;
-@property (weak,nonatomic) NSString * receivedPosition1;
-@property (weak,nonatomic) NSString * receivedPosition2;
-@property (weak,nonatomic) NSString * receivedNamePrefix;
-@property (weak,nonatomic) NSString * receivedEmail;
-@property (weak,nonatomic) NSString * receivedDeptID1;
-@property (weak,nonatomic) NSString * receivedDeptID2;
-@property (weak,nonatomic) NSString * receivedOfficeBldgID1;
-@property (weak,nonatomic) NSString * receivedOfficeBldgID2;
-@property (weak,nonatomic) NSString * receivedOfficeRmNum1;
-@property (weak,nonatomic) NSString * receivedOfficeRmNum2;
-@property (weak,nonatomic) NSString * receivedPhone1;
-@property (weak,nonatomic) NSString * receivedFax1;
-@property (weak,nonatomic) NSString * receivedPhone2;
-@property (weak,nonatomic) NSString * receivedFax2;
-@property (weak,nonatomic) NSString * receivedLinkToMoreInfo;
-@property (weak,nonatomic) NSString * receivedPicture;
-
-@property (weak,nonatomic) NSString * receivedFavorite;
-@property (weak,nonatomic) NSDate * receivedHistory;
 @end
 
 @implementation detailDirectoryViewController
 
 @synthesize directoryDatabase = _directoryDatabase;
 
+- (void)setTableViewBackgroundToColor:(UIColor*)color
+{
+    //Remove the default background from my table view
+    self.contactTable.backgroundColor = color;
+    self.contactTable.opaque = NO;
+    self.contactTable.backgroundView = nil;
+}
+
+- (NSString*)initalizeIfEmpty:(NSString*)x
+{
+    if([x length] == 0)
+        x = @"";
+    return x;
+}
+
+- (void)initalizedEmptyVariables
+{
+    if([myCurrentEmployee.website1 length] == 0)
+        myCurrentEmployee.website1 = @"";
+    if([myCurrentEmployee.website2 length] == 0)
+        myCurrentEmployee.website2 = @"";
+    
+    //Only need to check the first ones because if the seconds didn't exist, they've already been initialized to @""
+    if([myCurrentEmployee.phone1 length] == 0)
+        myCurrentEmployee.phone1 = @"";
+    if([myCurrentEmployee.fax1 length] == 0)
+        myCurrentEmployee.fax1 = @"";
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    //Remove the default background from my table view
-    self.contactTable.backgroundColor = [UIColor clearColor];
-    self.contactTable.opaque = NO;
-    self.contactTable.backgroundView = nil;
-    
-    NSLog(@"Here is what I got: %@ (name), %@ (position), %@ (department), %@ (phone), %@ (email), %@ (website), %@ (location), %@ (image), %@ (fax), %@ (favorite), %@ (history)\n",self.receivedLName,self.receivedPosition1,self.receivedDeptID1,self.receivedPhone1,self.receivedEmail,self.receivedLinkToMoreInfo,self.receivedOfficeBldgID1,self.receivedPicture,self.receivedFax1,self.receivedFavorite,self.receivedHistory);
+    //Set the background of the table view to be transparent
+    [self setTableViewBackgroundToColor:[UIColor clearColor]];
     
     //Combine the building and office information into something known as a location.
-    NSString * location1 = [NSString stringWithFormat:@"%@ %@",self.receivedOfficeBldgID1,self.receivedOfficeRmNum1];
-    NSString * location2 = [NSString stringWithFormat:@"%@ %@",self.receivedOfficeBldgID2,self.receivedOfficeRmNum2];
-    location1 = [location1 stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    location2 = [location2 stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSString * location1 = [myCurrentEmployee getLocation:1];
+    NSString * location2 = [myCurrentEmployee getLocation:2];
     
-    //Initialize my arrays
-    tableLabel = [[NSArray alloc]initWithObjects:@"Phone1",@"Phone2",@"Email",@"Website",@"Fax1",@"Fax2",@"Location1",@"Location2",nil];
-    tableContent = [[NSArray alloc]initWithObjects:self.receivedPhone1,self.receivedPhone2,self.receivedEmail,self.receivedLinkToMoreInfo,self.receivedFax1,self.receivedFax2,location1,location2,nil];
+    //Initialize my table content and label arrays. These are critical because they contain the information that the table will display.
     
-    //Set all of the text labels
-    self.fullnameLabel.text = [NSString stringWithFormat:@"%@ %@ %@ %@",self.receivedNamePrefix,self.receivedFName,self.receivedMiddle,self.receivedLName];
-    self.positionLabel.text = [NSString stringWithFormat:@"%@ | %@",self.receivedPosition1,self.receivedPosition2];
-    self.department.text = [NSString stringWithFormat:@"%@ | %@",self.receivedDeptID1,self.receivedDeptID2];
+    //Initlalized unreceived variables
+    if([myCurrentEmployee.website1 length] == 0)
+        myCurrentEmployee.website1 = @"";
+    if([myCurrentEmployee.website2 length] == 0)
+        myCurrentEmployee.website2 = @"";
     
-    for(int i=0; i<[tableContent count]; i++)
-    {
-        NSLog(@"tableContent[%d]=%@\n",i,[tableContent objectAtIndex:i]);
-        NSLog(@"tableLabel[%d]=%@\n",i,[tableLabel objectAtIndex:i]);
-    }
+    tableLabel = [[NSArray alloc]initWithObjects:@"Phone1",@"Phone2",@"Email",@"Fax1",@"Fax2",@"Website1",@"Website2",@"Location1",@"Location2",nil];
+    tableContent = [[NSArray alloc]initWithObjects:myCurrentEmployee.phone1,myCurrentEmployee.phone2,myCurrentEmployee.email,myCurrentEmployee.fax1,myCurrentEmployee.fax2,myCurrentEmployee.website1,myCurrentEmployee.website2,location1,location2,nil];
+    
+    //Set the name label for this person
+    self.fullnameLabel.text = [myCurrentEmployee getFullName];
+    
+    //Format the position and department lables appropriately: if there are two positions/departsments, show a '|' between them. Otherwise, don't print a '|'.
+    self.positionLabel.text = [myCurrentEmployee getPositions];
+    self.department.text = [myCurrentEmployee getDepartments];
     
     //Initialize my favorite image view
+    [self favoriteImageViewInitialization];
+    
+    //Download image for person off of the main UI thread
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
+                                             (unsigned long)NULL), ^(void) {
+        [self downloadImage];
+    });
+}
+
+-(void)favoriteImageViewInitialization
+{
+    //First, allocate the view and set the view to show nothing
     self.favoriteView = [[UIImageView alloc] initWithFrame:CGRectMake(265, 10, 50, 50)];
     NSString *imgFilepath = [[NSBundle mainBundle] pathForResource:@"noStar" ofType:@"png"];
     UIImage *img = [[UIImage alloc] initWithContentsOfFile:imgFilepath];
     [self.favoriteView setImage:img];
     [self.view addSubview:self.favoriteView];
     
-    //Should I set the favorite photo?
-    if([self.receivedFavorite isEqualToString:@"yes"])
+    //Should I change the favorite image view to show a star?
+    if([myCurrentEmployee.favorite isEqualToString:@"yes"])
     {
         //Put a star on the banner of this person's directory page
         //[self.view addSubview:self.favoriteView];
         [self.favoriteView setImage:[UIImage imageNamed:@"star.png"]];
     }
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
-                                             (unsigned long)NULL), ^(void) {
-        [self downloadImage];
-    });
 }
 
 -(void)putEmployeeInHistory
@@ -99,7 +107,7 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     
     //I only want the employee that has this current employee's name which I'm showing on the detail view
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"person_id == %@", self.receivedPersonID];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"person_id == %@", myCurrentEmployee.person_id];
     [request setPredicate:predicate];
     
     //Alright, let's put the request into action on the "Employee" entity
@@ -115,46 +123,22 @@
     currentEmployee.history = [NSDateFormatter localizedStringFromDate:[NSDate date]
                                                              dateStyle:NSDateFormatterShortStyle
                                                              timeStyle:NSDateFormatterFullStyle];
-    NSLog(@"Is %@ in my history? %@\n",self.receivedLName,currentEmployee.history);
 }
 
 -(void)sendEmployeeInformation:(Employee *)employeeInfo
 {
-    self.receivedEmail = employeeInfo.email;
-    self.receivedDeptID1 = employeeInfo.dept_id_1;
-    self.receivedDeptID2 = employeeInfo.dept_id_2;
-    self.receivedFName = employeeInfo.fname;
-    self.receivedMiddle = employeeInfo.middle;
-    self.receivedLName = employeeInfo.lname;
-    self.receivedPersonID = employeeInfo.person_id;
-    self.receivedLastChanged = employeeInfo.last_changed;
-    self.receivedPosition1 = employeeInfo.position_title_1;
-    self.receivedPosition2 = employeeInfo.position_title_2;
-    self.receivedNamePrefix = employeeInfo.name_prefix;
-    self.receivedEmail = employeeInfo.email;
-    self.receivedDeptID1 = employeeInfo.dept_id_1;
-    self.receivedDeptID2 = employeeInfo.dept_id_2;
-    self.receivedOfficeBldgID1 = employeeInfo.office_bldg_id_1;
-    self.receivedOfficeBldgID2 = employeeInfo.office_bldg_id_2;
-    self.receivedOfficeRmNum1 = employeeInfo.office_rm_num_1;
-    self.receivedOfficeRmNum2 = employeeInfo.office_rm_num_2;
-    self.receivedPhone1 = employeeInfo.phone1;
-    self.receivedPhone2 = employeeInfo.phone2;
-    self.receivedFax1 = employeeInfo.fax1;
-    self.receivedFax2 = employeeInfo.fax2;
-    self.receivedLinkToMoreInfo = employeeInfo.link_to_more_info;
-    self.receivedPicture = employeeInfo.picture;
-    self.receivedFavorite = employeeInfo.favorite;
-    self.receivedHistory = employeeInfo.history;
+    //Very important that 'myCurrentEmployee' gets initialized here! employeeInfo was sent from the Directory Search view.
+    myCurrentEmployee = employeeInfo;
+    [myCurrentEmployee printMyInfo];
 }
 
 -(void)downloadImage
 {
-    self.receivedPicture = [self.receivedPicture stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString * pictureURL = [myCurrentEmployee.picture stringByReplacingOccurrencesOfString:@" " withString:@""];
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
-    [self.photo setImageWithURL:[NSURL URLWithString:self.receivedPicture]
+    [self.photo setImageWithURL:[NSURL URLWithString:pictureURL]
                    placeholderImage:[UIImage imageNamed:@"Unknown.jpg"]];
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
@@ -248,6 +232,7 @@
 {
     NSLog(@"You pressed row with indexPath.row of %i\n",indexPath.row);
     
+    //LAST ROW always
     if(indexPath.row == [showInTableContent count])
     {
         NSLog(@"I pressed the 'Add to Contacts' button!\n");
@@ -257,7 +242,7 @@
     {
         NSLog(@"I pressed the phone button!\n");
         //[self askUserForCallPermission];
-        [self makePhoneCall:self.receivedPhone1];
+        [self makePhoneCall:myCurrentEmployee.phone1];
     }
     else if([[showInTableLabel objectAtIndex:indexPath.row] isEqualToString:@"Email"])
     {
@@ -268,9 +253,12 @@
             
             MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
             controller.mailComposeDelegate = self;
-            [controller setToRecipients:[NSArray arrayWithObject:self.receivedEmail]];
+            [controller setToRecipients:[NSArray arrayWithObject:myCurrentEmployee.email]];
             [controller setSubject:@""];
-            NSString * openingStatement = [NSString stringWithFormat:@"%@ %@,\n\n",self.receivedNamePrefix,self.receivedLName];
+            
+            //TODO Should format this better
+            NSString * openingStatement = [NSString stringWithFormat:@"Greetings %@,",[myCurrentEmployee getShortenedName]];
+            
             [controller setMessageBody:openingStatement isHTML:NO];
             if (controller) [self presentModalViewController:controller animated:YES];
         }
@@ -338,28 +326,28 @@
     
     NSLog(@"Preparing name,dept,position...\n");
 
-    ABRecordSetValue(newPerson,kABPersonFirstNameProperty,(__bridge CFTypeRef)(self.receivedFName),&error);
-    ABRecordSetValue(newPerson,kABPersonMiddleNameProperty,(__bridge CFTypeRef)(self.receivedMiddle),&error);
-    ABRecordSetValue(newPerson,kABPersonLastNameProperty,(__bridge CFTypeRef)(self.receivedLName),&error);
+    ABRecordSetValue(newPerson,kABPersonFirstNameProperty,(__bridge CFTypeRef)(myCurrentEmployee.fname),&error);
+    ABRecordSetValue(newPerson,kABPersonMiddleNameProperty,(__bridge CFTypeRef)(myCurrentEmployee.middle),&error);
+    ABRecordSetValue(newPerson,kABPersonLastNameProperty,(__bridge CFTypeRef)(myCurrentEmployee.lname),&error);
 
-    ABRecordSetValue(newPerson,kABPersonOrganizationProperty,(__bridge CFTypeRef)(self.receivedDeptID1),&error);
-    ABRecordSetValue(newPerson,kABPersonJobTitleProperty,(__bridge CFTypeRef)(self.receivedPosition1),&error);
+    ABRecordSetValue(newPerson,kABPersonOrganizationProperty,(__bridge CFTypeRef)(myCurrentEmployee.position_title_1),&error);
+    ABRecordSetValue(newPerson,kABPersonJobTitleProperty,(__bridge CFTypeRef)(myCurrentEmployee.position_title_2),&error);
     
-    //Phone Information
+    //Phone Information: TODO I should also add the second phone if there is one
     NSLog(@"Preparing phone...");
     ABMutableMultiValueRef multiPhone = ABMultiValueCreateMutable(kABMultiStringPropertyType);
-    ABMultiValueAddValueAndLabel(multiPhone,(__bridge CFTypeRef)(self.receivedPhone1), kABPersonPhoneMainLabel, NULL);
+    ABMultiValueAddValueAndLabel(multiPhone,(__bridge CFTypeRef)(myCurrentEmployee.phone1), kABPersonPhoneMainLabel, NULL);
     ABRecordSetValue(newPerson, kABPersonPhoneProperty, multiPhone, nil);
     CFRelease(multiPhone);
     
     //Email
     NSLog(@"Preparing email...\n");
     ABMutableMultiValueRef multiEmail = ABMultiValueCreateMutable(kABMultiStringPropertyType);
-    ABMultiValueAddValueAndLabel(multiEmail,(__bridge CFTypeRef)(self.receivedEmail),kABWorkLabel,NULL);
+    ABMultiValueAddValueAndLabel(multiEmail,(__bridge CFTypeRef)(myCurrentEmployee.email),kABWorkLabel,NULL);
     ABRecordSetValue(newPerson, kABPersonEmailProperty, multiEmail, nil);
     CFRelease(multiEmail);
     
-    //Address
+    //Address: TODO Do all personnel have the same mailing address? Should there be some sort of ATTENTION?
     NSLog(@"Preparing address...\n");
     ABMutableMultiValueRef multiAddress = ABMultiValueCreateMutable(kABMultiDictionaryPropertyType);
     NSMutableDictionary * addressDictionary = [[NSMutableDictionary alloc] init];
@@ -394,7 +382,7 @@
     else
     {
         NSLog(@"OK, you successfully added a contact!\n");
-        NSString * dialogMessage = [NSString stringWithFormat:@"%@ %@",self.receivedNamePrefix,self.receivedLName];
+        NSString * dialogMessage = [myCurrentEmployee getShortenedName];
         dialogMessage = [dialogMessage stringByAppendingString:@" has been added to your contacts."];
         
         alert = [[UIAlertView alloc]
@@ -424,7 +412,7 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     
     //I only want the employee that has this current employee's name which I'm showing on the detail view
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"person_id == %@", self.receivedPersonID];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"person_id == %@", myCurrentEmployee.person_id];
     [request setPredicate:predicate];
     
     //Alright, let's put the request into action on the "Employee" entity
@@ -438,7 +426,7 @@
     
     if([currentEmployee.favorite isEqualToString:@"no"])
     {
-        NSLog(@"%@ favorite employee: no\n",self.receivedLName);
+        NSLog(@"%@ favorite employee: no\n",myCurrentEmployee.lname);
         currentEmployee.favorite = @"yes";
         
         //Put a star on the banner of this person's directory page
@@ -447,7 +435,7 @@
     }
     else
     {
-        NSLog(@"%@ favorite employee: yes\n",self.receivedLName);
+        NSLog(@"%@ favorite employee: yes\n",myCurrentEmployee.lname);
         currentEmployee.favorite = @"no";
         [self.favoriteView setImage:[UIImage imageNamed:@"noStar.png"]];
         
@@ -485,8 +473,8 @@
         NSLog(@"Yes it is, do nothing...\n");
     }
     //Since I visited this person, I should put them into my history
-    NSLog(@"%@ history is %@\n",self.receivedLName,self.receivedHistory);
-    if(!self.receivedHistory)
+    NSLog(@"%@ history is %@\n",myCurrentEmployee.lname,myCurrentEmployee.history);
+    if(!myCurrentEmployee.history)
     {
         //Going to put this person into my history
         NSLog(@"Going to put this person into my history...\n");

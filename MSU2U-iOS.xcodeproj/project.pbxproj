@@ -127,9 +127,9 @@
 		1D62DD991657593200A60534 /* Sport+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D62DD981657593200A60534 /* Sport+Create.m */; };
 		1D62DD9C1657594300A60534 /* News+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D62DD9B1657594300A60534 /* News+Create.m */; };
 		1D62DDA2165759A700A60534 /* Event+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D62DDA1165759A700A60534 /* Event+Create.m */; };
+		1D64D2FB16E929A300578BE4 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D64D2FA16E929A300578BE4 /* Employee.m */; };
 		1D7253EF163A30D10057B33F /* 01-refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D7253EE163A30D10057B33F /* 01-refresh.png */; };
 		1D7253F1163A31660057B33F /* 02-redo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D7253F0163A31660057B33F /* 02-redo.png */; };
-		1D82B32E16780F27006564F8 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D82B32D16780F27006564F8 /* Employee.m */; };
 		1D82B33116780F35006564F8 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D82B33016780F35006564F8 /* News.m */; };
 		1D82B33D16781B6A006564F8 /* MustangsIconSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D82B33C16781B6A006564F8 /* MustangsIconSmall.png */; };
 		1D82B33F16781B7E006564F8 /* MustangsIconLarge.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D82B33E16781B7E006564F8 /* MustangsIconLarge.png */; };
@@ -606,10 +606,10 @@
 		1D62DD9B1657594300A60534 /* News+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "News+Create.m"; sourceTree = "<group>"; };
 		1D62DDA0165759A700A60534 /* Event+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+Create.h"; sourceTree = "<group>"; };
 		1D62DDA1165759A700A60534 /* Event+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+Create.m"; sourceTree = "<group>"; };
+		1D64D2F916E929A300578BE4 /* Employee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Employee.h; sourceTree = "<group>"; };
+		1D64D2FA16E929A300578BE4 /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
 		1D7253EE163A30D10057B33F /* 01-refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01-refresh.png"; sourceTree = "<group>"; };
 		1D7253F0163A31660057B33F /* 02-redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02-redo.png"; sourceTree = "<group>"; };
-		1D82B32C16780F27006564F8 /* Employee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Employee.h; sourceTree = "<group>"; };
-		1D82B32D16780F27006564F8 /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
 		1D82B32F16780F35006564F8 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		1D82B33016780F35006564F8 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		1D82B33C16781B6A006564F8 /* MustangsIconSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MustangsIconSmall.png; sourceTree = "<group>"; };
@@ -1213,8 +1213,8 @@
 		1D62DDA3165759B400A60534 /* Employee */ = {
 			isa = PBXGroup;
 			children = (
-				1D82B32C16780F27006564F8 /* Employee.h */,
-				1D82B32D16780F27006564F8 /* Employee.m */,
+				1D64D2F916E929A300578BE4 /* Employee.h */,
+				1D64D2FA16E929A300578BE4 /* Employee.m */,
 				1D4EB6E41654C77B005F9D8D /* Employee+Create.m */,
 				1D4EB6E31654C77B005F9D8D /* Employee+Create.h */,
 			);
@@ -1812,7 +1812,6 @@
 				1D9702A4165D3D4F00505F7C /* favoriteDirectoryViewController.m in Sources */,
 				1D9702AD165D4ACD00505F7C /* historyDirectoryViewController.m in Sources */,
 				1DB63E32165FDDCC00A21649 /* genericTableViewController.m in Sources */,
-				1D82B32E16780F27006564F8 /* Employee.m in Sources */,
 				1D82B33116780F35006564F8 /* News.m in Sources */,
 				1D82B34B1678493F006564F8 /* subscriptionsViewController.m in Sources */,
 				1D960C181679206200A9EBDE /* newsSubscriptionViewController.m in Sources */,
@@ -1852,6 +1851,7 @@
 				1D968C5F16BC8A47004AB866 /* overlay.m in Sources */,
 				1D4BEA8B16BF81F4000CE107 /* campusMapInfoViewController.m in Sources */,
 				1D24237016E3FEBD003E731D /* MBProgressHUD.m in Sources */,
+				1D64D2FB16E929A300578BE4 /* Employee.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
