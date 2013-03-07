@@ -87,10 +87,10 @@
                 employee.fax2 =  @"";
             if([employee.position_title_1 isEqualToString:employee.position_title_2])
                 employee.position_title_2 = @"";
-            if([employee.office_bldg_id_1 isEqualToString:employee.office_bldg_id_2] && [employee.office_rm_num_1 isEqualtoString:employee.office_rm_num_2])
+            if([employee.office_bldg_id_1 isEqualToString:employee.office_bldg_id_2] && [employee.office_rm_num_1 isEqualToString:employee.office_rm_num_2])
             {
                 employee.office_bldg_id_2 = @"";
-                employee.office_rm_num_1 = @"";
+                employee.office_rm_num_2 = @"";
             }
             if([employee.dept_id_1 isEqualToString:employee.dept_id_2])
                 employee.dept_id_2 = @"";
