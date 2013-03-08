@@ -59,8 +59,10 @@
             employee.office_rm_num_1 = [info objectForKey:@"Office_Rm_Num_1"];
             employee.office_rm_num_2 = [info objectForKey:@"Office_Rm_Num_2"];
             employee.link_to_more_info = [info objectForKey:@"Link_To_More_Info"];
+
             employee.website1 = [info objectForKey:@"Website_Link_1"];
             employee.website2 = [info objectForKey:@"Website_Link_2"];
+
             employee.picture = [info objectForKey:@"Picture"];
             
             //These are attributes I'm interested in on the iOS side, thus will not be found from the server
@@ -103,8 +105,11 @@
             }
             if([employee.dept_id_1 isEqualToString:employee.dept_id_2])
                 employee.dept_id_2 = @"";
+<<<<<<< HEAD
             if([employee.website1 isEqualToString:employee.website2])
                 employee.website2 = @"";
+=======
+>>>>>>> edf380e4f1858889056f7341863d49960b30fd94
         }
     }
     else
