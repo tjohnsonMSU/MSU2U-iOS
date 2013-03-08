@@ -105,11 +105,8 @@
             }
             if([employee.dept_id_1 isEqualToString:employee.dept_id_2])
                 employee.dept_id_2 = @"";
-<<<<<<< HEAD
             if([employee.website1 isEqualToString:employee.website2])
                 employee.website2 = @"";
-=======
->>>>>>> edf380e4f1858889056f7341863d49960b30fd94
         }
     }
     else
