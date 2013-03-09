@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "logPrinter.h"
 
-
-@interface mainMenuViewController : UITableViewController <UIScrollViewDelegate>
+@interface mainMenuViewController : UITableViewController <UIScrollViewDelegate>{
+    logPrinter * log;
+}
 
 @end

@@ -22,17 +22,20 @@
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
+    [log functionEnteredClass:[self class] Function:_cmd];
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
     }
+    [log functionExitedClass:[self class] Function:_cmd];
     return self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    log = [[logPrinter alloc]init];
+    [log functionEnteredClass:[self class] Function:_cmd];
     //Set all of the text labels
     self.titleLabel.text = self.receivedTitle;
     self.authorLabel.text = self.receivedAuthor;
@@ -47,10 +50,12 @@
         [self downloadImage];
     });
      */
+    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 -(void)sendNewsInformation:(News *)news
 {
+    [log functionEnteredClass:[self class] Function:_cmd];
     self.receivedTitle = news.title;
     self.receivedAuthor = news.author;
     self.receivedCategory = news.category;
@@ -58,9 +63,11 @@
     self.receivedDate = news.date;
     self.receivedImage = news.image;
     self.receivedLink = news.link;
+    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 - (IBAction)sharePressed:(UIBarButtonItem *)sender {
+    [log functionEnteredClass:[self class] Function:_cmd];
     // Create the item to share (in this example, a url)
     NSURL *url = [NSURL URLWithString:self.receivedLink];
     SHKItem *item = [SHKItem URL:url title:self.receivedTitle contentType:SHKURLContentTypeWebpage];
@@ -74,5 +81,6 @@
     
     // Display the action sheet
     [actionSheet showInView:self.view];
+    [log functionExitedClass:[self class] Function:_cmd];
 }
 @end

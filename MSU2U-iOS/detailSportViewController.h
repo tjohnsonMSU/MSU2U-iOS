@@ -11,12 +11,14 @@
 #import "campusMapViewController.h"
 #import "Sport+Create.h"
 #import "addEventToCalendar.h"
+#import "logPrinter.h"
 //ShareKit
 #import "SHK.h"
 
 
 @interface detailSportViewController : addEventToCalendar{
     UIBarButtonItem * rightButton;
+    logPrinter * log;
 }
 
 //Properties

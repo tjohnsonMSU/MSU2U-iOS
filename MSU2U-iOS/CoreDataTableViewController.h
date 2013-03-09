@@ -18,6 +18,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "logPrinter.h";
 
 @interface CoreDataTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
@@ -49,5 +50,6 @@
 
 // Set to YES to get some debugging output in the console.
 @property BOOL debug;
+@property (nonatomic) logPrinter * log;
 
 @end

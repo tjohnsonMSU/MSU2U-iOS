@@ -11,11 +11,13 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "campusMapViewController.h"
 #import "addEventToCalendar.h"
+#import "logPrinter.h"
 //ShareKit
 #import "SHK.h"
 
 @interface detailEventViewController : addEventToCalendar{
     UIBarButtonItem * rightButton;
+    logPrinter * log;
 }
 
 -(void)sendEventInformation:(Event*)eventInfo;

@@ -10,8 +10,11 @@
 #import "News+Create.h"
 //ShareKit
 #import "SHK.h"
+#import "logPrinter.h"
 
-@interface detailNewsViewController : UITableViewController
+@interface detailNewsViewController : UITableViewController{
+    logPrinter * log;
+}
 
 -(void)sendNewsInformation:(News*)news;
 

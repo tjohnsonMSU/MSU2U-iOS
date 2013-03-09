@@ -15,6 +15,9 @@
 
 - (void)viewDidLoad
 {
+    log = [[logPrinter alloc]init];
+    [log functionEnteredClass:[self class] Function:_cmd];
+    
     [super viewDidLoad];
 
     //Load the background image for the main menu
@@ -24,6 +27,7 @@
     
     //Load a navigation bar image for the main menu
     //[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navBarDemo.png"] forBarMetrics:UIBarMetricsDefault];
+    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 //KEEP THIS COMMENTED UNTIL YOU ADD A MENU OPTION THAT ALLOWS THE USER TO GO TO THE MYMWSU APP DIRECTLY FROM OUR APP
@@ -45,8 +49,11 @@
 }
 */
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [log functionEnteredClass:[self class] Function:_cmd];
+    [log outputClass:[self class] Function:_cmd Message:@"Set menu table cells transparent"];
+    
     /*UIView *v = [[UIView alloc] init];
     v.backgroundColor = [UIColor colorWithRed:(185.0/255.0) green:(142.0/255.0) blue:(47.0/255.0) alpha:0.7];
     cell.selectedBackgroundView = v;
@@ -56,6 +63,8 @@
     cell.backgroundColor = [UIColor colorWithRed:(255.0/255.0) green:(255.0/255.0) blue:(255.0/255.0) alpha:0.7];
      [[cell textLabel] setBackgroundColor:[UIColor clearColor]];
      [[cell detailTextLabel] setBackgroundColor:[UIColor clearColor]];
+    
+    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 @end
