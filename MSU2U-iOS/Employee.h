@@ -8,12 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "logPrinter.h"
 
-
-@interface Employee : NSManagedObject{
-    logPrinter * log;
-}
+@interface Employee : NSManagedObject
 
 @property (nonatomic, retain) NSString * deleted;
 @property (nonatomic, retain) NSString * dept_id_1;

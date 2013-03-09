@@ -35,7 +35,6 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    //Remove map overlays if any.
     
     //Set map type
     self.campusMap.mapType = MKMapTypeHybrid;
@@ -51,11 +50,8 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     NSLog(@"About to stuff buildings into datainfo...\n");
     for(NSDictionary * dataInfo in buildings)
     {
-        NSLog(@"Add item to buildingName array...\n");
         [self.buildingName addObject:[dataInfo objectForKey:@"name"]];
-        NSLog(@"Add item to buildingCoordinate array...\n");
         [self.buildingCoordinate addObject:[[NSArray alloc]initWithObjects:[dataInfo objectForKey:@"latitude"],[dataInfo objectForKey:@"longitude"], nil]];
-        NSLog(@"Add item to buildingAddress array...\n");
         [self.buildingAddress addObject:[[NSArray alloc]initWithObjects:
                                          [dataInfo objectForKey:@"addressCountryCode"],
                                          [dataInfo objectForKey:@"addressStreetCode"],
@@ -69,7 +65,8 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     self.addressLookup = [[NSMutableDictionary alloc]initWithObjects:self.buildingAddress forKeys:self.buildingName];
 }
 
-- (MKAnnotationView*)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+- (MKAnnotationView*)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
     if ([annotation isKindOfClass:[MSULocation class]]) {
         static NSString *const kPinIdentifier = @"MSULocation";
         MKPinAnnotationView *view = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:kPinIdentifier];
@@ -87,10 +84,9 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     return nil;
 }
 
--(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay{
-    NSLog(@"I'm in mapview view for overlay...\n");
+-(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
+{
 	if([overlay isKindOfClass:[MKPolygon class]]){
-        NSLog(@"I'm an MKPolygon class...\n");
 		MKPolygonView *view = [[MKPolygonView alloc] initWithOverlay:overlay];
 		view.lineWidth=1;
 		//view.strokeColor=[UIColor yellowColor];
@@ -115,11 +111,11 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
         }
         return view;
     }
-    NSLog(@"ERROR: Overlay was not of type MKPolygon OR MKPolylineView\n");
 	return nil;
 }
 
-- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
     _selectedLocation = (MSULocation*)view.annotation;
     
     // 1
@@ -135,7 +131,8 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     [sheet showInView:self.view];
 }
 
-- (void)performAfterFindingLocation:(RWLocationCallback)callback {
+- (void)performAfterFindingLocation:(RWLocationCallback)callback
+{
     if (self.campusMap.userLocation != nil) {
         if (callback) {
             callback(self.campusMap.userLocation.coordinate);
@@ -145,14 +142,16 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     }
 }
 
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
     if (_foundLocationCallback) {
         _foundLocationCallback(userLocation.coordinate);
     }
     _foundLocationCallback = nil;
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
     // 1
     if (buttonIndex != actionSheet.cancelButtonIndex) {
         if (buttonIndex == 0) {
@@ -278,19 +277,16 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     {
         self.campusMap.mapType = MKMapTypeStandard;
     }
-    
     [super viewDidLoad];
 }
 
 -(void)addPinWithTitle:(NSString*)title atLocation:(NSArray*)locationInfo atAddress:(NSArray*)addressInfo
 {
-    NSLog(@"I'm in addPinWithTitle");
     //locationInfo:
     //Index 0 is an array with two elements: latitude and longitude
     //Index 1 is an array with five elements: country code, street, state, city, ZIP
     //Therefore, to get the street for example, I need to go to index 1 of the object at index 1 of locationInfo
     MSULocation * testBuilding = [[MSULocation alloc] init];
-    NSLog(@"Received coordinate: %@,%@\n",[locationInfo objectAtIndex:0],[locationInfo objectAtIndex:1]);
     
     //Create information for this test site
     testBuilding.title = title;
@@ -306,7 +302,6 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     
     //Add annotation to the map
     [self.campusMap addAnnotation:testBuilding];
-    NSLog(@"Campus Map: Leaving buttonPressed...\n");
 }
 
 //SEARCH BAR TABLE VIEW STUFF
@@ -348,7 +343,6 @@ shouldReloadTableForSearchString:(NSString *)searchString
                                scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
                                       objectAtIndex:[self.searchDisplayController.searchBar
                                                      selectedScopeButtonIndex]]];
-    
     return YES;
 }
 

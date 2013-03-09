@@ -7,13 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "logPrinter.h"
 
 typedef void (^OnDocumentReady) (UIManagedDocument *document);
 
-@interface MYDocumentHandler : NSObject{
-    logPrinter * log;
-}
+@interface MYDocumentHandler : NSObject
 
 @property (strong, nonatomic) UIManagedDocument *document;
 

@@ -18,7 +18,6 @@
 
 -(void)viewDidLoad
 {
-    log = [[logPrinter alloc]init];
     self.jsonURL = nil;
     self.entityName = @"Employee";
     self.sortDescriptorKey = @"lname";

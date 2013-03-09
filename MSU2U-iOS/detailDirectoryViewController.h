@@ -13,7 +13,6 @@
 #import "MYDocumentHandler.h"
 #import <AddressBookUI/AddressBookUI.h>
 #import <AddressBook/AddressBook.h>
-#import "logPrinter.h"
 
 @interface detailDirectoryViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
     NSArray* tableLabel;
@@ -21,7 +20,6 @@
     NSMutableArray* showInTableContent;
     NSMutableArray* showInTableLabel;
     Employee * myCurrentEmployee;
-    logPrinter * log;
 }
 
 -(void)sendEmployeeInformation:(Employee*)employeeInfo;

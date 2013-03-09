@@ -26,17 +26,9 @@
     [super viewWillAppear:animated];
 }
 
--(void) shareEvent
-{
-    //Write the code to add the event to the iPhone's calendar
-}
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    log = [[logPrinter alloc]init];
-    [log functionEnteredClass:[self class] Function:_cmd];
     
     self.descriptionTextView.text = self.receivedDescription;
     self.titleLabel.text = self.receivedTitle;
@@ -55,13 +47,10 @@
     
     self.timeDateLabel.text = timeDate;
     self.locationLabel.text = self.receivedEvlocation;
-    
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 -(void)sendEventInformation:(Event*)eventInfo
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     self.receivedTitle = eventInfo.title;
     self.receivedDescription = eventInfo.content;
     self.receivedEndDate = eventInfo.endDate;
@@ -73,20 +62,16 @@
     self.title = self.receivedTitle;
     self.startDate = self.receivedStartDate;
     self.startTime = self.receivedStartTime;
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 - (void)didReceiveMemoryWarning
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     //Did the Add Event to Calendar cell get selected?
     if(indexPath.section == 2 && indexPath.row == 0)
     {
@@ -103,16 +88,10 @@
             [self addEventToMainCalendar];
         }
     }
-    else
-    {
-        [log outputClass:[self class] Function:_cmd Message:@"Did not select 'Add Event to Calendar, btw."];
-    }
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 - (IBAction)sharePressed:(UIBarButtonItem *)sender
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     // Create the item to share (in this example, a url)
     NSURL *url = [NSURL URLWithString:self.receivedLink];
     SHKItem *item = [SHKItem URL:url title:self.receivedTitle contentType:SHKURLContentTypeWebpage];
@@ -126,6 +105,5 @@
     
     // Display the action sheet
     [actionSheet showInView:self.view];
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 @end

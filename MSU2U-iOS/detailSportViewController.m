@@ -28,15 +28,12 @@
 -(void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [log functionEnteredClass:[self class] Function:_cmd];
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    log = [[logPrinter alloc]init];
-    [log functionEnteredClass:[self class] Function:_cmd];
+
     eventStore = [[EKEventStore alloc] init];
     
     //Set the Title of your View
@@ -54,12 +51,10 @@
     self.displayedStartTime.text = self.receivedStartTime;
     self.homeUniversityName.text = self.receivedHomeTeam;
     self.awayUniversityName.text = self.receivedAwayTeam;
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 -(void)sendSportInformation:(Sport *)sportInfo
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     self.receivedStartTime = sportInfo.startTime;
     self.receivedTitle = sportInfo.title;
     self.receivedDescription = sportInfo.content;
@@ -83,14 +78,10 @@
     self.title = self.receivedDescription;
     self.startTime = self.receivedStartTime;
     self.startDate = self.receivedStartDate;
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 -(void)downloadImage
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
-    [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"I received %@ (home) and %@ (away) as my logo links!\n",self.receivedSteamLogo,self.receivedSopponentLogo]];
-    
     self.receivedSteamLogo = [self.receivedSteamLogo stringByReplacingOccurrencesOfString:@" " withString:@""];
     self.receivedSopponentLogo = [self.receivedSopponentLogo stringByReplacingOccurrencesOfString:@" " withString:@""];
     
@@ -102,14 +93,12 @@
                    placeholderImage:[UIImage imageNamed:@"Default.png"]];
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 //TABLE METHODS
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     //Did the Add Event to Calendar cell get selected?
     if(indexPath.section == 2 && indexPath.row == 0)
     {
@@ -126,12 +115,10 @@
             [self addEventToMainCalendar];
         }
     }
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 - (IBAction)sharePressed:(UIBarButtonItem *)sender
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     // Create the item to share (in this example, a url)
     NSLog(@"Share Pressed!\n");
     NSURL *url = [NSURL URLWithString:self.receivedLink];
@@ -146,6 +133,5 @@
     
     // Display the action sheet
     [actionSheet showInView:self.view];
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 @end

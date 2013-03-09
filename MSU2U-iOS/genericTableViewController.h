@@ -18,7 +18,6 @@
 #import "CoreDataTableViewController.h"
 #import "MYDocumentHandler.h"
 #import "MBProgressHUD.h"
-#import "logPrinter.h"
 
 #import "Sport+Create.h"
 #import "News+Create.h"
@@ -29,7 +28,6 @@
     NSArray * news;
     NSMutableData * data;
     UIBarButtonItem * rightButton;
-    logPrinter * log;
 }
 
 @property (retain, nonatomic) NSMutableArray * filteredDataArray;

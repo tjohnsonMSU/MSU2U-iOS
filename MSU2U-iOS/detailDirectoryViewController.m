@@ -17,26 +17,21 @@
 
 - (void)setTableViewBackgroundToColor:(UIColor*)color
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     //Remove the default background from my table view
     self.contactTable.backgroundColor = color;
     self.contactTable.opaque = NO;
     self.contactTable.backgroundView = nil;
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 - (NSString*)initalizeIfEmpty:(NSString*)x
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     if([x length] == 0)
         x = @"";
     return x;
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 - (void)initalizedEmptyVariables
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     if([myCurrentEmployee.website1 length] == 0)
         myCurrentEmployee.website1 = @"";
     if([myCurrentEmployee.website2 length] == 0)
@@ -47,13 +42,10 @@
         myCurrentEmployee.phone1 = @"";
     if([myCurrentEmployee.fax1 length] == 0)
         myCurrentEmployee.fax1 = @"";
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 - (void)viewDidLoad
 {
-    log = [[logPrinter alloc]init];
-    [log functionEnteredClass:[self class] Function:_cmd];
     [super viewDidLoad];
     
     //Set the background of the table view to be transparent
@@ -89,12 +81,10 @@
                                              (unsigned long)NULL), ^(void) {
         [self downloadImage];
     });
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 -(void)favoriteImageViewInitialization
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     //First, allocate the view and set the view to show nothing
     self.favoriteView = [[UIImageView alloc] initWithFrame:CGRectMake(265, 10, 50, 50)];
     NSString *imgFilepath = [[NSBundle mainBundle] pathForResource:@"noStar" ofType:@"png"];
@@ -109,17 +99,15 @@
         //[self.view addSubview:self.favoriteView];
         [self.favoriteView setImage:[UIImage imageNamed:@"star.png"]];
     }
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 -(void)putEmployeeInHistory
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     //If I select this individual in my Directory search list, I need to fetch this employee from Core Data so I can manipulate their 'historty' attribute
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     
     //I only want the employee that has this current employee's name which I'm showing on the detail view
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"person_id == %@", myCurrentEmployee.person_id];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"person_id like[c] %@", myCurrentEmployee.person_id];
     [request setPredicate:predicate];
     
     //Alright, let's put the request into action on the "Employee" entity
@@ -135,21 +123,17 @@
     currentEmployee.history = [NSDateFormatter localizedStringFromDate:[NSDate date]
                                                              dateStyle:NSDateFormatterShortStyle
                                                              timeStyle:NSDateFormatterFullStyle];
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 -(void)sendEmployeeInformation:(Employee *)employeeInfo
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     //Very important that 'myCurrentEmployee' gets initialized here! employeeInfo was sent from the Directory Search view.
     myCurrentEmployee = employeeInfo;
     [myCurrentEmployee printMyInfo];
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 -(void)downloadImage
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     NSString * pictureURL = [myCurrentEmployee.picture stringByReplacingOccurrencesOfString:@" " withString:@""];
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
@@ -158,38 +142,30 @@
                    placeholderImage:[UIImage imageNamed:@"Unknown.jpg"]];
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 -(void)makePhoneCall:(NSString*)phoneNumber
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     //Remove all unwanted characters from phone number
     NSString *cleanedString = [[phoneNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet characterSetWithCharactersInString:@"0123456789-+()"] invertedSet]] componentsJoinedByString:@""];
     
     //Prepare to make the call. Once call is completed, the screen will return to the app.
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"telprompt:%@", cleanedString]]];
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 - (void)didReceiveMemoryWarning
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 -(int)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
-    [log functionExitedClass:[self class] Function:_cmd];
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     //Let's find out how many rows I need in my table
     showInTableContent = [[NSMutableArray alloc]init];
     showInTableLabel = [[NSMutableArray alloc]init];
@@ -199,28 +175,18 @@
     {
         if([[tableContent objectAtIndex:i] length]>0)
         {
-            [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"I think I will show %@",[tableContent objectAtIndex:i]]];
             [showInTableContent addObject:[tableContent objectAtIndex:i]];
             [showInTableLabel addObject:[tableLabel objectAtIndex:i]];
         }
     }
-    
-    for(int i=0; i<[showInTableContent count]; i++)
-        [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"Show in table:%@ / %@",[showInTableContent objectAtIndex:i],[showInTableLabel objectAtIndex:i]]];
-    
-    [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"I will show %d fields!",[showInTableContent count]]];
-    
-    [log functionExitedClass:[self class] Function:_cmd];
+
     return [showInTableContent count]+1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     // Identifier for retrieving reusable cells.
     static NSString * cellIdentifier;
-    
-    [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"I'm putting my cells in the table at indexPath.row=%d",indexPath.row]];
     
     //Is this the Add to Contacts cell? It would be the last item in the table. If there are five items to show in the table, Add to Contacts would be the at index 5 because the five table items are 0-4.
     if(indexPath.row != ([showInTableContent count]))
@@ -251,33 +217,20 @@
     {
         cell.textLabel.text = @"Add to Contacts";
     }
-    [log functionExitedClass:[self class] Function:_cmd];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
-    [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"You pressed row with indexPath.row of %i",indexPath.row]];
-    
     //LAST ROW always
     if(indexPath.row == [showInTableContent count])
-    {
-        [log outputClass:[self class] Function:_cmd Message:@"I pressed the 'Add to Contacts Button!'"];
         [self addToContacts];
-    }
     else if([[showInTableLabel objectAtIndex:indexPath.row]isEqualToString:@"Phone1"] || [[showInTableLabel objectAtIndex:indexPath.row]isEqualToString:@"Phone2"])
-    {
-        [log outputClass:[self class] Function:_cmd Message:@"I pressed a phonen button!"];
-        //[self askUserForCallPermission];
         [self makePhoneCall:myCurrentEmployee.phone1];
-    }
     else if([[showInTableLabel objectAtIndex:indexPath.row] isEqualToString:@"Email"])
     {
         if([MFMailComposeViewController canSendMail])
         {
-            [log outputClass:[self class] Function:_cmd Message:@"I pressed the e-mail button!"];
-            
             MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
             controller.mailComposeDelegate = self;
             [controller setToRecipients:[NSArray arrayWithObject:myCurrentEmployee.email]];
@@ -291,14 +244,13 @@
         }
         else
         {
-            [log outputClass:[self class] Function:_cmd Message:@"Oops! I can't send e-mail for some reason"];
+            //do nothing
         }
     }
 }
 
 - (void) addToContactsPressed
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     // Request authorization to Address Book
     ABAddressBookRef addressBookRef = ABAddressBookCreateWithOptions(NULL, NULL);
     
@@ -313,16 +265,13 @@
         [self addToContacts];
     }
     else {
-        [log outputClass:[self class] Function:_cmd Message:@"[!]ERROR: User has previously denied access and therefore I can't add contact"];
         // The user has previously denied access
         // Send an alert telling user to change privacy setting in settings app
     }
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 - (void) addToContacts
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     ABAddressBookRef addressBook = ABAddressBookCreate();
     
     NSMutableArray *array = nil;
@@ -345,14 +294,12 @@
     }
     else
     {
-        [log outputClass:[self class] Function:_cmd Message:@"AddressBook access it not granted. Need to have user access their Settings App and enable access"];
+        //do nothing
     }
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 - (void)createContact:(ABAddressBookRef)addressBook
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     CFErrorRef error = NULL;
     ABRecordRef newPerson = ABPersonCreate();
 
@@ -395,7 +342,6 @@
     UIAlertView *alert;
     if(error != NULL)
     {
-        [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"Error in my Add to Contacts! %@",error]];
         alert = [[UIAlertView alloc]
                  initWithTitle:@"Oops!"
                  message:@"An error occurred in the code."
@@ -417,24 +363,20 @@
                  otherButtonTitles:nil];
     }
     [alert show];
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller
           didFinishWithResult:(MFMailComposeResult)result
                         error:(NSError*)error;
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     if (result == MFMailComposeResultSent) {
         NSLog(@"It's away!");
     }
     [self dismissModalViewControllerAnimated:YES];
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 - (IBAction)favoriteButton:(UIBarButtonItem *)sender
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     //If I hit the favorite button, I need to fetch this employee from Core Data so I can manipulate their 'Favorite' attribute
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     
@@ -467,12 +409,10 @@
     }
     //Save!!!
     //[self.directoryDatabase updateChangeCount:UIDocumentChangeDone];
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     [[cell detailTextLabel] setTextColor:[UIColor colorWithRed:(55.0/255.0) green:(7.0/255.0) blue:(16.0/255.0) alpha:1]];
     /*
     cell.backgroundColor = [UIColor grayColor];
@@ -481,12 +421,10 @@
     cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photoFrame.png"]];
     cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photoFrame.png"]];
      */
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
     [super viewWillAppear:animated];
     
     //if my directory database is nil
@@ -494,21 +432,17 @@
     {
         [[MYDocumentHandler sharedDocumentHandler] performWithDocument:^(UIManagedDocument *document) {
             self.directoryDatabase = document;
-            [log outputClass:[self class] Function:_cmd Message:@"UIManagedDocument is NIL. Performing with document..."];
             //Do stuff with the document, set up a fetched results controller, whatever.
             //THE PAUL HEGARTY STUFF WILL TAKE OVER FROM HERE.
         }];
     }
     else{
-        [log outputClass:[self class] Function:_cmd Message:@"UIManagedDocument is not nil"];
     }
     //Since I visited this person, I should put them into my history
     if(!myCurrentEmployee.history)
     {
         //Going to put this person into my history
-        NSLog(@"Going to put this person into my history...");
         [self putEmployeeInHistory];
     }
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 @end

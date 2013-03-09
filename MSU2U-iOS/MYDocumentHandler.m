@@ -33,7 +33,6 @@ static MYDocumentHandler *_sharedInstance;
 {
     self = [super init];
     if (self) {
-        log = [[logPrinter alloc]init];
         NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask] lastObject];
         url = [url URLByAppendingPathComponent:@"MyDocument.md"];
         
@@ -61,8 +60,6 @@ static MYDocumentHandler *_sharedInstance;
 
 - (void)performWithDocument:(OnDocumentReady)onDocumentReady
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
-
     void (^OnDocumentDidLoad)(BOOL) = ^(BOOL success) {
         onDocumentReady(self.document);
     };
@@ -76,26 +73,18 @@ static MYDocumentHandler *_sharedInstance;
     } else if (self.document.documentState == UIDocumentStateNormal) {
         OnDocumentDidLoad(YES);
     }
-    
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 - (void)objectsDidChange:(NSNotification *)notification
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
 #ifdef DEBUG
-    [log outputClass:[self class] Function:_cmd Message:@"NSManagedDocument did change"];
 #endif
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 - (void)contextDidSave:(NSNotification *)notification
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
 #ifdef DEBUG
-    [log outputClass:[self class] Function:_cmd Message:@"NSManagedDocument did save"];
 #endif
-    [log functionExitedClass:[self class] Function:_cmd];
 }
 
 @end

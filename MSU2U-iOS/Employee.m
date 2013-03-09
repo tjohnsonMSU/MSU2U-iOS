@@ -39,34 +39,25 @@
 @dynamic website1;
 @dynamic website2;
 
--(id)init
-{
-    log = [[logPrinter alloc]init];
-    return nil;
-}
-
 -(void)printMyInfo
 {
-    [log outputClass:[self class] Function:_cmd Message:@"Entry"];
-    [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"name:%@ %@ %@ %@\n",self.name_prefix,self.fname,self.middle,self.lname]];
-    [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"Phones: %@ %@\n",self.phone1,self.phone2]];
-    [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"Faxes: %@ %@\n",self.fax1,self.fax2]];
-    [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"Locations: %@ %@ | %@ %@\n",self.office_bldg_id_1,self.office_rm_num_1,self.office_bldg_id_2,self.office_rm_num_2]];
-    [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"Positions: %@ %@\n",self.position_title_1,self.position_title_2]];
-    [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"Department: %@ %@\n",self.dept_id_1,self.dept_id_2]];
-    [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"Websites: %@ %@\n",self.website1,self.website2]];
-    [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"Deleted: %@\n",self.deleted]];
-    [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"favorite: %@\n",self.favorite]];
-    [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"picture: %@\n",self.picture]];
-    [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"last_changed: %@\n",self.last_changed]];
-    [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"Email: %@\n",self.email]];
-    [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"person_id: %@\n",self.person_id]];
-    [log outputClass:[self class] Function:_cmd Message:@"Exit"];
+    NSLog(@"name:%@ %@ %@ %@\n",self.name_prefix,self.fname,self.middle,self.lname);
+    NSLog(@"Phones: %@ %@\n",self.phone1,self.phone2);
+    NSLog(@"Faxes: %@ %@\n",self.fax1,self.fax2);
+    NSLog(@"Locations: %@ %@ | %@ %@\n",self.office_bldg_id_1,self.office_rm_num_1,self.office_bldg_id_2,self.office_rm_num_2);
+    NSLog(@"Positions: %@ %@\n",self.position_title_1,self.position_title_2);
+    NSLog(@"Department: %@ %@\n",self.dept_id_1,self.dept_id_2);
+    NSLog(@"Websites: %@ %@\n",self.website1,self.website2);
+    NSLog(@"Deleted: %@\n",self.deleted);
+    NSLog(@"favorite: %@\n",self.favorite);
+    NSLog(@"picture: %@\n",self.picture);
+    NSLog(@"last_changed: %@\n",self.last_changed);
+    NSLog(@"Email: %@\n",self.email);
+    NSLog(@"person_id: %@\n",self.person_id);
 }
 
 -(NSString*)getLocation:(int)n
 {
-    [log outputClass:[self class] Function:_cmd Message:@"Entry"];
     NSString * location = @"";
     
     if(n==1)
@@ -75,12 +66,10 @@
         location = [NSString stringWithFormat:@"%@ %@",self.office_bldg_id_2,self.office_rm_num_2];
     else
     {
-        [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"[!]ERROR: No such thing as position %@ for an employee.\n",[NSNumber numberWithInt:n]]];
         location = @"";
     }
     
     return [location stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    [log outputClass:[self class] Function:_cmd Message:@"Exit"];
 }
 
 -(NSString*)getFullName

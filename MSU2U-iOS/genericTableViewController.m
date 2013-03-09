@@ -21,41 +21,40 @@
 //for sure
 - (NSArray *)executeDataFetch:(NSString *)query
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
+    
     
     NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:query] encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
     NSError *error = nil;
     NSArray *results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
     if (error)
-        [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"JSON error: %@",error.localizedDescription]];
+    {
+        //do nothing
+    }
     //NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results);
     
-    [log functionExitedClass:[self class] Function:_cmd];
+    
     
     return results;
 }
 
 - (NSArray *)downloadCurrentData:(NSString*)jsonURL
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
+    
     
     NSString *request = [NSString stringWithFormat:jsonURL];
     
-    [log functionExitedClass:[self class] Function:_cmd];
+    
     
     return [self executeDataFetch:request];
 }
 
 -(void)fetchDataFromOnline:(UIManagedDocument*)document
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
+    
     
     dispatch_queue_t fetchQ = dispatch_queue_create("Data Fetcher", NULL);
     
     dispatch_async(fetchQ,^{
-        
-        [log outputClass:[self class] Function:_cmd Message:@"dispatch_async: Fetchq"];
-        
         
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
@@ -67,8 +66,6 @@
             [document.managedObjectContext performBlock:^{
                 for(NSDictionary * dataInfo in myData)
                 {
-                    [log outputClass:[self class] Function:_cmd Message:@"Inserting into database"];
-                    
                     //DEPENDS ON THE CHILD THAT I'M WORKING WITH
                     if(self.childNumber == [NSNumber numberWithInt:1])
                         [Sport sportWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
@@ -81,26 +78,23 @@
                 }
             }];
             
-            [log outputClass:[self class] Function:_cmd Message:@"Finished inserting into database"];
                 
                 
                 
             dispatch_async(dispatch_get_main_queue(), ^{
-                [log outputClass:[self class] Function:_cmd Message:@"dispatch_async: Hide Progress View"];
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
             });
         });
     
     });
-    [log functionExitedClass:[self class] Function:_cmd];
+    
 
 }
 
 -(void)setupFetchedResultsController
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
+    
     //Setting up the Fetched Results Controller
-    [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"childNumber=%@",self.childNumber]];
 
     NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:self.entityName];
     
@@ -159,7 +153,6 @@
             }
             myPredicate = [myPredicate stringByAppendingString:@"publication LIKE[c] 'Campus News'"];
         }
-        [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"Constructed Predicate is %@",myPredicate]];
         
         //Only if I actually added some text to myPredicate due to a switch being on will I set my request's predicate.
         if([myPredicate length] == 0)
@@ -206,57 +199,47 @@
     //Making sure I have information in my database already. If not, then I need to determine whether I should download or leave the table empty.
     if([[[self.fetchedResultsController sections] objectAtIndex:0] numberOfObjects] == 0)
     {
-        [log outputClass:[self class] Function:_cmd Message:@"There were 0 object in my table. Should I download more items?"];
         
         //As long as I'm not the Directory-Favorites or Directory-History tables, I'll continue.
         if(self.childNumber != [NSNumber numberWithInt:5] && self.childNumber != [NSNumber numberWithInt:6])
         {
             if(self.childNumber == [NSNumber numberWithInt:1])
             {
-                [log outputClass:[self class] Function:_cmd Message:@"I am in Sports Table"];
                 //I am the Sports table
                 if(![self switchesAreAllOffFor:@"userDefaultsSportsKey"])
                 {
-                    [log outputClass:[self class] Function:_cmd Message:@"At least one sport is subscribed to, so update"];
                     [self refresh];
                 }
             }
             else if(self.childNumber == [NSNumber numberWithInt:2])
             {
-                [log outputClass:[self class] Function:_cmd Message:@"I am in Events table"];
                 //I am the Events table
                 if(![self switchesAreAllOffFor:@"userDefaultsEventsKey"])
                 {
-                    [log outputClass:[self class] Function:_cmd Message:@"At least one event switch is on, so update"];
                     [self refresh];
                 }
             }
             else if(self.childNumber == [NSNumber numberWithInt:3])
             {
-                [log outputClass:[self class] Function:_cmd Message:@"I am in News table"];
                 //I am the News table
                 //News is a special case because if the user is subscribed to sports news, yet has not chosen any sports to subscribe to in the sports table, there will not be any news shown.
                 if(![self switchesAreAllOffFor:@"userDefaultsNewsKey"])
                 {
-                    [log outputClass:[self class] Function:_cmd Message:@"At least one news source switch is on, so upate"];
                     //Ok, so there is at least one News switch turned on, is it the sports news switch? If it is, I need to see if I am subscribed to any sports.
                     if(![self switchIsOffAtIndex:[NSNumber numberWithInt:1] forKey:@"userDefaultsNewsKey"] && [self switchIsOffAtIndex:[NSNumber numberWithInt:2] forKey:@"userDefaultsNewsKey"] && [self switchIsOffAtIndex:[NSNumber numberWithInt:0] forKey:@"userDefaultsNewsKey"])
                     {
-                       [log outputClass:[self class] Function:_cmd Message:@"SportsNews is ON, others are OFF"];
                         //The Sports News switch is on and the Wichitan/Campus News are off. Therefore, if there are ANY sport switches turned on, then I will attempt an update. Otherwise, I won't.
                         if(![self switchesAreAllOffFor:@"userDefaultsSportsKey"])
                         {
-                            [log outputClass:[self class] Function:_cmd Message:@"I'm subscribed to at least one sport, so update"];
                             [self refresh];
                         }
                         else
                         {
-                            [log outputClass:[self class] Function:_cmd Message:@"I'm not subscribed to any sports events, don't try to update"];
+                            //do nothing
                         }
                     }
                     else
                     {
-                        [log outputClass:[self class] Function:_cmd Message:@"Update the table because there is no content here"];
                         //Oh, so then either the sports news is not turned on OR the Wichitan/Campus News is turned on. Because I have nothing to show in my table, I will attempt an update to see if there's anything available.
                         [self refresh];
                     }
@@ -264,7 +247,6 @@
             }
             else if(self.childNumber == [NSNumber numberWithInt:4])
             {
-                [log outputClass:[self class] Function:_cmd Message:@"I am in the Directory and it is empty, so auto update"];
                 //This is the directory, which means there is no ability for the user to filter the listing and thus these must be refreshed
                 [self refresh];
             }
@@ -272,30 +254,28 @@
     }
     else if(self.childNumber == [NSNumber numberWithInt:5] || self.childNumber == [NSNumber numberWithInt:6])
     {
-        [log outputClass:[self class] Function:_cmd Message:@"I'm in either Favorites/History so I'll never need to download anything"];
+        //do nothing
     }
     else
     {
         //I know there are items in the database already.
-        [log outputClass:[self class] Function:_cmd Message:@"Data is already available in my database, so I'll load what I've got rather than attempt a download"];
+        //do nothing
     }
-    [log functionExitedClass:[self class] Function:_cmd];
+    
 }
 
 -(BOOL) switchIsOffAtIndex:(NSNumber*)myIndex forKey:(NSString*)myKey
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
-    [log outputClass:[self class] Function:_cmd Message:@""];
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
     NSArray * objects = [defaults objectForKey:myKey];
-    [log functionExitedClass:[self class] Function:_cmd];
+    
     return (![defaults boolForKey:[objects objectAtIndex:[myIndex integerValue]]]);
 }
 
 //Get a yes or not answer as to whether all of the switches are on
 -(BOOL) switchesAreAllOffFor:(NSString*)myKey
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
+    
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
     NSArray * objects = [defaults objectForKey:myKey];
     for(int i=0; i<[objects count]; i++)
@@ -306,28 +286,24 @@
         }
     }
     //If I get to this point, then all my switches were on
-    [log outputClass:[self class] Function:_cmd Message:@"All of my switches are off, so that's why there isn't anything to show. I won't bother downloading anything, either."];
-    [log functionExitedClass:[self class] Function:_cmd];
+    
     return YES;
 }
 
 -(NSString*)createPredicateForKeys:(NSArray*)myKeys usingSearchWords:(NSArray*)mySearchWords forAttribute:(NSString*)myAttribute
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
+    
     NSString * myPredicate = @"";
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
 
     for(int i=0; i<[myKeys count]; i++)
     {
-        [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"My key: %@",[myKeys objectAtIndex:i]]];
         if([defaults boolForKey:[myKeys objectAtIndex:i]])
         {
             if([myPredicate length] > 0)
             {
                 myPredicate = [myPredicate stringByAppendingString:@" || "];
             }
-            [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"My attribute is %@",myAttribute]];
-            [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"My search word is %@",[mySearchWords objectAtIndex:i]]];
 
             myPredicate = [myPredicate stringByAppendingString:myAttribute];
             myPredicate = [myPredicate stringByAppendingString:@" LIKE[c] "];
@@ -336,7 +312,6 @@
             myPredicate = [myPredicate stringByAppendingString:@"'"];
         }
     }
-    [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"My constructed predicate is %@",myPredicate]];
     
     if([myPredicate length] > 0)
     {
@@ -348,27 +323,22 @@
         returnStatement = [returnStatement stringByAppendingString:@" LIKE[c] 'nothing'"];
         return returnStatement;
     }
-    [log functionExitedClass:[self class] Function:_cmd];
+    
 }
 
 -(void)useDocument
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
-    
     //Does my file not exist yet?
     if(![[NSFileManager defaultManager]fileExistsAtPath:[self.myDatabase.fileURL path]])
     {
-        [log outputClass:[self class] Function:_cmd Message:@"Fetching items from online"];
         [self.myDatabase saveToURL:self.myDatabase.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success)
          {
-             [log outputClass:[self class] Function:_cmd Message:@"UIManagedDocument does not exist yet"];
              [self setupFetchedResultsController];
          }];
     }
     //What if my document is closed?
     else if(self.myDatabase.documentState == UIDocumentStateClosed)
     {
-        [log outputClass:[self class] Function:_cmd Message:@"UIManagedDocument is closed"];
         [self.myDatabase openWithCompletionHandler:^(BOOL success)
          {
              [self setupFetchedResultsController];
@@ -377,36 +347,34 @@
     //What if my document is already open?
     else if(self.myDatabase.documentState == UIDocumentStateNormal)
     {
-        [log outputClass:[self class] Function:_cmd Message:@"UIManagedDocument is already open"];
         [self setupFetchedResultsController];
     }
     else
     {
-        [log outputClass:[self class] Function:_cmd Message:@"UIManagedDocument exists yet is neither opened or closed, something strange happened"];
+        //do nothing
     }
-    [log functionExitedClass:[self class] Function:_cmd];
+    
 }
 
 -(void)setMyDatabase:(UIManagedDocument *)myDatabase
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
+    
     //If someone sets this document externally, I need to start using it.
     //In the setter, anytime someone sets this (as long as it has changed), then set it.
     if(_myDatabase != myDatabase)
     {
-        [log outputClass:[self class] Function:_cmd Message:@"UIManagedDocument setting up"];
         _myDatabase = myDatabase;
         [self useDocument];
     }
     else
-        [log outputClass:[self class] Function:_cmd Message:@"UIManagedDocument already set"];
-    [log functionExitedClass:[self class] Function:_cmd];
+    {
+        //do nothing
+    }
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    log = [[logPrinter alloc]init];
-    [log functionEnteredClass:[self class] Function:_cmd];
     [super viewWillAppear:animated];
     
     //Set debug to TRUE for the CoreDataTableViewController class
@@ -439,26 +407,23 @@
     if(self.childNumber == [NSNumber numberWithInt:4])
     {
         //Don't show a bar button item for these views
-        [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"BarButtonItem will not be shown for Directory Search View"]];
         self.tabBarController.navigationItem.rightBarButtonItem = nil;
     }
     else if(self.childNumber == [NSNumber numberWithInt:5] || self.childNumber == [NSNumber numberWithInt:6])
     {
-        [log outputClass:[self class] Function:_cmd Message:@"Setting 'Clear' BarButton for Directory Favorite or History View"];
         rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Clear"
                                                                          style:UIBarButtonSystemItemDone target:self action:@selector(clearMyTable)];
         self.tabBarController.navigationItem.rightBarButtonItem = rightButton;
     }
     else if(self.childNumber == [NSNumber numberWithInt:1] || self.childNumber == [NSNumber numberWithInt:2] || self.childNumber == [NSNumber numberWithInt:3])
     {
-        [log outputClass:[self class] Function:_cmd Message:@"Setting 'Subscribe' BarButton for News, Sports, and Events"];
         rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Subscribe"
                                                        style:UIBarButtonSystemItemDone target:self action:@selector(goToMySubscriptionView)];
         self.tabBarController.navigationItem.rightBarButtonItem = rightButton;
     }
     else
     {
-        [log outputClass:[self class] Function:_cmd Message:@"[!]ERROR: I did not recognize what view I'm in to determine if a BarButton item should be allocated"];
+        //do nothing
     }
     
     //Setup the arrays which will be used to hold the Core Data for the respective Table View Controller
@@ -469,22 +434,20 @@
     
     if(!self.myDatabase)
     {
-        [log outputClass:[self class] Function:_cmd Message:@"Attempting performWithDocument"];
         [[MYDocumentHandler sharedDocumentHandler] performWithDocument:^(UIManagedDocument *document) {
             self.myDatabase = document;
         }];
     }
     else
     {
-        [log outputClass:[self class] Function:_cmd Message:@"Not Attempting performWithDocument"];
         [self setupFetchedResultsController];
     }
-    [log functionExitedClass:[self class] Function:_cmd];
+    
 }
 
 -(void)makeSureUserWantsToClearTable
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
+    
     NSString * viewIamAt;
     
     //If the user is clearing the favorites table...
@@ -496,7 +459,7 @@
     // optional - add more buttons:
     [alert addButtonWithTitle:@"Yes"];
     [alert show];
-    [log functionExitedClass:[self class] Function:_cmd];
+    
 }
 
 /*
@@ -510,19 +473,19 @@
 
 -(void)goToMySubscriptionView
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
+    
     
     //Segue over to the subscription view
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     UITableViewController *yourViewController = (UITableViewController *)[storyboard instantiateViewControllerWithIdentifier:@"subscriptionView"];
     [self.navigationController pushViewController:yourViewController animated:YES];
     
-    [log functionExitedClass:[self class] Function:_cmd];
+    
 }
 
 -(void) clearMyTable
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
+    
     //If I hit the clear button, I need to fetch this employee from Core Data so I can manipulate their 'Favorite' attribute
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     
@@ -556,7 +519,6 @@
         {
             if([currentEmployee.favorite isEqualToString:@"yes"])
             {
-                [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"%@ is being changed from favorite 'yes' to 'no'",currentEmployee.lname]];
                 currentEmployee.favorite = @"no";
             }
         }
@@ -567,19 +529,18 @@
         {
             if(currentEmployee.history)
             {
-                [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"%@ is being changed from %@ to nil",currentEmployee.lname,currentEmployee.history]];
                 currentEmployee.history = nil;
             }
         }
     }
     //Save!!!
     //[self.directoryDatabase updateChangeCount:UIDocumentChangeDone];
-    [log functionExitedClass:[self class] Function:_cmd];
+    
 }
 
 -(void) refresh
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
+    
     [self fetchDataFromOnline:self.myDatabase];
     
     //Set the attributable string for the refresh control
@@ -592,12 +553,12 @@
     [self saveRefreshTime:lastUpdated];
     
     [self.refreshControl endRefreshing];
-    [log functionExitedClass:[self class] Function:_cmd];
+    
 }
 
 -(void)saveRefreshTime:(NSString*)refreshTime
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
+    
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
 
     switch([self.childNumber integerValue])
@@ -609,7 +570,7 @@
     }
     [defaults synchronize];
 
-    [log functionExitedClass:[self class] Function:_cmd];
+    
 }
 
 //######################################################################################
@@ -619,13 +580,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
-    [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"Number of Rows in Section = %d",section]];
-    
     // Check to see whether the normal table or search results table is being displayed and return the count from the appropriate array
     if (tableView == self.searchDisplayController.searchResultsTableView)
 	{
-        [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"Number of Rows in SearchDisplayController is %d",[self.filteredDataArray count]]];
         return [self.filteredDataArray count];
     }
 	else
@@ -654,7 +611,7 @@
         }
         else if(self.childNumber == [NSNumber numberWithInt:4])
         {
-            [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"I am childNumber=%@",self.childNumber]];
+
             for(Employee * currentEmployees in [self.fetchedResultsController fetchedObjects])
             {
                 count++;
@@ -662,7 +619,6 @@
         }
         else if(self.childNumber == [NSNumber numberWithInt:5])
         {
-            [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"I am childNumber=%@",self.childNumber]];
             for(Employee * currentEmployees in [self.fetchedResultsController fetchedObjects])
             {
                 count++;
@@ -670,21 +626,18 @@
         }
         else if(self.childNumber == [NSNumber numberWithInt:6])
         {
-            [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"I am childNumber=%@",self.childNumber]];
             for(Employee * currentEmployees in [self.fetchedResultsController fetchedObjects])
             {
                 count++;
             }
-        }
-        [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"Regular table has %d rows",count]];
-        [log functionExitedClass:[self class] Function:_cmd];
+        }        
         return count;
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier];
     
     if(cell == nil){
@@ -804,13 +757,13 @@
         cell.textLabel.text = directoryName;
         cell.detailTextLabel.text = [self.dataObject position_title_1];
     }
-    [log functionExitedClass:[self class] Function:_cmd];
+    
     return cell;
 }
 
 -(NSString*)concatenatePrefix:(NSString*)name_prefix firstName:(NSString*)firstName middleName:(NSString*)middleName lastName:(NSString*)lastName
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
+    
     //If they are null, make them empty
     if([name_prefix length] == 0)
         name_prefix = @"";
@@ -828,43 +781,35 @@
         lastName = @"";
     
     //Combine them now
-    [log functionExitedClass:[self class] Function:_cmd];
+    
     return [[NSString stringWithFormat:@"%@%@%@%@",name_prefix,firstName,middleName,lastName] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
+    
     // Perform segue to candy detail
     if(tableView == self.searchDisplayController.searchResultsTableView)
     {
         [self performSegueWithIdentifier:self.segueIdentifier sender:tableView];
     }
-    [log functionExitedClass:[self class] Function:_cmd];
+    
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
-    [log outputClass:[self class] Function:_cmd Message:[NSString stringWithFormat:@"I'm preparing to segue to %@",self.segueIdentifier]];
-    
     self.dataObject = nil;
     
     if(sender == self.searchDisplayController.searchResultsTableView)
     {
-        [log outputClass:[self class] Function:_cmd Message:@"I'm processing a search display row"];
         NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
         self.dataObject = [self.filteredDataArray objectAtIndex:[indexPath row]];
     }
     else
     {
-        [log outputClass:[self class] Function:_cmd Message:@"I'm processing a main display row"];
         NSIndexPath * indexPath = [self.tableView indexPathForSelectedRow];
         self.dataObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
     }
-    
-    [log outputClass:[self class] Function:_cmd Message:@"Sending dataObject to detail view controller"];
-    //Send the JSON data to the detail view controller
     
     if(self.childNumber == [NSNumber numberWithInt:1])
         [segue.destinationViewController sendSportInformation:self.dataObject];
@@ -872,9 +817,23 @@
         [segue.destinationViewController sendEventInformation:self.dataObject];
     else if(self.childNumber == [NSNumber numberWithInt:3])
         [segue.destinationViewController sendNewsInformation:self.dataObject];
-    else if(self.childNumber >= [NSNumber numberWithInt:4])
-        [segue.destinationViewController sendEmployeeInformation:self.dataObject];
-    [log functionExitedClass:[self class] Function:_cmd];
+    else if(self.childNumber == [NSNumber numberWithInt:4] || self.childNumber == [NSNumber numberWithInt:5] || self.childNumber == [NSNumber numberWithInt:6])
+    {
+        if([[self.dataObject person_id]length]==0)
+        {
+            NSLog(@"My god... I was going to send an empty data object???\n");
+        }
+        else
+        {
+            NSLog(@"Well I guess I got stuff after all, step aside for person_id=%@!\n",[self.dataObject person_id]);
+            [segue.destinationViewController sendEmployeeInformation:self.dataObject];
+        }
+    }
+    else
+    {
+        NSLog(@"I'm screwed up badly!\n");
+    }
+    
 }
 
 
@@ -885,7 +844,7 @@
 #pragma mark Content Filtering
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
+    
 	// Update the filtered array based on the search text and scope.
 	
     // Remove all objects from the filtered search array
@@ -946,32 +905,32 @@
      */
     
     self.filteredDataArray = [NSMutableArray arrayWithArray:tempArray];
-    [log functionExitedClass:[self class] Function:_cmd];
+    
 }
 
 #pragma mark - UISearchDisplayController Delegate Methods
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
+    
     // Tells the table data source to reload when text changes
     [self filterContentForSearchText:searchString scope:
      [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
     
     // Return YES to cause the search result table view to be reloaded.
-    [log functionExitedClass:[self class] Function:_cmd];
+    
     return YES;
 }
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
 {
-    [log functionEnteredClass:[self class] Function:_cmd];
+    
     // Tells the table data source to reload when scope bar selection changes
     [self filterContentForSearchText:[self.searchDisplayController.searchBar text] scope:
      [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
     
     // Return YES to cause the search result table view to be reloaded.
-    [log functionExitedClass:[self class] Function:_cmd];
+    
     return YES;
 }
 
