@@ -39,7 +39,10 @@
 @property (nonatomic, retain) NSString * sortDescriptorKey;
 @property (nonatomic, retain) NSString * cellIdentifier;
 @property (nonatomic, retain) NSString * segueIdentifier;
+
 @property (nonatomic, retain) NSString * keyToSearchOn;
+@property (nonatomic, retain) NSMutableArray * keysToSearchOn;
+
 @property (nonatomic, retain) NSNumber * childNumber;
 
 @property (nonatomic, retain) id dataObject;

@@ -25,7 +25,10 @@
     self.sortDescriptorKey = @"lname";
     self.cellIdentifier = @"directoryCell";
     self.segueIdentifier = @"toEmployeeDetail";
+    
     self.keyToSearchOn = @"lname";
+    self.keysToSearchOn = [[NSMutableArray alloc]initWithObjects:@"lname",@"fname",@"middle",@"phone1",@"phone2",@"email",@"website1",@"website2",nil];
+    
     self.childNumber = [NSNumber numberWithInt:4];
     
 

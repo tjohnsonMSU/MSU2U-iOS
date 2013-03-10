@@ -23,7 +23,10 @@
     self.sortDescriptorKey = @"history";
     self.cellIdentifier = @"historyDirectoryCell";
     self.segueIdentifier = @"toEmployeeDetail";
+    
     self.keyToSearchOn = @"lname";
+    self.keysToSearchOn = [[NSMutableArray alloc]initWithObjects:@"lname",@"fname", nil];
+    
     self.childNumber = [NSNumber numberWithInt:6];
 }
 

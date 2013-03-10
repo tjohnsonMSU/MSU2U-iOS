@@ -23,7 +23,10 @@
     self.sortDescriptorKey = @"title";
     self.cellIdentifier = @"athleticEvent";
     self.segueIdentifier = @"toSport";
+    
     self.keyToSearchOn = @"title";
+    self.keysToSearchOn = [[NSMutableArray alloc]initWithObjects:@"title", nil];
+    
     self.childNumber = [NSNumber numberWithInt:1];
 }
 

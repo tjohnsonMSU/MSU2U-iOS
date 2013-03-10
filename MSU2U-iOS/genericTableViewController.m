@@ -810,7 +810,7 @@
         NSIndexPath * indexPath = [self.tableView indexPathForSelectedRow];
         self.dataObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
     }
-    
+    NSLog(@"My child number is %@\n",self.childNumber);
     if(self.childNumber == [NSNumber numberWithInt:1])
         [segue.destinationViewController sendSportInformation:self.dataObject];
     else if(self.childNumber == [NSNumber numberWithInt:2])
@@ -819,6 +819,7 @@
         [segue.destinationViewController sendNewsInformation:self.dataObject];
     else if(self.childNumber == [NSNumber numberWithInt:4] || self.childNumber == [NSNumber numberWithInt:5] || self.childNumber == [NSNumber numberWithInt:6])
     {
+        NSLog(@"My dataObject person_id is %@\n",[self.dataObject person_id]);
         if([[self.dataObject person_id]length]==0)
         {
             NSLog(@"My god... I was going to send an empty data object???\n");
@@ -835,8 +836,6 @@
     }
     
 }
-
-
 
 //######################################################################################
 //#                 Search Display Controller Delegate Methods
@@ -892,17 +891,38 @@
             [self.dataArray addObject:currentEmployees];
     }
     
-    // Filter the array using NSPredicate
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.%@ contains[c] %@",self.keyToSearchOn,searchText];
-    NSArray *tempArray = [self.dataArray filteredArrayUsingPredicate:predicate];
-    
-    /* ==ONLY NECESSARY IF YOU ARE USING BUTTONS BELOW THE SEARCH BAR TO CHOOSE GENERAL CATEGORY (SEARCH KEYWORDS)
-     if(![scope isEqualToString:@"All"]) {
-     // Further filter the array with the scope
-     NSPredicate *scopePredicate = [NSPredicate predicateWithFormat:@"SELF.category contains[c] %@",scope];
-     tempArray = [tempArray filteredArrayUsingPredicate:scopePredicate];
-     }
-     */
+    //###### Filter the array using NSPredicate
+    //IF SEARCH TEXT IS ONE STRING, I'll check each attribute to see if there's a match.
+    NSArray * tempArray;
+    NSMutableArray * subPredicates;
+    if([searchText componentsSeparatedByString:@" "].count == 1)
+    {
+        subPredicates = [[NSMutableArray alloc]init];
+        for(int i=0; i<[self.keysToSearchOn count]; i++)
+        {
+            [subPredicates addObject:[NSPredicate predicateWithFormat:@"SELF.%@ contains[c] %@",[self.keysToSearchOn objectAtIndex:i],searchText]];
+        }
+        NSPredicate * predicate = [NSCompoundPredicate orPredicateWithSubpredicates:subPredicates];
+        
+        tempArray = [self.dataArray filteredArrayUsingPredicate:predicate];
+    }
+    //THE USER HAS TYPED MULTIPLE WORDS SO I NEED TO CHANGE MY SEARCH STRATEGY
+    else
+    {
+        subPredicates = [[NSMutableArray alloc]init];
+        NSArray * searchTerms = [searchText componentsSeparatedByString:@" "];
+        NSLog(@"I see that I have %d components!\n",[searchTerms count]);
+        for(int i=0; i<[searchTerms count]; i++)
+        {
+            for(int j=0; j<[self.keysToSearchOn count]; j++)
+            {
+                [subPredicates addObject:[NSPredicate predicateWithFormat:@"SELF.%@ contains[c] %@",[self.keysToSearchOn objectAtIndex:j],[searchTerms objectAtIndex:i]]];
+            }
+            NSPredicate * predicate = [NSCompoundPredicate orPredicateWithSubpredicates:subPredicates];
+            NSLog(@"NSPredicate is %@\n",predicate);
+            tempArray = [self.dataArray filteredArrayUsingPredicate:predicate];
+        }
+    }
     
     self.filteredDataArray = [NSMutableArray arrayWithArray:tempArray];
     

@@ -24,7 +24,10 @@
     self.sortDescriptorKey = @"title";
     self.cellIdentifier = @"article";
     self.segueIdentifier = @"toArticle";
+    
     self.keyToSearchOn = @"title";
+    self.keysToSearchOn = [[NSMutableArray alloc]initWithObjects:@"title", nil];
+    
     self.childNumber = [NSNumber numberWithInt:3];
 }
 
