@@ -71,7 +71,7 @@
                 
                 //My theory is that, because the hastag search JSON data is not an array, but rather a dictionary, I'll have
                 //  to have NSDictionary * results = json ? [.....]
-                NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:query] encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
+                NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:self.jsonURL] encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
                 NSError *error = nil;
                 NSDictionary *results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
                 NSLog(@"My screen_name test is %@\n",[[[results objectForKey:@"results"]objectAtIndex:0]objectForKey:@"screen_name"]);
