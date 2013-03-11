@@ -69,27 +69,22 @@
                 NSString * hashTag = [[self.screenName objectAtIndex:i]stringByReplacingOccurrencesOfString:@"#" withString:@""];
                 self.jsonURL = [@"http://search.twitter.com/search.json?q=%23" stringByAppendingString:hashTag];
                 
-                NSArray * myData = [self downloadCurrentData:self.jsonURL];
-                NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:self.jsonURL] encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
+                //My theory is that, because the hastag search JSON data is not an array, but rather a dictionary, I'll have
+                //  to have NSDictionary * results = json ? [.....]
+                NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:query] encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
                 NSError *error = nil;
                 NSDictionary *results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
-
+                NSLog(@"My screen_name test is %@\n",[[[results objectForKey:@"results"]objectAtIndex:0]objectForKey:@"screen_name"]);
                 
-                NSLog(@"My screen_name randomly is %@\n",[[[results objectForKey:@"results"]objectAtIndex:0]objectForKey:@"screen_name"]);
-                int count = 0;
-                int limit = 5;
+                NSArray * myData = [results objectForKey:@"results"];
                 for(NSDictionary * dataInfo in myData)
                 {
-                    count++;
-                    NSLog(@"count is %d\n",count);
-                    if(count > limit)
-                        break;
-                    
                     tweet * myTweet = [[tweet alloc]init];
-                    myTweet.text = [[dataInfo objectForKey:@"results"]objectForKey:@"text"];
-                    myTweet.profile_image_url = [[dataInfo objectForKey:@"results"]objectForKey:@"profile_image_url"];
-                    myTweet.created_at = [[dataInfo objectForKey:@"results"]objectForKey:@"profile_image_url"];
-                    myTweet.screen_name = [[dataInfo objectForKey:@"results"]objectForKey:@"screen_name"];
+                    myTweet.text = [dataInfo objectForKey:@"text"];
+                    myTweet.profile_image_url = [dataInfo objectForKey:@"profile_image_url"];
+                    myTweet.created_at = [dataInfo objectForKey:@"created_at"];
+                    myTweet.screen_name = [dataInfo objectForKey:@"screen_name"];
+                    [self.socialContent addObject:myTweet];
                 }
             }
             else
@@ -98,16 +93,8 @@
                 self.jsonURL = [NSString stringWithFormat:@"http://api.twitter.com/1/statuses/user_timeline.json?screen_name=%@&include_rts=1",[self.screenName objectAtIndex:i]];
                 
                 NSArray * myData = [self downloadCurrentData:self.jsonURL];
-                
-                int count = 0;
-                int limit = 5;
                 for(NSDictionary * dataInfo in myData)
                 {
-                    count++;
-                    NSLog(@"count is %d\n",count);
-                    if(count > limit)
-                        break;
-                    
                     tweet * myTweet = [[tweet alloc]init];
                     myTweet.text = [dataInfo objectForKey:@"text"];
                     myTweet.created_at = [dataInfo objectForKey:@"created_at"];
@@ -115,10 +102,8 @@
                     myTweet.profile_image_url = [[dataInfo objectForKey:@"user"] objectForKey:@"profile_image_url"];
                     [self.socialContent addObject:myTweet];
                 }
-            }
-            
+            } 
         }
-        
         
         //I will now sort the tweets by date to put the newest ones on top
         [self.socialContent sortUsingDescriptors:[NSArray arrayWithObjects:
@@ -142,7 +127,17 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.socialContent count];
+    int rowCount = 0;
+    
+    //If I want to restrict my Twitter feed to contain only the latest tweets regardless of who they are from in my
+    //  screenName array, I need to use the following condition. If I have less than 50 tweets, I'll just show everything I've got.
+    if([self.socialContent count] > ([self.screenName count]*5))
+        rowCount = ([self.screenName count]*5);
+    else
+        rowCount = [self.socialContent count];
+    
+    NSLog(@"I'm returning %d rows.\n",row);
+    return row;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
