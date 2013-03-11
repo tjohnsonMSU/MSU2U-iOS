@@ -28,6 +28,7 @@
     NSArray * news;
     NSMutableData * data;
     UIBarButtonItem * rightButton;
+    BOOL * notCurrentlyRefreshing;
 }
 
 @property (retain, nonatomic) NSMutableArray * filteredDataArray;

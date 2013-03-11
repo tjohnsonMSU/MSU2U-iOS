@@ -58,7 +58,7 @@
         
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        
+            [self.refreshControl beginRefreshing];
             hud.labelText = @"Downloading...";
             NSArray * myData = [self downloadCurrentData:self.jsonURL];
             hud.labelText = @"Loading...";
@@ -77,10 +77,8 @@
                         [Employee employeeWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
                 }
             }];
-            
-                
-                
-                
+            [self.refreshControl endRefreshing];
+            notCurrentlyRefreshing = TRUE;
             dispatch_async(dispatch_get_main_queue(), ^{
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
             });
@@ -379,6 +377,7 @@
     
     //Set debug to TRUE for the CoreDataTableViewController class
     self.debug = TRUE;
+    
     //Refresh Control
     //Make sure the Directory Favorites and Directory History do NOT have the refresh control.
     if(self.childNumber != [NSNumber numberWithInt:5] && self.childNumber != [NSNumber numberWithInt:6])
@@ -403,7 +402,7 @@
         self.refreshControl = refreshControl;
     }
     
-    //Should I setup any navigation bar buttons for this view? Put all of the rules here for your table view controllers
+    //Should I setup any navigation bar buttons for this view? Put all of the rules here for your table view controllers. Directory/Social/Maps should not have a subscribe button
     if(self.childNumber == [NSNumber numberWithInt:4])
     {
         //Don't show a bar button item for these views
@@ -540,7 +539,6 @@
 
 -(void) refresh
 {
-    
     [self fetchDataFromOnline:self.myDatabase];
     
     //Set the attributable string for the refresh control
@@ -551,9 +549,6 @@
     
     //Save this update string to the user defaults
     [self saveRefreshTime:lastUpdated];
-    
-    [self.refreshControl endRefreshing];
-    
 }
 
 -(void)saveRefreshTime:(NSString*)refreshTime
