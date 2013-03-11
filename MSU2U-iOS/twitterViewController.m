@@ -136,8 +136,8 @@
     else
         rowCount = [self.socialContent count];
     
-    NSLog(@"I'm returning %d rows.\n",row);
-    return row;
+    NSLog(@"I'm returning %d rows.\n",rowCount);
+    return rowCount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -148,7 +148,7 @@
     // Configure the cell...
     tweet * temp = [self.socialContent objectAtIndex:indexPath.row];
     cell.textLabel.text = temp.text;
-    cell.detailTextLabel.text = temp.screen_name;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ by %@",temp.created_at,temp.screen_name];
     
     [cell.imageView setImageWithURL:[NSURL URLWithString:temp.profile_image_url]
                    placeholderImage:[UIImage imageNamed:@"Default.png"]];
