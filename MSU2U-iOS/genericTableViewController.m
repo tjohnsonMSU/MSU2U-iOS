@@ -39,12 +39,7 @@
 
 - (NSArray *)downloadCurrentData:(NSString*)jsonURL
 {
-    
-    
     NSString *request = [NSString stringWithFormat:jsonURL];
-    
-    
-    
     return [self executeDataFetch:request];
 }
 
@@ -59,31 +54,74 @@
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
             [self.refreshControl beginRefreshing];
-            hud.labelText = @"Downloading...";
-            NSArray * myData = [self downloadCurrentData:self.jsonURL];
-            hud.labelText = @"Loading...";
-            //I'm blocking because I'm in the directory fetcher thread, and I can't otherwise access the context because it was created in a different thread.
-            [document.managedObjectContext performBlock:^{
-                for(NSDictionary * dataInfo in myData)
+            
+            //### JSON Downloading begins and ends here
+            if(self.childNumber == [NSNumber numberWithInt:7])
+            {
+                NSLog(@"### I'm Twitter!\n");
+                for(int i=0; i<[self.twitterProfilesAndHashtags count]; i++)
                 {
-                    //DEPENDS ON THE CHILD THAT I'M WORKING WITH
-                    if(self.childNumber == [NSNumber numberWithInt:1])
-                        [Sport sportWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
-                    else if(self.childNumber == [NSNumber numberWithInt:2])
-                        [Event eventWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
-                    else if(self.childNumber == [NSNumber numberWithInt:3])
-                        [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
-                    else if(self.childNumber == [NSNumber numberWithInt:4])
-                        [Employee employeeWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+                    //Is this a #hashtag?
+                    if([[self.twitterProfilesAndHashtags objectAtIndex:i]hasPrefix:@"#"])
+                    {
+                        NSLog(@"### I'm a hashtag!n");
+                        //Yep, it is a hashtag, so I need to treat this differently.
+                        NSString * hashTag = [[self.twitterProfilesAndHashtags objectAtIndex:i]stringByReplacingOccurrencesOfString:@"#" withString:@""];
+                        self.jsonURL = [@"http://search.twitter.com/search.json?q=%23" stringByAppendingString:hashTag];
+                        NSData * jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:self.jsonURL] encoding:NSUTF8StringEncoding error:nil]dataUsingEncoding:NSUTF8StringEncoding];
+                        NSError * error = nil;
+                        NSDictionary * results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error] : nil;
+                        NSArray * myData = [results objectForKey:@"results"];
+                        for(NSDictionary * dataInfo in myData)
+                        {
+                            [Tweet tweetWithInfo:dataInfo isProfile:FALSE inManagedObjectContext:document.managedObjectContext];
+                        }
+                    }
+                    //No, this is a profile such as @matthewfarm
+                    else
+                    {
+                        NSLog(@"###I'm a profile!\n");
+                        self.jsonURL = [NSString stringWithFormat:@"http://api.twitter.com/1/statuses/user_timeline.json?screen_name=%@&include_rts=1",[self.twitterProfilesAndHashtags objectAtIndex:i]];
+                        NSArray * myData = [self downloadCurrentData:self.jsonURL];
+                        NSLog(@"myData = %@\n",myData);
+                        for(NSDictionary * dataInfo in myData)
+                        {
+                            [Tweet tweetWithInfo:dataInfo isProfile:TRUE inManagedObjectContext:document.managedObjectContext];
+                        }
+                    }
                 }
-            }];
+            }
+            else
+            {
+                hud.labelText = @"Downloading...";
+                NSArray * myData = [self downloadCurrentData:self.jsonURL];
+                hud.labelText = @"Loading...";
+                
+                //I'm blocking because I'm in the directory fetcher thread, and I can't otherwise access the context because it was created in a different thread.
+                [document.managedObjectContext performBlock:^{
+                    for(NSDictionary * dataInfo in myData)
+                    {
+                        //DEPENDS ON THE CHILD THAT I'M WORKING WITH
+                        if(self.childNumber == [NSNumber numberWithInt:1])
+                            [Sport sportWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+                        else if(self.childNumber == [NSNumber numberWithInt:2])
+                            [Event eventWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+                        else if(self.childNumber == [NSNumber numberWithInt:3])
+                            [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+                        else if(self.childNumber == [NSNumber numberWithInt:4])
+                            [Employee employeeWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+                        //else if(self.childNumber == [NSNumber numberWithInt:7])
+                            //[Tweet tweetWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+                    }
+                }];
+            }//end-else
             [self.refreshControl endRefreshing];
             notCurrentlyRefreshing = TRUE;
             dispatch_async(dispatch_get_main_queue(), ^{
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
             });
         });
-    
+        
     });
     
 
@@ -111,7 +149,7 @@
                                   @"history != nil"];
         [request setPredicate:predicate];
     }
-    //Filter News/Sports/Events Tables based upon user defaults?
+    //#### NEWS
     else if(self.childNumber == [NSNumber numberWithInt:3])
     {
         //Check the user defaults
@@ -164,6 +202,7 @@
         NSPredicate * predicate = [NSPredicate predicateWithFormat:myPredicate];
         [request setPredicate:predicate];
     }
+    //#### EVENTS
     else if(self.childNumber == [NSNumber numberWithInt:2])
     {
         NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
@@ -172,6 +211,7 @@
         NSPredicate * predicate = [NSPredicate predicateWithFormat:[self createPredicateForKeys:keys usingSearchWords:searchWords forAttribute:@"category"]];
         [request setPredicate:predicate];
     }
+    //#### SPORTS
     else if(self.childNumber == [NSNumber numberWithInt:1])
     {
         NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
@@ -180,9 +220,21 @@
         NSPredicate * predicate = [NSPredicate predicateWithFormat:[self createPredicateForKeys:keys usingSearchWords:searchWords forAttribute:@"sportType"]];
         [request setPredicate:predicate];
     }
+    //#### TWITTER
+    else if(self.childNumber == [NSNumber numberWithInt:7])
+    {
+        /*
+        NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+        NSArray * keys = [defaults objectForKey:@"userDefaultsTweetsKey"];
+        NSArray * searchWords = [defaults objectForKey:@"typesOfTweets"];
+        NSPredicate * predicate = [NSPredicate predicateWithFormat:[self createPredicateForKeys:keys usingSearchWords:searchWords forAttribute:@"screen_name"]];
+        [request setPredicate:predicate];
+         */
+    }
     
     //Fetch all of the data. Be sure to sort the data correctly depending on which child is currently being viewed
-    if(self.childNumber != [NSNumber numberWithInt:6])
+    //#### DIRECTORY HISTORY AND TWITTER should be assorted by ascending dates
+    if(self.childNumber != [NSNumber numberWithInt:6] || self.childNumber != [NSNumber numberWithInt:7])
     {
         request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:self.sortDescriptorKey ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
     }
@@ -194,6 +246,7 @@
     //  will work with the data locaed within the fetchedResultsController. If we have no data in core data, then we'll download it first.
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:self.myDatabase.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     
+    //#### I DON'T HAVE ANY DATA IN MY TABLE? I NEED TO FIGURE OUT WHY
     //Making sure I have information in my database already. If not, then I need to determine whether I should download or leave the table empty.
     if([[[self.fetchedResultsController sections] objectAtIndex:0] numberOfObjects] == 0)
     {
@@ -248,11 +301,18 @@
                 //This is the directory, which means there is no ability for the user to filter the listing and thus these must be refreshed
                 [self refresh];
             }
+            else if(self.childNumber == [NSNumber numberWithInt:7])
+            {
+                if(![self switchesAreAllOffFor:@"userDefaultsTweetsKey"])
+                {
+                    [self refresh];
+                }
+            }
         }
     }
     else if(self.childNumber == [NSNumber numberWithInt:5] || self.childNumber == [NSNumber numberWithInt:6])
     {
-        //do nothing
+        //do nothing because it is perfectly acceptable for their to be no favorites or history in my table since these aren't downloaded data anyway
     }
     else
     {
@@ -349,6 +409,7 @@
     }
     else
     {
+        NSLog(@"My document exists but it is neither opened nor closed? Strange error from which we can not recover.\n");
         //do nothing
     }
     
@@ -356,7 +417,6 @@
 
 -(void)setMyDatabase:(UIManagedDocument *)myDatabase
 {
-    
     //If someone sets this document externally, I need to start using it.
     //In the setter, anytime someone sets this (as long as it has changed), then set it.
     if(_myDatabase != myDatabase)
@@ -368,7 +428,6 @@
     {
         //do nothing
     }
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -395,6 +454,7 @@
             case 2:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"eventsRefreshTime"]];break;
             case 3:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"newsRefreshTime"]];break;
             case 4:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"directoryRefreshTime"]];break;
+            case 5:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"tweetsRefreshTime"]];break;
         }
         
         [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
@@ -414,14 +474,15 @@
                                                                          style:UIBarButtonSystemItemDone target:self action:@selector(clearMyTable)];
         self.tabBarController.navigationItem.rightBarButtonItem = rightButton;
     }
-    else if(self.childNumber == [NSNumber numberWithInt:1] || self.childNumber == [NSNumber numberWithInt:2] || self.childNumber == [NSNumber numberWithInt:3])
+    else if(self.childNumber == [NSNumber numberWithInt:1] || self.childNumber == [NSNumber numberWithInt:2] || self.childNumber == [NSNumber numberWithInt:3] || self.childNumber == [NSNumber numberWithInt:7])
     {
-        rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Subscribe"
+        rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Configure"
                                                        style:UIBarButtonSystemItemDone target:self action:@selector(goToMySubscriptionView)];
         self.tabBarController.navigationItem.rightBarButtonItem = rightButton;
     }
     else
     {
+        NSLog(@"I didn't recognize what child number I'm on to determine whether a button should be placed in the top right corner of the view on the navigation bar.\n");
         //do nothing
     }
     
@@ -562,6 +623,7 @@
         case 2:[defaults setObject:refreshTime forKey:@"eventsRefreshTime"];break;
         case 3:[defaults setObject:refreshTime forKey:@"newsRefreshTime"];break;
         case 4:[defaults setObject:refreshTime forKey:@"directoryRefreshTime"];break;
+        case 5:[defaults setObject:refreshTime forKey:@"tweetsRefreshTime"];break;
     }
     [defaults synchronize];
 
@@ -625,7 +687,14 @@
             {
                 count++;
             }
-        }        
+        }
+        else if(self.childNumber == [NSNumber numberWithInt:7])
+        {
+            for(Tweet * currentTweets in [self.fetchedResultsController fetchedObjects])
+            {
+                count++;
+            }
+        }
         return count;
     }
 }
@@ -752,6 +821,12 @@
         cell.textLabel.text = directoryName;
         cell.detailTextLabel.text = [self.dataObject position_title_1];
     }
+    else if(self.childNumber == [NSNumber numberWithInt:7])
+    {
+        cell.textLabel.text = [self.dataObject text];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ by %@",[self.dataObject created_at],[self.dataObject screen_name]];
+        [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject profile_image_url]] placeholderImage:[UIImage imageNamed:@"twitter.png"]];
+    }
     
     return cell;
 }
@@ -825,6 +900,10 @@
             [segue.destinationViewController sendEmployeeInformation:self.dataObject];
         }
     }
+    else if(self.childNumber == [NSNumber numberWithInt:7])
+    {
+        [segue.destinationViewController sendTweetInformation:self.dataObject];
+    }
     else
     {
         NSLog(@"I'm screwed up badly!\n");
@@ -884,6 +963,12 @@
     {
         for (Employee *currentEmployees in [self.fetchedResultsController fetchedObjects])
             [self.dataArray addObject:currentEmployees];
+    }
+    //Twitter Tab
+    else if(self.childNumber == [NSNumber numberWithInt:7])
+    {
+        for (Employee *currentTweets in [self.fetchedResultsController fetchedObjects])
+            [self.dataArray addObject:currentTweets];
     }
     
     //###### Filter the array using NSPredicate

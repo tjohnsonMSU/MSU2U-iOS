@@ -7,13 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "Tweet+Create.h"
 
-@interface detailTwitterViewController : UIViewController
+@interface detailTwitterViewController : UIViewController{
+    Tweet * receivedTweet;
+}
 
-@property (weak, nonatomic) IBOutlet UIImageView *profile_image;
-@property (weak, nonatomic) IBOutlet UILabel *userName;
-@property (weak, nonatomic) IBOutlet UILabel *realName;
+@property (weak, nonatomic) IBOutlet UIImageView *profile_image_url;
+@property (weak, nonatomic) IBOutlet UIImageView *profile_background_image_url;
+@property (weak, nonatomic) IBOutlet UILabel *screen_name;
+@property (weak, nonatomic) IBOutlet UILabel *created_at;
+@property (weak, nonatomic) IBOutlet UILabel *name;
+
 @property (weak, nonatomic) IBOutlet UITextView *text;
 - (IBAction)retweet:(UIButton *)sender;
 - (IBAction)comment:(UIButton *)sender;
+
+-(void)sendTweetInformation:(Tweet*)tweetInfo;
+
 @end

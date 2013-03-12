@@ -13,6 +13,7 @@
 #import "detailDirectoryViewController.h"
 #import "detailEventViewController.h"
 #import "detailNewsViewController.h"
+#import "detailTwitterViewController.h"
 
 //Custom Libraries
 #import "CoreDataTableViewController.h"
@@ -23,6 +24,7 @@
 #import "News+Create.h"
 #import "Event+Create.h"
 #import "Employee+Create.h"
+#import "Tweet+Create.h"
 
 @interface genericTableViewController : CoreDataTableViewController <UISearchDisplayDelegate, UISearchBarDelegate>{
     NSArray * news;
@@ -36,6 +38,8 @@
 @property (nonatomic, strong) UIManagedDocument * myDatabase;
 
 @property (nonatomic, retain) NSString * jsonURL;
+@property (nonatomic, retain) NSArray * twitterProfilesAndHashtags;
+
 @property (nonatomic, retain) NSString * entityName;
 @property (nonatomic, retain) NSString * sortDescriptorKey;
 @property (nonatomic, retain) NSString * cellIdentifier;

@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "tweet.h"
-#import "MBProgressHUD.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+#import "detailTwitterViewController.h"
+#import "CoreDataTableViewController.h"
+#import "MYDocumentHandler.h"
+#import "genericTableViewController.h"
 
-@interface twitterViewController : UITableViewController
+//Paul Hegarty
+#import "Tweet+Create.h"
+
+@interface twitterViewController : genericTableViewController <UISearchDisplayDelegate, UISearchBarDelegate>
+@property (retain, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (retain, nonatomic) IBOutlet UISearchDisplayController *searchDisplayControl;
 
 @end

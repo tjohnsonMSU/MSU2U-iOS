@@ -55,16 +55,21 @@
     NSArray * userDefaultNewsKey = [[NSArray alloc] initWithObjects:@"wichitanNewsIsOn",@"sportsNewsIsOn",@"campusNewsIsOn",nil];
     NSArray * typesOfNews = [[NSArray alloc] initWithObjects:@"The Wichitan", @"Sports News", @"Event News", nil];
     
-     
+
+    NSArray * userDefaultTweetsKey = [[NSArray alloc] initWithObjects:@"MSUMustangsIsOn",@"MWSUCampusWatchIsOn",@"MidwesternAVPIsOn",@"msu2u_devteamIsOn",@"WichitanOnline",@"MSUUnivDev",@"MSU_VPIsOn",@"mwsu_sgIsOn",@"#SocialStampedeIsOn",nil];
+    NSArray * typesOfTweets = [[NSArray alloc] initWithObjects:@"MSUMustangs", @"MWSUCampusWatch", @"MidwesternAVPIsOn",@"msu2u_devteam",@"WichitanOnline",@"MSUUnivDev",@"MSU_VP",@"mwsu_sg",@"#SocialStampede",@"#MidwesternState", nil];
+    
     //Setup the user default keys and search keywords that are used throughout the app
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     [defaults setObject:userDefaultEventsKey forKey:@"userDefaultsEventsKey"];
     [defaults setObject:userDefaultSportsKey forKey:@"userDefaultsSportsKey"];
     [defaults setObject:userDefaultNewsKey forKey:@"userDefaultsNewsKey"];
+    [defaults setObject:userDefaultTweetsKey forKey:@"userDefaultsTweetsKey"];
     [defaults setObject:typesOfEvents forKey:@"typesOfEvents"];
     [defaults setObject:typesOfSports forKey:@"typesOfSports"];
     [defaults setObject:typesOfNews forKey:@"typesOfNews"];
+    [defaults setObject:typesOfTweets forKey:@"typesOfTweets"];
     
     //Save these defaults
     [defaults synchronize];

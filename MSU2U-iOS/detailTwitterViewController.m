@@ -14,25 +14,39 @@
 
 @implementation detailTwitterViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    //Set the labels
+    self.screen_name.text = receivedTweet.screen_name;
+    self.created_at.text = receivedTweet.created_at;
+    self.name.text = receivedTweet.name;
+    self.text.text = receivedTweet.text;
+    
+    //Download the images
+    [self downloadImage];
 }
 
-- (void)didReceiveMemoryWarning
+-(void)downloadImage
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    receivedTweet.profile_image_url = [receivedTweet.profile_image_url stringByReplacingOccurrencesOfString:@" " withString:@""];
+    receivedTweet.profile_background_image_url = [receivedTweet.profile_background_image_url stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    [self.profile_image_url setImageWithURL:[NSURL URLWithString:receivedTweet.profile_image_url]
+                  placeholderImage:[UIImage imageNamed:@"Default.png"]];
+    [self.profile_background_image_url setImageWithURL:[NSURL URLWithString:receivedTweet.profile_background_image_url]
+                  placeholderImage:[UIImage imageNamed:@"Default.png"]];
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
+-(void)sendTweetInformation:(Tweet *)tweetInfo
+{
+    receivedTweet = tweetInfo;
 }
 
 - (IBAction)retweet:(UIButton *)sender {
