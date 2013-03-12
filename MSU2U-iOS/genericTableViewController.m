@@ -49,10 +49,11 @@
     
     dispatch_queue_t fetchQ = dispatch_queue_create("Data Fetcher", NULL);
     
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     dispatch_async(fetchQ,^{
         
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        //MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        //dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
             [self.refreshControl beginRefreshing];
             
             //### JSON Downloading begins and ends here
@@ -72,10 +73,14 @@
                         NSError * error = nil;
                         NSDictionary * results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error] : nil;
                         NSArray * myData = [results objectForKey:@"results"];
-                        for(NSDictionary * dataInfo in myData)
-                        {
-                            [Tweet tweetWithInfo:dataInfo isProfile:FALSE inManagedObjectContext:document.managedObjectContext];
-                        }
+                        
+                        //I'm blocking because I'm in the directory fetcher thread, and I can't otherwise access the context because it was created in a different thread.
+                        [document.managedObjectContext performBlock:^{	
+                        	for(NSDictionary * dataInfo in myData)
+                        	{
+                            		[Tweet tweetWithInfo:dataInfo isProfile:FALSE inManagedObjectContext:document.managedObjectContext];
+                        	}
+                        }];
                     }
                     //No, this is a profile such as @matthewfarm
                     else
@@ -84,10 +89,14 @@
                         self.jsonURL = [NSString stringWithFormat:@"http://api.twitter.com/1/statuses/user_timeline.json?screen_name=%@&include_rts=1",[self.twitterProfilesAndHashtags objectAtIndex:i]];
                         NSArray * myData = [self downloadCurrentData:self.jsonURL];
                         NSLog(@"myData = %@\n",myData);
-                        for(NSDictionary * dataInfo in myData)
-                        {
-                            [Tweet tweetWithInfo:dataInfo isProfile:TRUE inManagedObjectContext:document.managedObjectContext];
-                        }
+                        
+                        //I'm blocking because I'm in the directory fetcher thread, and I can't otherwise access the context because it was created in a different thread.
+                        [document.managedObjectContext performBlock:^{
+                        	for(NSDictionary * dataInfo in myData)
+                        	{
+                            		[Tweet tweetWithInfo:dataInfo isProfile:TRUE inManagedObjectContext:document.managedObjectContext];
+                        	}
+                        }];
                     }
                 }
             }
@@ -115,12 +124,14 @@
                     }
                 }];
             }//end-else
+            
             [self.refreshControl endRefreshing];
             notCurrentlyRefreshing = TRUE;
+            
             dispatch_async(dispatch_get_main_queue(), ^{
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
             });
-        });
+        //});
         
     });
     
@@ -193,9 +204,9 @@
         //Only if I actually added some text to myPredicate due to a switch being on will I set my request's predicate.
         if([myPredicate length] == 0)
         {
-            //There is no such thing as a sport of type "NOTHING" so effectively this will return no one, which is what I want
+            //There is no such thing as a News of type "NOTHING" so effectively this will return no one, which is what I want
             //  since all of the news switches have been disable.
-            myPredicate = [myPredicate stringByAppendingString:@"publication LIKE[c] 'NOTHING'"];
+            myPredicate = [myPredicate stringByAppendingString:@"publication LIKE[c] 'Return no News Results'];
         }
         
         //set the predicate to your constructed predicate string
