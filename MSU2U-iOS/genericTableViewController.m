@@ -206,7 +206,7 @@
         {
             //There is no such thing as a News of type "NOTHING" so effectively this will return no one, which is what I want
             //  since all of the news switches have been disable.
-            myPredicate = [myPredicate stringByAppendingString:@"publication LIKE[c] 'Return no News Results'];
+            myPredicate = [myPredicate stringByAppendingString:@"publication LIKE[c] 'nothing'""];
         }
         
         //set the predicate to your constructed predicate string
