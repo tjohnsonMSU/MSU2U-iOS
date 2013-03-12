@@ -21,7 +21,7 @@
     self.socialContent = [[NSMutableArray alloc]init];
     
     //Figure out which feeds I need to download from
-    self.screenName = [[NSArray alloc]initWithObjects:@"MSUMustangs",@"matthewfarm",@"MWSUCampusWatch",@"MidwesternAVP",@"msu2u_devteam",@"WichitanOnline",@"MSUUnivDev",@"#SocialStampede", nil];
+    self.screenName = [[NSArray alloc]initWithObjects:@"MSUMustangs",@"matthewfarm",@"MWSUCampusWatch",@"MidwesternAVP",@"msu2u_devteam",@"WichitanOnline",@"MSUUnivDev",@"#SocialStampede",@"MSU_VP",@"mwsu_sg", nil];
     
     //Make some determination if you should download new data or not
     [self fetchDataFromOnline];

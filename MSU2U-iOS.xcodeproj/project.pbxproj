@@ -175,10 +175,6 @@
 		1DD49E3416ADD6B100EB7827 /* navBarDemo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DD49E3316ADD6B100EB7827 /* navBarDemo.png */; };
 		1DD8F3631693CF2F009F0FC3 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD8F3621693CF2F009F0FC3 /* EventKit.framework */; };
 		1DDB39C81652CF6E00252053 /* footballBanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDB39C71652CF6E00252053 /* footballBanner.png */; };
-		1DDD41FA16ED25910079463A /* rich.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD41F916ED25910079463A /* rich.jpg */; };
-		1DDD421D16ED3B730079463A /* mattfarmer.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD421C16ED3B730079463A /* mattfarmer.png */; };
-		1DDD421F16ED3CA10079463A /* logo-small_bigger.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD421E16ED3CA10079463A /* logo-small_bigger.png */; };
-		1DDD422116ED3CA50079463A /* pic_jimrome.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD422016ED3CA50079463A /* pic_jimrome.jpg */; };
 		1DDD422516ED401F0079463A /* twitterBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD422416ED401F0079463A /* twitterBG.png */; };
 		1DDD422716ED42BB0079463A /* twitterBlug.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD422616ED42BB0079463A /* twitterBlug.png */; };
 		1DDD423516ED61700079463A /* twitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD423416ED61700079463A /* twitterViewController.m */; };
@@ -680,10 +676,6 @@
 		1DD49E3316ADD6B100EB7827 /* navBarDemo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navBarDemo.png; sourceTree = "<group>"; };
 		1DD8F3621693CF2F009F0FC3 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		1DDB39C71652CF6E00252053 /* footballBanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = footballBanner.png; sourceTree = "<group>"; };
-		1DDD41F916ED25910079463A /* rich.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rich.jpg; sourceTree = "<group>"; };
-		1DDD421C16ED3B730079463A /* mattfarmer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mattfarmer.png; sourceTree = "<group>"; };
-		1DDD421E16ED3CA10079463A /* logo-small_bigger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-small_bigger.png"; sourceTree = "<group>"; };
-		1DDD422016ED3CA50079463A /* pic_jimrome.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic_jimrome.jpg; sourceTree = "<group>"; };
 		1DDD422416ED401F0079463A /* twitterBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterBG.png; sourceTree = "<group>"; };
 		1DDD422616ED42BB0079463A /* twitterBlug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterBlug.png; sourceTree = "<group>"; };
 		1DDD423316ED61700079463A /* twitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = twitterViewController.h; sourceTree = "<group>"; };
@@ -874,12 +866,8 @@
 			children = (
 				1DDD422616ED42BB0079463A /* twitterBlug.png */,
 				1DDD422416ED401F0079463A /* twitterBG.png */,
-				1DDD422016ED3CA50079463A /* pic_jimrome.jpg */,
-				1DDD421E16ED3CA10079463A /* logo-small_bigger.png */,
-				1DDD421C16ED3B730079463A /* mattfarmer.png */,
 				1D4BEA6616BF7FC3000CE107 /* BLACK.png */,
 				1D24236B16E3EEC1003E731D /* Unknown.jpg */,
-				1DDD41F916ED25910079463A /* rich.jpg */,
 				1DD49E3316ADD6B100EB7827 /* navBarDemo.png */,
 				1D1CEB45162B4E750059BC1F /* image */,
 				1D1CEB00162B4E690059BC1F /* icons */,
@@ -1821,10 +1809,6 @@
 				1D4BEA6716BF7FC3000CE107 /* BLACK.png in Resources */,
 				1D3521BF16E191A800EDFE25 /* Default-568h@2x.png in Resources */,
 				1D24236C16E3EEC2003E731D /* Unknown.jpg in Resources */,
-				1DDD41FA16ED25910079463A /* rich.jpg in Resources */,
-				1DDD421D16ED3B730079463A /* mattfarmer.png in Resources */,
-				1DDD421F16ED3CA10079463A /* logo-small_bigger.png in Resources */,
-				1DDD422116ED3CA50079463A /* pic_jimrome.jpg in Resources */,
 				1DDD422516ED401F0079463A /* twitterBG.png in Resources */,
 				1DDD422716ED42BB0079463A /* twitterBlug.png in Resources */,
 			);
