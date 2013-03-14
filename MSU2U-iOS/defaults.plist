@@ -54,13 +54,37 @@
 	<true/>
 	<key>campusNewsIsOn</key>
 	<true/>
+	<key>MidwesternStateIsOn</key>
+	<true/>
+	<key>MSUMustangsIsOn</key>
+	<true/>
+	<key>matthewfarmIsOn</key>
+	<true/>
+	<key>MWSUCampusWatchIsOn</key>
+	<true/>
+	<key>MidwesternAVPIsOn</key>
+	<true/>
+	<key>msu2u_devteamIsOn</key>
+	<true/>
+	<key>WichitanOnlineIsOn</key>
+	<true/>
+	<key>MSUUnivDevIsOn</key>
+	<true/>
+	<key>MSU_VPIsOn</key>
+	<true/>
+	<key>mwsu_sgIsOn</key>
+	<true/>
+	<key>#SocialStampedeIsOn</key>
+	<true/>
+	<key>#MidwesternStateIsOn</key>
+	<true/>
 	<key>sportsRefreshTime</key>
 	<string>Pull to Refresh</string>
 	<key>newsRefreshTime</key>
 	<string>Pull to Refresh</string>
 	<key>directoryRefreshTime</key>
 	<string>Pull to Refresh</string>
-	<key>eventsRefreshTime</key>
+	<key>twitterRefreshTime</key>
 	<string>Pull to Refresh</string>
 </dict>
 </plist>

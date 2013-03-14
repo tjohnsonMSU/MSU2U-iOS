@@ -21,8 +21,6 @@
 //for sure
 - (NSArray *)executeDataFetch:(NSString *)query
 {
-    
-    
     NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:query] encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
     NSError *error = nil;
     NSArray *results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
@@ -30,9 +28,6 @@
     {
         //do nothing
     }
-    //NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results);
-    
-    
     
     return results;
 }
@@ -45,27 +40,23 @@
 
 -(void)fetchDataFromOnline:(UIManagedDocument*)document
 {
-    
-    
     dispatch_queue_t fetchQ = dispatch_queue_create("Data Fetcher", NULL);
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     dispatch_async(fetchQ,^{
         
-        //MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        //dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
             [self.refreshControl beginRefreshing];
             
             //### JSON Downloading begins and ends here
             if(self.childNumber == [NSNumber numberWithInt:7])
             {
-                NSLog(@"### I'm Twitter!\n");
+                //NSLog(@"### I'm Twitter!\n");
                 for(int i=0; i<[self.twitterProfilesAndHashtags count]; i++)
                 {
                     //Is this a #hashtag?
                     if([[self.twitterProfilesAndHashtags objectAtIndex:i]hasPrefix:@"#"])
                     {
-                        NSLog(@"### I'm a hashtag!n");
+                        //NSLog(@"### I'm a hashtag!n");
                         //Yep, it is a hashtag, so I need to treat this differently.
                         NSString * hashTag = [[self.twitterProfilesAndHashtags objectAtIndex:i]stringByReplacingOccurrencesOfString:@"#" withString:@""];
                         self.jsonURL = [@"http://search.twitter.com/search.json?q=%23" stringByAppendingString:hashTag];
@@ -74,7 +65,7 @@
                         NSDictionary * results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error] : nil;
                         NSArray * myData = [results objectForKey:@"results"];
                         
-                        //I'm blocking because I'm in the directory fetcher thread, and I can't otherwise access the context because it was created in a different thread.
+                        //I'm blocking because I'm in the fetcher thread, and I can't otherwise access the context because it was created in a different thread.
                         [document.managedObjectContext performBlock:^{	
                         	for(NSDictionary * dataInfo in myData)
                         	{
@@ -85,12 +76,12 @@
                     //No, this is a profile such as @matthewfarm
                     else
                     {
-                        NSLog(@"###I'm a profile!\n");
+                        //NSLog(@"###I'm a profile!\n");
                         self.jsonURL = [NSString stringWithFormat:@"http://api.twitter.com/1/statuses/user_timeline.json?screen_name=%@&include_rts=1",[self.twitterProfilesAndHashtags objectAtIndex:i]];
                         NSArray * myData = [self downloadCurrentData:self.jsonURL];
-                        NSLog(@"myData = %@\n",myData);
+                        //NSLog(@"myData = %@\n",myData);
                         
-                        //I'm blocking because I'm in the directory fetcher thread, and I can't otherwise access the context because it was created in a different thread.
+                        //I'm blocking because I'm in the fetcher thread, and I can't otherwise access the context because it was created in a different thread.
                         [document.managedObjectContext performBlock:^{
                         	for(NSDictionary * dataInfo in myData)
                         	{
@@ -102,6 +93,7 @@
             }
             else
             {
+                //Everything but Twitter feeds are processed the same way so that's why they are all in this block. The Database Crew creates these feeds for us so they all match in their formatting, unlike Twitter created feeds which need to be handled a bit differently
                 hud.labelText = @"Downloading...";
                 NSArray * myData = [self downloadCurrentData:self.jsonURL];
                 hud.labelText = @"Loading...";
@@ -119,8 +111,6 @@
                             [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
                         else if(self.childNumber == [NSNumber numberWithInt:4])
                             [Employee employeeWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
-                        //else if(self.childNumber == [NSNumber numberWithInt:7])
-                            //[Tweet tweetWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
                     }
                 }];
             }//end-else
@@ -131,16 +121,11 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
             });
-        //});
-        
     });
-    
-
 }
 
 -(void)setupFetchedResultsController
 {
-    
     //Setting up the Fetched Results Controller
 
     NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:self.entityName];
@@ -206,7 +191,7 @@
         {
             //There is no such thing as a News of type "NOTHING" so effectively this will return no one, which is what I want
             //  since all of the news switches have been disable.
-            myPredicate = [myPredicate stringByAppendingString:@"publication LIKE[c] 'Return no News Results'];
+            myPredicate = [myPredicate stringByAppendingString:@"publication LIKE[c] 'Return no News Results'"];
         }
         
         //set the predicate to your constructed predicate string
@@ -234,13 +219,11 @@
     //#### TWITTER
     else if(self.childNumber == [NSNumber numberWithInt:7])
     {
-        /*
         NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
         NSArray * keys = [defaults objectForKey:@"userDefaultsTweetsKey"];
         NSArray * searchWords = [defaults objectForKey:@"typesOfTweets"];
         NSPredicate * predicate = [NSPredicate predicateWithFormat:[self createPredicateForKeys:keys usingSearchWords:searchWords forAttribute:@"screen_name"]];
         [request setPredicate:predicate];
-         */
     }
     
     //Fetch all of the data. Be sure to sort the data correctly depending on which child is currently being viewed
@@ -367,25 +350,18 @@
 
     for(int i=0; i<[myKeys count]; i++)
     {
+        NSLog(@"%@ is %d\n",[myKeys objectAtIndex:i],[defaults boolForKey:[myKeys objectAtIndex:i]]);
         if([defaults boolForKey:[myKeys objectAtIndex:i]])
         {
             if([myPredicate length] > 0)
-            {
                 myPredicate = [myPredicate stringByAppendingString:@" || "];
-            }
-
-            myPredicate = [myPredicate stringByAppendingString:myAttribute];
-            myPredicate = [myPredicate stringByAppendingString:@" LIKE[c] "];
-            myPredicate = [myPredicate stringByAppendingString:@"'"];
-            myPredicate = [myPredicate stringByAppendingString:[mySearchWords objectAtIndex:i]];
-            myPredicate = [myPredicate stringByAppendingString:@"'"];
+            
+            myPredicate = [myPredicate stringByAppendingString:[NSString stringWithFormat:@"%@ LIKE[c] '%@'",myAttribute,[mySearchWords objectAtIndex:i]]];
         }
     }
     
     if([myPredicate length] > 0)
-    {
         return myPredicate;
-    }
     else
     {
         NSString * returnStatement = myAttribute;

@@ -56,8 +56,8 @@
     NSArray * typesOfNews = [[NSArray alloc] initWithObjects:@"The Wichitan", @"Sports News", @"Event News", nil];
     
 
-    NSArray * userDefaultTweetsKey = [[NSArray alloc] initWithObjects:@"MSUMustangsIsOn",@"MWSUCampusWatchIsOn",@"MidwesternAVPIsOn",@"msu2u_devteamIsOn",@"WichitanOnline",@"MSUUnivDev",@"MSU_VPIsOn",@"mwsu_sgIsOn",@"#SocialStampedeIsOn",nil];
-    NSArray * typesOfTweets = [[NSArray alloc] initWithObjects:@"MSUMustangs", @"MWSUCampusWatch", @"MidwesternAVPIsOn",@"msu2u_devteam",@"WichitanOnline",@"MSUUnivDev",@"MSU_VP",@"mwsu_sg",@"#SocialStampede",@"#MidwesternState", nil];
+    NSArray * userDefaultTweetsKey = [[NSArray alloc] initWithObjects:@"MidwesternStateIsOn",@"MSUMustangsIsOn",@"matthewfarmIsOn",@"MWSUCampusWatchIsOn",@"MidwesternAVPIsOn",@"msu2u_devteamIsOn",@"WichitanOnlineIsOn",@"MSUUnivDevIsOn",@"MSU_VPIsOn",@"mwsu_sgIsOn",@"#SocialStampedeIsOn",@"#MidwesternStateIsOn",nil];
+    NSArray * typesOfTweets = [[NSArray alloc] initWithObjects:@"MidwesternState",@"MSUMustangs",@"matthewfarm",@"MWSUCampusWatch", @"MidwesternAVPIsOn",@"msu2u_devteam",@"WichitanOnline",@"MSUUnivDev",@"MSU_VP",@"mwsu_sg",@"#SocialStampede",@"#MidwesternState", nil];
     
     //Setup the user default keys and search keywords that are used throughout the app
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

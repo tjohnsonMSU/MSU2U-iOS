@@ -54,12 +54,12 @@
     }
     else if(percentage >= 0.5)
     {
-        NSLog(@"A majority of the switches is ON. Toggle switch will turn all switches ON.\n");
+        NSLog(@"A majority of the switches are ON. Toggle switch will turn all switches ON.\n");
         return YES;
     }
     else
     {
-        NSLog(@"A majority of the switches is OFF. Toggle switch will turn all switches OFF.\n");
+        NSLog(@"A majority of the switches are OFF. Toggle switch will turn all switches OFF.\n");
         return NO;
     }
 }
@@ -69,14 +69,16 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if([mySwitch isOn])
     {
+        NSLog(@"For key %@ I'm setting it to YES\n",myKey);
         [defaults setBool:YES forKey:myKey];
     }
     else
     {
+        NSLog(@"For key %@ I'm setting it to NO\n",myKey);
         [defaults setBool:NO forKey:myKey];
     }
     [defaults synchronize];
-    NSLog(@"Synchronized data for key %@\n",myKey);
+    NSLog(@"Synchronized data for key %@ (is now %@)\n",myKey,[defaults objectForKey:myKey]);
 }
 
 -(void)savedCurrentSwitchStatuses

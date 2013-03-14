@@ -20,7 +20,7 @@
 -(void)viewDidLoad
 {
     //self.jsonURL = @"CHANGE ME";
-    self.twitterProfilesAndHashtags = [[NSArray alloc]initWithObjects:@"MSUMustangs",@"matthewfarm",@"MWSUCampusWatch",@"MidwesternAVP",@"msu2u_devteam",@"WichitanOnline",@"MSUUnivDev",@"#SocialStampede",@"MSU_VP",@"mwsu_sg", nil];
+    self.twitterProfilesAndHashtags = [[NSArray alloc]initWithObjects:@"MidwesternState",@"MSUMustangs",@"matthewfarm",@"MWSUCampusWatch",@"MidwesternAVP",@"msu2u_devteam",@"WichitanOnline",@"MSUUnivDev",@"MSU_VP",@"mwsu_sg",@"#SocialStampede",@"#MidwesternState", nil];
     
     self.entityName = @"Tweet";
     self.sortDescriptorKey = @"created_at";

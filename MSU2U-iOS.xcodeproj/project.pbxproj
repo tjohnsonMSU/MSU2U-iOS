@@ -158,6 +158,7 @@
 		1D9D286E16A8994A00FC5A95 /* mainBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D9D286D16A8994A00FC5A95 /* mainBG.png */; };
 		1D9D287416A89CC200FC5A95 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D9D287316A89CC200FC5A95 /* Default.png */; };
 		1D9D287616A89EC700FC5A95 /* slideSample.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D9D287516A89EC700FC5A95 /* slideSample.png */; };
+		1D9FE21F16EFFAF800627945 /* twitterSubscriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FE21E16EFFAF800627945 /* twitterSubscriptionViewController.m */; };
 		1DA7B97F167A434C0046FF8F /* golf.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1DA7B97E167A434C0046FF8F /* golf.jpeg */; };
 		1DA7B981167A43540046FF8F /* crossCountry.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1DA7B980167A43540046FF8F /* crossCountry.jpeg */; };
 		1DA92C371693A52500AB71F1 /* Midwestern_St.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1DA92C361693A52500AB71F1 /* Midwestern_St.gif */; };
@@ -657,6 +658,8 @@
 		1D9D286D16A8994A00FC5A95 /* mainBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainBG.png; sourceTree = "<group>"; };
 		1D9D287316A89CC200FC5A95 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1D9D287516A89EC700FC5A95 /* slideSample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slideSample.png; sourceTree = "<group>"; };
+		1D9FE21D16EFFAF800627945 /* twitterSubscriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = twitterSubscriptionViewController.h; sourceTree = "<group>"; };
+		1D9FE21E16EFFAF800627945 /* twitterSubscriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = twitterSubscriptionViewController.m; sourceTree = "<group>"; };
 		1DA7B97E167A434C0046FF8F /* golf.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = golf.jpeg; sourceTree = "<group>"; };
 		1DA7B980167A43540046FF8F /* crossCountry.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = crossCountry.jpeg; sourceTree = "<group>"; };
 		1DA92C361693A52500AB71F1 /* Midwestern_St.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Midwestern_St.gif; sourceTree = "<group>"; };
@@ -748,6 +751,15 @@
 				1D246BE616B1D931005CCFDE /* moreEmergencyContactsTableViewController.m */,
 			);
 			name = "Emergency Numbers";
+			sourceTree = "<group>";
+		};
+		1D0F8FC216EFF2C00092A73B /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				1D9FE21D16EFFAF800627945 /* twitterSubscriptionViewController.h */,
+				1D9FE21E16EFFAF800627945 /* twitterSubscriptionViewController.m */,
+			);
+			name = Twitter;
 			sourceTree = "<group>";
 		};
 		1D1216D216AD014800164FA7 /* Products */ = {
@@ -1299,6 +1311,7 @@
 		1D82B34816784928006564F8 /* Subscriptions */ = {
 			isa = PBXGroup;
 			children = (
+				1D0F8FC216EFF2C00092A73B /* Twitter */,
 				1D82B3491678493F006564F8 /* subscriptionsViewController.h */,
 				1D82B34A1678493F006564F8 /* subscriptionsViewController.m */,
 				1D960C1C167921EC00A9EBDE /* Sports */,
@@ -1904,6 +1917,7 @@
 				1DDD423816ED61840079463A /* detailTwitterViewController.m in Sources */,
 				1DEC1C1016EEAAD10007E067 /* Tweet+Create.m in Sources */,
 				1DEC1C1316EEAF8E0007E067 /* Tweet.m in Sources */,
+				1D9FE21F16EFFAF800627945 /* twitterSubscriptionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
