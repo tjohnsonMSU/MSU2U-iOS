@@ -113,7 +113,6 @@
 		1D44B01616A5D8E000445FE7 /* 2011.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D44B00A16A5D8E000445FE7 /* 2011.png */; };
 		1D44B03816A5EAD700445FE7 /* webViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D44B03716A5EAD700445FE7 /* webViewController.m */; };
 		1D44B04816A606F200445FE7 /* mediaMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D44B04716A606F200445FE7 /* mediaMenuViewController.m */; };
-		1D477E6B16A73089001B2C89 /* employees.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1D477E6A16A73089001B2C89 /* employees.xml */; };
 		1D4781A916A7445C001B2C89 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D4781A816A7445C001B2C89 /* SystemConfiguration.framework */; };
 		1D4781AB16A74465001B2C89 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D4781AA16A74465001B2C89 /* Security.framework */; };
 		1D4BEA6716BF7FC3000CE107 /* BLACK.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D4BEA6616BF7FC3000CE107 /* BLACK.png */; };
@@ -591,7 +590,6 @@
 		1D44B03716A5EAD700445FE7 /* webViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = webViewController.m; sourceTree = "<group>"; };
 		1D44B04616A606F200445FE7 /* mediaMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mediaMenuViewController.h; sourceTree = "<group>"; };
 		1D44B04716A606F200445FE7 /* mediaMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mediaMenuViewController.m; sourceTree = "<group>"; };
-		1D477E6A16A73089001B2C89 /* employees.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = employees.xml; sourceTree = "<group>"; };
 		1D4781A816A7445C001B2C89 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1D4781AA16A74465001B2C89 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		1D4BEA6616BF7FC3000CE107 /* BLACK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BLACK.png; sourceTree = "<group>"; };
@@ -859,9 +857,6 @@
 			isa = PBXGroup;
 			children = (
 				1D1CEAFE162B4DBB0059BC1F /* MainStoryboard.storyboard */,
-				1D82B34C167867B0006564F8 /* defaults.plist */,
-				1D477E6A16A73089001B2C89 /* employees.xml */,
-				1D2B5DA716BA40D200F1F3DB /* buildings.json */,
 				1D1CEAE6162B4D230059BC1F /* AppDelegate.h */,
 				1D1CEAE7162B4D230059BC1F /* AppDelegate.m */,
 				1D0E7C7716B11D29009E672D /* Emergency Numbers */,
@@ -900,6 +895,7 @@
 		1D1CEAFA162B4D2B0059BC1F /* Campus Map */ = {
 			isa = PBXGroup;
 			children = (
+				1D2B5DA716BA40D200F1F3DB /* buildings.json */,
 				1DFCFCD216B63CEC00515EFD /* campusMapViewController.h */,
 				1DFCFCD316B63CEC00515EFD /* campusMapViewController.m */,
 				1DF849AC16B64FB6009F7785 /* MSULocation.h */,
@@ -1304,6 +1300,7 @@
 		1D82B347167848F4006564F8 /* userDefaults */ = {
 			isa = PBXGroup;
 			children = (
+				1D82B34C167867B0006564F8 /* defaults.plist */,
 			);
 			name = userDefaults;
 			sourceTree = "<group>";
@@ -1823,7 +1820,6 @@
 				1D44B01416A5D8E000445FE7 /* 1994.png in Resources */,
 				1D44B01516A5D8E000445FE7 /* 2010.png in Resources */,
 				1D44B01616A5D8E000445FE7 /* 2011.png in Resources */,
-				1D477E6B16A73089001B2C89 /* employees.xml in Resources */,
 				1D9D286E16A8994A00FC5A95 /* mainBG.png in Resources */,
 				1D9D287416A89CC200FC5A95 /* Default.png in Resources */,
 				1D9D287616A89EC700FC5A95 /* slideSample.png in Resources */,

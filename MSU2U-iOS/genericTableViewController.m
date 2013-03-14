@@ -755,6 +755,8 @@
             {
                 cell.imageView.image = [UIImage imageNamed:@"101-gameplan.png"];
             }
+            CGSize size = {50,50};
+            cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
         }
         else if(self.childNumber == [NSNumber numberWithInt:1])
         {
@@ -774,6 +776,8 @@
                 cell.imageView.image = [UIImage imageNamed:@"crossCountry.jpeg"];
             else if([[self.dataObject sportType] isEqualToString:@"GolfMen"] || [[self.dataObject sportType] isEqualToString:@"GolfWomen"])
                 cell.imageView.image = [UIImage imageNamed:@"golf.jpeg"];
+            CGSize size = {50,50};
+            cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
         }
         else if(self.childNumber == [NSNumber numberWithInt:2])
         {
@@ -805,6 +809,8 @@
             {
                 cell.imageView.image = [UIImage imageNamed:@"museum.jpeg"];
             }
+            CGSize size = {50,50};
+            cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
         }
     }
     else if(self.childNumber == [NSNumber numberWithInt:4] || self.childNumber == [NSNumber numberWithInt:5] || self.childNumber == [NSNumber numberWithInt:6])
@@ -819,10 +825,25 @@
     {
         cell.textLabel.text = [self.dataObject text];        
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ by %@",[NSDateFormatter localizedStringFromDate:[self.dataObject created_at] dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle],[self.dataObject screen_name]];
+        
         [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject profile_image_url]] placeholderImage:[UIImage imageNamed:@"twitter.png"]];
+        
+        [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject profile_image_url]] placeholderImage:[UIImage imageNamed:@"twitter.png"]];
+        CGSize size = {50,50};
+        cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
     }
-    
     return cell;
+}
+
+- (UIImage*)imageWithImage:(UIImage*)image
+              scaledToSize:(CGSize)newSize;
+{
+    UIGraphicsBeginImageContext( newSize );
+    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 -(NSString*)concatenatePrefix:(NSString*)name_prefix firstName:(NSString*)firstName middleName:(NSString*)middleName lastName:(NSString*)lastName
