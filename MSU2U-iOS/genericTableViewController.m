@@ -228,13 +228,13 @@
     
     //Fetch all of the data. Be sure to sort the data correctly depending on which child is currently being viewed
     //#### DIRECTORY HISTORY AND TWITTER should be assorted by ascending dates
-    if(self.childNumber != [NSNumber numberWithInt:6] || self.childNumber != [NSNumber numberWithInt:7])
+    if(self.childNumber != [NSNumber numberWithInt:6] && self.childNumber != [NSNumber numberWithInt:7])
     {
         request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:self.sortDescriptorKey ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
     }
     else
     {
-        request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:self.sortDescriptorKey ascending:NO selector:@selector(localizedCaseInsensitiveCompare:)]];
+        request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:self.sortDescriptorKey ascending:NO]];
     }
     //This is where we've captured the necessary data in our fetched results controller from our Core Data. All of the table view delegate methods
     //  will work with the data locaed within the fetchedResultsController. If we have no data in core data, then we'll download it first.
@@ -817,8 +817,8 @@
     }
     else if(self.childNumber == [NSNumber numberWithInt:7])
     {
-        cell.textLabel.text = [self.dataObject text];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ by %@",[self.dataObject created_at],[self.dataObject screen_name]];
+        cell.textLabel.text = [self.dataObject text];        
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ by %@",[NSDateFormatter localizedStringFromDate:[self.dataObject created_at] dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle],[self.dataObject screen_name]];
         [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject profile_image_url]] placeholderImage:[UIImage imageNamed:@"twitter.png"]];
     }
     

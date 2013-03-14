@@ -21,7 +21,7 @@
     
     //Set the labels
     self.screen_name.text = receivedTweet.screen_name;
-    self.created_at.text = receivedTweet.created_at;
+    self.created_at.text = [NSDateFormatter localizedStringFromDate:receivedTweet.created_at dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];
     self.name.text = receivedTweet.name;
     self.text.text = receivedTweet.text;
     
@@ -37,9 +37,9 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     [self.profile_image_url setImageWithURL:[NSURL URLWithString:receivedTweet.profile_image_url]
-                  placeholderImage:[UIImage imageNamed:@"Default.png"]];
+                  placeholderImage:[UIImage imageNamed:@"twitterBG.png"]];
     [self.profile_background_image_url setImageWithURL:[NSURL URLWithString:receivedTweet.profile_background_image_url]
-                  placeholderImage:[UIImage imageNamed:@"Default.png"]];
+                  placeholderImage:[UIImage imageNamed:@"twitterBG.png"]];
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }

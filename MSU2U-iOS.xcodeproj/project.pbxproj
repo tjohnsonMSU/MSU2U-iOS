@@ -182,8 +182,8 @@
 		1DDD423816ED61840079463A /* detailTwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD423716ED61840079463A /* detailTwitterViewController.m */; };
 		1DDE56F5163B023B008830A8 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1DDE56F3163B023B008830A8 /* Model.xcdatamodeld */; };
 		1DDE5732163B04E6008830A8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DDE5731163B04E6008830A8 /* CoreData.framework */; };
+		1DDFAED316F17F9100C7B595 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDFAED216F17F9100C7B595 /* Tweet.m */; };
 		1DEC1C1016EEAAD10007E067 /* Tweet+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC1C0F16EEAAD10007E067 /* Tweet+Create.m */; };
-		1DEC1C1316EEAF8E0007E067 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC1C1216EEAF8E0007E067 /* Tweet.m */; };
 		1DEC1C1516EED2380007E067 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DEC1C1416EED2380007E067 /* twitter.png */; };
 		1DED1E7616521CC2003D6721 /* directoryBackdrop.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DED1E7516521CC2003D6721 /* directoryBackdrop.png */; };
 		1DF0147A1697BBF400435975 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF014791697BBF400435975 /* AddressBook.framework */; };
@@ -689,10 +689,10 @@
 		1DDD423716ED61840079463A /* detailTwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailTwitterViewController.m; sourceTree = "<group>"; };
 		1DDE56F4163B023B008830A8 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1DDE5731163B04E6008830A8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1DDFAED116F17F9100C7B595 /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
+		1DDFAED216F17F9100C7B595 /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
 		1DEC1C0E16EEAAD10007E067 /* Tweet+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Tweet+Create.h"; sourceTree = "<group>"; };
 		1DEC1C0F16EEAAD10007E067 /* Tweet+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Tweet+Create.m"; sourceTree = "<group>"; };
-		1DEC1C1116EEAF8E0007E067 /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
-		1DEC1C1216EEAF8E0007E067 /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
 		1DEC1C1416EED2380007E067 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		1DED1E7516521CC2003D6721 /* directoryBackdrop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = directoryBackdrop.png; sourceTree = "<group>"; };
 		1DF014791697BBF400435975 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -1435,8 +1435,8 @@
 		1DEC1C0D16EEAA9B0007E067 /* Tweet */ = {
 			isa = PBXGroup;
 			children = (
-				1DEC1C1116EEAF8E0007E067 /* Tweet.h */,
-				1DEC1C1216EEAF8E0007E067 /* Tweet.m */,
+				1DDFAED116F17F9100C7B595 /* Tweet.h */,
+				1DDFAED216F17F9100C7B595 /* Tweet.m */,
 				1DEC1C0E16EEAAD10007E067 /* Tweet+Create.h */,
 				1DEC1C0F16EEAAD10007E067 /* Tweet+Create.m */,
 			);
@@ -1916,8 +1916,8 @@
 				1DDD423516ED61700079463A /* twitterViewController.m in Sources */,
 				1DDD423816ED61840079463A /* detailTwitterViewController.m in Sources */,
 				1DEC1C1016EEAAD10007E067 /* Tweet+Create.m in Sources */,
-				1DEC1C1316EEAF8E0007E067 /* Tweet.m in Sources */,
 				1D9FE21F16EFFAF800627945 /* twitterSubscriptionViewController.m in Sources */,
+				1DDFAED316F17F9100C7B595 /* Tweet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
