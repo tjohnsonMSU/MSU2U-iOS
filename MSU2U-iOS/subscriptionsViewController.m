@@ -39,27 +39,22 @@
         }
     }
     float percentage = onSwitchCount/[self.subscriptionSwitch count];
-    NSLog(@"There are %f switches ON out of %i switches = %f\n",onSwitchCount,[self.subscriptionSwitch count],percentage);
     
     //Do I have a majority of ON switches?
     if(onSwitchCount == 0)
     {
-        NSLog(@"All switches are OFF. Toggle switch will turn all switches ON.\n");
         return YES;
     }
     else if(onSwitchCount == [self.subscriptionSwitch count])
     {
-        NSLog(@"All switches are ON. Toggle switch will turn al switches OFF.\n");
         return NO;
     }
     else if(percentage >= 0.5)
     {
-        NSLog(@"A majority of the switches are ON. Toggle switch will turn all switches ON.\n");
         return YES;
     }
     else
     {
-        NSLog(@"A majority of the switches are OFF. Toggle switch will turn all switches OFF.\n");
         return NO;
     }
 }
@@ -69,16 +64,13 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if([mySwitch isOn])
     {
-        NSLog(@"For key %@ I'm setting it to YES\n",myKey);
         [defaults setBool:YES forKey:myKey];
     }
     else
     {
-        NSLog(@"For key %@ I'm setting it to NO\n",myKey);
         [defaults setBool:NO forKey:myKey];
     }
     [defaults synchronize];
-    NSLog(@"Synchronized data for key %@ (is now %@)\n",myKey,[defaults objectForKey:myKey]);
 }
 
 -(void)savedCurrentSwitchStatuses
@@ -99,7 +91,6 @@
     }
     
     [defaults synchronize];
-    NSLog(@"Data saved");
 }
 
 @end

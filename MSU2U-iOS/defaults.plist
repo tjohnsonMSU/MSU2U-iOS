@@ -86,5 +86,7 @@
 	<string>Pull to Refresh</string>
 	<key>twitterRefreshTime</key>
 	<string>Pull to Refresh</string>
+	<key>eventsRefreshTime</key>
+	<string>Pull to Refresh</string>
 </dict>
 </plist>

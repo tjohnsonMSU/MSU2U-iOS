@@ -350,13 +350,20 @@
 
     for(int i=0; i<[myKeys count]; i++)
     {
-        NSLog(@"%@ is %d\n",[myKeys objectAtIndex:i],[defaults boolForKey:[myKeys objectAtIndex:i]]);
         if([defaults boolForKey:[myKeys objectAtIndex:i]])
         {
             if([myPredicate length] > 0)
                 myPredicate = [myPredicate stringByAppendingString:@" || "];
             
-            myPredicate = [myPredicate stringByAppendingString:[NSString stringWithFormat:@"%@ LIKE[c] '%@'",myAttribute,[mySearchWords objectAtIndex:i]]];
+            if([self.childNumber isEqualToNumber:[NSNumber numberWithInt:7]] && [[myKeys objectAtIndex:i] hasPrefix:@"#"])
+            {
+                //Looks like I have a #hashTag, so I need to look in the text of this tweet to see if I can find this hashtag in there somewhere.
+                myPredicate = [myPredicate stringByAppendingString:[NSString stringWithFormat:@"text contains[c] '%@'",[mySearchWords objectAtIndex:i]]];
+            }
+            else
+            {
+                myPredicate = [myPredicate stringByAppendingString:[NSString stringWithFormat:@"%@ LIKE[c] '%@'",myAttribute,[mySearchWords objectAtIndex:i]]];
+            }
         }
     }
     
