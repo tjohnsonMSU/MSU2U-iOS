@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "News+Create.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 //ShareKit
 #import "SHK.h"
 
-@interface detailNewsViewController : UITableViewController
+@interface detailNewsViewController : UITableViewController{
+    News * receivedNews;
+}
 
 -(void)sendNewsInformation:(News*)news;
 

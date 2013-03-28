@@ -173,7 +173,7 @@
             NSArray * searchWords = [defaults objectForKey:@"typesOfSports"];
             
             //Add the sports predicate to the existing predicate (if any)
-            myPredicate = [myPredicate stringByAppendingString:[self createPredicateForKeys:keys usingSearchWords:searchWords forAttribute:@"category"]];
+            myPredicate = [myPredicate stringByAppendingString:[self createPredicateForKeys:keys usingSearchWords:searchWords forAttribute:@"category_1"]];
             myPredicate = [myPredicate stringByAppendingString:@"))"];
         }
         if([defaults boolForKey:@"campusNewsIsOn"])
@@ -717,11 +717,16 @@
     
     if(self.childNumber == [NSNumber numberWithInt:1] || self.childNumber == [NSNumber numberWithInt:2] || self.childNumber == [NSNumber numberWithInt:3])
     {
-        //Sports, News, and Events all have titles and contents to show in their cell
+        //Sports, News, and Events all have titles to show in their cell
         cell.textLabel.text = [self.dataObject title];
-        if(self.childNumber == [NSNumber numberWithInt:3] || self.childNumber == [NSNumber numberWithInt:2])
+        if(self.childNumber == [NSNumber numberWithInt:2])
         {
             cell.detailTextLabel.text = [self.dataObject content];
+        }
+        //News uses something called "short_description"
+        else if(self.childNumber == [NSNumber numberWithInt:3])
+        {
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ | %@",[self.dataObject last_changed],[self.dataObject short_description]];
         }
         else
         {

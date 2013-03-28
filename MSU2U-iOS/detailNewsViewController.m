@@ -9,13 +9,6 @@
 #import "detailNewsViewController.h"
 
 @interface detailNewsViewController ()
-@property (weak,nonatomic) NSString * receivedTitle;
-@property (weak,nonatomic) NSString * receivedDescription;
-@property (weak,nonatomic) NSString * receivedAuthor;
-@property (weak,nonatomic) NSString * receivedDate;
-@property (weak,nonatomic) NSString * receivedLink;
-@property (weak,nonatomic) NSString * receivedCategory;
-@property (weak,nonatomic) NSString * receivedImage;
 @end
 
 @implementation detailNewsViewController
@@ -33,36 +26,40 @@
 {
     [super viewDidLoad];
     //Set all of the text labels
-    self.titleLabel.text = self.receivedTitle;
-    self.authorLabel.text = self.receivedAuthor;
-    self.description.text = self.receivedDescription;
-    self.categoryLabel.text = self.receivedCategory;
-    self.dateLabel.text = self.receivedDate;
+    self.titleLabel.text = receivedNews.title;
+    self.authorLabel.text = receivedNews.doc_creator;
+    self.description.text = receivedNews.long_description;
+    self.categoryLabel.text = receivedNews.category_1;
+    self.dateLabel.text = [NSDateFormatter localizedStringFromDate:receivedNews.last_changed dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];
     
     //Download the image in a background thread
-    /*
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
                                              (unsigned long)NULL), ^(void) {
         [self downloadImage];
     });
-     */
+}
+
+-(void)downloadImage
+{
+    receivedNews.image = [receivedNews.image stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    [self.photo setImageWithURL:[NSURL URLWithString:receivedNews.image]
+                           placeholderImage:[UIImage imageNamed:@"wichitanLogo.png"]];
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 -(void)sendNewsInformation:(News *)news
 {
-    self.receivedTitle = news.title;
-    self.receivedAuthor = news.author;
-    self.receivedCategory = news.category;
-    self.receivedDescription = news.content;
-    self.receivedDate = news.date;
-    self.receivedImage = news.image;
-    self.receivedLink = news.link;
+    receivedNews = news;
 }
 
 - (IBAction)sharePressed:(UIBarButtonItem *)sender {
     // Create the item to share (in this example, a url)
-    NSURL *url = [NSURL URLWithString:self.receivedLink];
-    SHKItem *item = [SHKItem URL:url title:self.receivedTitle contentType:SHKURLContentTypeWebpage];
+    NSURL *url = [NSURL URLWithString:receivedNews.link];
+    SHKItem *item = [SHKItem URL:url title:receivedNews.title contentType:SHKURLContentTypeWebpage];
     
     // Get the ShareKit action sheet
     SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];

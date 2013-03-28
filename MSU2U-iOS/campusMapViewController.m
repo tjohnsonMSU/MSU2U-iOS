@@ -128,7 +128,8 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     // 3
     sheet.cancelButtonIndex = sheet.numberOfButtons - 1;
     // 4
-    [sheet showInView:self.view];
+    //[sheet showInView:self.view];
+    [sheet showFromTabBar:self.tabBarController.tabBar];
 }
 
 - (void)performAfterFindingLocation:(RWLocationCallback)callback

@@ -120,6 +120,8 @@
 		1D4EB6E51654C77B005F9D8D /* Employee+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4EB6E41654C77B005F9D8D /* Employee+Create.m */; };
 		1D4EB6E61654D387005F9D8D /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4EB6E21654B88E005F9D8D /* CoreDataTableViewController.m */; };
 		1D52AED31694B4C200D59D33 /* addEventToCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D52AED21694B4C200D59D33 /* addEventToCalendar.m */; };
+		1D58B1A31704C71B007BBBC2 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D58B1A21704C71B007BBBC2 /* News.m */; };
+		1D58B1A51704D2C4007BBBC2 /* wichitanLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D58B1A41704D2C4007BBBC2 /* wichitanLogo.png */; };
 		1D5B15B5164F3B140005C0A2 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5B15B4164F3B140005C0A2 /* MessageUI.framework */; };
 		1D62DD8416573FCC00A60534 /* MYDocumentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D62DD8316573FCC00A60534 /* MYDocumentHandler.m */; };
 		1D62DD93165758DD00A60534 /* Sport.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D62DD92165758DD00A60534 /* Sport.m */; };
@@ -129,7 +131,6 @@
 		1D64D2FB16E929A300578BE4 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D64D2FA16E929A300578BE4 /* Employee.m */; };
 		1D7253EF163A30D10057B33F /* 01-refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D7253EE163A30D10057B33F /* 01-refresh.png */; };
 		1D7253F1163A31660057B33F /* 02-redo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D7253F0163A31660057B33F /* 02-redo.png */; };
-		1D82B33116780F35006564F8 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D82B33016780F35006564F8 /* News.m */; };
 		1D82B33D16781B6A006564F8 /* MustangsIconSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D82B33C16781B6A006564F8 /* MustangsIconSmall.png */; };
 		1D82B33F16781B7E006564F8 /* MustangsIconLarge.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D82B33E16781B7E006564F8 /* MustangsIconLarge.png */; };
 		1D82B34B1678493F006564F8 /* subscriptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D82B34A1678493F006564F8 /* subscriptionsViewController.m */; };
@@ -601,6 +602,9 @@
 		1D4EB6E41654C77B005F9D8D /* Employee+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Employee+Create.m"; sourceTree = "<group>"; };
 		1D52AED11694B4C200D59D33 /* addEventToCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addEventToCalendar.h; sourceTree = "<group>"; };
 		1D52AED21694B4C200D59D33 /* addEventToCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addEventToCalendar.m; sourceTree = "<group>"; };
+		1D58B1A11704C71B007BBBC2 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
+		1D58B1A21704C71B007BBBC2 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
+		1D58B1A41704D2C4007BBBC2 /* wichitanLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wichitanLogo.png; sourceTree = "<group>"; };
 		1D5B15B4164F3B140005C0A2 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		1D62DD8216573FCC00A60534 /* MYDocumentHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYDocumentHandler.h; sourceTree = "<group>"; };
 		1D62DD8316573FCC00A60534 /* MYDocumentHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYDocumentHandler.m; sourceTree = "<group>"; };
@@ -616,8 +620,6 @@
 		1D64D2FA16E929A300578BE4 /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
 		1D7253EE163A30D10057B33F /* 01-refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01-refresh.png"; sourceTree = "<group>"; };
 		1D7253F0163A31660057B33F /* 02-redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02-redo.png"; sourceTree = "<group>"; };
-		1D82B32F16780F35006564F8 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
-		1D82B33016780F35006564F8 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		1D82B33C16781B6A006564F8 /* MustangsIconSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MustangsIconSmall.png; sourceTree = "<group>"; };
 		1D82B33E16781B7E006564F8 /* MustangsIconLarge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MustangsIconLarge.png; sourceTree = "<group>"; };
 		1D82B3491678493F006564F8 /* subscriptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = subscriptionsViewController.h; sourceTree = "<group>"; };
@@ -876,6 +878,7 @@
 		1D1CEADE162B4D230059BC1F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1D58B1A41704D2C4007BBBC2 /* wichitanLogo.png */,
 				1DEC1C1416EED2380007E067 /* twitter.png */,
 				1DDD422616ED42BB0079463A /* twitterBlug.png */,
 				1DDD422416ED401F0079463A /* twitterBG.png */,
@@ -1277,10 +1280,10 @@
 		1D62DDA6165759C900A60534 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				1D82B32F16780F35006564F8 /* News.h */,
-				1D82B33016780F35006564F8 /* News.m */,
 				1D62DD9A1657594300A60534 /* News+Create.h */,
 				1D62DD9B1657594300A60534 /* News+Create.m */,
+				1D58B1A11704C71B007BBBC2 /* News.h */,
+				1D58B1A21704C71B007BBBC2 /* News.m */,
 			);
 			name = News;
 			sourceTree = "<group>";
@@ -1837,6 +1840,7 @@
 				1DDD422516ED401F0079463A /* twitterBG.png in Resources */,
 				1DDD422716ED42BB0079463A /* twitterBlug.png in Resources */,
 				1DEC1C1516EED2380007E067 /* twitter.png in Resources */,
+				1D58B1A51704D2C4007BBBC2 /* wichitanLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1869,7 +1873,6 @@
 				1D9702A4165D3D4F00505F7C /* favoriteDirectoryViewController.m in Sources */,
 				1D9702AD165D4ACD00505F7C /* historyDirectoryViewController.m in Sources */,
 				1DB63E32165FDDCC00A21649 /* genericTableViewController.m in Sources */,
-				1D82B33116780F35006564F8 /* News.m in Sources */,
 				1D82B34B1678493F006564F8 /* subscriptionsViewController.m in Sources */,
 				1D960C181679206200A9EBDE /* newsSubscriptionViewController.m in Sources */,
 				1D960C1F1679241F00A9EBDE /* sportSubscriptionViewController.m in Sources */,
@@ -1914,6 +1917,7 @@
 				1DEC1C1016EEAAD10007E067 /* Tweet+Create.m in Sources */,
 				1D9FE21F16EFFAF800627945 /* twitterSubscriptionViewController.m in Sources */,
 				1DDFAED316F17F9100C7B595 /* Tweet.m in Sources */,
+				1D58B1A31704C71B007BBBC2 /* News.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
