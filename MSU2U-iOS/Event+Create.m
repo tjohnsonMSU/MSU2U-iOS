@@ -66,8 +66,6 @@
             NSLog(@"#### I couldn't figure out what sport category thish person belonged to! Title: %@\n",event.title);
             event.category = @"NCAA";
         }
-        
-        NSLog(@"!@#!@#!@#!@# %@\n",event.title);
     }
     else
     {

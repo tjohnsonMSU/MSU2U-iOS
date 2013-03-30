@@ -18,7 +18,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E8u-GZ-q8Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14461" y="-2747"/>
+            <point key="canvasLocation" x="-14461" y="-2795"/>
         </scene>
         <!--Campus Map View Controller - Map-->
         <scene sceneID="XwM-6U-FXN">
@@ -75,7 +75,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-13566" y="-2810"/>
+            <point key="canvasLocation" x="-13566" y="-2795"/>
         </scene>
         <!--Campus Map Settings View Controller - Settings-->
         <scene sceneID="pPY-0d-64S">
@@ -571,7 +571,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="NUe-KA-3Zg" kind="push" id="RsV-s9-L3l"/>
+                                    <segue destination="NUe-KA-3Zg" kind="push" identifier="toEvent" id="RsV-s9-L3l"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -614,7 +614,6 @@
         <!--Detail Event View Controller - Softball-->
         <scene sceneID="XLN-fv-Iie">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uKp-xR-2Jz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="NUe-KA-3Zg" customClass="detailEventViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Eui-M0-bqh">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
@@ -765,6 +764,7 @@
                         <outlet property="titleLabel" destination="HqI-1I-Uhc" id="anq-6f-Q4K"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uKp-xR-2Jz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-13375" y="59"/>
         </scene>

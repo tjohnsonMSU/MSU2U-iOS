@@ -33,7 +33,7 @@
     //Set your labels
     self.titleLabel.text = receivedEvent.title;
     self.locationLabel.text = receivedEvent.location;
-    self.startingDateLabel.text = @"[fix this later]";
+    self.startingDateLabel.text = @"fix this";
     
     //Setup the images
     if([receivedEvent.location isEqualToString:@"Wichita Falls, TX"])

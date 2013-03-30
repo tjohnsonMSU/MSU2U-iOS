@@ -135,7 +135,8 @@
         [request setPredicate:predicate];
     }
     
-    if(self.childNumber != [NSNumber numberWithInt:6] && self.childNumber != [NSNumber numberWithInt:7])
+    //IF TWITTER
+    if(self.childNumber != [NSNumber numberWithInt:7])
         request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:self.sortDescriptorKey ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
     else
         request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:self.sortDescriptorKey ascending:NO]];
@@ -231,41 +232,40 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+    NSLog(@"Hello?????\n");
     //Set debug to TRUE for the CoreDataTableViewController class
     self.debug = TRUE;
     
     //Refresh Control
     //Make sure the Directory Favorites and Directory History do NOT have the refresh control.
-    if(self.childNumber != [NSNumber numberWithInt:5] && self.childNumber != [NSNumber numberWithInt:6])
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.tintColor = [UIColor colorWithRed:(55.0/255.0) green:(7.0/255.0) blue:(16.0/255.0) alpha:1];
+    
+    //Retrieve the user defaults so that the last update for this table may be retrieved and shown to the user
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSLog(@"Setting refresh controls...\n");
+    //Set the refresh control attributed string to the retrieved last update
+    switch([self.childNumber integerValue])
     {
-        UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-        refreshControl.tintColor = [UIColor colorWithRed:(55.0/255.0) green:(7.0/255.0) blue:(16.0/255.0) alpha:1];
-        
-        //Retrieve the user defaults so that the last update for this table may be retrieved and shown to the user
-        NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-        
-        //Set the refresh control attributed string to the retrieved last update
-        switch([self.childNumber integerValue])
-        {
-            case 1:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"sportsRefreshTime"]];break;
-            case 2:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"eventsRefreshTime"]];break;
-            case 3:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"newsRefreshTime"]];break;
-            case 4:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"directoryRefreshTime"]];break;
-            case 5:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"tweetsRefreshTime"]];break;
-        }
-        
-        [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
-        
-        self.refreshControl = refreshControl;
+        case 2:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"eventsRefreshTime"]];break;
+        case 3:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"newsRefreshTime"]];break;
+        case 4:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"directoryRefreshTime"]];break;
+        case 7:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"twitterRefreshTime"]];break;
+        default:NSLog(@"My child number is %@\n",self.childNumber);
     }
     
+    [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+    
+    self.refreshControl = refreshControl;
+    
+    NSLog(@"Setting up the fetched data arrays to be empty...\n");
     //Setup the arrays which will be used to hold the Core Data for the respective Table View Controller
     self.dataArray = [[NSMutableArray alloc]initWithObjects:nil];
     self.filteredDataArray = [[NSMutableArray alloc]initWithObjects:nil];
     
     //I did have the [super viewWillAppear:animated]; right here before.
-    
+    NSLog(@"Checking if I should fetch...\n");
     if(!self.myDatabase)
     {
         [[MYDocumentHandler sharedDocumentHandler] performWithDocument:^(UIManagedDocument *document) {
@@ -293,7 +293,6 @@
     // optional - add more buttons:
     [alert addButtonWithTitle:@"Yes"];
     [alert show];
-    
 }
 
 -(void) clearMyTable
@@ -372,15 +371,12 @@
 
     switch([self.childNumber integerValue])
     {
-        case 1:[defaults setObject:refreshTime forKey:@"sportsRefreshTime"];break;
         case 2:[defaults setObject:refreshTime forKey:@"eventsRefreshTime"];break;
         case 3:[defaults setObject:refreshTime forKey:@"newsRefreshTime"];break;
         case 4:[defaults setObject:refreshTime forKey:@"directoryRefreshTime"];break;
-        case 5:[defaults setObject:refreshTime forKey:@"tweetsRefreshTime"];break;
+        case 7:[defaults setObject:refreshTime forKey:@"tweetsRefreshTime"];break;
     }
     [defaults synchronize];
-
-    
 }
 
 //######################################################################################
@@ -392,42 +388,23 @@
 {
     // Check to see whether the normal table or search results table is being displayed and return the count from the appropriate array
     if (tableView == self.searchDisplayController.searchResultsTableView)
-	{
         return [self.filteredDataArray count];
-    }
 	else
 	{
         int count = 0;
         
         if(self.childNumber == [NSNumber numberWithInt:2])
-        {
             for (Event * currentEvents in [self.fetchedResultsController fetchedObjects])
-            {
                 count++;
-            }
-        }
         else if(self.childNumber == [NSNumber numberWithInt:3])
-        {
             for (News * currentNews in [self.fetchedResultsController fetchedObjects])
-            {
                 count++;
-            }
-        }
         else if(self.childNumber == [NSNumber numberWithInt:4])
-        {
-
             for(Employee * currentEmployees in [self.fetchedResultsController fetchedObjects])
-            {
                 count++;
-            }
-        }
         else if(self.childNumber == [NSNumber numberWithInt:7])
-        {
             for(Tweet * currentTweets in [self.fetchedResultsController fetchedObjects])
-            {
                 count++;
-            }
-        }
         return count;
     }
 }
@@ -454,9 +431,9 @@
         self.dataObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
     }
     
-    if(self.childNumber == [NSNumber numberWithInt:1] || self.childNumber == [NSNumber numberWithInt:2] || self.childNumber == [NSNumber numberWithInt:3])
+    if(self.childNumber == [NSNumber numberWithInt:2] || self.childNumber == [NSNumber numberWithInt:3])
     {
-        //Sports, News, and Events all have titles to show in their cell
+        //News and Events both have titles to show in their cell
         cell.textLabel.text = [self.dataObject title];
         if(self.childNumber == [NSNumber numberWithInt:2])
         {
@@ -506,7 +483,7 @@
             cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
         }
     }
-    else if(self.childNumber == [NSNumber numberWithInt:4] || self.childNumber == [NSNumber numberWithInt:5] || self.childNumber == [NSNumber numberWithInt:6])
+    else if(self.childNumber == [NSNumber numberWithInt:4])
     {        
         //Directory cells, Directory Favorites, and Directory History
         NSString * directoryName = [self concatenatePrefix:[self.dataObject name_prefix] firstName:[self.dataObject fname] middleName:[self.dataObject middle] lastName:[self.dataObject lname]];
@@ -594,7 +571,7 @@
         [segue.destinationViewController sendEventInformation:self.dataObject];
     else if(self.childNumber == [NSNumber numberWithInt:3])
         [segue.destinationViewController sendNewsInformation:self.dataObject];
-    else if(self.childNumber == [NSNumber numberWithInt:4] || self.childNumber == [NSNumber numberWithInt:5] || self.childNumber == [NSNumber numberWithInt:6])
+    else if(self.childNumber == [NSNumber numberWithInt:4])
     {
         NSLog(@"My dataObject person_id is %@\n",[self.dataObject person_id]);
         if([[self.dataObject person_id]length]==0)
@@ -635,14 +612,8 @@
     //Put all of the current relevant data (depending on the current tab) into a mutable array
     
     //DEPENDS ON THE CHILD I'M WORKING WITH
-    //Sports Tab
-    if(self.childNumber == [NSNumber numberWithInt:1])
-    {
-        for (Sport *currentSports in [self.fetchedResultsController fetchedObjects])
-            [self.dataArray addObject:currentSports];
-    }
     //Events Tab
-    else if(self.childNumber == [NSNumber numberWithInt:2])
+    if(self.childNumber == [NSNumber numberWithInt:2])
     {
         for (Event *currentEvents in [self.fetchedResultsController fetchedObjects])
             [self.dataArray addObject:currentEvents];
@@ -655,18 +626,6 @@
     }
     //Directory Search Tab
     else if(self.childNumber == [NSNumber numberWithInt:4])
-    {
-        for (Employee *currentEmployees in [self.fetchedResultsController fetchedObjects])
-            [self.dataArray addObject:currentEmployees];
-    }
-    //Directory Favorites Tab
-    else if(self.childNumber == [NSNumber numberWithInt:5])
-    {
-        for (Employee *currentEmployees in [self.fetchedResultsController fetchedObjects])
-            [self.dataArray addObject:currentEmployees];
-    }
-    //Directory History Tab
-    else if(self.childNumber == [NSNumber numberWithInt:6])
     {
         for (Employee *currentEmployees in [self.fetchedResultsController fetchedObjects])
             [self.dataArray addObject:currentEmployees];
