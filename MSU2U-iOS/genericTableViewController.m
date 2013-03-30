@@ -95,8 +95,10 @@
             {
                 //Everything but Twitter feeds are processed the same way so that's why they are all in this block. The Database Crew creates these feeds for us so they all match in their formatting, unlike Twitter created feeds which need to be handled a bit differently
                 hud.labelText = @"Downloading...";
+                NSLog(@"Downloading from %@...\n",self.jsonURL);
                 NSArray * myData = [self downloadCurrentData:self.jsonURL];
                 hud.labelText = @"Loading...";
+                NSLog(@"%@\n",myData);
                 
                 //I'm blocking because I'm in the directory fetcher thread, and I can't otherwise access the context because it was created in a different thread.
                 [document.managedObjectContext performBlock:^{
@@ -201,11 +203,13 @@
     //#### EVENTS
     else if(self.childNumber == [NSNumber numberWithInt:2])
     {
+        /*
         NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
         NSArray * keys = [defaults objectForKey:@"userDefaultsEventsKey"];
         NSArray * searchWords = [defaults objectForKey:@"typesOfEvents"];
         NSPredicate * predicate = [NSPredicate predicateWithFormat:[self createPredicateForKeys:keys usingSearchWords:searchWords forAttribute:@"category"]];
         [request setPredicate:predicate];
+         */
     }
     //#### SPORTS
     else if(self.childNumber == [NSNumber numberWithInt:1])
@@ -259,10 +263,13 @@
             else if(self.childNumber == [NSNumber numberWithInt:2])
             {
                 //I am the Events table
+                /*
                 if(![self switchesAreAllOffFor:@"userDefaultsEventsKey"])
                 {
                     [self refresh];
                 }
+                 */
+                [self refresh];
             }
             else if(self.childNumber == [NSNumber numberWithInt:3])
             {
@@ -454,30 +461,6 @@
         [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
         
         self.refreshControl = refreshControl;
-    }
-    
-    //Should I setup any navigation bar buttons for this view? Put all of the rules here for your table view controllers. Directory/Social/Maps should not have a subscribe button
-    if(self.childNumber == [NSNumber numberWithInt:4])
-    {
-        //Don't show a bar button item for these views
-        self.tabBarController.navigationItem.rightBarButtonItem = nil;
-    }
-    else if(self.childNumber == [NSNumber numberWithInt:5] || self.childNumber == [NSNumber numberWithInt:6])
-    {
-        rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Clear"
-                                                                         style:UIBarButtonSystemItemDone target:self action:@selector(clearMyTable)];
-        self.tabBarController.navigationItem.rightBarButtonItem = rightButton;
-    }
-    else if(self.childNumber == [NSNumber numberWithInt:1] || self.childNumber == [NSNumber numberWithInt:2] || self.childNumber == [NSNumber numberWithInt:3] || self.childNumber == [NSNumber numberWithInt:7])
-    {
-        rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Configure"
-                                                       style:UIBarButtonSystemItemDone target:self action:@selector(goToMySubscriptionView)];
-        self.tabBarController.navigationItem.rightBarButtonItem = rightButton;
-    }
-    else
-    {
-        NSLog(@"I didn't recognize what child number I'm on to determine whether a button should be placed in the top right corner of the view on the navigation bar.\n");
-        //do nothing
     }
     
     //Setup the arrays which will be used to hold the Core Data for the respective Table View Controller
@@ -721,7 +704,7 @@
         cell.textLabel.text = [self.dataObject title];
         if(self.childNumber == [NSNumber numberWithInt:2])
         {
-            cell.detailTextLabel.text = [self.dataObject content];
+            cell.detailTextLabel.text = [self.dataObject desc];
         }
         //News uses something called "short_description"
         else if(self.childNumber == [NSNumber numberWithInt:3])
@@ -763,57 +746,22 @@
             CGSize size = {50,50};
             cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
         }
-        else if(self.childNumber == [NSNumber numberWithInt:1])
-        {
-            if([[self.dataObject sportType] isEqualToString:@"Football"])
-                cell.imageView.image = [UIImage imageNamed:@"football.jpeg"];
-            else if([[self.dataObject sportType] isEqualToString:@"Volleyball"])
-                cell.imageView.image = [UIImage imageNamed:@"volleyball.jpeg"];
-            else if([[self.dataObject sportType] isEqualToString:@"Softball"])
-                cell.imageView.image = [UIImage imageNamed:@"softball.jpeg"];
-            else if([[self.dataObject sportType] isEqualToString:@"BasketballMen"] || [[self.dataObject sportType] isEqualToString:@"BasketballWomen"])
-                cell.imageView.image = [UIImage imageNamed:@"basketball.jpeg"];
-            else if([[self.dataObject sportType] isEqualToString:@"TennisMen"] || [[self.dataObject sportType] isEqualToString:@"TennisWomen"])
-                cell.imageView.image = [UIImage imageNamed:@"tennis.jpeg"];
-            else if([[self.dataObject sportType] isEqualToString:@"SoccerMen"] || [[self.dataObject sportType] isEqualToString:@"SoccerWomen"])
-                cell.imageView.image = [UIImage imageNamed:@"soccer.jpeg"];
-            else if([[self.dataObject sportType] isEqualToString:@"Cross Country"])
-                cell.imageView.image = [UIImage imageNamed:@"crossCountry.jpeg"];
-            else if([[self.dataObject sportType] isEqualToString:@"GolfMen"] || [[self.dataObject sportType] isEqualToString:@"GolfWomen"])
-                cell.imageView.image = [UIImage imageNamed:@"golf.jpeg"];
-            CGSize size = {50,50};
-            cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
-        }
         else if(self.childNumber == [NSNumber numberWithInt:2])
         {
-            if([[self.dataObject category] isEqualToString:@"art"])
+            NSArray * sportCategories = [[NSArray alloc]initWithObjects:@"Men's Cross Country/Track",@"Women's Cross Country/Track",@"Men's Basketball",@"Women's Basketball",@"Football",@"Men's Golf",@"Women's Golf",@"Men's Soccer",@"Women's Soccer",@"Softball",@"Men's Tennis",@"Women's Tennis",@"Volleyball", nil];
+            NSArray * sportImages = [[NSArray alloc]initWithObjects:@"crossCountry.jpeg",@"crossCountry.jpeg",@"basketball.jpeg",@"basketball.jpeg",@"football.jpeg",@"golf.jpeg",@"golf.jpeg",@"soccer.jpeg",@"soccer.jpeg",@"softball.jpeg",@"tennis.jpeg",@"volleyball.jpeg", nil];
+            
+            for(int i=0; i<[sportCategories count]; i++)
             {
-                cell.imageView.image = [UIImage imageNamed:@"art.jpeg"];
+                //If I find my current sport category in the title string, then set my event category equal to the sport category that was found in the title string and break
+                if([[self.dataObject category] rangeOfString:[sportCategories objectAtIndex:i]].location != NSNotFound)
+                {
+                    cell.imageView.image = [UIImage imageNamed:[sportImages objectAtIndex:i]];
+                    break;
+                }
             }
-            else if([[self.dataObject category] isEqualToString:@"campus"])
-            {
-                cell.imageView.image = [UIImage imageNamed:@"campus.jpeg"];
-            }
-            else if([[self.dataObject category] isEqualToString:@"personnel"])
-            {
-                cell.imageView.image = [UIImage imageNamed:@"personnel.jpeg"];
-            }
-            else if([[self.dataObject category] isEqualToString:@"music"])
-            {
-                cell.imageView.image = [UIImage imageNamed:@"music.jpeg"];
-            }
-            else if([[self.dataObject category] isEqualToString:@"theater"])
-            {
-                cell.imageView.image = [UIImage imageNamed:@"theater.jpeg"];
-            }
-            else if([[self.dataObject category] isEqualToString:@"academic"])
-            {
-                cell.imageView.image = [UIImage imageNamed:@"academic.jpeg"];
-            }
-            else if([[self.dataObject category] isEqualToString:@"museum"])
-            {
-                cell.imageView.image = [UIImage imageNamed:@"museum.jpeg"];
-            }
+            
+            //Resize image
             CGSize size = {50,50};
             cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
         }

@@ -18,14 +18,14 @@
 
 -(void)viewDidLoad
 {
-    self.jsonURL = @"http://www.matthewfarmer.net/events.json";
+    self.jsonURL = @"http://www.matthewfarmer.net/sports/sportsRSStoJSON.php";
     self.entityName = @"Event";
-    self.sortDescriptorKey = @"title";
+    self.sortDescriptorKey = @"startdate";
     self.cellIdentifier = @"event";
     self.segueIdentifier = @"toEvent";
     
     self.keyToSearchOn = @"title";
-    self.keysToSearchOn = [[NSMutableArray alloc]initWithObjects:@"title", nil];
+    self.keysToSearchOn = [[NSMutableArray alloc]initWithObjects:@"title",@"startdate",@"category",@"enddate",@"location",nil];
     
     self.childNumber = [NSNumber numberWithInt:2];
 }

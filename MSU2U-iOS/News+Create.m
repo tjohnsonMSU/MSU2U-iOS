@@ -47,7 +47,7 @@
         
         //Format of the last_changed: 2013-03-27 23:19:29 
         [dateFormatter setDateFormat: @"yyyy-MM-dd HH:mm:ss"];
-        NSDate *last_changed_date = [dateFormatter dateFromString:[info objectForKey:@"last_changed"]];
+        NSDate *last_changed_date = [dateFormatter dateFromString:[info objectForKey:@"Last_Changed"]];
         news.last_changed = last_changed_date;
         
         //Format of the Pub_Date: 0000-00-00

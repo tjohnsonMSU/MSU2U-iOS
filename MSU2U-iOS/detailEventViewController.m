@@ -9,14 +9,6 @@
 #import "detailEventViewController.h"
 
 @interface detailEventViewController ()
-@property (weak, nonatomic) NSString* receivedTitle;
-@property (weak, nonatomic) NSString* receivedStartTime;
-@property (weak, nonatomic) NSString* receivedDescription;
-@property (weak, nonatomic) NSString* receivedLink;
-@property (weak, nonatomic) NSString* receivedEvgameid;
-@property (weak, nonatomic) NSString* receivedEvlocation;
-@property (weak, nonatomic) NSString* receivedStartDate;
-@property (weak, nonatomic) NSString* receivedEndDate;
 @end
 
 @implementation detailEventViewController
@@ -30,71 +22,67 @@
 {
     [super viewDidLoad];
     
-    self.descriptionTextView.text = self.receivedDescription;
-    self.titleLabel.text = self.receivedTitle;
+    //Setup the text in the navigation bar
+    self.navigationController.title = receivedEvent.category;
     
-    if([self.receivedStartDate length]==0)
-    {
-        self.receivedStartDate = @"";
-    }
-    if([self.receivedStartTime length]==0)
-    {
-        self.receivedStartTime = @"";
-    }
-    NSString * timeDate = self.receivedStartDate;
-    timeDate = [timeDate stringByAppendingString:@" at "];
-    timeDate = [timeDate stringByAppendingString:self.receivedStartTime];
+    //Set your labels
+    self.titleLabel.text = receivedEvent.title;
+    self.locationLabel.text = receivedEvent.location;
+    self.startingDateLabel.text = @"[fix this later]";
     
-    self.timeDateLabel.text = timeDate;
-    self.locationLabel.text = self.receivedEvlocation;
+    //Setup the images
+    if([receivedEvent.location isEqualToString:@"Wichita Falls, TX"])
+    {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
+                                                 (unsigned long)NULL), ^(void) {
+            [self downloadImageForHome:receivedEvent.teamlogo andAway:receivedEvent.opponentlogo];
+        });
+    }
+    else
+    {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
+                                                 (unsigned long)NULL), ^(void) {
+            [self downloadImageForHome:receivedEvent.opponentlogo andAway:receivedEvent.teamlogo];
+        });
+    }
 }
 
 -(void)sendEventInformation:(Event*)eventInfo
 {
-    self.receivedTitle = eventInfo.title;
-    self.receivedDescription = eventInfo.content;
-    self.receivedEndDate = eventInfo.endDate;
-    self.receivedStartTime = eventInfo.startTime;
-    self.receivedStartDate = eventInfo.startDate;
-    self.receivedEvlocation = eventInfo.evlocation;
+    receivedEvent = eventInfo;
     
     //Give the addEventToCalendarClass the event information so that the event can be added to the calendar if required
-    self.title = self.receivedTitle;
+    /*self.title = receivedEvent.category;
     self.startDate = self.receivedStartDate;
-    self.startTime = self.receivedStartTime;
+    self.startTime = self.receivedStartTime;*/
 }
 
-- (void)didReceiveMemoryWarning
+-(void)downloadImageForHome:(NSString*)homeTeam andAway:(NSString *)awayTeam
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    homeTeam = [homeTeam stringByReplacingOccurrencesOfString:@" " withString:@""];
+    awayTeam = [awayTeam stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    [self.homePhoto setImageWithURL:[NSURL URLWithString:homeTeam]
+                  placeholderImage:[UIImage imageNamed:@"Default.png"]];
+    [self.awayPhoto setImageWithURL:[NSURL URLWithString:awayTeam]
+                  placeholderImage:[UIImage imageNamed:@"Default.png"]];
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    //Did the Add Event to Calendar cell get selected?
-    if(indexPath.section == 2 && indexPath.row == 0)
-    {
-        if([eventStore respondsToSelector:@selector(requestAccessToEntityType:completion:)])
-        {
-            //This is iOS 6.0 and above, so I have to ask the user for permission to access their calendar before adding the event!
-            [eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
-                [self performSelectorOnMainThread:@selector(addEventToMainCalendar) withObject:nil waitUntilDone:YES];
-            }];
-        }
-        else
-        {
-            //This is iOS 5.0 and below, so I don't need to ask the user for permission first to access their calendar(s).
-            [self addEventToMainCalendar];
-        }
-    }
+- (IBAction)addToCalendar:(UIButton *)sender {
+}
+
+- (IBAction)showInMap:(UIButton *)sender {
 }
 
 - (IBAction)sharePressed:(UIBarButtonItem *)sender
 {
     // Create the item to share (in this example, a url)
-    NSURL *url = [NSURL URLWithString:self.receivedLink];
-    SHKItem *item = [SHKItem URL:url title:self.receivedTitle contentType:SHKURLContentTypeWebpage];
+    NSURL *url = [NSURL URLWithString:receivedEvent.link];
+    SHKItem *item = [SHKItem URL:url title:receivedEvent.title contentType:SHKURLContentTypeWebpage];
     
     // Get the ShareKit action sheet
     SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];

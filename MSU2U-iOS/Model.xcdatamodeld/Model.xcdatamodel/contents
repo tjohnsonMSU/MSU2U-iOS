@@ -31,13 +31,14 @@
     </entity>
     <entity name="Event" representedClassName="Event" syncable="YES">
         <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="endDate" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="evgameid" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="evlocation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="enddate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="gameid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="startDate" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="startTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="opponentlogo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startdate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="teamlogo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="News" representedClassName="News" syncable="YES">
@@ -78,10 +79,10 @@
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Employee" positionX="-7454" positionY="-2439" width="128" height="450"/>
-        <element name="Event" positionX="-7598" positionY="-2440" width="128" height="180"/>
-        <element name="News" positionX="-7598" positionY="-2250" width="128" height="208"/>
+        <element name="Employee" positionX="-7445" positionY="-2439" width="128" height="450"/>
+        <element name="Event" positionX="-7598" positionY="-2440" width="128" height="193"/>
+        <element name="News" positionX="-7598" positionY="-2241" width="128" height="208"/>
         <element name="Sport" positionX="-7749" positionY="-2439" width="128" height="238"/>
-        <element name="Tweet" positionX="-7902" positionY="-2142" width="128" height="150"/>
+        <element name="Tweet" positionX="-7749" positionY="-2175" width="128" height="150"/>
     </elements>
 </model>

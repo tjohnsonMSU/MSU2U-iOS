@@ -21,8 +21,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *name;
 
 @property (weak, nonatomic) IBOutlet UITextView *text;
-- (IBAction)retweet:(UIButton *)sender;
-- (IBAction)comment:(UIButton *)sender;
 
 -(void)sendTweetInformation:(Tweet*)tweetInfo;
 

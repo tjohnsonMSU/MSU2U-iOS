@@ -16,15 +16,18 @@
 #import "SHK.h"
 
 @interface detailEventViewController : addEventToCalendar{
-    UIBarButtonItem * rightButton;
+    Event * receivedEvent;
 }
 
 -(void)sendEventInformation:(Event*)eventInfo;
-
-@property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
-@property (weak, nonatomic) IBOutlet UILabel *timeDateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *backgroundPhoto;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *homePhoto;
+@property (strong, nonatomic) IBOutlet UIImageView *awayPhoto;
+@property (strong, nonatomic) IBOutlet UILabel *locationLabel;
+@property (strong, nonatomic) IBOutlet UILabel *startingDateLabel;
+- (IBAction)addToCalendar:(UIButton *)sender;
+- (IBAction)showInMap:(UIButton *)sender;
 - (IBAction)sharePressed:(UIBarButtonItem *)sender;
 
 @end
