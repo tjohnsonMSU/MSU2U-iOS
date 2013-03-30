@@ -98,6 +98,10 @@
     [SHK setRootViewController:self];
     
     // Display the action sheet
-    [actionSheet showInView:self.view];
+    [actionSheet showFromTabBar:self.tabBarController.tabBar];
+}
+
+- (IBAction)viewInBrowser:(UIButton *)sender {
+    NSLog(@"I'm going to go view this thing in the browser. woohoo!!\n");
 }
 @end

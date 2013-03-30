@@ -46,7 +46,7 @@
         [dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
         //           Sample Time:      2013-05-23T17:00:00.0000000
         //[dateFormatter setDateFormat: @"y-MM-ddTHH:mm:ss.SSSSSSS"];
-        [dateFormatter setDateFormat:@"Y-MM-dd HH:mm:ss"];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         
         NSArray * array1 = [[[info objectForKey:@"startdate"] stringByReplacingOccurrencesOfString:@"T" withString:@" "] componentsSeparatedByString:@"."];
         NSArray * array2 = [[[info objectForKey:@"enddate"] stringByReplacingOccurrencesOfString:@"T" withString:@" "] componentsSeparatedByString:@"."];

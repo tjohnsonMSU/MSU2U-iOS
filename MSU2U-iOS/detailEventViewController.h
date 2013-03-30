@@ -29,5 +29,6 @@
 - (IBAction)addToCalendar:(UIButton *)sender;
 - (IBAction)showInMap:(UIButton *)sender;
 - (IBAction)sharePressed:(UIBarButtonItem *)sender;
+- (IBAction)viewInBrowser:(UIButton *)sender;
 
 @end

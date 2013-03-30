@@ -126,11 +126,17 @@
 {
     NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:self.entityName];
     
+    //This is where I can limit what I show in the tables
     if(self.childNumber == [NSNumber numberWithInt:5])
     {
         //DIRECTORY FAVORITES = 5
         NSPredicate *predicate = [NSPredicate predicateWithFormat:
                                   @"favorite LIKE[c] 'yes'"];
+        [request setPredicate:predicate];
+    }
+    if(self.childNumber == [NSNumber numberWithInt:2])
+    {
+        NSPredicate * predicate =[NSPredicate predicateWithFormat:@"startdate >= %@",[NSDate date]];
         [request setPredicate:predicate];
     }
     
@@ -146,42 +152,6 @@
     
     if([[[self.fetchedResultsController sections] objectAtIndex:0] numberOfObjects] == 0)
         [self refresh];
-}
-
--(NSString*)createPredicateForKeys:(NSArray*)myKeys usingSearchWords:(NSArray*)mySearchWords forAttribute:(NSString*)myAttribute
-{
-    
-    NSString * myPredicate = @"";
-    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-
-    for(int i=0; i<[myKeys count]; i++)
-    {
-        if([defaults boolForKey:[myKeys objectAtIndex:i]])
-        {
-            if([myPredicate length] > 0)
-                myPredicate = [myPredicate stringByAppendingString:@" || "];
-            
-            if([self.childNumber isEqualToNumber:[NSNumber numberWithInt:7]] && [[myKeys objectAtIndex:i] hasPrefix:@"#"])
-            {
-                //Looks like I have a #hashTag, so I need to look in the text of this tweet to see if I can find this hashtag in there somewhere.
-                myPredicate = [myPredicate stringByAppendingString:[NSString stringWithFormat:@"text contains[c] '%@'",[mySearchWords objectAtIndex:i]]];
-            }
-            else
-            {
-                myPredicate = [myPredicate stringByAppendingString:[NSString stringWithFormat:@"%@ LIKE[c] '%@'",myAttribute,[mySearchWords objectAtIndex:i]]];
-            }
-        }
-    }
-    
-    if([myPredicate length] > 0)
-        return myPredicate;
-    else
-    {
-        NSString * returnStatement = myAttribute;
-        returnStatement = [returnStatement stringByAppendingString:@" LIKE[c] 'nothing'"];
-        return returnStatement;
-    }
-    
 }
 
 -(void)useDocument
