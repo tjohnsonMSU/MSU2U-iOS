@@ -33,7 +33,8 @@
     //Set your labels
     self.titleLabel.text = receivedEvent.title;
     self.locationLabel.text = receivedEvent.location;
-    self.startingDateLabel.text = @"fix this";
+    NSLog(@"The date is %@\n",receivedEvent.startdate);
+    self.startingDateLabel.text = [NSDateFormatter localizedStringFromDate:receivedEvent.startdate dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];
     
     //Setup the images
     if([receivedEvent.location isEqualToString:@"Wichita Falls, TX"])

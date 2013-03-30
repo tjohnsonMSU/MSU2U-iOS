@@ -25,7 +25,7 @@
     self.segueIdentifier = @"toEvent";
     
     self.keyToSearchOn = @"title";
-    self.keysToSearchOn = [[NSMutableArray alloc]initWithObjects:@"title",@"startdate",@"category",@"enddate",@"location",nil];
+    self.keysToSearchOn = [[NSMutableArray alloc]initWithObjects:@"title",@"category",@"location",nil];
     
     self.childNumber = [NSNumber numberWithInt:2];
 }
