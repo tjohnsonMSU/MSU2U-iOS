@@ -23,7 +23,12 @@
     [super viewDidLoad];
     
     //Setup the text in the navigation bar
-    self.navigationController.title = receivedEvent.category;
+    self.title = receivedEvent.category;
+    
+    if([receivedEvent.category isEqualToString:@"Men's Basketball"])
+    {
+        self.backgroundPhoto.image = [UIImage imageNamed:@"menbasketballBG.jpg"];
+    }
     
     //Set your labels
     self.titleLabel.text = receivedEvent.title;
@@ -50,7 +55,7 @@
 -(void)sendEventInformation:(Event*)eventInfo
 {
     receivedEvent = eventInfo;
-    
+    receivedEvent.teamlogo = @"http://www.msumustangs.com/images/logos/m6.png";
     //Give the addEventToCalendarClass the event information so that the event can be added to the calendar if required
     /*self.title = receivedEvent.category;
     self.startDate = self.receivedStartDate;

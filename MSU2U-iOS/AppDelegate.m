@@ -43,37 +43,6 @@
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
     [[NSUserDefaults standardUserDefaults] registerDefaults:dict];
     
-    //These are my user keys and search terms for the subscription tables. These are necessary for the Sports/News/Events tables to determine whether they should refresh given the current switch values in the subscription table.
-    NSArray * userDefaultEventsKey = [[NSArray alloc] initWithObjects:@"academicIsOn",@"artIsOn",@"campusIsOn",@"museumIsOn",@"musicIsOn",@"personnelIsOn",@"theaterIsOn",nil];
-    NSArray * typesOfEvents = [[NSArray alloc] initWithObjects:@"academic",@"art",@"campus",@"museum",@"music",@"personnel",@"theater",nil];
-    
-     
-    NSArray * userDefaultSportsKey = [[NSArray alloc] initWithObjects:@"crossCountryIsOn",@"basketballMenIsOn",@"basketballWomenIsOn",@"footballIsOn",@"golfMenIsOn",@"golfWomenIsOn",@"soccerMenIsOn",@"soccerWomenIsOn",@"softballIsOn",@"tennisMenIsOn",@"tennisWomenIsOn",@"volleyballIsOn",nil];
-    NSArray * typesOfSports = [[NSArray alloc] initWithObjects:@"Cross Country",@"BasketballMen",@"BasketballWomen",@"Football",@"GolfMen",@"GolfWomen",@"SoccerMen",@"SoccerWomen",@"Softball",@"TennisMen",@"TennisWomen",@"Volleyball", nil];
-    
-    NSArray * userDefaultNewsKey = [[NSArray alloc] initWithObjects:@"wichitanNewsIsOn",@"sportsNewsIsOn",@"campusNewsIsOn",nil];
-    NSArray * typesOfNews = [[NSArray alloc] initWithObjects:@"The Wichitan", @"Sports News", @"Event News", nil];
-    
-
-    NSArray * userDefaultTweetsKey = [[NSArray alloc] initWithObjects:@"MidwesternStateIsOn",@"MSUMustangsIsOn",@"matthewfarmIsOn",@"MWSUCampusWatchIsOn",@"MidwesternAVPIsOn",@"msu2u_devteamIsOn",@"WichitanOnlineIsOn",@"MSUUnivDevIsOn",@"MSU_VPIsOn",@"mwsu_sgIsOn",@"#SocialStampedeIsOn",@"#MidwesternStateIsOn",nil];
-    NSArray * typesOfTweets = [[NSArray alloc] initWithObjects:@"MidwesternState",@"MSUMustangs",@"matthewfarm",@"MWSUCampusWatch", @"MidwesternAVPIsOn",@"msu2u_devteam",@"WichitanOnline",@"MSUUnivDev",@"MSU_VP",@"mwsu_sg",@"#SocialStampede",@"#MidwesternState", nil];
-    
-    //Setup the user default keys and search keywords that are used throughout the app
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    [defaults setObject:userDefaultEventsKey forKey:@"userDefaultsEventsKey"];
-    [defaults setObject:userDefaultSportsKey forKey:@"userDefaultsSportsKey"];
-    [defaults setObject:userDefaultNewsKey forKey:@"userDefaultsNewsKey"];
-    [defaults setObject:userDefaultTweetsKey forKey:@"userDefaultsTweetsKey"];
-    [defaults setObject:typesOfEvents forKey:@"typesOfEvents"];
-    [defaults setObject:typesOfSports forKey:@"typesOfSports"];
-    [defaults setObject:typesOfNews forKey:@"typesOfNews"];
-    [defaults setObject:typesOfTweets forKey:@"typesOfTweets"];
-    
-    //Save these defaults
-    [defaults synchronize];
-
-    
     //For ShareKit
     DefaultSHKConfigurator *configurator = [[DefaultSHKConfigurator alloc] init];
     [SHKConfiguration sharedInstanceWithConfigurator:configurator];

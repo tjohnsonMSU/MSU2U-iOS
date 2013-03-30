@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <EventKit/EventKit.h>
 
-@interface addEventToCalendar : UITableViewController{
+@interface addEventToCalendar : UIViewController{
     EKEventStore * eventStore;
 }
-@property (weak,nonatomic) NSString * title;
-@property (weak,nonatomic) NSString * startDate;
-@property (weak,nonatomic) NSString * startTime;
+@property (weak,nonatomic) NSString * calendarEventTitle;
+@property (weak,nonatomic) NSString * calendarEventStartDate;
+@property (weak,nonatomic) NSString * calendarEventStartTime;
 
 -(void) addEventToMainCalendar;
 

@@ -27,7 +27,7 @@
     self.segueIdentifier = @"toEmployeeDetail";
     
     self.keyToSearchOn = @"lname";
-    self.keysToSearchOn = [[NSMutableArray alloc]initWithObjects:@"lname",@"fname",@"middle",@"phone1",@"phone2",@"email",@"website1",@"website2",nil];
+    self.keysToSearchOn = [[NSMutableArray alloc]initWithObjects:@"lname",@"fname",@"middle",@"phone1",@"phone2",@"email",@"website1",@"website2",@"position_title_1",@"position_title_2",@"dept_id_1",@"dept_id_2",nil];
     
     self.childNumber = [NSNumber numberWithInt:4];
     

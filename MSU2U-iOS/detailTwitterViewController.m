@@ -44,14 +44,30 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
+- (IBAction)retweet:(UIButton *)sender {
+    NSLog(@"Tweet tweet said the bird!\n");
+    
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [tweetSheet setInitialText:@"#SocialStampede "];
+        [self presentViewController:tweetSheet animated:YES completion:nil];
+    }
+    else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Oops!"
+                                  message:@"Please setup a Twitter Account for your device (Settings > Twitter) and ensure you have an internet connection and try again! :)"
+                                  delegate:self
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+        [alertView show];
+    }
+}
+
 -(void)sendTweetInformation:(Tweet *)tweetInfo
 {
     receivedTweet = tweetInfo;
 }
 
-- (IBAction)retweet:(UIButton *)sender {
-}
-
-- (IBAction)comment:(UIButton *)sender {
-}
 @end

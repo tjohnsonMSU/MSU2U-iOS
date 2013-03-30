@@ -515,11 +515,11 @@
             </objects>
             <point key="canvasLocation" x="-14288" y="-1761"/>
         </scene>
-        <!--Navigation Controller - Games-->
+        <!--Navigation Controller - Events-->
         <scene sceneID="oDR-ti-3mc">
             <objects>
                 <navigationController definesPresentationContext="YES" id="LGb-J0-zI2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Games" image="101-gameplan.png" id="rLZ-ky-aLv"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="101-gameplan.png" id="rLZ-ky-aLv"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CVL-a8-1VZ">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -570,6 +570,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="NUe-KA-3Zg" kind="push" id="RsV-s9-L3l"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -593,7 +596,6 @@
                         <outlet property="searchBar" destination="gFN-cw-2FK" id="954-Nz-7lJ"/>
                         <outlet property="searchDisplayControl" destination="0q9-Iu-Yva" id="cf9-Yg-O1R"/>
                         <outlet property="searchDisplayController" destination="0q9-Iu-Yva" id="Vbe-ib-ZYm"/>
-                        <segue destination="NUe-KA-3Zg" kind="push" identifier="toEvent" id="Lyn-HF-i2o"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xVs-fy-uCH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -764,7 +766,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-13280" y="60"/>
+            <point key="canvasLocation" x="-13375" y="59"/>
         </scene>
         <!--Navigation Controller - Tweets-->
         <scene sceneID="SMZ-u8-hgK">
@@ -782,7 +784,7 @@
             </objects>
             <point key="canvasLocation" x="-14960" y="-16"/>
         </scene>
-        <!--Twitter View Controller - Tweets-->
+        <!--Twitter View Controller-->
         <scene sceneID="5uv-kQ-8Pw">
             <objects>
                 <tableViewController id="GJB-9a-jfJ" customClass="twitterViewController" sceneMemberID="viewController">
@@ -839,7 +841,24 @@
                             <outlet property="delegate" destination="GJB-9a-jfJ" id="AFm-gB-hMX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Tweets" id="wJb-aF-gRg"/>
+                    <navigationItem key="navigationItem" id="wJb-aF-gRg">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="H0U-Dy-eWj">
+                            <rect key="frame" x="112" y="6" width="95" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="tweet" image="209-twitter.png">
+                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="tweet:" destination="GJB-9a-jfJ" eventType="touchUpInside" id="DjK-2o-hO1"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="1kN-8T-ALu" id="omT-zC-xAj"/>
                         <outlet property="searchDisplayControl" destination="PvZ-4W-ytf" id="MdE-2u-6mp"/>
@@ -952,6 +971,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tYU-ZA-b1j">
+                        <nil key="title"/>
                         <barButtonItem key="rightBarButtonItem" title="Share" id="a0c-qD-7mj"/>
                     </navigationItem>
                     <connections>
@@ -1043,6 +1063,9 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="vRl-3M-1sy" kind="push" identifier="toWebsite" id="a16-mU-OAc"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="294" id="LFC-Mr-3ln">
                                         <rect key="frame" x="0.0" y="280" width="320" height="294"/>
@@ -1362,6 +1385,7 @@
                         <outlet property="fullnameLabel" destination="OsI-2j-fw9" id="qvh-Go-C61"/>
                         <outlet property="photo" destination="WWh-tz-brD" id="73K-uK-LjT"/>
                         <outlet property="positionLabel" destination="7i5-nC-rG1" id="Iu0-LR-NAm"/>
+                        <segue destination="vRl-3M-1sy" kind="push" identifier="toWebsite" id="tds-tn-th9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zay-14-bAS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1373,9 +1397,20 @@
             <objects>
                 <viewController id="vRl-3M-1sy" customClass="webViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hhm-ZN-WQ1">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="WebPage would go here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNW-D6-h4j">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JNW-D6-h4j" firstAttribute="centerY" secondItem="hhm-ZN-WQ1" secondAttribute="centerY" type="default" id="WMX-Jq-aEV"/>
+                            <constraint firstItem="JNW-D6-h4j" firstAttribute="centerX" secondItem="hhm-ZN-WQ1" secondAttribute="centerX" type="default" id="kfL-rG-poV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="[Web View]" id="klm-qn-yxi">
                         <barButtonItem key="rightBarButtonItem" title="Share" id="0er-ov-T2L">
@@ -1387,7 +1422,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iFb-gN-TyH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12325" y="-3008"/>
+            <point key="canvasLocation" x="-12759" y="-1458"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="30L-jD-bg0">
@@ -1440,7 +1475,7 @@
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
-        <class className="addEventToCalendar" superclassName="UITableViewController">
+        <class className="addEventToCalendar" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/addEventToCalendar.h"/>
         </class>
         <class className="campusMapInfoViewController" superclassName="UIViewController">
@@ -1512,6 +1547,7 @@
         <class className="detailTwitterViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/detailTwitterViewController.h"/>
             <relationships>
+                <relationship kind="action" name="retweet:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="created_at" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="name" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="profile_background_image_url" candidateClass="UIImageView"/>
@@ -1547,6 +1583,7 @@
         <class className="twitterViewController" superclassName="genericTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/twitterViewController.h"/>
             <relationships>
+                <relationship kind="action" name="tweet:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
                 <relationship kind="outlet" name="searchDisplayControl" candidateClass="UISearchDisplayController"/>
             </relationships>
@@ -1563,4 +1600,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="tds-tn-th9"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -34,6 +34,7 @@
         event.link = [info objectForKey:@"link"];
         event.teamlogo = [info objectForKey:@"teamlogo"];
         event.opponentlogo = [info objectForKey:@"opponentlogo"];
+        event.location = [info objectForKey:@"location"];
         
         //Setup the dates
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];

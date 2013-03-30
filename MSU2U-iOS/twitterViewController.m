@@ -20,7 +20,7 @@
 -(void)viewDidLoad
 {
     //self.jsonURL = @"CHANGE ME";
-    self.twitterProfilesAndHashtags = [[NSArray alloc]initWithObjects:@"MidwesternState",@"MSUMustangs",@"matthewfarm",@"MWSUCampusWatch",@"MidwesternAVP",@"msu2u_devteam",@"WichitanOnline",@"MSUUnivDev",@"MSU_VP",@"mwsu_sg",@"#SocialStampede",@"#MidwesternState", nil];
+    self.twitterProfilesAndHashtags = [[NSArray alloc]initWithObjects:@"MidwesternState",@"MSUMustangs",@"matthewfarm",@"MWSUCampusWatch",@"MidwesternAVP",@"msu2u_devteam",@"WichitanOnline",@"MSUUnivDev",@"MSU_VP",@"mwsu_sg",@"#SocialStampede",@"#MidwesternState",@"#msu2u",@"#msumustangs",@"MSUCyclingTeam",@"msuchiomega", nil];
     
     self.entityName = @"Tweet";
     self.sortDescriptorKey = @"created_at";
@@ -38,4 +38,24 @@
     [self.searchDisplayControl setActive:NO];
 }
 
+- (IBAction)tweet:(UIButton *)sender {
+    NSLog(@"Tweet tweet said the bird!\n");
+    
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [tweetSheet setInitialText:@"#SocialStampede "];
+        [self presentViewController:tweetSheet animated:YES completion:nil];
+    }
+    else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Oops!"
+                                  message:@"Please setup a Twitter Account for your device (Settings > Twitter) and ensure you have an internet connection and try again! :)"
+                                  delegate:self
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+        [alertView show];
+    }
+}
 @end

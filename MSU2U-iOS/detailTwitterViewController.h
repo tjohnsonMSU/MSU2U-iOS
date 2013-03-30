@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "Tweet+Create.h"
+#import <Social/Social.h>
 
 @interface detailTwitterViewController : UIViewController{
     Tweet * receivedTweet;
@@ -21,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *name;
 
 @property (weak, nonatomic) IBOutlet UITextView *text;
+- (IBAction)retweet:(UIButton *)sender;
 
 -(void)sendTweetInformation:(Tweet*)tweetInfo;
 

@@ -12,7 +12,7 @@
 
 -(void) addEventToMainCalendar
 {
-    NSLog(@"Attempting to add this event to calendar: %@, %@\n",self.title,self.startDate);
+    NSLog(@"Attempting to add this event to calendar: %@, %@\n",self.calendarEventTitle,self.calendarEventStartDate);
     
     EKEvent *event  = [EKEvent eventWithEventStore:eventStore];
     event.title     = self.title;
@@ -22,18 +22,18 @@
     NSDateComponents *comps = [[NSDateComponents alloc] init];
     
     //Rip apart my receivedStartDate (2013-1-1) to 2013 1 1
-    NSArray *dateBits = [self.startDate componentsSeparatedByString: @"-"];
+    NSArray *dateBits = [self.calendarEventStartDate componentsSeparatedByString: @"-"];
     NSArray *timeBits;
     NSArray *amOrPm;
-    if([self.startTime isEqualToString:@"N/A"])
+    if([self.calendarEventStartTime isEqualToString:@"N/A"])
     {
         NSLog(@"There is no start time...\n");
         timeBits = [[NSArray alloc]initWithObjects:@"12", nil];
     }
     else
     {
-        NSLog(@"Start time is %@...\n",self.startTime);
-        timeBits = [self.startTime componentsSeparatedByString: @":"];
+        NSLog(@"Start time is %@...\n",self.calendarEventStartTime);
+        timeBits = [self.calendarEventStartTime componentsSeparatedByString: @":"];
         amOrPm = [[timeBits objectAtIndex:1] componentsSeparatedByString:@" "];
         NSLog(@"amOrPm at index 1 is %@...\n",[amOrPm objectAtIndex:1]);
     }

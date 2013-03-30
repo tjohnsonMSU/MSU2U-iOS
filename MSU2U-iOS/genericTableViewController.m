@@ -95,7 +95,6 @@
             {
                 //Everything but Twitter feeds are processed the same way so that's why they are all in this block. The Database Crew creates these feeds for us so they all match in their formatting, unlike Twitter created feeds which need to be handled a bit differently
                 hud.labelText = @"Downloading...";
-                NSLog(@"Downloading from %@...\n",self.jsonURL);
                 NSArray * myData = [self downloadCurrentData:self.jsonURL];
                 hud.labelText = @"Loading...";
                 NSLog(@"%@\n",myData);
@@ -105,9 +104,7 @@
                     for(NSDictionary * dataInfo in myData)
                     {
                         //DEPENDS ON THE CHILD THAT I'M WORKING WITH
-                        if(self.childNumber == [NSNumber numberWithInt:1])
-                            [Sport sportWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
-                        else if(self.childNumber == [NSNumber numberWithInt:2])
+                        if(self.childNumber == [NSNumber numberWithInt:2])
                             [Event eventWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
                         else if(self.childNumber == [NSNumber numberWithInt:3])
                             [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
@@ -128,11 +125,8 @@
 
 -(void)setupFetchedResultsController
 {
-    //Setting up the Fetched Results Controller
-
     NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:self.entityName];
     
-    //DIRECTORY FAVORITES AND DIRECTORY HISTORY SHOULD HAVE A FILTER THAT RESTRICTS THE DATA IN MY TABLE
     if(self.childNumber == [NSNumber numberWithInt:5])
     {
         //DIRECTORY FAVORITES = 5
@@ -140,213 +134,16 @@
                                   @"favorite LIKE[c] 'yes'"];
         [request setPredicate:predicate];
     }
-    else if(self.childNumber == [NSNumber numberWithInt:6])
-    {
-        //DIRECTORY HISTORY = 6
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:
-                                  @"history != nil"];
-        [request setPredicate:predicate];
-    }
-    //#### NEWS
-    else if(self.childNumber == [NSNumber numberWithInt:3])
-    {
-        //Check the user defaults
-        NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-        
-        //CHECK THE SWITCHES. SEE WHAT PREDICATE I SHOULD APPLY TO THESE TABLES!
-        NSString * myPredicate = @"";
-        
-        if([defaults boolForKey:@"wichitanNewsIsOn"])
-        {
-            myPredicate = [myPredicate stringByAppendingString:@"publication LIKE[c] 'The Wichitan'"];
-        }
-        if([defaults boolForKey:@"sportsNewsIsOn"])
-        {
-            
-            //If I already started my predicate string, then I need to concatenate ||.
-            if([myPredicate length] > 0)
-            {
-                myPredicate = [myPredicate stringByAppendingString:@" || "];
-            }
-            myPredicate = [myPredicate stringByAppendingString:@"(publication LIKE[c] 'Sports News' && ("];
-            
-            //Also, we need to check and see which sports the person has selected in the Sports tab. We will check the category of the news article to see if the user is likely to be interested in the story before putting it into the table so let's add some more filters.
-            NSArray * keys = [defaults objectForKey:@"userDefaultsSportsKey"];
-            NSArray * searchWords = [defaults objectForKey:@"typesOfSports"];
-            
-            //Add the sports predicate to the existing predicate (if any)
-            myPredicate = [myPredicate stringByAppendingString:[self createPredicateForKeys:keys usingSearchWords:searchWords forAttribute:@"category_1"]];
-            myPredicate = [myPredicate stringByAppendingString:@"))"];
-        }
-        if([defaults boolForKey:@"campusNewsIsOn"])
-        {
-            //If I already started my predicate string, then I need to concatenate ||.
-            if([myPredicate length] > 0)
-            {
-                myPredicate = [myPredicate stringByAppendingString:@" || "];
-            }
-            myPredicate = [myPredicate stringByAppendingString:@"publication LIKE[c] 'Campus News'"];
-        }
-        
-        //Only if I actually added some text to myPredicate due to a switch being on will I set my request's predicate.
-        if([myPredicate length] == 0)
-        {
-            //There is no such thing as a News of type "NOTHING" so effectively this will return no one, which is what I want
-            //  since all of the news switches have been disable.
-            myPredicate = [myPredicate stringByAppendingString:@"publication LIKE[c] 'nothing'"];
-        }
-        
-        //set the predicate to your constructed predicate string
-        NSPredicate * predicate = [NSPredicate predicateWithFormat:myPredicate];
-        [request setPredicate:predicate];
-    }
-    //#### EVENTS
-    else if(self.childNumber == [NSNumber numberWithInt:2])
-    {
-        /*
-        NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-        NSArray * keys = [defaults objectForKey:@"userDefaultsEventsKey"];
-        NSArray * searchWords = [defaults objectForKey:@"typesOfEvents"];
-        NSPredicate * predicate = [NSPredicate predicateWithFormat:[self createPredicateForKeys:keys usingSearchWords:searchWords forAttribute:@"category"]];
-        [request setPredicate:predicate];
-         */
-    }
-    //#### SPORTS
-    else if(self.childNumber == [NSNumber numberWithInt:1])
-    {
-        NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-        NSArray * keys = [defaults objectForKey:@"userDefaultsSportsKey"];
-        NSArray * searchWords = [defaults objectForKey:@"typesOfSports"];
-        NSPredicate * predicate = [NSPredicate predicateWithFormat:[self createPredicateForKeys:keys usingSearchWords:searchWords forAttribute:@"sportType"]];
-        [request setPredicate:predicate];
-    }
-    //#### TWITTER
-    else if(self.childNumber == [NSNumber numberWithInt:7])
-    {
-        NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-        NSArray * keys = [defaults objectForKey:@"userDefaultsTweetsKey"];
-        NSArray * searchWords = [defaults objectForKey:@"typesOfTweets"];
-        NSPredicate * predicate = [NSPredicate predicateWithFormat:[self createPredicateForKeys:keys usingSearchWords:searchWords forAttribute:@"screen_name"]];
-        [request setPredicate:predicate];
-    }
     
-    //Fetch all of the data. Be sure to sort the data correctly depending on which child is currently being viewed
-    //#### DIRECTORY HISTORY AND TWITTER should be assorted by ascending dates
     if(self.childNumber != [NSNumber numberWithInt:6] && self.childNumber != [NSNumber numberWithInt:7])
-    {
         request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:self.sortDescriptorKey ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
-    }
     else
-    {
         request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:self.sortDescriptorKey ascending:NO]];
-    }
-    //This is where we've captured the necessary data in our fetched results controller from our Core Data. All of the table view delegate methods
-    //  will work with the data locaed within the fetchedResultsController. If we have no data in core data, then we'll download it first.
+
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:self.myDatabase.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     
-    //#### I DON'T HAVE ANY DATA IN MY TABLE? I NEED TO FIGURE OUT WHY
-    //Making sure I have information in my database already. If not, then I need to determine whether I should download or leave the table empty.
     if([[[self.fetchedResultsController sections] objectAtIndex:0] numberOfObjects] == 0)
-    {
-        
-        //As long as I'm not the Directory-Favorites or Directory-History tables, I'll continue.
-        if(self.childNumber != [NSNumber numberWithInt:5] && self.childNumber != [NSNumber numberWithInt:6])
-        {
-            if(self.childNumber == [NSNumber numberWithInt:1])
-            {
-                //I am the Sports table
-                if(![self switchesAreAllOffFor:@"userDefaultsSportsKey"])
-                {
-                    [self refresh];
-                }
-            }
-            else if(self.childNumber == [NSNumber numberWithInt:2])
-            {
-                //I am the Events table
-                /*
-                if(![self switchesAreAllOffFor:@"userDefaultsEventsKey"])
-                {
-                    [self refresh];
-                }
-                 */
-                [self refresh];
-            }
-            else if(self.childNumber == [NSNumber numberWithInt:3])
-            {
-                //I am the News table
-                //News is a special case because if the user is subscribed to sports news, yet has not chosen any sports to subscribe to in the sports table, there will not be any news shown.
-                if(![self switchesAreAllOffFor:@"userDefaultsNewsKey"])
-                {
-                    //Ok, so there is at least one News switch turned on, is it the sports news switch? If it is, I need to see if I am subscribed to any sports.
-                    if(![self switchIsOffAtIndex:[NSNumber numberWithInt:1] forKey:@"userDefaultsNewsKey"] && [self switchIsOffAtIndex:[NSNumber numberWithInt:2] forKey:@"userDefaultsNewsKey"] && [self switchIsOffAtIndex:[NSNumber numberWithInt:0] forKey:@"userDefaultsNewsKey"])
-                    {
-                        //The Sports News switch is on and the Wichitan/Campus News are off. Therefore, if there are ANY sport switches turned on, then I will attempt an update. Otherwise, I won't.
-                        if(![self switchesAreAllOffFor:@"userDefaultsSportsKey"])
-                        {
-                            [self refresh];
-                        }
-                        else
-                        {
-                            //do nothing
-                        }
-                    }
-                    else
-                    {
-                        //Oh, so then either the sports news is not turned on OR the Wichitan/Campus News is turned on. Because I have nothing to show in my table, I will attempt an update to see if there's anything available.
-                        [self refresh];
-                    }
-                }
-            }
-            else if(self.childNumber == [NSNumber numberWithInt:4])
-            {
-                //This is the directory, which means there is no ability for the user to filter the listing and thus these must be refreshed
-                [self refresh];
-            }
-            else if(self.childNumber == [NSNumber numberWithInt:7])
-            {
-                if(![self switchesAreAllOffFor:@"userDefaultsTweetsKey"])
-                {
-                    [self refresh];
-                }
-            }
-        }
-    }
-    else if(self.childNumber == [NSNumber numberWithInt:5] || self.childNumber == [NSNumber numberWithInt:6])
-    {
-        //do nothing because it is perfectly acceptable for their to be no favorites or history in my table since these aren't downloaded data anyway
-    }
-    else
-    {
-        //I know there are items in the database already.
-        //do nothing
-    }
-    
-}
-
--(BOOL) switchIsOffAtIndex:(NSNumber*)myIndex forKey:(NSString*)myKey
-{
-    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-    NSArray * objects = [defaults objectForKey:myKey];
-    
-    return (![defaults boolForKey:[objects objectAtIndex:[myIndex integerValue]]]);
-}
-
-//Get a yes or not answer as to whether all of the switches are on
--(BOOL) switchesAreAllOffFor:(NSString*)myKey
-{
-    
-    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-    NSArray * objects = [defaults objectForKey:myKey];
-    for(int i=0; i<[objects count]; i++)
-    {
-        if([defaults boolForKey:[objects objectAtIndex:i]])
-        {
-            return NO;
-        }
-    }
-    //If I get to this point, then all my switches were on
-    
-    return YES;
+        [self refresh];
 }
 
 -(NSString*)createPredicateForKeys:(NSArray*)myKeys usingSearchWords:(NSArray*)mySearchWords forAttribute:(NSString*)myAttribute
@@ -499,27 +296,6 @@
     
 }
 
-/*
-//Perform the action that the user chose from the UIAlertView
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 1) {
-        NSLog(@"I pressed button 1");
-    }
-}
-*/
-
--(void)goToMySubscriptionView
-{
-    
-    
-    //Segue over to the subscription view
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    UITableViewController *yourViewController = (UITableViewController *)[storyboard instantiateViewControllerWithIdentifier:@"subscriptionView"];
-    [self.navigationController pushViewController:yourViewController animated:YES];
-    
-    
-}
-
 -(void) clearMyTable
 {
     
@@ -622,14 +398,8 @@
 	else
 	{
         int count = 0;
-        if(self.childNumber == [NSNumber numberWithInt:1])
-        {
-            for (Sport * currentSports in [self.fetchedResultsController fetchedObjects])
-            {
-                count++;
-            }
-        }
-        else if(self.childNumber == [NSNumber numberWithInt:2])
+        
+        if(self.childNumber == [NSNumber numberWithInt:2])
         {
             for (Event * currentEvents in [self.fetchedResultsController fetchedObjects])
             {
@@ -646,20 +416,6 @@
         else if(self.childNumber == [NSNumber numberWithInt:4])
         {
 
-            for(Employee * currentEmployees in [self.fetchedResultsController fetchedObjects])
-            {
-                count++;
-            }
-        }
-        else if(self.childNumber == [NSNumber numberWithInt:5])
-        {
-            for(Employee * currentEmployees in [self.fetchedResultsController fetchedObjects])
-            {
-                count++;
-            }
-        }
-        else if(self.childNumber == [NSNumber numberWithInt:6])
-        {
             for(Employee * currentEmployees in [self.fetchedResultsController fetchedObjects])
             {
                 count++;
@@ -710,22 +466,6 @@
         else if(self.childNumber == [NSNumber numberWithInt:3])
         {
             cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ | %@",[self.dataObject last_changed],[self.dataObject short_description]];
-        }
-        else
-        {
-            //Sports should show the date in the detail label
-            NSString * sDate = @"(no date)";
-            NSString * sTime = @"(no time)";
-            if([[self.dataObject startDate] length] >  0)
-            {
-                sDate = [self.dataObject startDate];
-            }
-            if([[self.dataObject startTime] length] > 0)
-            {
-                sTime = [self.dataObject startTime];
-            }
-            NSString * timeAndDate = [sDate stringByAppendingString:[@" " stringByAppendingString:sTime]];
-            cell.detailTextLabel.text = timeAndDate;
         }
         
         //THIS IS A NEWS CELL, SO LET'S FIGURE OUT WHICH IMAGE TO SHOW IN THE CELL ROW
@@ -849,9 +589,8 @@
         self.dataObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
     }
     NSLog(@"My child number is %@\n",self.childNumber);
-    if(self.childNumber == [NSNumber numberWithInt:1])
-        [segue.destinationViewController sendSportInformation:self.dataObject];
-    else if(self.childNumber == [NSNumber numberWithInt:2])
+
+    if(self.childNumber == [NSNumber numberWithInt:2])
         [segue.destinationViewController sendEventInformation:self.dataObject];
     else if(self.childNumber == [NSNumber numberWithInt:3])
         [segue.destinationViewController sendNewsInformation:self.dataObject];
@@ -1001,16 +740,5 @@
     
     return YES;
 }
-
-#pragma mark - Search Button
-
-/*
- - (IBAction)goToSearch:(id)sender
- {
- // If you're worried that your users might not catch on to the fact that a search bar is available if they scroll to reveal it, a search icon will help them
- // Note that if you didn't hide your search bar, you should probably not include this, as it would be redundant
- [self.searchBar becomeFirstResponder];
- }
- */
 
 @end
