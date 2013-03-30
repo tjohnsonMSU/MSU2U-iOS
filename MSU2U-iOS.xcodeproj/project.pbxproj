@@ -93,6 +93,7 @@
 		1D52AED31694B4C200D59D33 /* addEventToCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D52AED21694B4C200D59D33 /* addEventToCalendar.m */; };
 		1D58B1A31704C71B007BBBC2 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D58B1A21704C71B007BBBC2 /* News.m */; };
 		1D58B1A51704D2C4007BBBC2 /* wichitanLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D58B1A41704D2C4007BBBC2 /* wichitanLogo.png */; };
+		1D5A5C841707AF7F000792C7 /* 42-info.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D5A5C831707AF7F000792C7 /* 42-info.png */; };
 		1D5B15B5164F3B140005C0A2 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5B15B4164F3B140005C0A2 /* MessageUI.framework */; };
 		1D62DD8416573FCC00A60534 /* MYDocumentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D62DD8316573FCC00A60534 /* MYDocumentHandler.m */; };
 		1D62DD93165758DD00A60534 /* Sport.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D62DD92165758DD00A60534 /* Sport.m */; };
@@ -513,6 +514,7 @@
 		1D58B1A11704C71B007BBBC2 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		1D58B1A21704C71B007BBBC2 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		1D58B1A41704D2C4007BBBC2 /* wichitanLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wichitanLogo.png; sourceTree = "<group>"; };
+		1D5A5C831707AF7F000792C7 /* 42-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "42-info.png"; sourceTree = "<group>"; };
 		1D5B15B4164F3B140005C0A2 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		1D62DD8216573FCC00A60534 /* MYDocumentHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYDocumentHandler.h; sourceTree = "<group>"; };
 		1D62DD8316573FCC00A60534 /* MYDocumentHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYDocumentHandler.m; sourceTree = "<group>"; };
@@ -747,6 +749,7 @@
 		1D1CEADE162B4D230059BC1F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1D5A5C831707AF7F000792C7 /* 42-info.png */,
 				1D58B1A41704D2C4007BBBC2 /* wichitanLogo.png */,
 				1DEC1C1416EED2380007E067 /* twitter.png */,
 				1DDD422616ED42BB0079463A /* twitterBlug.png */,
@@ -1546,6 +1549,7 @@
 				1D9EBAD31706AA850027A4A6 /* womensoccerBG.png in Resources */,
 				1D9EBAD41706AA850027A4A6 /* footballBG2.jpg in Resources */,
 				1D9EBAD51706AA850027A4A6 /* footballBG.jpg in Resources */,
+				1D5A5C841707AF7F000792C7 /* 42-info.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
