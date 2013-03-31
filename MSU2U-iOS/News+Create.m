@@ -55,17 +55,35 @@
         NSDate *pub_date_date = [dateFormatter dateFromString:[info objectForKey:@"Pub_Date"]];
         news.pub_date = pub_date_date;
         
-        //extract the image information from news.long_description
-        news.image = @"http://www.ryan-hayes.com/wp-content/uploads/2010/05/digicam-test1.png";
-        
         //figure out what publication source this news article is from. This is tricky and not 100% fool proof. Currently using a hokey means of deciding whether
         //  the publication is from MSU Mustangs or Wichitan based upon the listed category for the article
         if([news.doc_creator isEqualToString:@"msumustangs.com"])
         {
             news.publication = @"MSU Mustangs";
+            news.image = [info objectForKey:@"image"];
         }
         else
+        {
             news.publication = @"The Wichitan";
+            
+            
+            NSString *url = nil;
+            NSString *htmlString = news.long_description;
+            NSScanner *theScanner = [NSScanner scannerWithString:htmlString];
+            // find start of IMG tag
+            [theScanner scanUpToString:@"<img" intoString:nil];
+            if (![theScanner isAtEnd]) {
+                [theScanner scanUpToString:@"src" intoString:nil];
+                NSCharacterSet *charset = [NSCharacterSet characterSetWithCharactersInString:@"\"'"];
+                [theScanner scanUpToCharactersFromSet:charset intoString:nil];
+                [theScanner scanCharactersFromSet:charset intoString:nil];
+                [theScanner scanUpToCharactersFromSet:charset intoString:&url];
+                // "url" now contains the URL of the img
+            }
+            
+            NSLog(@"My alleged wichitan images: %@\n",url);
+            news.image = url;
+        }
         
     }
     else
