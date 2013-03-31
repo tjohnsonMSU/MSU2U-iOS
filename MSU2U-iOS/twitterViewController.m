@@ -38,7 +38,7 @@
     [self.searchDisplayControl setActive:NO];
 }
 
-- (IBAction)tweet:(UIBarButtonItem *)sender {
+- (IBAction)tweet:(UIButton *)sender {
     NSLog(@"Tweet tweet said the bird!\n");
     
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
@@ -50,8 +50,8 @@
     else
     {
         UIAlertView *alertView = [[UIAlertView alloc]
-                                  initWithTitle:@"Oops!"
-                                  message:@"Please setup a Twitter Account for your device (Settings > Twitter) and ensure you have an internet connection and try again! :)"
+                                  initWithTitle:@"Oops! Could not compose tweet"
+                                  message:@"Please check that you have internet access and that you have a Twitter account setup in your device's Settings > Twitter menu and try again."
                                   delegate:self
                                   cancelButtonTitle:@"OK"
                                   otherButtonTitles:nil];
