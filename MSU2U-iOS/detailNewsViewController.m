@@ -43,12 +43,12 @@
 {
     receivedNews.image = [receivedNews.image stringByReplacingOccurrencesOfString:@" " withString:@""];
     
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    //[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     [self.photo setImageWithURL:[NSURL URLWithString:receivedNews.image]
                            placeholderImage:[UIImage imageNamed:@"wichitanLogo.png"]];
     
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    //[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 -(void)sendNewsInformation:(News *)news

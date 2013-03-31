@@ -34,14 +34,14 @@
     receivedTweet.profile_image_url = [receivedTweet.profile_image_url stringByReplacingOccurrencesOfString:@" " withString:@""];
     receivedTweet.profile_background_image_url = [receivedTweet.profile_background_image_url stringByReplacingOccurrencesOfString:@" " withString:@""];
     
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    //[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     [self.profile_image_url setImageWithURL:[NSURL URLWithString:receivedTweet.profile_image_url]
                   placeholderImage:[UIImage imageNamed:@"twitterBG.png"]];
     [self.profile_background_image_url setImageWithURL:[NSURL URLWithString:receivedTweet.profile_background_image_url]
                   placeholderImage:[UIImage imageNamed:@"twitterBG.png"]];
     
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    //[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 - (IBAction)retweet:(UIButton *)sender {

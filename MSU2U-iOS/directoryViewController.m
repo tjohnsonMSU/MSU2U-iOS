@@ -30,7 +30,6 @@
     self.keysToSearchOn = [[NSMutableArray alloc]initWithObjects:@"lname",@"fname",@"middle",@"phone1",@"phone2",@"email",@"website1",@"website2",@"position_title_1",@"position_title_2",@"dept_id_1",@"dept_id_2",nil];
     
     self.childNumber = [NSNumber numberWithInt:4];
-    
 
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc]
                                             init];
@@ -40,6 +39,26 @@
         // custom refresh logic would be placed here...
     [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
+}
+
+- (IBAction)segmentedControlIndexChanged
+{
+    switch(self.segmentedControl.selectedSegmentIndex)
+    {
+        case 0:
+        {
+            //ALL
+            self.showDirectoryFavoritesOnly = NO;
+            break;
+        }
+        case 1:
+        {
+            //Favorites Only
+            self.showDirectoryFavoritesOnly = YES;
+            break;
+        }
+    }
+    [self setupFetchedResultsController];
 }
 
 -(void)viewWillDisappear:(BOOL)animated

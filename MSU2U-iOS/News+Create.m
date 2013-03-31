@@ -58,8 +58,14 @@
         //extract the image information from news.long_description
         news.image = @"http://www.ryan-hayes.com/wp-content/uploads/2010/05/digicam-test1.png";
         
-        //figure out what publication source this news article is from
-        news.publication = @"The Wichitan";
+        //figure out what publication source this news article is from. This is tricky and not 100% fool proof. Currently using a hokey means of deciding whether
+        //  the publication is from MSU Mustangs or Wichitan based upon the listed category for the article
+        if([news.doc_creator isEqualToString:@"msumustangs.com"])
+        {
+            news.publication = @"MSU Mustangs";
+        }
+        else
+            news.publication = @"The Wichitan";
         
     }
     else

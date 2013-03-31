@@ -19,6 +19,6 @@
 @interface twitterViewController : genericTableViewController <UISearchDisplayDelegate, UISearchBarDelegate>
 @property (retain, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (retain, nonatomic) IBOutlet UISearchDisplayController *searchDisplayControl;
-- (IBAction)tweet:(UIButton *)sender;
+- (IBAction)tweet:(UIBarButtonItem *)sender;
 
 @end

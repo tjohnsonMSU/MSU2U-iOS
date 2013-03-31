@@ -19,7 +19,6 @@
 #import "MYDocumentHandler.h"
 #import "MBProgressHUD.h"
 
-#import "Sport+Create.h"
 #import "News+Create.h"
 #import "Event+Create.h"
 #import "Employee+Create.h"
@@ -36,7 +35,10 @@
 @property (retain, nonatomic) NSMutableArray * dataArray;
 @property (nonatomic, strong) UIManagedDocument * myDatabase;
 
+//JSON URLs
 @property (nonatomic, retain) NSString * jsonURL;
+@property (nonatomic, retain) NSString * jsonSportsNewsURL;
+
 @property (nonatomic, retain) NSArray * twitterProfilesAndHashtags;
 
 @property (nonatomic, retain) NSString * entityName;
@@ -51,4 +53,9 @@
 
 @property (nonatomic, retain) id dataObject;
 
+//Segmented Control
+@property (nonatomic) BOOL * showDirectoryFavoritesOnly;
+@property (nonatomic) int showEventsForIndex;
+@property (nonatomic) int showNewsForIndex;
+-(void)setupFetchedResultsController;
 @end

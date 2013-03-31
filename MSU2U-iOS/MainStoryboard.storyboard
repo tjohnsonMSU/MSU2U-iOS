@@ -394,12 +394,16 @@
                                 <segment title="All"/>
                                 <segment title="Favorites"/>
                             </segments>
+                            <connections>
+                                <action selector="segmentedControlIndexChanged" destination="Kec-sy-i5v" eventType="valueChanged" id="IZr-eo-cd7"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="ShX-sO-Uqg" id="ReN-ui-94l"/>
                         <outlet property="searchDisplayControl" destination="fV4-JW-47U" id="2nd-vW-xpr"/>
                         <outlet property="searchDisplayController" destination="fV4-JW-47U" id="Ab3-hK-SYg"/>
+                        <outlet property="segmentedControl" destination="ZLF-R6-qlK" id="QTO-Qm-7Tw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ign-bf-Ctb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -429,7 +433,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRl-j9-bNP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14928" y="-2284"/>
+            <point key="canvasLocation" x="-14452" y="-2072"/>
         </scene>
         <!--News View Controller-->
         <scene sceneID="QAN-6o-FBA">
@@ -494,12 +498,16 @@
                                 <segment title="Sports"/>
                                 <segment title="Campus"/>
                             </segments>
+                            <connections>
+                                <action selector="segmentedControlIndexChanged" destination="CQc-ql-YAE" eventType="valueChanged" id="Mn9-SC-G1o"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="XfL-ng-m5n" id="8vE-c4-kfJ"/>
                         <outlet property="searchDisplayControl" destination="0DM-mP-U6n" id="u3g-dr-CWC"/>
                         <outlet property="searchDisplayController" destination="0DM-mP-U6n" id="J9V-DH-p32"/>
+                        <outlet property="segmentedControl" destination="YM9-nJ-joP" id="1kF-Z3-wbk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xpr-QO-ID7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -513,13 +521,13 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-14240" y="-2017"/>
+            <point key="canvasLocation" x="-14000" y="-1937"/>
         </scene>
-        <!--Navigation Controller - Events-->
+        <!--Navigation Controller - Sports-->
         <scene sceneID="oDR-ti-3mc">
             <objects>
                 <navigationController definesPresentationContext="YES" id="LGb-J0-zI2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Events" image="101-gameplan.png" id="rLZ-ky-aLv"/>
+                    <tabBarItem key="tabBarItem" title="Sports" image="101-gameplan.png" id="rLZ-ky-aLv"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CVL-a8-1VZ">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -594,12 +602,16 @@
                                 <segment title="Home"/>
                                 <segment title="Away"/>
                             </segments>
+                            <connections>
+                                <action selector="segmentedControlIndexChanged" destination="OtI-Ww-pzS" eventType="valueChanged" id="ocI-IP-PW6"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="gFN-cw-2FK" id="954-Nz-7lJ"/>
                         <outlet property="searchDisplayControl" destination="0q9-Iu-Yva" id="cf9-Yg-O1R"/>
                         <outlet property="searchDisplayController" destination="0q9-Iu-Yva" id="Vbe-ib-ZYm"/>
+                        <outlet property="segmentedControl" destination="8NW-O7-X1x" id="dg6-Gq-iFW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xVs-fy-uCH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1166,7 +1178,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x1Y-pe-Xea" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14786" y="1169"/>
+            <point key="canvasLocation" x="-14786" y="1065"/>
         </scene>
         <!--Navigation Controller - Twitter-->
         <scene sceneID="SMZ-u8-hgK">
@@ -1182,7 +1194,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qak-nb-5Ov" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14856" y="-384"/>
+            <point key="canvasLocation" x="-15196" y="-560"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="m6D-V5-WDb">
@@ -1279,6 +1291,61 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Provide Feedback" id="noQ-y9-MUO">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="7ph-pr-hXV" style="IBUITableViewCellStyleDefault" id="gSB-cx-har">
+                                        <rect key="frame" x="0.0" y="282" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Take a Survey" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7ph-pr-hXV">
+                                                    <rect key="frame" x="10" y="0.0" width="260" height="43"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="iSQ-KN-0pK" style="IBUITableViewCellStyleDefault" id="iy2-xu-bz9">
+                                        <rect key="frame" x="0.0" y="327" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Report a Bug" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iSQ-KN-0pK">
+                                                    <rect key="frame" x="10" y="0.0" width="260" height="43"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="NRk-Rv-G4l" style="IBUITableViewCellStyleDefault" id="d70-DV-x03">
+                                        <rect key="frame" x="0.0" y="371" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Contact Development Team" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NRk-Rv-G4l">
+                                                    <rect key="frame" x="10" y="0.0" width="260" height="43"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="NkA-uN-VnS" id="nkv-Ke-vVB"/>
@@ -1289,7 +1356,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dac-O0-zWS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15356" y="681"/>
+            <point key="canvasLocation" x="-15746" y="693"/>
         </scene>
         <!--Navigation Controller - About-->
         <scene sceneID="2pp-lZ-YDB">
@@ -1365,22 +1432,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="wJb-aF-gRg">
-                        <nil key="title"/>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="H0U-Dy-eWj">
-                            <rect key="frame" x="112" y="6" width="95" height="32"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" title="tweet" image="209-twitter.png">
-                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="highlighted">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="tweet:" destination="GJB-9a-jfJ" eventType="touchUpInside" id="DjK-2o-hO1"/>
-                            </connections>
-                        </button>
+                        <barButtonItem key="rightBarButtonItem" title="Tweet" id="psU-8o-nmi"/>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="1kN-8T-ALu" id="omT-zC-xAj"/>
@@ -1451,10 +1503,10 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8n-MM-mw6">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="215" id="KDu-Ts-jy0"/>
+                                    <constraint firstAttribute="height" constant="220" id="9qz-d6-p7d"/>
                                 </constraints>
                                 <string key="text">Blaise Pascal didn't tweet and neither did Mark Twain. When it came to writing something short &amp; sweet neither Blaise nor Mark had the time.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                             </textView>
@@ -1508,7 +1560,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yhr-WE-JsG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-13227" y="418"/>
+            <point key="canvasLocation" x="-13423" y="330"/>
         </scene>
         <!--Detail News View Controller - The Wichitan-->
         <scene sceneID="ctQ-C3-5zp">
@@ -1655,7 +1707,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QDB-vs-0dZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-13566" y="-1787"/>
+            <point key="canvasLocation" x="-13500" y="-1561"/>
         </scene>
         <!--Campus Map Info View Controller - Map-->
         <scene sceneID="EDK-nm-e2t">
@@ -1959,7 +2011,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="sTv-U5-K3B" kind="relationship" relationship="viewControllers" id="AAE-N8-aVW"/>
+                        <segue destination="sTv-U5-K3B" kind="relationship" relationship="viewControllers" id="glQ-PQ-FUu"/>
                         <segue destination="wC3-iN-wRZ" kind="relationship" relationship="viewControllers" id="df5-hK-L4w"/>
                         <segue destination="LGb-J0-zI2" kind="relationship" relationship="viewControllers" id="soF-Rq-UhF"/>
                         <segue destination="OP2-jJ-Xxs" kind="relationship" relationship="viewControllers" id="uoK-vG-KIc"/>
@@ -2074,7 +2126,6 @@
         <class className="detailTwitterViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/detailTwitterViewController.h"/>
             <relationships>
-                <relationship kind="action" name="retweet:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="created_at" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="name" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="profile_background_image_url" candidateClass="UIImageView"/>
@@ -2088,6 +2139,7 @@
             <relationships>
                 <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
                 <relationship kind="outlet" name="searchDisplayControl" candidateClass="UISearchDisplayController"/>
+                <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>
             </relationships>
         </class>
         <class className="eventViewController" superclassName="genericTableViewController">
@@ -2095,6 +2147,7 @@
             <relationships>
                 <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
                 <relationship kind="outlet" name="searchDisplayControl" candidateClass="UISearchDisplayController"/>
+                <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>
             </relationships>
         </class>
         <class className="genericTableViewController" superclassName="CoreDataTableViewController">
@@ -2105,12 +2158,13 @@
             <relationships>
                 <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
                 <relationship kind="outlet" name="searchDisplayControl" candidateClass="UISearchDisplayController"/>
+                <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>
             </relationships>
         </class>
         <class className="twitterViewController" superclassName="genericTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/twitterViewController.h"/>
             <relationships>
-                <relationship kind="action" name="tweet:" candidateClass="UIButton"/>
+                <relationship kind="action" name="tweet:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
                 <relationship kind="outlet" name="searchDisplayControl" candidateClass="UISearchDisplayController"/>
             </relationships>
@@ -2122,6 +2176,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="hwd-AE-P6N"/>
+        <segue reference="a16-mU-OAc"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -36,6 +36,16 @@
         event.opponentlogo = [info objectForKey:@"opponentlogo"];
         event.location = [info objectForKey:@"location"];
         
+        //Figure out if this is a home game or not
+        if([event.location isEqualToString:@"Wichita Falls, TX"] || [event.location isEqualToString:@"Wichita Falls, Texas"] || [event.location isEqualToString:@"Wichita Falls"])
+        {
+            event.isHomeGame = @"yes";
+        }
+        else
+        {
+            event.isHomeGame = @"no";
+        }
+        
         //Setup the dates
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         //NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];

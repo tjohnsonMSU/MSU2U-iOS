@@ -30,6 +30,12 @@
     self.childNumber = [NSNumber numberWithInt:2];
 }
 
+- (IBAction)segmentedControlIndexChanged
+{
+    self.showEventsForIndex = self.segmentedControl.selectedSegmentIndex;
+    [self setupFetchedResultsController];
+}
+
 -(void)viewWillDisappear:(BOOL)animated
 {
     [self.searchDisplayControl setActive:NO];

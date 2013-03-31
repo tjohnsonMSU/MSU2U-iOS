@@ -34,6 +34,7 @@
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="enddate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="gameid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isHomeGame" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="opponentlogo" optional="YES" attributeType="String" syncable="YES"/>
@@ -80,7 +81,7 @@
     </entity>
     <elements>
         <element name="Employee" positionX="-7445" positionY="-2439" width="128" height="450"/>
-        <element name="Event" positionX="-7598" positionY="-2440" width="128" height="193"/>
+        <element name="Event" positionX="-7598" positionY="-2467" width="128" height="208"/>
         <element name="News" positionX="-7598" positionY="-2241" width="128" height="208"/>
         <element name="Sport" positionX="-7749" positionY="-2439" width="128" height="238"/>
         <element name="Tweet" positionX="-7749" positionY="-2175" width="128" height="150"/>

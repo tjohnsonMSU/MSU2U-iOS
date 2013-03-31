@@ -26,6 +26,7 @@
     NSArray *results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
     if (error)
     {
+        NSLog(@"Error with json: %@",error);
         //do nothing
     }
     
@@ -91,6 +92,26 @@
                     }
                 }
             }
+            //News
+            else if(self.childNumber == [NSNumber numberWithInt:3])
+            {
+                hud.labelText = @"Downloading...";
+                NSArray * myWichitanData = [self downloadCurrentData:self.jsonURL];
+                NSArray * mySportsNewsData = [self downloadCurrentData:self.jsonSportsNewsURL];
+                hud.labelText = @"Loading...";
+                NSLog(@"mySportsNewsData = %@\n",mySportsNewsData);
+                [document.managedObjectContext performBlock:^{
+                    for(NSDictionary * dataInfo in myWichitanData)
+                    {
+                        [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+                    }
+                    for(NSDictionary * dataInfo in mySportsNewsData)
+                    {
+                        [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+                    }
+                }];
+            }
+            //EVENTS and DIRECTORY
             else
             {
                 //Everything but Twitter feeds are processed the same way so that's why they are all in this block. The Database Crew creates these feeds for us so they all match in their formatting, unlike Twitter created feeds which need to be handled a bit differently
@@ -105,8 +126,6 @@
                         //DEPENDS ON THE CHILD THAT I'M WORKING WITH
                         if(self.childNumber == [NSNumber numberWithInt:2])
                             [Event eventWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
-                        else if(self.childNumber == [NSNumber numberWithInt:3])
-                            [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
                         else if(self.childNumber == [NSNumber numberWithInt:4])
                             [Employee employeeWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
                     }
@@ -126,20 +145,82 @@
 {
     NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:self.entityName];
     
-    //This is where I can limit what I show in the tables
-    if(self.childNumber == [NSNumber numberWithInt:5])
-    {
-        //DIRECTORY FAVORITES = 5
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:
-                                  @"favorite LIKE[c] 'yes'"];
-        [request setPredicate:predicate];
-    }
+    //### What should I show in my table?
+    //News
     if(self.childNumber == [NSNumber numberWithInt:2])
     {
-        NSPredicate * predicate =[NSPredicate predicateWithFormat:@"startdate >= %@",[NSDate date]];
+        NSPredicate * predicate;
+        switch(self.showEventsForIndex)
+        {
+            case 0:
+            {
+                //ALL
+                predicate =[NSPredicate predicateWithFormat:@"startdate >= %@",[NSDate date]];
+                break;
+            }
+            case 1:
+            {
+                //HOME GAMES ONLY
+                predicate = [NSPredicate predicateWithFormat:@"startdate >= %@ AND isHomeGame LIKE[c] 'yes'",[NSDate date]];
+                break;
+            }
+            case 2:
+            {
+                //AWAY GAMES ONLY
+                predicate =[NSPredicate predicateWithFormat:@"startdate >= %@ AND isHomeGame LIKE[c] 'no'",[NSDate date]];
+                break;
+            }
+        }
         [request setPredicate:predicate];
     }
+    //Directory
+    else if(self.childNumber == [NSNumber numberWithInt:4])
+    {
+        NSPredicate * predicate;
+        if(self.showDirectoryFavoritesOnly)
+        {
+            predicate = [NSPredicate predicateWithFormat:@"favorite LIKE[c] 'yes'"];
+            [request setPredicate:predicate];
+        }
+        //else set not predicate for your request
+    }
+    else if(self.childNumber == [NSNumber numberWithInt:3])
+    {
+        switch(self.showNewsForIndex)
+        {
+            case 0:
+            {
+                break;
+                //do nothing because I want to show ALL of the news
+            }
+            case 1:
+            {
+                //show ONLY 'The Wichitan' news
+                NSPredicate * predicate;
+                predicate = [NSPredicate predicateWithFormat:@"publication LIKE[c] 'The Wichitan'"];
+                [request setPredicate:predicate];
+                break;
+            }
+            case 2:
+            {
+                //show ONLY 'MSU Mustangs' sports related news
+                NSPredicate * predicate;
+                predicate = [NSPredicate predicateWithFormat:@"publication LIKE[c] 'MSU Mustangs'"];
+                [request setPredicate:predicate];
+                break;
+            }
+            case 3:
+            {
+                //show ONLY 'Campus' related news
+                NSPredicate * predicate;
+                predicate = [NSPredicate predicateWithFormat:@"publication LIKE[c] 'Campus'"];
+                [request setPredicate:predicate];
+                break;
+            }
+        }
+    }
     
+    //2. How should I sort the data in my table?
     //IF TWITTER
     if(self.childNumber != [NSNumber numberWithInt:7] && self.childNumber != [NSNumber numberWithInt:2])
         request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:self.sortDescriptorKey ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
@@ -150,8 +231,29 @@
 
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:self.myDatabase.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     
+    //3. What should I do if there's NOTHING to show in my table?
     if([[[self.fetchedResultsController sections] objectAtIndex:0] numberOfObjects] == 0)
-        [self refresh];
+    {
+        if(self.childNumber == [NSNumber numberWithInt:4])
+        {
+            if(!self.showDirectoryFavoritesOnly)
+                [self refresh];
+        }
+        else if(self.childNumber == [NSNumber numberWithInt:2])
+        {
+            if(self.showEventsForIndex == 0)
+                [self refresh];
+        }
+        else if(self.childNumber == [NSNumber numberWithInt:3])
+        {
+            if(self.showNewsForIndex == 0)
+                [self refresh];
+        }
+        else
+        {
+            [self refresh];
+        }
+    }
 }
 
 -(void)useDocument
@@ -247,78 +349,6 @@
     {
         [self setupFetchedResultsController];
     }
-    
-}
-
--(void)makeSureUserWantsToClearTable
-{
-    
-    NSString * viewIamAt;
-    
-    //If the user is clearing the favorites table...
-    if(self.childNumber == [NSNumber numberWithInt:5]){viewIamAt = @"favorites";}
-    //If the user is clearing the history table...
-    else if(self.childNumber == [NSNumber numberWithInt:6]){viewIamAt = @"history";}
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Clear the table" message:@"Do you want to remove all employees in your %@?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
-    // optional - add more buttons:
-    [alert addButtonWithTitle:@"Yes"];
-    [alert show];
-}
-
--(void) clearMyTable
-{
-    
-    //If I hit the clear button, I need to fetch this employee from Core Data so I can manipulate their 'Favorite' attribute
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    
-    //I only want the employee that has this current employee's name which I'm showing on the detail view
-    //DIRECTORY FAVORITES AND DIRECTORY HISTORY SHOULD HAVE A FILTER THAT RESTRICTS THE DATA IN MY TABLE
-    if(self.childNumber == [NSNumber numberWithInt:5])
-    {
-        //DIRECTORY FAVORITES = 5
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:
-                                  @"favorite LIKE[c] 'yes'"];
-        [request setPredicate:predicate];
-    }
-    else if(self.childNumber == [NSNumber numberWithInt:6])
-    {
-        //DIRECTORY HISTORY = 6
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:
-                                  @"history != nil"];
-        [request setPredicate:predicate];
-    }
-    
-    //Alright, let's put the request into action on the "Employee" entity
-    [request setEntity:[NSEntityDescription entityForName:self.entityName inManagedObjectContext:self.myDatabase.managedObjectContext]];
-    
-    NSError *error = nil;
-    NSArray *results = [self.myDatabase.managedObjectContext executeFetchRequest:request error:&error];
-    
-    //Get all of the data that satisfies my request
-    if(self.childNumber == [NSNumber numberWithInt:5])
-    {
-        for(Employee * currentEmployee in results)
-        {
-            if([currentEmployee.favorite isEqualToString:@"yes"])
-            {
-                currentEmployee.favorite = @"no";
-            }
-        }
-    }
-    else if(self.childNumber == [NSNumber numberWithInt:6])
-    {
-        for(Employee * currentEmployee in results)
-        {
-            if(currentEmployee.history)
-            {
-                currentEmployee.history = nil;
-            }
-        }
-    }
-    //Save!!!
-    //[self.directoryDatabase updateChangeCount:UIDocumentChangeDone];
-    
 }
 
 -(void) refresh
@@ -427,7 +457,7 @@
             {
                 cell.imageView.image = [UIImage imageNamed:@"140-gradhat.png"];
             }
-            else if([[self.dataObject publication] isEqualToString:@"Sports News"])
+            else if([[self.dataObject publication] isEqualToString:@"MSU Mustangs"])
             {
                 cell.imageView.image = [UIImage imageNamed:@"101-gameplan.png"];
             }

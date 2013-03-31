@@ -38,7 +38,7 @@
     [self.searchDisplayControl setActive:NO];
 }
 
-- (IBAction)tweet:(UIButton *)sender {
+- (IBAction)tweet:(UIBarButtonItem *)sender {
     NSLog(@"Tweet tweet said the bird!\n");
     
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])

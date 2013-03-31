@@ -37,7 +37,7 @@
     self.startingDateLabel.text = [NSDateFormatter localizedStringFromDate:receivedEvent.startdate dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];
     
     //Setup the images
-    if([receivedEvent.location isEqualToString:@"Wichita Falls, TX"])
+    if([receivedEvent.isHomeGame isEqualToString:@"yes"])
     {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
                                                  (unsigned long)NULL), ^(void) {
@@ -68,14 +68,14 @@
     homeTeam = [homeTeam stringByReplacingOccurrencesOfString:@" " withString:@""];
     awayTeam = [awayTeam stringByReplacingOccurrencesOfString:@" " withString:@""];
     
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    //[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     [self.homePhoto setImageWithURL:[NSURL URLWithString:homeTeam]
                   placeholderImage:[UIImage imageNamed:@"Default.png"]];
     [self.awayPhoto setImageWithURL:[NSURL URLWithString:awayTeam]
                   placeholderImage:[UIImage imageNamed:@"Default.png"]];
     
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    //[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 - (IBAction)addToCalendar:(UIButton *)sender {

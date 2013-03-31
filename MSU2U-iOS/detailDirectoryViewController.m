@@ -136,12 +136,12 @@
 {
     NSString * pictureURL = [myCurrentEmployee.picture stringByReplacingOccurrencesOfString:@" " withString:@""];
     
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    //[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     [self.photo setImageWithURL:[NSURL URLWithString:pictureURL]
                    placeholderImage:[UIImage imageNamed:@"Unknown.jpg"]];
     
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    //[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 -(void)makePhoneCall:(NSString*)phoneNumber

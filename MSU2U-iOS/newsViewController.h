@@ -19,5 +19,6 @@
 
 @property (retain, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (retain, nonatomic) IBOutlet UISearchDisplayController *searchDisplayControl;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
 @end
