@@ -449,18 +449,21 @@
         //THIS IS A NEWS CELL, SO LET'S FIGURE OUT WHICH IMAGE TO SHOW IN THE CELL ROW
         if(self.childNumber == [NSNumber numberWithInt:3])
         {
+            NSString * defaultImage;
             if([[self.dataObject publication] isEqualToString:@"The Wichitan"])
             {
-                cell.imageView.image = [UIImage imageNamed:@"theWichitan.jpg"];
+                defaultImage = @"theWichitan.jpg";
             }
             else if([[self.dataObject publication] isEqualToString:@"Campus News"])
             {
-                cell.imageView.image = [UIImage imageNamed:@"140-gradhat.png"];
+                defaultImage = @"140-gradhat.png";
             }
             else if([[self.dataObject publication] isEqualToString:@"MSU Mustangs"])
             {
-                cell.imageView.image = [UIImage imageNamed:@"101-gameplan.png"];
+                defaultImage = @"101-gameplan.png";
             }
+            
+            [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject image]] placeholderImage:[UIImage imageNamed:defaultImage]];
             CGSize size = {50,50};
             cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
         }

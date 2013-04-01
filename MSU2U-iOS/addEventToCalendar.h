@@ -13,8 +13,8 @@
     EKEventStore * eventStore;
 }
 @property (weak,nonatomic) NSString * calendarEventTitle;
-@property (weak,nonatomic) NSString * calendarEventStartDate;
-@property (weak,nonatomic) NSString * calendarEventStartTime;
+@property (retain,nonatomic) NSDate * calendarEventStartDate;
+@property (retain,nonatomic) NSDate * calendarEventEndDate;
 
 -(void) addEventToMainCalendar;
 

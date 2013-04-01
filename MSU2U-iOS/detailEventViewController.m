@@ -79,6 +79,12 @@
 }
 
 - (IBAction)addToCalendar:(UIButton *)sender {
+    //Setup the variables for this event in the addEventToMainCalendar class
+    NSLog(@"Well, the date on my end before sending to addEventToMainCalendar is %@\n",receivedEvent.startdate);
+    self.calendarEventTitle = receivedEvent.title;
+    self.calendarEventStartDate = receivedEvent.startdate;
+    self.calendarEventEndDate = receivedEvent.enddate;
+    [self addEventToMainCalendar];
 }
 
 - (IBAction)showInMap:(UIButton *)sender {

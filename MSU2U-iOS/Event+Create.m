@@ -50,7 +50,7 @@
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         //NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
         //[dateFormatter setLocale:usLocale];
-        NSTimeZone * cst = [NSTimeZone timeZoneWithAbbreviation:@"CST"];
+        NSTimeZone * cst = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
         [dateFormatter setDateStyle:NSDateFormatterLongStyle];
         [dateFormatter setTimeZone:cst];
         [dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
