@@ -13,24 +13,21 @@
 
 @implementation detailNewsViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.title = receivedNews.publication;
     //Set all of the text labels
     self.titleLabel.text = receivedNews.title;
     self.authorLabel.text = receivedNews.doc_creator;
     self.description.text = receivedNews.long_description;
     self.categoryLabel.text = receivedNews.category_1;
     self.dateLabel.text = [NSDateFormatter localizedStringFromDate:receivedNews.last_changed dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];
+    
+    //Get the content to fit inside my description label
+    self.description.numberOfLines = 0;
+    [self.description sizeToFit];
     
     //Download the image in a background thread
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
@@ -70,5 +67,8 @@
     
     // Display the action sheet
     [actionSheet showInView:self.view];
+}
+
+- (IBAction)viewArticleOnline:(UIButton *)sender {
 }
 @end

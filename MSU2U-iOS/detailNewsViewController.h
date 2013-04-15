@@ -12,7 +12,7 @@
 //ShareKit
 #import "SHK.h"
 
-@interface detailNewsViewController : UITableViewController{
+@interface detailNewsViewController : UIViewController{
     News * receivedNews;
 }
 
@@ -22,7 +22,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
-@property (weak, nonatomic) IBOutlet UITextView *description;
 @property (weak, nonatomic) IBOutlet UIImageView *photo;
+@property (weak, nonatomic) IBOutlet UILabel *description;
 - (IBAction)sharePressed:(UIBarButtonItem *)sender;
+- (IBAction)viewArticleOnline:(UIButton *)sender;
 @end

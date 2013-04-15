@@ -36,6 +36,7 @@
         news.short_description = [info objectForKey:@"Short_Description"];
         news.doc_creator = [info objectForKey:@"Doc_Creator"];
         news.long_description = [info objectForKey:@"Long_Description"];
+        news.image = [info objectForKey:@"image"];
         
         //Handle the dates
         //Convert the created_at string to an NSDate to be stored in tweet.created_at
@@ -60,7 +61,6 @@
         if([news.doc_creator isEqualToString:@"msumustangs.com"])
         {
             news.publication = @"MSU Mustangs";
-            news.image = [info objectForKey:@"image"];
         }
         else
         {
@@ -70,19 +70,8 @@
             NSString *url = nil;
             NSString *htmlString = news.long_description;
             NSScanner *theScanner = [NSScanner scannerWithString:htmlString];
-            // find start of IMG tag
-            /*[theScanner scanUpToString:@"<img" intoString:nil];
-            if (![theScanner isAtEnd]) {
-                [theScanner scanUpToString:@"src" intoString:nil];
-                NSCharacterSet *charset = [NSCharacterSet characterSetWithCharactersInString:@"\"'"];
-                [theScanner scanUpToCharactersFromSet:charset intoString:nil];
-                [theScanner scanCharactersFromSet:charset intoString:nil];
-                [theScanner scanUpToCharactersFromSet:charset intoString:&url];
-                // "url" now contains the URL of the img
-            }*/
             
             NSLog(@"My alleged wichitan images: %@\n",[info objectForKey:@"image"]);
-            news.image = [info objectForKey:@"image"];
         }
         
     }
