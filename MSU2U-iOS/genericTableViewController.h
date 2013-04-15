@@ -57,5 +57,6 @@
 @property (nonatomic) BOOL * showDirectoryFavoritesOnly;
 @property (nonatomic) int showEventsForIndex;
 @property (nonatomic) int showNewsForIndex;
+@property (nonatomic) int showTweetsForIndex;
 -(void)setupFetchedResultsController;
 @end

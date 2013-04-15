@@ -58,4 +58,11 @@
         [alertView show];
     }
 }
+
+-(IBAction) segmentedControlIndexChanged
+{
+    self.showTweetsForIndex = self.segmentedControl.selectedSegmentIndex;
+    [self setupFetchedResultsController];
+}
+
 @end

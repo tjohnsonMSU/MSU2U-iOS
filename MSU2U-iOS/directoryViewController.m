@@ -16,6 +16,11 @@
 @synthesize searchBar = _searchBar;
 @synthesize searchDisplayControl = _searchDisplayControl;
 
+- (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed
+{
+    NSLog(@"Hello from the tabBarController Directory delegate thingy! roflmao");
+}
+
 -(void)viewDidLoad
 {
     //self.jsonURL = @"http://www.matthewfarmer.net/directory.json";

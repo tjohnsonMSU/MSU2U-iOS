@@ -184,6 +184,40 @@
         }
         //else set not predicate for your request
     }
+    //Twitter
+    else if(self.childNumber == [NSNumber numberWithInt:7])
+    {
+        NSPredicate * predicate;
+        
+        switch(self.showTweetsForIndex)
+        {
+            case 0:
+            {
+                //do nothing because I want to show all Tweets
+                break;
+            }
+            case 1:
+            {
+                NSCalendar *cal = [NSCalendar currentCalendar];
+                NSDateComponents *components = [cal components:( NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit ) fromDate:[[NSDate alloc] init]];
+                
+                [components setHour:-[components hour]];
+                [components setMinute:-[components minute]];
+                [components setSecond:-[components second]];
+                NSDate *today = [cal dateByAddingComponents:components toDate:[[NSDate alloc] init] options:0]; //This variable should now be pointing at a date object that is the start of today (midnight);
+                
+                [components setHour:-24];
+                [components setMinute:0];
+                [components setSecond:0];
+                NSDate *yesterday = [cal dateByAddingComponents:components toDate: today options:0];
+                
+                predicate = [NSPredicate predicateWithFormat:@"created_at >= %@",yesterday];
+                [request setPredicate:predicate];
+                break;
+            }
+        }
+    }
+    //NEWS
     else if(self.childNumber == [NSNumber numberWithInt:3])
     {
         switch(self.showNewsForIndex)
@@ -247,6 +281,11 @@
         else if(self.childNumber == [NSNumber numberWithInt:3])
         {
             if(self.showNewsForIndex == 0)
+                [self refresh];
+        }
+        else if(self.childNumber == [NSNumber numberWithInt:7])
+        {
+            if(self.showTweetsForIndex == 0)
                 [self refresh];
         }
         else

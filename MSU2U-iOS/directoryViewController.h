@@ -15,7 +15,7 @@
 //Paul Hegarty
 #import "Employee+Create.h"
 
-@interface directoryViewController : genericTableViewController <UISearchDisplayDelegate, UISearchBarDelegate>
+@interface directoryViewController : genericTableViewController <UISearchDisplayDelegate, UISearchBarDelegate,UITabBarControllerDelegate>
 
 @property (retain, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (retain, nonatomic) IBOutlet UISearchDisplayController *searchDisplayControl;
