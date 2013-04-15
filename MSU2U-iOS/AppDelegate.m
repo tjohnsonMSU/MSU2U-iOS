@@ -31,6 +31,9 @@
     //Make the back buttons on the navigation bar red as well.
     [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:(55.0/255.0) green:(7.0/255.0) blue:(16.0/255.0) alpha:1]];
     
+    //Make Toolbars Red
+    [[UIToolbar appearance] setTintColor:[UIColor colorWithRed:(55.0/255.0) green:(7.0/255.0) blue:(16.0/255.0) alpha:1]];
+    
     //Set the search bars to be a gold color
     [[UISearchBar appearance] setTintColor:[UIColor colorWithRed:(185.0/255.0) green:(142.0/255.0) blue:(47.0/255.0) alpha:1]];
     

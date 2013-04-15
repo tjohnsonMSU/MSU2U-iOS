@@ -255,10 +255,10 @@
     }
     
     //2. How should I sort the data in my table?
-    //IF TWITTER
-    if(self.childNumber != [NSNumber numberWithInt:7] && self.childNumber != [NSNumber numberWithInt:2])
+    //IF NOT TWITTER AND NOT EVENTS AND NOT NEWS
+    if(self.childNumber != [NSNumber numberWithInt:7] && self.childNumber != [NSNumber numberWithInt:2] && self.childNumber != [NSNumber numberWithInt:3])
         request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:self.sortDescriptorKey ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
-    else if(self.childNumber == [NSNumber numberWithInt:7])
+    else if(self.childNumber == [NSNumber numberWithInt:7] || self.childNumber == [NSNumber numberWithInt:3])
         request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:self.sortDescriptorKey ascending:NO]];
     else
         request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:self.sortDescriptorKey ascending:YES]];

@@ -65,6 +65,9 @@
 		1D24237016E3FEBD003E731D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D24236F16E3FEBD003E731D /* MBProgressHUD.m */; };
 		1D2656F71639E5D500FBF6E1 /* directoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2656F61639E5D500FBF6E1 /* directoryViewController.m */; };
 		1D2B5DA816BA40D200F1F3DB /* buildings.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D2B5DA716BA40D200F1F3DB /* buildings.json */; };
+		1D2E4D73171C4A1D008CBD75 /* temp-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E4D72171C4A1D008CBD75 /* temp-bg.png */; };
+		1D2E4D77171C4B38008CBD75 /* bg-real.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E4D76171C4B38008CBD75 /* bg-real.png */; };
+		1D2E4D79171C4BCD008CBD75 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E4D78171C4BCD008CBD75 /* Default-568h@2x.png */; };
 		1D339A991679341D00D84A20 /* academic.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1D339A921679341D00D84A20 /* academic.jpeg */; };
 		1D339A9A1679341D00D84A20 /* museum.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1D339A931679341D00D84A20 /* museum.jpeg */; };
 		1D339A9B1679341D00D84A20 /* music.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1D339A941679341D00D84A20 /* music.jpeg */; };
@@ -72,7 +75,6 @@
 		1D339A9D1679341D00D84A20 /* art.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1D339A961679341D00D84A20 /* art.jpeg */; };
 		1D339A9E1679341D00D84A20 /* campus.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1D339A971679341D00D84A20 /* campus.jpeg */; };
 		1D339A9F1679341D00D84A20 /* personnel.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1D339A981679341D00D84A20 /* personnel.jpeg */; };
-		1D3521BF16E191A800EDFE25 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D3521BE16E191A800EDFE25 /* Default-568h@2x.png */; };
 		1D44AFBC16A5D7F000445FE7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D44AFBB16A5D7F000445FE7 /* QuartzCore.framework */; };
 		1D44B00C16A5D8E000445FE7 /* 1977.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D44B00016A5D8E000445FE7 /* 1977.png */; };
 		1D44B00E16A5D8E000445FE7 /* 1978.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D44B00216A5D8E000445FE7 /* 1978.png */; };
@@ -91,6 +93,8 @@
 		1D4EB6E51654C77B005F9D8D /* Employee+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4EB6E41654C77B005F9D8D /* Employee+Create.m */; };
 		1D4EB6E61654D387005F9D8D /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4EB6E21654B88E005F9D8D /* CoreDataTableViewController.m */; };
 		1D52AED31694B4C200D59D33 /* addEventToCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D52AED21694B4C200D59D33 /* addEventToCalendar.m */; };
+		1D58A960171BD937008CF5CB /* MustangsIcon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D58A95F171BD937008CF5CB /* MustangsIcon1.png */; };
+		1D58A962171BD940008CF5CB /* MustangsIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D58A961171BD940008CF5CB /* MustangsIcon2.png */; };
 		1D58B1A31704C71B007BBBC2 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D58B1A21704C71B007BBBC2 /* News.m */; };
 		1D58B1A51704D2C4007BBBC2 /* wichitanLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D58B1A41704D2C4007BBBC2 /* wichitanLogo.png */; };
 		1D5A5C841707AF7F000792C7 /* 42-info.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D5A5C831707AF7F000792C7 /* 42-info.png */; };
@@ -118,7 +122,6 @@
 		1D98D0EE165202F3002F2DD4 /* detailEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D98D0ED165202F3002F2DD4 /* detailEventViewController.m */; };
 		1D9CA134166C798B00D0D0E0 /* noStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D9CA133166C798B00D0D0E0 /* noStar.png */; };
 		1D9D286E16A8994A00FC5A95 /* mainBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D9D286D16A8994A00FC5A95 /* mainBG.png */; };
-		1D9D287416A89CC200FC5A95 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D9D287316A89CC200FC5A95 /* Default.png */; };
 		1D9D287616A89EC700FC5A95 /* slideSample.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D9D287516A89EC700FC5A95 /* slideSample.png */; };
 		1D9EBAD21706AA850027A4A6 /* menbasketballBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D9EBACE1706AA850027A4A6 /* menbasketballBG.jpg */; };
 		1D9EBAD31706AA850027A4A6 /* womensoccerBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D9EBACF1706AA850027A4A6 /* womensoccerBG.png */; };
@@ -154,7 +157,6 @@
 		1DF0147A1697BBF400435975 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF014791697BBF400435975 /* AddressBook.framework */; };
 		1DF0147F1697C77200435975 /* dirBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DF0147E1697C77200435975 /* dirBg.png */; };
 		1DF014811697C7D400435975 /* photoFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DF014801697C7D400435975 /* photoFrame.png */; };
-		1DF2025116BAF9A8000369C8 /* msu-rounded.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DF2025016BAF9A8000369C8 /* msu-rounded.png */; };
 		1DF2025416BAFE01000369C8 /* campusMapSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF2025316BAFE01000369C8 /* campusMapSettingsViewController.m */; };
 		1DF849AE16B64FB6009F7785 /* MSULocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF849AD16B64FB6009F7785 /* MSULocation.m */; };
 		1DFCFCD416B63CEC00515EFD /* campusMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFCFCD316B63CEC00515EFD /* campusMapViewController.m */; };
@@ -479,6 +481,9 @@
 		1D2656F51639E5D500FBF6E1 /* directoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = directoryViewController.h; sourceTree = "<group>"; };
 		1D2656F61639E5D500FBF6E1 /* directoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = directoryViewController.m; sourceTree = "<group>"; };
 		1D2B5DA716BA40D200F1F3DB /* buildings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = buildings.json; sourceTree = "<group>"; };
+		1D2E4D72171C4A1D008CBD75 /* temp-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "temp-bg.png"; sourceTree = "<group>"; };
+		1D2E4D76171C4B38008CBD75 /* bg-real.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-real.png"; sourceTree = "<group>"; };
+		1D2E4D78171C4BCD008CBD75 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1D339A921679341D00D84A20 /* academic.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = academic.jpeg; sourceTree = "<group>"; };
 		1D339A931679341D00D84A20 /* museum.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = museum.jpeg; sourceTree = "<group>"; };
 		1D339A941679341D00D84A20 /* music.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = music.jpeg; sourceTree = "<group>"; };
@@ -486,7 +491,6 @@
 		1D339A961679341D00D84A20 /* art.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = art.jpeg; sourceTree = "<group>"; };
 		1D339A971679341D00D84A20 /* campus.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = campus.jpeg; sourceTree = "<group>"; };
 		1D339A981679341D00D84A20 /* personnel.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = personnel.jpeg; sourceTree = "<group>"; };
-		1D3521BE16E191A800EDFE25 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1D44AFBB16A5D7F000445FE7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1D44B00016A5D8E000445FE7 /* 1977.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1977.png; sourceTree = "<group>"; };
 		1D44B00216A5D8E000445FE7 /* 1978.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1978.png; sourceTree = "<group>"; };
@@ -509,6 +513,8 @@
 		1D4EB6E41654C77B005F9D8D /* Employee+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Employee+Create.m"; sourceTree = "<group>"; };
 		1D52AED11694B4C200D59D33 /* addEventToCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addEventToCalendar.h; sourceTree = "<group>"; };
 		1D52AED21694B4C200D59D33 /* addEventToCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addEventToCalendar.m; sourceTree = "<group>"; };
+		1D58A95F171BD937008CF5CB /* MustangsIcon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MustangsIcon1.png; sourceTree = "<group>"; };
+		1D58A961171BD940008CF5CB /* MustangsIcon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MustangsIcon2.png; sourceTree = "<group>"; };
 		1D58B1A11704C71B007BBBC2 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		1D58B1A21704C71B007BBBC2 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		1D58B1A41704D2C4007BBBC2 /* wichitanLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wichitanLogo.png; sourceTree = "<group>"; };
@@ -545,7 +551,6 @@
 		1D98D0ED165202F3002F2DD4 /* detailEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailEventViewController.m; sourceTree = "<group>"; };
 		1D9CA133166C798B00D0D0E0 /* noStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noStar.png; sourceTree = "<group>"; };
 		1D9D286D16A8994A00FC5A95 /* mainBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainBG.png; sourceTree = "<group>"; };
-		1D9D287316A89CC200FC5A95 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1D9D287516A89EC700FC5A95 /* slideSample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slideSample.png; sourceTree = "<group>"; };
 		1D9EBACE1706AA850027A4A6 /* menbasketballBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = menbasketballBG.jpg; sourceTree = "<group>"; };
 		1D9EBACF1706AA850027A4A6 /* womensoccerBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = womensoccerBG.png; sourceTree = "<group>"; };
@@ -589,7 +594,6 @@
 		1DF014791697BBF400435975 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		1DF0147E1697C77200435975 /* dirBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dirBg.png; sourceTree = "<group>"; };
 		1DF014801697C7D400435975 /* photoFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photoFrame.png; sourceTree = "<group>"; };
-		1DF2025016BAF9A8000369C8 /* msu-rounded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "msu-rounded.png"; sourceTree = "<group>"; };
 		1DF2025216BAFE01000369C8 /* campusMapSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = campusMapSettingsViewController.h; sourceTree = "<group>"; };
 		1DF2025316BAFE01000369C8 /* campusMapSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = campusMapSettingsViewController.m; sourceTree = "<group>"; };
 		1DF849AC16B64FB6009F7785 /* MSULocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSULocation.h; sourceTree = "<group>"; };
@@ -676,8 +680,10 @@
 		1D1CEAC8162B4D230059BC1F = {
 			isa = PBXGroup;
 			children = (
+				1D2E4D78171C4BCD008CBD75 /* Default-568h@2x.png */,
+				1D58A961171BD940008CF5CB /* MustangsIcon2.png */,
+				1D58A95F171BD937008CF5CB /* MustangsIcon1.png */,
 				1D1216D116AD014800164FA7 /* ShareKit.xcodeproj */,
-				1DF2025016BAF9A8000369C8 /* msu-rounded.png */,
 				1D1CEADD162B4D230059BC1F /* MSU2U-iOS */,
 				1D1CEAD6162B4D230059BC1F /* Frameworks */,
 				1D1CEAD4162B4D230059BC1F /* Products */,
@@ -742,6 +748,8 @@
 		1D1CEADE162B4D230059BC1F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1D2E4D76171C4B38008CBD75 /* bg-real.png */,
+				1D2E4D72171C4A1D008CBD75 /* temp-bg.png */,
 				1D5A5C881707DA70000792C7 /* 209-twitter.png */,
 				1D5A5C831707AF7F000792C7 /* 42-info.png */,
 				1D58B1A41704D2C4007BBBC2 /* wichitanLogo.png */,
@@ -915,8 +923,6 @@
 		1D339A8F1679305300D84A20 /* splashScreen */ = {
 			isa = PBXGroup;
 			children = (
-				1D3521BE16E191A800EDFE25 /* Default-568h@2x.png */,
-				1D9D287316A89CC200FC5A95 /* Default.png */,
 			);
 			name = splashScreen;
 			sourceTree = "<group>";
@@ -1494,16 +1500,13 @@
 				1D44B01516A5D8E000445FE7 /* 2010.png in Resources */,
 				1D44B01616A5D8E000445FE7 /* 2011.png in Resources */,
 				1D9D286E16A8994A00FC5A95 /* mainBG.png in Resources */,
-				1D9D287416A89CC200FC5A95 /* Default.png in Resources */,
 				1D9D287616A89EC700FC5A95 /* slideSample.png in Resources */,
 				1DD49E3416ADD6B100EB7827 /* navBarDemo.png in Resources */,
 				1D2B5DA816BA40D200F1F3DB /* buildings.json in Resources */,
-				1DF2025116BAF9A8000369C8 /* msu-rounded.png in Resources */,
 				1D968C6316BCAA58004AB866 /* standardMap.png in Resources */,
 				1D968C6416BCAA58004AB866 /* satelliteMap.png in Resources */,
 				1D968C6516BCAA58004AB866 /* hybridMap.png in Resources */,
 				1D4BEA6716BF7FC3000CE107 /* BLACK.png in Resources */,
-				1D3521BF16E191A800EDFE25 /* Default-568h@2x.png in Resources */,
 				1D24236C16E3EEC2003E731D /* Unknown.jpg in Resources */,
 				1DDD422516ED401F0079463A /* twitterBG.png in Resources */,
 				1DDD422716ED42BB0079463A /* twitterBlug.png in Resources */,
@@ -1515,6 +1518,11 @@
 				1D9EBAD51706AA850027A4A6 /* footballBG.jpg in Resources */,
 				1D5A5C841707AF7F000792C7 /* 42-info.png in Resources */,
 				1D5A5C891707DA70000792C7 /* 209-twitter.png in Resources */,
+				1D58A960171BD937008CF5CB /* MustangsIcon1.png in Resources */,
+				1D58A962171BD940008CF5CB /* MustangsIcon2.png in Resources */,
+				1D2E4D73171C4A1D008CBD75 /* temp-bg.png in Resources */,
+				1D2E4D77171C4B38008CBD75 /* bg-real.png in Resources */,
+				1D2E4D79171C4BCD008CBD75 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

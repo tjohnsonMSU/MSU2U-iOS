@@ -40,18 +40,18 @@
         //Handle the dates
         //Convert the created_at string to an NSDate to be stored in tweet.created_at
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-        [dateFormatter setLocale:usLocale];
+        NSTimeZone * cst = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
         [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+        [dateFormatter setTimeZone:cst];
         [dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
         
         //Format of the last_changed: 2013-03-27 23:19:29 
-        [dateFormatter setDateFormat: @"Y-MM-dd HH:mm:ss"];
+        [dateFormatter setDateFormat: @"EEE, dd MMMM y HH:mm:ss ZZZZ"];
         NSDate *last_changed_date = [dateFormatter dateFromString:[info objectForKey:@"Last_Changed"]];
         news.last_changed = last_changed_date;
         
         //Format of the Pub_Date: 0000-00-00
-        [dateFormatter setDateFormat: @"Y-MM-dd"];
+        [dateFormatter setDateFormat: @"EEE, dd MMMM y HH:mm:ss ZZZZ"];
         NSDate *pub_date_date = [dateFormatter dateFromString:[info objectForKey:@"Pub_Date"]];
         news.pub_date = pub_date_date;
         
@@ -71,7 +71,7 @@
             NSString *htmlString = news.long_description;
             NSScanner *theScanner = [NSScanner scannerWithString:htmlString];
             // find start of IMG tag
-            [theScanner scanUpToString:@"<img" intoString:nil];
+            /*[theScanner scanUpToString:@"<img" intoString:nil];
             if (![theScanner isAtEnd]) {
                 [theScanner scanUpToString:@"src" intoString:nil];
                 NSCharacterSet *charset = [NSCharacterSet characterSetWithCharactersInString:@"\"'"];
@@ -79,10 +79,10 @@
                 [theScanner scanCharactersFromSet:charset intoString:nil];
                 [theScanner scanUpToCharactersFromSet:charset intoString:&url];
                 // "url" now contains the URL of the img
-            }
+            }*/
             
-            NSLog(@"My alleged wichitan images: %@\n",url);
-            news.image = url;
+            NSLog(@"My alleged wichitan images: %@\n",[info objectForKey:@"image"]);
+            news.image = [info objectForKey:@"image"];
         }
         
     }

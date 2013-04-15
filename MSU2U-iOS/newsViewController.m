@@ -20,7 +20,8 @@
 {
     //self.jsonURL = @"http://www.matthewfarmer.net/wichitan.json";
     //self.jsonURL = @"http://www.matthewfarmer.net/wichitan.php";
-    self.jsonURL = @"http://cs2.mwsu.edu/~msu2u/get_article_from_db.php";
+    //self.jsonURL = @"http://cs2.mwsu.edu/~msu2u/get_article_from_db.php";
+    self.jsonURL = @"http://www.matthewfarmer.net/sports/wichitanNewsRSStoJSON.php";
     self.jsonSportsNewsURL = @"http://www.matthewfarmer.net/sports/sportsNewsRSStoJSON.php";
     
     self.entityName = @"News";

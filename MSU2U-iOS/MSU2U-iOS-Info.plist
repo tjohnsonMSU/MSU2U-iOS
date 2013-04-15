@@ -27,6 +27,8 @@
 			<array>
 				<string>msu-rounded.png</string>
 				<string>MustangsIconSmall.png</string>
+				<string>MustangsIcon1.png</string>
+				<string>MustangsIcon2.png</string>
 			</array>
 		</dict>
 	</dict>
@@ -64,6 +66,7 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
