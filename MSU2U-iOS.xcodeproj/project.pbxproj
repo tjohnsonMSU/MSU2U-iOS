@@ -160,6 +160,7 @@
 		1DF2025416BAFE01000369C8 /* campusMapSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF2025316BAFE01000369C8 /* campusMapSettingsViewController.m */; };
 		1DF849AE16B64FB6009F7785 /* MSULocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF849AD16B64FB6009F7785 /* MSULocation.m */; };
 		1DFCFCD416B63CEC00515EFD /* campusMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFCFCD316B63CEC00515EFD /* campusMapViewController.m */; };
+		E09A146A171DC175000CF267 /* webViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A1469171DC175000CF267 /* webViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -600,6 +601,8 @@
 		1DF849AD16B64FB6009F7785 /* MSULocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSULocation.m; sourceTree = "<group>"; };
 		1DFCFCD216B63CEC00515EFD /* campusMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = campusMapViewController.h; sourceTree = "<group>"; };
 		1DFCFCD316B63CEC00515EFD /* campusMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = campusMapViewController.m; sourceTree = "<group>"; };
+		E09A1468171DC175000CF267 /* webViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = webViewController.h; sourceTree = "<group>"; };
+		E09A1469171DC175000CF267 /* webViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = webViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -730,6 +733,7 @@
 		1D1CEADD162B4D230059BC1F /* MSU2U-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				E09A1467171DC161000CF267 /* Website */,
 				1D1CEAFE162B4DBB0059BC1F /* MainStoryboard.storyboard */,
 				1D1CEAE6162B4D230059BC1F /* AppDelegate.h */,
 				1D1CEAE7162B4D230059BC1F /* AppDelegate.m */,
@@ -1119,6 +1123,15 @@
 				1DEC1C0F16EEAAD10007E067 /* Tweet+Create.m */,
 			);
 			name = Tweet;
+			sourceTree = "<group>";
+		};
+		E09A1467171DC161000CF267 /* Website */ = {
+			isa = PBXGroup;
+			children = (
+				E09A1468171DC175000CF267 /* webViewController.h */,
+				E09A1469171DC175000CF267 /* webViewController.m */,
+			);
+			name = Website;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1562,6 +1575,7 @@
 				1DDFAED316F17F9100C7B595 /* Tweet.m in Sources */,
 				1D58B1A31704C71B007BBBC2 /* News.m in Sources */,
 				1D5A5C871707CB37000792C7 /* Event.m in Sources */,
+				E09A146A171DC175000CF267 /* webViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

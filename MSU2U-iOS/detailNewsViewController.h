@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "News+Create.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "webViewController.h"
 //ShareKit
 #import "SHK.h"
 

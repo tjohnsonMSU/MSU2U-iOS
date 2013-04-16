@@ -70,5 +70,12 @@
 }
 
 - (IBAction)viewArticleOnline:(UIButton *)sender {
+    [self performSegueWithIdentifier:@"toWebView" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    //Send the link to the destination web view
+    [segue.destinationViewController sendURL:receivedNews.link];
 }
 @end

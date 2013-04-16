@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="L3K-3G-aB4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="L3K-3G-aB4">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller - Map-->
@@ -319,7 +319,6 @@
         <!--View Controller-->
         <scene sceneID="nzV-gp-O4z">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wQE-EZ-wca" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="RTv-xa-TIU" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xWa-S3-UiB">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
@@ -345,6 +344,7 @@
                         </constraints>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wQE-EZ-wca" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-15616" y="-3533"/>
         </scene>
@@ -668,16 +668,12 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QNd-W8-2PD">
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="i6f-jc-4Mf">
-                                        <attributedString key="attributedText">
-                                            <fragment content="Label">
-                                                <attributes>
-                                                    <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <font key="NSFont" size="17" name="Helvetica"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="i6f-jc-4Mf">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="280" id="v13-Ze-piN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCr-65-Q1B">
@@ -721,8 +717,12 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXC-5b-Icb">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="285" id="Q13-bK-7lM"/>
+                                            <constraint firstAttribute="height" constant="25" id="m0Z-0p-vgN"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="View Article Online">
+                                        <state key="normal" title="View Full Article Online">
                                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -731,31 +731,29 @@
                                         </state>
                                         <connections>
                                             <action selector="viewArticleOnline:" destination="0AU-gl-Ajf" eventType="touchUpInside" id="c86-fY-myP"/>
-                                            <segue destination="vRl-3M-1sy" kind="push" id="LuT-G9-Tq3"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="i6f-jc-4Mf" secondAttribute="bottom" constant="140" id="0Mv-1f-gBh"/>
                                     <constraint firstAttribute="trailing" secondItem="HCr-65-Q1B" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="387-ba-KcS"/>
-                                    <constraint firstItem="uXC-5b-Icb" firstAttribute="centerX" secondItem="QNd-W8-2PD" secondAttribute="centerX" type="default" id="7PM-uU-N5O"/>
-                                    <constraint firstItem="i6f-jc-4Mf" firstAttribute="top" secondItem="HCr-65-Q1B" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="86V-tM-6k3"/>
+                                    <constraint firstItem="i6f-jc-4Mf" firstAttribute="top" secondItem="uXC-5b-Icb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5kb-2v-O6M"/>
                                     <constraint firstItem="Mhn-qc-WoH" firstAttribute="baseline" secondItem="ddx-ll-AxA" secondAttribute="baseline" type="default" id="8pM-za-aKu"/>
-                                    <constraint firstAttribute="bottom" secondItem="uXC-5b-Icb" secondAttribute="bottom" constant="122" id="94j-H5-JnB"/>
                                     <constraint firstItem="znA-RB-LHG" firstAttribute="top" secondItem="BuK-A7-SP2" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="CXn-9d-bua"/>
                                     <constraint firstItem="Mhn-qc-WoH" firstAttribute="top" secondItem="ddx-ll-AxA" secondAttribute="top" type="default" id="Cv0-nA-KFX"/>
                                     <constraint firstItem="ddx-ll-AxA" firstAttribute="leading" secondItem="HCr-65-Q1B" secondAttribute="leading" type="default" id="FeO-zM-w2r"/>
                                     <constraint firstAttribute="trailing" secondItem="uXC-5b-Icb" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="FiJ-QL-0qT"/>
                                     <constraint firstAttribute="trailing" secondItem="Mhn-qc-WoH" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Fng-ME-mSu"/>
-                                    <constraint firstItem="uXC-5b-Icb" firstAttribute="top" secondItem="i6f-jc-4Mf" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="LLz-ms-51h"/>
+                                    <constraint firstItem="uXC-5b-Icb" firstAttribute="centerX" secondItem="i6f-jc-4Mf" secondAttribute="centerX" type="default" id="I7P-pv-oiH"/>
                                     <constraint firstItem="uXC-5b-Icb" firstAttribute="leading" secondItem="QNd-W8-2PD" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="LW0-h3-tdV"/>
                                     <constraint firstItem="HCr-65-Q1B" firstAttribute="top" secondItem="ddx-ll-AxA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="OPZ-cs-MH1"/>
+                                    <constraint firstItem="i6f-jc-4Mf" firstAttribute="centerX" secondItem="QNd-W8-2PD" secondAttribute="centerX" type="default" id="Sq1-OS-If5"/>
+                                    <constraint firstItem="ddx-ll-AxA" firstAttribute="top" secondItem="QNd-W8-2PD" secondAttribute="top" constant="203" id="gDi-px-dNE"/>
                                     <constraint firstItem="BuK-A7-SP2" firstAttribute="trailing" secondItem="QNd-W8-2PD" secondAttribute="trailing" type="default" id="k30-dX-3l2"/>
                                     <constraint firstAttribute="trailing" secondItem="znA-RB-LHG" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="kC2-by-qSW"/>
-                                    <constraint firstItem="ddx-ll-AxA" firstAttribute="top" secondItem="QNd-W8-2PD" secondAttribute="top" constant="203" id="m0r-mq-NOd"/>
                                     <constraint firstItem="BuK-A7-SP2" firstAttribute="centerX" secondItem="znA-RB-LHG" secondAttribute="centerX" type="default" id="n1E-ej-XTw"/>
+                                    <constraint firstItem="uXC-5b-Icb" firstAttribute="top" secondItem="HCr-65-Q1B" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="n5a-UR-spr"/>
                                     <constraint firstItem="BuK-A7-SP2" firstAttribute="top" secondItem="QNd-W8-2PD" secondAttribute="top" type="default" id="pjJ-ma-Nm5"/>
-                                    <constraint firstItem="i6f-jc-4Mf" firstAttribute="leading" secondItem="HCr-65-Q1B" secondAttribute="leading" type="default" id="qku-8w-8zf"/>
-                                    <constraint firstAttribute="trailing" secondItem="i6f-jc-4Mf" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="rVj-fr-aM3"/>
                                     <constraint firstItem="ddx-ll-AxA" firstAttribute="leading" secondItem="znA-RB-LHG" secondAttribute="leading" type="default" id="tHm-w6-pXB"/>
                                 </constraints>
                             </scrollView>
@@ -765,7 +763,6 @@
                             <constraint firstItem="QNd-W8-2PD" firstAttribute="trailing" secondItem="bge-Sh-1bB" secondAttribute="trailing" type="default" id="6q4-eL-UYB"/>
                             <constraint firstItem="QNd-W8-2PD" firstAttribute="top" secondItem="bge-Sh-1bB" secondAttribute="top" type="default" id="Xl7-CL-sXX"/>
                             <constraint firstItem="QNd-W8-2PD" firstAttribute="bottom" secondItem="bge-Sh-1bB" secondAttribute="bottom" type="default" id="la1-pe-a3O"/>
-                            <constraint firstItem="QNd-W8-2PD" firstAttribute="leading" secondItem="bge-Sh-1bB" secondAttribute="leading" constant="-5" id="z40-Oa-NK6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PSF-RJ-Bhc">
@@ -782,11 +779,12 @@
                         <outlet property="description" destination="i6f-jc-4Mf" id="Ljk-Wp-HDK"/>
                         <outlet property="photo" destination="BuK-A7-SP2" id="7Xi-Ku-jMc"/>
                         <outlet property="titleLabel" destination="znA-RB-LHG" id="lY1-6a-5MJ"/>
+                        <segue destination="vRl-3M-1sy" kind="push" identifier="toWebView" id="VtX-6c-JYC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="heN-W1-IY1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-13462" y="-1555"/>
+            <point key="canvasLocation" x="-13540" y="-1545"/>
         </scene>
         <!--Detail Event View Controller - Softball-->
         <scene sceneID="XLN-fv-Iie">
@@ -1563,7 +1561,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R55-r9-J3Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15732" y="-1895"/>
+            <point key="canvasLocation" x="-15812" y="-1623"/>
         </scene>
         <!--Twitter View Controller-->
         <scene sceneID="5uv-kQ-8Pw">
@@ -2036,29 +2034,29 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="WebPage would go here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNW-D6-h4j">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nfj-Sy-LHO">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JNW-D6-h4j" firstAttribute="centerY" secondItem="hhm-ZN-WQ1" secondAttribute="centerY" type="default" id="WMX-Jq-aEV"/>
-                            <constraint firstItem="JNW-D6-h4j" firstAttribute="centerX" secondItem="hhm-ZN-WQ1" secondAttribute="centerX" type="default" id="kfL-rG-poV"/>
+                            <constraint firstItem="nfj-Sy-LHO" firstAttribute="leading" secondItem="hhm-ZN-WQ1" secondAttribute="leading" type="default" id="WTO-4P-thv"/>
+                            <constraint firstItem="nfj-Sy-LHO" firstAttribute="bottom" secondItem="hhm-ZN-WQ1" secondAttribute="bottom" type="default" id="skX-lH-wvC"/>
+                            <constraint firstItem="nfj-Sy-LHO" firstAttribute="trailing" secondItem="hhm-ZN-WQ1" secondAttribute="trailing" type="default" id="weP-yP-jvG"/>
+                            <constraint firstItem="nfj-Sy-LHO" firstAttribute="top" secondItem="hhm-ZN-WQ1" secondAttribute="top" type="default" id="yiH-Zy-aH7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="[Web View]" id="klm-qn-yxi">
-                        <barButtonItem key="rightBarButtonItem" title="Share" id="0er-ov-T2L">
-                            <connections>
-                                <action selector="shareButton:" destination="vRl-3M-1sy" id="HH5-Si-wHg"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="YkC-nP-nH3"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="nfj-Sy-LHO" id="zo0-oe-lcf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iFb-gN-TyH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12622" y="-1226"/>
+            <point key="canvasLocation" x="-12973" y="-1192"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="30L-jD-bg0">
@@ -2082,7 +2080,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fk7-1D-mCn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15573" y="-2795"/>
+            <point key="canvasLocation" x="-15921" y="-2867"/>
         </scene>
     </scenes>
     <resources>
@@ -2233,6 +2231,12 @@
                 <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>
             </relationships>
         </class>
+        <class className="webViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/webViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -2240,6 +2244,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="LuT-G9-Tq3"/>
+        <segue reference="VtX-6c-JYC"/>
     </inferredMetricsTieBreakers>
 </document>

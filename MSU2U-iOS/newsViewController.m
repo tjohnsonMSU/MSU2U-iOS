@@ -30,7 +30,7 @@
     self.segueIdentifier = @"toArticle";
     
     self.keyToSearchOn = @"title";
-    self.keysToSearchOn = [[NSMutableArray alloc]initWithObjects:@"title",@"long_description",@"doc_creator",nil];
+    self.keysToSearchOn = [[NSMutableArray alloc]initWithObjects:@"title",@"long_description",@"short_description",@"doc_creator",nil];
     
     self.childNumber = [NSNumber numberWithInt:3];
 }

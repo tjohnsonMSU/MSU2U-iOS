@@ -533,6 +533,10 @@
         
         cell.textLabel.text = directoryName;
         cell.detailTextLabel.text = [self.dataObject position_title_1];
+        
+        [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject picture]] placeholderImage:[UIImage imageNamed:@"Unknown.jpg"]];
+        CGSize size = {50,50};
+        cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
     }
     else if(self.childNumber == [NSNumber numberWithInt:7])
     {
