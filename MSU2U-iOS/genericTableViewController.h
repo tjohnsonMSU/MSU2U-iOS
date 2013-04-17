@@ -11,13 +11,15 @@
 //Detail Controllers
 #import "detailDirectoryViewController.h"
 #import "detailEventViewController.h"
-#import "detailNewsViewController.h"
+//#import "detailNewsViewController.h"
 #import "detailTwitterViewController.h"
+#import "webViewController.h"
 
 //Custom Libraries
 #import "CoreDataTableViewController.h"
 #import "MYDocumentHandler.h"
 #import "MBProgressHUD.h"
+#import "UIImageView+WebCache.h"
 
 #import "News+Create.h"
 #import "Event+Create.h"

@@ -25,10 +25,10 @@
     self.entityName = @"Tweet";
     self.sortDescriptorKey = @"created_at";
     self.cellIdentifier = @"tweetCell";
-    self.segueIdentifier = @"toTweet";
+    self.segueIdentifier = @"toWebView";
     
     //self.keyToSearchOn = @"title";
-    self.keysToSearchOn = [[NSMutableArray alloc]initWithObjects:@"text",@"screen_name", nil];
+    self.keysToSearchOn = [[NSMutableArray alloc]initWithObjects:@"text",@"screen_name",@"name",nil];
     
     self.childNumber = [NSNumber numberWithInt:7];
 }

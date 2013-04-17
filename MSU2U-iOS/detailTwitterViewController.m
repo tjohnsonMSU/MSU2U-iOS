@@ -65,6 +65,17 @@
     }
 }
 
+- (IBAction)viewProfileOnline:(UIButton *)sender {
+    [self performSegueWithIdentifier:@"toWebView" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    //Send the link to the destination web view
+    NSLog(@"Scree name is %@?\n",receivedTweet.screen_name);
+    [segue.destinationViewController sendURL:[NSString stringWithFormat:@"http://www.twitter.com/%@",receivedTweet.screen_name] andTitle:receivedTweet.screen_name];
+}
+
 -(void)sendTweetInformation:(Tweet *)tweetInfo
 {
     receivedTweet = tweetInfo;

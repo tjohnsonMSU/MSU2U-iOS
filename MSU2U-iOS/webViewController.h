@@ -14,6 +14,6 @@
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
--(void) sendURL:(NSString*)x;
+-(void) sendURL:(NSString*)x andTitle:(NSString*)y;
 
 @end

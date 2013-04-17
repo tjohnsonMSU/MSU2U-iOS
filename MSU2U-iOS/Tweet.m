@@ -2,7 +2,7 @@
 //  Tweet.m
 //  MSU2U-iOS
 //
-//  Created by Matthew Farmer on 3/13/13.
+//  Created by Matthew Farmer on 4/17/13.
 //  Copyright (c) 2013 Matthew Farmer. All rights reserved.
 //
 
@@ -18,5 +18,6 @@
 @dynamic profile_image_url;
 @dynamic screen_name;
 @dynamic text;
+@dynamic max_id;
 
 @end

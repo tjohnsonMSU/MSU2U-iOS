@@ -45,6 +45,7 @@
             [dateFormatter setDateFormat: @"EEE MMM dd HH:mm:ss Z yyyy"];
             
             //Other stuff
+            tweet.max_id = [info objectForKey:@"id_str"];
             tweet.screen_name = [[info objectForKey:@"user"]objectForKey:@"screen_name"];
             tweet.profile_image_url = [[info objectForKey:@"user"] objectForKey:@"profile_image_url"];
             tweet.profile_background_image_url = [[info objectForKey:@"user"] objectForKey:@"profile_background_image_url"];
@@ -58,10 +59,11 @@
             [dateFormatter setDateFormat: @"EEE, dd MMM yyyy HH:mm:ss Z"];
             
             //Other Stuff
-            tweet.screen_name = [info objectForKey:@"screen_name"];
+            tweet.screen_name = [info objectForKey:@"from_user"];
             tweet.profile_image_url = [info objectForKey:@"profile_image_url"];
             tweet.profile_background_image_url = [info objectForKey:@"profile_background_image_url"];
             tweet.name = [info objectForKey:@"from_user_name"];
+            tweet.max_id = [info objectForKey:@"id_str"];
         }
         NSDate *date = [dateFormatter dateFromString:[info objectForKey:@"created_at"]];
         tweet.created_at = date;

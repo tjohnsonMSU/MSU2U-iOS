@@ -28,9 +28,10 @@
     [self.webView loadRequest:requestObj];
 }
 
--(void) sendURL:(NSString *)x
+-(void) sendURL:(NSString *)x andTitle:(NSString *)y
 {
     websiteURL = x;
+    self.title = y;
 }
 
 @end

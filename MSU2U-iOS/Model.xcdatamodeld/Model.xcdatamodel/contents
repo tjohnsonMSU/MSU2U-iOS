@@ -73,6 +73,7 @@
     <entity name="Tweet" representedClassName="Tweet" syncable="YES">
         <attribute name="created_at" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="id_str" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="max_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="profile_background_image_url" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="profile_image_url" optional="YES" attributeType="String" syncable="YES"/>
@@ -84,6 +85,6 @@
         <element name="Event" positionX="-7598" positionY="-2467" width="128" height="208"/>
         <element name="News" positionX="-7598" positionY="-2241" width="128" height="208"/>
         <element name="Sport" positionX="-7749" positionY="-2439" width="128" height="238"/>
-        <element name="Tweet" positionX="-7749" positionY="-2175" width="128" height="150"/>
+        <element name="Tweet" positionX="-7749" positionY="-2175" width="128" height="163"/>
     </elements>
 </model>

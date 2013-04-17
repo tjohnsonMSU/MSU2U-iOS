@@ -493,18 +493,18 @@
             {
                 defaultImage = @"theWichitan.jpg";
             }
-            else if([[self.dataObject publication] isEqualToString:@"Campus News"])
-            {
-                defaultImage = @"140-gradhat.png";
-            }
             else if([[self.dataObject publication] isEqualToString:@"MSU Mustangs"])
             {
                 defaultImage = @"101-gameplan.png";
             }
             
-            [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject image]] placeholderImage:[UIImage imageNamed:defaultImage]];
+            //Download a 50x50 image
+            [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject image]] placeholderImage:[UIImage imageNamed:defaultImage] options:0 andResize:CGSizeMake(50, 50)];
+            
+            //Ensure that the table cell image is restricted to 50x50
             CGSize size = {50,50};
             cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
+            
         }
         else if(self.childNumber == [NSNumber numberWithInt:2])
         {
@@ -534,8 +534,9 @@
         cell.textLabel.text = directoryName;
         cell.detailTextLabel.text = [self.dataObject position_title_1];
         
-        [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject picture]] placeholderImage:[UIImage imageNamed:@"Unknown.jpg"]];
-        CGSize size = {50,50};
+        [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject picture]] placeholderImage:[UIImage imageNamed:@"Unknown.jpg"] options:0 andResize:CGSizeMake(40, 50)];
+        //[cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject picture]] placeholderImage:[UIImage imageNamed:@"Unknown.jpg"]];
+        CGSize size = {40,50};
         cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
     }
     else if(self.childNumber == [NSNumber numberWithInt:7])
@@ -543,8 +544,7 @@
         cell.textLabel.text = [self.dataObject text];        
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ by %@",[NSDateFormatter localizedStringFromDate:[self.dataObject created_at] dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle],[self.dataObject screen_name]];
         
-        [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject profile_image_url]] placeholderImage:[UIImage imageNamed:@"twitter.png"]];
-        
+        [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject profile_image_url]] placeholderImage:[UIImage imageNamed:@"twitter.png"] options:0 andResize:CGSizeMake(50, 50)];
         [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject profile_image_url]] placeholderImage:[UIImage imageNamed:@"twitter.png"]];
         CGSize size = {50,50};
         cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
@@ -617,7 +617,10 @@
     if(self.childNumber == [NSNumber numberWithInt:2])
         [segue.destinationViewController sendEventInformation:self.dataObject];
     else if(self.childNumber == [NSNumber numberWithInt:3])
-        [segue.destinationViewController sendNewsInformation:self.dataObject];
+    {
+        //[segue.destinationViewController sendNewsInformation:self.dataObject];
+        [segue.destinationViewController sendURL:[self.dataObject link] andTitle:[self.dataObject publication]];
+    }
     else if(self.childNumber == [NSNumber numberWithInt:4])
     {
         NSLog(@"My dataObject person_id is %@\n",[self.dataObject person_id]);
@@ -633,13 +636,14 @@
     }
     else if(self.childNumber == [NSNumber numberWithInt:7])
     {
-        [segue.destinationViewController sendTweetInformation:self.dataObject];
+        //[segue.destinationViewController sendTweetInformation:self.dataObject];
+        NSLog(@"Going to http://www.twitter.com/%@/status/%@",[self.dataObject screen_name],[self.dataObject max_id]);
+        [segue.destinationViewController sendURL:[NSString stringWithFormat:@"http://www.twitter.com/%@/status/%@",[self.dataObject screen_name],[self.dataObject max_id]] andTitle:[self.dataObject screen_name]];
     }
     else
     {
         NSLog(@"I'm screwed up badly!\n");
     }
-    
 }
 
 //######################################################################################

@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "Event+Create.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+//#import <SDWebImage/UIImageView+WebCache.h>
+#import "UIImageView+WebCache.h"
 #import "campusMapViewController.h"
 #import "addEventToCalendar.h"
 

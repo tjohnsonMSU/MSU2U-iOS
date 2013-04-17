@@ -27,7 +27,7 @@
     self.entityName = @"News";
     self.sortDescriptorKey = @"last_changed";
     self.cellIdentifier = @"article";
-    self.segueIdentifier = @"toArticle";
+    self.segueIdentifier = @"toWebView";
     
     self.keyToSearchOn = @"title";
     self.keysToSearchOn = [[NSMutableArray alloc]initWithObjects:@"title",@"long_description",@"short_description",@"doc_creator",nil];

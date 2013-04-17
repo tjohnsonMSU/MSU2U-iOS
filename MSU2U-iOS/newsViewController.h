@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "detailNewsViewController.h"
+//#import "detailNewsViewController.h"
 #import "CoreDataTableViewController.h"
 #import "MYDocumentHandler.h"
 #import "genericTableViewController.h"

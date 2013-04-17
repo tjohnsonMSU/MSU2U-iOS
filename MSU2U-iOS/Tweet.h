@@ -2,7 +2,7 @@
 //  Tweet.h
 //  MSU2U-iOS
 //
-//  Created by Matthew Farmer on 3/13/13.
+//  Created by Matthew Farmer on 4/17/13.
 //  Copyright (c) 2013 Matthew Farmer. All rights reserved.
 //
 
@@ -19,5 +19,6 @@
 @property (nonatomic, retain) NSString * profile_image_url;
 @property (nonatomic, retain) NSString * screen_name;
 @property (nonatomic, retain) NSString * text;
+@property (nonatomic, retain) NSString * max_id;
 
 @end
