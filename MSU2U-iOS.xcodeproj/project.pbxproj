@@ -88,6 +88,10 @@
 		1D3DA8E5171F26BB0020FEBB /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3DA8D8171F26BB0020FEBB /* UIImage+RoundedCorner.m */; };
 		1D3DA8E6171F26BB0020FEBB /* UIImage+Scaling.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3DA8DA171F26BB0020FEBB /* UIImage+Scaling.m */; };
 		1D3DA8E9171F30FC0020FEBB /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3DA8E8171F30FC0020FEBB /* Tweet.m */; };
+		1D3DA8FA17207DA20020FEBB /* SVWebViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D3DA8ED17207DA20020FEBB /* SVWebViewController.strings */; };
+		1D3DA8FB17207DA20020FEBB /* SVModalWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3DA8F417207DA20020FEBB /* SVModalWebViewController.m */; };
+		1D3DA8FC17207DA20020FEBB /* SVWebViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1D3DA8F517207DA20020FEBB /* SVWebViewController.bundle */; };
+		1D3DA8FD17207DA20020FEBB /* SVWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3DA8F717207DA20020FEBB /* SVWebViewController.m */; };
 		1D44AFBC16A5D7F000445FE7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D44AFBB16A5D7F000445FE7 /* QuartzCore.framework */; };
 		1D44B00C16A5D8E000445FE7 /* 1977.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D44B00016A5D8E000445FE7 /* 1977.png */; };
 		1D44B00E16A5D8E000445FE7 /* 1978.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D44B00216A5D8E000445FE7 /* 1978.png */; };
@@ -105,6 +109,8 @@
 		1D4BEA8B16BF81F4000CE107 /* campusMapInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4BEA8A16BF81F4000CE107 /* campusMapInfoViewController.m */; };
 		1D4EB6E51654C77B005F9D8D /* Employee+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4EB6E41654C77B005F9D8D /* Employee+Create.m */; };
 		1D4EB6E61654D387005F9D8D /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4EB6E21654B88E005F9D8D /* CoreDataTableViewController.m */; };
+		1D4FEA6A17220E0300183FFA /* Video+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4FEA6917220E0300183FFA /* Video+Create.m */; };
+		1D4FEA7617221BB900183FFA /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4FEA7517221BB900183FFA /* Video.m */; };
 		1D52AED31694B4C200D59D33 /* addEventToCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D52AED21694B4C200D59D33 /* addEventToCalendar.m */; };
 		1D58A960171BD937008CF5CB /* MustangsIcon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D58A95F171BD937008CF5CB /* MustangsIcon1.png */; };
 		1D58A962171BD940008CF5CB /* MustangsIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D58A961171BD940008CF5CB /* MustangsIcon2.png */; };
@@ -139,6 +145,8 @@
 		1D9EBAD31706AA850027A4A6 /* womensoccerBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D9EBACF1706AA850027A4A6 /* womensoccerBG.png */; };
 		1D9EBAD41706AA850027A4A6 /* footballBG2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D9EBAD01706AA850027A4A6 /* footballBG2.jpg */; };
 		1D9EBAD51706AA850027A4A6 /* footballBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D9EBAD11706AA850027A4A6 /* footballBG.jpg */; };
+		1DA478211722035B001CC653 /* videoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA478201722035B001CC653 /* videoViewController.m */; };
+		1DA47823172205E3001CC653 /* 70-tv.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA47822172205E3001CC653 /* 70-tv.png */; };
 		1DA7B97F167A434C0046FF8F /* golf.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1DA7B97E167A434C0046FF8F /* golf.jpeg */; };
 		1DA7B981167A43540046FF8F /* crossCountry.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1DA7B980167A43540046FF8F /* crossCountry.jpeg */; };
 		1DA92C371693A52500AB71F1 /* Midwestern_St.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1DA92C361693A52500AB71F1 /* Midwestern_St.gif */; };
@@ -158,7 +166,6 @@
 		1DDD422516ED401F0079463A /* twitterBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD422416ED401F0079463A /* twitterBG.png */; };
 		1DDD422716ED42BB0079463A /* twitterBlug.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD422616ED42BB0079463A /* twitterBlug.png */; };
 		1DDD423516ED61700079463A /* twitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD423416ED61700079463A /* twitterViewController.m */; };
-		1DDD423816ED61840079463A /* detailTwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD423716ED61840079463A /* detailTwitterViewController.m */; };
 		1DDE56F5163B023B008830A8 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1DDE56F3163B023B008830A8 /* Model.xcdatamodeld */; };
 		1DDE5732163B04E6008830A8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DDE5731163B04E6008830A8 /* CoreData.framework */; };
 		1DEC1C1016EEAAD10007E067 /* Tweet+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC1C0F16EEAAD10007E067 /* Tweet+Create.m */; };
@@ -532,6 +539,18 @@
 		1D3DA8DA171F26BB0020FEBB /* UIImage+Scaling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Scaling.m"; sourceTree = "<group>"; };
 		1D3DA8E7171F30FC0020FEBB /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
 		1D3DA8E8171F30FC0020FEBB /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
+		1D3DA8EE17207DA20020FEBB /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/SVWebViewController.strings; sourceTree = "<group>"; };
+		1D3DA8EF17207DA20020FEBB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SVWebViewController.strings; sourceTree = "<group>"; };
+		1D3DA8F017207DA20020FEBB /* es-ES */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-ES"; path = "es-ES.lproj/SVWebViewController.strings"; sourceTree = "<group>"; };
+		1D3DA8F117207DA20020FEBB /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/SVWebViewController.strings; sourceTree = "<group>"; };
+		1D3DA8F217207DA20020FEBB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/SVWebViewController.strings; sourceTree = "<group>"; };
+		1D3DA8F317207DA20020FEBB /* SVModalWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVModalWebViewController.h; sourceTree = "<group>"; };
+		1D3DA8F417207DA20020FEBB /* SVModalWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVModalWebViewController.m; sourceTree = "<group>"; };
+		1D3DA8F517207DA20020FEBB /* SVWebViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVWebViewController.bundle; sourceTree = "<group>"; };
+		1D3DA8F617207DA20020FEBB /* SVWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVWebViewController.h; sourceTree = "<group>"; };
+		1D3DA8F717207DA20020FEBB /* SVWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVWebViewController.m; sourceTree = "<group>"; };
+		1D3DA8F817207DA20020FEBB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SVWebViewController.strings"; sourceTree = "<group>"; };
+		1D3DA8F917207DA20020FEBB /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/SVWebViewController.strings"; sourceTree = "<group>"; };
 		1D44AFBB16A5D7F000445FE7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1D44B00016A5D8E000445FE7 /* 1977.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1977.png; sourceTree = "<group>"; };
 		1D44B00216A5D8E000445FE7 /* 1978.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1978.png; sourceTree = "<group>"; };
@@ -552,6 +571,10 @@
 		1D4EB6E21654B88E005F9D8D /* CoreDataTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		1D4EB6E31654C77B005F9D8D /* Employee+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Employee+Create.h"; sourceTree = "<group>"; };
 		1D4EB6E41654C77B005F9D8D /* Employee+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Employee+Create.m"; sourceTree = "<group>"; };
+		1D4FEA6817220E0300183FFA /* Video+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Video+Create.h"; sourceTree = "<group>"; };
+		1D4FEA6917220E0300183FFA /* Video+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Video+Create.m"; sourceTree = "<group>"; };
+		1D4FEA7417221BB900183FFA /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
+		1D4FEA7517221BB900183FFA /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video.m; sourceTree = "<group>"; };
 		1D52AED11694B4C200D59D33 /* addEventToCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addEventToCalendar.h; sourceTree = "<group>"; };
 		1D52AED21694B4C200D59D33 /* addEventToCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addEventToCalendar.m; sourceTree = "<group>"; };
 		1D58A95F171BD937008CF5CB /* MustangsIcon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MustangsIcon1.png; sourceTree = "<group>"; };
@@ -596,6 +619,9 @@
 		1D9EBACF1706AA850027A4A6 /* womensoccerBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = womensoccerBG.png; sourceTree = "<group>"; };
 		1D9EBAD01706AA850027A4A6 /* footballBG2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = footballBG2.jpg; sourceTree = "<group>"; };
 		1D9EBAD11706AA850027A4A6 /* footballBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = footballBG.jpg; sourceTree = "<group>"; };
+		1DA4781F1722035B001CC653 /* videoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = videoViewController.h; sourceTree = "<group>"; };
+		1DA478201722035B001CC653 /* videoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = videoViewController.m; sourceTree = "<group>"; };
+		1DA47822172205E3001CC653 /* 70-tv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "70-tv.png"; sourceTree = "<group>"; };
 		1DA7B97E167A434C0046FF8F /* golf.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = golf.jpeg; sourceTree = "<group>"; };
 		1DA7B980167A43540046FF8F /* crossCountry.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = crossCountry.jpeg; sourceTree = "<group>"; };
 		1DA92C361693A52500AB71F1 /* Midwestern_St.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Midwestern_St.gif; sourceTree = "<group>"; };
@@ -619,8 +645,6 @@
 		1DDD422616ED42BB0079463A /* twitterBlug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterBlug.png; sourceTree = "<group>"; };
 		1DDD423316ED61700079463A /* twitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = twitterViewController.h; sourceTree = "<group>"; };
 		1DDD423416ED61700079463A /* twitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = twitterViewController.m; sourceTree = "<group>"; };
-		1DDD423616ED61840079463A /* detailTwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailTwitterViewController.h; sourceTree = "<group>"; };
-		1DDD423716ED61840079463A /* detailTwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailTwitterViewController.m; sourceTree = "<group>"; };
 		1DDE56F4163B023B008830A8 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1DDE5731163B04E6008830A8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		1DEC1C0E16EEAAD10007E067 /* Tweet+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Tweet+Create.h"; sourceTree = "<group>"; };
@@ -766,6 +790,7 @@
 		1D1CEADD162B4D230059BC1F /* MSU2U-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				1DA477FD17220341001CC653 /* Videos */,
 				E09A1467171DC161000CF267 /* Website */,
 				1D1CEAFE162B4DBB0059BC1F /* MainStoryboard.storyboard */,
 				1D1CEAE6162B4D230059BC1F /* AppDelegate.h */,
@@ -785,6 +810,7 @@
 		1D1CEADE162B4D230059BC1F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1DA47822172205E3001CC653 /* 70-tv.png */,
 				1D2E4D76171C4B38008CBD75 /* bg-real.png */,
 				1D2E4D72171C4A1D008CBD75 /* temp-bg.png */,
 				1D5A5C881707DA70000792C7 /* 209-twitter.png */,
@@ -1039,6 +1065,19 @@
 			path = "UIImage+Resize";
 			sourceTree = "<group>";
 		};
+		1D3DA8EC17207DA20020FEBB /* SVWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1D3DA8ED17207DA20020FEBB /* SVWebViewController.strings */,
+				1D3DA8F317207DA20020FEBB /* SVModalWebViewController.h */,
+				1D3DA8F417207DA20020FEBB /* SVModalWebViewController.m */,
+				1D3DA8F517207DA20020FEBB /* SVWebViewController.bundle */,
+				1D3DA8F617207DA20020FEBB /* SVWebViewController.h */,
+				1D3DA8F717207DA20020FEBB /* SVWebViewController.m */,
+			);
+			path = SVWebViewController;
+			sourceTree = "<group>";
+		};
 		1D44AFFF16A5D8E000445FE7 /* PDF Covers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1054,6 +1093,17 @@
 				1D44B00A16A5D8E000445FE7 /* 2011.png */,
 			);
 			path = "PDF Covers";
+			sourceTree = "<group>";
+		};
+		1D4FEA6717220DD100183FFA /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				1D4FEA7417221BB900183FFA /* Video.h */,
+				1D4FEA7517221BB900183FFA /* Video.m */,
+				1D4FEA6817220E0300183FFA /* Video+Create.h */,
+				1D4FEA6917220E0300183FFA /* Video+Create.m */,
+			);
+			name = Video;
 			sourceTree = "<group>";
 		};
 		1D52AECF1694B4AE00D59D33 /* Add Event to Calendar */ = {
@@ -1088,6 +1138,7 @@
 		1D62DD7F16573F7E00A60534 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				1D4FEA6717220DD100183FFA /* Video */,
 				1DEC1C0D16EEAA9B0007E067 /* Tweet */,
 				1D62DDA6165759C900A60534 /* News */,
 				1D62DDA5165759BF00A60534 /* Event */,
@@ -1132,6 +1183,7 @@
 		1D709B30165B456E00475A8E /* External Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				1D3DA8EC17207DA20020FEBB /* SVWebViewController */,
 				1D3DA8BC171F26AA0020FEBB /* ImageHandling */,
 				1D1CEAFB162B4D310059BC1F /* genericTableView */,
 				1D52AECF1694B4AE00D59D33 /* Add Event to Calendar */,
@@ -1169,6 +1221,15 @@
 			name = MYDocumentHandler;
 			sourceTree = "<group>";
 		};
+		1DA477FD17220341001CC653 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				1DA4781F1722035B001CC653 /* videoViewController.h */,
+				1DA478201722035B001CC653 /* videoViewController.m */,
+			);
+			name = Videos;
+			sourceTree = "<group>";
+		};
 		1DA92C391693AD2000AB71F1 /* banner */ = {
 			isa = PBXGroup;
 			children = (
@@ -1191,8 +1252,6 @@
 			children = (
 				1DDD423316ED61700079463A /* twitterViewController.h */,
 				1DDD423416ED61700079463A /* twitterViewController.m */,
-				1DDD423616ED61840079463A /* detailTwitterViewController.h */,
-				1DDD423716ED61840079463A /* detailTwitterViewController.m */,
 			);
 			name = Twitter;
 			sourceTree = "<group>";
@@ -1255,6 +1314,12 @@
 			knownRegions = (
 				en,
 				de,
+				da,
+				"es-ES",
+				es,
+				fr,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 1D1CEAC8162B4D230059BC1F;
 			productRefGroup = 1D1CEAD4162B4D230059BC1F /* Products */;
@@ -1619,6 +1684,9 @@
 				1D2E4D73171C4A1D008CBD75 /* temp-bg.png in Resources */,
 				1D2E4D77171C4B38008CBD75 /* bg-real.png in Resources */,
 				1D2E4D79171C4BCD008CBD75 /* Default-568h@2x.png in Resources */,
+				1D3DA8FA17207DA20020FEBB /* SVWebViewController.strings in Resources */,
+				1D3DA8FC17207DA20020FEBB /* SVWebViewController.bundle in Resources */,
+				1DA47823172205E3001CC653 /* 70-tv.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1652,7 +1720,6 @@
 				1D24237016E3FEBD003E731D /* MBProgressHUD.m in Sources */,
 				1D64D2FB16E929A300578BE4 /* Employee.m in Sources */,
 				1DDD423516ED61700079463A /* twitterViewController.m in Sources */,
-				1DDD423816ED61840079463A /* detailTwitterViewController.m in Sources */,
 				1DEC1C1016EEAAD10007E067 /* Tweet+Create.m in Sources */,
 				1D58B1A31704C71B007BBBC2 /* News.m in Sources */,
 				1D5A5C871707CB37000792C7 /* Event.m in Sources */,
@@ -1670,6 +1737,11 @@
 				1D3DA8E5171F26BB0020FEBB /* UIImage+RoundedCorner.m in Sources */,
 				1D3DA8E6171F26BB0020FEBB /* UIImage+Scaling.m in Sources */,
 				1D3DA8E9171F30FC0020FEBB /* Tweet.m in Sources */,
+				1D3DA8FB17207DA20020FEBB /* SVModalWebViewController.m in Sources */,
+				1D3DA8FD17207DA20020FEBB /* SVWebViewController.m in Sources */,
+				1DA478211722035B001CC653 /* videoViewController.m in Sources */,
+				1D4FEA6A17220E0300183FFA /* Video+Create.m in Sources */,
+				1D4FEA7617221BB900183FFA /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1695,6 +1767,20 @@
 				1D1CEAE1162B4D230059BC1F /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1D3DA8ED17207DA20020FEBB /* SVWebViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D3DA8EE17207DA20020FEBB /* da */,
+				1D3DA8EF17207DA20020FEBB /* en */,
+				1D3DA8F017207DA20020FEBB /* es-ES */,
+				1D3DA8F117207DA20020FEBB /* es */,
+				1D3DA8F217207DA20020FEBB /* fr */,
+				1D3DA8F817207DA20020FEBB /* zh-Hans */,
+				1D3DA8F917207DA20020FEBB /* zh-Hant */,
+			);
+			name = SVWebViewController.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

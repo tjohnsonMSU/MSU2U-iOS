@@ -43,7 +43,13 @@
 {
     dispatch_queue_t fetchQ = dispatch_queue_create("Data Fetcher", NULL);
     
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    MBProgressHUD *hud;
+    
+    if([[[self.fetchedResultsController sections] objectAtIndex:0] numberOfObjects] == 0)
+    {
+        hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    }
+
     dispatch_async(fetchQ,^{
         
             [self.refreshControl beginRefreshing];
@@ -413,6 +419,7 @@
         case 3:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"newsRefreshTime"]];break;
         case 4:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"directoryRefreshTime"]];break;
         case 7:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"twitterRefreshTime"]];break;
+        case 8:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"videoRefreshTime"]];break;
         default:NSLog(@"My child number is %@\n",self.childNumber);
     }
     
@@ -464,6 +471,7 @@
         case 3:[defaults setObject:refreshTime forKey:@"newsRefreshTime"];break;
         case 4:[defaults setObject:refreshTime forKey:@"directoryRefreshTime"];break;
         case 7:[defaults setObject:refreshTime forKey:@"twitterRefreshTime"];break;
+        case 8:[defaults setObject:refreshTime forKey:@"videoRefreshTime"];break;
     }
     [defaults synchronize];
 }
