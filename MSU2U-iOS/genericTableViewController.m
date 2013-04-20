@@ -242,6 +242,7 @@
             }
             case 1:
             {
+                /*
                 NSCalendar *cal = [NSCalendar currentCalendar];
                 NSDateComponents *components = [cal components:( NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit ) fromDate:[[NSDate alloc] init]];
                 
@@ -256,6 +257,12 @@
                 NSDate *yesterday = [cal dateByAddingComponents:components toDate: today options:0];
                 
                 predicate = [NSPredicate predicateWithFormat:@"created_at >= %@",yesterday];
+                [request setPredicate:predicate];
+                break;
+                 */
+                //show ONLY 'msu2u_devteam' tweets
+                NSPredicate * predicate;
+                predicate = [NSPredicate predicateWithFormat:@"screen_name LIKE[c] 'msu2u_devteam'"];
                 [request setPredicate:predicate];
                 break;
             }
@@ -301,6 +308,29 @@
     else if(self.childNumber == [NSNumber numberWithInt:8])
     {
         //do nothing, therefore SHOW ALL because I have NO segmented filter at this time
+        switch(self.showVideoForIndex)
+        {
+            case 0:
+            {
+                break;
+            }
+            case 1:
+            {
+                //show ONLY 'Vimeo' videos
+                NSPredicate * predicate;
+                predicate = [NSPredicate predicateWithFormat:@"source LIKE[c] 'Vimeo'"];
+                [request setPredicate:predicate];
+                break;
+            }
+            case 2:
+            {
+                //show ONLY 'YouTube' videos
+                NSPredicate * predicate;
+                predicate = [NSPredicate predicateWithFormat:@"source LIKE[c] 'YouTube'"];
+                [request setPredicate:predicate];
+                break;
+            }
+        }
     }
     
     //2. How should I sort the data in my table?
@@ -341,7 +371,8 @@
         }
         else if(self.childNumber == [NSNumber numberWithInt:8])
         {
-            [self refresh];
+            if(self.showVideoForIndex == 0)
+                [self refresh];
         }
         else
         {
@@ -614,7 +645,7 @@
         cell.textLabel.text = [self.dataObject title];
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ by %@",[NSDateFormatter localizedStringFromDate:[self.dataObject upload_date] dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle],[self.dataObject user_name]];
         
-        [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject thumbnail_small]] placeholderImage:[UIImage imageNamed:@"twitter.png"] options:0 andResize:CGSizeMake(50, 50)];
+        [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject thumbnail_small]] placeholderImage:[UIImage imageNamed:@"70-tv.png"] options:0 andResize:CGSizeMake(50, 50)];
         CGSize size = {50,50};
         cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
     }

@@ -34,6 +34,11 @@
     self.childNumber = [NSNumber numberWithInt:8];
 }
 
+- (IBAction)segmentedControlIndexChanged:(UISegmentedControl *)sender {
+    self.showVideoForIndex = self.segmentedControl.selectedSegmentIndex;
+    [self setupFetchedResultsController];
+}
+
 -(void)viewWillDisappear:(BOOL)animated
 {
     [self.searchDisplayControl setActive:NO];

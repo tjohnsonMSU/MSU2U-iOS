@@ -451,7 +451,7 @@
             </objects>
             <point key="canvasLocation" x="-14337" y="-3606"/>
         </scene>
-        <!--Video View Controller - Videos-->
+        <!--Video View Controller-->
         <scene sceneID="Niz-ow-pfv">
             <objects>
                 <tableViewController id="rXO-Nc-aqW" customClass="videoViewController" sceneMemberID="viewController">
@@ -498,11 +498,26 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Videos" id="554-2h-DNH"/>
+                    <navigationItem key="navigationItem" id="554-2h-DNH">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="83T-6O-Se0">
+                            <rect key="frame" x="60" y="6" width="200" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="All"/>
+                                <segment title="Vimeo"/>
+                                <segment title="YouTube"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentedControlIndexChanged:" destination="rXO-Nc-aqW" eventType="valueChanged" id="Jx4-t4-LUn"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="m71-ap-2zb" id="KJk-HD-r0k"/>
                         <outlet property="searchDisplayControl" destination="rIQ-HJ-L6h" id="pdb-tQ-4Pc"/>
                         <outlet property="searchDisplayController" destination="rIQ-HJ-L6h" id="Zd1-9w-Phg"/>
+                        <outlet property="segmentedControl" destination="83T-6O-Se0" id="f0o-cY-5aT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CyB-NZ-63s" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1598,7 +1613,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="All"/>
-                                <segment title="Today"/>
+                                <segment title="MSU2U"/>
                             </segments>
                             <connections>
                                 <action selector="segmentedControlIndexChanged" destination="GJB-9a-jfJ" eventType="valueChanged" id="Ntb-Sn-GpP"/>
@@ -2075,6 +2090,7 @@
             <relationships>
                 <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
                 <relationship kind="outlet" name="searchDisplayControl" candidateClass="UISearchDisplayController"/>
+                <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>
             </relationships>
         </class>
         <class className="webViewController" superclassName="UIViewController">
@@ -2090,7 +2106,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="re7-RB-cUD"/>
         <segue reference="pWi-Fu-hij"/>
+        <segue reference="re7-RB-cUD"/>
     </inferredMetricsTieBreakers>
 </document>

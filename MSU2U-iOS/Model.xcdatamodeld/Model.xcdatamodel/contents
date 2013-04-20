@@ -82,6 +82,7 @@
     </entity>
     <entity name="Video" representedClassName="Video" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="source" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tags" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="thumbnail_small" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
@@ -98,6 +99,6 @@
         <element name="News" positionX="-7598" positionY="-2241" width="128" height="208"/>
         <element name="Sport" positionX="-7749" positionY="-2439" width="128" height="238"/>
         <element name="Tweet" positionX="-7749" positionY="-2175" width="128" height="163"/>
-        <element name="Video" positionX="-7598" positionY="-2016" width="128" height="193"/>
+        <element name="Video" positionX="-7598" positionY="-2016" width="128" height="208"/>
     </elements>
 </model>

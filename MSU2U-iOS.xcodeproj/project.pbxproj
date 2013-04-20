@@ -110,7 +110,6 @@
 		1D4EB6E51654C77B005F9D8D /* Employee+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4EB6E41654C77B005F9D8D /* Employee+Create.m */; };
 		1D4EB6E61654D387005F9D8D /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4EB6E21654B88E005F9D8D /* CoreDataTableViewController.m */; };
 		1D4FEA6A17220E0300183FFA /* Video+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4FEA6917220E0300183FFA /* Video+Create.m */; };
-		1D4FEA7617221BB900183FFA /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4FEA7517221BB900183FFA /* Video.m */; };
 		1D52AED31694B4C200D59D33 /* addEventToCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D52AED21694B4C200D59D33 /* addEventToCalendar.m */; };
 		1D58A960171BD937008CF5CB /* MustangsIcon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D58A95F171BD937008CF5CB /* MustangsIcon1.png */; };
 		1D58A962171BD940008CF5CB /* MustangsIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D58A961171BD940008CF5CB /* MustangsIcon2.png */; };
@@ -162,6 +161,7 @@
 		1DC4010516474FA0002BA05C /* detailDirectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC4010416474FA0002BA05C /* detailDirectoryViewController.m */; };
 		1DD49E3416ADD6B100EB7827 /* navBarDemo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DD49E3316ADD6B100EB7827 /* navBarDemo.png */; };
 		1DD8F3631693CF2F009F0FC3 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD8F3621693CF2F009F0FC3 /* EventKit.framework */; };
+		1DD9F7EA17231EE800754EB8 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD9F7E917231EE800754EB8 /* Video.m */; };
 		1DDB39C81652CF6E00252053 /* footballBanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDB39C71652CF6E00252053 /* footballBanner.png */; };
 		1DDD422516ED401F0079463A /* twitterBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD422416ED401F0079463A /* twitterBG.png */; };
 		1DDD422716ED42BB0079463A /* twitterBlug.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD422616ED42BB0079463A /* twitterBlug.png */; };
@@ -573,8 +573,6 @@
 		1D4EB6E41654C77B005F9D8D /* Employee+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Employee+Create.m"; sourceTree = "<group>"; };
 		1D4FEA6817220E0300183FFA /* Video+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Video+Create.h"; sourceTree = "<group>"; };
 		1D4FEA6917220E0300183FFA /* Video+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Video+Create.m"; sourceTree = "<group>"; };
-		1D4FEA7417221BB900183FFA /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
-		1D4FEA7517221BB900183FFA /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video.m; sourceTree = "<group>"; };
 		1D52AED11694B4C200D59D33 /* addEventToCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addEventToCalendar.h; sourceTree = "<group>"; };
 		1D52AED21694B4C200D59D33 /* addEventToCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addEventToCalendar.m; sourceTree = "<group>"; };
 		1D58A95F171BD937008CF5CB /* MustangsIcon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MustangsIcon1.png; sourceTree = "<group>"; };
@@ -640,6 +638,8 @@
 		1DC4010416474FA0002BA05C /* detailDirectoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailDirectoryViewController.m; sourceTree = "<group>"; };
 		1DD49E3316ADD6B100EB7827 /* navBarDemo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navBarDemo.png; sourceTree = "<group>"; };
 		1DD8F3621693CF2F009F0FC3 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		1DD9F7E817231EE800754EB8 /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Video.h; path = ../Video.h; sourceTree = "<group>"; };
+		1DD9F7E917231EE800754EB8 /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Video.m; path = ../Video.m; sourceTree = "<group>"; };
 		1DDB39C71652CF6E00252053 /* footballBanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = footballBanner.png; sourceTree = "<group>"; };
 		1DDD422416ED401F0079463A /* twitterBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterBG.png; sourceTree = "<group>"; };
 		1DDD422616ED42BB0079463A /* twitterBlug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterBlug.png; sourceTree = "<group>"; };
@@ -1098,8 +1098,8 @@
 		1D4FEA6717220DD100183FFA /* Video */ = {
 			isa = PBXGroup;
 			children = (
-				1D4FEA7417221BB900183FFA /* Video.h */,
-				1D4FEA7517221BB900183FFA /* Video.m */,
+				1DD9F7E817231EE800754EB8 /* Video.h */,
+				1DD9F7E917231EE800754EB8 /* Video.m */,
 				1D4FEA6817220E0300183FFA /* Video+Create.h */,
 				1D4FEA6917220E0300183FFA /* Video+Create.m */,
 			);
@@ -1741,7 +1741,7 @@
 				1D3DA8FD17207DA20020FEBB /* SVWebViewController.m in Sources */,
 				1DA478211722035B001CC653 /* videoViewController.m in Sources */,
 				1D4FEA6A17220E0300183FFA /* Video+Create.m in Sources */,
-				1D4FEA7617221BB900183FFA /* Video.m in Sources */,
+				1DD9F7EA17231EE800754EB8 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

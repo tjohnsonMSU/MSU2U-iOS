@@ -57,6 +57,7 @@
             video.user_id = [NSString stringWithFormat:@"%@",[info objectForKey:@"user_id"]];
             video.url = [info objectForKey:@"url"];
             video.user_name = [info objectForKey:@"user_name"];
+            video.source = @"Vimeo";
             
             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
             NSTimeZone * cst = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
@@ -94,6 +95,7 @@
             NSLog(@"My video URL is %@\n",video.url);
             //NSLog(@"user_name...\n");
             video.user_name = [info objectForKey:@"uploader"];
+            video.source = @"YouTube";
             
             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
             NSTimeZone * cst = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];

@@ -62,5 +62,6 @@
 @property (nonatomic) int showEventsForIndex;
 @property (nonatomic) int showNewsForIndex;
 @property (nonatomic) int showTweetsForIndex;
+@property (nonatomic) int showVideoForIndex;
 -(void)setupFetchedResultsController;
 @end
