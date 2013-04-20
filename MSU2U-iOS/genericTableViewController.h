@@ -11,8 +11,6 @@
 //Detail Controllers
 #import "detailDirectoryViewController.h"
 #import "detailEventViewController.h"
-//#import "detailNewsViewController.h"
-#import "detailTwitterViewController.h"
 #import "webViewController.h"
 
 //Custom Libraries
@@ -25,6 +23,8 @@
 #import "Event+Create.h"
 #import "Employee+Create.h"
 #import "Tweet+Create.h"
+#import "Video+Create.h"
+#import "SVWebViewController.h"
 
 @interface genericTableViewController : CoreDataTableViewController <UISearchDisplayDelegate, UISearchBarDelegate>{
     NSArray * news;
@@ -42,6 +42,8 @@
 @property (nonatomic, retain) NSString * jsonSportsNewsURL;
 
 @property (nonatomic, retain) NSArray * twitterProfilesAndHashtags;
+@property (nonatomic, retain) NSArray * vimeoChannel;
+@property (nonatomic, retain) NSArray * youTubeChannel;
 
 @property (nonatomic, retain) NSString * entityName;
 @property (nonatomic, retain) NSString * sortDescriptorKey;

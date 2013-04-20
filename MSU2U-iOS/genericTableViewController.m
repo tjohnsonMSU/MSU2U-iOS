@@ -96,6 +96,7 @@
             else if(self.childNumber == [NSNumber numberWithInt:3])
             {
                 hud.labelText = @"Downloading...";
+                
                 NSArray * myWichitanData = [self downloadCurrentData:self.jsonURL];
                 NSArray * mySportsNewsData = [self downloadCurrentData:self.jsonSportsNewsURL];
                 hud.labelText = @"Loading...";
@@ -110,6 +111,43 @@
                         [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
                     }
                 }];
+            }
+            //VIDEO
+            else if(self.childNumber == [NSNumber numberWithInt:8])
+            {
+                hud.labelText = @"Downloading...";
+                
+                for(int i=0; i<[self.vimeoChannel count]; i++)
+                {
+                    NSArray * myVimeoData = [self downloadCurrentData:[NSString stringWithFormat:@"http://vimeo.com/api/v2/%@/videos.json",[self.vimeoChannel objectAtIndex:i]]];
+                    
+                    hud.labelText = @"Loading...";
+                    
+                    NSLog(@"myVimeoData = %@\n",myVimeoData);
+                    [document.managedObjectContext performBlock:^{
+                        for(NSDictionary * dataInfo in myVimeoData)
+                        {
+                            [Video videoWithInfo:dataInfo isVimeo:YES inManagedObjectContext:document.managedObjectContext];
+                        }
+                    }];
+                }
+                
+                for(int i=0; i<[self.youTubeChannel count]; i++)
+                {
+                    NSArray * myYouTubeData = [self downloadCurrentData:[NSString stringWithFormat:@"http://gdata.youtube.com/feeds/api/users/%@/uploads?&v=2&max-results=50&alt=jsonc",[self.youTubeChannel objectAtIndex:i]]];
+                    
+                    hud.labelText = @"Loading...";
+                    
+                    NSDictionary * myInfo = myYouTubeData;
+                    NSArray * itemsAlone = [[myInfo objectForKey:@"data"] objectForKey:@"items"];
+                    
+                    [document.managedObjectContext performBlock:^{
+                        for(NSDictionary * dataInfo in itemsAlone)
+                        {
+                            [Video videoWithInfo:dataInfo isVimeo:NO inManagedObjectContext:document.managedObjectContext];
+                        }
+                    }];
+                }
             }
             //EVENTS and DIRECTORY
             else
@@ -253,13 +291,20 @@
             }
         }
     }
+    //Video
+    else if(self.childNumber == [NSNumber numberWithInt:8])
+    {
+        //do nothing, therefore SHOW ALL because I have NO segmented filter at this time
+    }
     
     //2. How should I sort the data in my table?
-    //IF NOT TWITTER AND NOT EVENTS AND NOT NEWS
-    if(self.childNumber != [NSNumber numberWithInt:7] && self.childNumber != [NSNumber numberWithInt:2] && self.childNumber != [NSNumber numberWithInt:3])
+    //IF NOT TWITTER AND NOT EVENTS AND NOT NEWS, SORT TABLE BY SOMETHING THAT IS NOT A DATE
+    if(self.childNumber != [NSNumber numberWithInt:7] && self.childNumber != [NSNumber numberWithInt:2] && self.childNumber != [NSNumber numberWithInt:3] && self.childNumber != [NSNumber numberWithInt:8])
         request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:self.sortDescriptorKey ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
-    else if(self.childNumber == [NSNumber numberWithInt:7] || self.childNumber == [NSNumber numberWithInt:3])
+    //SORT TABLE BY DATES FROM NEWEST TO OLDEST
+    else if(self.childNumber == [NSNumber numberWithInt:7] || self.childNumber == [NSNumber numberWithInt:3] || self.childNumber == [NSNumber numberWithInt:8])
         request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:self.sortDescriptorKey ascending:NO]];
+    //SORT TABLE BY DATES FROM OLDEST TO NEWEST
     else
         request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:self.sortDescriptorKey ascending:YES]];
 
@@ -287,6 +332,10 @@
         {
             if(self.showTweetsForIndex == 0)
                 [self refresh];
+        }
+        else if(self.childNumber == [NSNumber numberWithInt:8])
+        {
+            [self refresh];
         }
         else
         {
@@ -414,7 +463,7 @@
         case 2:[defaults setObject:refreshTime forKey:@"eventsRefreshTime"];break;
         case 3:[defaults setObject:refreshTime forKey:@"newsRefreshTime"];break;
         case 4:[defaults setObject:refreshTime forKey:@"directoryRefreshTime"];break;
-        case 7:[defaults setObject:refreshTime forKey:@"tweetsRefreshTime"];break;
+        case 7:[defaults setObject:refreshTime forKey:@"twitterRefreshTime"];break;
     }
     [defaults synchronize];
 }
@@ -444,6 +493,9 @@
                 count++;
         else if(self.childNumber == [NSNumber numberWithInt:7])
             for(Tweet * currentTweets in [self.fetchedResultsController fetchedObjects])
+                count++;
+        else if(self.childNumber == [NSNumber numberWithInt:8])
+            for(Video * currentVideos in [self.fetchedResultsController fetchedObjects])
                 count++;
         return count;
     }
@@ -549,6 +601,15 @@
         CGSize size = {50,50};
         cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
     }
+    else if(self.childNumber == [NSNumber numberWithInt:8])
+    {
+        cell.textLabel.text = [self.dataObject title];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ by %@",[NSDateFormatter localizedStringFromDate:[self.dataObject upload_date] dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle],[self.dataObject user_name]];
+        
+        [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject thumbnail_small]] placeholderImage:[UIImage imageNamed:@"twitter.png"] options:0 andResize:CGSizeMake(50, 50)];
+        CGSize size = {50,50};
+        cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
+    }
     return cell;
 }
 
@@ -619,7 +680,9 @@
     else if(self.childNumber == [NSNumber numberWithInt:3])
     {
         //[segue.destinationViewController sendNewsInformation:self.dataObject];
-        [segue.destinationViewController sendURL:[self.dataObject link] andTitle:[self.dataObject publication]];
+        //[segue.destinationViewController sendURL:[self.dataObject link] andTitle:[self.dataObject publication]];
+        SVWebViewController *webViewController = [[SVWebViewController alloc] initWithAddress:[self.dataObject link]];
+        [self.navigationController pushViewController:webViewController animated:YES];
     }
     else if(self.childNumber == [NSNumber numberWithInt:4])
     {
@@ -639,6 +702,12 @@
         //[segue.destinationViewController sendTweetInformation:self.dataObject];
         NSLog(@"Going to http://www.twitter.com/%@/status/%@",[self.dataObject screen_name],[self.dataObject max_id]);
         [segue.destinationViewController sendURL:[NSString stringWithFormat:@"http://www.twitter.com/%@/status/%@",[self.dataObject screen_name],[self.dataObject max_id]] andTitle:[self.dataObject screen_name]];
+        
+    }
+    else if(self.childNumber == [NSNumber numberWithInt:8])
+    {
+        NSLog(@"Going to video link...%@",[self.dataObject url]);
+        [segue.destinationViewController sendURL:[self.dataObject url] andTitle:[self.dataObject user_name]];
     }
     else
     {
@@ -686,6 +755,11 @@
     {
         for (Employee *currentTweets in [self.fetchedResultsController fetchedObjects])
             [self.dataArray addObject:currentTweets];
+    }
+    else if(self.childNumber == [NSNumber numberWithInt:8])
+    {
+        for (Employee *currentVideos in [self.fetchedResultsController fetchedObjects])
+            [self.dataArray addObject:currentVideos];
     }
     
     //###### Filter the array using NSPredicate

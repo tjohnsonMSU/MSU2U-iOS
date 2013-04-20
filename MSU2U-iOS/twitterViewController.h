@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "detailTwitterViewController.h"
 #import "CoreDataTableViewController.h"
 #import "MYDocumentHandler.h"
 #import "genericTableViewController.h"

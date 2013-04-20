@@ -80,11 +80,24 @@
         <attribute name="screen_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Video" representedClassName="Video" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tags" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbnail_small" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="upload_date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_portrait_small" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="video_id" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Employee" positionX="-7445" positionY="-2439" width="128" height="450"/>
         <element name="Event" positionX="-7598" positionY="-2467" width="128" height="208"/>
         <element name="News" positionX="-7598" positionY="-2241" width="128" height="208"/>
         <element name="Sport" positionX="-7749" positionY="-2439" width="128" height="238"/>
         <element name="Tweet" positionX="-7749" positionY="-2175" width="128" height="163"/>
+        <element name="Video" positionX="-7598" positionY="-2016" width="128" height="193"/>
     </elements>
 </model>

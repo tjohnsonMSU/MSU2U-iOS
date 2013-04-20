@@ -75,7 +75,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-13761" y="-2795"/>
+            <point key="canvasLocation" x="-13143" y="-2796"/>
         </scene>
         <!--Campus Map Settings View Controller - Settings-->
         <scene sceneID="pPY-0d-64S">
@@ -314,7 +314,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dMY-y0-vPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12834" y="-3254"/>
+            <point key="canvasLocation" x="-12630" y="-3386"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="nzV-gp-O4z">
@@ -346,7 +346,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wQE-EZ-wca" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15616" y="-3533"/>
+            <point key="canvasLocation" x="-15991" y="-3642"/>
         </scene>
         <!--Navigation Controller - Directory-->
         <scene sceneID="Dgt-Wr-Aya">
@@ -451,6 +451,90 @@
             </objects>
             <point key="canvasLocation" x="-14337" y="-3606"/>
         </scene>
+        <!--Video View Controller - Videos-->
+        <scene sceneID="Niz-ow-pfv">
+            <objects>
+                <tableViewController id="rXO-Nc-aqW" customClass="videoViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="61" sectionHeaderHeight="22" sectionFooterHeight="22" id="b12-YY-prL">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="m71-ap-2zb">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="rXO-Nc-aqW" id="g5K-9p-8jt"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="videoCell" textLabel="cyh-C7-b7p" detailTextLabel="IAe-fR-84e" imageView="g9k-82-jTV" rowHeight="61" style="IBUITableViewCellStyleSubtitle" id="alz-O6-2Gj">
+                                <rect key="frame" x="0.0" y="66" width="320" height="61"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Dillard College of Business Does Cool Things" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="186" translatesAutoresizingMaskIntoConstraints="NO" id="cyh-C7-b7p">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Video Date Published" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAe-fR-84e">
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="softball1.JPG" id="g9k-82-jTV">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="vRl-3M-1sy" kind="push" identifier="toWebView" id="pWi-Fu-hij"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Videos" id="554-2h-DNH"/>
+                    <connections>
+                        <outlet property="searchBar" destination="m71-ap-2zb" id="KJk-HD-r0k"/>
+                        <outlet property="searchDisplayControl" destination="rIQ-HJ-L6h" id="pdb-tQ-4Pc"/>
+                        <outlet property="searchDisplayController" destination="rIQ-HJ-L6h" id="Zd1-9w-Phg"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CyB-NZ-63s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="rIQ-HJ-L6h">
+                    <connections>
+                        <outlet property="delegate" destination="rXO-Nc-aqW" id="ayg-OX-JKa"/>
+                        <outlet property="searchBar" destination="m71-ap-2zb" id="efI-YL-eKS"/>
+                        <outlet property="searchContentsController" destination="rXO-Nc-aqW" id="NqM-nG-elv"/>
+                        <outlet property="searchResultsDataSource" destination="rXO-Nc-aqW" id="j7T-B0-fKm"/>
+                        <outlet property="searchResultsDelegate" destination="rXO-Nc-aqW" id="boz-S0-Aml"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="-14918" y="-4098"/>
+        </scene>
+        <!--Navigation Controller - Videos-->
+        <scene sceneID="vou-pN-SQb">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="3Wr-qe-r7U" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Videos" image="70-tv.png" id="W2W-B7-yvS"/>
+                    <navigationItem key="navigationItem" id="WX9-67-3pd"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dC4-ck-BXF">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="rXO-Nc-aqW" kind="relationship" relationship="rootViewController" id="fFP-pK-yOh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="unJ-gG-jmX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-15510" y="-3626"/>
+        </scene>
         <!--Navigation Controller - News-->
         <scene sceneID="ybQ-HG-r2p">
             <objects>
@@ -465,7 +549,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRl-j9-bNP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14452" y="-2072"/>
+            <point key="canvasLocation" x="-14548" y="-2094"/>
         </scene>
         <!--News View Controller-->
         <scene sceneID="QAN-6o-FBA">
@@ -552,7 +636,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-13834" y="-2015"/>
+            <point key="canvasLocation" x="-14086" y="-1969"/>
         </scene>
         <!--Navigation Controller - Sports-->
         <scene sceneID="oDR-ti-3mc">
@@ -656,7 +740,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-13954" y="-629"/>
+            <point key="canvasLocation" x="-14418" y="-719"/>
         </scene>
         <!--Detail Event View Controller - Softball-->
         <scene sceneID="XLN-fv-Iie">
@@ -734,6 +818,7 @@
                                 </state>
                                 <connections>
                                     <action selector="showInMap:" destination="NUe-KA-3Zg" eventType="touchUpInside" id="PVW-mV-sYi"/>
+                                    <segue destination="iUY-HR-2IB" kind="push" id="re7-RB-cUD"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Home" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuL-BC-uUs">
@@ -813,7 +898,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uKp-xR-2Jz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-13439" y="-629"/>
+            <point key="canvasLocation" x="-13893" y="-1199"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="t9L-Zq-S8d">
@@ -1433,7 +1518,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R55-r9-J3Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15812" y="-1623"/>
+            <point key="canvasLocation" x="-15936" y="-1543"/>
         </scene>
         <!--Twitter View Controller-->
         <scene sceneID="5uv-kQ-8Pw">
@@ -1529,133 +1614,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-14010" y="330"/>
-        </scene>
-        <!--Detail Twitter View Controller-->
-        <scene sceneID="rZr-V3-ZnF">
-            <objects>
-                <viewController id="tLT-Hf-0V0" customClass="detailTwitterViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Y3G-VJ-f8s">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.10000000000000014" contentMode="scaleToFill" image="BLACK.png" translatesAutoresizingMaskIntoConstraints="NO" id="4dg-R7-FJb">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="14" id="znd-lx-cSX"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="twitterBG.png" translatesAutoresizingMaskIntoConstraints="NO" id="Mfm-WO-E3W">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="84" id="UWS-8a-psp"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="photoFrame.png" translatesAutoresizingMaskIntoConstraints="NO" id="XWd-rG-jHq">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Lbp-Ew-CRr"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="theWichitan.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ob9-Y8-q1H">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="jV5-Fc-SFM"/>
-                                    <constraint firstAttribute="height" constant="90" id="nHZ-pQ-hq6"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="@matthewfarm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EP0-fF-Nws">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="kKn-0K-eWb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <size key="shadowOffset" width="2" height="2"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="created_at" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fu7-eZ-NZO">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="hgn-bw-luk"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8n-MM-mw6">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="177" id="pJV-ot-MhN"/>
-                                </constraints>
-                                <string key="text">Blaise Pascal didn't tweet and neither did Mark Twain. When it came to writing something short &amp; sweet neither Blaise nor Mark had the time.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
-                            </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9N8-yZ-Rj8">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="172" id="Ba1-vp-mm2"/>
-                                    <constraint firstAttribute="height" constant="21" id="bac-zk-6gI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J9u-4G-08J">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="View Full Profile Online">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="viewProfileOnline:" destination="tLT-Hf-0V0" eventType="touchUpInside" id="f1I-3h-aWn"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="XWd-rG-jHq" firstAttribute="centerX" secondItem="ob9-Y8-q1H" secondAttribute="centerX" type="default" id="23A-5m-6yS"/>
-                            <constraint firstItem="EP0-fF-Nws" firstAttribute="leading" secondItem="ob9-Y8-q1H" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="2De-wu-qGR"/>
-                            <constraint firstItem="Mfm-WO-E3W" firstAttribute="trailing" secondItem="Y3G-VJ-f8s" secondAttribute="trailing" type="default" id="4Aa-AD-KXY"/>
-                            <constraint firstItem="4dg-R7-FJb" firstAttribute="top" secondItem="Y3G-VJ-f8s" secondAttribute="top" constant="75" id="6Xn-Mp-dEg"/>
-                            <constraint firstItem="q8n-MM-mw6" firstAttribute="trailing" secondItem="9N8-yZ-Rj8" secondAttribute="trailing" type="default" id="9Ub-Mv-z8U"/>
-                            <constraint firstItem="q8n-MM-mw6" firstAttribute="leading" secondItem="XWd-rG-jHq" secondAttribute="leading" type="default" id="9nt-Ry-ubS"/>
-                            <constraint firstItem="EP0-fF-Nws" firstAttribute="trailing" secondItem="9N8-yZ-Rj8" secondAttribute="trailing" type="default" id="B8F-ZG-HRl"/>
-                            <constraint firstItem="XWd-rG-jHq" firstAttribute="centerY" secondItem="ob9-Y8-q1H" secondAttribute="centerY" type="default" id="FJK-Wm-HAg"/>
-                            <constraint firstItem="ob9-Y8-q1H" firstAttribute="leading" secondItem="Y3G-VJ-f8s" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="G5U-Mr-xpC"/>
-                            <constraint firstItem="4dg-R7-FJb" firstAttribute="leading" secondItem="Y3G-VJ-f8s" secondAttribute="leading" type="default" id="InL-cB-A8D"/>
-                            <constraint firstItem="Mfm-WO-E3W" firstAttribute="top" secondItem="Y3G-VJ-f8s" secondAttribute="top" type="default" id="Ldn-GO-lG5"/>
-                            <constraint firstItem="J9u-4G-08J" firstAttribute="leading" secondItem="Y3G-VJ-f8s" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="M2q-Xg-qdz"/>
-                            <constraint firstItem="EP0-fF-Nws" firstAttribute="bottom" secondItem="Mfm-WO-E3W" secondAttribute="bottom" type="default" id="Mv0-NJ-xIm"/>
-                            <constraint firstItem="ob9-Y8-q1H" firstAttribute="top" secondItem="Y3G-VJ-f8s" secondAttribute="top" constant="20" symbolic="YES" type="default" id="PMi-Uj-pY3"/>
-                            <constraint firstItem="J9u-4G-08J" firstAttribute="trailing" secondItem="q8n-MM-mw6" secondAttribute="trailing" type="default" id="TWc-eO-c1F"/>
-                            <constraint firstAttribute="trailing" secondItem="Fu7-eZ-NZO" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="YNt-ww-Jfg"/>
-                            <constraint firstAttribute="bottom" secondItem="J9u-4G-08J" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="ddI-x2-kdQ"/>
-                            <constraint firstItem="4dg-R7-FJb" firstAttribute="trailing" secondItem="Y3G-VJ-f8s" secondAttribute="trailing" type="default" id="doL-tk-nbK"/>
-                            <constraint firstItem="Fu7-eZ-NZO" firstAttribute="bottom" secondItem="ob9-Y8-q1H" secondAttribute="bottom" type="default" id="eAS-uf-mXy"/>
-                            <constraint firstItem="9N8-yZ-Rj8" firstAttribute="leading" secondItem="XWd-rG-jHq" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="fdh-MK-F0w"/>
-                            <constraint firstItem="q8n-MM-mw6" firstAttribute="top" secondItem="9N8-yZ-Rj8" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="nq8-d0-Gz6"/>
-                            <constraint firstItem="Mfm-WO-E3W" firstAttribute="leading" secondItem="Y3G-VJ-f8s" secondAttribute="leading" type="default" id="qa8-Sy-eW6"/>
-                            <constraint firstItem="Fu7-eZ-NZO" firstAttribute="leading" secondItem="XWd-rG-jHq" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="uFV-cu-W9R"/>
-                            <constraint firstItem="9N8-yZ-Rj8" firstAttribute="top" secondItem="Y3G-VJ-f8s" secondAttribute="top" constant="113" id="ueh-sT-Ffn"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="tYU-ZA-b1j">
-                        <nil key="title"/>
-                        <barButtonItem key="rightBarButtonItem" title="Share" id="a0c-qD-7mj"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="created_at" destination="Fu7-eZ-NZO" id="tCH-hY-DYR"/>
-                        <outlet property="name" destination="9N8-yZ-Rj8" id="hZi-Vw-16E"/>
-                        <outlet property="profile_background_image_url" destination="Mfm-WO-E3W" id="hCO-fx-ZP3"/>
-                        <outlet property="profile_image_url" destination="ob9-Y8-q1H" id="TBA-NS-Y2Q"/>
-                        <outlet property="screen_name" destination="EP0-fF-Nws" id="XLt-fu-zh6"/>
-                        <outlet property="text" destination="q8n-MM-mw6" id="j64-Fo-zTi"/>
-                        <segue destination="vRl-3M-1sy" kind="push" identifier="toWebView" id="gtc-2l-XRg"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Yhr-WE-JsG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-13513" y="723"/>
+            <point key="canvasLocation" x="-13816" y="356"/>
         </scene>
         <!--Campus Map Info View Controller - Map-->
         <scene sceneID="EDK-nm-e2t">
@@ -1762,7 +1721,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rhU-Pc-c3y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12915" y="-2537"/>
+            <point key="canvasLocation" x="-12630" y="-2617"/>
         </scene>
         <!--Detail Directory View Controller - Directory-->
         <scene sceneID="Rnm-vL-Wno">
@@ -1913,14 +1872,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zay-14-bAS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-13761" y="-3606"/>
+            <point key="canvasLocation" x="-13831" y="-3946"/>
         </scene>
         <!--Web View Controller - [Web View]-->
         <scene sceneID="pCe-V0-hef">
             <objects>
                 <viewController id="vRl-3M-1sy" customClass="webViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hhm-ZN-WQ1">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nfj-Sy-LHO">
@@ -1945,7 +1904,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iFb-gN-TyH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12915" y="280"/>
+            <point key="canvasLocation" x="-13051" y="-4700"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="30L-jD-bg0">
@@ -1965,11 +1924,12 @@
                         <segue destination="OP2-jJ-Xxs" kind="relationship" relationship="viewControllers" id="uoK-vG-KIc"/>
                         <segue destination="WTN-9a-f9M" kind="relationship" relationship="viewControllers" id="SRE-KZ-Od4"/>
                         <segue destination="Kil-vA-Bz9" kind="relationship" relationship="viewControllers" id="8Lp-L3-Bym"/>
+                        <segue destination="3Wr-qe-r7U" kind="relationship" relationship="viewControllers" id="VvJ-9s-wFl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fk7-1D-mCn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15921" y="-2867"/>
+            <point key="canvasLocation" x="-15991" y="-2912"/>
         </scene>
     </scenes>
     <resources>
@@ -1979,6 +1939,7 @@
         <image name="166-newspaper.png" width="28" height="23"/>
         <image name="209-twitter.png" width="22" height="22"/>
         <image name="42-info.png" width="28" height="28"/>
+        <image name="70-tv.png" width="24" height="24"/>
         <image name="BLACK.png" width="30" height="30"/>
         <image name="Unknown.jpg" width="161" height="184"/>
         <image name="dirBg.png" width="320" height="74"/>
@@ -1991,7 +1952,6 @@
         <image name="standardMap.png" width="174" height="156"/>
         <image name="theWichitan.jpg" width="180" height="180"/>
         <image name="twitter.png" width="500" height="500"/>
-        <image name="twitterBG.png" width="338" height="100"/>
         <image name="volleyball.jpeg" width="204" height="204"/>
         <image name="wichitanLogo.png" width="320" height="150"/>
     </resources>
@@ -2060,18 +2020,6 @@
                 <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="detailTwitterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/detailTwitterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="viewProfileOnline:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="created_at" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="name" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="profile_background_image_url" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="profile_image_url" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="screen_name" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="text" candidateClass="UITextView"/>
-            </relationships>
-        </class>
         <class className="directoryViewController" superclassName="genericTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/directoryViewController.h"/>
             <relationships>
@@ -2108,6 +2056,13 @@
                 <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>
             </relationships>
         </class>
+        <class className="videoViewController" superclassName="genericTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/videoViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="searchDisplayControl" candidateClass="UISearchDisplayController"/>
+            </relationships>
+        </class>
         <class className="webViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/webViewController.h"/>
             <relationships>
@@ -2121,6 +2076,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="gtc-2l-XRg"/>
+        <segue reference="re7-RB-cUD"/>
+        <segue reference="pWi-Fu-hij"/>
     </inferredMetricsTieBreakers>
 </document>
