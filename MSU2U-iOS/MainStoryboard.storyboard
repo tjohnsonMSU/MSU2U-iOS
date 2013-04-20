@@ -1813,7 +1813,7 @@
                                     <outlet property="delegate" destination="CNN-7E-Foq" id="wGa-pd-zKP"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="dirBg.png" translatesAutoresizingMaskIntoConstraints="NO" id="ukl-bT-Vij">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="dirBg.png" translatesAutoresizingMaskIntoConstraints="NO" id="ukl-bT-Vij">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="77" id="0Lu-fG-eO5"/>
                                 </constraints>
@@ -1896,7 +1896,7 @@
                         <outlet property="fullnameLabel" destination="OsI-2j-fw9" id="qvh-Go-C61"/>
                         <outlet property="photo" destination="WWh-tz-brD" id="73K-uK-LjT"/>
                         <outlet property="positionLabel" destination="7i5-nC-rG1" id="Iu0-LR-NAm"/>
-                        <segue destination="vRl-3M-1sy" kind="push" identifier="toWebsite" id="tds-tn-th9"/>
+                        <segue destination="vRl-3M-1sy" kind="push" identifier="toWebView" id="tds-tn-th9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zay-14-bAS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1925,7 +1925,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="[Web View]" id="klm-qn-yxi">
-                        <barButtonItem key="rightBarButtonItem" title="Share" id="YkC-nP-nH3"/>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="YkC-nP-nH3">
+                            <connections>
+                                <action selector="sharePressed:" destination="vRl-3M-1sy" id="JVK-1j-noc"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="webView" destination="nfj-Sy-LHO" id="zo0-oe-lcf"/>
@@ -2106,7 +2110,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="pWi-Fu-hij"/>
+        <segue reference="tds-tn-th9"/>
         <segue reference="re7-RB-cUD"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SHK.h"
 
 @interface webViewController : UIViewController{
     NSString * websiteURL;

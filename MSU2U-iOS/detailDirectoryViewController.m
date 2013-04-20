@@ -225,8 +225,10 @@
     //LAST ROW always
     if(indexPath.row == [showInTableContent count])
         [self addToContacts];
-    else if([[showInTableLabel objectAtIndex:indexPath.row]isEqualToString:@"Phone1"] || [[showInTableLabel objectAtIndex:indexPath.row]isEqualToString:@"Phone2"])
+    else if([[showInTableLabel objectAtIndex:indexPath.row]isEqualToString:@"Phone1"])
         [self makePhoneCall:myCurrentEmployee.phone1];
+    else if([[showInTableLabel objectAtIndex:indexPath.row]isEqualToString:@"Phone2"])
+        [self makePhoneCall:myCurrentEmployee.phone2];
     else if([[showInTableLabel objectAtIndex:indexPath.row] isEqualToString:@"Email"])
     {
         if([MFMailComposeViewController canSendMail])
@@ -247,6 +249,23 @@
             //do nothing
         }
     }
+    else if([[showInTableLabel objectAtIndex:indexPath.row] isEqualToString:@"Website1"])
+    {
+        //Set the website string which will be used by prepare for segue
+        websiteToBePassed = myCurrentEmployee.website1;
+        [self performSegueWithIdentifier:@"toWebView" sender:tableView];
+    }
+    else if([[showInTableLabel objectAtIndex:indexPath.row] isEqualToString:@"Website2"])
+    {
+        //Set the website string which will be used by prepare for segue.
+        websiteToBePassed = myCurrentEmployee.website2;
+        [self performSegueWithIdentifier:@"toWebView" sender:tableView];
+    }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    [segue.destinationViewController sendURL:websiteToBePassed andTitle:[NSString stringWithFormat:@"%@ %@",myCurrentEmployee.fname,myCurrentEmployee.lname]];
 }
 
 - (void) addToContactsPressed

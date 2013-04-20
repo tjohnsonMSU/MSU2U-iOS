@@ -33,6 +33,23 @@
     }
 }
 
+- (IBAction)sharePressed:(UIBarButtonItem *)sender
+{
+    // Create the item to share (in this example, a url)
+    NSURL *url = [NSURL URLWithString:websiteURL];
+    SHKItem *item = [SHKItem URL:url title:self.title contentType:SHKURLContentTypeWebpage];
+    
+    // Get the ShareKit action sheet
+    SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
+    
+    // ShareKit detects top view controller (the one intended to present ShareKit UI) automatically,
+    // but sometimes it may not find one. To be safe, set it explicitly
+    [SHK setRootViewController:self];
+    
+    // Display the action sheet
+    [actionSheet showFromTabBar:self.tabBarController.tabBar];
+}
+
 -(void) sendURL:(NSString *)x andTitle:(NSString *)y
 {
     websiteURL = x;

@@ -12,6 +12,7 @@
 #import <MessageUI/MFMailComposeViewController.h>
 #import "Employee+Create.h"
 #import "MYDocumentHandler.h"
+#import "webViewController.h"
 #import <AddressBookUI/AddressBookUI.h>
 #import <AddressBook/AddressBook.h>
 
@@ -21,6 +22,7 @@
     NSMutableArray* showInTableContent;
     NSMutableArray* showInTableLabel;
     Employee * myCurrentEmployee;
+    NSString * websiteToBePassed;
 }
 
 -(void)sendEmployeeInformation:(Employee*)employeeInfo;
