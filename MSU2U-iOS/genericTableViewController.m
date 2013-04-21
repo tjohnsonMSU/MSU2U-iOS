@@ -376,7 +376,8 @@
         }
         else
         {
-            [self refresh];
+            NSLog(@"!@#!@# WHAT AM I TRYING TO REFRESH???\n");
+            //[self refresh];
         }
     }
 }
@@ -477,8 +478,39 @@
     }
 }
 
--(void) refresh
+-(void)purgeAllEntitiesOfType:(NSString*)entityName
 {
+    //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // Do your long-running task here
+    __block void (^block)(void) = ^{
+        NSLog(@"About to purge...\n");
+        NSFetchRequest * allCars = [[NSFetchRequest alloc] init];
+        [allCars setEntity:[NSEntityDescription entityForName:entityName inManagedObjectContext:self.myDatabase.managedObjectContext]];
+        [allCars setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+        
+        NSError * error = nil;
+        NSArray * cars = [self.myDatabase.managedObjectContext executeFetchRequest:allCars error:&error];
+        
+        //error handling goes here
+        for (NSManagedObject * car in cars) {
+            [self.myDatabase.managedObjectContext deleteObject:car];
+        }
+        NSError *saveError = nil;
+        [self.myDatabase.managedObjectContext save:&saveError];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // Do callbacks to any UI updates here, like for a status indicator
+        });
+    //});
+    };
+    
+    [self.myDatabase.managedObjectContext performBlock:block];
+}
+
+-(void) downloadAllEntities
+{
+    //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    //SECOND, GET THE NEW DATA
     [self fetchDataFromOnline:self.myDatabase];
     
     //Set the attributable string for the refresh control
@@ -489,6 +521,49 @@
     
     //Save this update string to the user defaults
     [self saveRefreshTime:lastUpdated];
+    //});
+}
+
+-(void) refresh
+{
+    //FIRST, GET RID OF MY CURRENT DATA.
+    switch ([self.childNumber integerValue])
+    {
+        //Events
+        case 2:
+        {
+            [self purgeAllEntitiesOfType:@"Event"];
+            break;
+        }
+        //News
+        case 3:
+        {
+            [self purgeAllEntitiesOfType:@"News"];
+            break;
+        }
+        //Directory
+        case 4:
+        {
+            [self purgeAllEntitiesOfType:@"Employee"];
+            break;
+        }
+        //Twitter
+        case 7:
+        {
+            [self purgeAllEntitiesOfType:@"Tweet"];
+            break;
+        }
+        //Video
+        case 8:
+        {
+            [self purgeAllEntitiesOfType:@"Video"];
+            break;
+        }
+        default:
+            break;
+    }
+    [self downloadAllEntities];
+    NSLog(@"I'm done purging!\n");
 }
 
 -(void)saveRefreshTime:(NSString*)refreshTime
@@ -719,9 +794,9 @@
     else if(self.childNumber == [NSNumber numberWithInt:3])
     {
         //[segue.destinationViewController sendNewsInformation:self.dataObject];
-        //[segue.destinationViewController sendURL:[self.dataObject link] andTitle:[self.dataObject publication]];
-        SVWebViewController *webViewController = [[SVWebViewController alloc] initWithAddress:[self.dataObject link]];
-        [self.navigationController pushViewController:webViewController animated:YES];
+        [segue.destinationViewController sendURL:[self.dataObject link] andTitle:[self.dataObject publication]];
+        //SVWebViewController *webViewController = [[SVWebViewController alloc] initWithAddress:[self.dataObject link]];
+        //[self.navigationController pushViewController:webViewController animated:YES];
     }
     else if(self.childNumber == [NSNumber numberWithInt:4])
     {
