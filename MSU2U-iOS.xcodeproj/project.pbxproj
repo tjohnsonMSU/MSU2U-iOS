@@ -69,6 +69,7 @@
 		1D2E4D77171C4B38008CBD75 /* bg-real.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E4D76171C4B38008CBD75 /* bg-real.png */; };
 		1D2E4D79171C4BCD008CBD75 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E4D78171C4BCD008CBD75 /* Default-568h@2x.png */; };
 		1D2FF9A8172450E300871B7C /* tabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2FF9A7172450E300871B7C /* tabBarViewController.m */; };
+		1D2FF9D4172465F000871B7C /* aboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2FF9D3172465F000871B7C /* aboutViewController.m */; };
 		1D339A991679341D00D84A20 /* academic.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1D339A921679341D00D84A20 /* academic.jpeg */; };
 		1D339A9A1679341D00D84A20 /* museum.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1D339A931679341D00D84A20 /* museum.jpeg */; };
 		1D339A9B1679341D00D84A20 /* music.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1D339A941679341D00D84A20 /* music.jpeg */; };
@@ -508,6 +509,8 @@
 		1D2E4D78171C4BCD008CBD75 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1D2FF9A6172450E300871B7C /* tabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tabBarViewController.h; sourceTree = "<group>"; };
 		1D2FF9A7172450E300871B7C /* tabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tabBarViewController.m; sourceTree = "<group>"; };
+		1D2FF9D2172465F000871B7C /* aboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aboutViewController.h; sourceTree = "<group>"; };
+		1D2FF9D3172465F000871B7C /* aboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aboutViewController.m; sourceTree = "<group>"; };
 		1D339A921679341D00D84A20 /* academic.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = academic.jpeg; sourceTree = "<group>"; };
 		1D339A931679341D00D84A20 /* museum.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = museum.jpeg; sourceTree = "<group>"; };
 		1D339A941679341D00D84A20 /* music.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = music.jpeg; sourceTree = "<group>"; };
@@ -799,6 +802,7 @@
 		1D1CEADD162B4D230059BC1F /* MSU2U-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				1D2FF9D1172465DB00871B7C /* About */,
 				1D2FF9CA1724519200871B7C /* TabBarController */,
 				1DA477FD17220341001CC653 /* Videos */,
 				E09A1467171DC161000CF267 /* Website */,
@@ -965,13 +969,30 @@
 			name = TabBarController;
 			sourceTree = "<group>";
 		};
-		1D339A8A16792FE100D84A20 /* sport */ = {
+		1D2FF9D0172465A700871B7C /* event-backdrop */ = {
 			isa = PBXGroup;
 			children = (
 				1D9EBACE1706AA850027A4A6 /* menbasketballBG.jpg */,
 				1D9EBACF1706AA850027A4A6 /* womensoccerBG.png */,
 				1D9EBAD01706AA850027A4A6 /* footballBG2.jpg */,
 				1D9EBAD11706AA850027A4A6 /* footballBG.jpg */,
+			);
+			name = "event-backdrop";
+			sourceTree = "<group>";
+		};
+		1D2FF9D1172465DB00871B7C /* About */ = {
+			isa = PBXGroup;
+			children = (
+				1D2FF9D2172465F000871B7C /* aboutViewController.h */,
+				1D2FF9D3172465F000871B7C /* aboutViewController.m */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
+		1D339A8A16792FE100D84A20 /* sport */ = {
+			isa = PBXGroup;
+			children = (
+				1D2FF9D0172465A700871B7C /* event-backdrop */,
 				1DA92C391693AD2000AB71F1 /* banner */,
 				1DA7B980167A43540046FF8F /* crossCountry.jpeg */,
 				1DA7B97E167A434C0046FF8F /* golf.jpeg */,
@@ -1768,6 +1789,7 @@
 				1D4FEA6A17220E0300183FFA /* Video+Create.m in Sources */,
 				1DD9F7EA17231EE800754EB8 /* Video.m in Sources */,
 				1D2FF9A8172450E300871B7C /* tabBarViewController.m in Sources */,
+				1D2FF9D4172465F000871B7C /* aboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

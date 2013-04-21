@@ -1420,10 +1420,10 @@
             </objects>
             <point key="canvasLocation" x="-15242" y="-1162"/>
         </scene>
-        <!--Table View Controller-->
+        <!--About View Controller - About-->
         <scene sceneID="m6D-V5-WDb">
             <objects>
-                <tableViewController id="NkA-uN-VnS" sceneMemberID="viewController">
+                <tableViewController id="NkA-uN-VnS" customClass="aboutViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="L10-BM-MHu">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1542,7 +1542,7 @@
                             <outlet property="delegate" destination="NkA-uN-VnS" id="Gq8-Lr-skJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="4r3-0e-aHK"/>
+                    <navigationItem key="navigationItem" title="About" id="4r3-0e-aHK"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dac-O0-zWS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2007,6 +2007,9 @@
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="aboutViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/aboutViewController.h"/>
         </class>
         <class className="campusMapInfoViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/campusMapInfoViewController.h"/>

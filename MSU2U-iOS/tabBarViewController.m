@@ -35,16 +35,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
-{
-
-}
-/*
--(void)tabBar:(UITabBar *)tabBar didBeginCustomizingItems:(NSArray *)items
-{
-    NSLog(@"I did begin customizing items...\n");
-}*/
-
 -(void)tabBar:(UITabBar *)tabBar didEndCustomizingItems:(NSArray *)items changed:(BOOL)changed
 {
     NSLog(@"Did end customizing items...\n");
@@ -59,15 +49,4 @@
     }
 }
 
-/*
--(void)tabBar:(UITabBar *)tabBar willBeginCustomizingItems:(NSArray *)items
-{
-    NSLog(@"I WILL begin customizing items...\n");
-}
-
--(void)tabBar:(UITabBar *)tabBar willEndCustomizingItems:(NSArray *)items changed:(BOOL)changed
-{
-    NSLog(@"I WILL end customizing items...\n");
-}
-*/
 @end
