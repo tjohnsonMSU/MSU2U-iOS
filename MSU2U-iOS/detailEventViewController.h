@@ -16,7 +16,7 @@
 //ShareKit
 #import "SHK.h"
 
-@interface detailEventViewController : addEventToCalendar{
+@interface detailEventViewController : UITableViewController{
     Event * receivedEvent;
 }
 
@@ -27,9 +27,9 @@
 @property (strong, nonatomic) IBOutlet UIImageView *awayPhoto;
 @property (strong, nonatomic) IBOutlet UILabel *locationLabel;
 @property (strong, nonatomic) IBOutlet UILabel *startingDateLabel;
-- (IBAction)addToCalendar:(UIButton *)sender;
-- (IBAction)showInMap:(UIButton *)sender;
+@property (strong, nonatomic) IBOutlet UILabel *homeTeamName;
+@property (strong, nonatomic) IBOutlet UILabel *awayTeamName;
+
 - (IBAction)sharePressed:(UIBarButtonItem *)sender;
-- (IBAction)viewInBrowser:(UIButton *)sender;
 
 @end

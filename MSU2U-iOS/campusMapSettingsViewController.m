@@ -31,6 +31,18 @@
     NSLog(@"%@\n",[defaults valueForKey:@"campusMapSettingsMapRowChecked"]);
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    if(interfaceOrientation == UIInterfaceOrientationLandscapeRight)
+        return NO;
+    else if(interfaceOrientation == UIInterfaceOrientationLandscapeLeft)
+        return NO;
+    else if(interfaceOrientation == UIInterfaceOrientationPortrait)
+        return YES;
+    else
+        return YES;
+}
+
 -(void)viewDidAppear:(BOOL)animated
 {
     //Set up the settings options as they are in the user defaults

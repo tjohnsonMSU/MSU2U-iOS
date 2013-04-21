@@ -16,6 +16,37 @@
 -(void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    UIImageView *tempImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
+    [tempImg setImage:[UIImage imageNamed:@"womensoccerBG.png"]];
+    [self.tableView setBackgroundView:tempImg];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChanged) name:@"UIDeviceOrientationDidChangeNotification" object:nil];
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //cell.backgroundColor = [UIColor colorWithRed:(185.0/255.0) green:(142.0/255.0) blue:(47.0/255.0) alpha:1];
+    //cell.backgroundView.backgroundColor = [UIColor colorWithRed:(185.0/255.0) green:(142.0/255.0) blue:(47.0/255.0) alpha:1];
+    cell.backgroundView.alpha = 0.9;
+}
+
+- (void)orientationChanged
+{
+    //[self adjustViewsForOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
+    NSLog(@"Whoa we shifted?! orientation == %d\n",[[UIDevice currentDevice]orientation]);
+    
+    if([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft || [[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight)
+    {
+        UIImageView *tempImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
+        [tempImg setImage:[UIImage imageNamed:@"twitterBG.png"]];
+        [self.tableView setBackgroundView:tempImg];
+    }
+    else if([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait || [[UIDevice currentDevice] orientation] == UIDeviceOrientationPortraitUpsideDown)
+    {
+        UIImageView *tempImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
+        [tempImg setImage:[UIImage imageNamed:@"womensoccerBG.png"]];
+        [self.tableView setBackgroundView:tempImg];
+    }
 }
 
 - (void)viewDidLoad
@@ -24,11 +55,6 @@
     
     //Setup the text in the navigation bar
     self.title = receivedEvent.category;
-    
-    if([receivedEvent.category isEqualToString:@"Men's Basketball"])
-    {
-        self.backgroundPhoto.image = [UIImage imageNamed:@"menbasketballBG.jpg"];
-    }
     
     //Set your labels
     self.titleLabel.text = receivedEvent.title;
@@ -43,6 +69,24 @@
                                                  (unsigned long)NULL), ^(void) {
             [self downloadImageForHome:receivedEvent.teamlogo andAway:receivedEvent.opponentlogo];
         });
+        
+        //Set the home label to say 'Midwestern State'
+        self.homeTeamName.text = @"Midwestern State";
+        
+        if ([receivedEvent.title rangeOfString:@" at "].location==NSNotFound)
+        {
+            //'vs' was used
+            NSArray * components = [receivedEvent.title componentsSeparatedByString:@" vs "];
+            NSString *trimmedText = [[components objectAtIndex:1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            self.awayTeamName.text = (NSString *)trimmedText;
+        }
+        else
+        {
+            NSArray * components = [receivedEvent.title componentsSeparatedByString:@" at "];
+            NSString *trimmedText = [[components objectAtIndex:1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            self.awayTeamName.text = (NSString *)trimmedText;
+        }
+        
     }
     else
     {
@@ -50,6 +94,21 @@
                                                  (unsigned long)NULL), ^(void) {
             [self downloadImageForHome:receivedEvent.opponentlogo andAway:receivedEvent.teamlogo];
         });
+        self.awayTeamName.text = @"Midwestern State";
+        
+        if ([receivedEvent.title rangeOfString:@" at "].location==NSNotFound)
+        {
+            //'vs' was used
+            NSArray * components = [receivedEvent.title componentsSeparatedByString:@" vs "];
+            NSString *trimmedText = [[components objectAtIndex:1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            self.homeTeamName.text = (NSString *)trimmedText;
+        }
+        else
+        {
+            NSArray * components = [receivedEvent.title componentsSeparatedByString:@" at "];
+            NSString *trimmedText = [[components objectAtIndex:1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            self.homeTeamName.text = (NSString *)trimmedText;
+        }
     }
 }
 
@@ -78,16 +137,37 @@
     //[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
-- (IBAction)addToCalendar:(UIButton *)sender {
+- (void)addToCalendar {
     //Setup the variables for this event in the addEventToMainCalendar class
+    addEventToCalendar * myCal = [[addEventToCalendar alloc]init];
+    
     NSLog(@"Well, the date on my end before sending to addEventToMainCalendar is %@\n",receivedEvent.startdate);
-    self.calendarEventTitle = receivedEvent.title;
-    self.calendarEventStartDate = receivedEvent.startdate;
-    self.calendarEventEndDate = receivedEvent.enddate;
-    [self addEventToMainCalendar];
+    myCal.calendarEventTitle = receivedEvent.title;
+    myCal.calendarEventStartDate = receivedEvent.startdate;
+    myCal.calendarEventEndDate = receivedEvent.enddate;
+    [myCal addEventToMainCalendar];
 }
 
-- (IBAction)showInMap:(UIButton *)sender {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.section == 2)
+    {
+        switch (indexPath.row)
+        {
+            case 0:
+            {
+                //TODO
+                break;
+            }
+            case 1:
+            {
+                [self addToCalendar];
+                break;
+            }
+            default:
+                break;
+        }
+    }
 }
 
 - (IBAction)sharePressed:(UIBarButtonItem *)sender
@@ -107,7 +187,4 @@
     [actionSheet showFromTabBar:self.tabBarController.tabBar];
 }
 
-- (IBAction)viewInBrowser:(UIButton *)sender {
-    NSLog(@"I'm going to go view this thing in the browser. woohoo!!\n");
-}
 @end

@@ -150,6 +150,8 @@
 		1DA7B981167A43540046FF8F /* crossCountry.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1DA7B980167A43540046FF8F /* crossCountry.jpeg */; };
 		1DA92C371693A52500AB71F1 /* Midwestern_St.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1DA92C361693A52500AB71F1 /* Midwestern_St.gif */; };
 		1DA92C3B1693AD7100AB71F1 /* softball1.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 1DA92C3A1693AD7100AB71F1 /* softball1.JPG */; };
+		1DAD526F17235C58000CC658 /* maroon_gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAD526E17235C58000CC658 /* maroon_gradient.png */; };
+		1DAD529217236010000CC658 /* RlujSF.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAD529117236010000CC658 /* RlujSF.png */; };
 		1DB63E32165FDDCC00A21649 /* genericTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB63E31165FDDCC00A21649 /* genericTableViewController.m */; };
 		1DB63E4316604EBD00A21649 /* basketball.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1DB63E3D16604EBD00A21649 /* basketball.jpeg */; };
 		1DB63E4416604EBD00A21649 /* softball.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1DB63E3E16604EBD00A21649 /* softball.jpeg */; };
@@ -162,6 +164,7 @@
 		1DD49E3416ADD6B100EB7827 /* navBarDemo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DD49E3316ADD6B100EB7827 /* navBarDemo.png */; };
 		1DD8F3631693CF2F009F0FC3 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD8F3621693CF2F009F0FC3 /* EventKit.framework */; };
 		1DD9F7EA17231EE800754EB8 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD9F7E917231EE800754EB8 /* Video.m */; };
+		1DD9F7EC172337C500754EB8 /* true_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DD9F7EB172337C500754EB8 /* true_black.png */; };
 		1DDB39C81652CF6E00252053 /* footballBanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDB39C71652CF6E00252053 /* footballBanner.png */; };
 		1DDD422516ED401F0079463A /* twitterBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD422416ED401F0079463A /* twitterBG.png */; };
 		1DDD422716ED42BB0079463A /* twitterBlug.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD422616ED42BB0079463A /* twitterBlug.png */; };
@@ -624,6 +627,8 @@
 		1DA7B980167A43540046FF8F /* crossCountry.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = crossCountry.jpeg; sourceTree = "<group>"; };
 		1DA92C361693A52500AB71F1 /* Midwestern_St.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Midwestern_St.gif; sourceTree = "<group>"; };
 		1DA92C3A1693AD7100AB71F1 /* softball1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = softball1.JPG; sourceTree = "<group>"; };
+		1DAD526E17235C58000CC658 /* maroon_gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maroon_gradient.png; sourceTree = "<group>"; };
+		1DAD529117236010000CC658 /* RlujSF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RlujSF.png; sourceTree = "<group>"; };
 		1DB63E30165FDDCC00A21649 /* genericTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = genericTableViewController.h; sourceTree = "<group>"; };
 		1DB63E31165FDDCC00A21649 /* genericTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = genericTableViewController.m; sourceTree = "<group>"; };
 		1DB63E3D16604EBD00A21649 /* basketball.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = basketball.jpeg; sourceTree = "<group>"; };
@@ -640,6 +645,7 @@
 		1DD8F3621693CF2F009F0FC3 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		1DD9F7E817231EE800754EB8 /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Video.h; path = ../Video.h; sourceTree = "<group>"; };
 		1DD9F7E917231EE800754EB8 /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Video.m; path = ../Video.m; sourceTree = "<group>"; };
+		1DD9F7EB172337C500754EB8 /* true_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = true_black.png; sourceTree = "<group>"; };
 		1DDB39C71652CF6E00252053 /* footballBanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = footballBanner.png; sourceTree = "<group>"; };
 		1DDD422416ED401F0079463A /* twitterBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterBG.png; sourceTree = "<group>"; };
 		1DDD422616ED42BB0079463A /* twitterBlug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterBlug.png; sourceTree = "<group>"; };
@@ -810,6 +816,9 @@
 		1D1CEADE162B4D230059BC1F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1DAD529117236010000CC658 /* RlujSF.png */,
+				1DAD526E17235C58000CC658 /* maroon_gradient.png */,
+				1DD9F7EB172337C500754EB8 /* true_black.png */,
 				1DA47822172205E3001CC653 /* 70-tv.png */,
 				1D2E4D76171C4B38008CBD75 /* bg-real.png */,
 				1D2E4D72171C4A1D008CBD75 /* temp-bg.png */,
@@ -1687,6 +1696,9 @@
 				1D3DA8FA17207DA20020FEBB /* SVWebViewController.strings in Resources */,
 				1D3DA8FC17207DA20020FEBB /* SVWebViewController.bundle in Resources */,
 				1DA47823172205E3001CC653 /* 70-tv.png in Resources */,
+				1DD9F7EC172337C500754EB8 /* true_black.png in Resources */,
+				1DAD526F17235C58000CC658 /* maroon_gradient.png in Resources */,
+				1DAD529217236010000CC658 /* RlujSF.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,6 +32,18 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     return results;
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    if(interfaceOrientation == UIInterfaceOrientationLandscapeRight)
+        return NO;
+    else if(interfaceOrientation == UIInterfaceOrientationLandscapeLeft)
+        return NO;
+    else if(interfaceOrientation == UIInterfaceOrientationPortrait)
+        return YES;
+    else
+        return YES;
+}
+
 -(void)viewDidLoad
 {
     [super viewDidLoad];
