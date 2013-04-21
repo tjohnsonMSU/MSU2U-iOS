@@ -41,7 +41,7 @@
         [tempImg setImage:[UIImage imageNamed:@"twitterBG.png"]];
         [self.tableView setBackgroundView:tempImg];
     }
-    else if([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait || [[UIDevice currentDevice] orientation] == UIDeviceOrientationPortraitUpsideDown)
+    else if([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait)
     {
         UIImageView *tempImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
         [tempImg setImage:[UIImage imageNamed:@"womensoccerBG.png"]];
@@ -157,6 +157,7 @@
             case 0:
             {
                 //TODO
+                [self showInMap];
                 break;
             }
             case 1:
@@ -167,6 +168,42 @@
             default:
                 break;
         }
+    }
+}
+
+-(void)showInMap
+{
+    // Check for iOS 6
+    Class mapItemClass = [MKMapItem class];
+    if (mapItemClass && [mapItemClass respondsToSelector:@selector(openMapsWithItems:launchOptions:)])
+    {
+        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+        [geocoder geocodeAddressString:receivedEvent.location
+                     completionHandler:^(NSArray *placemarks, NSError *error) {
+                         
+                         // Convert the CLPlacemark to an MKPlacemark
+                         // Note: There's no error checking for a failed geocode
+                         CLPlacemark *geocodedPlacemark = [placemarks objectAtIndex:0];
+                         MKPlacemark *placemark = [[MKPlacemark alloc]
+                                                   initWithCoordinate:geocodedPlacemark.location.coordinate
+                                                   addressDictionary:geocodedPlacemark.addressDictionary];
+                         
+                         // Create a map item for the geocoded address to pass to Maps app
+                         MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+                         [mapItem setName:geocodedPlacemark.name];
+                         
+                         // Set the directions mode to "Driving"
+                         // Can use MKLaunchOptionsDirectionsModeWalking instead
+                         NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving};
+                         
+                         // Get the "Current User Location" MKMapItem
+                         MKMapItem *currentLocationMapItem = [MKMapItem mapItemForCurrentLocation];
+                         
+                         // Pass the current location and destination map items to the Maps app
+                         // Set the direction mode in the launchOptions dictionary
+                         [MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem] launchOptions:launchOptions];
+                         
+                     }];
     }
 }
 
