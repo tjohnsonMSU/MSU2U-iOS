@@ -37,16 +37,28 @@
             //This person doesn't have a last name, so this person is not suitable to be inserted into database
             //do nothing
         }
-        else
+        else if([[info objectForKey:@"deleted"] isEqualToString:@"0"])
         {
+            //OK this employee has not been deleted from the database, so put this person into my core data
             employee = [NSEntityDescription insertNewObjectForEntityForName:@"Employee" inManagedObjectContext:context];
             employee = [self createNewEmployee:employee fromInfo:info];
+        }
+        else
+        {
+            NSLog(@"I found a unique employee ID with last name %@, however I did not put them into core data because their deleted flag is TRUE\n",[info objectForKey:@"FName"]);
         }
     }
     else
     {
         employee = [employees lastObject];
         //NSLog(@"Employee %@ %@ already exists. Let me see if their data matches my new data...\n",employee.fname,employee.lname);
+        if([employee.deleted isEqualToString:@"0"] && [[info objectForKey:@"deleted"] isEqualToString:@"1"])
+        {
+            //I need to delete this employee since he or she no longer exists in the database
+            for (NSManagedObject * e in employees) {
+                [context deleteObject:e];
+            }
+        }
         if(![employee.last_changed isEqualToString:[info objectForKey:@"last_changed"]])
         {
             NSLog(@"Whoa, this person was updated since the last I checked. UPDATING %@ %@!\n",employee.fname,employee.lname);

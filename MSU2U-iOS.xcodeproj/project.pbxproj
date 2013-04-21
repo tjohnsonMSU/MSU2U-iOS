@@ -68,6 +68,7 @@
 		1D2E4D73171C4A1D008CBD75 /* temp-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E4D72171C4A1D008CBD75 /* temp-bg.png */; };
 		1D2E4D77171C4B38008CBD75 /* bg-real.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E4D76171C4B38008CBD75 /* bg-real.png */; };
 		1D2E4D79171C4BCD008CBD75 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E4D78171C4BCD008CBD75 /* Default-568h@2x.png */; };
+		1D2FF9A8172450E300871B7C /* tabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2FF9A7172450E300871B7C /* tabBarViewController.m */; };
 		1D339A991679341D00D84A20 /* academic.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1D339A921679341D00D84A20 /* academic.jpeg */; };
 		1D339A9A1679341D00D84A20 /* museum.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1D339A931679341D00D84A20 /* museum.jpeg */; };
 		1D339A9B1679341D00D84A20 /* music.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1D339A941679341D00D84A20 /* music.jpeg */; };
@@ -505,6 +506,8 @@
 		1D2E4D72171C4A1D008CBD75 /* temp-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "temp-bg.png"; sourceTree = "<group>"; };
 		1D2E4D76171C4B38008CBD75 /* bg-real.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-real.png"; sourceTree = "<group>"; };
 		1D2E4D78171C4BCD008CBD75 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		1D2FF9A6172450E300871B7C /* tabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tabBarViewController.h; sourceTree = "<group>"; };
+		1D2FF9A7172450E300871B7C /* tabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tabBarViewController.m; sourceTree = "<group>"; };
 		1D339A921679341D00D84A20 /* academic.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = academic.jpeg; sourceTree = "<group>"; };
 		1D339A931679341D00D84A20 /* museum.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = museum.jpeg; sourceTree = "<group>"; };
 		1D339A941679341D00D84A20 /* music.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = music.jpeg; sourceTree = "<group>"; };
@@ -796,6 +799,7 @@
 		1D1CEADD162B4D230059BC1F /* MSU2U-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				1D2FF9CA1724519200871B7C /* TabBarController */,
 				1DA477FD17220341001CC653 /* Videos */,
 				E09A1467171DC161000CF267 /* Website */,
 				1D1CEAFE162B4DBB0059BC1F /* MainStoryboard.storyboard */,
@@ -950,6 +954,15 @@
 				1D24236F16E3FEBD003E731D /* MBProgressHUD.m */,
 			);
 			name = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		1D2FF9CA1724519200871B7C /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				1D2FF9A6172450E300871B7C /* tabBarViewController.h */,
+				1D2FF9A7172450E300871B7C /* tabBarViewController.m */,
+			);
+			name = TabBarController;
 			sourceTree = "<group>";
 		};
 		1D339A8A16792FE100D84A20 /* sport */ = {
@@ -1754,6 +1767,7 @@
 				1DA478211722035B001CC653 /* videoViewController.m in Sources */,
 				1D4FEA6A17220E0300183FFA /* Video+Create.m in Sources */,
 				1DD9F7EA17231EE800754EB8 /* Video.m in Sources */,
+				1D2FF9A8172450E300871B7C /* tabBarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

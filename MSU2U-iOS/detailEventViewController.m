@@ -16,9 +16,12 @@
 -(void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    UIImageView *tempImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
+    
+    /*UIImageView *tempImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
     [tempImg setImage:[UIImage imageNamed:@"womensoccerBG.png"]];
     [self.tableView setBackgroundView:tempImg];
+    */
+    [self orientationChanged];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChanged) name:@"UIDeviceOrientationDidChangeNotification" object:nil];
 }

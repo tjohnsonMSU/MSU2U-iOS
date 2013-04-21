@@ -496,10 +496,10 @@
             </objects>
             <point key="canvasLocation" x="-15510" y="-3626"/>
         </scene>
-        <!--Navigation Controller - News-->
+        <!--News Navigation View Controller - News-->
         <scene sceneID="ybQ-HG-r2p">
             <objects>
-                <navigationController definesPresentationContext="YES" id="wC3-iN-wRZ" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="wC3-iN-wRZ" customClass="newsNavigationViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="News" image="166-newspaper.png" id="VVO-zk-BjC"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NrL-sd-EX6">
                         <autoresizingMask key="autoresizingMask"/>
@@ -1418,7 +1418,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qak-nb-5Ov" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15218" y="-1108"/>
+            <point key="canvasLocation" x="-15242" y="-1162"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="m6D-V5-WDb">
@@ -1954,10 +1954,10 @@
             </objects>
             <point key="canvasLocation" x="-13051" y="-4700"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="30L-jD-bg0">
             <objects>
-                <tabBarController restorationIdentifier="My Feed" definesPresentationContext="YES" id="L3K-3G-aB4" sceneMemberID="viewController">
+                <tabBarController restorationIdentifier="My Feed" definesPresentationContext="YES" id="L3K-3G-aB4" customClass="tabBarViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="XWc-Ex-znE"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="ixx-A0-F6N">
@@ -1966,18 +1966,18 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="sTv-U5-K3B" kind="relationship" relationship="viewControllers" id="m5I-AT-5cj"/>
-                        <segue destination="wC3-iN-wRZ" kind="relationship" relationship="viewControllers" id="df5-hK-L4w"/>
-                        <segue destination="3Wr-qe-r7U" kind="relationship" relationship="viewControllers" id="VvJ-9s-wFl"/>
-                        <segue destination="LGb-J0-zI2" kind="relationship" relationship="viewControllers" id="QoU-eZ-Ssb"/>
-                        <segue destination="OP2-jJ-Xxs" kind="relationship" relationship="viewControllers" id="x7N-db-L8l"/>
-                        <segue destination="WTN-9a-f9M" kind="relationship" relationship="viewControllers" id="SRE-KZ-Od4"/>
-                        <segue destination="Kil-vA-Bz9" kind="relationship" relationship="viewControllers" id="8Lp-L3-Bym"/>
+                        <segue destination="3Wr-qe-r7U" kind="relationship" relationship="viewControllers" id="eOu-5F-odb"/>
+                        <segue destination="OP2-jJ-Xxs" kind="relationship" relationship="viewControllers" id="S8R-gk-qdW"/>
+                        <segue destination="WTN-9a-f9M" kind="relationship" relationship="viewControllers" id="Rc1-Wr-msa"/>
+                        <segue destination="wC3-iN-wRZ" kind="relationship" relationship="viewControllers" id="I86-dJ-pEp"/>
+                        <segue destination="LGb-J0-zI2" kind="relationship" relationship="viewControllers" id="aRW-g3-Cd6"/>
+                        <segue destination="Kil-vA-Bz9" kind="relationship" relationship="viewControllers" id="CTU-Tr-OAw"/>
+                        <segue destination="sTv-U5-K3B" kind="relationship" relationship="viewControllers" id="klA-dN-3cP"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fk7-1D-mCn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15991" y="-2912"/>
+            <point key="canvasLocation" x="-16019" y="-2876"/>
         </scene>
     </scenes>
     <resources>
@@ -2088,6 +2088,9 @@
                 <relationship kind="outlet" name="searchDisplayControl" candidateClass="UISearchDisplayController"/>
                 <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>
             </relationships>
+        </class>
+        <class className="tabBarViewController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/tabBarViewController.h"/>
         </class>
         <class className="twitterViewController" superclassName="genericTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/twitterViewController.h"/>
