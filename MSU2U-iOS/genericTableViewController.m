@@ -477,7 +477,7 @@
         [self setupFetchedResultsController];
     }
 }
-
+/*
 -(void)purgeAllEntitiesOfType:(NSString*)entityName
 {
     //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -506,7 +506,7 @@
     
     [self.myDatabase.managedObjectContext performBlock:block];
 }
-
+*/
 -(void) downloadAllEntities
 {
     //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -527,7 +527,7 @@
 -(void) refresh
 {
     //FIRST, GET RID OF MY CURRENT DATA.
-    switch ([self.childNumber integerValue])
+    /*switch ([self.childNumber integerValue])
     {
         //Events
         case 2:
@@ -562,6 +562,7 @@
         default:
             break;
     }
+     */
     [self downloadAllEntities];
     NSLog(@"I'm done purging!\n");
 }
