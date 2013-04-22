@@ -40,6 +40,7 @@
 //JSON URLs
 @property (nonatomic, retain) NSString * jsonURL;
 @property (nonatomic, retain) NSString * jsonSportsNewsURL;
+@property (nonatomic, retain) NSString * jsonMuseumNewsURL;
 
 @property (nonatomic, retain) NSArray * twitterProfilesAndHashtags;
 @property (nonatomic, retain) NSArray * vimeoChannel;

@@ -105,6 +105,8 @@
                 
                 NSArray * myWichitanData = [self downloadCurrentData:self.jsonURL];
                 NSArray * mySportsNewsData = [self downloadCurrentData:self.jsonSportsNewsURL];
+                NSArray * myMuseumNewsData = [self downloadCurrentData:self.jsonMuseumNewsURL];
+                
                 hud.labelText = @"Loading...";
                 NSLog(@"mySportsNewsData = %@\n",mySportsNewsData);
                 [document.managedObjectContext performBlock:^{
@@ -113,6 +115,10 @@
                         [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
                     }
                     for(NSDictionary * dataInfo in mySportsNewsData)
+                    {
+                        [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+                    }
+                    for(NSDictionary * dataInfo in myMuseumNewsData)
                     {
                         [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
                     }
@@ -296,9 +302,9 @@
             }
             case 3:
             {
-                //show ONLY 'Campus' related news
+                //show ONLY 'Museum' related news
                 NSPredicate * predicate;
-                predicate = [NSPredicate predicateWithFormat:@"publication LIKE[c] 'Campus'"];
+                predicate = [NSPredicate predicateWithFormat:@"publication LIKE[c] 'WF Museum of Art'"];
                 [request setPredicate:predicate];
                 break;
             }
@@ -477,7 +483,7 @@
         [self setupFetchedResultsController];
     }
 }
-/*
+
 -(void)purgeAllEntitiesOfType:(NSString*)entityName
 {
     //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -506,7 +512,7 @@
     
     [self.myDatabase.managedObjectContext performBlock:block];
 }
-*/
+
 -(void) downloadAllEntities
 {
     //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -527,42 +533,44 @@
 -(void) refresh
 {
     //FIRST, GET RID OF MY CURRENT DATA.
-    /*switch ([self.childNumber integerValue])
+    if(self.childNumber != [NSNumber numberWithInt:4])
     {
-        //Events
-        case 2:
+        switch ([self.childNumber integerValue])
         {
-            [self purgeAllEntitiesOfType:@"Event"];
-            break;
+            //Events
+            case 2:
+            {
+                [self purgeAllEntitiesOfType:@"Event"];
+                break;
+            }
+            //News
+            case 3:
+            {
+                [self purgeAllEntitiesOfType:@"News"];
+                break;
+            }
+            //Directory
+            /*case 4:
+            {
+                [self purgeAllEntitiesOfType:@"Employee"];
+                break;
+            }*/
+            //Twitter
+            case 7:
+            {
+                [self purgeAllEntitiesOfType:@"Tweet"];
+                break;
+            }
+            //Video
+            case 8:
+            {
+                [self purgeAllEntitiesOfType:@"Video"];
+                break;
+            }
+            default:
+                break;
         }
-        //News
-        case 3:
-        {
-            [self purgeAllEntitiesOfType:@"News"];
-            break;
-        }
-        //Directory
-        case 4:
-        {
-            [self purgeAllEntitiesOfType:@"Employee"];
-            break;
-        }
-        //Twitter
-        case 7:
-        {
-            [self purgeAllEntitiesOfType:@"Tweet"];
-            break;
-        }
-        //Video
-        case 8:
-        {
-            [self purgeAllEntitiesOfType:@"Video"];
-            break;
-        }
-        default:
-            break;
     }
-     */
     [self downloadAllEntities];
     NSLog(@"I'm done purging!\n");
 }
@@ -663,6 +671,10 @@
             else if([[self.dataObject publication] isEqualToString:@"MSU Mustangs"])
             {
                 defaultImage = @"101-gameplan.png";
+            }
+            else if([[self.dataObject publication] isEqualToString:@"WF Museum of Art"])
+            {
+                defaultImage = @"wfma50x50.png";
             }
             
             //Download a 50x50 image
@@ -796,6 +808,7 @@
     {
         //[segue.destinationViewController sendNewsInformation:self.dataObject];
         [segue.destinationViewController sendURL:[self.dataObject link] andTitle:[self.dataObject publication]];
+        
         //SVWebViewController *webViewController = [[SVWebViewController alloc] initWithAddress:[self.dataObject link]];
         //[self.navigationController pushViewController:webViewController animated:YES];
     }

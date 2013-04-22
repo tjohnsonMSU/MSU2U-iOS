@@ -45,7 +45,16 @@
     if(indexPath.section == 2 && indexPath.row == 0)
     {
         //User pressed the Contact Development Team cell!
+        MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+        controller.mailComposeDelegate = self;
+        [controller setToRecipients:[NSArray arrayWithObject:@"msu2u@yahoo.com"]];
+        [controller setSubject:@""];
         
+        //TODO Should format this better
+        NSString * openingStatement = [NSString stringWithFormat:@"[Sent from within MSU2U]\n\nGreetings,\n"];
+        
+        [controller setMessageBody:openingStatement isHTML:NO];
+        if (controller) [self presentModalViewController:controller animated:YES];
     }
 }
 
@@ -85,6 +94,16 @@
     [headerView addSubview:label];
     
     return headerView;
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError*)error;
+{
+    if (result == MFMailComposeResultSent) {
+        NSLog(@"It's away!");
+    }
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 @end

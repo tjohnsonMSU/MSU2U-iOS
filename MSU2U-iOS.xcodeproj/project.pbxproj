@@ -70,6 +70,27 @@
 		1D2E4D79171C4BCD008CBD75 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E4D78171C4BCD008CBD75 /* Default-568h@2x.png */; };
 		1D2FF9A8172450E300871B7C /* tabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2FF9A7172450E300871B7C /* tabBarViewController.m */; };
 		1D2FF9D4172465F000871B7C /* aboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2FF9D3172465F000871B7C /* aboutViewController.m */; };
+		1D2FF9D617247F2100871B7C /* wfma50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9D517247F2100871B7C /* wfma50x50.png */; };
+		1D2FF9E5172499BC00871B7C /* womens-basketball-portrait.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9D7172499BC00871B7C /* womens-basketball-portrait.jpg */; };
+		1D2FF9E6172499BC00871B7C /* womens-basketball-landscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9D8172499BC00871B7C /* womens-basketball-landscape.jpg */; };
+		1D2FF9E7172499BC00871B7C /* mens-soccer-portrait.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9D9172499BC00871B7C /* mens-soccer-portrait.jpg */; };
+		1D2FF9E8172499BC00871B7C /* volleyball-portrait.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9DA172499BC00871B7C /* volleyball-portrait.jpg */; };
+		1D2FF9E9172499BC00871B7C /* mens-soccer-landscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9DB172499BC00871B7C /* mens-soccer-landscape.jpg */; };
+		1D2FF9EA172499BC00871B7C /* volleyball-landscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9DC172499BC00871B7C /* volleyball-landscape.jpg */; };
+		1D2FF9EB172499BC00871B7C /* mens-basketball-landscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9DD172499BC00871B7C /* mens-basketball-landscape.jpg */; };
+		1D2FF9EC172499BC00871B7C /* womens-tennis-portrait.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9DE172499BC00871B7C /* womens-tennis-portrait.jpg */; };
+		1D2FF9ED172499BC00871B7C /* golf-landscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9DF172499BC00871B7C /* golf-landscape.jpg */; };
+		1D2FF9EE172499BC00871B7C /* womens-tennis-landscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9E0172499BC00871B7C /* womens-tennis-landscape.jpg */; };
+		1D2FF9EF172499BC00871B7C /* mens-tennis-landscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9E1172499BC00871B7C /* mens-tennis-landscape.jpg */; };
+		1D2FF9F0172499BC00871B7C /* womens-soccer-portrait.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9E2172499BC00871B7C /* womens-soccer-portrait.jpg */; };
+		1D2FF9F1172499BC00871B7C /* softball-landscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9E3172499BC00871B7C /* softball-landscape.jpg */; };
+		1D2FF9F2172499BC00871B7C /* womens-soccer-landscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9E4172499BC00871B7C /* womens-soccer-landscape.jpg */; };
+		1D2FF9F7172499C500871B7C /* womens-golf-portrait.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9F3172499C500871B7C /* womens-golf-portrait.jpg */; };
+		1D2FF9F8172499C500871B7C /* womens-golf-landscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9F4172499C500871B7C /* womens-golf-landscape.jpg */; };
+		1D2FF9F9172499C500871B7C /* track-portrait.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9F5172499C500871B7C /* track-portrait.jpg */; };
+		1D2FF9FA172499C500871B7C /* track-landscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9F6172499C500871B7C /* track-landscape.jpg */; };
+		1D2FF9FC17249D7E00871B7C /* softball-portrait.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9FB17249D7E00871B7C /* softball-portrait.jpg */; };
+		1D2FF9FE1724A18100871B7C /* mens-tennis-portrait.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9FD1724A18100871B7C /* mens-tennis-portrait.jpg */; };
 		1D339A991679341D00D84A20 /* academic.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1D339A921679341D00D84A20 /* academic.jpeg */; };
 		1D339A9A1679341D00D84A20 /* museum.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1D339A931679341D00D84A20 /* museum.jpeg */; };
 		1D339A9B1679341D00D84A20 /* music.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1D339A941679341D00D84A20 /* music.jpeg */; };
@@ -511,6 +532,27 @@
 		1D2FF9A7172450E300871B7C /* tabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tabBarViewController.m; sourceTree = "<group>"; };
 		1D2FF9D2172465F000871B7C /* aboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aboutViewController.h; sourceTree = "<group>"; };
 		1D2FF9D3172465F000871B7C /* aboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aboutViewController.m; sourceTree = "<group>"; };
+		1D2FF9D517247F2100871B7C /* wfma50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wfma50x50.png; sourceTree = "<group>"; };
+		1D2FF9D7172499BC00871B7C /* womens-basketball-portrait.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "womens-basketball-portrait.jpg"; sourceTree = "<group>"; };
+		1D2FF9D8172499BC00871B7C /* womens-basketball-landscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "womens-basketball-landscape.jpg"; sourceTree = "<group>"; };
+		1D2FF9D9172499BC00871B7C /* mens-soccer-portrait.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mens-soccer-portrait.jpg"; sourceTree = "<group>"; };
+		1D2FF9DA172499BC00871B7C /* volleyball-portrait.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "volleyball-portrait.jpg"; sourceTree = "<group>"; };
+		1D2FF9DB172499BC00871B7C /* mens-soccer-landscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mens-soccer-landscape.jpg"; sourceTree = "<group>"; };
+		1D2FF9DC172499BC00871B7C /* volleyball-landscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "volleyball-landscape.jpg"; sourceTree = "<group>"; };
+		1D2FF9DD172499BC00871B7C /* mens-basketball-landscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mens-basketball-landscape.jpg"; sourceTree = "<group>"; };
+		1D2FF9DE172499BC00871B7C /* womens-tennis-portrait.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "womens-tennis-portrait.jpg"; sourceTree = "<group>"; };
+		1D2FF9DF172499BC00871B7C /* golf-landscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "golf-landscape.jpg"; sourceTree = "<group>"; };
+		1D2FF9E0172499BC00871B7C /* womens-tennis-landscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "womens-tennis-landscape.jpg"; sourceTree = "<group>"; };
+		1D2FF9E1172499BC00871B7C /* mens-tennis-landscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mens-tennis-landscape.jpg"; sourceTree = "<group>"; };
+		1D2FF9E2172499BC00871B7C /* womens-soccer-portrait.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "womens-soccer-portrait.jpg"; sourceTree = "<group>"; };
+		1D2FF9E3172499BC00871B7C /* softball-landscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "softball-landscape.jpg"; sourceTree = "<group>"; };
+		1D2FF9E4172499BC00871B7C /* womens-soccer-landscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "womens-soccer-landscape.jpg"; sourceTree = "<group>"; };
+		1D2FF9F3172499C500871B7C /* womens-golf-portrait.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "womens-golf-portrait.jpg"; sourceTree = "<group>"; };
+		1D2FF9F4172499C500871B7C /* womens-golf-landscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "womens-golf-landscape.jpg"; sourceTree = "<group>"; };
+		1D2FF9F5172499C500871B7C /* track-portrait.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "track-portrait.jpg"; sourceTree = "<group>"; };
+		1D2FF9F6172499C500871B7C /* track-landscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "track-landscape.jpg"; sourceTree = "<group>"; };
+		1D2FF9FB17249D7E00871B7C /* softball-portrait.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "softball-portrait.jpg"; sourceTree = "<group>"; };
+		1D2FF9FD1724A18100871B7C /* mens-tennis-portrait.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mens-tennis-portrait.jpg"; sourceTree = "<group>"; };
 		1D339A921679341D00D84A20 /* academic.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = academic.jpeg; sourceTree = "<group>"; };
 		1D339A931679341D00D84A20 /* museum.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = museum.jpeg; sourceTree = "<group>"; };
 		1D339A941679341D00D84A20 /* music.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = music.jpeg; sourceTree = "<group>"; };
@@ -824,6 +866,7 @@
 		1D1CEADE162B4D230059BC1F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1D2FF9D517247F2100871B7C /* wfma50x50.png */,
 				1DAD529117236010000CC658 /* RlujSF.png */,
 				1DAD526E17235C58000CC658 /* maroon_gradient.png */,
 				1DD9F7EB172337C500754EB8 /* true_black.png */,
@@ -972,6 +1015,26 @@
 		1D2FF9D0172465A700871B7C /* event-backdrop */ = {
 			isa = PBXGroup;
 			children = (
+				1D2FF9D7172499BC00871B7C /* womens-basketball-portrait.jpg */,
+				1D2FF9FD1724A18100871B7C /* mens-tennis-portrait.jpg */,
+				1D2FF9F3172499C500871B7C /* womens-golf-portrait.jpg */,
+				1D2FF9F4172499C500871B7C /* womens-golf-landscape.jpg */,
+				1D2FF9F5172499C500871B7C /* track-portrait.jpg */,
+				1D2FF9F6172499C500871B7C /* track-landscape.jpg */,
+				1D2FF9D8172499BC00871B7C /* womens-basketball-landscape.jpg */,
+				1D2FF9D9172499BC00871B7C /* mens-soccer-portrait.jpg */,
+				1D2FF9DA172499BC00871B7C /* volleyball-portrait.jpg */,
+				1D2FF9DB172499BC00871B7C /* mens-soccer-landscape.jpg */,
+				1D2FF9FB17249D7E00871B7C /* softball-portrait.jpg */,
+				1D2FF9DC172499BC00871B7C /* volleyball-landscape.jpg */,
+				1D2FF9DD172499BC00871B7C /* mens-basketball-landscape.jpg */,
+				1D2FF9DE172499BC00871B7C /* womens-tennis-portrait.jpg */,
+				1D2FF9DF172499BC00871B7C /* golf-landscape.jpg */,
+				1D2FF9E0172499BC00871B7C /* womens-tennis-landscape.jpg */,
+				1D2FF9E1172499BC00871B7C /* mens-tennis-landscape.jpg */,
+				1D2FF9E2172499BC00871B7C /* womens-soccer-portrait.jpg */,
+				1D2FF9E3172499BC00871B7C /* softball-landscape.jpg */,
+				1D2FF9E4172499BC00871B7C /* womens-soccer-landscape.jpg */,
 				1D9EBACE1706AA850027A4A6 /* menbasketballBG.jpg */,
 				1D9EBACF1706AA850027A4A6 /* womensoccerBG.png */,
 				1D9EBAD01706AA850027A4A6 /* footballBG2.jpg */,
@@ -1733,6 +1796,27 @@
 				1DD9F7EC172337C500754EB8 /* true_black.png in Resources */,
 				1DAD526F17235C58000CC658 /* maroon_gradient.png in Resources */,
 				1DAD529217236010000CC658 /* RlujSF.png in Resources */,
+				1D2FF9D617247F2100871B7C /* wfma50x50.png in Resources */,
+				1D2FF9E5172499BC00871B7C /* womens-basketball-portrait.jpg in Resources */,
+				1D2FF9E6172499BC00871B7C /* womens-basketball-landscape.jpg in Resources */,
+				1D2FF9E7172499BC00871B7C /* mens-soccer-portrait.jpg in Resources */,
+				1D2FF9E8172499BC00871B7C /* volleyball-portrait.jpg in Resources */,
+				1D2FF9E9172499BC00871B7C /* mens-soccer-landscape.jpg in Resources */,
+				1D2FF9EA172499BC00871B7C /* volleyball-landscape.jpg in Resources */,
+				1D2FF9EB172499BC00871B7C /* mens-basketball-landscape.jpg in Resources */,
+				1D2FF9EC172499BC00871B7C /* womens-tennis-portrait.jpg in Resources */,
+				1D2FF9ED172499BC00871B7C /* golf-landscape.jpg in Resources */,
+				1D2FF9EE172499BC00871B7C /* womens-tennis-landscape.jpg in Resources */,
+				1D2FF9EF172499BC00871B7C /* mens-tennis-landscape.jpg in Resources */,
+				1D2FF9F0172499BC00871B7C /* womens-soccer-portrait.jpg in Resources */,
+				1D2FF9F1172499BC00871B7C /* softball-landscape.jpg in Resources */,
+				1D2FF9F2172499BC00871B7C /* womens-soccer-landscape.jpg in Resources */,
+				1D2FF9F7172499C500871B7C /* womens-golf-portrait.jpg in Resources */,
+				1D2FF9F8172499C500871B7C /* womens-golf-landscape.jpg in Resources */,
+				1D2FF9F9172499C500871B7C /* track-portrait.jpg in Resources */,
+				1D2FF9FA172499C500871B7C /* track-landscape.jpg in Resources */,
+				1D2FF9FC17249D7E00871B7C /* softball-portrait.jpg in Resources */,
+				1D2FF9FE1724A18100871B7C /* mens-tennis-portrait.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

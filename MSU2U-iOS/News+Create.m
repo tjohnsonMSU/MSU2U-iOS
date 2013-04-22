@@ -62,6 +62,10 @@
         {
             news.publication = @"MSU Mustangs";
         }
+        else if([news.doc_creator isEqualToString:@"WF Museum of Art"])
+        {
+            news.publication = @"WF Museum of Art";
+        }
         else
         {
             news.publication = @"The Wichitan";

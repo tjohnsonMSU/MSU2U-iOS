@@ -21,7 +21,16 @@
     [tempImg setImage:[UIImage imageNamed:@"womensoccerBG.png"]];
     [self.tableView setBackgroundView:tempImg];
     */
-    [self orientationChanged];
+    //[self orientationChanged];
+    if(UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
+        UIImageView *tempImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
+        [tempImg setImage:[UIImage imageNamed:[self portraitSportImage]]];
+        [self.tableView setBackgroundView:tempImg];
+    } else if(UIInterfaceOrientationIsLandscape(self.interfaceOrientation)){
+        UIImageView *tempImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
+        [tempImg setImage:[UIImage imageNamed:[self landscapeSportImage]]];
+        [self.tableView setBackgroundView:tempImg];
+    }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChanged) name:@"UIDeviceOrientationDidChangeNotification" object:nil];
 }
@@ -31,6 +40,9 @@
     //cell.backgroundColor = [UIColor colorWithRed:(185.0/255.0) green:(142.0/255.0) blue:(47.0/255.0) alpha:1];
     //cell.backgroundView.backgroundColor = [UIColor colorWithRed:(185.0/255.0) green:(142.0/255.0) blue:(47.0/255.0) alpha:1];
     cell.backgroundView.alpha = 0.9;
+    cell.contentView.backgroundColor = [UIColor clearColor];
+    cell.textLabel.backgroundColor = cell.contentView.backgroundColor;
+    cell.detailTextLabel.backgroundColor = cell.contentView.backgroundColor;
 }
 
 - (void)orientationChanged
@@ -38,16 +50,22 @@
     //[self adjustViewsForOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
     NSLog(@"Whoa we shifted?! orientation == %d\n",[[UIDevice currentDevice]orientation]);
     
+    if(UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
+        
+    } else if(UIInterfaceOrientationIsLandscape(self.interfaceOrientation)){
+        //do landscape work
+    }
+    
     if([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft || [[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight)
     {
         UIImageView *tempImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
-        [tempImg setImage:[UIImage imageNamed:@"twitterBG.png"]];
+        [tempImg setImage:[UIImage imageNamed:[self landscapeSportImage]]];
         [self.tableView setBackgroundView:tempImg];
     }
     else if([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait)
     {
         UIImageView *tempImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
-        [tempImg setImage:[UIImage imageNamed:@"womensoccerBG.png"]];
+        [tempImg setImage:[UIImage imageNamed:[self portraitSportImage]]];
         [self.tableView setBackgroundView:tempImg];
     }
 }
@@ -113,6 +131,79 @@
             self.homeTeamName.text = (NSString *)trimmedText;
         }
     }
+}
+
+-(NSString*)landscapeSportImage
+{
+    /*NSArray * sportCategories = [[NSArray alloc]initWithObjects:@"Men's Cross Country/Track",@"Women's Cross Country/Track",@"Men's Basketball",@"Women's Basketball",@"Football",@"Men's Golf",@"Women's Golf",@"Men's Soccer",@"Women's Soccer",@"Softball",@"Men's Tennis",@"Women's Tennis",@"Volleyball", nil];*/
+    NSString * sportName;
+    
+    if([receivedEvent.category isEqualToString:@"Men's Cross Country/Track"])
+        sportName = @"track-landscape.jpg";
+    else if([receivedEvent.category isEqualToString:@"Women's Cross Country/Track"])
+        sportName = @"track-landscape.jpg";
+    else if([receivedEvent.category isEqualToString:@"Men's Basketball"])
+        sportName = @"mens-basketball-landscape.jpg";
+    else if([receivedEvent.category isEqualToString:@"Women's Basketball"])
+        sportName = @"womens-basketball-landscape.jpg";
+    else if([receivedEvent.category isEqualToString:@"Football"])
+        sportName = @"footballBG.jpg";
+    else if([receivedEvent.category isEqualToString:@"Men's Golf"])
+        sportName = @"golf-landscape.jpg";
+    else if([receivedEvent.category isEqualToString:@"Women's Golf"])
+        sportName = @"womens-golf-portrait.jpg";
+    else if([receivedEvent.category isEqualToString:@"Men's Soccer"])
+        sportName = @"mens-soccer-landscape.jpg";
+    else if([receivedEvent.category isEqualToString:@"Women's Soccer"])
+        sportName = @"womens-soccer-landscape.jpg";
+    else if([receivedEvent.category isEqualToString:@"Softball"])
+        sportName = @"softball-landscape.jpg";
+    else if([receivedEvent.category isEqualToString:@"Men's Tennis"])
+        sportName = @"mens-tennis-landscape.jpg";
+    else if([receivedEvent.category isEqualToString:@"Women's Tennis"])
+        sportName = @"womens-tennis-landscape.jpg";
+    else if([receivedEvent.category isEqualToString:@"Volleyball"])
+        sportName = @"volleyball-landscape.jpg";
+    else
+        NSLog(@"I can't determine what image to use!?");
+    
+    return sportName;
+}
+
+-(NSString*)portraitSportImage
+{
+    NSString * sportName;
+    
+    if([receivedEvent.category isEqualToString:@"Men's Cross Country/Track"])
+        sportName = @"track-portrait.jpg";
+    else if([receivedEvent.category isEqualToString:@"Women's Cross Country/Track"])
+        sportName = @"track-portrait.jpg";
+    else if([receivedEvent.category isEqualToString:@"Men's Basketball"])
+        sportName = @"mens-basketball-portrait.jpg";
+    else if([receivedEvent.category isEqualToString:@"Women's Basketball"])
+        sportName = @"womens-basketball-portrait.jpg";
+    else if([receivedEvent.category isEqualToString:@"Football"])
+        sportName = @"footballBG2.jpg";
+    else if([receivedEvent.category isEqualToString:@"Men's Golf"])
+        sportName = @"golf-landscape.jpg";
+    else if([receivedEvent.category isEqualToString:@"Women's Golf"])
+        sportName = @"womens-golf-landscape.jpg";
+    else if([receivedEvent.category isEqualToString:@"Men's Soccer"])
+        sportName = @"mens-soccer-portrait.jpg";
+    else if([receivedEvent.category isEqualToString:@"Women's Soccer"])
+        sportName = @"womens-soccer-portrait.jpg";
+    else if([receivedEvent.category isEqualToString:@"Softball"])
+        sportName = @"softball-portrait.jpg";
+    else if([receivedEvent.category isEqualToString:@"Men's Tennis"])
+        sportName = @"mens-tennis-portrait.jpg";
+    else if([receivedEvent.category isEqualToString:@"Women's Tennis"])
+        sportName = @"womens-tennis-portrait.jpg";
+    else if([receivedEvent.category isEqualToString:@"Volleyball"])
+        sportName = @"volleyball-portrait.jpg";
+    else
+        NSLog(@"I can't determine what image to use!?");
+    
+    return sportName;
 }
 
 -(void)sendEventInformation:(Event*)eventInfo
