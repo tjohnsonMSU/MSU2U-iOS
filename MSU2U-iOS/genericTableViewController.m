@@ -533,6 +533,7 @@
 -(void) refresh
 {
     //FIRST, GET RID OF MY CURRENT DATA.
+    /*
     if(self.childNumber != [NSNumber numberWithInt:4])
     {
         switch ([self.childNumber integerValue])
@@ -550,11 +551,11 @@
                 break;
             }
             //Directory
-            /*case 4:
+            case 4:
             {
                 [self purgeAllEntitiesOfType:@"Employee"];
                 break;
-            }*/
+            }
             //Twitter
             case 7:
             {
@@ -570,7 +571,7 @@
             default:
                 break;
         }
-    }
+    }*/
     [self downloadAllEntities];
     NSLog(@"I'm done purging!\n");
 }

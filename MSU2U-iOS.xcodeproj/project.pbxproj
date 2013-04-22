@@ -91,6 +91,7 @@
 		1D2FF9FA172499C500871B7C /* track-landscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9F6172499C500871B7C /* track-landscape.jpg */; };
 		1D2FF9FC17249D7E00871B7C /* softball-portrait.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9FB17249D7E00871B7C /* softball-portrait.jpg */; };
 		1D2FF9FE1724A18100871B7C /* mens-tennis-portrait.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9FD1724A18100871B7C /* mens-tennis-portrait.jpg */; };
+		1D2FFA001724CB7500871B7C /* ipadStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9FF1724CB7500871B7C /* ipadStoryboard.storyboard */; };
 		1D339A991679341D00D84A20 /* academic.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1D339A921679341D00D84A20 /* academic.jpeg */; };
 		1D339A9A1679341D00D84A20 /* museum.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1D339A931679341D00D84A20 /* museum.jpeg */; };
 		1D339A9B1679341D00D84A20 /* music.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1D339A941679341D00D84A20 /* music.jpeg */; };
@@ -553,6 +554,7 @@
 		1D2FF9F6172499C500871B7C /* track-landscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "track-landscape.jpg"; sourceTree = "<group>"; };
 		1D2FF9FB17249D7E00871B7C /* softball-portrait.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "softball-portrait.jpg"; sourceTree = "<group>"; };
 		1D2FF9FD1724A18100871B7C /* mens-tennis-portrait.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mens-tennis-portrait.jpg"; sourceTree = "<group>"; };
+		1D2FF9FF1724CB7500871B7C /* ipadStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ipadStoryboard.storyboard; path = ../ipadStoryboard.storyboard; sourceTree = "<group>"; };
 		1D339A921679341D00D84A20 /* academic.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = academic.jpeg; sourceTree = "<group>"; };
 		1D339A931679341D00D84A20 /* museum.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = museum.jpeg; sourceTree = "<group>"; };
 		1D339A941679341D00D84A20 /* music.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = music.jpeg; sourceTree = "<group>"; };
@@ -849,6 +851,7 @@
 				1DA477FD17220341001CC653 /* Videos */,
 				E09A1467171DC161000CF267 /* Website */,
 				1D1CEAFE162B4DBB0059BC1F /* MainStoryboard.storyboard */,
+				1D2FF9FF1724CB7500871B7C /* ipadStoryboard.storyboard */,
 				1D1CEAE6162B4D230059BC1F /* AppDelegate.h */,
 				1D1CEAE7162B4D230059BC1F /* AppDelegate.m */,
 				1D592EA0164D5FE300CBB292 /* Core Data */,
@@ -1817,6 +1820,7 @@
 				1D2FF9FA172499C500871B7C /* track-landscape.jpg in Resources */,
 				1D2FF9FC17249D7E00871B7C /* softball-portrait.jpg in Resources */,
 				1D2FF9FE1724A18100871B7C /* mens-tennis-portrait.jpg in Resources */,
+				1D2FFA001724CB7500871B7C /* ipadStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1980,11 +1984,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MSU2U-iOS/MSU2U-iOS-Prefix.pch";
 				INFOPLIST_FILE = "MSU2U-iOS/MSU2U-iOS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "Submodules/**";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2000,11 +2004,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MSU2U-iOS/MSU2U-iOS-Prefix.pch";
 				INFOPLIST_FILE = "MSU2U-iOS/MSU2U-iOS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "Submodules/**";
 				WRAPPER_EXTENSION = app;
 			};
