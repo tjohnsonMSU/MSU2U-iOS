@@ -1,3 +1,7 @@
+![Screenshot](https://raw.github.com/tjohnson1965/MSU2U-iOS/master/screenshot/twitter.png)
+![Screenshot](https://raw.github.com/tjohnson1965/MSU2U-iOS/master/screenshot/map.png)
+![Screenshot](https://raw.github.com/tjohnson1965/MSU2U-iOS/master/screenshot/directory.png)
+![Screenshot](https://raw.github.com/tjohnson1965/MSU2U-iOS/master/screenshot/eventDetail.png)
 <h1>MSU2U-iOS</h1>
 
 <h3>About:</h3>
