@@ -20,5 +20,7 @@
 	<string>Pull to Refresh</string>
 	<key>videoRefreshTime</key>
 	<string>Pull to Refresh</string>
+	<key>podcastRefreshTime</key>
+	<string>Pull to Refresh</string>
 </dict>
 </plist>

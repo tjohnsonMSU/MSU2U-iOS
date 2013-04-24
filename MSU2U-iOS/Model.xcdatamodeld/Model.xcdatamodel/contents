@@ -9,6 +9,7 @@
         <attribute name="fax1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fax2" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fullname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="history" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="last_changed" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="link_to_more_info" optional="YES" attributeType="String" syncable="YES"/>
@@ -55,6 +56,13 @@
         <attribute name="short_description" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Podcast" representedClassName="Podcast" syncable="YES">
+        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="podcast_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pubDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Sport" representedClassName="Sport" syncable="YES">
         <attribute name="awayTeam" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
@@ -94,11 +102,12 @@
         <attribute name="video_id" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Employee" positionX="-7445" positionY="-2439" width="128" height="450"/>
+        <element name="Employee" positionX="-7445" positionY="-2439" width="128" height="463"/>
         <element name="Event" positionX="-7598" positionY="-2467" width="128" height="208"/>
         <element name="News" positionX="-7598" positionY="-2241" width="128" height="208"/>
         <element name="Sport" positionX="-7749" positionY="-2439" width="128" height="238"/>
         <element name="Tweet" positionX="-7749" positionY="-2175" width="128" height="163"/>
         <element name="Video" positionX="-7598" positionY="-2016" width="128" height="208"/>
+        <element name="Podcast" positionX="-7832" positionY="-2637" width="128" height="118"/>
     </elements>
 </model>

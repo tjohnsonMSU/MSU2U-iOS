@@ -2,12 +2,13 @@
 //  Employee.h
 //  MSU2U-iOS
 //
-//  Created by Matthew Farmer on 3/7/13.
+//  Created by Matthew Farmer on 4/23/13.
 //  Copyright (c) 2013 Matthew Farmer. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+
 
 @interface Employee : NSManagedObject
 
@@ -38,6 +39,7 @@
 @property (nonatomic, retain) NSString * position_title_2;
 @property (nonatomic, retain) NSString * website1;
 @property (nonatomic, retain) NSString * website2;
+@property (nonatomic, retain) NSString * fullname;
 
 -(void)printMyInfo;
 -(NSString*)getFullName;

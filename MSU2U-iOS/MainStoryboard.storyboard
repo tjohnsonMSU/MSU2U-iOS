@@ -75,7 +75,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-13083" y="-1194"/>
+            <point key="canvasLocation" x="-12907" y="-1543"/>
         </scene>
         <!--Campus Map Settings View Controller - Settings-->
         <scene sceneID="pPY-0d-64S">
@@ -260,7 +260,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dMY-y0-vPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12630" y="-3386"/>
+            <point key="canvasLocation" x="-12166" y="-1994"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="nzV-gp-O4z">
@@ -292,7 +292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wQE-EZ-wca" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15991" y="-3642"/>
+            <point key="canvasLocation" x="-16231" y="-3626"/>
         </scene>
         <!--Navigation Controller - Directory-->
         <scene sceneID="Dgt-Wr-Aya">
@@ -396,6 +396,103 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="-14373" y="-3626"/>
+        </scene>
+        <!--Podcast View Controller-->
+        <scene sceneID="jit-NR-mCg">
+            <objects>
+                <tableViewController id="GdR-CQ-gqj" customClass="podcastViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" id="vDe-ba-EUW">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="VzM-67-76n">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="GdR-CQ-gqj" id="PKm-d0-4Y2"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="podcastCell" textLabel="cXe-Ij-Bdg" detailTextLabel="CZY-Hj-lVv" imageView="TGI-5A-SHd" rowHeight="54" style="IBUITableViewCellStyleSubtitle" id="ZCe-tH-PbM">
+                                <rect key="frame" x="0.0" y="66" width="320" height="54"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="53"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="MSU Mustangs Report 4-10-13" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="202" translatesAutoresizingMaskIntoConstraints="NO" id="cXe-Ij-Bdg">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Posted on 4/10/13 by MSUMustangs.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZY-Hj-lVv">
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="satelliteMap.png" id="TGI-5A-SHd">
+                                            <rect key="frame" x="0.0" y="0.0" width="54" height="53"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="vRl-3M-1sy" kind="push" id="g4E-bv-11y"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="BgG-DD-1Oq">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="MmP-hI-ifa">
+                            <rect key="frame" x="85" y="6" width="149" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="All"/>
+                                <segment title="This Week"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentedControlIndexChanged" destination="GdR-CQ-gqj" eventType="valueChanged" id="Kjx-80-7sk"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="VzM-67-76n" id="dnM-Sg-g3o"/>
+                        <outlet property="searchDisplayControl" destination="q1X-4C-8Xl" id="J0Q-KO-Y4k"/>
+                        <outlet property="searchDisplayController" destination="q1X-4C-8Xl" id="0UY-gh-SSs"/>
+                        <outlet property="segmentedControl" destination="MmP-hI-ifa" id="KVa-d3-T8Z"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EFr-Wk-4dU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="q1X-4C-8Xl">
+                    <connections>
+                        <outlet property="delegate" destination="GdR-CQ-gqj" id="vM5-E8-6RL"/>
+                        <outlet property="searchBar" destination="VzM-67-76n" id="aPC-S9-7u5"/>
+                        <outlet property="searchContentsController" destination="GdR-CQ-gqj" id="nZq-gN-ha1"/>
+                        <outlet property="searchResultsDataSource" destination="GdR-CQ-gqj" id="GEs-U6-GWd"/>
+                        <outlet property="searchResultsDelegate" destination="GdR-CQ-gqj" id="1A5-g5-ZHc"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="-15269" y="-5062"/>
+        </scene>
+        <!--Navigation Controller - Podcast-->
+        <scene sceneID="VOK-nN-2pb">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="kCc-ev-Vy9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Podcast" image="194-note-2.png" id="VtZ-pK-Txm"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tbs-Rh-NxA">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="GdR-CQ-gqj" kind="relationship" relationship="rootViewController" id="v6d-1o-wC6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a6X-uh-lrU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-15807" y="-4316"/>
         </scene>
         <!--Video View Controller-->
         <scene sceneID="Niz-ow-pfv">
@@ -598,7 +695,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-14122" y="-1733"/>
+            <point key="canvasLocation" x="-14162" y="-1925"/>
         </scene>
         <!--Navigation Controller - Event-->
         <scene sceneID="oDR-ti-3mc">
@@ -1965,7 +2062,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iFb-gN-TyH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-13051" y="-4700"/>
+            <point key="canvasLocation" x="-13662" y="-5176"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="30L-jD-bg0">
@@ -1986,6 +2083,7 @@
                         <segue destination="LGb-J0-zI2" kind="relationship" relationship="viewControllers" id="aRW-g3-Cd6"/>
                         <segue destination="Kil-vA-Bz9" kind="relationship" relationship="viewControllers" id="CTU-Tr-OAw"/>
                         <segue destination="sTv-U5-K3B" kind="relationship" relationship="viewControllers" id="klA-dN-3cP"/>
+                        <segue destination="kCc-ev-Vy9" kind="relationship" relationship="viewControllers" id="LE9-oO-DNa"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fk7-1D-mCn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1998,6 +2096,7 @@
         <image name="103-map.png" width="26" height="21"/>
         <image name="112-group.png" width="32" height="21"/>
         <image name="166-newspaper.png" width="28" height="23"/>
+        <image name="194-note-2.png" width="23" height="23"/>
         <image name="209-twitter.png" width="22" height="22"/>
         <image name="42-info.png" width="28" height="28"/>
         <image name="70-tv.png" width="24" height="24"/>
@@ -2105,6 +2204,14 @@
                 <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>
             </relationships>
         </class>
+        <class className="podcastViewController" superclassName="genericTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/podcastViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="searchDisplayControl" candidateClass="UISearchDisplayController"/>
+                <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
         <class className="tabBarViewController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/tabBarViewController.h"/>
         </class>
@@ -2139,6 +2246,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Egf-cW-mua"/>
-        <segue reference="tds-tn-th9"/>
+        <segue reference="g4E-bv-11y"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -81,7 +81,7 @@
 
 +(Employee*)createNewEmployee:(Employee*)employee fromInfo:(NSDictionary*)info
 {
-    //These attributes are received from the server
+    //These attributes are received from the server    
     employee.person_id = [info objectForKey:@"Person_ID"];
     employee.last_changed = [info objectForKey:@"last_changed"];
     employee.deleted = [info objectForKey:@"deleted"];
@@ -148,6 +148,8 @@
     if([employee.website1 isEqualToString:employee.website2])
         employee.website2 = @"";
     
+    employee.fullname = [employee getFullName];
+    NSLog(@"My fullname is %@\n",employee.fullname);
     return employee;
 }
 

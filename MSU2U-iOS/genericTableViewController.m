@@ -161,6 +161,21 @@
                     }];
                 }
             }
+            else if(self.childNumber == [NSNumber numberWithInt:9])
+            {
+                hud.labelText = @"Downloading...";
+                
+                NSArray * myPodcastData = [self downloadCurrentData:self.jsonURL];
+                
+                hud.labelText = @"Loading...";
+                
+                [document.managedObjectContext performBlock:^{
+                    for(NSDictionary * dataInfo in myPodcastData)
+                    {
+                        [Podcast podcastWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+                    }
+                }];
+            }
             //EVENTS and DIRECTORY
             else
             {
@@ -338,13 +353,45 @@
             }
         }
     }
+    //Podcast
+    else if(self.childNumber == [NSNumber numberWithInt:9])
+    {
+        switch(self.showPodcastForIndex)
+        {
+            case 0:
+            {
+                break;
+            }
+            case 1:
+            {
+                //Show only podcasts within the last week
+                 NSCalendar *cal = [NSCalendar currentCalendar];
+                 NSDateComponents *components = [cal components:( NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit ) fromDate:[[NSDate alloc] init]];
+                 
+                 [components setHour:-[components hour]];
+                 [components setMinute:-[components minute]];
+                 [components setSecond:-[components second]];
+                 NSDate *today = [cal dateByAddingComponents:components toDate:[[NSDate alloc] init] options:0]; //This variable should now be pointing at a date object that is the start of today (midnight);
+                 
+                 [components setHour:-168];
+                 [components setMinute:0];
+                 [components setSecond:0];
+                 NSDate *lastWeek = [cal dateByAddingComponents:components toDate: today options:0];
+                
+                 NSPredicate * predicate;
+                 predicate = [NSPredicate predicateWithFormat:@"pubDate >= %@",lastWeek];
+                 [request setPredicate:predicate];
+                 break;
+            }
+        }
+    }
     
     //2. How should I sort the data in my table?
     //IF NOT TWITTER AND NOT EVENTS AND NOT NEWS, SORT TABLE BY SOMETHING THAT IS NOT A DATE
-    if(self.childNumber != [NSNumber numberWithInt:7] && self.childNumber != [NSNumber numberWithInt:2] && self.childNumber != [NSNumber numberWithInt:3] && self.childNumber != [NSNumber numberWithInt:8])
+    if(self.childNumber != [NSNumber numberWithInt:7] && self.childNumber != [NSNumber numberWithInt:2] && self.childNumber != [NSNumber numberWithInt:3] && self.childNumber != [NSNumber numberWithInt:8] && self.childNumber != [NSNumber numberWithInt:9])
         request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:self.sortDescriptorKey ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
     //SORT TABLE BY DATES FROM NEWEST TO OLDEST
-    else if(self.childNumber == [NSNumber numberWithInt:7] || self.childNumber == [NSNumber numberWithInt:3] || self.childNumber == [NSNumber numberWithInt:8])
+    else if(self.childNumber == [NSNumber numberWithInt:7] || self.childNumber == [NSNumber numberWithInt:3] || self.childNumber == [NSNumber numberWithInt:8] || self.childNumber == [NSNumber numberWithInt:9])
         request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:self.sortDescriptorKey ascending:NO]];
     //SORT TABLE BY DATES FROM OLDEST TO NEWEST
     else
@@ -378,6 +425,11 @@
         else if(self.childNumber == [NSNumber numberWithInt:8])
         {
             if(self.showVideoForIndex == 0)
+                [self refresh];
+        }
+        else if(self.childNumber == [NSNumber numberWithInt:9])
+        {
+            if(self.showPodcastForIndex == 0)
                 [self refresh];
         }
         else
@@ -458,6 +510,7 @@
         case 4:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"directoryRefreshTime"]];break;
         case 7:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"twitterRefreshTime"]];break;
         case 8:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"videoRefreshTime"]];break;
+        case 9:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"podcastRefreshTime"]];break;
         default:NSLog(@"My child number is %@\n",self.childNumber);
     }
     
@@ -588,6 +641,7 @@
         case 4:[defaults setObject:refreshTime forKey:@"directoryRefreshTime"];break;
         case 7:[defaults setObject:refreshTime forKey:@"twitterRefreshTime"];break;
         case 8:[defaults setObject:refreshTime forKey:@"videoRefreshTime"];break;
+        case 9:[defaults setObject:refreshTime forKey:@"podcastRefreshTime"];break;
     }
     [defaults synchronize];
 }
@@ -620,6 +674,9 @@
                 count++;
         else if(self.childNumber == [NSNumber numberWithInt:8])
             for(Video * currentVideos in [self.fetchedResultsController fetchedObjects])
+                count++;
+        else if(self.childNumber == [NSNumber numberWithInt:9])
+            for(Podcast * currentPodcasts in [self.fetchedResultsController fetchedObjects])
                 count++;
         return count;
     }
@@ -738,6 +795,24 @@
         CGSize size = {50,50};
         cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
     }
+    else if(self.childNumber == [NSNumber numberWithInt:9])
+    {
+        cell.textLabel.text = [self.dataObject title];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"Posted on %@ by %@",[NSDateFormatter localizedStringFromDate:[self.dataObject pubDate] dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle],[self.dataObject author]];
+        
+        if([[self.dataObject author] isEqualToString:@"MSUMustangs.com"])
+        {
+            [cell.imageView setImageWithURL:[NSURL URLWithString:@"http://www.msumustangs.com/images/logos/m6.png"] placeholderImage:[UIImage imageNamed:@"70-tv.png"] options:0 andResize:CGSizeMake(50, 50)];
+        }
+        else
+        {
+            cell.imageView.image = [UIImage imageNamed:@"RlujSF.png"];
+        }
+        
+        //Resize image
+        CGSize size = {50,50};
+        cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
+    }
     return cell;
 }
 
@@ -838,6 +913,10 @@
         NSLog(@"Going to video link...%@",[self.dataObject url]);
         [segue.destinationViewController sendURL:[self.dataObject url] andTitle:[self.dataObject user_name]];
     }
+    else if(self.childNumber == [NSNumber numberWithInt:9])
+    {
+        [segue.destinationViewController sendURL:[self.dataObject link] andTitle:[self.dataObject title]];
+    }
     else
     {
         NSLog(@"I'm screwed up badly!\n");
@@ -882,19 +961,60 @@
     //Twitter Tab
     else if(self.childNumber == [NSNumber numberWithInt:7])
     {
-        for (Employee *currentTweets in [self.fetchedResultsController fetchedObjects])
+        for (Tweet *currentTweets in [self.fetchedResultsController fetchedObjects])
             [self.dataArray addObject:currentTweets];
     }
     else if(self.childNumber == [NSNumber numberWithInt:8])
     {
-        for (Employee *currentVideos in [self.fetchedResultsController fetchedObjects])
+        for (Video *currentVideos in [self.fetchedResultsController fetchedObjects])
             [self.dataArray addObject:currentVideos];
+    }
+    else if(self.childNumber == [NSNumber numberWithInt:9])
+    {
+        for (Podcast * currentPodcasts in [self.fetchedResultsController fetchedObjects])
+            [self.dataArray addObject:currentPodcasts];
     }
     
     //###### Filter the array using NSPredicate
     //IF SEARCH TEXT IS ONE STRING, I'll check each attribute to see if there's a match.
     NSArray * tempArray;
     NSMutableArray * subPredicates;
+    
+    /*
+    subPredicates = [[NSMutableArray alloc]init];
+    for(int i=0; i<[self.keysToSearchOn count]; i++)
+    {
+        [subPredicates addObject:[NSPredicate predicateWithFormat:@"SELF.%@ contains[c] %@",[self.keysToSearchOn objectAtIndex:i],searchText]];
+    }
+    NSPredicate * predicate = [NSCompoundPredicate orPredicateWithSubpredicates:subPredicates];
+    
+    tempArray = [self.dataArray filteredArrayUsingPredicate:predicate];
+    */
+    NSArray *words = [searchText componentsSeparatedByString:@" "];
+    NSMutableArray *predicateList = [NSMutableArray array];
+    for (NSString *word in words) {
+        if ([word length] > 0) {
+            NSString * buildingMyPredicate = [[NSString alloc]init];
+            for(int i=0; i<[self.keysToSearchOn count]; i++)
+            {
+                if((i+1) != [self.keysToSearchOn count])
+                {
+                    buildingMyPredicate = [buildingMyPredicate stringByAppendingString:[NSString stringWithFormat:@"SELF.%@ CONTAINS[c] '%@' OR ",[self.keysToSearchOn objectAtIndex:i],word]];
+                }
+                else
+                {
+                    buildingMyPredicate = [buildingMyPredicate stringByAppendingString:[NSString stringWithFormat:@"SELF.%@ CONTAINS[c] '%@'",[self.keysToSearchOn objectAtIndex:i],word]];
+                }
+            }
+            NSPredicate *pred = [NSPredicate predicateWithFormat:buildingMyPredicate];
+            [predicateList addObject:pred];
+        }
+    }
+    
+    NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:predicateList];
+    NSLog(@"%@", predicate);
+    tempArray = [self.dataArray filteredArrayUsingPredicate:predicate];
+    /*
     if([searchText componentsSeparatedByString:@" "].count == 1)
     {
         subPredicates = [[NSMutableArray alloc]init];
@@ -923,7 +1043,7 @@
             tempArray = [self.dataArray filteredArrayUsingPredicate:predicate];
         }
     }
-    
+    */
     self.filteredDataArray = [NSMutableArray arrayWithArray:tempArray];
     
 }

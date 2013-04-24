@@ -32,6 +32,7 @@
         event.title = [info objectForKey:@"title"];
         event.desc = [info objectForKey:@"description"];
         event.link = [info objectForKey:@"link"];
+        NSLog(@"MSU logo is at %@\n",[info objectForKey:@"teamlogo"]);
         event.teamlogo = [info objectForKey:@"teamlogo"];
         event.opponentlogo = [info objectForKey:@"opponentlogo"];
         event.location = [info objectForKey:@"location"];

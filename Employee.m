@@ -2,7 +2,7 @@
 //  Employee.m
 //  MSU2U-iOS
 //
-//  Created by Matthew Farmer on 3/7/13.
+//  Created by Matthew Farmer on 4/23/13.
 //  Copyright (c) 2013 Matthew Farmer. All rights reserved.
 //
 
@@ -38,6 +38,7 @@
 @dynamic position_title_2;
 @dynamic website1;
 @dynamic website2;
+@dynamic fullname;
 
 -(void)printMyInfo
 {
@@ -83,7 +84,7 @@
         fullName = [fullName stringByAppendingString:[NSString stringWithFormat:@"%@ ",self.middle]];
     if([self.lname length] != 0)
         fullName = [fullName stringByAppendingString:[NSString stringWithFormat:@"%@ ",self.lname]];
-        
+    
     return [fullName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 }
 

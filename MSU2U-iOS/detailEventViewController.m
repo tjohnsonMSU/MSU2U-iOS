@@ -222,7 +222,7 @@
     awayTeam = [awayTeam stringByReplacingOccurrencesOfString:@" " withString:@""];
     
     //[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    
+    NSLog(@"My hometeam URL is %@\n",homeTeam);
     [self.homePhoto setImageWithURL:[NSURL URLWithString:homeTeam]
                   placeholderImage:[UIImage imageNamed:@"Default.png"]];
     [self.awayPhoto setImageWithURL:[NSURL URLWithString:awayTeam]

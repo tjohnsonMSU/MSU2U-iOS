@@ -24,6 +24,7 @@
 #import "Employee+Create.h"
 #import "Tweet+Create.h"
 #import "Video+Create.h"
+#import "Podcast+Create.h"
 #import "SVWebViewController.h"
 
 @interface genericTableViewController : CoreDataTableViewController <UISearchDisplayDelegate, UISearchBarDelegate>{
@@ -64,5 +65,6 @@
 @property (nonatomic) int showNewsForIndex;
 @property (nonatomic) int showTweetsForIndex;
 @property (nonatomic) int showVideoForIndex;
+@property (nonatomic) int showPodcastForIndex;
 -(void)setupFetchedResultsController;
 @end
