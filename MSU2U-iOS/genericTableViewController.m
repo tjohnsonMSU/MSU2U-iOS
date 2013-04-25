@@ -236,7 +236,44 @@
                  }];
                  
                  //Make another request for @MidwesternState
+                 // Making the request
+                 NSMutableDictionary * newParameters = [[NSMutableDictionary alloc]init];
+                 [newParameters setObject:@"midwesternstate" forKey:@"screen_name"];
+                 [newParameters setObject:@"1" forKey:@"include_rts"];
+                 [newParameters setObject:@"100" forKey:@"count"];
+                 twitterInfoRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:[NSURL URLWithString:@"https://api.twitter.com/1.1/statuses/user_timeline.json"] parameters:newParameters];
+                 [twitterInfoRequest setAccount:twitterAccount];
                  
+                 [twitterInfoRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
+                     dispatch_async(dispatch_get_main_queue(), ^{
+                         // Check if we reached the reate limit
+                         if ([urlResponse statusCode] == 429)
+                         {
+                             NSLog(@"Rate limit reached");
+                             return;
+                         }
+                         // Check if there was an error
+                         if (error)
+                         {
+                             NSLog(@"Error: %@", error.localizedDescription);
+                             return;
+                         }
+                         // Check if there is some response data
+                         if (responseData)
+                         {
+                             NSError *error = nil;
+                             NSArray *TWData = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:&error];
+                             
+                             // Filter the preferred data
+                             [document.managedObjectContext performBlock:^{
+                                 for(NSDictionary * dataInfo in TWData)
+                                 {
+                                     [Tweet tweetWithInfo:dataInfo isProfile:TRUE inManagedObjectContext:document.managedObjectContext];
+                                 }
+                             }];
+                         }
+                     });
+                 }];
                  //Make Another Request for #SocialStampede
              }
          }
