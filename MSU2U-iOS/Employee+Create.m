@@ -149,7 +149,7 @@
         employee.website2 = @"";
     
     employee.fullname = [employee getFullName];
-    NSLog(@"My fullname is %@\n",employee.fullname);
+    
     return employee;
 }
 

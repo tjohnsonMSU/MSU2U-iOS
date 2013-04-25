@@ -20,7 +20,9 @@
 -(void)viewDidLoad
 {
     //self.jsonURL = @"CHANGE ME";
-    self.twitterProfilesAndHashtags = [[NSArray alloc]initWithObjects:@"CavalryUltimate",@"MSUNASA",@"MSUStreetTeam",@"IFCMSU",@"MSUTreasureHunt",@"MSUBusinessOfc",@"WCOE_teach",@"MSU_SLA",@"PSKSigma_MSU",@"MWSUHousing",@"MuseumofArtMSU",@"MWSUTheatre",@"MSU_UPB",@"KKPsiGammaAlpha",@"MSUGammaPhiBeta",@"MSUAPhi",@"MidwesternKA",@"Midwestern_UPB",@"MSU_CMC",@"mwsugrad",@"MSUGreeks",@"MSUAdmissions",@"MSU_StuDev",@"MSUSigmaKappa",@"MSUSpiritDays",@"MidwesternState",@"MSUMustangs",@"MWSUCampusWatch",@"MidwesternAVP",@"msu2u_devteam",@"WichitanOnline",@"MSUUnivDev",@"MSU_VP",@"mwsu_sg",@"#SocialStampede",@"#MidwesternState",@"#msu2u",@"#msumustangs",@"MSUCyclingTeam",@"msuchiomega", nil];
+    self.twitterProfilesAndHashtags = [[NSArray alloc]initWithObjects:@"CavalryUltimate",@"MSUNASA",@"MSUStreetTeam",@"IFCMSU",@"MSUTreasureHunt",@"MSUBusinessOfc",@"WCOE_teach",@"MSU_SLA",@"PSKSigma_MSU",@"MWSUHousing",@"MuseumofArtMSU",@"MWSUTheatre",@"MSU_UPB",@"KKPsiGammaAlpha",@"MSUGammaPhiBeta",@"MSUAPhi",@"MidwesternKA",@"Midwestern_UPB",@"MSU_CMC",@"mwsugrad",@"MSUGreeks",@"MSUAdmissions",@"MSU_StuDev",@"MSUSigmaKappa",@"MSUSpiritDays",@"MidwesternState",@"MSUMustangs",@"MWSUCampusWatch",@"MidwesternAVP",@"msu2u_devteam",@"WichitanOnline",@"MSUUnivDev",@"MSU_VP",@"mwsu_sg",@"MSUCyclingTeam",@"msuchiomega", nil];
+    
+    //@"#SocialStampede",@"#MidwesternState",@"#msu2u",@"#msumustangs"
     
     self.entityName = @"Tweet";
     self.sortDescriptorKey = @"created_at";

@@ -52,158 +52,199 @@
 
     dispatch_async(fetchQ,^{
         
-            [self.refreshControl beginRefreshing];
+        [self.refreshControl beginRefreshing];
+        hud.labelText = @"Downloading...";
+        
+        //### JSON Downloading begins and ends here
+        if(self.childNumber == [NSNumber numberWithInt:7])
+            [self getTweets:document];
+        //News
+        else if(self.childNumber == [NSNumber numberWithInt:3])
+            [self getNews:document];
+        //VIDEO
+        else if(self.childNumber == [NSNumber numberWithInt:8])
+            [self getVideos:document];
+        else if(self.childNumber == [NSNumber numberWithInt:9])
+            [self getPodcasts:document];
+        else if(self.childNumber == [NSNumber numberWithInt:2])
+            [self getEvents:document];
+        else if(self.childNumber == [NSNumber numberWithInt:4])
+            [self getDirectory:document];
+        else
+            NSLog(@"I did not recognize what view currently needs data to be loaded?\n");
             
-            //### JSON Downloading begins and ends here
-            if(self.childNumber == [NSNumber numberWithInt:7])
-            {
-                //NSLog(@"### I'm Twitter!\n");
-                for(int i=0; i<[self.twitterProfilesAndHashtags count]; i++)
-                {
-                    //Is this a #hashtag?
-                    if([[self.twitterProfilesAndHashtags objectAtIndex:i]hasPrefix:@"#"])
-                    {
-                        //NSLog(@"### I'm a hashtag!n");
-                        //Yep, it is a hashtag, so I need to treat this differently.
-                        NSString * hashTag = [[self.twitterProfilesAndHashtags objectAtIndex:i]stringByReplacingOccurrencesOfString:@"#" withString:@""];
-                        self.jsonURL = [@"http://search.twitter.com/search.json?q=%23" stringByAppendingString:hashTag];
-                        NSData * jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:self.jsonURL] encoding:NSUTF8StringEncoding error:nil]dataUsingEncoding:NSUTF8StringEncoding];
-                        NSError * error = nil;
-                        NSDictionary * results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error] : nil;
-                        NSArray * myData = [results objectForKey:@"results"];
-                        
-                        //I'm blocking because I'm in the fetcher thread, and I can't otherwise access the context because it was created in a different thread.
-                        [document.managedObjectContext performBlock:^{	
-                        	for(NSDictionary * dataInfo in myData)
-                        	{
-                            		[Tweet tweetWithInfo:dataInfo isProfile:FALSE inManagedObjectContext:document.managedObjectContext];
-                        	}
-                        }];
-                    }
-                    //No, this is a profile such as @matthewfarm
-                    else
-                    {
-                        //NSLog(@"###I'm a profile!\n");
-                        self.jsonURL = [NSString stringWithFormat:@"http://api.twitter.com/1/statuses/user_timeline.json?screen_name=%@&include_rts=1",[self.twitterProfilesAndHashtags objectAtIndex:i]];
-                        NSArray * myData = [self downloadCurrentData:self.jsonURL];
-                        //NSLog(@"myData = %@\n",myData);
-                        
-                        //I'm blocking because I'm in the fetcher thread, and I can't otherwise access the context because it was created in a different thread.
-                        [document.managedObjectContext performBlock:^{
-                        	for(NSDictionary * dataInfo in myData)
-                        	{
-                            		[Tweet tweetWithInfo:dataInfo isProfile:TRUE inManagedObjectContext:document.managedObjectContext];
-                        	}
-                        }];
-                    }
-                }
-            }
-            //News
-            else if(self.childNumber == [NSNumber numberWithInt:3])
-            {
-                hud.labelText = @"Downloading...";
-                
-                NSArray * myWichitanData = [self downloadCurrentData:self.jsonURL];
-                NSArray * mySportsNewsData = [self downloadCurrentData:self.jsonSportsNewsURL];
-                NSArray * myMuseumNewsData = [self downloadCurrentData:self.jsonMuseumNewsURL];
-                
-                hud.labelText = @"Loading...";
-                NSLog(@"mySportsNewsData = %@\n",mySportsNewsData);
-                [document.managedObjectContext performBlock:^{
-                    for(NSDictionary * dataInfo in myWichitanData)
-                    {
-                        [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
-                    }
-                    for(NSDictionary * dataInfo in mySportsNewsData)
-                    {
-                        [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
-                    }
-                    for(NSDictionary * dataInfo in myMuseumNewsData)
-                    {
-                        [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
-                    }
-                }];
-            }
-            //VIDEO
-            else if(self.childNumber == [NSNumber numberWithInt:8])
-            {
-                hud.labelText = @"Downloading...";
-                
-                for(int i=0; i<[self.vimeoChannel count]; i++)
-                {
-                    NSArray * myVimeoData = [self downloadCurrentData:[NSString stringWithFormat:@"http://vimeo.com/api/v2/%@/videos.json",[self.vimeoChannel objectAtIndex:i]]];
-                    
-                    hud.labelText = @"Loading...";
-                    
-                    NSLog(@"myVimeoData = %@\n",myVimeoData);
-                    [document.managedObjectContext performBlock:^{
-                        for(NSDictionary * dataInfo in myVimeoData)
-                        {
-                            [Video videoWithInfo:dataInfo isVimeo:YES inManagedObjectContext:document.managedObjectContext];
-                        }
-                    }];
-                }
-                
-                for(int i=0; i<[self.youTubeChannel count]; i++)
-                {
-                    NSArray * myYouTubeData = [self downloadCurrentData:[NSString stringWithFormat:@"http://gdata.youtube.com/feeds/api/users/%@/uploads?&v=2&max-results=50&alt=jsonc",[self.youTubeChannel objectAtIndex:i]]];
-                    
-                    hud.labelText = @"Loading...";
-                    
-                    NSDictionary * myInfo = myYouTubeData;
-                    NSArray * itemsAlone = [[myInfo objectForKey:@"data"] objectForKey:@"items"];
-                    
-                    [document.managedObjectContext performBlock:^{
-                        for(NSDictionary * dataInfo in itemsAlone)
-                        {
-                            [Video videoWithInfo:dataInfo isVimeo:NO inManagedObjectContext:document.managedObjectContext];
-                        }
-                    }];
-                }
-            }
-            else if(self.childNumber == [NSNumber numberWithInt:9])
-            {
-                hud.labelText = @"Downloading...";
-                
-                NSArray * myPodcastData = [self downloadCurrentData:self.jsonURL];
-                
-                hud.labelText = @"Loading...";
-                
-                [document.managedObjectContext performBlock:^{
-                    for(NSDictionary * dataInfo in myPodcastData)
-                    {
-                        [Podcast podcastWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
-                    }
-                }];
-            }
-            //EVENTS and DIRECTORY
-            else
-            {
-                //Everything but Twitter feeds are processed the same way so that's why they are all in this block. The Database Crew creates these feeds for us so they all match in their formatting, unlike Twitter created feeds which need to be handled a bit differently
-                hud.labelText = @"Downloading...";
-                NSArray * myData = [self downloadCurrentData:self.jsonURL];
-                hud.labelText = @"Loading...";
-                
-                //I'm blocking because I'm in the directory fetcher thread, and I can't otherwise access the context because it was created in a different thread.
-                [document.managedObjectContext performBlock:^{
-                    for(NSDictionary * dataInfo in myData)
-                    {
-                        //DEPENDS ON THE CHILD THAT I'M WORKING WITH
-                        if(self.childNumber == [NSNumber numberWithInt:2])
-                            [Event eventWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
-                        else if(self.childNumber == [NSNumber numberWithInt:4])
-                            [Employee employeeWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
-                    }
-                }];
-            }//end-else
-            
-            [self.refreshControl endRefreshing];
-            notCurrentlyRefreshing = TRUE;
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [MBProgressHUD hideHUDForView:self.view animated:YES];
-            });
+        [self.refreshControl endRefreshing];
+        notCurrentlyRefreshing = TRUE;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        });
     });
+}
+
+-(void)getDirectory:(UIManagedDocument*)document
+{
+    NSArray * myData = [self downloadCurrentData:self.jsonURL];
+    [document.managedObjectContext performBlock:^{
+        for(NSDictionary * dataInfo in myData)
+        {
+            [Employee employeeWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+        }
+    }];
+}
+
+-(void)getEvents:(UIManagedDocument*)document
+{
+    NSArray * myData = [self downloadCurrentData:self.jsonURL];
+    [document.managedObjectContext performBlock:^{
+        for(NSDictionary * dataInfo in myData)
+        {
+            [Event eventWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+        }
+    }];
+}
+
+-(void)getPodcasts:(UIManagedDocument*)document
+{
+    NSArray * myPodcastData = [self downloadCurrentData:self.jsonURL];
+    [document.managedObjectContext performBlock:^{
+        for(NSDictionary * dataInfo in myPodcastData)
+        {
+            [Podcast podcastWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+        }
+    }];
+}
+
+-(void)getNews:(UIManagedDocument*)document
+{
+    NSArray * myWichitanData = [self downloadCurrentData:self.jsonURL];
+    NSArray * mySportsNewsData = [self downloadCurrentData:self.jsonSportsNewsURL];
+    NSArray * myMuseumNewsData = [self downloadCurrentData:self.jsonMuseumNewsURL];
+    
+    [document.managedObjectContext performBlock:^{
+        for(NSDictionary * dataInfo in myWichitanData)
+        {
+            [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+        }
+        for(NSDictionary * dataInfo in mySportsNewsData)
+        {
+            [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+        }
+        for(NSDictionary * dataInfo in myMuseumNewsData)
+        {
+            [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+        }
+    }];
+}
+
+-(void)getVideos:(UIManagedDocument*)document
+{
+    //Get videos for all VIMEO channels
+    for(int i=0; i<[self.vimeoChannel count]; i++)
+    {
+        NSArray * myVimeoData = [self downloadCurrentData:[NSString stringWithFormat:@"http://vimeo.com/api/v2/%@/videos.json",[self.vimeoChannel objectAtIndex:i]]];
+        
+        NSLog(@"myVimeoData = %@\n",myVimeoData);
+        [document.managedObjectContext performBlock:^{
+            for(NSDictionary * dataInfo in myVimeoData)
+            {
+                [Video videoWithInfo:dataInfo isVimeo:YES inManagedObjectContext:document.managedObjectContext];
+            }
+        }];
+    }
+    
+    //Get videos for all YouTube channels
+    for(int i=0; i<[self.youTubeChannel count]; i++)
+    {
+        NSArray * myYouTubeData = [self downloadCurrentData:[NSString stringWithFormat:@"http://gdata.youtube.com/feeds/api/users/%@/uploads?&v=2&max-results=50&alt=jsonc",[self.youTubeChannel objectAtIndex:i]]];
+        
+        NSDictionary * myInfo = myYouTubeData;
+        NSArray * itemsAlone = [[myInfo objectForKey:@"data"] objectForKey:@"items"];
+        
+        [document.managedObjectContext performBlock:^{
+            for(NSDictionary * dataInfo in itemsAlone)
+            {
+                [Video videoWithInfo:dataInfo isVimeo:NO inManagedObjectContext:document.managedObjectContext];
+            }
+        }];
+    }
+}
+
+-(void)getTweets:(UIManagedDocument*)document
+{
+    //Get access to the user's Twitter Account
+    // Request access to the Twitter accounts
+    ACAccountStore *accountStore = [[ACAccountStore alloc] init];
+    ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    [accountStore requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error)
+     {
+         if (granted)
+         {
+             NSArray *accounts = [accountStore accountsWithAccountType:accountType];
+             
+             // Check if the user has setup at least one Twitter account
+             if (accounts.count > 0)
+             {
+                 ACAccount *twitterAccount = [accounts objectAtIndex:0];
+                 
+                 //Setup the request parameters
+                 NSMutableDictionary * parameters = [[NSMutableDictionary alloc]init];
+                 [parameters setObject:@"1" forKey:@"include_rts"];
+                 
+                 //For all twitter accounts in my list
+                 //[parameters setObject:@"midwesternstate" forKey:@"screen_name"];
+                 
+                 // Creating a request to get the info about a user on Twitter
+                 [parameters setObject:@"midwestern" forKey:@"slug"];
+                 [parameters setObject:@"midwesternstate" forKey:@"owner_screen_name"];
+                 [parameters setObject:@"100" forKey:@"per_page"];
+                 [parameters setObject:@"true" forKey:@"include_entities"];
+                 
+                 SLRequest *twitterInfoRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:[NSURL URLWithString:@"https://api.twitter.com/1/lists/statuses.json"] parameters:parameters];
+                 [twitterInfoRequest setAccount:twitterAccount];
+                 
+                 // Making the request
+                 [twitterInfoRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
+                     dispatch_async(dispatch_get_main_queue(), ^{
+                         // Check if we reached the reate limit
+                         if ([urlResponse statusCode] == 429)
+                         {
+                             NSLog(@"Rate limit reached");
+                             return;
+                         }
+                         // Check if there was an error
+                         if (error)
+                         {
+                             NSLog(@"Error: %@", error.localizedDescription);
+                             return;
+                         }
+                         // Check if there is some response data
+                         if (responseData)
+                         {
+                             NSError *error = nil;
+                             NSArray *TWData = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:&error];
+                             
+                             // Filter the preferred data
+                             [document.managedObjectContext performBlock:^{
+                                 for(NSDictionary * dataInfo in TWData)
+                                 {
+                                     [Tweet tweetWithInfo:dataInfo isProfile:TRUE inManagedObjectContext:document.managedObjectContext];
+                                 }
+                             }];
+                         }
+                     });
+                 }];
+                 
+                 //Make another request for @MidwesternState
+                 
+                 //Make Another Request for #SocialStampede
+             }
+         }
+         else
+         {
+             NSLog(@"No access granted");
+         }
+     }];
 }
 
 -(void)setupFetchedResultsController
@@ -976,20 +1017,7 @@
     }
     
     //###### Filter the array using NSPredicate
-    //IF SEARCH TEXT IS ONE STRING, I'll check each attribute to see if there's a match.
-    NSArray * tempArray;
-    NSMutableArray * subPredicates;
-    
-    /*
-    subPredicates = [[NSMutableArray alloc]init];
-    for(int i=0; i<[self.keysToSearchOn count]; i++)
-    {
-        [subPredicates addObject:[NSPredicate predicateWithFormat:@"SELF.%@ contains[c] %@",[self.keysToSearchOn objectAtIndex:i],searchText]];
-    }
-    NSPredicate * predicate = [NSCompoundPredicate orPredicateWithSubpredicates:subPredicates];
-    
-    tempArray = [self.dataArray filteredArrayUsingPredicate:predicate];
-    */
+    NSArray * tempArray = [[NSArray alloc]init];
     NSArray *words = [searchText componentsSeparatedByString:@" "];
     NSMutableArray *predicateList = [NSMutableArray array];
     for (NSString *word in words) {
