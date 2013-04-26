@@ -35,7 +35,7 @@
 
 - (NSArray *)downloadCurrentData:(NSString*)jsonURL
 {
-    NSString *request = [NSString stringWithFormat:jsonURL];
+    NSString *request = [NSString stringWithFormat:@"%@",jsonURL];
     return [self executeDataFetch:request];
 }
 
@@ -1100,13 +1100,14 @@
             NSString * buildingMyPredicate = [[NSString alloc]init];
             for(int i=0; i<[self.keysToSearchOn count]; i++)
             {
+                NSString *escaped = [word stringByReplacingOccurrencesOfString:@"\'" withString:@"\\\'"];
                 if((i+1) != [self.keysToSearchOn count])
                 {
-                    buildingMyPredicate = [buildingMyPredicate stringByAppendingString:[NSString stringWithFormat:@"SELF.%@ CONTAINS[c] '%@' OR ",[self.keysToSearchOn objectAtIndex:i],word]];
+                    buildingMyPredicate = [buildingMyPredicate stringByAppendingString:[NSString stringWithFormat:@"SELF.%@ CONTAINS[c] '%@' OR ",[self.keysToSearchOn objectAtIndex:i],escaped]];
                 }
                 else
                 {
-                    buildingMyPredicate = [buildingMyPredicate stringByAppendingString:[NSString stringWithFormat:@"SELF.%@ CONTAINS[c] '%@'",[self.keysToSearchOn objectAtIndex:i],word]];
+                    buildingMyPredicate = [buildingMyPredicate stringByAppendingString:[NSString stringWithFormat:@"SELF.%@ CONTAINS[c] '%@'",[self.keysToSearchOn objectAtIndex:i],escaped]];
                 }
             }
             NSPredicate *pred = [NSPredicate predicateWithFormat:buildingMyPredicate];
@@ -1117,36 +1118,7 @@
     NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:predicateList];
     NSLog(@"%@", predicate);
     tempArray = [self.dataArray filteredArrayUsingPredicate:predicate];
-    /*
-    if([searchText componentsSeparatedByString:@" "].count == 1)
-    {
-        subPredicates = [[NSMutableArray alloc]init];
-        for(int i=0; i<[self.keysToSearchOn count]; i++)
-        {
-            [subPredicates addObject:[NSPredicate predicateWithFormat:@"SELF.%@ contains[c] %@",[self.keysToSearchOn objectAtIndex:i],searchText]];
-        }
-        NSPredicate * predicate = [NSCompoundPredicate orPredicateWithSubpredicates:subPredicates];
-        
-        tempArray = [self.dataArray filteredArrayUsingPredicate:predicate];
-    }
-    //THE USER HAS TYPED MULTIPLE WORDS SO I NEED TO CHANGE MY SEARCH STRATEGY
-    else
-    {
-        subPredicates = [[NSMutableArray alloc]init];
-        NSArray * searchTerms = [searchText componentsSeparatedByString:@" "];
-        NSLog(@"I see that I have %d components!\n",[searchTerms count]);
-        for(int i=0; i<[searchTerms count]; i++)
-        {
-            for(int j=0; j<[self.keysToSearchOn count]; j++)
-            {
-                [subPredicates addObject:[NSPredicate predicateWithFormat:@"SELF.%@ contains[c] %@",[self.keysToSearchOn objectAtIndex:j],[searchTerms objectAtIndex:i]]];
-            }
-            NSPredicate * predicate = [NSCompoundPredicate orPredicateWithSubpredicates:subPredicates];
-            NSLog(@"NSPredicate is %@\n",predicate);
-            tempArray = [self.dataArray filteredArrayUsingPredicate:predicate];
-        }
-    }
-    */
+    
     self.filteredDataArray = [NSMutableArray arrayWithArray:tempArray];
     
 }
