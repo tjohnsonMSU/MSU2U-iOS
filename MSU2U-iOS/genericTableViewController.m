@@ -275,6 +275,44 @@
                      });
                  }];
                  //Make Another Request for #SocialStampede
+                 NSMutableDictionary * newestParameters = [[NSMutableDictionary alloc]init];
+                 [newestParameters setObject:@"socialstampede+OR+midwesternstate+OR+msu2u" forKey:@"q"];
+                 
+                 twitterInfoRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:[NSURL URLWithString:@"http://search.twitter.com/search.json"] parameters:newestParameters];
+                 [twitterInfoRequest setAccount:twitterAccount];
+                 
+                 [twitterInfoRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
+                     dispatch_async(dispatch_get_main_queue(), ^{
+                         // Check if we reached the reate limit
+                         if ([urlResponse statusCode] == 429)
+                         {
+                             NSLog(@"Rate limit reached");
+                             return;
+                         }
+                         // Check if there was an error
+                         if (error)
+                         {
+                             NSLog(@"Error: %@", error.localizedDescription);
+                             return;
+                         }
+                         // Check if there is some response data
+                         if (responseData)
+                         {
+                             NSError *error = nil;
+                             NSArray *TWData = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:&error];
+                             NSDictionary * results = TWData;
+                             NSArray *realResults = [results objectForKey:@"results"];
+                             
+                             // Filter the preferred data
+                             [document.managedObjectContext performBlock:^{
+                                 for(NSDictionary * dataInfo in realResults)
+                                 {
+                                     [Tweet tweetWithInfo:dataInfo isProfile:FALSE inManagedObjectContext:document.managedObjectContext];
+                                 }
+                             }];
+                         }
+                     });
+                 }];
              }
          }
          else
