@@ -180,6 +180,9 @@
      {
          if (granted)
          {
+             self.tableView.separatorColor = nil;
+             [self.tableView setBackgroundView:nil];
+             //[self.tableView setHidden:NO];
              NSArray *accounts = [accountStore accountsWithAccountType:accountType];
              
              // Check if the user has setup at least one Twitter account
@@ -210,12 +213,20 @@
                          if ([urlResponse statusCode] == 429)
                          {
                              NSLog(@"Rate limit reached");
+                             [document.managedObjectContext performBlock:^{
+                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Rate Limit Reached" message:@"Twitter allows a maximum of 115 refreshes per hour per Twitter Account. Please try again later, or if you have received this message in error, please let us know at msu2u@mwsu.edu." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                 [alert show];
+                             }];
                              return;
                          }
                          // Check if there was an error
                          if (error)
                          {
                              NSLog(@"Error: %@", error.localizedDescription);
+                             [document.managedObjectContext performBlock:^{
+                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Download Error" message:@"Hmm, seems there was an error during the download. Try again later? Or tell us about it at msu2u@mwsu.edu." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                 [alert show];
+                             }];
                              return;
                          }
                          // Check if there is some response data
@@ -250,12 +261,20 @@
                          if ([urlResponse statusCode] == 429)
                          {
                              NSLog(@"Rate limit reached");
+                             [document.managedObjectContext performBlock:^{
+                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Rate Limit Reached" message:@"Twitter allows a maximum of 115 refreshes per hour per Twitter Account. Please try again later, or if you have received this message in error, please let us know at msu2u@mwsu.edu." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                 [alert show];
+                             }];
                              return;
                          }
                          // Check if there was an error
                          if (error)
                          {
                              NSLog(@"Error: %@", error.localizedDescription);
+                             [document.managedObjectContext performBlock:^{
+                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Download Error" message:@"Hmm, seems there was an error during the download. Try again later? Or tell us about it at msu2u@mwsu.edu." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                 [alert show];
+                             }];
                              return;
                          }
                          // Check if there is some response data
@@ -287,12 +306,20 @@
                          if ([urlResponse statusCode] == 429)
                          {
                              NSLog(@"Rate limit reached");
+                             [document.managedObjectContext performBlock:^{
+                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Rate Limit Reached" message:@"Twitter allows a maximum of 115 refreshes per hour per Twitter Account. Please try again later, or if you have received this message in error, please let us know at msu2u@mwsu.edu." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                 [alert show];
+                             }];
                              return;
                          }
                          // Check if there was an error
                          if (error)
                          {
                              NSLog(@"Error: %@", error.localizedDescription);
+                             [document.managedObjectContext performBlock:^{
+                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Download Error" message:@"Hmm, seems there was an error during the download. Try again later? Or tell us about it at msu2u@mwsu.edu." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                 [alert show];
+                             }];
                              return;
                          }
                          // Check if there is some response data
@@ -317,10 +344,22 @@
          }
          else
          {
-             NSLog(@"No access granted");
+             [self purgeAllEntitiesOfType:@"Tweet"];
+             NSLog(@"No Twitter Account");
+             [document.managedObjectContext performBlock:^{
+                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Setup Twitter Account" message:@"Please login/setup your Twitter account in your device's Settings>Twitter menu to view this feature." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                 [alert show];
+             }];
+             //Set my baby's image!!!
+             UIImageView *tempImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
+             [tempImg setImage:[UIImage imageNamed:@"twitterNoAccount.png"]];
+             [self.tableView setBackgroundView:tempImg];
+             //[self.tableView setHidden:YES];
+             self.tableView.separatorColor = [UIColor clearColor];
          }
      }];
 }
+
 
 -(void)setupFetchedResultsController
 {

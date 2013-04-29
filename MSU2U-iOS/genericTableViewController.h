@@ -29,7 +29,7 @@
 #import "Podcast+Create.h"
 #import "SVWebViewController.h"
 
-@interface genericTableViewController : CoreDataTableViewController <UISearchDisplayDelegate, UISearchBarDelegate>{
+@interface genericTableViewController : CoreDataTableViewController <UISearchDisplayDelegate, UISearchBarDelegate, UIAlertViewDelegate>{
     NSArray * news;
     NSMutableData * data;
     UIBarButtonItem * rightButton;

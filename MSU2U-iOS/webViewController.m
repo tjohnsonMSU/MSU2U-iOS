@@ -26,11 +26,6 @@
     
     //[self.webView loadHTMLString:websiteURL baseURL:nil];
     [self.webView loadRequest:requestObj];
-    
-    if([self.title isEqualToString:@"The Wichitan"])
-    {
-        self.webView.scrollView.zoomScale = 1.43;
-    }
 }
 
 - (IBAction)sharePressed:(UIBarButtonItem *)sender

@@ -210,10 +210,6 @@
 {
     receivedEvent = eventInfo;
     receivedEvent.teamlogo = @"http://www.msumustangs.com/images/logos/m6.png";
-    //Give the addEventToCalendarClass the event information so that the event can be added to the calendar if required
-    /*self.title = receivedEvent.category;
-    self.startDate = self.receivedStartDate;
-    self.startTime = self.receivedStartTime;*/
 }
 
 -(void)downloadImageForHome:(NSString*)homeTeam andAway:(NSString *)awayTeam
@@ -223,13 +219,27 @@
     
     //[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     NSLog(@"My hometeam URL is %@\n",homeTeam);
-    [self.homePhoto setImageWithURL:[NSURL URLWithString:homeTeam]
-                  placeholderImage:[UIImage imageNamed:@"Default.png"]];
-    [self.awayPhoto setImageWithURL:[NSURL URLWithString:awayTeam]
-                  placeholderImage:[UIImage imageNamed:@"Default.png"]];
     
+    [self.homePhoto setImageWithURL:[NSURL URLWithString:homeTeam] placeholderImage:[UIImage imageNamed:@"Default.png"] options:0 andResize:CGSizeMake(50, 50)];
+    [self.awayPhoto setImageWithURL:[NSURL URLWithString:awayTeam] placeholderImage:[UIImage imageNamed:@"Default.png"] options:0 andResize:CGSizeMake(50,50)];
+    
+    CGSize size = {50,50};
+    self.homePhoto.image = [self imageWithImage:self.homePhoto.image scaledToSize:size];
+    self.awayPhoto.image = [self imageWithImage:self.awayPhoto.image scaledToSize:size];
     //[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
+
+- (UIImage*)imageWithImage:(UIImage*)image
+              scaledToSize:(CGSize)newSize;
+{
+    UIGraphicsBeginImageContext( newSize );
+    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
 
 - (void)addToCalendar {
     //Setup the variables for this event in the addEventToMainCalendar class

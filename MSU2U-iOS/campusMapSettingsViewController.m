@@ -65,11 +65,12 @@
     {
         [self.campusBorderSwitch setOn:TRUE];
     }
+    /*TODO IMPLEMENT A BETTER BUS ROUTE LATER
     if([defaults boolForKey:@"campusMapSettingsBusRoute"])
     {
         [self.busTransitRouteSwitch setOn:TRUE];
     }
-    
+    */
 }
 
 #pragma mark - Table view delegate

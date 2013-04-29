@@ -21,6 +21,7 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
 
 - (NSArray *)executeDataFetch:(NSString *)query
 {
+    //Get all of the buildings loaded so that searches may be conducted
     NSString * textPath = [[NSBundle mainBundle]pathForResource:@"buildings" ofType:@"json"];
     NSError * error;
     NSData *jsonData = [[NSString stringWithContentsOfFile:textPath encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
@@ -30,18 +31,6 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results);
      
     return results;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    if(interfaceOrientation == UIInterfaceOrientationLandscapeRight)
-        return NO;
-    else if(interfaceOrientation == UIInterfaceOrientationLandscapeLeft)
-        return NO;
-    else if(interfaceOrientation == UIInterfaceOrientationPortrait)
-        return YES;
-    else
-        return YES;
 }
 
 -(void)viewDidLoad
@@ -135,7 +124,7 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
                                                        delegate:self
                                               cancelButtonTitle:@"Cancel"
                                          destructiveButtonTitle:nil
-                                              otherButtonTitles:@"Show Directions",@"Remove Pin",@"Show Location Info", nil];
+                                              otherButtonTitles:@"Show Directions",@"Remove Pin", nil];
     
     // 3
     sheet.cancelButtonIndex = sheet.numberOfButtons - 1;
@@ -199,7 +188,9 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
             
         } else if (buttonIndex == 1) {
             // REMOVE PIN HERE
-            
+            id<MKAnnotation> ann = [[_campusMap selectedAnnotations] objectAtIndex:0];
+            NSLog(@"ann.title = %@", ann.title);
+            [_campusMap removeAnnotation:ann];
         } else if (buttonIndex == 2) {
             // SHOW MORE INFO CODE HERE
         }
