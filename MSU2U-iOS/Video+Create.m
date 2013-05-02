@@ -20,19 +20,8 @@
     NSString * theVideoIDnumber = [NSString stringWithFormat:@"%@",[info objectForKey:@"id"]];
     request.predicate = [NSPredicate predicateWithFormat:@"video_id = %@", theVideoIDnumber];
 
-    //How is the information sorted?
-    if(isVimeo)
-    {
-        NSSortDescriptor * sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"upload_date" ascending:YES];
-        request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-    }
-    else
-    {
-        /*
-        NSSortDescriptor * sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"uploaded" ascending:YES];
-        request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-         */
-    }
+    NSSortDescriptor * sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"upload_date" ascending:YES];
+    request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     
     NSError * error = nil;
     NSArray * allVideo = [context executeFetchRequest:request error:&error];
@@ -47,8 +36,49 @@
     }
     else
     {
-        //It apears this video exists already in the core data. Well, has any information been updated since the time I downloaded the original?
         video = [allVideo lastObject];
+        
+        //It apears this video exists already in the core data. Well, has any information been updated since the time I downloaded the original?
+        if(isVimeo)
+        {
+            if([video.title isEqualToString:[info objectForKey:@"title"]] && [video.desc isEqualToString:[info objectForKey:@"description"]] && [video.thumbnail_small isEqualToString:[info objectForKey:@"thumbnail_small"]])
+            {
+                NSLog(@"Title, description, and thumbnail are the same. Do nothing...\n");
+            }
+            else
+            {
+                NSLog(@"Something changed:|\n%@ - %@\n|%@ - %@\n|%@ - %@\n",video.title,[info objectForKey:@"title"],video.desc,[info objectForKey:@"description"],video.thumbnail_small,[info objectForKey:@"thumbnail_small"]);
+                
+                //Well, something changed so remove this video and add the new copy in
+                for (NSManagedObject * v in allVideo) {
+                    [context deleteObject:v];
+                }
+                
+                //create a new video
+                video = [self createNewVideo:info inContext:context isVimeo:isVimeo];
+            }
+        }
+        //YouTube video
+        else
+        {
+            if([video.title isEqualToString:[info objectForKey:@"title"]] && [video.desc isEqualToString:[info objectForKey:@"description"]] && [video.thumbnail_small isEqualToString:[[info objectForKey:@"thumbnail"]objectForKey:@"hqDefault"]])
+            {
+                NSLog(@"Title, description, and thumbnail are the same. Do nothing...\n");
+                video = [allVideo lastObject];
+            }
+            else
+            {
+                NSLog(@"Something changed:|\n%@ - %@\n|%@ - %@\n|%@ - %@\n",video.title,[info objectForKey:@"title"],video.desc,[info objectForKey:@"description"],video.thumbnail_small,[[info objectForKey:@"thumbnail"]objectForKey:@"hqDefault"]);
+                
+                //Well, something changed so remove this video and add the new copy in
+                for (NSManagedObject * v in allVideo) {
+                    [context deleteObject:v];
+                }
+                
+                //create a new video
+                video = [self createNewVideo:info inContext:context isVimeo:isVimeo];
+            }
+        }
     }
     
     return video;

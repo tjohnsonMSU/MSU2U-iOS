@@ -38,6 +38,23 @@
     {
         //It apears this video exists already in the core data. Well, has any information been updated since the time I downloaded the original?
         podcast = [allPodcast lastObject];
+        
+        if([podcast.title isEqualToString:[info objectForKey:@"Title"]] && [podcast.link isEqualToString:[info objectForKey:@"Link"]])
+        {
+            //all good
+        }
+        else
+        {
+            NSLog(@"Something changed:|\n%@ - %@\n|%@ - %@\n\n",podcast.title,[info objectForKey:@"title"],podcast.link,[info objectForKey:@"link"]);
+            
+            //Well, something changed so remove this video and add the new copy in
+            for (NSManagedObject * p in allPodcast) {
+                [context deleteObject:p];
+            }
+            
+            //create a new video
+            podcast = [self createNewPodcast:info inContext:context];
+        }
     }
     
     return podcast;
@@ -69,8 +86,8 @@
     [dateFormatter setTimeZone:cst];
     [dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
     
-    //Format of the last_changed: 2013-03-27 23:19:29
-    [dateFormatter setDateFormat: @"mm/dd/yyyy"];
+    //Format of the Pub_Date: 4/23/2013
+    [dateFormatter setDateFormat: @"MM/dd/yyyy"];
     NSDate * date = [dateFormatter dateFromString:[info objectForKey:@"Pub_Date"]];
     podcast.pubDate = date;
     

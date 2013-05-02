@@ -40,8 +40,8 @@
         else if([[info objectForKey:@"deleted"] isEqualToString:@"0"])
         {
             //OK this employee has not been deleted from the database, so put this person into my core data
-            employee = [NSEntityDescription insertNewObjectForEntityForName:@"Employee" inManagedObjectContext:context];
-            employee = [self createNewEmployee:employee fromInfo:info];
+            //employee = [NSEntityDescription insertNewObjectForEntityForName:@"Employee" inManagedObjectContext:context];
+            employee = [self createNewEmployee:employee inContext:context fromInfo:info];
         }
         else
         {
@@ -52,6 +52,7 @@
     {
         employee = [employees lastObject];
         //NSLog(@"Employee %@ %@ already exists. Let me see if their data matches my new data...\n",employee.fname,employee.lname);
+        
         if([employee.deleted isEqualToString:@"0"] && [[info objectForKey:@"deleted"] isEqualToString:@"1"])
         {
             //I need to delete this employee since he or she no longer exists in the database
@@ -67,20 +68,18 @@
                 [context deleteObject:e];
             }
             //create a new employee
-            employee = [NSEntityDescription insertNewObjectForEntityForName:@"Employee" inManagedObjectContext:context];
-            employee = [self createNewEmployee:employee fromInfo:info];
-        }
-        else
-        {
-            employee = [employees lastObject];
+            //employee = [NSEntityDescription insertNewObjectForEntityForName:@"Employee" inManagedObjectContext:context];
+            employee = [self createNewEmployee:employee inContext:context fromInfo:info];
         }
     }
     
     return employee;
 }
 
-+(Employee*)createNewEmployee:(Employee*)employee fromInfo:(NSDictionary*)info
++(Employee*)createNewEmployee:(Employee*)employee inContext:(NSManagedObjectContext*)context fromInfo:(NSDictionary*)info
 {
+    employee = [NSEntityDescription insertNewObjectForEntityForName:@"Employee" inManagedObjectContext:context];
+    
     //These attributes are received from the server    
     employee.person_id = [info objectForKey:@"Person_ID"];
     employee.last_changed = [info objectForKey:@"last_changed"];

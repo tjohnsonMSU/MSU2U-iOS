@@ -27,9 +27,9 @@
 {
     [super viewDidLoad];
 
-    UIImageView *tempImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
+    /*UIImageView *tempImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
     [tempImg setImage:[UIImage imageNamed:@"mainBG.png"]];
-    [self.tableView setBackgroundView:tempImg];
+    [self.tableView setBackgroundView:tempImg];*/
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,17 +47,18 @@
         //User pressed the Contact Development Team cell!
         MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
         controller.mailComposeDelegate = self;
-        [controller setToRecipients:[NSArray arrayWithObject:@"msu2u@yahoo.com"]];
+        [controller setToRecipients:[NSArray arrayWithObject:@"msu2u@mwsu.edu"]];
         [controller setSubject:@""];
         
         //TODO Should format this better
-        NSString * openingStatement = [NSString stringWithFormat:@"[Sent from within MSU2U]\n\nGreetings,\n"];
+        NSString * openingStatement = [NSString stringWithFormat:@""];
         
         [controller setMessageBody:openingStatement isHTML:NO];
         if (controller) [self presentModalViewController:controller animated:YES];
     }
 }
 
+/*
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //cell.backgroundColor = [UIColor colorWithRed:(185.0/255.0) green:(142.0/255.0) blue:(47.0/255.0) alpha:1];
@@ -67,7 +68,9 @@
     cell.textLabel.backgroundColor = cell.contentView.backgroundColor;
     cell.detailTextLabel.backgroundColor = cell.contentView.backgroundColor;
 }
+*/
 
+/*
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 30)];
@@ -95,6 +98,7 @@
     
     return headerView;
 }
+*/
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller
           didFinishWithResult:(MFMailComposeResult)result

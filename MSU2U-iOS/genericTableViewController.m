@@ -110,7 +110,14 @@
     [document.managedObjectContext performBlock:^{
         for(NSDictionary * dataInfo in myPodcastData)
         {
-            [Podcast podcastWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+            NSComparisonResult result = [[self convertString:[dataInfo objectForKey:@"Pub_Date"] toDateWithFormat:@"MM/dd/yyyy"] compare:[self getDateFor:@"lastMonth"]];
+            
+            if(result != NSOrderedAscending)
+            {
+                [Podcast podcastWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+            }
+            else
+                NSLog(@"%@ is too old!\n",[dataInfo objectForKey:@"Title"]);
         }
     }];
 }
@@ -120,19 +127,40 @@
     NSArray * myWichitanData = [self downloadCurrentData:self.jsonURL];
     NSArray * mySportsNewsData = [self downloadCurrentData:self.jsonSportsNewsURL];
     NSArray * myMuseumNewsData = [self downloadCurrentData:self.jsonMuseumNewsURL];
-    
+    NSLog(@"Getting the news!\n");
     [document.managedObjectContext performBlock:^{
         for(NSDictionary * dataInfo in myWichitanData)
         {
-            [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+            NSComparisonResult result = [[self convertString:[dataInfo objectForKey:@"Pub_Date"] toDateWithFormat:@"EEE, dd MMMM y HH:mm:ss ZZZZ"] compare:[self getDateFor:@"lastMonth"]];
+                                         
+            if(result != NSOrderedAscending)
+            {
+                [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+            }
+            else
+                NSLog(@"%@ is too old!\n",[dataInfo objectForKey:@"Title"]);
         }
         for(NSDictionary * dataInfo in mySportsNewsData)
         {
-            [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+            NSComparisonResult result = [[self convertString:[dataInfo objectForKey:@"Pub_Date"] toDateWithFormat:@"EEE, dd MMMM y HH:mm:ss ZZZZ"] compare:[self getDateFor:@"lastMonth"]];
+                                         
+            if(result != NSOrderedAscending)
+            {
+                [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+            }
+            else
+                NSLog(@"%@ is too old!\n",[dataInfo objectForKey:@"Title"]);
         }
         for(NSDictionary * dataInfo in myMuseumNewsData)
         {
-            [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+            NSComparisonResult result = [[self convertString:[dataInfo objectForKey:@"Pub_Date"] toDateWithFormat:@"EEE, dd MMMM y HH:mm:ss ZZZZ"] compare:[self getDateFor:@"lastMonth"]];
+                                         
+            if(result != NSOrderedAscending)
+            {
+                [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+            }
+            else
+                NSLog(@"%@ is too old! (%@ is older than %@)\n",[dataInfo objectForKey:@"Title"],[dataInfo objectForKey:@"Pub_Date"],[self getDateFor:@"lastMonth"]);
         }
     }];
 }
@@ -148,7 +176,14 @@
         [document.managedObjectContext performBlock:^{
             for(NSDictionary * dataInfo in myVimeoData)
             {
-                [Video videoWithInfo:dataInfo isVimeo:YES inManagedObjectContext:document.managedObjectContext];
+                NSComparisonResult result = [[self convertString:[dataInfo objectForKey:@"upload_date"] toDateWithFormat:@"yyyy-MM-dd HH:mm:ss"] compare:[self getDateFor:@"lastYear"]];
+                NSLog(@"Is %@ before %@?\n",[dataInfo objectForKey:@"upload_date"],[self getDateFor:@"lastYear"]);
+                if(result != NSOrderedAscending)
+                {
+                    [Video videoWithInfo:dataInfo isVimeo:YES inManagedObjectContext:document.managedObjectContext];
+                }
+                else
+                    NSLog(@"%@ is too old! (%@ is older than %@)\n",[dataInfo objectForKey:@"title"],[dataInfo objectForKey:@"upload_date"],[self getDateFor:@"lastYear"]);
             }
         }];
     }
@@ -156,7 +191,7 @@
     //Get videos for all YouTube channels
     for(int i=0; i<[self.youTubeChannel count]; i++)
     {
-        NSArray * myYouTubeData = [self downloadCurrentData:[NSString stringWithFormat:@"http://gdata.youtube.com/feeds/api/users/%@/uploads?&v=2&max-results=50&alt=jsonc",[self.youTubeChannel objectAtIndex:i]]];
+        NSArray * myYouTubeData = [self downloadCurrentData:[NSString stringWithFormat:@"http://gdata.youtube.com/feeds/api/users/%@/uploads?&v=2&max-results=20&alt=jsonc",[self.youTubeChannel objectAtIndex:i]]];
         
         NSDictionary * myInfo = myYouTubeData;
         NSArray * itemsAlone = [[myInfo objectForKey:@"data"] objectForKey:@"items"];
@@ -164,7 +199,14 @@
         [document.managedObjectContext performBlock:^{
             for(NSDictionary * dataInfo in itemsAlone)
             {
-                [Video videoWithInfo:dataInfo isVimeo:NO inManagedObjectContext:document.managedObjectContext];
+                NSComparisonResult result = [[self convertString:[dataInfo objectForKey:@"uploaded"] toDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss.000'Z'"] compare:[self getDateFor:@"lastYear"]];
+                NSLog(@"Is %@ before %@?\n",[dataInfo objectForKey:@"uploaded"],[self getDateFor:@"lastYear"]);
+                if(result != NSOrderedAscending)
+                {
+                    [Video videoWithInfo:dataInfo isVimeo:NO inManagedObjectContext:document.managedObjectContext];
+                }
+                else
+                    NSLog(@"%@ is too old! (%@ is older than %@)\n",[dataInfo objectForKey:@"title"],[dataInfo objectForKey:@"uploaded"],[self getDateFor:@"lastYear"]);
             }
         }];
     }
@@ -232,10 +274,10 @@
                          // Check if there is some response data
                          if (responseData)
                          {
+                             //THIS IS WHERE I ACTUALLY HAVE ALL OF THE TWEETS
                              NSError *error = nil;
                              NSArray *TWData = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:&error];
                              
-                             // Filter the preferred data
                              [document.managedObjectContext performBlock:^{
                                  for(NSDictionary * dataInfo in TWData)
                                  {
@@ -251,7 +293,7 @@
                  NSMutableDictionary * newParameters = [[NSMutableDictionary alloc]init];
                  [newParameters setObject:@"midwesternstate" forKey:@"screen_name"];
                  [newParameters setObject:@"1" forKey:@"include_rts"];
-                 [newParameters setObject:@"100" forKey:@"count"];
+                 [newParameters setObject:@"25" forKey:@"count"];
                  twitterInfoRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:[NSURL URLWithString:@"https://api.twitter.com/1.1/statuses/user_timeline.json"] parameters:newParameters];
                  [twitterInfoRequest setAccount:twitterAccount];
                  
@@ -272,7 +314,7 @@
                          {
                              NSLog(@"Error: %@", error.localizedDescription);
                              [document.managedObjectContext performBlock:^{
-                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Download Error" message:@"Hmm, seems there was an error during the download. Try again later? Or tell us about it at msu2u@mwsu.edu." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Download Error" message:@"Hmm, seems there was an error during the download. Ensure you have an internet connection and try again later." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                                  [alert show];
                              }];
                              return;
@@ -283,7 +325,6 @@
                              NSError *error = nil;
                              NSArray *TWData = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:&error];
                              
-                             // Filter the preferred data
                              [document.managedObjectContext performBlock:^{
                                  for(NSDictionary * dataInfo in TWData)
                                  {
@@ -295,7 +336,7 @@
                  }];
                  //Make Another Request for #SocialStampede
                  NSMutableDictionary * newestParameters = [[NSMutableDictionary alloc]init];
-                 [newestParameters setObject:@"socialstampede+OR+midwesternstate+OR+msu2u" forKey:@"q"];
+                 [newestParameters setObject:@"socialstampede+OR+midwesternstate+OR+msu2u+OR+ClubMoffett+OR+CSCAtrium+OR+wichitanonline" forKey:@"q"];
                  
                  twitterInfoRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:[NSURL URLWithString:@"http://search.twitter.com/search.json"] parameters:newestParameters];
                  [twitterInfoRequest setAccount:twitterAccount];
@@ -350,23 +391,117 @@
                  UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Setup Twitter Account" message:@"Please login/setup your Twitter account in your device's Settings>Twitter menu to view this feature." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                  [alert show];
              }];
-             //Set my baby's image!!!
+             //Set my table background image!!!
              UIImageView *tempImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
              [tempImg setImage:[UIImage imageNamed:@"twitterNoAccount.png"]];
              [self.tableView setBackgroundView:tempImg];
-             //[self.tableView setHidden:YES];
              self.tableView.separatorColor = [UIColor clearColor];
          }
      }];
 }
 
+-(NSDate*)convertString:(NSString*)string toDateWithFormat:(NSString*)format
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSTimeZone * cst = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+    [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+    [dateFormatter setTimeZone:cst];
+    [dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+    
+    [dateFormatter setDateFormat: format];
+    
+    NSDate *myDate = [dateFormatter dateFromString:string];
+    return myDate;
+}
+
+-(NSDate*)getDateFor:(NSString*)timePeriod
+{
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSDateComponents *components = [cal components:( NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit ) fromDate:[[NSDate alloc] init]];
+    
+    [components setHour:-[components hour]];
+    [components setMinute:-[components minute]];
+    [components setSecond:-[components second]];
+    NSDate *today = [cal dateByAddingComponents:components toDate:[[NSDate alloc] init] options:0]; //This variable should now be pointing at a date object that is the start of today (midnight);
+    
+    [components setHour:-24];
+    [components setMinute:0];
+    [components setSecond:0];
+    NSDate *yesterday = [cal dateByAddingComponents:components toDate: today options:0];
+    
+    components = [cal components:NSWeekdayCalendarUnit | NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:[[NSDate alloc] init]];
+    
+    [components setDay:([components day] - ([components weekday] - 1))];
+    NSDate *thisWeek  = [cal dateFromComponents:components];
+    
+    [components setDay:([components day] - ([components day] -1))];
+    NSDate *thisMonth = [cal dateFromComponents:components];
+    
+    [components setMonth:([components month] - 1)];
+    NSDate *lastMonth = [cal dateFromComponents:components];
+    
+    NSDateComponents *componentsToSubtract = [[NSDateComponents alloc] init];
+    [componentsToSubtract setMonth:-6];
+    NSDate *lastSemester = [[NSCalendar currentCalendar] dateByAddingComponents:componentsToSubtract toDate:[NSDate date] options:0];
+
+    NSDateComponents *componentsToSubtract2 = [[NSDateComponents alloc] init];
+    [componentsToSubtract2 setYear:-1];
+    NSDate * lastYear = [[NSCalendar currentCalendar] dateByAddingComponents:componentsToSubtract2 toDate:[NSDate date] options:0];
+    
+    NSDateComponents *comp3 = [[NSDateComponents alloc]init];
+    [comp3 setDay:-7];
+    NSDate * lastWeek = [[NSCalendar currentCalendar] dateByAddingComponents:comp3 toDate:[NSDate date] options:0];
+    
+    NSLog(@"Last week is %@\n",lastWeek);
+    
+    if([timePeriod isEqualToString:@"today"])
+        return today;
+    else if([timePeriod isEqualToString:@"yesterday"])
+        return yesterday;
+    else if([timePeriod isEqualToString:@"lastWeek"])
+        return lastWeek;
+    else if([timePeriod isEqualToString:@"thisWeek"])
+        return thisWeek;
+    else if([timePeriod isEqualToString:@"thisMonth"])
+        return thisMonth;
+    else if([timePeriod isEqualToString:@"lastMonth"])
+        return lastMonth;
+    else if([timePeriod isEqualToString:@"lastYear"])
+        return lastYear;
+    else if([timePeriod isEqualToString:@"lastSemester"])
+        return lastSemester;
+    else
+        return [NSDate date];
+}
+
+-(void)purgeEntity:(NSString*)entityName withPredicate:(NSPredicate*)predicate
+{
+    __block void (^block)(void) = ^{
+        //Fetch all of the specified entities from Core Data
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:self.myDatabase.managedObjectContext];
+        [request setEntity:entity];
+        NSError *error;
+        
+        //Set the predicate, similar to the concept of an SQL query
+        [request setPredicate:predicate];
+        NSArray *results = [self.myDatabase.managedObjectContext executeFetchRequest:request error:&error];
+        
+        NSLog(@"I think %d articles are going to get deleted!\n",[results count]);
+        //Delete all of the objects that meet the predicate's requirements
+        for (NSManagedObject * n in results) {
+            [self.myDatabase.managedObjectContext deleteObject:n];
+        }
+    };
+    [self.myDatabase.managedObjectContext performBlock:block];
+}
 
 -(void)setupFetchedResultsController
 {
     NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:self.entityName];
     
     //### What should I show in my table?
-    //News
+    //Events
     if(self.childNumber == [NSNumber numberWithInt:2])
     {
         NSPredicate * predicate;
@@ -407,8 +542,6 @@
     //Twitter
     else if(self.childNumber == [NSNumber numberWithInt:7])
     {
-        NSPredicate * predicate;
-        
         switch(self.showTweetsForIndex)
         {
             case 0:
@@ -418,24 +551,6 @@
             }
             case 1:
             {
-                /*
-                NSCalendar *cal = [NSCalendar currentCalendar];
-                NSDateComponents *components = [cal components:( NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit ) fromDate:[[NSDate alloc] init]];
-                
-                [components setHour:-[components hour]];
-                [components setMinute:-[components minute]];
-                [components setSecond:-[components second]];
-                NSDate *today = [cal dateByAddingComponents:components toDate:[[NSDate alloc] init] options:0]; //This variable should now be pointing at a date object that is the start of today (midnight);
-                
-                [components setHour:-24];
-                [components setMinute:0];
-                [components setSecond:0];
-                NSDate *yesterday = [cal dateByAddingComponents:components toDate: today options:0];
-                
-                predicate = [NSPredicate predicateWithFormat:@"created_at >= %@",yesterday];
-                [request setPredicate:predicate];
-                break;
-                 */
                 //show ONLY 'msu2u_devteam' tweets
                 NSPredicate * predicate;
                 predicate = [NSPredicate predicateWithFormat:@"screen_name LIKE[c] 'msu2u_devteam'"];
@@ -447,6 +562,11 @@
     //NEWS
     else if(self.childNumber == [NSNumber numberWithInt:3])
     {
+        //Delete all News articles that are older than 1 month
+        NSPredicate * deletePredicate = [NSPredicate predicateWithFormat:@"pub_date <= %@",[self getDateFor:@"lastMonth"]];
+        [self purgeEntity:self.entityName withPredicate:deletePredicate];
+        
+        //Now figure out what to show
         switch(self.showNewsForIndex)
         {
             case 0:
@@ -483,7 +603,10 @@
     //Video
     else if(self.childNumber == [NSNumber numberWithInt:8])
     {
-        //do nothing, therefore SHOW ALL because I have NO segmented filter at this time
+        //Delete all Videos that are older than 1 year old
+        NSPredicate * deletePredicate = [NSPredicate predicateWithFormat:@"upload_date <= %@",[self getDateFor:@"lastYear"]];
+        [self purgeEntity:self.entityName withPredicate:deletePredicate];
+        
         switch(self.showVideoForIndex)
         {
             case 0:
@@ -511,6 +634,10 @@
     //Podcast
     else if(self.childNumber == [NSNumber numberWithInt:9])
     {
+        //Delete all podcasts that are older than 6 months
+        NSPredicate * predicate = [NSPredicate predicateWithFormat:@"pubDate <= %@",[self getDateFor:@"lastMonth"]];
+        [self purgeEntity:self.entityName withPredicate:predicate];
+        
         switch(self.showPodcastForIndex)
         {
             case 0:
@@ -519,22 +646,9 @@
             }
             case 1:
             {
-                //Show only podcasts within the last week
-                 NSCalendar *cal = [NSCalendar currentCalendar];
-                 NSDateComponents *components = [cal components:( NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit ) fromDate:[[NSDate alloc] init]];
-                 
-                 [components setHour:-[components hour]];
-                 [components setMinute:-[components minute]];
-                 [components setSecond:-[components second]];
-                 NSDate *today = [cal dateByAddingComponents:components toDate:[[NSDate alloc] init] options:0]; //This variable should now be pointing at a date object that is the start of today (midnight);
-                 
-                 [components setHour:-168];
-                 [components setMinute:0];
-                 [components setSecond:0];
-                 NSDate *lastWeek = [cal dateByAddingComponents:components toDate: today options:0];
-                
+                //Show Podcasts only from the last week
                  NSPredicate * predicate;
-                 predicate = [NSPredicate predicateWithFormat:@"pubDate >= %@",lastWeek];
+                 predicate = [NSPredicate predicateWithFormat:@"pubDate >= %@",[self getDateFor:@"lastWeek"]];
                  [request setPredicate:predicate];
                  break;
             }
@@ -553,6 +667,8 @@
         request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:self.sortDescriptorKey ascending:YES]];
 
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:self.myDatabase.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    
+    NSLog(@"I fetched my data for this table!");
     
     //3. What should I do if there's NOTHING to show in my table?
     if([[[self.fetchedResultsController sections] objectAtIndex:0] numberOfObjects] == 0)
@@ -590,7 +706,6 @@
         else
         {
             NSLog(@"!@#!@# WHAT AM I TRYING TO REFRESH???\n");
-            //[self refresh];
         }
     }
 }
@@ -740,55 +855,37 @@
 
 -(void) refresh
 {
-    //FIRST, GET RID OF MY CURRENT DATA.
-    /*
-    if(self.childNumber != [NSNumber numberWithInt:4])
+    //Certain types of data I want to remove all of them during a refresh
+    //[self purgeAllEntitiesOfType:self.entityName];
+    switch([self.childNumber intValue])
     {
-        switch ([self.childNumber integerValue])
-        {
-            //Events
-            case 2:
-            {
-                [self purgeAllEntitiesOfType:@"Event"];
-                break;
-            }
-            //News
-            case 3:
-            {
-                [self purgeAllEntitiesOfType:@"News"];
-                break;
-            }
-            //Directory
-            case 4:
-            {
-                [self purgeAllEntitiesOfType:@"Employee"];
-                break;
-            }
-            //Twitter
-            case 7:
-            {
-                [self purgeAllEntitiesOfType:@"Tweet"];
-                break;
-            }
-            //Video
-            case 8:
-            {
-                [self purgeAllEntitiesOfType:@"Video"];
-                break;
-            }
-            default:
-                break;
-        }
-    }*/
+        //Events are at high risk of being re-scheduled on the fly, so it's safest to just delete all and put the new events in.
+        case 2: [self purgeAllEntitiesOfType:self.entityName];break;
+        
+        //News will check to see if anything about itself has changed and make those changes individually
+        //case 3: [self purgeAllEntitiesOfType:self.entityName];break;
+        
+        //Employee
+        //case 4: [self purgeAllEntitiesOfType:self.entityName];break;
+        
+        //Video
+        //case 8: [self purgeAllEntitiesOfType:self.entityName];break;
+            
+        //Podcast
+        //case 9: [self purgeAllEntitiesOfType:self.entityName];break;
+        
+        //Tweet
+        case 7: [self purgeAllEntitiesOfType:self.entityName];break;
+        
+        //default: NSLog(@"Reached default condition in refresh\n");break;
+    }
     [self downloadAllEntities];
-    NSLog(@"I'm done purging!\n");
 }
 
 -(void)saveRefreshTime:(NSString*)refreshTime
 {
-    
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-
+    
     switch([self.childNumber integerValue])
     {
         case 2:[defaults setObject:refreshTime forKey:@"eventsRefreshTime"];break;
@@ -946,8 +1043,8 @@
         cell.textLabel.text = [self.dataObject title];
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ by %@",[NSDateFormatter localizedStringFromDate:[self.dataObject upload_date] dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle],[self.dataObject user_name]];
         
-        [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject thumbnail_small]] placeholderImage:[UIImage imageNamed:@"70-tv.png"] options:0 andResize:CGSizeMake(50, 50)];
-        CGSize size = {50,50};
+        [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject thumbnail_small]] placeholderImage:[UIImage imageNamed:@"70-tv.png"] options:0 andResize:CGSizeMake(107, 68)];
+        CGSize size = {107,68};
         cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
     }
     else if(self.childNumber == [NSNumber numberWithInt:9])
