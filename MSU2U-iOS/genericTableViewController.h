@@ -20,6 +20,7 @@
 #import "MYDocumentHandler.h"
 #import "MBProgressHUD.h"
 #import "UIImageView+WebCache.h"
+#import "SDImageCache.h"
 
 #import "News+Create.h"
 #import "Event+Create.h"

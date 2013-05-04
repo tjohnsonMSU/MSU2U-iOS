@@ -35,6 +35,7 @@
     {
         //Ok, I already have this tweet, but has the screen_name, profile image, or real name changed for any tweet?
         tweet = [allTweet lastObject];
+        /*
         BOOL deleteMe = false;
         
         if(isProfile)
@@ -60,7 +61,7 @@
             //create a new tweet
             tweet = [self createNewTweet:info inContext:context isProfile:isProfile];
         }
-
+         */
     }
     
     return tweet;

@@ -15,7 +15,7 @@
 @implementation genericTableViewController
 
 //######################################################################################
-//#                 PAUL HEGARTY CORE DATA STUFF
+//#                 PAUL HEGARTY CORE DATA STUFF                                       #
 //######################################################################################
 
 //for sure
@@ -24,6 +24,7 @@
     NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:query] encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
     NSError *error = nil;
     NSArray *results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
+    
     if (error)
     {
         NSLog(@"Error with json: %@",error);
@@ -31,6 +32,11 @@
     }
     
     return results;
+}
+
+-(void)executeRSSFetch:(NSString*)query
+{
+    
 }
 
 - (NSArray *)downloadCurrentData:(NSString*)jsonURL
@@ -1032,9 +1038,13 @@
     {
         cell.textLabel.text = [self.dataObject text];        
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ by %@",[NSDateFormatter localizedStringFromDate:[self.dataObject created_at] dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle],[self.dataObject screen_name]];
-        
+        if([[self.dataObject screen_name] isEqualToString:@"MSUMustangs"])
+        {
+            NSLog(@"OK, MSUMustangs' image is %@\n",[self.dataObject profile_image_url]);
+        }
+        //Twitter profile images could change often, so remove from the cache and force a redownload
+        [[SDImageCache sharedImageCache] removeImageForKey:[self.dataObject profile_image_url] fromDisk:YES];
         [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject profile_image_url]] placeholderImage:[UIImage imageNamed:@"twitter.png"] options:0 andResize:CGSizeMake(50, 50)];
-        [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject profile_image_url]] placeholderImage:[UIImage imageNamed:@"twitter.png"]];
         CGSize size = {50,50};
         cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
     }
@@ -1135,7 +1145,7 @@
     else if(self.childNumber == [NSNumber numberWithInt:3])
     {
         //[segue.destinationViewController sendNewsInformation:self.dataObject];
-        [segue.destinationViewController sendURL:[self.dataObject link] andTitle:[self.dataObject publication]];
+        [segue.destinationViewController sendURL:[self.dataObject link] andTitle:[self.dataObject publication] andMessagePrefix:[self.dataObject title]];
         
         //SVWebViewController *webViewController = [[SVWebViewController alloc] initWithAddress:[self.dataObject link]];
         //[self.navigationController pushViewController:webViewController animated:YES];
@@ -1157,17 +1167,17 @@
     {
         //[segue.destinationViewController sendTweetInformation:self.dataObject];
         NSLog(@"Going to http://www.twitter.com/%@/status/%@",[self.dataObject screen_name],[self.dataObject max_id]);
-        [segue.destinationViewController sendURL:[NSString stringWithFormat:@"http://www.twitter.com/%@/status/%@",[self.dataObject screen_name],[self.dataObject max_id]] andTitle:[self.dataObject screen_name]];
+        [segue.destinationViewController sendURL:[NSString stringWithFormat:@"http://www.twitter.com/%@/status/%@",[self.dataObject screen_name],[self.dataObject max_id]] andTitle:[self.dataObject screen_name] andMessagePrefix:[NSString stringWithFormat:@"Tweet from %@",[self.dataObject screen_name]]];
         
     }
     else if(self.childNumber == [NSNumber numberWithInt:8])
     {
         NSLog(@"Going to video link...%@",[self.dataObject url]);
-        [segue.destinationViewController sendURL:[self.dataObject url] andTitle:[self.dataObject user_name]];
+        [segue.destinationViewController sendURL:[self.dataObject url] andTitle:[self.dataObject user_name] andMessagePrefix:[self.dataObject title]];
     }
     else if(self.childNumber == [NSNumber numberWithInt:9])
     {
-        [segue.destinationViewController sendURL:[self.dataObject link] andTitle:[self.dataObject title]];
+        [segue.destinationViewController sendURL:[self.dataObject link] andTitle:[self.dataObject title] andMessagePrefix:[self.dataObject title]];
     }
     else
     {

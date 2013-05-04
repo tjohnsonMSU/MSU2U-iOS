@@ -31,8 +31,7 @@
 - (IBAction)sharePressed:(UIBarButtonItem *)sender
 {
     // Create the item to share (in this example, a url)
-    NSURL *url = [NSURL URLWithString:websiteURL];
-    SHKItem *item = [SHKItem URL:url title:self.title contentType:SHKURLContentTypeWebpage];
+    SHKItem *item = [SHKItem text:[NSString stringWithFormat:@"%@ %@",messagePrefix, websiteURL]];
     
     // Get the ShareKit action sheet
     SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
@@ -45,10 +44,11 @@
     [actionSheet showFromTabBar:self.tabBarController.tabBar];
 }
 
--(void) sendURL:(NSString *)x andTitle:(NSString *)y
+-(void) sendURL:(NSString *)x andTitle:(NSString *)y andMessagePrefix:(NSString *)z
 {
     websiteURL = x;
     self.title = y;
+    messagePrefix = z;
 }
 
 @end

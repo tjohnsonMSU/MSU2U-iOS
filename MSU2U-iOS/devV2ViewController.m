@@ -144,7 +144,7 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [segue.destinationViewController sendURL:webLink andTitle:name];
+    [segue.destinationViewController sendURL:webLink andTitle:name andMessagePrefix:name];
 }
 
 @end

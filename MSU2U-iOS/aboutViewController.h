@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MFMailComposeViewController.h>
+#import "SHK.h"
 
 @interface aboutViewController : UITableViewController
+
+- (IBAction)shareApp:(UIBarButtonItem *)sender;
 
 @end

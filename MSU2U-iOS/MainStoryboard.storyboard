@@ -1637,7 +1637,13 @@
                             <outlet property="delegate" destination="NkA-uN-VnS" id="Gq8-Lr-skJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="About" id="4r3-0e-aHK"/>
+                    <navigationItem key="navigationItem" title="About" id="4r3-0e-aHK">
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="HDA-NQ-O4L">
+                            <connections>
+                                <action selector="shareApp:" destination="NkA-uN-VnS" id="SRe-5C-6cq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dac-O0-zWS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2123,6 +2129,9 @@
         </class>
         <class className="aboutViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/aboutViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="shareApp:" candidateClass="UIBarButtonItem"/>
+            </relationships>
         </class>
         <class className="campusMapInfoViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/campusMapInfoViewController.h"/>
@@ -2232,7 +2241,6 @@
         <class className="videoViewController" superclassName="genericTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/videoViewController.h"/>
             <relationships>
-                <relationship kind="action" name="segmentedControlIndexChanged:" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
                 <relationship kind="outlet" name="searchDisplayControl" candidateClass="UISearchDisplayController"/>
                 <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>

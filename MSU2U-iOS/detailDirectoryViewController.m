@@ -265,7 +265,7 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [segue.destinationViewController sendURL:websiteToBePassed andTitle:[NSString stringWithFormat:@"%@ %@",myCurrentEmployee.fname,myCurrentEmployee.lname]];
+    [segue.destinationViewController sendURL:websiteToBePassed andTitle:[NSString stringWithFormat:@"%@ %@",myCurrentEmployee.fname,myCurrentEmployee.lname] andMessagePrefix:[NSString stringWithFormat:@"%@ %@",myCurrentEmployee.fname,myCurrentEmployee.lname]];
 }
 
 - (void) addToContactsPressed

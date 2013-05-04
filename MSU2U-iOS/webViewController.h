@@ -11,10 +11,11 @@
 
 @interface webViewController : UIViewController{
     NSString * websiteURL;
+    NSString * messagePrefix;
 }
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
--(void) sendURL:(NSString*)x andTitle:(NSString*)y;
+-(void) sendURL:(NSString *)x andTitle:(NSString *)y andMessagePrefix:(NSString *)z;
 
 @end
