@@ -34,10 +34,157 @@
     return results;
 }
 
--(void)executeRSSFetch:(NSString*)query
+//######## RSS STUFF
+-(NSMutableArray*)executeRSSFetch:(NSString*)query
 {
+    stories = [[NSMutableArray alloc]init];
     
+    NSLog(@"Executing RSS Fetch at %@...\n",query);
+    NSURL *rssURL =[[NSURL alloc] initWithString:query];
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:rssURL];
+    [parser setDelegate:self];
+    [parser parse];
+    
+    //OK, all of my items are in my stories array. Return the array
+    return stories;
 }
+
+-(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
+{
+    NSLog(@"ended element: %@", elementName);
+	if ([elementName isEqualToString:@"item"]) {
+		
+        //Podcasts
+        if(self.childNumber == [NSNumber numberWithInt:9])
+        {
+            [item setObject:currentTitle forKey:@"Title"];
+            [item setObject:currentPubDate forKey:@"Pub_Date"];
+            [item setObject:currentGuid forKey:@"Article_ID"];
+            [item setObject:currentLink forKey:@"Link"];
+        }
+        //Events
+        else if(self.childNumber == [NSNumber numberWithInt:2])
+        {
+            [item setObject:currentTitle forKey:@"title"];
+            [item setObject:currentLink forKey:@"link"];
+            [item setObject:currentDesc forKey:@"description"];
+            [item setObject:currentSTeamLogo forKey:@"teamlogo"];
+            [item setObject:currentSOpponentLogo forKey:@"opponentlogo"];
+            [item setObject:currentEvLocation forKey:@"location"];
+            [item setObject:currentEvStartDate forKey:@"startdate"];
+            [item setObject:currentEvEndDate forKey:@"enddate"];
+        }
+        else if(self.childNumber == [NSNumber numberWithInt:3])
+        {
+            [item setObject:currentTitle forKey:@"Title"];
+            [item setObject:currentGuid forKey:@"Article_ID"];
+            [item setObject:currentLink forKey:@"Link"];
+            [item setObject:currentCategory forKey:@"Category_1"];
+            [item setObject:currentDcCreator forKey:@"Doc_Creator"];
+            [item setObject:currentDesc forKey:@"Short_Description"];
+            [item setObject:currentDesc forKey:@"Long_Description"];
+            [item setObject:currentPubDate forKey:@"Pub_Date"];
+            [item setObject:currentPubDate forKey:@"Last_Changed"];
+            [item setObject:myCurrentPublication forKey:@"Publication"];
+            
+            //I need to get an image!!! Extract this from the description.
+            NSString *src = nil;
+            NSString *newsRSSFeed = [item objectForKey:@"Long_Description"];
+            NSScanner *theScanner = [NSScanner scannerWithString:newsRSSFeed];
+            // find start of IMG tag
+            [theScanner scanUpToString:@"<img" intoString:nil];
+            if (![theScanner isAtEnd]) {
+                [theScanner scanUpToString:@"src" intoString:nil];
+                NSCharacterSet *charset = [NSCharacterSet characterSetWithCharactersInString:@"\"'"];
+                [theScanner scanUpToCharactersFromSet:charset intoString:nil];
+                [theScanner scanCharactersFromSet:charset intoString:nil];
+                [theScanner scanUpToCharactersFromSet:charset intoString:&src];
+                // src now contains the URL of the img
+            }
+            NSLog(@"@#$@#$@#$@#$ IMAGE IMAGE %@",src);
+            if(!src)
+                src = @"";
+            [item setObject:src forKey:@"image"];
+        }
+        
+		[stories addObject:[item copy]];
+		NSLog(@"adding story: %@", currentTitle);
+	}
+}
+
+-(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
+{
+    NSLog(@"found this element: %@", elementName);
+	currentElement = [elementName copy];
+    
+	if ([elementName isEqualToString:@"item"]) {
+		// clear out our story item caches...
+		item = [[NSMutableDictionary alloc] init];
+        currentTitle = [[NSMutableString alloc]init];
+        currentDesc = [[NSMutableString alloc]init];
+        currentPubDate = [[NSMutableString alloc]init];
+        currentGuid = [[NSMutableString alloc]init];
+        currentLink = [[NSMutableString alloc]init];
+        currentEnclosureURL = [[NSMutableString alloc]init];
+        currentEvGameID = [[NSMutableString alloc]init];
+        currentEvLocation = [[NSMutableString alloc]init];
+        currentEvStartDate = [[NSMutableString alloc]init];
+        currentEvEndDate = [[NSMutableString alloc]init];
+        currentSTeamLogo = [[NSMutableString alloc]init];
+        currentSOpponentLogo = [[NSMutableString alloc]init];
+        currentDcCreator = [[NSMutableString alloc]init];
+        currentCategory = [[NSMutableString alloc]init];
+        currentContentEncoded = [[NSMutableString alloc]init];
+	}
+    //Check for enclosure URL (used by Podcasts to get the link). MUST ENSURE THAT MSUMUSTANGS ignores this, so don't allow childNumber of 3 because that will screw up the msumustang links
+    else if([elementName isEqualToString:@"enclosure"] && self.childNumber != [NSNumber numberWithInt:3])
+    {
+        [currentLink appendString:[attributeDict objectForKey:@"url"]];
+    }
+}
+
+-(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
+{
+    NSLog(@"found characters: %@", string);
+    string = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+	// save the characters for the current item...
+	if ([currentElement isEqualToString:@"title"])
+    {
+        NSLog(@"I am setting currentTitle = %@\n",string);
+		[currentTitle appendString:string];
+    }
+	else if ([currentElement isEqualToString:@"pubDate"])
+		[currentPubDate appendString:string];
+    else if([currentElement isEqualToString:@"guid"])
+        [currentGuid appendString:string];
+    else if([currentElement isEqualToString:@"link"])
+    {
+        NSLog(@"<<< appending string '%@' to currentLink...\n",string);
+        [currentLink appendString:string];
+        NSLog(@"<<< complete!\n");
+    }
+    else if([currentElement isEqualToString:@"ev:gameid"])
+        [currentEvGameID appendString:string];
+    else if([currentElement isEqualToString:@"ev:location"])
+        [currentEvLocation appendString:string];
+    else if([currentElement isEqualToString:@"ev:startdate"])
+        [currentEvStartDate appendString:string];
+    else if([currentElement isEqualToString:@"ev:enddate"])
+        [currentEvEndDate appendString:string];
+    else if([currentElement isEqualToString:@"s:teamlogo"])
+        [currentSTeamLogo appendString:string];
+    else if([currentElement isEqualToString:@"s:opponentlogo"])
+        [currentSOpponentLogo appendString:string];
+    else if([currentElement isEqualToString:@"description"])
+        [currentDesc appendString:string];
+    else if([currentElement isEqualToString:@"dc:creator"])
+        [currentDcCreator appendString:string];
+    else if([currentElement isEqualToString:@"category"])
+        [currentCategory appendString:string];
+    else if([currentElement isEqualToString:@"content:encoded"])
+        [currentDesc appendString:string];
+}
+//####### END RSS STUFF
 
 - (NSArray *)downloadCurrentData:(NSString*)jsonURL
 {
@@ -101,10 +248,13 @@
 
 -(void)getEvents:(UIManagedDocument*)document
 {
-    NSArray * myData = [self downloadCurrentData:self.jsonURL];
+    //NSArray * myData = [self downloadCurrentData:self.jsonURL];
+    NSArray * myData = [self executeRSSFetch:@"http://www.msumustangs.com/calendar.ashx/calendar.rss?"];
+    NSLog(@"There were %d items in my event feed!\n",[myData count]);
     [document.managedObjectContext performBlock:^{
         for(NSDictionary * dataInfo in myData)
         {
+            NSLog(@"Going to insert stuff for %@!\n",[dataInfo objectForKey:@"title"]);
             [Event eventWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
         }
     }];
@@ -112,7 +262,10 @@
 
 -(void)getPodcasts:(UIManagedDocument*)document
 {
-    NSArray * myPodcastData = [self downloadCurrentData:self.jsonURL];
+    //NSArray * myPodcastData = [self downloadCurrentData:self.jsonURL];
+    NSArray * myPodcastData = [self executeRSSFetch:@"http://www.msumustangs.com/podcast.aspx"];
+    
+    NSLog(@"Got my podcast data for %d stories...\n",[myPodcastData count]);
     [document.managedObjectContext performBlock:^{
         for(NSDictionary * dataInfo in myPodcastData)
         {
@@ -120,6 +273,7 @@
             
             if(result != NSOrderedAscending)
             {
+                NSLog(@"Going to insert stuff for %@!\n",[dataInfo objectForKey:@"Title"]);
                 [Podcast podcastWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
             }
             else
@@ -130,9 +284,16 @@
 
 -(void)getNews:(UIManagedDocument*)document
 {
-    NSArray * myWichitanData = [self downloadCurrentData:self.jsonURL];
-    NSArray * mySportsNewsData = [self downloadCurrentData:self.jsonSportsNewsURL];
-    NSArray * myMuseumNewsData = [self downloadCurrentData:self.jsonMuseumNewsURL];
+    //NSArray * myWichitanData = [self downloadCurrentData:self.jsonURL];
+    //NSArray * mySportsNewsData = [self downloadCurrentData:self.jsonSportsNewsURL];
+    //NSArray * myMuseumNewsData = [self downloadCurrentData:self.jsonMuseumNewsURL];
+    myCurrentPublication = @"The Wichitan";
+    NSArray * myWichitanData = [self executeRSSFetch:self.rssWichitanNewsURL];
+    myCurrentPublication = @"MSU Mustangs";
+    NSArray * mySportsNewsData = [self executeRSSFetch:self.rssSportsNewsURL];
+    myCurrentPublication = @"WF Museum of Art";
+    NSArray * myMuseumNewsData = [self executeRSSFetch:self.rssMuseumNewsURL];
+    
     NSLog(@"Getting the news!\n");
     [document.managedObjectContext performBlock:^{
         for(NSDictionary * dataInfo in myWichitanData)

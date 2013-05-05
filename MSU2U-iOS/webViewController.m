@@ -49,6 +49,8 @@
     websiteURL = x;
     self.title = y;
     messagePrefix = z;
+    
+    NSLog(@"[[[ I am showing '%@'\n",websiteURL);
 }
 
 @end

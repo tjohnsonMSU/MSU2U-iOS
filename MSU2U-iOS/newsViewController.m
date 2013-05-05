@@ -18,12 +18,13 @@
 
 -(void)viewDidLoad
 {
-    //self.jsonURL = @"http://www.matthewfarmer.net/wichitan.json";
-    //self.jsonURL = @"http://www.matthewfarmer.net/wichitan.php";
-    //self.jsonURL = @"http://cs2.mwsu.edu/~msu2u/get_article_from_db.php";
-    self.jsonURL = @"http://www.matthewfarmer.net/sports/wichitanNewsRSStoJSON.php";
-    self.jsonSportsNewsURL = @"http://www.matthewfarmer.net/sports/sportsNewsRSStoJSON.php";
-    self.jsonMuseumNewsURL = @"http://www.matthewfarmer.net/sports/museumNewsRSStoJSON.php";
+    //self.jsonURL = @"http://thewichitan.com/feed/";
+    //self.jsonSportsNewsURL = @"http://www.msumustangs.com/rss.aspx";
+    //self.jsonMuseumNewsURL = @"http://www.mwsu.info/wfma/feed/";
+    
+    self.rssWichitanNewsURL = @"http://thewichitan.com/feed/";
+    self.rssSportsNewsURL = @"http://www.msumustangs.com/rss.aspx";
+    self.rssMuseumNewsURL = @"http://www.mwsu.info/wfma/feed/";
     
     self.entityName = @"News";
     self.sortDescriptorKey = @"last_changed";

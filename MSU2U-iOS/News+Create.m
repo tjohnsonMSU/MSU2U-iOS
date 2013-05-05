@@ -65,6 +65,18 @@
     news.category_1 = [info objectForKey:@"Category_1"];
     news.short_description = [info objectForKey:@"Short_Description"];
     news.doc_creator = [info objectForKey:@"Doc_Creator"];
+    
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"<img[^>]*>"
+                                                                           options:NSRegularExpressionCaseInsensitive
+                                                                             error:nil];
+    
+    [regex replaceMatchesInString:[info objectForKey:@"Long_Description"]
+                          options:0
+                            range:NSMakeRange(0, [[info objectForKey:@"Long_Description"] length])
+                     withTemplate:@""];
+    
+    [[info objectForKey:@"Long_Description"] replaceOccurrencesOfString:@"<br />" withString:@"" options:nil range:NSMakeRange(0,[[info objectForKey:@"Long_Description"] length])];
+    
     news.long_description = [info objectForKey:@"Long_Description"];
     news.image = [info objectForKey:@"image"];
     
@@ -86,18 +98,7 @@
     
     //figure out what publication source this news article is from. This is tricky and not 100% fool proof. Currently using a hokey means of deciding whether
     //  the publication is from MSU Mustangs or Wichitan based upon the listed category for the article
-    if([news.doc_creator isEqualToString:@"msumustangs.com"] || [news.doc_creator isEqualToString:@"msumustangscom"])
-    {
-        news.publication = @"MSU Mustangs";
-    }
-    else if([news.doc_creator isEqualToString:@"WF Museum of Art"])
-    {
-        news.publication = @"WF Museum of Art";
-    }
-    else
-    {
-        news.publication = @"The Wichitan";
-    }
+    news.publication = [info objectForKey:@"Publication"];
     
     return news;
 }

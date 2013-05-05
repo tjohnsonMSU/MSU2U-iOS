@@ -34,33 +34,6 @@
     {
         //I already have this event, but I need to make sure nothing has changed
         event = [events lastObject];
-        /*
-        //Setup the dates
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        //NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-        //[dateFormatter setLocale:usLocale];
-        NSTimeZone * cst = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
-        [dateFormatter setDateStyle:NSDateFormatterLongStyle];
-        [dateFormatter setTimeZone:cst];
-        [dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
-        //           Sample Time:      2013-05-23T17:00:00.0000000
-        //[dateFormatter setDateFormat: @"y-MM-ddTHH:mm:ss.SSSSSSS"];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-        NSArray * array1 = [[[info objectForKey:@"startdate"] stringByReplacingOccurrencesOfString:@"T" withString:@" "] componentsSeparatedByString:@"."];
-        
-        if(![event.title isEqualToString:[info objectForKey:@"title"]] || ![event.location isEqualToString:[info objectForKey:@"location"]] || ![event.startdate isEqualToDate:[dateFormatter dateFromString:[array1 objectAtIndex:0]]])
-        {
-            NSLog(@"Something about event %@ has changed!\n",event.title);
-            //Well, something changed so remove this event and add the new copy in
-            for (NSManagedObject * e in events)
-            {
-                [context deleteObject:e];
-            }
-            
-            //create a new video
-            event = [self createNewEvent:info inContext:context];
-        }
-         */
     }
     
     return event;
@@ -73,7 +46,7 @@
     event.title = [info objectForKey:@"title"];
     event.desc = [info objectForKey:@"description"];
     event.link = [info objectForKey:@"link"];
-    NSLog(@"MSU logo is at %@\n",[info objectForKey:@"teamlogo"]);
+    //NSLog(@"MSU logo is at %@\n",[info objectForKey:@"teamlogo"]);
     event.teamlogo = [info objectForKey:@"teamlogo"];
     event.opponentlogo = [info objectForKey:@"opponentlogo"];
     event.location = [info objectForKey:@"location"];

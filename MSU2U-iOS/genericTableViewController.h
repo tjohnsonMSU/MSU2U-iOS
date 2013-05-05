@@ -30,11 +30,32 @@
 #import "Podcast+Create.h"
 #import "SVWebViewController.h"
 
-@interface genericTableViewController : CoreDataTableViewController <UISearchDisplayDelegate, UISearchBarDelegate, UIAlertViewDelegate>{
+@interface genericTableViewController : CoreDataTableViewController <UISearchDisplayDelegate, UISearchBarDelegate, UIAlertViewDelegate, NSXMLParserDelegate>{
     NSArray * news;
     NSMutableData * data;
     UIBarButtonItem * rightButton;
     BOOL * notCurrentlyRefreshing;
+    
+    //Used by the RSS Parser
+    NSMutableArray * stories;
+    NSMutableDictionary * item;
+    NSMutableString * currentElement;
+    NSMutableString * currentTitle;
+    NSMutableString * currentDesc;
+    NSMutableString * currentLink;
+    NSMutableString * currentPubDate;
+    NSMutableString * currentGuid;
+    NSMutableString * currentEnclosureURL;
+    NSMutableString * currentEvGameID;
+    NSMutableString * currentEvLocation;
+    NSMutableString * currentEvStartDate;
+    NSMutableString * currentEvEndDate;
+    NSMutableString * currentSTeamLogo;
+    NSMutableString * currentSOpponentLogo;
+    NSMutableString * currentDcCreator;
+    NSMutableString * currentCategory;
+    NSMutableString * currentContentEncoded;
+    NSString * myCurrentPublication;
 }
 
 @property (retain, nonatomic) NSMutableArray * filteredDataArray;
@@ -43,8 +64,9 @@
 
 //JSON URLs
 @property (nonatomic, retain) NSString * jsonURL;
-@property (nonatomic, retain) NSString * jsonSportsNewsURL;
-@property (nonatomic, retain) NSString * jsonMuseumNewsURL;
+@property (nonatomic, retain) NSString * rssWichitanNewsURL;
+@property (nonatomic, retain) NSString * rssSportsNewsURL;
+@property (nonatomic, retain) NSString * rssMuseumNewsURL;
 
 @property (nonatomic, retain) NSArray * twitterProfilesAndHashtags;
 @property (nonatomic, retain) NSArray * vimeoChannel;
