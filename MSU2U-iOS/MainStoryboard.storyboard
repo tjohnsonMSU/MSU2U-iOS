@@ -75,7 +75,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-13339" y="-1815"/>
+            <point key="canvasLocation" x="-13371" y="-2319"/>
         </scene>
         <!--Campus Map Settings View Controller - Settings-->
         <scene sceneID="pPY-0d-64S">
@@ -416,7 +416,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-15269" y="-5062"/>
+            <point key="canvasLocation" x="-14992" y="-5022"/>
         </scene>
         <!--Navigation Controller - Podcast-->
         <scene sceneID="VOK-nN-2pb">
@@ -514,7 +514,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-15040" y="-4288"/>
+            <point key="canvasLocation" x="-14992" y="-4272"/>
         </scene>
         <!--Navigation Controller - Video-->
         <scene sceneID="vou-pN-SQb">
@@ -1647,7 +1647,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dac-O0-zWS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15746" y="693"/>
+            <point key="canvasLocation" x="-15807" y="312"/>
         </scene>
         <!--Navigation Controller - About-->
         <scene sceneID="2pp-lZ-YDB">
@@ -2067,6 +2067,38 @@
             </objects>
             <point key="canvasLocation" x="-12658" y="278"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="CxL-lu-Vxh">
+            <objects>
+                <viewController id="Inw-Qk-hCt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="clX-vy-Wry">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UEG-Pi-nPt">
+                                <items>
+                                    <navigationItem id="ffT-Ln-ism"/>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXO-8o-GQz">
+                                <items/>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UEG-Pi-nPt" firstAttribute="trailing" secondItem="clX-vy-Wry" secondAttribute="trailing" type="default" id="C5W-iw-Vag"/>
+                            <constraint firstItem="UEG-Pi-nPt" firstAttribute="top" secondItem="clX-vy-Wry" secondAttribute="top" type="default" id="HnQ-xu-ijC"/>
+                            <constraint firstItem="UEG-Pi-nPt" firstAttribute="leading" secondItem="clX-vy-Wry" secondAttribute="leading" type="default" id="YwN-37-ct9"/>
+                            <constraint firstItem="UXO-8o-GQz" firstAttribute="leading" secondItem="clX-vy-Wry" secondAttribute="leading" type="default" id="fXr-lf-gCd"/>
+                            <constraint firstItem="UXO-8o-GQz" firstAttribute="bottom" secondItem="clX-vy-Wry" secondAttribute="bottom" type="default" id="scJ-iR-JQu"/>
+                            <constraint firstItem="UXO-8o-GQz" firstAttribute="trailing" secondItem="clX-vy-Wry" secondAttribute="trailing" type="default" id="wBl-Kx-0FY"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="siU-rq-0Iu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-16327" y="-3643"/>
+        </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="30L-jD-bg0">
             <objects>
@@ -2259,7 +2291,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="pWi-Fu-hij"/>
+        <segue reference="g4E-bv-11y"/>
         <segue reference="Egf-cW-mua"/>
     </inferredMetricsTieBreakers>
 </document>

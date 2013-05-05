@@ -279,11 +279,11 @@
 {
     //NSArray * myData = [self downloadCurrentData:self.jsonURL];
     NSArray * myData = [self executeRSSFetch:@"http://www.msumustangs.com/calendar.ashx/calendar.rss?"];
-    NSLog(@"There were %d items in my event feed!\n",[myData count]);
+    //NSLog(@"There were %d items in my event feed!\n",[myData count]);
     [document.managedObjectContext performBlock:^{
         for(NSDictionary * dataInfo in myData)
         {
-            NSLog(@"Going to insert stuff for %@!\n",[dataInfo objectForKey:@"title"]);
+            //NSLog(@"Going to insert stuff for %@!\n",[dataInfo objectForKey:@"title"]);
             [Event eventWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
         }
     }];
@@ -294,7 +294,7 @@
     //NSArray * myPodcastData = [self downloadCurrentData:self.jsonURL];
     NSArray * myPodcastData = [self executeRSSFetch:@"http://www.msumustangs.com/podcast.aspx"];
     
-    NSLog(@"Got my podcast data for %d stories...\n",[myPodcastData count]);
+    //NSLog(@"Got my podcast data for %d stories...\n",[myPodcastData count]);
     [document.managedObjectContext performBlock:^{
         for(NSDictionary * dataInfo in myPodcastData)
         {
@@ -302,11 +302,13 @@
             
             if(result != NSOrderedAscending)
             {
-                NSLog(@"Going to insert stuff for %@!\n",[dataInfo objectForKey:@"Title"]);
+                //NSLog(@"Going to insert stuff for %@!\n",[dataInfo objectForKey:@"Title"]);
                 [Podcast podcastWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
             }
             else
-                NSLog(@"%@ is too old!\n",[dataInfo objectForKey:@"Title"]);
+            {
+                //NSLog(@"%@ is too old!\n",[dataInfo objectForKey:@"Title"]);
+            }
         }
     }];
 }
@@ -323,7 +325,7 @@
     myCurrentPublication = @"WF Museum of Art";
     NSArray * myMuseumNewsData = [self executeRSSFetch:self.rssMuseumNewsURL];
     
-    NSLog(@"Getting the news!\n");
+    //NSLog(@"Getting the news!\n");
     [document.managedObjectContext performBlock:^{
         for(NSDictionary * dataInfo in myWichitanData)
         {
@@ -334,7 +336,9 @@
                 [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
             }
             else
-                NSLog(@"%@ is too old!\n",[dataInfo objectForKey:@"Title"]);
+            {
+                //NSLog(@"%@ is too old!\n",[dataInfo objectForKey:@"Title"]);
+            }
         }
         for(NSDictionary * dataInfo in mySportsNewsData)
         {
@@ -345,7 +349,9 @@
                 [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
             }
             else
-                NSLog(@"%@ is too old!\n",[dataInfo objectForKey:@"Title"]);
+            {
+                //NSLog(@"%@ is too old!\n",[dataInfo objectForKey:@"Title"]);
+            }
         }
         for(NSDictionary * dataInfo in myMuseumNewsData)
         {
@@ -356,7 +362,9 @@
                 [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
             }
             else
-                NSLog(@"%@ is too old! (%@ is older than %@)\n",[dataInfo objectForKey:@"Title"],[dataInfo objectForKey:@"Pub_Date"],[self getDateFor:@"lastMonth"]);
+            {
+                //NSLog(@"%@ is too old! (%@ is older than %@)\n",[dataInfo objectForKey:@"Title"],[dataInfo objectForKey:@"Pub_Date"],[self getDateFor:@"lastMonth"]);
+            }
         }
     }];
 }
@@ -368,18 +376,20 @@
     {
         NSArray * myVimeoData = [self downloadCurrentData:[NSString stringWithFormat:@"http://vimeo.com/api/v2/%@/videos.json",[self.vimeoChannel objectAtIndex:i]]];
         
-        NSLog(@"myVimeoData = %@\n",myVimeoData);
+        //NSLog(@"myVimeoData = %@\n",myVimeoData);
         [document.managedObjectContext performBlock:^{
             for(NSDictionary * dataInfo in myVimeoData)
             {
                 NSComparisonResult result = [[self convertString:[dataInfo objectForKey:@"upload_date"] toDateWithFormat:@"yyyy-MM-dd HH:mm:ss"] compare:[self getDateFor:@"lastYear"]];
-                NSLog(@"Is %@ before %@?\n",[dataInfo objectForKey:@"upload_date"],[self getDateFor:@"lastYear"]);
+                //NSLog(@"Is %@ before %@?\n",[dataInfo objectForKey:@"upload_date"],[self getDateFor:@"lastYear"]);
                 if(result != NSOrderedAscending)
                 {
                     [Video videoWithInfo:dataInfo isVimeo:YES inManagedObjectContext:document.managedObjectContext];
                 }
                 else
-                    NSLog(@"%@ is too old! (%@ is older than %@)\n",[dataInfo objectForKey:@"title"],[dataInfo objectForKey:@"upload_date"],[self getDateFor:@"lastYear"]);
+                {
+                    //NSLog(@"%@ is too old! (%@ is older than %@)\n",[dataInfo objectForKey:@"title"],[dataInfo objectForKey:@"upload_date"],[self getDateFor:@"lastYear"]);
+                }
             }
         }];
     }
@@ -396,13 +406,15 @@
             for(NSDictionary * dataInfo in itemsAlone)
             {
                 NSComparisonResult result = [[self convertString:[dataInfo objectForKey:@"uploaded"] toDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss.000'Z'"] compare:[self getDateFor:@"lastYear"]];
-                NSLog(@"Is %@ before %@?\n",[dataInfo objectForKey:@"uploaded"],[self getDateFor:@"lastYear"]);
+                //NSLog(@"Is %@ before %@?\n",[dataInfo objectForKey:@"uploaded"],[self getDateFor:@"lastYear"]);
                 if(result != NSOrderedAscending)
                 {
                     [Video videoWithInfo:dataInfo isVimeo:NO inManagedObjectContext:document.managedObjectContext];
                 }
                 else
-                    NSLog(@"%@ is too old! (%@ is older than %@)\n",[dataInfo objectForKey:@"title"],[dataInfo objectForKey:@"uploaded"],[self getDateFor:@"lastYear"]);
+                {
+                    //NSLog(@"%@ is too old! (%@ is older than %@)\n",[dataInfo objectForKey:@"title"],[dataInfo objectForKey:@"uploaded"],[self getDateFor:@"lastYear"]);
+                }
             }
         }];
     }
@@ -450,7 +462,7 @@
                          // Check if we reached the reate limit
                          if ([urlResponse statusCode] == 429)
                          {
-                             NSLog(@"Rate limit reached");
+                             //NSLog(@"Rate limit reached");
                              [document.managedObjectContext performBlock:^{
                                  UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Rate Limit Reached" message:@"Twitter allows a maximum of 115 refreshes per hour per Twitter Account. Please try again later, or if you have received this message in error, please let us know at msu2u@mwsu.edu." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                                  [alert show];
@@ -460,7 +472,7 @@
                          // Check if there was an error
                          if (error)
                          {
-                             NSLog(@"Error: %@", error.localizedDescription);
+                             //NSLog(@"Error: %@", error.localizedDescription);
                              [document.managedObjectContext performBlock:^{
                                  UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Download Error" message:@"Hmm, seems there was an error during the download. Try again later? Or tell us about it at msu2u@mwsu.edu." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                                  [alert show];
@@ -582,7 +594,7 @@
          else
          {
              [self purgeAllEntitiesOfType:@"Tweet"];
-             NSLog(@"No Twitter Account");
+             //NSLog(@"No Twitter Account");
              [document.managedObjectContext performBlock:^{
                  UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Setup Twitter Account" message:@"Please login/setup your Twitter account in your device's Settings>Twitter menu to view this feature." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                  [alert show];
@@ -648,7 +660,7 @@
     [comp3 setDay:-7];
     NSDate * lastWeek = [[NSCalendar currentCalendar] dateByAddingComponents:comp3 toDate:[NSDate date] options:0];
     
-    NSLog(@"Last week is %@\n",lastWeek);
+    //NSLog(@"Last week is %@\n",lastWeek);
     
     if([timePeriod isEqualToString:@"today"])
         return today;
@@ -683,7 +695,7 @@
         [request setPredicate:predicate];
         NSArray *results = [self.myDatabase.managedObjectContext executeFetchRequest:request error:&error];
         
-        NSLog(@"I think %d articles are going to get deleted!\n",[results count]);
+        //NSLog(@"I think %d articles are going to get deleted!\n",[results count]);
         //Delete all of the objects that meet the predicate's requirements
         for (NSManagedObject * n in results) {
             [self.myDatabase.managedObjectContext deleteObject:n];
@@ -864,7 +876,7 @@
 
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:self.myDatabase.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     
-    NSLog(@"I fetched my data for this table!");
+    //NSLog(@"I fetched my data for this table!");
     
     //3. What should I do if there's NOTHING to show in my table?
     if([[[self.fetchedResultsController sections] objectAtIndex:0] numberOfObjects] == 0)
@@ -955,7 +967,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    NSLog(@"Hello?????\n");
+    //NSLog(@"Hello?????\n");
     //Set debug to TRUE for the CoreDataTableViewController class
     self.debug = TRUE;
     
@@ -967,7 +979,7 @@
     //Retrieve the user defaults so that the last update for this table may be retrieved and shown to the user
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
     
-    NSLog(@"Setting refresh controls...\n");
+    //NSLog(@"Setting refresh controls...\n");
     //Set the refresh control attributed string to the retrieved last update
     switch([self.childNumber integerValue])
     {
@@ -984,13 +996,13 @@
     
     self.refreshControl = refreshControl;
     
-    NSLog(@"Setting up the fetched data arrays to be empty...\n");
+    //NSLog(@"Setting up the fetched data arrays to be empty...\n");
     //Setup the arrays which will be used to hold the Core Data for the respective Table View Controller
     self.dataArray = [[NSMutableArray alloc]initWithObjects:nil];
     self.filteredDataArray = [[NSMutableArray alloc]initWithObjects:nil];
     
     //I did have the [super viewWillAppear:animated]; right here before.
-    NSLog(@"Checking if I should fetch...\n");
+    //NSLog(@"Checking if I should fetch...\n");
     if(!self.myDatabase)
     {
         [[MYDocumentHandler sharedDocumentHandler] performWithDocument:^(UIManagedDocument *document) {
@@ -1008,7 +1020,7 @@
     //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         // Do your long-running task here
     __block void (^block)(void) = ^{
-        NSLog(@"About to purge...\n");
+        //NSLog(@"About to purge...\n");
         NSFetchRequest * allCars = [[NSFetchRequest alloc] init];
         [allCars setEntity:[NSEntityDescription entityForName:entityName inManagedObjectContext:self.myDatabase.managedObjectContext]];
         [allCars setIncludesPropertyValues:NO]; //only fetch the managedObjectID
@@ -1228,10 +1240,7 @@
     {
         cell.textLabel.text = [self.dataObject text];        
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ by %@",[NSDateFormatter localizedStringFromDate:[self.dataObject created_at] dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle],[self.dataObject screen_name]];
-        if([[self.dataObject screen_name] isEqualToString:@"MSUMustangs"])
-        {
-            NSLog(@"OK, MSUMustangs' image is %@\n",[self.dataObject profile_image_url]);
-        }
+        
         //Twitter profile images could change often, so remove from the cache and force a redownload
         [[SDImageCache sharedImageCache] removeImageForKey:[self.dataObject profile_image_url] fromDisk:YES];
         [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject profile_image_url]] placeholderImage:[UIImage imageNamed:@"twitter.png"] options:0 andResize:CGSizeMake(50, 50)];
@@ -1258,7 +1267,7 @@
         }
         else
         {
-            cell.imageView.image = [UIImage imageNamed:@"RlujSF.png"];
+            cell.imageView.image = [UIImage imageNamed:@"podcast_default.png"];
         }
         
         //Resize image
@@ -1328,7 +1337,7 @@
         NSIndexPath * indexPath = [self.tableView indexPathForSelectedRow];
         self.dataObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
     }
-    NSLog(@"My child number is %@\n",self.childNumber);
+    //NSLog(@"My child number is %@\n",self.childNumber);
 
     if(self.childNumber == [NSNumber numberWithInt:2])
         [segue.destinationViewController sendEventInformation:self.dataObject];
@@ -1342,7 +1351,7 @@
     }
     else if(self.childNumber == [NSNumber numberWithInt:4])
     {
-        NSLog(@"My dataObject person_id is %@\n",[self.dataObject person_id]);
+        //NSLog(@"My dataObject person_id is %@\n",[self.dataObject person_id]);
         if([[self.dataObject person_id]length]==0)
         {
             NSLog(@"My god... I was going to send an empty data object???\n");
@@ -1356,13 +1365,13 @@
     else if(self.childNumber == [NSNumber numberWithInt:7])
     {
         //[segue.destinationViewController sendTweetInformation:self.dataObject];
-        NSLog(@"Going to http://www.twitter.com/%@/status/%@",[self.dataObject screen_name],[self.dataObject max_id]);
+        //NSLog(@"Going to http://www.twitter.com/%@/status/%@",[self.dataObject screen_name],[self.dataObject max_id]);
         [segue.destinationViewController sendURL:[NSString stringWithFormat:@"http://www.twitter.com/%@/status/%@",[self.dataObject screen_name],[self.dataObject max_id]] andTitle:[self.dataObject screen_name] andMessagePrefix:[NSString stringWithFormat:@"Tweet from %@",[self.dataObject screen_name]]];
         
     }
     else if(self.childNumber == [NSNumber numberWithInt:8])
     {
-        NSLog(@"Going to video link...%@",[self.dataObject url]);
+        //NSLog(@"Going to video link...%@",[self.dataObject url]);
         [segue.destinationViewController sendURL:[self.dataObject url] andTitle:[self.dataObject user_name] andMessagePrefix:[self.dataObject title]];
     }
     else if(self.childNumber == [NSNumber numberWithInt:9])
@@ -1452,7 +1461,7 @@
     }
     
     NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:predicateList];
-    NSLog(@"%@", predicate);
+    //NSLog(@"%@", predicate);
     tempArray = [self.dataArray filteredArrayUsingPredicate:predicate];
     
     self.filteredDataArray = [NSMutableArray arrayWithArray:tempArray];

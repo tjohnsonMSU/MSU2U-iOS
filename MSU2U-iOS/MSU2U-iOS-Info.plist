@@ -29,6 +29,8 @@
 				<string>MustangsIconSmall.png</string>
 				<string>MustangsIcon1.png</string>
 				<string>MustangsIcon2.png</string>
+				<string>MustangsIcon2-ipad-retina.png</string>
+				<string>MustangsIcon2-ipad-non-retina.png</string>
 			</array>
 		</dict>
 	</dict>
