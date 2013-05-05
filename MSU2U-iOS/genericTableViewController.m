@@ -39,7 +39,7 @@
 {
     stories = [[NSMutableArray alloc]init];
     
-    NSLog(@"Executing RSS Fetch at %@...\n",query);
+    //NSLog(@"Executing RSS Fetch at %@...\n",query);
     NSURL *rssURL =[[NSURL alloc] initWithString:query];
     NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:rssURL];
     [parser setDelegate:self];
@@ -51,7 +51,7 @@
 
 -(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
-    NSLog(@"ended element: %@", elementName);
+    //NSLog(@"ended element: %@", elementName);
 	if ([elementName isEqualToString:@"item"]) {
 		
         //Podcasts
@@ -101,20 +101,33 @@
                 [theScanner scanUpToCharactersFromSet:charset intoString:&src];
                 // src now contains the URL of the img
             }
-            NSLog(@"@#$@#$@#$@#$ IMAGE IMAGE %@",src);
+            
             if(!src)
                 src = @"";
             [item setObject:src forKey:@"image"];
+            
+            //Clean up the description!
+            NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"<img[^>]*>"
+                                                                                   options:NSRegularExpressionCaseInsensitive
+                                                                                     error:nil];
+            
+            [regex replaceMatchesInString:[item objectForKey:@"Long_Description"]
+                                  options:0
+                                    range:NSMakeRange(0, [[item objectForKey:@"Long_Description"] length])
+                             withTemplate:@""];
+            
+            [[item objectForKey:@"Long_Description"] replaceOccurrencesOfString:@"<br />" withString:@"" options:nil range:NSMakeRange(0,[[item objectForKey:@"Long_Description"] length])];
+            
         }
         
 		[stories addObject:[item copy]];
-		NSLog(@"adding story: %@", currentTitle);
+		//NSLog(@"adding story: %@", currentTitle);
 	}
 }
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
-    NSLog(@"found this element: %@", elementName);
+    //NSLog(@"found this element: %@", elementName);
 	currentElement = [elementName copy];
     
 	if ([elementName isEqualToString:@"item"]) {
@@ -135,6 +148,22 @@
         currentDcCreator = [[NSMutableString alloc]init];
         currentCategory = [[NSMutableString alloc]init];
         currentContentEncoded = [[NSMutableString alloc]init];
+        
+        [currentTitle appendString:@""];
+        [currentDesc appendString:@""];
+        [currentPubDate appendString:@""];
+        [currentGuid appendString:@""];
+        [currentLink appendString:@""];
+        [currentEnclosureURL appendString:@""];
+        [currentEvGameID appendString:@""];
+        [currentEvLocation appendString:@""];
+        [currentEvStartDate appendString:@""];
+        [currentEvEndDate appendString:@""];
+        [currentSTeamLogo appendString:@""];
+        [currentSOpponentLogo appendString:@""];
+        [currentDcCreator appendString:@""];
+        [currentCategory appendString:@""];
+        [currentContentEncoded appendString:@""];
 	}
     //Check for enclosure URL (used by Podcasts to get the link). MUST ENSURE THAT MSUMUSTANGS ignores this, so don't allow childNumber of 3 because that will screw up the msumustang links
     else if([elementName isEqualToString:@"enclosure"] && self.childNumber != [NSNumber numberWithInt:3])
@@ -145,12 +174,12 @@
 
 -(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
-    NSLog(@"found characters: %@", string);
+    //NSLog(@"found characters: %@", string);
     string = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 	// save the characters for the current item...
 	if ([currentElement isEqualToString:@"title"])
     {
-        NSLog(@"I am setting currentTitle = %@\n",string);
+        //NSLog(@"I am setting currentTitle = %@\n",string);
 		[currentTitle appendString:string];
     }
 	else if ([currentElement isEqualToString:@"pubDate"])
@@ -159,9 +188,9 @@
         [currentGuid appendString:string];
     else if([currentElement isEqualToString:@"link"])
     {
-        NSLog(@"<<< appending string '%@' to currentLink...\n",string);
+        //NSLog(@"<<< appending string '%@' to currentLink...\n",string);
         [currentLink appendString:string];
-        NSLog(@"<<< complete!\n");
+        //NSLog(@"<<< complete!\n");
     }
     else if([currentElement isEqualToString:@"ev:gameid"])
         [currentEvGameID appendString:string];
