@@ -137,6 +137,19 @@
                     break;
             }
             break;
+        case 3:
+            switch(indexPath.row){
+                case 0:
+                {
+                    webLink =  @"http://www.github.com/tjohnson1965/MSU2U-iOS";
+                    name = @"GitHub Repo";
+                    [self performSegueWithIdentifier:@"toWebView" sender:tableView];
+                    break;
+                }
+                default:
+                    break;
+            }
+            break;
         default:
             break;
     }

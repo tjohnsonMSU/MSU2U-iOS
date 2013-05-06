@@ -996,7 +996,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9D-el-JAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15252" y="-117"/>
+            <point key="canvasLocation" x="-15084" y="-361"/>
         </scene>
         <!--DevV2 View Controller - Version 2.0-->
         <scene sceneID="t9L-Zq-S8d">
@@ -1317,6 +1317,35 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Open-Source Code" id="Itc-VZ-sBC">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="nJH-Rp-Uqi" detailTextLabel="CFT-k5-y0r" style="IBUITableViewCellStyleSubtitle" id="XuC-lu-ePI">
+                                        <rect key="frame" x="0.0" y="849" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="GitHub Public Repository" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nJH-Rp-Uqi">
+                                                    <rect key="frame" x="10" y="2" width="219" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="www.github.com/tjohnson1965/MSU2U-iOS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CFT-k5-y0r">
+                                                    <rect key="frame" x="10" y="24" width="272" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="vke-Pd-0eS" id="czN-wq-bAi"/>
@@ -1330,7 +1359,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ztR-UO-5nk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14786" y="312"/>
+            <point key="canvasLocation" x="-14578" y="150"/>
         </scene>
         <!--DevV1 View Controller - Version 1.0-->
         <scene sceneID="1A3-iB-g5b">
@@ -1516,7 +1545,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x1Y-pe-Xea" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14786" y="1065"/>
+            <point key="canvasLocation" x="-14510" y="1125"/>
         </scene>
         <!--Navigation Controller - Twitter-->
         <scene sceneID="SMZ-u8-hgK">
@@ -1666,7 +1695,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dac-O0-zWS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15807" y="312"/>
+            <point key="canvasLocation" x="-15387" y="656"/>
         </scene>
         <!--Navigation Controller - About-->
         <scene sceneID="2pp-lZ-YDB">
@@ -2084,7 +2113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iFb-gN-TyH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12658" y="278"/>
+            <point key="canvasLocation" x="-12462" y="610"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="CxL-lu-Vxh">
@@ -2198,8 +2227,6 @@
         <class className="campusMapSettingsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/campusMapSettingsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="campusBorderFlipped:" candidateClass="UISwitch"/>
-                <relationship kind="action" name="parkingZoneFlipped:" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="campusBorderPressed" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="parkingOverlayPressed" candidateClass="UITableViewCell"/>
             </relationships>
@@ -2310,7 +2337,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="pWi-Fu-hij"/>
+        <segue reference="qGx-zT-Ybj"/>
         <segue reference="Egf-cW-mua"/>
     </inferredMetricsTieBreakers>
 </document>
