@@ -174,6 +174,7 @@
 		1DB63E4716604EBD00A21649 /* soccer.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1DB63E4116604EBD00A21649 /* soccer.jpeg */; };
 		1DB63E4816604EBD00A21649 /* volleyball.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1DB63E4216604EBD00A21649 /* volleyball.jpeg */; };
 		1DBA0E2C1648B8B900A42CB6 /* newsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DBA0E2B1648B8B900A42CB6 /* newsViewController.m */; };
+		1DBA9A3417373B7300582DDA /* ncaa_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DBA9A3317373B7300582DDA /* ncaa_default.png */; };
 		1DC4010516474FA0002BA05C /* detailDirectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC4010416474FA0002BA05C /* detailDirectoryViewController.m */; };
 		1DC539CA17323340008BD25B /* devV2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC539C917323340008BD25B /* devV2ViewController.m */; };
 		1DC539CD1732334F008BD25B /* devV1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC539CC1732334F008BD25B /* devV1ViewController.m */; };
@@ -464,7 +465,7 @@
 		1D12175616AD04DA00164FA7 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		1D12178916AD069900164FA7 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		1D12178B16AD06A000164FA7 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
-		1D1CEAD3162B4D230059BC1F /* MSU2U-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MSU2U-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D1CEAD3162B4D230059BC1F /* MSU2U.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSU2U.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1CEAD7162B4D230059BC1F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1D1CEAD9162B4D230059BC1F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D1CEADB162B4D230059BC1F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -673,6 +674,7 @@
 		1DB63E4216604EBD00A21649 /* volleyball.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = volleyball.jpeg; sourceTree = "<group>"; };
 		1DBA0E2A1648B8B900A42CB6 /* newsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newsViewController.h; sourceTree = "<group>"; };
 		1DBA0E2B1648B8B900A42CB6 /* newsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newsViewController.m; sourceTree = "<group>"; };
+		1DBA9A3317373B7300582DDA /* ncaa_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ncaa_default.png; sourceTree = "<group>"; };
 		1DC4010316474FA0002BA05C /* detailDirectoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailDirectoryViewController.h; sourceTree = "<group>"; };
 		1DC4010416474FA0002BA05C /* detailDirectoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailDirectoryViewController.m; sourceTree = "<group>"; };
 		1DC539C817323340008BD25B /* devV2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = devV2ViewController.h; sourceTree = "<group>"; };
@@ -803,7 +805,7 @@
 		1D1CEAD4162B4D230059BC1F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D1CEAD3162B4D230059BC1F /* MSU2U-iOS.app */,
+				1D1CEAD3162B4D230059BC1F /* MSU2U.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1056,6 +1058,7 @@
 				1DA7B97E167A434C0046FF8F /* golf.jpeg */,
 				1DDB39C71652CF6E00252053 /* footballBanner.png */,
 				1DB63E3D16604EBD00A21649 /* basketball.jpeg */,
+				1DBA9A3317373B7300582DDA /* ncaa_default.png */,
 				1DB63E3E16604EBD00A21649 /* softball.jpeg */,
 				1DB63E3F16604EBD00A21649 /* tennis.jpeg */,
 				1DA92C361693A52500AB71F1 /* Midwestern_St.gif */,
@@ -1392,9 +1395,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D1CEAD2162B4D230059BC1F /* MSU2U-iOS */ = {
+		1D1CEAD2162B4D230059BC1F /* MSU2U */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D1CEAF7162B4D230059BC1F /* Build configuration list for PBXNativeTarget "MSU2U-iOS" */;
+			buildConfigurationList = 1D1CEAF7162B4D230059BC1F /* Build configuration list for PBXNativeTarget "MSU2U" */;
 			buildPhases = (
 				1D1CEACF162B4D230059BC1F /* Sources */,
 				1D1CEAD0162B4D230059BC1F /* Frameworks */,
@@ -1406,9 +1409,9 @@
 				1D12174916AD017800164FA7 /* PBXTargetDependency */,
 				1D12174716AD016A00164FA7 /* PBXTargetDependency */,
 			);
-			name = "MSU2U-iOS";
+			name = MSU2U;
 			productName = "MSU2U-iOS";
-			productReference = 1D1CEAD3162B4D230059BC1F /* MSU2U-iOS.app */;
+			productReference = 1D1CEAD3162B4D230059BC1F /* MSU2U.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1445,7 +1448,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				1D1CEAD2162B4D230059BC1F /* MSU2U-iOS */,
+				1D1CEAD2162B4D230059BC1F /* MSU2U */,
 			);
 		};
 /* End PBXProject section */
@@ -1810,6 +1813,7 @@
 				1D57B82F1736E926008A0216 /* MustangsIcon2-ipad-non-retina.png in Resources */,
 				1D57B8311736F200008A0216 /* Default@2x.png in Resources */,
 				1D57B8331736F20C008A0216 /* Default.png in Resources */,
+				1DBA9A3417373B7300582DDA /* ncaa_default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2020,7 +2024,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1D1CEAF7162B4D230059BC1F /* Build configuration list for PBXNativeTarget "MSU2U-iOS" */ = {
+		1D1CEAF7162B4D230059BC1F /* Build configuration list for PBXNativeTarget "MSU2U" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D1CEAF8162B4D230059BC1F /* Debug */,

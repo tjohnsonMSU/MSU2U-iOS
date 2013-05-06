@@ -430,8 +430,8 @@
      {
          if (granted)
          {
-             self.tableView.separatorColor = nil;
-             [self.tableView setBackgroundView:nil];
+             //self.tableView.separatorColor = nil;
+             //[self.tableView setBackgroundView:nil];
              //[self.tableView setHidden:NO];
              NSArray *accounts = [accountStore accountsWithAccountType:accountType];
              
@@ -464,7 +464,7 @@
                          {
                              //NSLog(@"Rate limit reached");
                              [document.managedObjectContext performBlock:^{
-                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Rate Limit Reached" message:@"Twitter allows a maximum of 115 refreshes per hour per Twitter Account. Please try again later, or if you have received this message in error, please let us know at msu2u@mwsu.edu." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Rate Limit Reached" message:@"Twitter allows a maximum of 116 refreshes per hour per Twitter Account. Please try again later, or if you have received this message in error, please let us know at msu2u@mwsu.edu." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                                  [alert show];
                              }];
                              return;
@@ -474,7 +474,7 @@
                          {
                              //NSLog(@"Error: %@", error.localizedDescription);
                              [document.managedObjectContext performBlock:^{
-                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Download Error" message:@"Hmm, seems there was an error during the download. Try again later? Or tell us about it at msu2u@mwsu.edu." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Download Error" message:@"Hmm, seems there was an error during the download. Ensure you have an active internet connection and try again later. If this problem persists, please let us know at: msu2u@mwsu.edu" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                                  [alert show];
                              }];
                              return;
@@ -512,7 +512,7 @@
                          {
                              NSLog(@"Rate limit reached");
                              [document.managedObjectContext performBlock:^{
-                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Rate Limit Reached" message:@"Twitter allows a maximum of 115 refreshes per hour per Twitter Account. Please try again later, or if you have received this message in error, please let us know at msu2u@mwsu.edu." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Rate Limit Reached" message:@"A Maximum of 116 refreshes per hour per Twitter Account is allowed. Please try again later, or if you have received this message in error, please let us know at msu2u@mwsu.edu." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                                  [alert show];
                              }];
                              return;
@@ -522,7 +522,7 @@
                          {
                              NSLog(@"Error: %@", error.localizedDescription);
                              [document.managedObjectContext performBlock:^{
-                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Download Error" message:@"Hmm, seems there was an error during the download. Ensure you have an internet connection and try again later." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Download Error" message:@"Hmm, seems there was an error during the download. Ensure you have an active internet connection and try again later. If this problem persists, please let us know at: msu2u@mwsu.edu" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                                  [alert show];
                              }];
                              return;
@@ -556,7 +556,7 @@
                          {
                              NSLog(@"Rate limit reached");
                              [document.managedObjectContext performBlock:^{
-                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Rate Limit Reached" message:@"Twitter allows a maximum of 115 refreshes per hour per Twitter Account. Please try again later, or if you have received this message in error, please let us know at msu2u@mwsu.edu." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Rate Limit Reached" message:@"A Maximum of 116 refreshes per hour per Twitter Account is allowed. Please try again later, or if you have received this message in error, please let us know at msu2u@mwsu.edu." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                                  [alert show];
                              }];
                              return;
@@ -566,7 +566,7 @@
                          {
                              NSLog(@"Error: %@", error.localizedDescription);
                              [document.managedObjectContext performBlock:^{
-                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Download Error" message:@"Hmm, seems there was an error during the download. Try again later? Or tell us about it at msu2u@mwsu.edu." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Download Error" message:@"Hmm, seems there was an error during the download. Ensure you have an active internet connection and try again later. If this problem persists, please let us know at: msu2u@mwsu.edu" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                                  [alert show];
                              }];
                              return;
@@ -593,19 +593,35 @@
          }
          else
          {
+             //User does not have a Twitter Account setup on their device
              [self purgeAllEntitiesOfType:@"Tweet"];
              //NSLog(@"No Twitter Account");
              [document.managedObjectContext performBlock:^{
-                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Setup Twitter Account" message:@"Please login/setup your Twitter account in your device's Settings>Twitter menu to view this feature." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Setup Twitter Account" message:@"Please add a Twitter account in Settings and ensure that MSU2U has permission to access your Twitter account in order to use this feature." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Help", nil];
                  [alert show];
              }];
              //Set my table background image!!!
+             /*
              UIImageView *tempImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
              [tempImg setImage:[UIImage imageNamed:@"twitterNoAccount.png"]];
              [self.tableView setBackgroundView:tempImg];
-             self.tableView.separatorColor = [UIColor clearColor];
+             self.tableView.separatorColor = [UIColor clearColor];*/
          }
      }];
+}
+
+- (void)alertView:(UIAlertView *)alertView
+clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0){
+        //nothing, OK was pressed
+    }else if (buttonIndex == 1){
+        webViewController *myController = [self.storyboard instantiateViewControllerWithIdentifier:@"webView"];
+        UIStoryboardSegue * segue = [[UIStoryboardSegue alloc]initWithIdentifier:@"toWebView" source:self destination:myController];
+        //[self.navigationController pushViewController:myController animated:YES];
+        [segue.destinationViewController sendURL:@"http://www.youtube.com/watch?v=TQk7a5rQm_s" andTitle:@"Twitter Setup" andMessagePrefix:@"How to Setup Twitter iOS Integration for iOS 5 and later."];
+        [self.navigationController pushViewController:myController animated:YES];
+        //[[segue.destinationViewController sendURL:[NSString stringWithFormat:@"http://www.twitter.com/%@/status/%@",[self.dataObject screen_name],[self.dataObject max_id]] andTitle:[self.dataObject screen_name] andMessagePrefix:[NSString stringWithFormat:@"Tweet from %@",[self.dataObject screen_name]]];
+    }
 }
 
 -(NSDate*)convertString:(NSString*)string toDateWithFormat:(NSString*)format

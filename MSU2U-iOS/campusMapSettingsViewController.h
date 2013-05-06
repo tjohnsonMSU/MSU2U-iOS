@@ -11,11 +11,11 @@
 @interface campusMapSettingsViewController : UITableViewController{
     NSUserDefaults * defaults;
 }
-@property (weak, nonatomic) IBOutlet UISwitch *parkingZoneSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *campusBorderSwitch;
-//@property (weak, nonatomic) IBOutlet UISwitch *busTransitRouteSwitch;
 
-- (IBAction)parkingZoneFlipped:(id)sender;
-- (IBAction)campusBorderFlipped:(UISwitch *)sender;
+//@property (weak, nonatomic) IBOutlet UISwitch *busTransitRouteSwitch;
+@property (strong, nonatomic) IBOutlet UITableViewCell *parkingOverlayPressed;
+@property (strong, nonatomic) IBOutlet UITableViewCell *campusBorderPressed;
+
+
 //- (IBAction)busTransitRouteFlipped:(UISwitch *)sender;
 @end

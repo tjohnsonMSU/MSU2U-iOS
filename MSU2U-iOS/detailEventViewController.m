@@ -220,8 +220,8 @@
     //[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     NSLog(@"My hometeam URL is %@\n",homeTeam);
     
-    [self.homePhoto setImageWithURL:[NSURL URLWithString:homeTeam] placeholderImage:[UIImage imageNamed:@"Default.png"] options:0 andResize:CGSizeMake(50, 50)];
-    [self.awayPhoto setImageWithURL:[NSURL URLWithString:awayTeam] placeholderImage:[UIImage imageNamed:@"Default.png"] options:0 andResize:CGSizeMake(50,50)];
+    [self.homePhoto setImageWithURL:[NSURL URLWithString:homeTeam] placeholderImage:[UIImage imageNamed:@"ncaa_default.png"] options:0 andResize:CGSizeMake(50, 50)];
+    [self.awayPhoto setImageWithURL:[NSURL URLWithString:awayTeam] placeholderImage:[UIImage imageNamed:@"ncaa_default.png"] options:0 andResize:CGSizeMake(50,50)];
     
     CGSize size = {50,50};
     self.homePhoto.image = [self imageWithImage:self.homePhoto.image scaledToSize:size];

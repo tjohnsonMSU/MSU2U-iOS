@@ -86,74 +86,93 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
+                            <tableViewSection headerTitle="Legend" id="oFf-MJ-L5T">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="vAW-wD-eEt" imageView="ZPu-Ga-D77" rowHeight="42" style="IBUITableViewCellStyleDefault" id="Pky-04-5vQ">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="43"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="41"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Hybrid" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vAW-wD-eEt">
+                                                    <rect key="frame" x="52" y="0.0" width="238" height="41"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="hybridMap.png" id="ZPu-Ga-D77">
+                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="41"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="tUK-Ua-ADg" imageView="7im-mD-gpD" rowHeight="42" style="IBUITableViewCellStyleDefault" id="W28-2V-iUP">
+                                        <rect key="frame" x="0.0" y="89" width="320" height="43"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="41"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Satellite Only" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tUK-Ua-ADg">
+                                                    <rect key="frame" x="52" y="0.0" width="238" height="41"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="satelliteMap.png" id="7im-mD-gpD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="41"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection headerTitle="Overlays" id="wme-Ws-P9z">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="as0-ZI-60B">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="VLb-L8-mLz" style="IBUITableViewCellStyleDefault" id="as0-ZI-60B">
+                                        <rect key="frame" x="0.0" y="178" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Parking Zones" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGO-98-5H0">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="122" id="1b1-oM-UbK"/>
-                                                    </constraints>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Parking Overlays" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLb-L8-mLz">
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bvn-qg-7Lk">
-                                                    <connections>
-                                                        <action selector="parkingZoneFlipped:" destination="Iew-9Z-FEp" eventType="valueChanged" id="eR5-B4-GtC"/>
-                                                    </connections>
-                                                </switch>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="Bvn-qg-7Lk" firstAttribute="leading" secondItem="as0-ZI-60B" secondAttribute="leading" constant="213" id="9Vw-0M-UjC"/>
-                                            <constraint firstItem="Bvn-qg-7Lk" firstAttribute="centerY" secondItem="uGO-98-5H0" secondAttribute="centerY" type="default" id="NOX-LI-aNs"/>
-                                            <constraint firstItem="Bvn-qg-7Lk" firstAttribute="centerY" secondItem="as0-ZI-60B" secondAttribute="centerY" type="default" id="PxB-Jg-ER7"/>
-                                            <constraint firstItem="uGO-98-5H0" firstAttribute="leading" secondItem="as0-ZI-60B" secondAttribute="leading" constant="30" id="TCy-Mq-8YQ"/>
-                                        </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="moR-0W-yJS">
-                                        <rect key="frame" x="0.0" y="91" width="320" height="45"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="N3c-Jw-Ar3" style="IBUITableViewCellStyleDefault" id="moR-0W-yJS">
+                                        <rect key="frame" x="0.0" y="223" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Campus Border" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arU-PO-gw8">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="134" id="vfd-d4-ubE"/>
-                                                    </constraints>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Campus Border" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3c-Jw-Ar3">
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="J3L-qf-kzq">
-                                                    <connections>
-                                                        <action selector="campusBorderFlipped:" destination="Iew-9Z-FEp" eventType="valueChanged" id="QuJ-nv-lO6"/>
-                                                    </connections>
-                                                </switch>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="J3L-qf-kzq" firstAttribute="leading" secondItem="moR-0W-yJS" secondAttribute="leading" constant="213" id="5kd-I5-nFM"/>
-                                            <constraint firstItem="J3L-qf-kzq" firstAttribute="centerY" secondItem="arU-PO-gw8" secondAttribute="centerY" type="default" id="7oG-mQ-4y9"/>
-                                            <constraint firstItem="J3L-qf-kzq" firstAttribute="top" secondItem="moR-0W-yJS" secondAttribute="top" constant="8" id="Fow-l8-VDC"/>
-                                            <constraint firstItem="arU-PO-gw8" firstAttribute="leading" secondItem="moR-0W-yJS" secondAttribute="leading" constant="30" id="qgR-Ky-63n"/>
-                                        </constraints>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Map Type" id="w1O-LY-Rvf">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="EqR-SW-OTl" imageView="uZM-J6-6Bk" rowHeight="42" style="IBUITableViewCellStyleDefault" id="BiD-nj-LAj">
-                                        <rect key="frame" x="0.0" y="182" width="320" height="43"/>
+                                        <rect key="frame" x="0.0" y="314" width="320" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="41"/>
@@ -173,7 +192,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="qGd-7m-yY0" imageView="qSR-vd-hG3" rowHeight="42" style="IBUITableViewCellStyleDefault" id="HQe-Hn-J8R">
-                                        <rect key="frame" x="0.0" y="225" width="320" height="42"/>
+                                        <rect key="frame" x="0.0" y="357" width="320" height="42"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="41"/>
@@ -195,7 +214,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="xJf-qB-sv2" imageView="Xk4-lI-QUg" rowHeight="42" style="IBUITableViewCellStyleDefault" id="eDW-ej-yR6">
-                                        <rect key="frame" x="0.0" y="267" width="320" height="43"/>
+                                        <rect key="frame" x="0.0" y="399" width="320" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="41"/>
@@ -226,13 +245,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="kJx-Ba-hvI"/>
                     <connections>
-                        <outlet property="campusBorderSwitch" destination="J3L-qf-kzq" id="y7J-b7-ABj"/>
-                        <outlet property="parkingZoneSwitch" destination="Bvn-qg-7Lk" id="e7g-Eb-F9w"/>
+                        <outlet property="campusBorderPressed" destination="moR-0W-yJS" id="q00-ez-I0g"/>
+                        <outlet property="parkingOverlayPressed" destination="as0-ZI-60B" id="Ugs-A6-xPo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dMY-y0-vPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12742" y="-1410"/>
+            <point key="canvasLocation" x="-12639" y="-1456"/>
         </scene>
         <!--Navigation Controller - Directory-->
         <scene sceneID="Dgt-Wr-Aya">
@@ -2034,7 +2053,7 @@
         <!--Web View Controller - [Web View]-->
         <scene sceneID="pCe-V0-hef">
             <objects>
-                <viewController id="vRl-3M-1sy" customClass="webViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="webView" id="vRl-3M-1sy" customClass="webViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hhm-ZN-WQ1">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2180,9 +2199,9 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/campusMapSettingsViewController.h"/>
             <relationships>
                 <relationship kind="action" name="campusBorderFlipped:" candidateClass="UISwitch"/>
-                <relationship kind="action" name="parkingZoneFlipped:"/>
-                <relationship kind="outlet" name="campusBorderSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="parkingZoneSwitch" candidateClass="UISwitch"/>
+                <relationship kind="action" name="parkingZoneFlipped:" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="campusBorderPressed" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="parkingOverlayPressed" candidateClass="UITableViewCell"/>
             </relationships>
         </class>
         <class className="campusMapViewController" superclassName="UIViewController">
@@ -2291,7 +2310,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="g4E-bv-11y"/>
+        <segue reference="pWi-Fu-hij"/>
         <segue reference="Egf-cW-mua"/>
     </inferredMetricsTieBreakers>
 </document>

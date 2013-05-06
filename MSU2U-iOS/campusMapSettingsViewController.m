@@ -48,22 +48,22 @@
     //Set up the settings options as they are in the user defaults
     if([[defaults valueForKey:@"campusMapSettingsMapRowChecked"] isEqualToString:@"Satellite Only"])
     {
-        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:1]].accessoryType = UITableViewCellAccessoryCheckmark;
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:2]].accessoryType = UITableViewCellAccessoryCheckmark;
         NSLog(@"I'm trying to make 'satellite only' checked, but I guess I'm failing at that.\n");
     }
     else if([[defaults valueForKey:@"campusMapSettingsMapRowChecked"] isEqualToString:@"Roads Only"])
-        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:1]].accessoryType = UITableViewCellAccessoryCheckmark;
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:2]].accessoryType = UITableViewCellAccessoryCheckmark;
     else
-        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]].accessoryType = UITableViewCellAccessoryCheckmark;
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]].accessoryType = UITableViewCellAccessoryCheckmark;
     
     if([defaults boolForKey:@"campusMapSettingsParkingLot"])
     {
         //turn on that switch
-        [self.parkingZoneSwitch setOn:TRUE];
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]].accessoryType = UITableViewCellAccessoryCheckmark;
     }
     if([defaults boolForKey:@"campusMapSettingsCampusBorder"])
     {
-        [self.campusBorderSwitch setOn:TRUE];
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:1]].accessoryType = UITableViewCellAccessoryCheckmark;
     }
     /*TODO IMPLEMENT A BETTER BUS ROUTE LATER
     if([defaults boolForKey:@"campusMapSettingsBusRoute"])
@@ -77,7 +77,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.section == 1)
+    if(indexPath.section == 2)
     {
         switch (indexPath.row) {
             case 0:
@@ -85,8 +85,8 @@
                 //hybrid
                 [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
                 [defaults setValue:@"Hybrid" forKey:@"campusMapSettingsMapRowChecked"];
-                [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:1]].accessoryType = UITableViewCellAccessoryNone;
-                [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:1]].accessoryType = UITableViewCellAccessoryNone;
+                [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:2]].accessoryType = UITableViewCellAccessoryNone;
+                [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:2]].accessoryType = UITableViewCellAccessoryNone;
                 break;
             }
             case 1:
@@ -94,8 +94,8 @@
                 //satellite only
                 [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
                 [defaults setValue:@"Satellite Only" forKey:@"campusMapSettingsMapRowChecked"];
-                [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]].accessoryType = UITableViewCellAccessoryNone;
-                [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:1]].accessoryType = UITableViewCellAccessoryNone;
+                [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]].accessoryType = UITableViewCellAccessoryNone;
+                [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:2]].accessoryType = UITableViewCellAccessoryNone;
                 break;
             }
             case 2:
@@ -103,55 +103,46 @@
                 //roads only
                 [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
                 [defaults setValue:@"Roads Only" forKey:@"campusMapSettingsMapRowChecked"];
-                [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]].accessoryType = UITableViewCellAccessoryNone;
-                [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:1]].accessoryType = UITableViewCellAccessoryNone;
+                [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]].accessoryType = UITableViewCellAccessoryNone;
+                [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:2]].accessoryType = UITableViewCellAccessoryNone;
                 break;
             }
             default:
                 break;
         }
     }
+    else if(indexPath.section == 1)
+    {
+        if(indexPath.row == 0)
+        {
+            //Parking Overlays
+            if([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark)
+            {
+                [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+                [defaults setBool:NO forKey:@"campusMapSettingsParkingLot"];
+            }
+            else
+            {
+                [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+                [defaults setBool:YES forKey:@"campusMapSettingsParkingLot"];
+            }
+        }
+        else if(indexPath.row == 1)
+        {
+            //Parking Overlays
+            if([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark)
+            {
+                [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+                [defaults setBool:NO forKey:@"campusMapSettingsCampusBorder"];
+            }
+            else
+            {
+                [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+                [defaults setBool:YES forKey:@"campusMapSettingsCampusBorder"];
+            }
+        }
+    }
     [defaults synchronize];
 }
 
-- (IBAction)parkingZoneFlipped:(UISwitch *)sender {
-    if(sender.isOn)
-    {
-        NSLog(@"Setting parking lot as TRUE in defaults...\n");
-        [defaults setBool:YES forKey:@"campusMapSettingsParkingLot"];
-    }
-    else
-    {
-        NSLog(@"Setting parking lot as FALSE in defaults...\n");
-        [defaults setBool:NO forKey:@"campusMapSettingsParkingLot"];
-    }
-    [defaults synchronize];
-}
-
-- (IBAction)campusBorderFlipped:(UISwitch *)sender {
-    if(sender.isOn)
-    {
-        NSLog(@"Setting campus border as TRUE in defaults...\n");
-        [defaults setBool:YES forKey:@"campusMapSettingsCampusBorder"];
-    }
-    else
-    {
-        NSLog(@"Setting campus border as FALSE in defaults...\n");
-        [defaults setBool:NO forKey:@"campusMapSettingsCampusBorder"];
-    }
-    [defaults synchronize];
-}
-- (IBAction)busTransitRouteFlipped:(UISwitch *)sender {
-    if(sender.isOn)
-    {
-        NSLog(@"Setting bus transit route as TRUE in defaults...\n");
-        [defaults setBool:YES forKey:@"campusMapSettingsBusRoute"];
-    }
-    else
-    {
-        NSLog(@"Setting parking lot as FALSE in defaults...\n");
-        [defaults setBool:NO forKey:@"campusMapSettingsBusRoute"];
-    }
-    [defaults synchronize];
-}
 @end
