@@ -30,7 +30,7 @@
         <attribute name="website1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="website2" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Event" representedClassName="Event" syncable="YES">
+    <entity name="Game" representedClassName="Game" syncable="YES">
         <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="enddate" optional="YES" attributeType="Date" syncable="YES"/>
@@ -103,11 +103,11 @@
     </entity>
     <elements>
         <element name="Employee" positionX="-7445" positionY="-2439" width="128" height="463"/>
-        <element name="Event" positionX="-7598" positionY="-2467" width="128" height="208"/>
         <element name="News" positionX="-7598" positionY="-2241" width="128" height="208"/>
+        <element name="Podcast" positionX="-7832" positionY="-2637" width="128" height="118"/>
         <element name="Sport" positionX="-7749" positionY="-2439" width="128" height="238"/>
         <element name="Tweet" positionX="-7749" positionY="-2175" width="128" height="163"/>
         <element name="Video" positionX="-7598" positionY="-2016" width="128" height="208"/>
-        <element name="Podcast" positionX="-7832" positionY="-2637" width="128" height="118"/>
+        <element name="Game" positionX="-7947" positionY="-2421" width="128" height="208"/>
     </elements>
 </model>

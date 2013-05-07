@@ -29,6 +29,8 @@
     self.cellIdentifier = @"videoCell";
     self.segueIdentifier = @"toWebView";
     
+    self.title = @"Video";
+    
     self.keysToSearchOn = [[NSMutableArray alloc]initWithObjects:@"user_id",@"desc",@"tags",@"title",nil];
     
     self.childNumber = [NSNumber numberWithInt:8];

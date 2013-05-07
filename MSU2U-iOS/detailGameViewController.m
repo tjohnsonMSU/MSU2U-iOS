@@ -1,17 +1,17 @@
 //
-//  detailEventViewController.m
+//  detailGameViewController.m
 //  MSU2U-iOS
 //
 //  Created by Matthew Farmer on 11/12/12.
 //  Copyright (c) 2012 Matthew Farmer. All rights reserved.
 //
 
-#import "detailEventViewController.h"
+#import "detailGameViewController.h"
 
-@interface detailEventViewController ()
+@interface detailGameViewController ()
 @end
 
-@implementation detailEventViewController
+@implementation detailGameViewController
 
 -(void) viewWillAppear:(BOOL)animated
 {
@@ -75,35 +75,35 @@
     [super viewDidLoad];
     
     //Setup the text in the navigation bar
-    self.title = receivedEvent.category;
+    self.title = receivedGame.category;
     
     //Set your labels
-    self.titleLabel.text = receivedEvent.title;
-    self.locationLabel.text = receivedEvent.location;
-    NSLog(@"The date is %@\n",receivedEvent.startdate);
-    self.startingDateLabel.text = [NSDateFormatter localizedStringFromDate:receivedEvent.startdate dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];
+    self.titleLabel.text = receivedGame.title;
+    self.locationLabel.text = receivedGame.location;
+    NSLog(@"The date is %@\n",receivedGame.startdate);
+    self.startingDateLabel.text = [NSDateFormatter localizedStringFromDate:receivedGame.startdate dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];
     
     //Setup the images
-    if([receivedEvent.isHomeGame isEqualToString:@"yes"])
+    if([receivedGame.isHomeGame isEqualToString:@"yes"])
     {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
                                                  (unsigned long)NULL), ^(void) {
-            [self downloadImageForHome:receivedEvent.teamlogo andAway:receivedEvent.opponentlogo];
+            [self downloadImageForHome:receivedGame.teamlogo andAway:receivedGame.opponentlogo];
         });
         
         //Set the home label to say 'Midwestern State'
         self.homeTeamName.text = @"Midwestern State";
         
-        if ([receivedEvent.title rangeOfString:@" at "].location==NSNotFound)
+        if ([receivedGame.title rangeOfString:@" at "].location==NSNotFound)
         {
             //'vs' was used
-            NSArray * components = [receivedEvent.title componentsSeparatedByString:@" vs "];
+            NSArray * components = [receivedGame.title componentsSeparatedByString:@" vs "];
             NSString *trimmedText = [[components objectAtIndex:1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
             self.awayTeamName.text = (NSString *)trimmedText;
         }
         else
         {
-            NSArray * components = [receivedEvent.title componentsSeparatedByString:@" at "];
+            NSArray * components = [receivedGame.title componentsSeparatedByString:@" at "];
             NSString *trimmedText = [[components objectAtIndex:1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
             self.awayTeamName.text = (NSString *)trimmedText;
         }
@@ -113,20 +113,20 @@
     {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
                                                  (unsigned long)NULL), ^(void) {
-            [self downloadImageForHome:receivedEvent.opponentlogo andAway:receivedEvent.teamlogo];
+            [self downloadImageForHome:receivedGame.opponentlogo andAway:receivedGame.teamlogo];
         });
         self.awayTeamName.text = @"Midwestern State";
         
-        if ([receivedEvent.title rangeOfString:@" at "].location==NSNotFound)
+        if ([receivedGame.title rangeOfString:@" at "].location==NSNotFound)
         {
             //'vs' was used
-            NSArray * components = [receivedEvent.title componentsSeparatedByString:@" vs "];
+            NSArray * components = [receivedGame.title componentsSeparatedByString:@" vs "];
             NSString *trimmedText = [[components objectAtIndex:1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
             self.homeTeamName.text = (NSString *)trimmedText;
         }
         else
         {
-            NSArray * components = [receivedEvent.title componentsSeparatedByString:@" at "];
+            NSArray * components = [receivedGame.title componentsSeparatedByString:@" at "];
             NSString *trimmedText = [[components objectAtIndex:1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
             self.homeTeamName.text = (NSString *)trimmedText;
         }
@@ -138,31 +138,31 @@
     /*NSArray * sportCategories = [[NSArray alloc]initWithObjects:@"Men's Cross Country/Track",@"Women's Cross Country/Track",@"Men's Basketball",@"Women's Basketball",@"Football",@"Men's Golf",@"Women's Golf",@"Men's Soccer",@"Women's Soccer",@"Softball",@"Men's Tennis",@"Women's Tennis",@"Volleyball", nil];*/
     NSString * sportName;
     
-    if([receivedEvent.category isEqualToString:@"Men's Cross Country/Track"])
+    if([receivedGame.category isEqualToString:@"Men's Cross Country/Track"])
         sportName = @"track-landscape.jpg";
-    else if([receivedEvent.category isEqualToString:@"Women's Cross Country/Track"])
+    else if([receivedGame.category isEqualToString:@"Women's Cross Country/Track"])
         sportName = @"track-landscape.jpg";
-    else if([receivedEvent.category isEqualToString:@"Men's Basketball"])
+    else if([receivedGame.category isEqualToString:@"Men's Basketball"])
         sportName = @"mens-basketball-landscape.jpg";
-    else if([receivedEvent.category isEqualToString:@"Women's Basketball"])
+    else if([receivedGame.category isEqualToString:@"Women's Basketball"])
         sportName = @"womens-basketball-landscape.jpg";
-    else if([receivedEvent.category isEqualToString:@"Football"])
+    else if([receivedGame.category isEqualToString:@"Football"])
         sportName = @"footballBG.jpg";
-    else if([receivedEvent.category isEqualToString:@"Men's Golf"])
+    else if([receivedGame.category isEqualToString:@"Men's Golf"])
         sportName = @"golf-landscape.jpg";
-    else if([receivedEvent.category isEqualToString:@"Women's Golf"])
+    else if([receivedGame.category isEqualToString:@"Women's Golf"])
         sportName = @"womens-golf-portrait.jpg";
-    else if([receivedEvent.category isEqualToString:@"Men's Soccer"])
+    else if([receivedGame.category isEqualToString:@"Men's Soccer"])
         sportName = @"mens-soccer-landscape.jpg";
-    else if([receivedEvent.category isEqualToString:@"Women's Soccer"])
+    else if([receivedGame.category isEqualToString:@"Women's Soccer"])
         sportName = @"womens-soccer-landscape.jpg";
-    else if([receivedEvent.category isEqualToString:@"Softball"])
+    else if([receivedGame.category isEqualToString:@"Softball"])
         sportName = @"softball-landscape.jpg";
-    else if([receivedEvent.category isEqualToString:@"Men's Tennis"])
+    else if([receivedGame.category isEqualToString:@"Men's Tennis"])
         sportName = @"mens-tennis-landscape.jpg";
-    else if([receivedEvent.category isEqualToString:@"Women's Tennis"])
+    else if([receivedGame.category isEqualToString:@"Women's Tennis"])
         sportName = @"womens-tennis-landscape.jpg";
-    else if([receivedEvent.category isEqualToString:@"Volleyball"])
+    else if([receivedGame.category isEqualToString:@"Volleyball"])
         sportName = @"volleyball-landscape.jpg";
     else
         NSLog(@"I can't determine what image to use!?");
@@ -174,31 +174,31 @@
 {
     NSString * sportName;
     
-    if([receivedEvent.category isEqualToString:@"Men's Cross Country/Track"])
+    if([receivedGame.category isEqualToString:@"Men's Cross Country/Track"])
         sportName = @"track-portrait.jpg";
-    else if([receivedEvent.category isEqualToString:@"Women's Cross Country/Track"])
+    else if([receivedGame.category isEqualToString:@"Women's Cross Country/Track"])
         sportName = @"track-portrait.jpg";
-    else if([receivedEvent.category isEqualToString:@"Men's Basketball"])
+    else if([receivedGame.category isEqualToString:@"Men's Basketball"])
         sportName = @"mens-basketball-portrait.jpg";
-    else if([receivedEvent.category isEqualToString:@"Women's Basketball"])
+    else if([receivedGame.category isEqualToString:@"Women's Basketball"])
         sportName = @"womens-basketball-portrait.jpg";
-    else if([receivedEvent.category isEqualToString:@"Football"])
+    else if([receivedGame.category isEqualToString:@"Football"])
         sportName = @"footballBG2.jpg";
-    else if([receivedEvent.category isEqualToString:@"Men's Golf"])
+    else if([receivedGame.category isEqualToString:@"Men's Golf"])
         sportName = @"golf-landscape.jpg";
-    else if([receivedEvent.category isEqualToString:@"Women's Golf"])
+    else if([receivedGame.category isEqualToString:@"Women's Golf"])
         sportName = @"womens-golf-landscape.jpg";
-    else if([receivedEvent.category isEqualToString:@"Men's Soccer"])
+    else if([receivedGame.category isEqualToString:@"Men's Soccer"])
         sportName = @"mens-soccer-portrait.jpg";
-    else if([receivedEvent.category isEqualToString:@"Women's Soccer"])
+    else if([receivedGame.category isEqualToString:@"Women's Soccer"])
         sportName = @"womens-soccer-portrait.jpg";
-    else if([receivedEvent.category isEqualToString:@"Softball"])
+    else if([receivedGame.category isEqualToString:@"Softball"])
         sportName = @"softball-portrait.jpg";
-    else if([receivedEvent.category isEqualToString:@"Men's Tennis"])
+    else if([receivedGame.category isEqualToString:@"Men's Tennis"])
         sportName = @"mens-tennis-portrait.jpg";
-    else if([receivedEvent.category isEqualToString:@"Women's Tennis"])
+    else if([receivedGame.category isEqualToString:@"Women's Tennis"])
         sportName = @"womens-tennis-portrait.jpg";
-    else if([receivedEvent.category isEqualToString:@"Volleyball"])
+    else if([receivedGame.category isEqualToString:@"Volleyball"])
         sportName = @"volleyball-portrait.jpg";
     else
         NSLog(@"I can't determine what image to use!?");
@@ -206,10 +206,10 @@
     return sportName;
 }
 
--(void)sendEventInformation:(Event*)eventInfo
+-(void)sendGameInformation:(Game*)gameInfo
 {
-    receivedEvent = eventInfo;
-    receivedEvent.teamlogo = @"http://www.msumustangs.com/images/logos/m6.png";
+    receivedGame = gameInfo;
+    receivedGame.teamlogo = @"http://www.msumustangs.com/images/logos/m6.png";
 }
 
 -(void)downloadImageForHome:(NSString*)homeTeam andAway:(NSString *)awayTeam
@@ -242,13 +242,13 @@
 
 
 - (void)addToCalendar {
-    //Setup the variables for this event in the addEventToMainCalendar class
+    //Setup the variables for this game in the addEventToMainCalendar class
     addEventToCalendar * myCal = [[addEventToCalendar alloc]init];
     
-    NSLog(@"Well, the date on my end before sending to addEventToMainCalendar is %@\n",receivedEvent.startdate);
-    myCal.calendarEventTitle = receivedEvent.title;
-    myCal.calendarEventStartDate = receivedEvent.startdate;
-    myCal.calendarEventEndDate = receivedEvent.enddate;
+    NSLog(@"Well, the date on my end before sending to addEventToMainCalendar is %@\n",receivedGame.startdate);
+    myCal.calendarEventTitle = receivedGame.title;
+    myCal.calendarEventStartDate = receivedGame.startdate;
+    myCal.calendarEventEndDate = receivedGame.enddate;
     [myCal addEventToMainCalendar];
 }
 
@@ -279,14 +279,14 @@
 {
     // Check for iOS 6
     
-    if(![receivedEvent.location isEqualToString:@"TBA"])
+    if(![receivedGame.location isEqualToString:@"TBA"])
     {
         Class mapItemClass = [MKMapItem class];
         
         if (mapItemClass && [mapItemClass respondsToSelector:@selector(openMapsWithItems:launchOptions:)])
         {
             CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-            [geocoder geocodeAddressString:receivedEvent.location
+            [geocoder geocodeAddressString:receivedGame.location
                          completionHandler:^(NSArray *placemarks, NSError *error) {
                              
                              // Convert the CLPlacemark to an MKPlacemark
@@ -329,8 +329,8 @@
 - (IBAction)sharePressed:(UIBarButtonItem *)sender
 {
     // Create the item to share (in this example, a url)
-    NSURL *url = [NSURL URLWithString:receivedEvent.link];
-    SHKItem *item = [SHKItem URL:url title:receivedEvent.title contentType:SHKURLContentTypeWebpage];
+    NSURL *url = [NSURL URLWithString:receivedGame.link];
+    SHKItem *item = [SHKItem URL:url title:receivedGame.title contentType:SHKURLContentTypeWebpage];
     
     // Get the ShareKit action sheet
     SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];

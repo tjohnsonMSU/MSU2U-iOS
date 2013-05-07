@@ -48,22 +48,22 @@
     //Set up the settings options as they are in the user defaults
     if([[defaults valueForKey:@"campusMapSettingsMapRowChecked"] isEqualToString:@"Satellite Only"])
     {
-        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:2]].accessoryType = UITableViewCellAccessoryCheckmark;
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:1]].accessoryType = UITableViewCellAccessoryCheckmark;
         NSLog(@"I'm trying to make 'satellite only' checked, but I guess I'm failing at that.\n");
     }
     else if([[defaults valueForKey:@"campusMapSettingsMapRowChecked"] isEqualToString:@"Roads Only"])
-        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:2]].accessoryType = UITableViewCellAccessoryCheckmark;
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:1]].accessoryType = UITableViewCellAccessoryCheckmark;
     else
-        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]].accessoryType = UITableViewCellAccessoryCheckmark;
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]].accessoryType = UITableViewCellAccessoryCheckmark;
     
     if([defaults boolForKey:@"campusMapSettingsParkingLot"])
     {
         //turn on that switch
-        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]].accessoryType = UITableViewCellAccessoryCheckmark;
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]].accessoryType = UITableViewCellAccessoryCheckmark;
     }
     if([defaults boolForKey:@"campusMapSettingsCampusBorder"])
     {
-        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:1]].accessoryType = UITableViewCellAccessoryCheckmark;
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]].accessoryType = UITableViewCellAccessoryCheckmark;
     }
     /*TODO IMPLEMENT A BETTER BUS ROUTE LATER
     if([defaults boolForKey:@"campusMapSettingsBusRoute"])
@@ -77,7 +77,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.section == 2)
+    if(indexPath.section == 1)
     {
         switch (indexPath.row) {
             case 0:
@@ -85,8 +85,8 @@
                 //hybrid
                 [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
                 [defaults setValue:@"Hybrid" forKey:@"campusMapSettingsMapRowChecked"];
-                [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:2]].accessoryType = UITableViewCellAccessoryNone;
-                [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:2]].accessoryType = UITableViewCellAccessoryNone;
+                [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:indexPath.section]].accessoryType = UITableViewCellAccessoryNone;
+                [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:indexPath.section]].accessoryType = UITableViewCellAccessoryNone;
                 break;
             }
             case 1:
@@ -94,8 +94,8 @@
                 //satellite only
                 [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
                 [defaults setValue:@"Satellite Only" forKey:@"campusMapSettingsMapRowChecked"];
-                [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]].accessoryType = UITableViewCellAccessoryNone;
-                [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:2]].accessoryType = UITableViewCellAccessoryNone;
+                [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:indexPath.section]].accessoryType = UITableViewCellAccessoryNone;
+                [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:indexPath.section]].accessoryType = UITableViewCellAccessoryNone;
                 break;
             }
             case 2:
@@ -103,15 +103,15 @@
                 //roads only
                 [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
                 [defaults setValue:@"Roads Only" forKey:@"campusMapSettingsMapRowChecked"];
-                [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]].accessoryType = UITableViewCellAccessoryNone;
-                [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:2]].accessoryType = UITableViewCellAccessoryNone;
+                [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:indexPath.section]].accessoryType = UITableViewCellAccessoryNone;
+                [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:indexPath.section]].accessoryType = UITableViewCellAccessoryNone;
                 break;
             }
             default:
                 break;
         }
     }
-    else if(indexPath.section == 1)
+    else if(indexPath.section == 0)
     {
         if(indexPath.row == 0)
         {

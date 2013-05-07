@@ -1,5 +1,5 @@
 //
-//  detailEventViewController.h
+//  detailGameViewController.h
 //  MSU2U-iOS
 //
 //  Created by Matthew Farmer on 11/12/12.
@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Event+Create.h"
+#import "Game+Create.h"
 //#import <SDWebImage/UIImageView+WebCache.h>
 #import "UIImageView+WebCache.h"
 #import "campusMapViewController.h"
@@ -16,11 +16,11 @@
 //ShareKit
 #import "SHK.h"
 
-@interface detailEventViewController : UITableViewController{
-    Event * receivedEvent;
+@interface detailGameViewController : UITableViewController{
+    Game * receivedGame;
 }
 
--(void)sendEventInformation:(Event*)eventInfo;
+-(void)sendGameInformation:(Game*)gameInfo;
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundPhoto;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *homePhoto;

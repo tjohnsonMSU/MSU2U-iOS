@@ -26,6 +26,8 @@
     self.cellIdentifier = @"podcastCell";
     self.segueIdentifier = @"toWebView";
     
+    self.title = @"Podcast";
+    
     self.keyToSearchOn = @"title";
     self.keysToSearchOn = [[NSMutableArray alloc]initWithObjects:@"title",nil];
     

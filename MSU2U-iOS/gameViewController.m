@@ -1,17 +1,17 @@
 //
-//  eventViewController.m
+//  gameViewController.m
 //  MSU2U-iOS
 //
 //  Created by Matthew Farmer on 10/25/12.
 //  Copyright (c) 2012 Matthew Farmer. All rights reserved.
 //
-#import "eventViewController.h"
+#import "gameViewController.h"
 
-@interface eventViewController ()
+@interface gameViewController ()
 
 @end
 
-@implementation eventViewController
+@implementation gameViewController
 
 @synthesize searchBar = _searchBar;
 @synthesize searchDisplayControl = _searchDisplayControl;
@@ -19,10 +19,13 @@
 -(void)viewDidLoad
 {
     self.jsonURL = @"http://www.matthewfarmer.net/sports/sportsRSStoJSON.php";
-    self.entityName = @"Event";
+    self.entityName = @"Game";
     self.sortDescriptorKey = @"startdate";
-    self.cellIdentifier = @"event";
-    self.segueIdentifier = @"toEvent";
+    self.cellIdentifier = @"game";
+    self.segueIdentifier = @"toGame";
+    
+    //Ensures that the tab always says "Event", otherwise it has a tendency to change itself to "Game"
+    self.title = @"Event";
     
     self.keyToSearchOn = @"title";
     self.keysToSearchOn = [[NSMutableArray alloc]initWithObjects:@"title",@"category",@"location",nil];

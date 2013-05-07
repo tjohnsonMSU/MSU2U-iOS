@@ -12,7 +12,7 @@
 
 //Detail Controllers
 #import "detailDirectoryViewController.h"
-#import "detailEventViewController.h"
+#import "detailGameViewController.h"
 #import "webViewController.h"
 
 //Custom Libraries
@@ -23,7 +23,7 @@
 #import "SDImageCache.h"
 
 #import "News+Create.h"
-#import "Event+Create.h"
+#import "Game+Create.h"
 #import "Employee+Create.h"
 #import "Tweet+Create.h"
 #import "Video+Create.h"

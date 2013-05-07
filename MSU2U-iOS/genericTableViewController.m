@@ -284,7 +284,7 @@
         for(NSDictionary * dataInfo in myData)
         {
             //NSLog(@"Going to insert stuff for %@!\n",[dataInfo objectForKey:@"title"]);
-            [Event eventWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+            [Game gameWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
         }
     }];
 }
@@ -1137,7 +1137,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
         int count = 0;
         
         if(self.childNumber == [NSNumber numberWithInt:2])
-            for (Event * currentEvents in [self.fetchedResultsController fetchedObjects])
+            for (Game * currentEvents in [self.fetchedResultsController fetchedObjects])
                 count++;
         else if(self.childNumber == [NSNumber numberWithInt:3])
             for (News * currentNews in [self.fetchedResultsController fetchedObjects])
@@ -1356,7 +1356,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
     //NSLog(@"My child number is %@\n",self.childNumber);
 
     if(self.childNumber == [NSNumber numberWithInt:2])
-        [segue.destinationViewController sendEventInformation:self.dataObject];
+        [segue.destinationViewController sendGameInformation:self.dataObject];
     else if(self.childNumber == [NSNumber numberWithInt:3])
     {
         //[segue.destinationViewController sendNewsInformation:self.dataObject];
@@ -1420,7 +1420,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
     //Events Tab
     if(self.childNumber == [NSNumber numberWithInt:2])
     {
-        for (Event *currentEvents in [self.fetchedResultsController fetchedObjects])
+        for (Game *currentEvents in [self.fetchedResultsController fetchedObjects])
             [self.dataArray addObject:currentEvents];
     }
     //News Tab

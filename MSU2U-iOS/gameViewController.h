@@ -1,5 +1,5 @@
 //
-//  eventViewController.h
+//  gameViewController.h
 //  MSU2U-iOS
 //
 //  Created by Matthew Farmer on 11/21/12.
@@ -7,15 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "detailEventViewController.h"
+#import "detailGameViewController.h"
 #import "CoreDataTableViewController.h"
 #import "MYDocumentHandler.h"
 #import "genericTableViewController.h"
 
 //Paul Hegarty
-#import "Event+Create.h"
+#import "Game+Create.h"
 
-@interface eventViewController : genericTableViewController<UISearchDisplayDelegate, UISearchBarDelegate>
+@interface gameViewController : genericTableViewController<UISearchDisplayDelegate, UISearchBarDelegate>
 
 @property (retain, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (retain, nonatomic) IBOutlet UISearchDisplayController *searchDisplayControl;

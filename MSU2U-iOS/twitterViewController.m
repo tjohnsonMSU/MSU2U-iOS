@@ -29,6 +29,8 @@
     self.cellIdentifier = @"tweetCell";
     self.segueIdentifier = @"toWebView";
     
+    self.title = @"Twitter";
+    
     //self.keyToSearchOn = @"title";
     self.keysToSearchOn = [[NSMutableArray alloc]initWithObjects:@"text",@"screen_name",@"name",nil];
     

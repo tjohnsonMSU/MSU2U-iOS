@@ -31,6 +31,8 @@
     self.cellIdentifier = @"article";
     self.segueIdentifier = @"toWebView";
     
+    self.title = @"News";
+    
     self.keyToSearchOn = @"title";
     self.keysToSearchOn = [[NSMutableArray alloc]initWithObjects:@"title",@"long_description",@"short_description",@"doc_creator",@"publication",nil];
     
