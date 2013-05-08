@@ -239,9 +239,9 @@
             [controller setSubject:@""];
             
             //TODO Should format this better
-            NSString * openingStatement = [NSString stringWithFormat:@"Greetings %@,",[myCurrentEmployee getShortenedName]];
+            //NSString * openingStatement = [NSString stringWithFormat:@"Greetings %@,",[myCurrentEmployee getShortenedName]];
             
-            [controller setMessageBody:openingStatement isHTML:NO];
+            [controller setMessageBody:@"" isHTML:NO];
             if (controller) [self presentModalViewController:controller animated:YES];
         }
         else

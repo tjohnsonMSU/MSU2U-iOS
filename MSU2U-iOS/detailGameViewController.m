@@ -317,7 +317,7 @@
     else
     {
         UIAlertView *alert = [[UIAlertView alloc]
-                         initWithTitle:@"Location TBA"
+                         initWithTitle:@"Location TBA #msu2u"
                          message:@"Sorry, the event location is TBA (To Be Announced)"
                          delegate:nil
                          cancelButtonTitle:@"OK"
@@ -329,8 +329,7 @@
 - (IBAction)sharePressed:(UIBarButtonItem *)sender
 {
     // Create the item to share (in this example, a url)
-    NSURL *url = [NSURL URLWithString:receivedGame.link];
-    SHKItem *item = [SHKItem URL:url title:receivedGame.title contentType:SHKURLContentTypeWebpage];
+    SHKItem *item = [SHKItem text:[NSString stringWithFormat:@"%@ in %@",receivedGame.title,receivedGame.location]];
     
     // Get the ShareKit action sheet
     SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];

@@ -1182,6 +1182,14 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
     
     if(self.childNumber == [NSNumber numberWithInt:2] || self.childNumber == [NSNumber numberWithInt:3])
     {
+        //### DELETE ME
+        if(self.childNumber == [NSNumber numberWithInt:3])
+        {
+            NSLog(@"# Title: %@\n",[self.dataObject title]);
+            NSLog(@"# Link : %@\n",[self.dataObject link]);
+            NSLog(@"# ID   : %@\n\n",[self.dataObject article_id]);
+        }
+        
         //News and Events both have titles to show in their cell
         cell.textLabel.text = [self.dataObject title];
         if(self.childNumber == [NSNumber numberWithInt:2])
@@ -1383,7 +1391,6 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
         //[segue.destinationViewController sendTweetInformation:self.dataObject];
         //NSLog(@"Going to http://www.twitter.com/%@/status/%@",[self.dataObject screen_name],[self.dataObject max_id]);
         [segue.destinationViewController sendURL:[NSString stringWithFormat:@"http://www.twitter.com/%@/status/%@",[self.dataObject screen_name],[self.dataObject max_id]] andTitle:[self.dataObject screen_name] andMessagePrefix:[NSString stringWithFormat:@"Tweet from %@",[self.dataObject screen_name]]];
-        
     }
     else if(self.childNumber == [NSNumber numberWithInt:8])
     {
@@ -1506,7 +1513,6 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
      [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
     
     // Return YES to cause the search result table view to be reloaded.
-    
     return YES;
 }
 

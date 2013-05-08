@@ -15,7 +15,11 @@
     News * news = nil;
     
     NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:@"News"];
-    request.predicate = [NSPredicate predicateWithFormat:@"article_id = %@", [info objectForKey:@"Article_ID"]];
+    
+    //Some news sources are inconsistent in delivering their GUID with www or not, which can fool the program into thinking an article is new when it isn't. Ensure everything is void of www
+    NSString * myGUID = [[info objectForKey:@"Article_ID"] stringByReplacingOccurrencesOfString:@"http://www." withString:@"http://"];
+    
+    request.predicate = [NSPredicate predicateWithFormat:@"article_id = %@", myGUID];
     NSSortDescriptor * sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"last_changed" ascending:NO];
     request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     
@@ -28,10 +32,12 @@
     }
     else if(![allNews count])
     {
+        //Ensure that there isn't a title with the same name already in the database. MSU Mustangs sometimes changes its urls for some reason, like http://msumustangs.com to http://www.msumustangs.com which fools our code.
         news = [self createNewNews:info inContext:context];
     }
     else
     {
+        //I already have this news item
         news = [allNews lastObject];
         
         if([news.title isEqualToString:[info objectForKey:@"Title"]] && [news.image isEqualToString:[info objectForKey:@"image"]] && [news.short_description isEqualToString:[info objectForKey:@"Short_Description"]] && [news.long_description isEqualToString:[info objectForKey:@"Long_Description"]])
@@ -58,8 +64,8 @@
 +(News*)createNewNews:(NSDictionary*)info inContext:(NSManagedObjectContext*)context
 {
     News * news = [NSEntityDescription insertNewObjectForEntityForName:@"News" inManagedObjectContext:context];
-    
-    news.article_id = [info objectForKey:@"Article_ID"];
+    NSString * myGUID = [[info objectForKey:@"Article_ID"] stringByReplacingOccurrencesOfString:@"http://www." withString:@"http://"];
+    news.article_id = myGUID;
     news.title = [info objectForKey:@"Title"];
     news.link = [info objectForKey:@"Link"];
     news.category_1 = [info objectForKey:@"Category_1"];
