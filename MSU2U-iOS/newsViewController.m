@@ -18,13 +18,8 @@
 
 -(void)viewDidLoad
 {
-    //self.jsonURL = @"http://thewichitan.com/feed/";
-    //self.jsonSportsNewsURL = @"http://www.msumustangs.com/rss.aspx";
-    //self.jsonMuseumNewsURL = @"http://www.mwsu.info/wfma/feed/";
-    
-    self.rssWichitanNewsURL = @"http://thewichitan.com/feed/";
-    self.rssSportsNewsURL = @"http://www.msumustangs.com/rss.aspx";
-    self.rssMuseumNewsURL = @"http://www.mwsu.info/wfma/feed/";
+    self.newsRSSurl = [[NSArray alloc]initWithObjects:@"http://thewichitan.com/feed/",@"http://www.msumustangs.com/rss.aspx",@"http://www.mwsu.info/wfma/feed/",nil];
+    self.publicationName = [[NSArray alloc]initWithObjects:@"The Wichitan",@"MSU Mustangs",@"WF Museum of Art", nil];
     
     self.entityName = @"News";
     self.sortDescriptorKey = @"last_changed";

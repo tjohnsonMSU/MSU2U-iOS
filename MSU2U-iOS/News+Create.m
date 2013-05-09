@@ -43,7 +43,7 @@
         if([news.title isEqualToString:[info objectForKey:@"Title"]] && [news.image isEqualToString:[info objectForKey:@"image"]] && [news.short_description isEqualToString:[info objectForKey:@"Short_Description"]] && [news.long_description isEqualToString:[info objectForKey:@"Long_Description"]])
         {
             //OK, this news item has not significantly changed so keep it the same
-            NSLog(@"News item has not changed...\n");
+            //NSLog(@"News item has not changed...\n");
         }
         else
         {

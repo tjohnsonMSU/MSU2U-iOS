@@ -16,8 +16,11 @@
     
     NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:@"Podcast"];
     
+    //Make sure the link/GUID provided by MSUMustangs.com is void of 'www' to be consistent
+    NSString * myGUID = [[info objectForKey:@"Article_ID"] stringByReplacingOccurrencesOfString:@"http://www." withString:@"http://"];
+    
     //What attribute makes a tweet unique?
-    request.predicate = [NSPredicate predicateWithFormat:@"podcast_id = %@", [info objectForKey:@"Article_ID"]];
+    request.predicate = [NSPredicate predicateWithFormat:@"podcast_id = %@", myGUID];
     
     //How is the information sorted?
     NSSortDescriptor * sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"pubDate" ascending:YES];
@@ -63,9 +66,9 @@
 +(Podcast*)createNewPodcast:(NSDictionary*)info inContext:(NSManagedObjectContext*)context
 {
     Podcast * podcast = [NSEntityDescription insertNewObjectForEntityForName:@"Podcast" inManagedObjectContext:context];
-    
+    NSString * myGUID = [[info objectForKey:@"Article_ID"] stringByReplacingOccurrencesOfString:@"http://www." withString:@"http://"];
     //Get all of the video information
-    podcast.podcast_id = [info objectForKey:@"Article_ID"];
+    podcast.podcast_id = myGUID;
     podcast.title = [info objectForKey:@"Title"];
     podcast.link = [info objectForKey:@"Link"];
     

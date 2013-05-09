@@ -56,6 +56,7 @@
     NSMutableString * currentCategory;
     NSMutableString * currentContentEncoded;
     NSString * myCurrentPublication;
+    BOOL * ignoreRSStitleAndLink;
 }
 
 @property (retain, nonatomic) NSMutableArray * filteredDataArray;
@@ -64,9 +65,11 @@
 
 //JSON URLs
 @property (nonatomic, retain) NSString * jsonURL;
-@property (nonatomic, retain) NSString * rssWichitanNewsURL;
-@property (nonatomic, retain) NSString * rssSportsNewsURL;
-@property (nonatomic, retain) NSString * rssMuseumNewsURL;
+//@property (nonatomic, retain) NSString * rssWichitanNewsURL;
+//@property (nonatomic, retain) NSString * rssSportsNewsURL;
+//@property (nonatomic, retain) NSString * rssMuseumNewsURL;
+@property (nonatomic, retain) NSArray * newsRSSurl;
+@property (nonatomic, retain) NSArray * publicationName;
 
 @property (nonatomic, retain) NSArray * twitterProfilesAndHashtags;
 @property (nonatomic, retain) NSArray * vimeoChannel;

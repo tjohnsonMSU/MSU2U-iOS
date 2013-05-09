@@ -35,6 +35,7 @@
 }
 
 //######## RSS STUFF
+
 -(NSMutableArray*)executeRSSFetch:(NSString*)query
 {
     stories = [[NSMutableArray alloc]init];
@@ -53,7 +54,7 @@
 {
     //NSLog(@"ended element: %@", elementName);
 	if ([elementName isEqualToString:@"item"]) {
-		
+		ignoreRSStitleAndLink = YES;
         //Podcasts
         if(self.childNumber == [NSNumber numberWithInt:9])
         {
@@ -131,6 +132,7 @@
 	currentElement = [elementName copy];
     
 	if ([elementName isEqualToString:@"item"]) {
+        ignoreRSStitleAndLink = NO;
 		// clear out our story item caches...
 		item = [[NSMutableDictionary alloc] init];
         currentTitle = [[NSMutableString alloc]init];
@@ -176,8 +178,9 @@
 {
     //NSLog(@"found characters: %@", string);
     string = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
 	// save the characters for the current item...
-	if ([currentElement isEqualToString:@"title"])
+	if ([currentElement isEqualToString:@"title"] && !ignoreRSStitleAndLink)
     {
         //NSLog(@"I am setting currentTitle = %@\n",string);
 		[currentTitle appendString:string];
@@ -186,7 +189,7 @@
 		[currentPubDate appendString:string];
     else if([currentElement isEqualToString:@"guid"])
         [currentGuid appendString:string];
-    else if([currentElement isEqualToString:@"link"])
+    else if([currentElement isEqualToString:@"link"] && !ignoreRSStitleAndLink)
     {
         //NSLog(@"<<< appending string '%@' to currentLink...\n",string);
         [currentLink appendString:string];
@@ -213,6 +216,7 @@
     else if([currentElement isEqualToString:@"content:encoded"])
         [currentDesc appendString:string];
 }
+
 //####### END RSS STUFF
 
 - (NSArray *)downloadCurrentData:(NSString*)jsonURL
@@ -315,58 +319,29 @@
 
 -(void)getNews:(UIManagedDocument*)document
 {
-    //NSArray * myWichitanData = [self downloadCurrentData:self.jsonURL];
-    //NSArray * mySportsNewsData = [self downloadCurrentData:self.jsonSportsNewsURL];
-    //NSArray * myMuseumNewsData = [self downloadCurrentData:self.jsonMuseumNewsURL];
-    myCurrentPublication = @"The Wichitan";
-    NSArray * myWichitanData = [self executeRSSFetch:self.rssWichitanNewsURL];
-    myCurrentPublication = @"MSU Mustangs";
-    NSArray * mySportsNewsData = [self executeRSSFetch:self.rssSportsNewsURL];
-    myCurrentPublication = @"WF Museum of Art";
-    NSArray * myMuseumNewsData = [self executeRSSFetch:self.rssMuseumNewsURL];
-    
-    //NSLog(@"Getting the news!\n");
-    [document.managedObjectContext performBlock:^{
-        for(NSDictionary * dataInfo in myWichitanData)
-        {
-            NSComparisonResult result = [[self convertString:[dataInfo objectForKey:@"Pub_Date"] toDateWithFormat:@"EEE, dd MMMM y HH:mm:ss ZZZZ"] compare:[self getDateFor:@"lastMonth"]];
-                                         
-            if(result != NSOrderedAscending)
+    NSArray * downloadedData = [[NSArray alloc]init];
+    for(int i=0; i<[self.newsRSSurl count]; i++)
+    {
+        myCurrentPublication = [self.publicationName objectAtIndex:i];
+        downloadedData = [self executeRSSFetch:[self.newsRSSurl objectAtIndex:i]];
+        NSLog(@"%@ downloaded(%d posts)\n",myCurrentPublication,[downloadedData count]);
+        [document.managedObjectContext performBlock:^{
+            for(NSDictionary * dataInfo in downloadedData)
             {
-                [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+                NSComparisonResult result = [[self convertString:[dataInfo objectForKey:@"Pub_Date"] toDateWithFormat:@"EEE, dd MMMM y HH:mm:ss ZZZZ"] compare:[self getDateFor:@"lastMonth"]];
+                
+                if(result != NSOrderedAscending)
+                {
+                    [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
+                }
+                else
+                {
+                    //NSLog(@"%@ is too old!\n",[dataInfo objectForKey:@"Title"]);
+                }
             }
-            else
-            {
-                //NSLog(@"%@ is too old!\n",[dataInfo objectForKey:@"Title"]);
-            }
-        }
-        for(NSDictionary * dataInfo in mySportsNewsData)
-        {
-            NSComparisonResult result = [[self convertString:[dataInfo objectForKey:@"Pub_Date"] toDateWithFormat:@"EEE, dd MMMM y HH:mm:ss ZZZZ"] compare:[self getDateFor:@"lastMonth"]];
-                                         
-            if(result != NSOrderedAscending)
-            {
-                [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
-            }
-            else
-            {
-                //NSLog(@"%@ is too old!\n",[dataInfo objectForKey:@"Title"]);
-            }
-        }
-        for(NSDictionary * dataInfo in myMuseumNewsData)
-        {
-            NSComparisonResult result = [[self convertString:[dataInfo objectForKey:@"Pub_Date"] toDateWithFormat:@"EEE, dd MMMM y HH:mm:ss ZZZZ"] compare:[self getDateFor:@"lastMonth"]];
-                                         
-            if(result != NSOrderedAscending)
-            {
-                [News newsWithInfo:dataInfo inManagedObjectContext:document.managedObjectContext];
-            }
-            else
-            {
-                //NSLog(@"%@ is too old! (%@ is older than %@)\n",[dataInfo objectForKey:@"Title"],[dataInfo objectForKey:@"Pub_Date"],[self getDateFor:@"lastMonth"]);
-            }
-        }
-    }];
+         }];
+        NSLog(@"%@ finished!",myCurrentPublication);
+    }
 }
 
 -(void)getVideos:(UIManagedDocument*)document
@@ -985,7 +960,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
     [super viewWillAppear:animated];
     //NSLog(@"Hello?????\n");
     //Set debug to TRUE for the CoreDataTableViewController class
-    self.debug = TRUE;
+    self.debug = FALSE;
     
     //Refresh Control
     //Make sure the Directory Favorites and Directory History do NOT have the refresh control.
@@ -1079,6 +1054,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
 
 -(void) refresh
 {
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
     //Certain types of data I want to remove all of them during a refresh
     //[self purgeAllEntitiesOfType:self.entityName];
     switch([self.childNumber intValue])
@@ -1087,7 +1063,18 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
         case 2: [self purgeAllEntitiesOfType:self.entityName];break;
         
         //News will check to see if anything about itself has changed and make those changes individually
-        //case 3: [self purgeAllEntitiesOfType:self.entityName];break;
+        case 3:
+        {
+            
+            if([defaults boolForKey:@"purgeNews"])
+            {
+                NSLog(@"I've been told to purge news...\n");
+                [self purgeAllEntitiesOfType:self.entityName];
+                [defaults setBool:NO forKey:@"purgeNews"];
+                NSLog(@"News has been purged, I will not purgeNews again.");
+            }
+            break;
+        }
         
         //Employee
         //case 4: [self purgeAllEntitiesOfType:self.entityName];break;
@@ -1182,13 +1169,15 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
     
     if(self.childNumber == [NSNumber numberWithInt:2] || self.childNumber == [NSNumber numberWithInt:3])
     {
-        //### DELETE ME
+        //### Good for debugging the News feed to determine what the Title, link, and unique ID are for each article
+        /*
         if(self.childNumber == [NSNumber numberWithInt:3])
         {
             NSLog(@"# Title: %@\n",[self.dataObject title]);
             NSLog(@"# Link : %@\n",[self.dataObject link]);
             NSLog(@"# ID   : %@\n\n",[self.dataObject article_id]);
         }
+         */
         
         //News and Events both have titles to show in their cell
         cell.textLabel.text = [self.dataObject title];
