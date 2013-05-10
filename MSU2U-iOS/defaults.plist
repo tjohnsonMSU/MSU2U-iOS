@@ -22,7 +22,9 @@
 	<string>Pull to Refresh</string>
 	<key>podcastRefreshTime</key>
 	<string>Pull to Refresh</string>
-	<key>purgeNews</key>
+	<key>purgeNews_201</key>
+	<true/>
+	<key>purgePodcast_201</key>
 	<true/>
 </dict>
 </plist>

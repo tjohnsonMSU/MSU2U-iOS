@@ -19,7 +19,7 @@
 
 -(void)viewDidLoad
 {
-    self.jsonURL = @"http://www.matthewfarmer.net/sports/podcastRSStoJSON.php";
+    self.jsonURL = @"http://www.msumustangs.com/podcast.aspx";
     
     self.entityName = @"Podcast";
     self.sortDescriptorKey = @"pubDate";

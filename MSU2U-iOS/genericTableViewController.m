@@ -282,7 +282,7 @@
 -(void)getEvents:(UIManagedDocument*)document
 {
     //NSArray * myData = [self downloadCurrentData:self.jsonURL];
-    NSArray * myData = [self executeRSSFetch:@"http://www.msumustangs.com/calendar.ashx/calendar.rss?"];
+    NSArray * myData = [self executeRSSFetch:self.jsonURL];
     //NSLog(@"There were %d items in my event feed!\n",[myData count]);
     [document.managedObjectContext performBlock:^{
         for(NSDictionary * dataInfo in myData)
@@ -296,7 +296,7 @@
 -(void)getPodcasts:(UIManagedDocument*)document
 {
     //NSArray * myPodcastData = [self downloadCurrentData:self.jsonURL];
-    NSArray * myPodcastData = [self executeRSSFetch:@"http://www.msumustangs.com/podcast.aspx"];
+    NSArray * myPodcastData = [self executeRSSFetch:self.jsonURL];
     
     //NSLog(@"Got my podcast data for %d stories...\n",[myPodcastData count]);
     [document.managedObjectContext performBlock:^{
@@ -1067,12 +1067,13 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
         //News will check to see if anything about itself has changed and make those changes individually
         case 3:
         {
-            if([defaults boolForKey:@"purgeNews"])
+            if([defaults boolForKey:@"purgeNews_201"])
             {
                 NSLog(@"I've been told to purge news...\n");
                 [self purgeAllEntitiesOfType:self.entityName];
-                [defaults setBool:NO forKey:@"purgeNews"];
+                [defaults setBool:NO forKey:@"purgeNews_201"];
                 NSLog(@"News has been purged, I will not purgeNews again.");
+                [defaults synchronize];
             }
             break;
         }
@@ -1084,7 +1085,18 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
         //case 8: [self purgeAllEntitiesOfType:self.entityName];break;
             
         //Podcast
-        //case 9: [self purgeAllEntitiesOfType:self.entityName];break;
+        case 9:
+        {
+            if([defaults boolForKey:@"purgePodcast_201"])
+            {
+                NSLog(@"I've been told to purge podcast...\n");
+                [self purgeAllEntitiesOfType:self.entityName];
+                [defaults setBool:NO forKey:@"purgePodcast_201"];
+                NSLog(@"Podcasts have been purged, I will not purgePodcast again.");
+                [defaults synchronize];
+            }
+            break;
+        }
         
         //Tweet
         case 7: [self purgeAllEntitiesOfType:self.entityName];break;

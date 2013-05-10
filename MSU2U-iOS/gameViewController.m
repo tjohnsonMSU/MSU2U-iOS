@@ -18,7 +18,7 @@
 
 -(void)viewDidLoad
 {
-    self.jsonURL = @"http://www.matthewfarmer.net/sports/sportsRSStoJSON.php";
+    self.jsonURL = @"http://www.msumustangs.com/calendar.ashx/calendar.rss?";
     self.entityName = @"Game";
     self.sortDescriptorKey = @"startdate";
     self.cellIdentifier = @"game";

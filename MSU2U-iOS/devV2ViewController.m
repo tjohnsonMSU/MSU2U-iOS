@@ -73,12 +73,6 @@
                     [self performSegueWithIdentifier:@"toWebView" sender:tableView];
                     break;
                 case 4:
-                    //Kerde Severin
-                    webLink = @"http://www.linkedin.com/profile/view?id=225844737&locale=en_US&trk=tyah2";
-                    name = @"Kerde Severin";
-                    [self performSegueWithIdentifier:@"toWebView" sender:tableView];
-                    break;
-                case 5:
                     //Terrance Smith
                     webLink = @"http://www.linkedin.com/profile/view?id=160262859&authType=name&authToken=DwBk&offset=0&ref=PYMK&trk=prof-sb-pdm-pymk-name";
                     name = @"Terrance Smith";
@@ -93,10 +87,9 @@
         case 1:
             switch (indexPath.row) {
                 case 0:
-                    //matthew steimel
-                    webLink = @"http://www.linkedin.com/profile/view?id=228821234&authType=NAME_SEARCH&authToken=HdK-&locale=en_US&srchid=b0436a7b-2989-4f98-9ab3-76cc4fb8cd94-0&srchindex=1&srchtotal=4&goback=%2Efps_PBCK_Matthew+Steimel_*1_*1_*1_*1_*1_*1_*2_*1_Y_*1_*1_*1_false_1_R_*1_*51_*1_*51_true_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2&pvs=ps&trk=pp_profile_name_link";
-                    name = @"Matthew Steimel";
-                    [self performSegueWithIdentifier:@"toWebView" sender:tableView];
+                    //danya bynoe
+                    webLink = @"";
+                    name = @"Danya Bynoe";
                     break;
                 case 1:
                     //kistel hazel
@@ -105,8 +98,16 @@
                     //[self performSegueWithIdentifier:@"toWebView" sender:tableView];
                     break;
                 case 2:
-                    //danya bynoe
-                    name = @"Danya Bynoe";
+                    //Kerde Severin
+                    webLink = @"http://www.linkedin.com/profile/view?id=225844737&locale=en_US&trk=tyah2";
+                    name = @"Kerde Severin";
+                    [self performSegueWithIdentifier:@"toWebView" sender:tableView];
+                    break;
+                case 3:
+                    //matthew steimel
+                    webLink = @"http://www.linkedin.com/profile/view?id=228821234&authType=NAME_SEARCH&authToken=HdK-&locale=en_US&srchid=b0436a7b-2989-4f98-9ab3-76cc4fb8cd94-0&srchindex=1&srchtotal=4&goback=%2Efps_PBCK_Matthew+Steimel_*1_*1_*1_*1_*1_*1_*2_*1_Y_*1_*1_*1_false_1_R_*1_*51_*1_*51_true_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2&pvs=ps&trk=pp_profile_name_link";
+                    name = @"Matthew Steimel";
+                    [self performSegueWithIdentifier:@"toWebView" sender:tableView];
                     break;
                     
                 default:
