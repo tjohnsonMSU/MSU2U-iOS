@@ -520,6 +520,7 @@
                  //Make Another Request for #SocialStampede
                  NSMutableDictionary * newestParameters = [[NSMutableDictionary alloc]init];
                  [newestParameters setObject:@"socialstampede+OR+midwesternstate+OR+msu2u+OR+ClubMoffett+OR+CSCAtrium+OR+wichitanonline" forKey:@"q"];
+                 [newestParameters setObject:@"75" forKey:@"rpp"];
                  
                  twitterInfoRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:[NSURL URLWithString:@"http://search.twitter.com/search.json"] parameters:newestParameters];
                  [twitterInfoRequest setAccount:twitterAccount];
@@ -553,12 +554,13 @@
                              NSArray *TWData = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:&error];
                              NSDictionary * results = TWData;
                              NSArray *realResults = [results objectForKey:@"results"];
-                             
+                             NSLog(@"I have %d results!\n",[realResults count]);
                              // Filter the preferred data
                              [document.managedObjectContext performBlock:^{
                                  for(NSDictionary * dataInfo in realResults)
                                  {
-                                     [Tweet tweetWithInfo:dataInfo isProfile:FALSE inManagedObjectContext:document.managedObjectContext];
+                                     Tweet * t = [Tweet tweetWithInfo:dataInfo isProfile:FALSE inManagedObjectContext:document.managedObjectContext];
+                                     NSLog(@"I inserted %@: %@...\n",t.screen_name,t.text);
                                  }
                              }];
                          }
@@ -1065,7 +1067,6 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
         //News will check to see if anything about itself has changed and make those changes individually
         case 3:
         {
-            
             if([defaults boolForKey:@"purgeNews"])
             {
                 NSLog(@"I've been told to purge news...\n");
