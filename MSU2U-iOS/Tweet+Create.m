@@ -11,57 +11,36 @@
 @implementation Tweet (Create)
 +(Tweet *)tweetWithInfo:(NSDictionary*)info isProfile:(BOOL)isProfile inManagedObjectContext:(NSManagedObjectContext*)context
 {
+    //NSLog(@"START\n");
     Tweet * tweet = nil;
     
     NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:@"Tweet"];
+    
     //What attribute makes a tweet unique?
-    request.predicate = [NSPredicate predicateWithFormat:@"id_str = %@", [info objectForKey:@"id_str"]];
+    //NSLog(@"Request Predicate\n");
+    request.predicate = [NSPredicate predicateWithFormat:@"id_str = %@",[info objectForKey:@"id_str"]];
+
     NSSortDescriptor * sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"created_at" ascending:YES];
     request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     
     NSError * error = nil;
     NSArray * allTweet = [context executeFetchRequest:request error:&error];
     
+    //NSLog(@"If/else/else\n");
     if(!allTweet || ([allTweet count] > 1))
     {
-        //handle error
+        //NSLog(@"error!\n");
     }
     else if(![allTweet count])
     {
         //Brand new, never before seen Tweet. Add it!
+        //NSLog(@"Brand new...\n");
         tweet = [self createNewTweet:info inContext:context isProfile:isProfile];
     }
     else
     {
-        //Ok, I already have this tweet, but has the screen_name, profile image, or real name changed for any tweet?
+        //NSLog(@"Get old tweet, I've seen this before\n");
         tweet = [allTweet lastObject];
-        /*
-        BOOL deleteMe = false;
-        
-        if(isProfile)
-        {
-            if(![tweet.profile_image_url isEqualToString:[[info objectForKey:@"user"] objectForKey:@"profile_image_url"]] || ![tweet.screen_name isEqualToString:[[info objectForKey:@"user"]objectForKey:@"screen_name"]] || ![tweet.name isEqualToString:[[info objectForKey:@"user"] objectForKey:@"name"]])
-                deleteMe = true;
-        }
-        else
-        {
-            if(![tweet.profile_image_url isEqualToString:[info objectForKey:@"profile_image_url"]] || ![tweet.screen_name isEqualToString:[info objectForKey:@"from_user"]] || ![tweet.name isEqualToString:[info objectForKey:@"from_user_name"]])
-                deleteMe = true;
-        }
-        
-        if(deleteMe)
-        {
-            NSLog(@"Something changed for %@\n",tweet.screen_name);
-            //Well, something changed so remove this tweet and add the new copy in
-            for (NSManagedObject * t in allTweet)
-            {
-                [context deleteObject:t];
-            }
-            
-            //create a new tweet
-            tweet = [self createNewTweet:info inContext:context isProfile:isProfile];
-        }
-         */
     }
     
     return tweet;
@@ -79,33 +58,30 @@
     [dateFormatter setDateStyle:NSDateFormatterLongStyle];
     [dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
     
-    tweet.id_str = [info objectForKey:@"id_str"];
+    //tweet.id_str = [info objectForKey:@"id_str"];
     if(isProfile)
     {
-        //Date formatter
-        [dateFormatter setDateFormat: @"EEE MMM dd HH:mm:ss Z yyyy"];
-        
+        //NSLog(@"isProfile = TRUE");
         //Other stuff
+        //NSLog(@"Setting id_str...\n");
+        tweet.id_str = [info objectForKey:@"id_str"];
+        //NSLog(@"SEtting max_id...\n");
         tweet.max_id = [info objectForKey:@"id_str"];
-        tweet.screen_name = [[info objectForKey:@"user"]objectForKey:@"screen_name"];
-        tweet.profile_image_url = [[info objectForKey:@"user"] objectForKey:@"profile_image_url"];
-        tweet.profile_background_image_url = [[info objectForKey:@"user"] objectForKey:@"profile_background_image_url"];
-        tweet.name = [[info objectForKey:@"user"] objectForKey:@"name"];
     }
     else
     {
+        //NSLog(@"isProfile = FALSE");
         //### hashtag
-        
-        //Date Formatter
-        [dateFormatter setDateFormat: @"EEE, dd MMM yyyy HH:mm:ss Z"];
-        
-        //Other Stuff
-        tweet.screen_name = [info objectForKey:@"from_user"];
-        tweet.profile_image_url = [info objectForKey:@"profile_image_url"];
-        tweet.profile_background_image_url = [info objectForKey:@"profile_background_image_url"];
-        tweet.name = [info objectForKey:@"from_user_name"];
-        tweet.max_id = [info objectForKey:@"id_str"];
+        tweet.id_str = [NSString stringWithFormat:@"%@",[info objectForKey:@"id_str"]];
+        tweet.max_id = tweet.id_str;
     }
+    
+    [dateFormatter setDateFormat: @"EEE MMM dd HH:mm:ss Z yyyy"];
+    tweet.screen_name = [[info objectForKey:@"user"]objectForKey:@"screen_name"];
+    tweet.profile_image_url = [[info objectForKey:@"user"] objectForKey:@"profile_image_url"];
+    tweet.profile_background_image_url = [[info objectForKey:@"user"] objectForKey:@"profile_background_image_url"];
+    tweet.name = [[info objectForKey:@"user"] objectForKey:@"name"];
+    
     NSDate *date = [dateFormatter dateFromString:[info objectForKey:@"created_at"]];
     tweet.created_at = date;
     

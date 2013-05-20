@@ -52,7 +52,7 @@
 
 -(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
-    //NSLog(@"ended element: %@", elementName);
+    NSLog(@"ended element: %@", elementName);
 	if ([elementName isEqualToString:@"item"]) {
 		ignoreRSStitleAndLink = YES;
         //Podcasts
@@ -128,7 +128,7 @@
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
-    //NSLog(@"found this element: %@", elementName);
+    NSLog(@"found this element: %@", elementName);
 	currentElement = [elementName copy];
     
 	if ([elementName isEqualToString:@"item"]) {
@@ -176,7 +176,7 @@
 
 -(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
-    //NSLog(@"found characters: %@", string);
+    NSLog(@"found characters: %@", string);
     string = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
 	// save the characters for the current item...
@@ -282,8 +282,9 @@
 -(void)getEvents:(UIManagedDocument*)document
 {
     //NSArray * myData = [self downloadCurrentData:self.jsonURL];
+    NSLog(@"I am about to visit %@\n",self.jsonURL);
     NSArray * myData = [self executeRSSFetch:self.jsonURL];
-    //NSLog(@"There were %d items in my event feed!\n",[myData count]);
+    NSLog(@"There were %d items in my event feed!\n",[myData count]);
     [document.managedObjectContext performBlock:^{
         for(NSDictionary * dataInfo in myData)
         {
@@ -425,10 +426,10 @@
                  // Creating a request to get the info about a user on Twitter
                  [parameters setObject:@"midwestern" forKey:@"slug"];
                  [parameters setObject:@"midwesternstate" forKey:@"owner_screen_name"];
-                 [parameters setObject:@"100" forKey:@"per_page"];
+                 [parameters setObject:@"100" forKey:@"count"];
                  [parameters setObject:@"true" forKey:@"include_entities"];
                  
-                 SLRequest *twitterInfoRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:[NSURL URLWithString:@"https://api.twitter.com/1/lists/statuses.json"] parameters:parameters];
+                 SLRequest *twitterInfoRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:[NSURL URLWithString:@"https://api.twitter.com/1.1/lists/statuses.json"] parameters:parameters];
                  [twitterInfoRequest setAccount:twitterAccount];
                  
                  // Making the request
@@ -460,6 +461,7 @@
                              //THIS IS WHERE I ACTUALLY HAVE ALL OF THE TWEETS
                              NSError *error = nil;
                              NSArray *TWData = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:&error];
+                             //NSLog(@"%@\n",TWData);
                              
                              [document.managedObjectContext performBlock:^{
                                  for(NSDictionary * dataInfo in TWData)
@@ -467,6 +469,7 @@
                                      [Tweet tweetWithInfo:dataInfo isProfile:TRUE inManagedObjectContext:document.managedObjectContext];
                                  }
                              }];
+                              
                          }
                      });
                  }];
@@ -507,6 +510,7 @@
                          {
                              NSError *error = nil;
                              NSArray *TWData = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:&error];
+                             //NSLog(@"%@\n",TWData);
                              
                              [document.managedObjectContext performBlock:^{
                                  for(NSDictionary * dataInfo in TWData)
@@ -514,15 +518,17 @@
                                      [Tweet tweetWithInfo:dataInfo isProfile:TRUE inManagedObjectContext:document.managedObjectContext];
                                  }
                              }];
+                              
                          }
                      });
                  }];
                  //Make Another Request for #SocialStampede
                  NSMutableDictionary * newestParameters = [[NSMutableDictionary alloc]init];
                  [newestParameters setObject:@"socialstampede+OR+midwesternstate+OR+msu2u+OR+ClubMoffett+OR+CSCAtrium+OR+wichitanonline" forKey:@"q"];
-                 [newestParameters setObject:@"75" forKey:@"rpp"];
+                 [newestParameters setObject:@"100" forKey:@"count"];
                  
-                 twitterInfoRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:[NSURL URLWithString:@"http://search.twitter.com/search.json"] parameters:newestParameters];
+                 //twitterInfoRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:[NSURL URLWithString:@"http://search.twitter.com/search.json"] parameters:newestParameters];
+                 twitterInfoRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:[NSURL URLWithString:@"https://api.twitter.com/1.1/search/tweets.json"] parameters:newestParameters];
                  [twitterInfoRequest setAccount:twitterAccount];
                  
                  [twitterInfoRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
@@ -536,6 +542,10 @@
                                  [alert show];
                              }];
                              return;
+                         }
+                         else
+                         {
+                             NSLog(@"Status Code: %d\n",[urlResponse statusCode]);
                          }
                          // Check if there was an error
                          if (error)
@@ -552,17 +562,19 @@
                          {
                              NSError *error = nil;
                              NSArray *TWData = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:&error];
-                             NSDictionary * results = TWData;
-                             NSArray *realResults = [results objectForKey:@"results"];
-                             NSLog(@"I have %d results!\n",[realResults count]);
-                             // Filter the preferred data
+                             
+                             NSDictionary * test = TWData;
+                             NSArray * realResults = [test objectForKey:@"statuses"];
+                             //NSLog(@"%@\n",realResults);
+                             //NSLog(@"%@\n",TWData);
+                             
                              [document.managedObjectContext performBlock:^{
                                  for(NSDictionary * dataInfo in realResults)
                                  {
-                                     Tweet * t = [Tweet tweetWithInfo:dataInfo isProfile:FALSE inManagedObjectContext:document.managedObjectContext];
-                                     NSLog(@"I inserted %@: %@...\n",t.screen_name,t.text);
+                                     [Tweet tweetWithInfo:dataInfo isProfile:TRUE inManagedObjectContext:document.managedObjectContext];
                                  }
                              }];
+                              
                          }
                      });
                  }];
