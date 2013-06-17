@@ -101,7 +101,7 @@
         "addressZIPCode": "76308",
         "info": "A new university student center was constructed in 1951 and in 1961 it was named Clark Student Center in honor of C. H. Clark, one of the city’s outstanding educational leaders. The center originally included a game room, a formal lounge and a barbershop. The Clark Student Center now encompasses a total of 53,050 square feet. Today the Clark Student Center houses Aramark Dining Services, associate vice president for student affairs, Barnes and Nobel Bookstore, Clark Student Center director, Clark Student Center information center, Corner Perk (snackbar), counseling center, dean of students, post office, recreation room, student activities, student development, student government, Sundance Court (food court), University Programming Board, and Wai-Kun (yearbook).",
         "image": "http://www.mwsu.edu/maps/google/photos/csc.jpg",
-        "tag": "dining services, bookstore, clark student center, career center, dean of students, post office, recreation room, student activities, student development, student government, Sundance Court, food, meals, University Programming Board, Wai-Kun, yearbook"
+        "tag": "dining services, bookstore, clark student center, career center, dean of students, post office, recreation room, student activities, student development, student government, Sundance Court, food, meals, University Programming Board, Wai-Kun, yearbook, java city, restaurant"
     },
     {
         "name": "Ferguson Hall",
@@ -116,6 +116,32 @@
         "image": "http://www.mwsu.edu/maps/google/photos/ferguson.jpg",
         "tag": "education, teacher certification"
     },
+ {
+ "name": "Java City",
+ "latitude": 33.874896,
+ "longitude": -98.52075,
+ "addressCountryCode": "US",
+ "addressStreetCode": "3410 Taft Blvd",
+ "addressCityCode": "Wichita Falls",
+ "addressStateCode": "Texas",
+ "addressZIPCode": "76308",
+ "info": "N/A",
+ "image": "",
+ "tag": "meals, food, restaurant, coffee, snacks"
+ },
+ {
+ "name": "Starbucks",
+ "latitude": 33.876977,
+ "longitude": -98.52096,
+ "addressCountryCode": "US",
+ "addressStreetCode": "3410 Taft Blvd",
+ "addressCityCode": "Wichita Falls",
+ "addressStateCode": "Texas",
+ "addressZIPCode": "76308",
+ "info": "N/A",
+ "image": "",
+ "tag": "meals, food, restaurant, coffee, snacks"
+ },
     {
         "name": "Fain Hall",
         "latitude": 33.875563,
@@ -192,7 +218,7 @@
         "addressZIPCode": "76308",
         "info": "Fall 2006 saw the opening of the new 88,000 sq. ft. Dillard College of Business Administration building, made possible in part by donations from the A.R. Dillard family, Priddy Foundation, Bryant Edwards Foundation, and J. S. Bridwell Foundation.. The $18 million building incorporates $1.1 million in state-of-the-art technology. Besides classrooms and faculty offices, the two-story complex boasts a 140-seat auditorium, a community seminar room, auditorium dining room, faculty library, computer labs, and its very own real-time stock ticker in the Cyber Café.",
         "image": "http://www.mwsu.edu/maps/google/images/coba.jpg",
-        "tag": "business, starbucks, computer lab, stock ticker, cyber cafe"
+        "tag": "business, starbucks, computer lab, stock ticker, cyber cafe, food, meals, restaurant"
     },
     {
         "name": "Martin Hall",
@@ -242,9 +268,9 @@
         "addressCityCode": "Wichita Falls",
         "addressStateCode": "Texas",
         "addressZIPCode": "76308",
-        "info": "[ NONE ]",
-        "image": "",
-        "tag": ""
+ "info": "Construction on Bridwell Hall was complete in September 1998. The newest MSU facility is a sleek three-story building for the health sciences division complete with a 147-seat lecture hall. The building was named after J.S. Bridwell, a well-known Wichita Falls rancher and oilman, who was also instrumental in establishing Sheppard Field, later known as Sheppard Air Force Base. Bridwell Hall houses the College of Health Sciences & Human Services, dental hygiene, nursing, radiologic sciences and respiratory care.",
+        "image": "http://www.mwsu.edu/maps/google/photos/bridwellhall.jpg",
+        "tag": "college of health sciences & and human services, dental hygiene, nursing, radiologic sciences, respiratory care, xray, x-ray, medical"
     },
     {
         "name": "McGaha Hall",

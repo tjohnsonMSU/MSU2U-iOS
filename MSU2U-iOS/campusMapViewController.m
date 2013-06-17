@@ -64,7 +64,7 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
                                          [dataInfo objectForKey:@"addressCityCode"],
                                          [dataInfo objectForKey:@"addressZIPCode"],
                                          nil]];
-        [self.tag addObject:[dataInfo objectForKey:@"tag"]];
+        [self.tag addObject:[[dataInfo objectForKey:@"tag"] stringByAppendingString:[NSString stringWithFormat:@", %@",[dataInfo objectForKey:@"name"]]]];
     }
     //Place the organized JSON data into a dictionary format that can be more easily worked with later
     self.tagToBuildingNameLookup = [[NSDictionary alloc]initWithObjects:self.buildingName forKeys:self.tag];
