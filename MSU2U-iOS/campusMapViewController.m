@@ -37,6 +37,9 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
 {
     [super viewDidLoad];
     
+    //Keys to search on
+    self.keysToSearchOn = [[NSArray alloc] initWithObjects:@"buildingName",@"tag", nil];
+    
     //Set map type
     self.campusMap.mapType = MKMapTypeHybrid;
     
@@ -44,6 +47,7 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     self.buildingName = [[NSMutableArray alloc]init];
     self.buildingCoordinate = [[NSMutableArray alloc]init];
     self.buildingAddress = [[NSMutableArray alloc]init];
+    self.tag = [[NSMutableArray alloc]init];
     
     //Download the JSON data
     buildings = [self executeDataFetch:@"buildings.json"];
@@ -60,10 +64,12 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
                                          [dataInfo objectForKey:@"addressCityCode"],
                                          [dataInfo objectForKey:@"addressZIPCode"],
                                          nil]];
+        [self.tag addObject:[dataInfo objectForKey:@"tag"]];
     }
     //Place the organized JSON data into a dictionary format that can be more easily worked with later
-    self.coordinateLookup = [[NSMutableDictionary alloc]initWithObjects:self.buildingCoordinate forKeys:self.buildingName];
-    self.addressLookup = [[NSMutableDictionary alloc]initWithObjects:self.buildingAddress forKeys:self.buildingName];
+    self.tagToBuildingNameLookup = [[NSDictionary alloc]initWithObjects:self.buildingName forKeys:self.tag];
+    self.coordinateLookup = [[NSDictionary alloc]initWithObjects:self.buildingCoordinate forKeys:self.buildingName];
+    self.addressLookup = [[NSDictionary alloc]initWithObjects:self.buildingAddress forKeys:self.buildingName];
 }
 
 - (MKAnnotationView*)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
@@ -333,11 +339,36 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
-    NSPredicate *resultPredicate = [NSPredicate
-                                    predicateWithFormat:@"SELF contains[cd] %@",
-                                    searchText];
+    //ORIGINAL MAP SEARCH CODE
+    searchResults = [[NSMutableArray alloc]init];
     
-    searchResults = [self.buildingName filteredArrayUsingPredicate:resultPredicate];
+    
+    NSArray *words = [searchText componentsSeparatedByString:@" "];
+    NSMutableArray *predicateList = [NSMutableArray array];
+    
+    for (NSString *word in words) {
+        if ([word length] > 0)
+        {
+            NSString * buildingMyPredicate = [[NSString alloc]init];
+
+            NSString *escaped = [word stringByReplacingOccurrencesOfString:@"\'" withString:@"\\\'"];
+
+            buildingMyPredicate = [buildingMyPredicate stringByAppendingString:[NSString stringWithFormat:@"SELF CONTAINS[c] '%@'",escaped]];
+
+            NSPredicate *pred = [NSPredicate predicateWithFormat:buildingMyPredicate];
+            [predicateList addObject:pred];
+        }
+    }
+    NSPredicate *resultPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:predicateList];
+    
+    tagResults = [self.tag filteredArrayUsingPredicate:resultPredicate];
+    
+    //OK, I have all the appropriate matching tags. Now, I just need the building name associated with each tag!
+    for(int i=0; i<[tagResults count]; i++)
+    {
+        NSLog(@"%d: %@\n",i,[tagResults objectAtIndex:i]);
+        [searchResults addObject:[self.tagToBuildingNameLookup objectForKey:[tagResults objectAtIndex:i]]];
+    }
 }
 
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller
@@ -350,6 +381,7 @@ shouldReloadTableForSearchString:(NSString *)searchString
     return YES;
 }
 
+//What happens when a search result is selected?
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CLLocationCoordinate2D coordinate;

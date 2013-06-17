@@ -15,7 +15,8 @@
 
 @interface campusMapViewController : UIViewController<MKMapViewDelegate, UIActionSheetDelegate>{
     NSArray *buildings;
-    NSArray *searchResults;
+    NSMutableArray *searchResults;
+    NSArray *tagResults;
     MKMapView * _campusMap;
     UIColor * _parkingLotColor;
     UIColor * _polylineColor;
@@ -31,6 +32,12 @@
 
 @property (strong,nonatomic) NSMutableArray * buildingAddress;
 
+@property (strong,nonatomic) NSMutableArray * tag;
+
 @property (strong,nonatomic) NSDictionary * addressLookup;
+
+@property (strong,nonatomic) NSDictionary * tagToBuildingNameLookup;
+
+@property (strong,nonatomic) NSArray * keysToSearchOn;
 
 @end
