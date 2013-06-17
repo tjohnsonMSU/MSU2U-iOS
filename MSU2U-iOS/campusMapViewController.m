@@ -45,9 +45,11 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     
     //Allocate arrays
     self.buildingName = [[NSMutableArray alloc]init];
+    self.buildingImage = [[NSMutableArray alloc]init];
     self.buildingCoordinate = [[NSMutableArray alloc]init];
     self.buildingAddress = [[NSMutableArray alloc]init];
     self.tag = [[NSMutableArray alloc]init];
+    self.buildingInfo = [[NSMutableArray alloc]init];
     
     //Download the JSON data
     buildings = [self executeDataFetch:@"buildings.json"];
@@ -64,12 +66,16 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
                                          [dataInfo objectForKey:@"addressCityCode"],
                                          [dataInfo objectForKey:@"addressZIPCode"],
                                          nil]];
+        [self.buildingInfo addObject:[dataInfo objectForKey:@"info"]];
+        [self.buildingImage addObject:[dataInfo objectForKey:@"image"]];
         [self.tag addObject:[[dataInfo objectForKey:@"tag"] stringByAppendingString:[NSString stringWithFormat:@", %@",[dataInfo objectForKey:@"name"]]]];
     }
     //Place the organized JSON data into a dictionary format that can be more easily worked with later
     self.tagToBuildingNameLookup = [[NSDictionary alloc]initWithObjects:self.buildingName forKeys:self.tag];
     self.coordinateLookup = [[NSDictionary alloc]initWithObjects:self.buildingCoordinate forKeys:self.buildingName];
     self.addressLookup = [[NSDictionary alloc]initWithObjects:self.buildingAddress forKeys:self.buildingName];
+    self.buildingNameToInfoLookup = [[NSDictionary alloc]initWithObjects:self.buildingInfo forKeys:self.buildingName];
+    self.buildingNameToImageLookup = [[NSDictionary alloc]initWithObjects:self.buildingImage forKeys:self.buildingName];
 }
 
 - (MKAnnotationView*)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
@@ -130,7 +136,7 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
                                                        delegate:self
                                               cancelButtonTitle:@"Cancel"
                                          destructiveButtonTitle:nil
-                                              otherButtonTitles:@"Show Directions",@"Remove Pin", nil];
+                                              otherButtonTitles:@"Show Directions",@"More Info",@"Remove Pin", nil];
     
     // 3
     sheet.cancelButtonIndex = sheet.numberOfButtons - 1;
@@ -192,18 +198,30 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
             [MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem] 
                            launchOptions:launchOptions];
             
-        } else if (buttonIndex == 1) {
+        } else if (buttonIndex == 2) {
             // REMOVE PIN HERE
             id<MKAnnotation> ann = [[_campusMap selectedAnnotations] objectAtIndex:0];
             NSLog(@"ann.title = %@", ann.title);
             [_campusMap removeAnnotation:ann];
-        } else if (buttonIndex == 2) {
+        } else if (buttonIndex == 1) {
             // SHOW MORE INFO CODE HERE
+            //I want to segue to the building info screen
+            buildingInfoPressed = YES;
+            [self performSegueWithIdentifier:@"toBuildingInfo" sender:self];
         }
     }
     
     // 5
     _selectedLocation = nil;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if(buildingInfoPressed)
+    {
+        [segue.destinationViewController sendBuildingName:[_selectedLocation title] andInfo:[self.buildingNameToInfoLookup objectForKey:[_selectedLocation title]] andImage:[self.buildingNameToImageLookup objectForKey:[_selectedLocation title]]];
+        buildingInfoPressed = NO;
+    }
 }
 
 

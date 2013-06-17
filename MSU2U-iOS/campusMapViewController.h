@@ -21,10 +21,15 @@
     UIColor * _parkingLotColor;
     UIColor * _polylineColor;
     MSULocation * _selectedLocation;
+    bool buildingInfoPressed;
 }
 @property (strong,nonatomic) NSDictionary * coordinateLookup;
 
 @property (strong,nonatomic) NSMutableArray * buildingName;
+
+@property (strong,nonatomic) NSMutableArray * buildingImage;
+
+@property (strong,nonatomic) NSMutableArray * buildingInfo;
 
 @property (strong,nonatomic) NSMutableArray * buildingCoordinate;
 
@@ -37,6 +42,8 @@
 @property (strong,nonatomic) NSDictionary * addressLookup;
 
 @property (strong,nonatomic) NSDictionary * tagToBuildingNameLookup;
+@property (strong,nonatomic) NSDictionary * buildingNameToInfoLookup;
+@property (strong,nonatomic) NSDictionary * buildingNameToImageLookup;
 
 @property (strong,nonatomic) NSArray * keysToSearchOn;
 
