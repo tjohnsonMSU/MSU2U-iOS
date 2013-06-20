@@ -10,7 +10,7 @@
         "addressZIPCode": "76308",
         "info": "Bolin Hall, then called the Science Building, was completed in 1966.\nToday Bolin Hall houses biology, chemistry, College of Science and Mathematics, computer science, environmental science, geology, mathematics, physics, and SACS accreditation.",
         "image": "http://www.mwsu.edu/maps/google/photos/bolin.jpg",
-        "tag": "science building, biology, chemistry, mathematics, computer science, environmental science, gelogoy, mathematics, physics, SACS accreditation"
+        "tag": "science building, biology, chemistry, mathematics, computer science, environmental science, geology, mathematics, physics, SACS accreditation, labs"
     },
     {
         "name": "Moffett Library",
@@ -101,7 +101,7 @@
         "addressZIPCode": "76308",
         "info": "A new university student center was constructed in 1951 and in 1961 it was named Clark Student Center in honor of C. H. Clark, one of the city’s outstanding educational leaders. The center originally included a game room, a formal lounge and a barbershop. The Clark Student Center now encompasses a total of 53,050 square feet. Today the Clark Student Center houses Aramark Dining Services, associate vice president for student affairs, Barnes and Nobel Bookstore, Clark Student Center director, Clark Student Center information center, Corner Perk (snackbar), counseling center, dean of students, post office, recreation room, student activities, student development, student government, Sundance Court (food court), University Programming Board, and Wai-Kun (yearbook).",
         "image": "http://www.mwsu.edu/maps/google/photos/csc.jpg",
-        "tag": "dining services, bookstore, clark student center, career center, dean of students, post office, recreation room, student activities, student development, student government, Sundance Court, food, meals, University Programming Board, Wai-Kun, yearbook, java city, restaurant"
+        "tag": "dining services, bookstore, clark student center, career center, dean of students, post office, recreation room, student activities, student development, student government, Sundance Court, food, meals, University Programming Board, Wai-Kun, yearbooks, java city, restaurant, computer labs, kiowa, csc atrium, shawnee theater"
     },
     {
         "name": "Ferguson Hall",
@@ -114,7 +114,7 @@
         "addressZIPCode": "76308",
         "info": "The Ferguson Building was completed in 1947 through funds given by the W. P. Fergusons in memory of their son, Billy, for use as a School of Animal Husbandry. Today, Ferguson Hall houses the Gordon T. and Ellen West College of Education, Education and Teacher Certification.",
         "image": "http://www.mwsu.edu/maps/google/photos/ferguson.jpg",
-        "tag": "education, teacher certification"
+        "tag": "education, teacher certifications"
     },
  {
  "name": "Java City",
@@ -141,6 +141,19 @@
  "info": "N/A",
  "image": "",
  "tag": "meals, food, restaurant, coffee, snacks"
+ },
+ {
+ "name": "Office of Housing and Residence Life",
+ "latitude": 33.873963,
+ "longitude": -98.521782,
+ "addressCountryCode": "US",
+ "addressStreetCode": "3410 Taft Blvd",
+ "addressCityCode": "Wichita Falls",
+ "addressStateCode": "Texas",
+ "addressZIPCode": "76308",
+ "info": "N/A",
+ "image": "",
+ "tag": "residence life, apartments, rent, dorms, room, house"
  },
     {
         "name": "Fain Hall",
@@ -179,8 +192,21 @@
         "addressZIPCode": "76308",
         "info": "Hardin South, which was originally the gymnasium in Hardin Administration Building, was reconstructed in 1969 into offices. Today, Hardin South houses academic services, admissions, career management center, financial aid, international student services, military recruitment, registrar, testing services, upward bound, and veteran's affairs.",
         "image": "http://www.mwsu.edu/maps/google/photos/hardinsouth.jpg",
-        "tag": "academic services, admissions, financial aid, international student services, registrar, testing services, upward bound, veteran's affairs, graduate school"
+        "tag": "academic services, admissions, financial aid, international student services, registrar, testing services, upward bound, veteran's affairs, graduate school, register, enroll, student loans, business office, testing center"
     },
+ {
+ "name": "Business Office",
+ "latitude": 33.875753,
+ "longitude": -98.519694,
+ "addressCountryCode": "US",
+ "addressStreetCode": "3410 Taft Blvd",
+ "addressCityCode": "Wichita Falls",
+ "addressStateCode": "Texas",
+ "addressZIPCode": "76308",
+ "info": "The business office is responsible for billing and collecting tuition, fees, campus housing, and other university-related charges. The office also invoices third-party agencies, audits MSU student accounts, and processes student refunds. Our office is also responsible for processing deposits for university departments.",
+ "image": "http://www.mwsu.edu/maps/google/photos/hardinsouth.jpg",
+ "tag": "pay tuition, holds, fines, ticket, fee, money, payment"
+ },
     {
         "name": "Hardin Administration",
         "latitude": 33.876356,
@@ -218,7 +244,7 @@
         "addressZIPCode": "76308",
         "info": "Fall 2006 saw the opening of the new 88,000 sq. ft. Dillard College of Business Administration building, made possible in part by donations from the A.R. Dillard family, Priddy Foundation, Bryant Edwards Foundation, and J. S. Bridwell Foundation.. The $18 million building incorporates $1.1 million in state-of-the-art technology. Besides classrooms and faculty offices, the two-story complex boasts a 140-seat auditorium, a community seminar room, auditorium dining room, faculty library, computer labs, and its very own real-time stock ticker in the Cyber Café.",
         "image": "http://www.mwsu.edu/maps/google/images/coba.jpg",
-        "tag": "business, starbucks, computer lab, stock ticker, cyber cafe, food, meals, restaurant"
+        "tag": "business, computer labs, stock ticker, cyber cafe, food, meals, restaurant"
     },
     {
         "name": "Martin Hall",
@@ -231,7 +257,7 @@
         "addressZIPCode": "76308",
         "info": "Martin Hall was the first library at MSU, which was then called Martin Library. It was completed in 1946 and was expanded in 1948. It housed the university library until Moffett Library was completed in 1964. Today, Martin Hall houses criminal justice, health and public administration, and social work.",
         "image": "http://www.mwsu.edu/maps/google/photos/martinhall.jpg",
-        "tag": "criminal justice, health administration, public administration, social work"
+        "tag": "criminal justice, health administration, public administration, social work, computer lab"
     },
     {
         "name": "University Press",
@@ -296,7 +322,7 @@
         "addressZIPCode": "76308",
         "info": "Located in the Hampstead House on the North end of Campus. To reach the MSU Police Department please call 397-4239.",
         "image": "http://www.mwsu.edu/maps/google/photos/police.jpg",
-        "tag": "police, permit, security, fine, ticket, officer"
+        "tag": "police, permit, security, fine, ticket, officer, chief, emergency, parking"
     },
     {
         "name": "Counseling Center",
@@ -437,7 +463,7 @@
         "addressCityCode": "Wichita Falls",
         "addressStateCode": "Texas",
         "addressZIPCode": "76308",
-        "info": "Re-opened in the Fall of 2004 after a complete renovation, Killingsworth Hall is the largest residence hall on campus.  Killingsworth is a six-story, 301 bed exclusively female hall located adjacent to the Clark Student Center.\n\nFeatures of this hall include television and study lounges on every floor, two full sized kitchens, multiple laundry facilities, fitness room, chapel and several group study rooms accompanied by multiple independent study carrels.\n\nResident rooms will include nice furniture, carpet and amenities such as Micro Fridge units, vanity with sink, cable and phone hookups for each resident (including voice mail) and ethernet services.\n\nKillingsworth Hall also features private bathrooms as opposed to traditional community washrooms for added privacy and comfort.  The Office of Housing and Residence Life employs one staff member for every 25 residents in Killingsworth Hall to assure a safe, comfortable and involving living environment.\n\nThe service desk located in the hall provides 24-hour access for checking-out games, equipment, cleaning supplies, providing maintenance request forms, and other services which the resident student may require.\n\nFree copies of USA Today, The Dallas Morning News, and The Wichita Falls Times-Record News are available in the Hall lobby each weekday morning.",
+        "info": "Re-opened in the Fall of 2004 after a complete renovation, Killingsworth Hall is the largest residence hall on campus. Killingsworth is a six-story, 301 bed exclusively female hall located adjacent to the Clark Student Center.\n\nFeatures of this hall include television and study lounges on every floor, two full sized kitchens, multiple laundry facilities, fitness room, chapel and several group study rooms accompanied by multiple independent study carrels.\n\nResident rooms will include nice furniture, carpet and amenities such as Micro Fridge units, vanity with sink, cable and phone hookups for each resident (including voice mail) and ethernet services.\n\nKillingsworth Hall also features private bathrooms as opposed to traditional community washrooms for added privacy and comfort. The Office of Housing and Residence Life employs one staff member for every 25 residents in Killingsworth Hall to assure a safe, comfortable and involving living environment.\n\nThe service desk located in the hall provides 24-hour access for checking-out games, equipment, cleaning supplies, providing maintenance request forms, and other services which the resident student may require.\n\nFree copies of USA Today, The Dallas Morning News, and The Wichita Falls Times-Record News are available in the Hall lobby each weekday morning.",
         "image": "http://www.mwsu.edu/maps/google/photos/khall.jpg",
         "tag": "residential, dormitory, women, housing, female"
     },
@@ -595,10 +621,10 @@
         "addressZIPCode": "76308",
         "info": "The Vinson Health Center was originally the Vinson Infirmary named for Jerry Vinson, who contributed toward its rehabilitation. The Vinson Health Center is the student health center for Midwestern State University. Ambulatory care services are provided for the exclusive benefit of MSU students. Medical services are designed to meet the needs of students with acute illnesses and/or injuries. The Health Center utilizes an emphasis on preventative medicine to enable students to focus on the university curriculum and campus life.\n\nAdditional services to promote wellness are provided to ensure each student maintains a state of optimal health. The Health Center serves as a resource for developmental programming in areas of health promotion, health maintenance, and health education.",
         "image": "http://healthcenter.mwsu.edu/images/Vinson_group.jpg",
-        "tag": "ambulatory care, medical services, illness, injury, sick, medicine, health"
+        "tag": "ambulatory care, medical services, illness, injury, injuries, sick, medicine, health"
     },
     {
-        "name": "Bruce & Graciela Redwine Student Wellness Center",
+        "name": "Student Wellness Center",
         "latitude": 33.869992,
         "longitude": -98.523706,
         "addressCountryCode": "US",
@@ -608,7 +634,7 @@
         "addressZIPCode": "76308",
         "info": "Welcome to the Midwestern State University Student Wellness Center. Your 51,000 square foot facility was built in the summer of 2009, and is completed with the best equipment available on the market (CYBEX) and (TRUE). We have over 75 pieces of free weights and machines and 50 different pieces of cardiovascular equipment each having an entertainment monitor (television) for student, faculty and staff use. In addition, there is an indoor track, state-of-the-art group fitness rooms, an outdoor aquatics area, and fully equipped gymnasium. For more information call 940-397-4838.",
         "image": "http://www.mwsu.edu/maps/google/images/new-wellness-center01.jpg",
-        "tag": "fitness, gym, weightlifting, workout, cardio, spin, treadmill, swimming pool, basketball, gymnasium, sandpit volleyball, group fitness rooms, zumba, walking track"
+        "tag": "fitness, gym, weightlifting, workout, exercise, cardio, spin, treadmill, swimming pool, basketball, gymnasium, sandpit volleyball, group fitness rooms, zumba, walking track, Bruce & Graciela Redwine"
     },
     {
         "name": "Sikes House",
@@ -673,7 +699,7 @@
         "addressZIPCode": "76308",
         "info": "The Outdoor Recreation Center is a 125' X 70' metal building that allows a wide array of uses. The large classroom doubles as a meeting and activities room with a capacity for approximately 200 people. Windows and doors on the west side of the building offer a view of Sikes Lake from inside the facility.",
         "image": "http://www.mwsu.edu/maps/google/photos/outdoorrec.jpg",
-        "tag": "meeting, activities room, social gatherings"
+        "tag": "meetings, activities room, social gatherings"
     },
     {
         "name": "Sikes Cottage",
@@ -712,7 +738,7 @@
         "addressZIPCode": "76308",
         "info": "Located on the South Campus at MSU. The mission of the Office of Alumni Relations is to identify, cultivate and strengthen relationships among former students, graduates and friends while promoting and enhancing the university's mission and commitment to academic excellence, productive scholarship, and personal growth.",
         "image": "http://www.mwsu.edu/maps/google/photos/alumni.jpg",
-        "tag": "alumni, alumnus, scholarship, graduates, Office of Alumni Relations"
+        "tag": "alumni, alumnus, scholarships, graduates, Office of Alumni Relations"
     },
     {
         "name": "Daniel Bldg - Physical Plant",
@@ -738,7 +764,7 @@
         "addressZIPCode": "76308",
         "info": "N/A",
         "image": "",
-        "tag": "mail, package, mailbox, postal service, usps"
+        "tag": "mail, packages, mailboxes, postal services, usps"
     },
     {
         "name": "Outdoor Swimming Pool",
