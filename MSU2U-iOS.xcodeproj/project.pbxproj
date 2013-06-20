@@ -63,7 +63,6 @@
 		1D24236C16E3EEC2003E731D /* Unknown.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D24236B16E3EEC1003E731D /* Unknown.jpg */; };
 		1D24237016E3FEBD003E731D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D24236F16E3FEBD003E731D /* MBProgressHUD.m */; };
 		1D2656F71639E5D500FBF6E1 /* directoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2656F61639E5D500FBF6E1 /* directoryViewController.m */; };
-		1D2B5DA816BA40D200F1F3DB /* buildings.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D2B5DA716BA40D200F1F3DB /* buildings.json */; };
 		1D2E4D77171C4B38008CBD75 /* bg-real.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E4D76171C4B38008CBD75 /* bg-real.png */; };
 		1D2E4D79171C4BCD008CBD75 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E4D78171C4BCD008CBD75 /* Default-568h@2x.png */; };
 		1D2FF9A8172450E300871B7C /* tabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2FF9A7172450E300871B7C /* tabBarViewController.m */; };
@@ -140,6 +139,7 @@
 		1D62DD9C1657594300A60534 /* News+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D62DD9B1657594300A60534 /* News+Create.m */; };
 		1D7253EF163A30D10057B33F /* 01-refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D7253EE163A30D10057B33F /* 01-refresh.png */; };
 		1D7253F1163A31660057B33F /* 02-redo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D7253F0163A31660057B33F /* 02-redo.png */; };
+		1D76473E176E976800F697AB /* buildings.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D76473D176E976800F697AB /* buildings.json */; };
 		1D82B34D167867B0006564F8 /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D82B34C167867B0006564F8 /* defaults.plist */; };
 		1D887F65164B706800854F9A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D887F64164B706800854F9A /* ImageIO.framework */; };
 		1D8C297A16977997005DE855 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D8C297916977997005DE855 /* AddressBookUI.framework */; };
@@ -516,7 +516,6 @@
 		1D24236F16E3FEBD003E731D /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		1D2656F51639E5D500FBF6E1 /* directoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = directoryViewController.h; sourceTree = "<group>"; };
 		1D2656F61639E5D500FBF6E1 /* directoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = directoryViewController.m; sourceTree = "<group>"; };
-		1D2B5DA716BA40D200F1F3DB /* buildings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = buildings.json; sourceTree = "<group>"; };
 		1D2E4D76171C4B38008CBD75 /* bg-real.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-real.png"; sourceTree = "<group>"; };
 		1D2E4D78171C4BCD008CBD75 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1D2FF9A6172450E300871B7C /* tabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tabBarViewController.h; sourceTree = "<group>"; };
@@ -633,6 +632,7 @@
 		1D62DD9B1657594300A60534 /* News+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "News+Create.m"; sourceTree = "<group>"; };
 		1D7253EE163A30D10057B33F /* 01-refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01-refresh.png"; sourceTree = "<group>"; };
 		1D7253F0163A31660057B33F /* 02-redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02-redo.png"; sourceTree = "<group>"; };
+		1D76473D176E976800F697AB /* buildings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = buildings.json; sourceTree = "<group>"; };
 		1D82B34C167867B0006564F8 /* defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaults.plist; sourceTree = "<group>"; };
 		1D887F64164B706800854F9A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		1D8C297916977997005DE855 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
@@ -895,7 +895,7 @@
 		1D1CEAFA162B4D2B0059BC1F /* Campus Map */ = {
 			isa = PBXGroup;
 			children = (
-				1D2B5DA716BA40D200F1F3DB /* buildings.json */,
+				1D76473D176E976800F697AB /* buildings.json */,
 				1DFCFCD216B63CEC00515EFD /* campusMapViewController.h */,
 				1DFCFCD316B63CEC00515EFD /* campusMapViewController.m */,
 				1DF849AC16B64FB6009F7785 /* MSULocation.h */,
@@ -1761,7 +1761,6 @@
 				1DF0147F1697C77200435975 /* dirBg.png in Resources */,
 				1D12174B16AD01B500164FA7 /* ShareKit.bundle in Resources */,
 				1DF014811697C7D400435975 /* photoFrame.png in Resources */,
-				1D2B5DA816BA40D200F1F3DB /* buildings.json in Resources */,
 				1D968C6316BCAA58004AB866 /* standardMap.png in Resources */,
 				1D968C6416BCAA58004AB866 /* satelliteMap.png in Resources */,
 				1D968C6516BCAA58004AB866 /* hybridMap.png in Resources */,
@@ -1818,6 +1817,7 @@
 				1D57B8331736F20C008A0216 /* Default.png in Resources */,
 				1DBA9A3417373B7300582DDA /* ncaa_default.png in Resources */,
 				1D519BBD1738C72100937FE0 /* parking_lot_transparent.png in Resources */,
+				1D76473E176E976800F697AB /* buildings.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -52,7 +52,7 @@
 
 -(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
-    NSLog(@"ended element: %@", elementName);
+    //NSLog(@"ended element: %@", elementName);
 	if ([elementName isEqualToString:@"item"]) {
 		ignoreRSStitleAndLink = YES;
         //Podcasts
@@ -128,7 +128,7 @@
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
-    NSLog(@"found this element: %@", elementName);
+    //NSLog(@"found this element: %@", elementName);
 	currentElement = [elementName copy];
     
 	if ([elementName isEqualToString:@"item"]) {
@@ -176,7 +176,7 @@
 
 -(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
-    NSLog(@"found characters: %@", string);
+    //NSLog(@"found characters: %@", string);
     string = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
 	// save the characters for the current item...
@@ -402,6 +402,9 @@
     // Request access to the Twitter accounts
     ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    
+    __block bool errorOccurred = NO;
+    
     [accountStore requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error)
      {
          if (granted)
@@ -435,12 +438,13 @@
                  // Making the request
                  [twitterInfoRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
                      dispatch_async(dispatch_get_main_queue(), ^{
+                         
                          // Check if we reached the reate limit
                          if ([urlResponse statusCode] == 429)
                          {
                              //NSLog(@"Rate limit reached");
                              [document.managedObjectContext performBlock:^{
-                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Rate Limit Reached" message:@"Twitter allows a maximum of 116 refreshes per hour per Twitter Account. Please try again later, or if you have received this message in error, please let us know at msu2u@mwsu.edu." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Rate Limit Reached" message:@"Twitter allows a maximum of 116 refreshes per hour per Twitter Account. Please try again later, or if you have received this message in error, please let us know at msu2u@mwsu.edu. (Status Code: 429)" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                                  [alert show];
                              }];
                              return;
@@ -448,12 +452,15 @@
                          // Check if there was an error
                          if (error)
                          {
-                             //NSLog(@"Error: %@", error.localizedDescription);
+                             NSLog(@"Error: %@", error.localizedDescription);
+                             /*
                              [document.managedObjectContext performBlock:^{
                                  UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Download Error" message:@"Hmm, seems there was an error during the download. Ensure you have an active internet connection and try again later. If this problem persists, please let us know at: msu2u@mwsu.edu" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                                  [alert show];
                              }];
                              return;
+                              */
+                             errorOccurred = YES;
                          }
                          // Check if there is some response data
                          if (responseData)
@@ -471,6 +478,7 @@
                              }];
                               
                          }
+                         tweetDownloadComplete++;
                      });
                  }];
                  
@@ -490,7 +498,7 @@
                          {
                              NSLog(@"Rate limit reached");
                              [document.managedObjectContext performBlock:^{
-                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Rate Limit Reached" message:@"A Maximum of 116 refreshes per hour per Twitter Account is allowed. Please try again later, or if you have received this message in error, please let us know at msu2u@mwsu.edu." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Rate Limit Reached" message:@"A Maximum of 116 refreshes per hour per Twitter Account is allowed. Please try again later, or if you have received this message in error, please let us know at msu2u@mwsu.edu. (Status Code: 429)" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                                  [alert show];
                              }];
                              return;
@@ -499,11 +507,14 @@
                          if (error)
                          {
                              NSLog(@"Error: %@", error.localizedDescription);
+                             /*
                              [document.managedObjectContext performBlock:^{
                                  UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Download Error" message:@"Hmm, seems there was an error during the download. Ensure you have an active internet connection and try again later. If this problem persists, please let us know at: msu2u@mwsu.edu" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                                  [alert show];
                              }];
                              return;
+                              */
+                            errorOccurred = YES;
                          }
                          // Check if there is some response data
                          if (responseData)
@@ -520,9 +531,11 @@
                              }];
                               
                          }
+                         tweetDownloadComplete++;
                      });
                  }];
-                 //Make Another Request for #SocialStampede
+                 
+                 //Make Another Request for #Hashtags
                  NSMutableDictionary * newestParameters = [[NSMutableDictionary alloc]init];
                  [newestParameters setObject:@"socialstampede+OR+midwesternstate+OR+msu2u+OR+ClubMoffett+OR+CSCAtrium+OR+wichitanonline" forKey:@"q"];
                  [newestParameters setObject:@"100" forKey:@"count"];
@@ -538,7 +551,7 @@
                          {
                              NSLog(@"Rate limit reached");
                              [document.managedObjectContext performBlock:^{
-                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Rate Limit Reached" message:@"A Maximum of 116 refreshes per hour per Twitter Account is allowed. Please try again later, or if you have received this message in error, please let us know at msu2u@mwsu.edu." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Rate Limit Reached" message:@"A Maximum of 116 refreshes per hour per Twitter Account is allowed. Please try again later, or if you have received this message in error, please let us know at msu2u@mwsu.edu. (Status Code: 429)" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                                  [alert show];
                              }];
                              return;
@@ -551,11 +564,14 @@
                          if (error)
                          {
                              NSLog(@"Error: %@", error.localizedDescription);
+                             /*
                              [document.managedObjectContext performBlock:^{
                                  UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Download Error" message:@"Hmm, seems there was an error during the download. Ensure you have an active internet connection and try again later. If this problem persists, please let us know at: msu2u@mwsu.edu" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                                  [alert show];
                              }];
                              return;
+                              */
+                             errorOccurred = YES;
                          }
                          // Check if there is some response data
                          if (responseData)
@@ -574,10 +590,19 @@
                                      [Tweet tweetWithInfo:dataInfo isProfile:TRUE inManagedObjectContext:document.managedObjectContext];
                                  }
                              }];
-                              
                          }
+                         tweetDownloadComplete++;
                      });
                  }];
+                 
+                 //Did an error occur?
+                 if(errorOccurred)
+                 {
+                     [document.managedObjectContext performBlock:^{
+                         UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Download Error" message:@"Hmm, seems there was an error during the download. Ensure you have an active internet connection and try again later. If this problem persists, please let us know at: msu2u@mwsu.edu" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                         [alert show];
+                     }];
+                 }
              }
          }
          else
@@ -589,12 +614,6 @@
                  UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Setup Twitter Account" message:@"Please add a Twitter account in Settings and ensure that MSU2U has permission to access your Twitter account in order to use this feature." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Help", nil];
                  [alert show];
              }];
-             //Set my table background image!!!
-             /*
-             UIImageView *tempImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
-             [tempImg setImage:[UIImage imageNamed:@"twitterNoAccount.png"]];
-             [self.tableView setBackgroundView:tempImg];
-             self.tableView.separatorColor = [UIColor clearColor];*/
          }
      }];
 }
@@ -1192,75 +1211,60 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
         self.dataObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
     }
     
-    if(self.childNumber == [NSNumber numberWithInt:2] || self.childNumber == [NSNumber numberWithInt:3])
+    //**********Let's figure out what to show in the cell for the table
+    //*** EVENTS
+    if(self.childNumber == [NSNumber numberWithInt:2])
     {
-        //### Good for debugging the News feed to determine what the Title, link, and unique ID are for each article
-        /*
-        if(self.childNumber == [NSNumber numberWithInt:3])
-        {
-            NSLog(@"# Title: %@\n",[self.dataObject title]);
-            NSLog(@"# Link : %@\n",[self.dataObject link]);
-            NSLog(@"# ID   : %@\n\n",[self.dataObject article_id]);
-        }
-         */
-        
-        //News and Events both have titles to show in their cell
         cell.textLabel.text = [self.dataObject title];
-        if(self.childNumber == [NSNumber numberWithInt:2])
+        cell.detailTextLabel.text = [self.dataObject desc];
+        
+        NSArray * sportCategories = [[NSArray alloc]initWithObjects:@"Men's Cross Country/Track",@"Women's Cross Country/Track",@"Men's Basketball",@"Women's Basketball",@"Football",@"Men's Golf",@"Women's Golf",@"Men's Soccer",@"Women's Soccer",@"Softball",@"Men's Tennis",@"Women's Tennis",@"Volleyball", nil];
+        NSArray * sportImages = [[NSArray alloc]initWithObjects:@"crossCountry.jpeg",@"crossCountry.jpeg",@"basketball.jpeg",@"basketball.jpeg",@"football.jpeg",@"golf.jpeg",@"golf.jpeg",@"soccer.jpeg",@"soccer.jpeg",@"softball.jpeg",@"tennis.jpeg",@"tennis.jpeg",@"volleyball.jpeg", nil];
+        
+        for(int i=0; i<[sportCategories count]; i++)
         {
-            cell.detailTextLabel.text = [self.dataObject desc];
-        }
-        //News uses something called "short_description"
-        else if(self.childNumber == [NSNumber numberWithInt:3])
-        {
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ | %@",[self.dataObject last_changed],[self.dataObject short_description]];
+            //If I find my current sport category in the title string, then set my event category equal to the sport category that was found in the title string and break
+            if([[self.dataObject category] rangeOfString:[sportCategories objectAtIndex:i]].location != NSNotFound)
+            {
+                cell.imageView.image = [UIImage imageNamed:[sportImages objectAtIndex:i]];
+                break;
+            }
         }
         
-        //THIS IS A NEWS CELL, SO LET'S FIGURE OUT WHICH IMAGE TO SHOW IN THE CELL ROW
-        if(self.childNumber == [NSNumber numberWithInt:3])
-        {
-            NSString * defaultImage;
-            if([[self.dataObject publication] isEqualToString:@"The Wichitan"])
-            {
-                defaultImage = @"theWichitan.jpg";
-            }
-            else if([[self.dataObject publication] isEqualToString:@"MSU Mustangs"])
-            {
-                defaultImage = @"101-gameplan.png";
-            }
-            else if([[self.dataObject publication] isEqualToString:@"WF Museum of Art"])
-            {
-                defaultImage = @"wfma50x50.png";
-            }
-            
-            //Download a 50x50 image
-            [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject image]] placeholderImage:[UIImage imageNamed:defaultImage] options:0 andResize:CGSizeMake(50, 50)];
-            
-            //Ensure that the table cell image is restricted to 50x50
-            CGSize size = {50,50};
-            cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
-            
-        }
-        else if(self.childNumber == [NSNumber numberWithInt:2])
-        {
-            NSArray * sportCategories = [[NSArray alloc]initWithObjects:@"Men's Cross Country/Track",@"Women's Cross Country/Track",@"Men's Basketball",@"Women's Basketball",@"Football",@"Men's Golf",@"Women's Golf",@"Men's Soccer",@"Women's Soccer",@"Softball",@"Men's Tennis",@"Women's Tennis",@"Volleyball", nil];
-            NSArray * sportImages = [[NSArray alloc]initWithObjects:@"crossCountry.jpeg",@"crossCountry.jpeg",@"basketball.jpeg",@"basketball.jpeg",@"football.jpeg",@"golf.jpeg",@"golf.jpeg",@"soccer.jpeg",@"soccer.jpeg",@"softball.jpeg",@"tennis.jpeg",@"tennis.jpeg",@"volleyball.jpeg", nil];
-            
-            for(int i=0; i<[sportCategories count]; i++)
-            {
-                //If I find my current sport category in the title string, then set my event category equal to the sport category that was found in the title string and break
-                if([[self.dataObject category] rangeOfString:[sportCategories objectAtIndex:i]].location != NSNotFound)
-                {
-                    cell.imageView.image = [UIImage imageNamed:[sportImages objectAtIndex:i]];
-                    break;
-                }
-            }
-            
-            //Resize image
-            CGSize size = {50,50};
-            cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
-        }
+        //Resize image
+        CGSize size = {50,50};
+        cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
     }
+    //*** NEWS
+    if(self.childNumber == [NSNumber numberWithInt:3])
+    {
+        NSString * defaultImage;
+        cell.textLabel.text = [self.dataObject title];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ | %@",[self.dataObject last_changed],[self.dataObject publication]];
+        
+        
+        if([[self.dataObject publication] isEqualToString:@"The Wichitan"])
+        {
+            defaultImage = @"theWichitan.jpg";
+        }
+        else if([[self.dataObject publication] isEqualToString:@"MSU Mustangs"])
+        {
+            defaultImage = @"101-gameplan.png";
+        }
+        else if([[self.dataObject publication] isEqualToString:@"WF Museum of Art"])
+        {
+            defaultImage = @"wfma50x50.png";
+        }
+        
+        //Download a 50x50 image
+        [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject image]] placeholderImage:[UIImage imageNamed:defaultImage] options:0 andResize:CGSizeMake(50, 50)];
+        
+        //Ensure that the table cell image is restricted to 50x50
+        CGSize size = {50,50};
+        cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
+        
+    }
+    //*** Directory
     else if(self.childNumber == [NSNumber numberWithInt:4])
     {        
         //Directory cells, Directory Favorites, and Directory History
@@ -1274,6 +1278,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
         CGSize size = {40,50};
         cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
     }
+    //*** Twitter
     else if(self.childNumber == [NSNumber numberWithInt:7])
     {
         cell.textLabel.text = [self.dataObject text];        
@@ -1285,6 +1290,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
         CGSize size = {50,50};
         cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
     }
+    //*** Videos
     else if(self.childNumber == [NSNumber numberWithInt:8])
     {
         cell.textLabel.text = [self.dataObject title];
@@ -1294,6 +1300,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
         CGSize size = {107,68};
         cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
     }
+    //*** Podcasts
     else if(self.childNumber == [NSNumber numberWithInt:9])
     {
         cell.textLabel.text = [self.dataObject title];

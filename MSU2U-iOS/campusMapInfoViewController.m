@@ -7,6 +7,8 @@
 //
 
 #import "campusMapInfoViewController.h"
+#import "SDImageCache.h"
+#import "UIImageView+WebCache.h"
 
 @interface campusMapInfoViewController ()
 
@@ -14,12 +16,17 @@
 
 @implementation campusMapInfoViewController
 
-- (IBAction)callLocation:(UIButton *)sender {
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.buildingImage setImageWithURL:[NSURL URLWithString:buildingImageURL] placeholderImage:[UIImage imageNamed:@"Unknown.jpg"] options:0];
+    self.buildingInfoTextView.text = buildingInfo;
 }
 
--(void)sendLocationName:(NSString*)receivedLocationName
+-(void)sendBuildingName:(NSString*)receivedBuildingName andInfo:(NSString*)receivedBuildingInfo andImage:(NSString*)receivedBuildingImage
 {
-    self.locationName.text = receivedLocationName;
+    self.title = receivedBuildingName;
+    buildingInfo = receivedBuildingInfo;
+    buildingImageURL = receivedBuildingImage;
 }
 
 @end
