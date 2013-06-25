@@ -28,8 +28,10 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
 
     NSArray *results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
     if (error) NSLog(@"[%@ %@] JSON error: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error.localizedDescription);
-    NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results);
-     
+    
+    //If you want to see what the JSON file fetched looks like, uncomment the line below
+    //NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results);
+    
     return results;
 }
 
@@ -43,6 +45,12 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     //Set map type
     self.campusMap.mapType = MKMapTypeHybrid;
     
+    //Get all of the buildings loaded into memory
+    [self loadBuildingsFromJSON];
+}
+
+-(void)loadBuildingsFromJSON
+{
     //Allocate arrays
     self.buildingName = [[NSMutableArray alloc]init];
     self.buildingImage = [[NSMutableArray alloc]init];
@@ -54,7 +62,7 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     //Download the JSON data
     buildings = [self executeDataFetch:@"buildings.json"];
     
-    NSLog(@"About to stuff buildings into datainfo...\n");
+    //NSLog(@"About to stuff buildings into datainfo...\n");
     for(NSDictionary * dataInfo in buildings)
     {
         [self.buildingName addObject:[dataInfo objectForKey:@"name"]];
@@ -99,7 +107,8 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
 
 -(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
 {
-	if([overlay isKindOfClass:[MKPolygon class]]){
+	if([overlay isKindOfClass:[MKPolygon class]])
+    {
 		MKPolygonView *view = [[MKPolygonView alloc] initWithOverlay:overlay];
 		view.lineWidth=1;
 		//view.strokeColor=[UIColor yellowColor];
@@ -108,7 +117,8 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
         view.fillColor = [_parkingLotColor colorWithAlphaComponent:0.5];
         return view;
 	}
-    else if([overlay isKindOfClass:[MKPolyline class]]){
+    else if([overlay isKindOfClass:[MKPolyline class]])
+    {
         MKPolylineView * view = [[MKPolylineView alloc]initWithPolyline:overlay];
         view.lineWidth=5;
         view.strokeColor = _polylineColor;
@@ -289,7 +299,7 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     
     //#####
     //####
-    //### Draw appropriate may type!
+    //### Draw appropriate map type!
     //##
     //#
     NSLog(@"My map type should be %@\n",[defaults objectForKey:@"campusMapSettingsMapRowChecked"]);
@@ -305,6 +315,14 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     {
         self.campusMap.mapType = MKMapTypeStandard;
     }
+    
+    //Should I zoom the map in?
+    if(zoomedCoordinate.latitude)
+    {
+        MKCoordinateRegion adjustedRegion = [self.campusMap regionThatFits:MKCoordinateRegionMakeWithDistance(zoomedCoordinate, 250, 250)];
+        [self.campusMap setRegion:adjustedRegion animated:NO];
+    }
+    
     [super viewDidLoad];
 }
 
@@ -329,7 +347,41 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     testBuilding.coordinate = myCoordinate;
     
     //Add annotation to the map
+    NSLog(@"I am about to add a building!");
     [self.campusMap addAnnotation:testBuilding];
+}
+
+- (void) sendLocationName:(NSString*)locationName andEmployeeName:(NSString*)employeeName
+{
+    //Do all of the necessary loading
+    [self viewDidAppear:YES];
+    
+    NSLog(@"I am hoping to find %@ in my building list...\n",locationName);
+    NSLog(@"Coordinates: %@\n",[self.coordinateLookup objectForKey:locationName]);
+    NSLog(@"Address: %@\n",[self.addressLookup objectForKey:locationName]);
+    
+    if([self.coordinateLookup objectForKey:locationName])
+    {
+        //Now, go ahead and search for the building's location and place a pin if you can. If not, notify the user.
+        CLLocationCoordinate2D coordinate;
+        [self addPinWithTitle:locationName atLocation:[self.coordinateLookup objectForKey:locationName] atAddress:[self.addressLookup objectForKey:locationName]];
+        
+        //Get ready to zoom in on the employee's location
+        float latitude = [[[self.coordinateLookup objectForKey:locationName] objectAtIndex:0] floatValue];
+        float longitude = [[[self.coordinateLookup objectForKey:locationName]objectAtIndex:1] floatValue];
+        
+        coordinate = CLLocationCoordinate2DMake(latitude,longitude);
+        zoomedCoordinate = coordinate;
+        
+        MKCoordinateRegion adjustedRegion = [self.campusMap regionThatFits:MKCoordinateRegionMakeWithDistance(coordinate, 250, 250)];
+        //[self.searchDisplayController setActive:NO animated:YES];
+        [self.campusMap setRegion:adjustedRegion animated:YES];
+    }
+    else
+    {
+        UIAlertView * av = [[UIAlertView alloc]initWithTitle:@"Oops" message:[NSString stringWithFormat:@"Could not locate %@. Try using the search bar.",locationName] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [av show];
+    }
 }
 
 //SEARCH BAR TABLE VIEW STUFF
@@ -412,7 +464,7 @@ shouldReloadTableForSearchString:(NSString *)searchString
     float longitude = [[[self.coordinateLookup objectForKey:[searchResults objectAtIndex:indexPath.row]]objectAtIndex:1] floatValue];
     
     coordinate = CLLocationCoordinate2DMake(latitude,longitude);
-                                              
+    
     MKCoordinateRegion adjustedRegion = [self.campusMap regionThatFits:MKCoordinateRegionMakeWithDistance(coordinate, 250, 250)];
     [self.searchDisplayController setActive:NO animated:YES];
     [self.campusMap setRegion:adjustedRegion animated:YES];

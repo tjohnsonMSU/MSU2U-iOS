@@ -252,20 +252,32 @@
     else if([[showInTableLabel objectAtIndex:indexPath.row] isEqualToString:@"Website1"])
     {
         //Set the website string which will be used by prepare for segue
-        websiteToBePassed = myCurrentEmployee.website1;
+        //websiteToBePassed = myCurrentEmployee.website1;
         [self performSegueWithIdentifier:@"toWebView" sender:tableView];
     }
     else if([[showInTableLabel objectAtIndex:indexPath.row] isEqualToString:@"Website2"])
     {
         //Set the website string which will be used by prepare for segue.
-        websiteToBePassed = myCurrentEmployee.website2;
+        //websiteToBePassed = myCurrentEmployee.website2;
         [self performSegueWithIdentifier:@"toWebView" sender:tableView];
+    }
+    else if([[showInTableLabel objectAtIndex:indexPath.row]isEqualToString:@"Location1"])
+    {
+        [self performSegueWithIdentifier:@"toMapView" sender:tableView];
     }
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [segue.destinationViewController sendURL:websiteToBePassed andTitle:[NSString stringWithFormat:@"%@ %@",myCurrentEmployee.fname,myCurrentEmployee.lname] andMessagePrefix:[NSString stringWithFormat:@"%@ %@",myCurrentEmployee.fname,myCurrentEmployee.lname]];
+    if(![segue.identifier isEqualToString:@"toMapView"])
+    {
+        [segue.destinationViewController sendURL:myCurrentEmployee.website1 andTitle:[NSString stringWithFormat:@"%@ %@",myCurrentEmployee.fname,myCurrentEmployee.lname] andMessagePrefix:[NSString stringWithFormat:@"%@ %@",myCurrentEmployee.fname,myCurrentEmployee.lname]];
+    }
+    else
+    {
+        //We are segueing to the map view because the user selected either Location1 or Location2
+        [segue.destinationViewController sendLocationName:myCurrentEmployee.office_bldg_id_1 andEmployeeName:[NSString stringWithFormat:@"%@ %@",myCurrentEmployee.fname,myCurrentEmployee.lname]];
+    }
 }
 
 - (void) addToContactsPressed

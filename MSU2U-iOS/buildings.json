@@ -26,7 +26,7 @@
         "tag": "library"
     },
     {
-        "name": "DL Ligon Coliseum",
+        "name": "D.L. Ligon Coliseum",
         "latitude": 33.872078,
         "longitude": -98.519624,
         "addressCountryCode": "US",
@@ -36,7 +36,7 @@
         "addressZIPCode": "76308",
         "info": "The coliseum has been home to the university's athletic department for 37 years, and it is the site of all MSU home basketball and volleyball events. Built in 1969, the facility was renamed D.L. Ligon Coliseum in 1975 to honor legendary employee D.L. Ligon. Beside the 5,200-seat arena, the building also features a practice gymnasium, weight room, wellness center, training room, locker rooms, and classrooms, as well as the athletic offices.",
         "image": "http://www.mwsu.edu/maps/google/photos/ligon.jpg",
-        "tag": "sports, gymnasium, arena, weight room, locker rooms, athletics offices"
+        "tag": "sports, gymnasium, arena, weight room, locker rooms, athletics offices, dl"
     },
     {
         "name": "Central Plant",
@@ -78,7 +78,7 @@
         "tag": "british studies, college of liberal arts, history, international studies, political science, psychology, sociology, o donohoe"
     },
     {
-        "name": "Bea Wood",
+        "name": "Bea Wood Hall",
         "latitude": 33.874024,
         "longitude": -98.521772,
         "addressCountryCode": "US",
@@ -208,7 +208,7 @@
  "tag": "pay tuition, holds, fines, ticket, fee, money, payment"
  },
     {
-        "name": "Hardin Administration",
+        "name": "Hardin Administration Bldg",
         "latitude": 33.876356,
         "longitude": -98.519787,
         "addressCountryCode": "US",
@@ -312,7 +312,7 @@
         "tag": "academic support center"
     },
     {
-        "name": "Police Dept",
+        "name": "University Police",
         "latitude": 33.877665,
         "longitude": -98.52391,
         "addressCountryCode": "US",
@@ -337,6 +337,19 @@
         "image": "",
         "tag": "counseling"
     },
+ {
+ "name": "917 Midwestern Parkway",
+ "latitude": 33.875665,
+ "longitude": -98.483665,
+ "addressCountryCode": "US",
+ "addressStreetCode": "3410 Taft Blvd",
+ "addressCityCode": "Wichita Falls",
+ "addressStateCode": "Texas",
+ "addressZIPCode": "76308",
+ "info": "North Texas Surgi-Center at 917 Midwestern Parkway.",
+ "image": "",
+ "tag": "offsite, North Texas Surgi Center, Surgi-Center, surgical care affiliates"
+ },
     {
         "name": "Biology House",
         "latitude": 33.877678,
@@ -624,7 +637,7 @@
         "tag": "ambulatory care, medical services, illness, injury, injuries, sick, medicine, health"
     },
     {
-        "name": "Student Wellness Center",
+        "name": "Bruce & Graciela Redwine Student Wellness Center",
         "latitude": 33.869992,
         "longitude": -98.523706,
         "addressCountryCode": "US",
@@ -663,7 +676,7 @@
         "tag": ""
     },
     {
-        "name": "Wichita Falls Museum of Art at MSU",
+        "name": "Museum of Art",
         "latitude": 33.869016,
         "longitude": -98.524881,
         "addressCountryCode": "US",
@@ -673,7 +686,7 @@
         "addressZIPCode": "76308",
         "info": "N/A",
         "image": "http://www.mwsu.info/wfma/files/2012/01/IMG_2778.jpg",
-        "tag": "art, museum, gallery"
+        "tag": "art, museum, gallery, wfma"
     },
     {
         "name": "Sikes Lake Center",
@@ -741,7 +754,7 @@
         "tag": "alumni, alumnus, scholarships, graduates, Office of Alumni Relations"
     },
     {
-        "name": "Daniel Bldg - Physical Plant",
+        "name": "Daniel Building",
         "latitude": 33.875876,
         "longitude": -98.522357,
         "addressCountryCode": "US",
@@ -751,7 +764,7 @@
         "addressZIPCode": "76308",
         "info": "Named for Will Daniel who was a governing board member, was originally moved to campus from Sheppard Air Force Base. It served as a dormitory for years. The original building was demolished in 1981 and rebuilt in 1990. Today Daniel Hall is home to the Physical Plant and the Purchasing Office.",
         "image": "http://www.mwsu.edu/maps/google/photos/daniel.jpg",
-        "tag": "Purchasing Office, Physical Plant"
+        "tag": "Purchasing Office, Physical Plant, Bldg"
     },
     {
         "name": "Post Office",

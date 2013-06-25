@@ -75,7 +75,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-13371" y="-2319"/>
+            <point key="canvasLocation" x="-12431" y="-2739"/>
         </scene>
         <!--Campus Map Info View Controller - [Building Name Here]-->
         <scene sceneID="cTL-YX-Zwf">
@@ -134,7 +134,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9g2-ec-6N2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12696" y="-2283"/>
+            <point key="canvasLocation" x="-11688" y="-2347"/>
         </scene>
         <!--Campus Map Settings View Controller - Settings-->
         <scene sceneID="pPY-0d-64S">
@@ -267,7 +267,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dMY-y0-vPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12639" y="-1456"/>
+            <point key="canvasLocation" x="-11631" y="-1520"/>
         </scene>
         <!--Navigation Controller - Directory-->
         <scene sceneID="Dgt-Wr-Aya">
@@ -1982,6 +1982,7 @@
                         <outlet property="photo" destination="WWh-tz-brD" id="73K-uK-LjT"/>
                         <outlet property="positionLabel" destination="7i5-nC-rG1" id="Iu0-LR-NAm"/>
                         <segue destination="vRl-3M-1sy" kind="push" identifier="toWebView" id="tds-tn-th9"/>
+                        <segue destination="iUY-HR-2IB" kind="push" identifier="toMapView" id="fPi-pD-lM1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zay-14-bAS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2242,7 +2243,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="9jF-L6-71y"/>
-        <segue reference="Egf-cW-mua"/>
+        <segue reference="tds-tn-th9"/>
+        <segue reference="fPi-pD-lM1"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -22,6 +22,8 @@
     UIColor * _polylineColor;
     MSULocation * _selectedLocation;
     bool buildingInfoPressed;
+    
+    CLLocationCoordinate2D zoomedCoordinate;
 }
 @property (strong,nonatomic) NSDictionary * coordinateLookup;
 
@@ -47,4 +49,5 @@
 
 @property (strong,nonatomic) NSArray * keysToSearchOn;
 
+- (void) sendLocationName:(NSString*)locationName andEmployeeName:(NSString*)employeeName;
 @end

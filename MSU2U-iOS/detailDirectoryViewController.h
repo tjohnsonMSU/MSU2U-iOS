@@ -15,6 +15,7 @@
 #import "webViewController.h"
 #import <AddressBookUI/AddressBookUI.h>
 #import <AddressBook/AddressBook.h>
+#import "campusMapViewController.h"
 
 @interface detailDirectoryViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
     NSArray* tableLabel;
@@ -22,7 +23,6 @@
     NSMutableArray* showInTableContent;
     NSMutableArray* showInTableLabel;
     Employee * myCurrentEmployee;
-    NSString * websiteToBePassed;
 }
 
 -(void)sendEmployeeInformation:(Employee*)employeeInfo;
