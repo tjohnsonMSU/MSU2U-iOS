@@ -23,6 +23,7 @@
     NSMutableArray* showInTableContent;
     NSMutableArray* showInTableLabel;
     Employee * myCurrentEmployee;
+    BOOL location2selected;
 }
 
 -(void)sendEmployeeInformation:(Employee*)employeeInfo;

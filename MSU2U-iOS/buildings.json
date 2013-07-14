@@ -130,6 +130,19 @@
  "tag": "meals, food, restaurant, coffee, snacks"
  },
  {
+ "name": "2510 Hampstead",
+ "latitude": 33.87798,
+ "longitude": -98.523242,
+ "addressCountryCode": "US",
+ "addressStreetCode": "3410 Taft Blvd",
+ "addressCityCode": "Wichita Falls",
+ "addressStateCode": "Texas",
+ "addressZIPCode": "76308",
+ "info": "MSU Football Program property.",
+ "image": "",
+ "tag": "football program"
+ },
+ {
  "name": "Starbucks",
  "latitude": 33.876977,
  "longitude": -98.52096,
@@ -140,7 +153,7 @@
  "addressZIPCode": "76308",
  "info": "N/A",
  "image": "",
- "tag": "meals, food, restaurant, coffee, snacks"
+ "tag": "meals, food, restaurant, coffee, snacks, cyber cafe"
  },
  {
  "name": "Office of Housing and Residence Life",
@@ -244,7 +257,7 @@
         "addressZIPCode": "76308",
         "info": "Fall 2006 saw the opening of the new 88,000 sq. ft. Dillard College of Business Administration building, made possible in part by donations from the A.R. Dillard family, Priddy Foundation, Bryant Edwards Foundation, and J. S. Bridwell Foundation.. The $18 million building incorporates $1.1 million in state-of-the-art technology. Besides classrooms and faculty offices, the two-story complex boasts a 140-seat auditorium, a community seminar room, auditorium dining room, faculty library, computer labs, and its very own real-time stock ticker in the Cyber Café.",
         "image": "http://www.mwsu.edu/maps/google/images/coba.jpg",
-        "tag": "business, computer labs, stock ticker, cyber cafe, food, meals, restaurant"
+        "tag": "business, computer labs, stock ticker"
     },
     {
         "name": "Martin Hall",
@@ -517,7 +530,7 @@
         "addressZIPCode": "76308",
         "info": "The Fain Fine Arts Center was dedicated by former Texas Governor Dolph Briscoe on February 2, 1978. The Fain Fine Art Center houses art, the box office, Lamar D. Fain College of Fine Arts, mass communications, music, Fain Fine Arts Theatre, TV-2 (TV studio) and the Wichitan (campus newspaper).",
         "image": "http://www.mwsu.edu/maps/google/photos/faincenter.jpg",
-        "tag": "fine arts, mass communications, music, theatre, TV-2, Campus Watch, TV studio, Wichitan, campus newspaper, performing arts, painting, sculting, art gallery, piano, voice, choir, band"
+        "tag": "fine arts, mass communications, music, theatre, TV-2, Campus Watch, TV studio, Wichitan, campus newspaper, performing arts, painting, sculting, art gallery, piano, voice, choir, band, artist, digital"
     },
     {
         "name": "Free Play Field",
@@ -585,7 +598,7 @@
         "tag": ""
     },
     {
-        "name": "Mustang Park (Softball Field)",
+        "name": "Mustang Park",
         "latitude": 33.871081,
         "longitude": -98.523186,
         "addressCountryCode": "US",
@@ -595,7 +608,7 @@
         "addressZIPCode": "76308",
         "info": "N/A",
         "image": "",
-        "tag": ""
+        "tag": "softball stadium field"
     },
     {
         "name": "Batting Cages",
@@ -608,7 +621,7 @@
         "addressZIPCode": "76308",
         "info": "N/A",
         "image": "",
-        "tag": ""
+        "tag": "softball"
     },
     {
         "name": "Sundance Court",

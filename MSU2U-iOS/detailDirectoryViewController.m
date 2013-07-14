@@ -54,7 +54,7 @@
     //Combine the building and office information into something known as a location.
     NSString * location1 = [myCurrentEmployee getLocation:1];
     NSString * location2 = [myCurrentEmployee getLocation:2];
-    
+    location2selected = false;
     //Initialize my table content and label arrays. These are critical because they contain the information that the table will display.
     
     //Initlalized unreceived variables
@@ -263,6 +263,12 @@
     }
     else if([[showInTableLabel objectAtIndex:indexPath.row]isEqualToString:@"Location1"])
     {
+        location2selected = false;
+        [self performSegueWithIdentifier:@"toMapView" sender:tableView];
+    }
+    else if([[showInTableLabel objectAtIndex:indexPath.row]isEqualToString:@"Location2"])
+    {
+        location2selected = true;
         [self performSegueWithIdentifier:@"toMapView" sender:tableView];
     }
 }
@@ -276,7 +282,14 @@
     else
     {
         //We are segueing to the map view because the user selected either Location1 or Location2
-        [segue.destinationViewController sendLocationName:myCurrentEmployee.office_bldg_id_1 andEmployeeName:[NSString stringWithFormat:@"%@ %@",myCurrentEmployee.fname,myCurrentEmployee.lname]];
+        if(location2selected)
+        {
+            [segue.destinationViewController sendLocationName:myCurrentEmployee.office_bldg_id_2 andEmployeeName:[NSString stringWithFormat:@"%@ %@",myCurrentEmployee.fname,myCurrentEmployee.lname]];
+        }
+        else
+        {
+            [segue.destinationViewController sendLocationName:myCurrentEmployee.office_bldg_id_1 andEmployeeName:[NSString stringWithFormat:@"%@ %@",myCurrentEmployee.fname,myCurrentEmployee.lname]];
+        }
     }
 }
 
