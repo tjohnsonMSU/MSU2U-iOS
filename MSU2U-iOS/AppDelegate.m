@@ -12,35 +12,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //Set the color of the navigation bars
-    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:(55.0/255.0) green:(7.0/255.0) blue:(16.0/255.0) alpha:1]];
-    
-    /*### Either the navigation bars will be colored programmatically (above) or will use a user defined image (below)
-    //Set the background image of ALL navigation bars
-    [[UINavigationBar appearance] setBackgroundImage:YOUR_IMAGE_GOES_HERE forBarMetrics:UIBarMetricsDefault];
-    */
-    
-    //Change the color of the tabs to red
-    [[UITabBar appearance]setTintColor:[UIColor colorWithRed:(55.0/255.0) green:(7.0/255.0) blue:(16.0/255.0) alpha:1]];
-    
-    //Change the color of the selected tab icon
-    [[UITabBar appearance] setSelectionIndicatorImage:
-     [UIImage imageNamed:@"tab_select_indicator"]];
-    [[UITabBar appearance] setSelectedImageTintColor:[UIColor colorWithRed:(185.0/255.0) green:(142.0/255.0) blue:(47.0/255.0) alpha:1]];
-    
-    //Make the back buttons on the navigation bar red as well.
-    [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:(55.0/255.0) green:(7.0/255.0) blue:(16.0/255.0) alpha:1]];
-    
-    //Make Toolbars Red
-    [[UIToolbar appearance] setTintColor:[UIColor colorWithRed:(55.0/255.0) green:(7.0/255.0) blue:(16.0/255.0) alpha:1]];
-    
-    //Set the search bars to be a gold color
-    [[UISearchBar appearance] setTintColor:[UIColor colorWithRed:(185.0/255.0) green:(142.0/255.0) blue:(47.0/255.0) alpha:1]];
-    
-    //Set the switches to be gold when ON
-    [[UISwitch appearance] setOnTintColor:[UIColor colorWithRed:(185.0/255.0) green:(142.0/255.0) blue:(47.0/255.0) alpha:1]];
-    [[UISwitch appearance] setTintColor:[UIColor colorWithRed:(55.0/255.0) green:(7.0/255.0) blue:(16.0/255.0) alpha:1]];
-    
     //Initialize user defaults
     NSString *path = [[NSBundle mainBundle] pathForResource:@"defaults" ofType:@"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
