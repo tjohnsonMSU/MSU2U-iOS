@@ -238,7 +238,6 @@
 
     dispatch_async(fetchQ,^{
         
-        [self.refreshControl beginRefreshing];
         hud.labelText = @"Downloading...";
         
         //### JSON Downloading begins and ends here
@@ -258,8 +257,7 @@
             [self getDirectory:document];
         else
             NSLog(@"I did not recognize what view currently needs data to be loaded?\n");
-            
-        [self.refreshControl endRefreshing];
+        
         notCurrentlyRefreshing = TRUE;
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -730,6 +728,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
 
 -(void)setupFetchedResultsController
 {
+    //Depending upon which view I'm currently looking at, set the correct ENTITY type for which to apply the predicates to
     NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:self.entityName];
     
     //### What should I show in my table?
@@ -991,34 +990,9 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    //NSLog(@"Hello?????\n");
+    
     //Set debug to TRUE for the CoreDataTableViewController class
     self.debug = FALSE;
-    
-    //Refresh Control
-    //Make sure the Directory Favorites and Directory History do NOT have the refresh control.
-    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-    refreshControl.tintColor = [UIColor colorWithRed:(55.0/255.0) green:(7.0/255.0) blue:(16.0/255.0) alpha:1];
-    
-    //Retrieve the user defaults so that the last update for this table may be retrieved and shown to the user
-    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-    
-    //NSLog(@"Setting refresh controls...\n");
-    //Set the refresh control attributed string to the retrieved last update
-    switch([self.childNumber integerValue])
-    {
-        case 2:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"eventsRefreshTime"]];break;
-        case 3:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"newsRefreshTime"]];break;
-        case 4:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"directoryRefreshTime"]];break;
-        case 7:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"twitterRefreshTime"]];break;
-        case 8:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"videoRefreshTime"]];break;
-        case 9:refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:[defaults objectForKey:@"podcastRefreshTime"]];break;
-        default:NSLog(@"My child number is %@\n",self.childNumber);
-    }
-    
-    [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
-    
-    self.refreshControl = refreshControl;
     
     //NSLog(@"Setting up the fetched data arrays to be empty...\n");
     //Setup the arrays which will be used to hold the Core Data for the respective Table View Controller
@@ -1078,7 +1052,6 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MMM d, h:mm a"];
     NSString *lastUpdated = [NSString stringWithFormat:@"Last updated on %@",[formatter stringFromDate:[NSDate date]]];
-    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
     
     //Save this update string to the user defaults
     [self saveRefreshTime:lastUpdated];
