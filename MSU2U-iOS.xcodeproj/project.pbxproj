@@ -856,7 +856,7 @@
 				1D592EA0164D5FE300CBB292 /* Core Data */,
 				1D709B30165B456E00475A8E /* External Libraries */,
 				1DBA0E2D1648BA2C00A42CB6 /* News */,
-				1D1CEAFA162B4D2B0059BC1F /* Campus Map */,
+				1D1CEAFA162B4D2B0059BC1F /* Map */,
 				1D592EA2164D60C400CBB292 /* Game */,
 				1DDD423216ED615F0079463A /* Twitter */,
 				1D1CEAFD162B4D3E0059BC1F /* Directory */,
@@ -892,7 +892,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1D1CEAFA162B4D2B0059BC1F /* Campus Map */ = {
+		1D1CEAFA162B4D2B0059BC1F /* Map */ = {
 			isa = PBXGroup;
 			children = (
 				1D76473D176E976800F697AB /* buildings.json */,
@@ -907,7 +907,7 @@
 				1D4BEA8916BF81F4000CE107 /* campusMapInfoViewController.h */,
 				1D4BEA8A16BF81F4000CE107 /* campusMapInfoViewController.m */,
 			);
-			name = "Campus Map";
+			name = Map;
 			sourceTree = "<group>";
 		};
 		1D1CEAFB162B4D310059BC1F /* genericTableView */ = {
