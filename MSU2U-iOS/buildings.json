@@ -10,7 +10,8 @@
         "addressZIPCode": "76308",
         "info": "Bolin Hall, then called the Science Building, was completed in 1966.\nToday Bolin Hall houses biology, chemistry, College of Science and Mathematics, computer science, environmental science, geology, mathematics, physics, and SACS accreditation.",
         "image": "http://www.mwsu.edu/maps/google/photos/bolin.jpg",
-        "tag": "science building, biology, chemistry, mathematics, computer science, environmental science, geology, mathematics, physics, SACS accreditation, labs"
+        "tag": "science building, biology, chemistry, mathematics, computer science, environmental science, geology, mathematics, physics, SACS accreditation, labs",
+        "type":"building"
     },
     {
         "name": "Moffett Library",
@@ -23,7 +24,8 @@
         "addressZIPCode": "76308",
         "image": "http://www.mwsu.edu/maps/google/photos/library.jpg",
         "info": "Moffett Library was dedicated in May 1964 and was named in honor of the late Senator George (Cotton) Moffett of Vernon, who had sponsored the legislative act making Midwestern a state institution. The building covers 54,499 square feet. Please call 940-397-4202 for more information or visit the library online at library.mwsu.edu",
-        "tag": "library"
+ "tag": "library",
+ "type":"building"
     },
     {
         "name": "D.L. Ligon Coliseum",
@@ -36,7 +38,8 @@
         "addressZIPCode": "76308",
         "info": "The coliseum has been home to the university's athletic department for 37 years, and it is the site of all MSU home basketball and volleyball events. Built in 1969, the facility was renamed D.L. Ligon Coliseum in 1975 to honor legendary employee D.L. Ligon. Beside the 5,200-seat arena, the building also features a practice gymnasium, weight room, wellness center, training room, locker rooms, and classrooms, as well as the athletic offices.",
         "image": "http://www.mwsu.edu/maps/google/photos/ligon.jpg",
-        "tag": "sports, gymnasium, arena, weight room, locker rooms, athletics offices, dl"
+ "tag": "sports, gymnasium, arena, weight room, locker rooms, athletics offices, dl",
+ "type":"building"
     },
     {
         "name": "Central Plant",
@@ -49,7 +52,8 @@
         "addressZIPCode": "76308",
         "info": "The Central Plant was completed in 1967.",
         "image": "http://www.mwsu.edu/maps/google/photos/cplant.jpg",
-        "tag": ""
+ "tag": "",
+ "type":"building"
     },
     {
         "name": "Prothro Yeager Hall",
@@ -62,7 +66,8 @@
         "addressZIPCode": "76308",
         "info": "The Prothro-Yeager College of Humanities and Social Sciences offers baccalaureate degrees with majors in English, history, humanities, international studies, political science, psychology, sociology, and Spanish. The college also offers minors in these fields as well as French and philosophy. In addition to the traditional Bachelor of Arts and Bachelor of Science degrees, the programs of the college include the Bachelor of Applied Arts and Sciences degree, with an emphasis in professional development and in an occupational specialty. Please call 940-397-4030 for more information.",
         "image": "http://www.mwsu.edu/maps/google/images/libarts.jpg",
-        "tag": "humanities, social sciences, english, history, humanities, international studies, political science, psychology, sociology, spanish, french, philosophy"
+ "tag": "humanities, social sciences, english, history, humanities, international studies, political science, psychology, sociology, spanish, french, philosophy",
+ "type":"building"
     },
     {
         "name": "O'Donohoe Hall",
@@ -75,7 +80,8 @@
         "addressZIPCode": "76308",
         "info": "The building presently known as O`Donohoe was originally constructed as a girls' dormitory in 1950 and was named Queen’s Hall. Today O'Donohoe houses, British studies, College of Liberal Arts, history, international studies, political science, psychology, and sociology.",
         "image": "http://www.mwsu.edu/maps/google/photos/odonohoe.jpg",
-        "tag": "british studies, college of liberal arts, history, international studies, political science, psychology, sociology, o donohoe"
+ "tag": "british studies, college of liberal arts, history, international studies, political science, psychology, sociology, o donohoe",
+ "type":"building"
     },
     {
         "name": "Bea Wood Hall",
@@ -88,7 +94,8 @@
         "addressZIPCode": "76308",
         "info": "Bea Wood Hall was constructed as a women’s dormitory in 1954 and named for Mrs. Frank Wood who, with her husband Frank, had added to the facilities of the college with funds and time. Today Bea Wood Hall houses applied arts and sciences, aviation management, bible studies, English, foreign language, housing and residence life, humanities, MSU press, philosophy, Spectrum, and Voices magazine.",
         "image": "http://www.mwsu.edu/maps/google/photos/beawood.jpg",
-        "tag": "aviation management, bible studies, english, foreign languages, housing and residence life, humanities, MSU Press, philosophy, spectrum, and Voices Magazine"
+ "tag": "aviation management, bible studies, english, foreign languages, housing and residence life, humanities, MSU Press, philosophy, spectrum, and Voices Magazine",
+ "type":"building"
     },
     {
         "name": "Clark Student Center",
@@ -101,7 +108,8 @@
         "addressZIPCode": "76308",
         "info": "A new university student center was constructed in 1951 and in 1961 it was named Clark Student Center in honor of C. H. Clark, one of the city’s outstanding educational leaders. The center originally included a game room, a formal lounge and a barbershop. The Clark Student Center now encompasses a total of 53,050 square feet. Today the Clark Student Center houses Aramark Dining Services, associate vice president for student affairs, Barnes and Nobel Bookstore, Clark Student Center director, Clark Student Center information center, Corner Perk (snackbar), counseling center, dean of students, post office, recreation room, student activities, student development, student government, Sundance Court (food court), University Programming Board, and Wai-Kun (yearbook).",
         "image": "http://www.mwsu.edu/maps/google/photos/csc.jpg",
-        "tag": "dining services, bookstore, clark student center, career center, dean of students, post office, recreation room, student activities, student development, student government, Sundance Court, food, meals, University Programming Board, Wai-Kun, yearbooks, restaurant, computer labs, kiowa, csc atrium, shawnee theater, billiards, pool, arcade"
+ "tag": "dining services, bookstore, clark student center, career center, dean of students, post office, recreation room, student activities, student development, student government, Sundance Court, food, meals, University Programming Board, Wai-Kun, yearbooks, restaurant, computer labs, kiowa, csc atrium, shawnee theater, billiards, pool, arcade",
+ "type":"building"
     },
     {
         "name": "Ferguson Hall",
@@ -114,8 +122,23 @@
         "addressZIPCode": "76308",
         "info": "The Ferguson Building was completed in 1947 through funds given by the W. P. Fergusons in memory of their son, Billy, for use as a School of Animal Husbandry. Today, Ferguson Hall houses the Gordon T. and Ellen West College of Education, Education and Teacher Certification.",
         "image": "http://www.mwsu.edu/maps/google/photos/ferguson.jpg",
-        "tag": "education, teacher certifications"
+ "tag": "education, teacher certifications",
+ "type":"building"
     },
+ {
+    "name": "The Graduate School",
+    "latitude": "33.875904",
+    "longitude": "-98.519863",
+     "addressCountryCode": "US",
+     "addressStreetCode": "3410 Taft Blvd",
+     "addressCityCode": "Wichita Falls",
+     "addressStateCode": "Texas",
+     "addressZIPCode": "76308",
+     "info": "Are you ready to take your education to the next level? Midwestern State University’s Graduate School offers 25 master’s degrees in fields that will take you closer to the future of your dreams. Come learn from an outstanding group of scholars and researchers who are recognized among the top in their fields. A low student to faculty ratio will prepare you for doctoral studies, or to be a front runner for top jobs. MSU cultivates a culture of faculty/student collaboration for research presentation and professional conference attendance, introducing students to regional as well as global job markets.",
+     "image": "",
+ "tag": "masters, ms, mba, ma, mha",
+ "type":"building"
+ },
  {
  "name": "Java City",
  "latitude": 33.874896,
@@ -127,7 +150,8 @@
  "addressZIPCode": "76308",
  "info": "Get your caffeine buzz on demand or just drop into the arms of a big comfy couch while you enjoy wireless internet access, friends or quiet time alone. Java City offers a wide range of gourmet brewed coffees and flavors, baked goodies, sandwiches, salads, chips and more.  Home of the Javalanche! Stop by and try one today.",
  "image": "http://www.campusdish.com/NR/rdonlyres/B9F51ECB-1D9D-452B-AB9F-3FD6DA694C49/0/logojavacity.gif",
- "tag": "meals, food, restaurant, coffee, snacks"
+ "tag": "meals, food, restaurant, coffee, snacks",
+ "type":"building"
  },
  {
  "name": "2510 Hampstead",
@@ -140,7 +164,8 @@
  "addressZIPCode": "76308",
  "info": "MSU Football Program property.",
  "image": "",
- "tag": "football program"
+ "tag": "football program",
+ "type":"building"
  },
  {
  "name": "Starbucks",
@@ -153,7 +178,8 @@
  "addressZIPCode": "76308",
  "info": "N/A",
  "image": "",
- "tag": "meals, food, restaurant, coffee, snacks, cyber cafe"
+ "tag": "meals, food, restaurant, coffee, snacks, cyber cafe",
+ "type":"building"
  },
  {
  "name": "Office of Housing and Residence Life",
@@ -166,7 +192,8 @@
  "addressZIPCode": "76308",
  "info": "N/A",
  "image": "",
- "tag": "residence life, apartments, rent, dorms, room, house"
+ "tag": "residence life, apartments, rent, dorms, room, house",
+ "type":"building"
  },
     {
         "name": "Fain Hall",
@@ -179,7 +206,8 @@
         "addressZIPCode": "76308",
         "info": "Fain Hall was renovated in 1997 to include new restrooms, a chair lift and a new entrance on the north side. Fain Hall houses all sorority chapter rooms including Alpha Phi, Chi Omega, Gamma Phi, and Sigma Kappa.",
         "image": "http://www.mwsu.edu/maps/google/photos/fainhall.jpg",
-        "tag": "sorority, alpha phi, chi omega, gamma phi, sigma kappa"
+ "tag": "sorority, alpha phi, chi omega, gamma phi, sigma kappa",
+ "type":"building"
     },
     {
         "name": "Memorial Bldg",
@@ -192,7 +220,8 @@
         "addressZIPCode": "76308",
         "info": "Memorial Hall, a dormitory for women built in 1945, was one of the first two dormitories completed on campus. Today, Memorial Hall is home to Information Systems (397-4278) and Telecommunications (397-4555).",
         "image": "http://www.mwsu.edu/maps/google/photos/memorial.jpg",
-        "tag": "information systems, telecommunications"
+ "tag": "information systems, telecommunications",
+ "type":"building"
     },
     {
         "name": "Hardin South",
@@ -205,7 +234,8 @@
         "addressZIPCode": "76308",
         "info": "Hardin South, which was originally the gymnasium in Hardin Administration Building, was reconstructed in 1969 into offices. Today, Hardin South houses academic services, admissions, career management center, financial aid, international student services, military recruitment, registrar, testing services, upward bound, and veteran's affairs.",
         "image": "http://www.mwsu.edu/maps/google/photos/hardinsouth.jpg",
-        "tag": "academic services, admissions, financial aid, international student services, registrar, testing services, upward bound, veteran's affairs, graduate school, register, enroll, student loans, business office, testing center"
+ "tag": "academic services, admissions, financial aid, international student services, registrar, testing services, upward bound, veteran's affairs, graduate school, register, enroll, student loans, business office, testing center",
+ "type":"building"
     },
  {
  "name": "Business Office",
@@ -218,7 +248,8 @@
  "addressZIPCode": "76308",
  "info": "The business office is responsible for billing and collecting tuition, fees, campus housing, and other university-related charges. The office also invoices third-party agencies, audits MSU student accounts, and processes student refunds. Our office is also responsible for processing deposits for university departments.",
  "image": "http://www.mwsu.edu/maps/google/photos/hardinsouth.jpg",
- "tag": "pay tuition, holds, fines, ticket, fee, money, payment"
+ "tag": "pay tuition, holds, fines, ticket, fee, money, payment",
+ "type":"building"
  },
     {
         "name": "Hardin Administration Bldg",
@@ -231,7 +262,8 @@
         "addressZIPCode": "76308",
         "info": "Hardin Administration Building was one of the first two buildings constructed on the present campus. The building was completed March, 1937 at a price of $390,000 and was home to all offices and classrooms plus the library, gymnasium and auditorium. ",
         "image": "http://www.mwsu.edu/maps/google/photos/hardin-wide.jpg",
-        "tag": "administration, president"
+ "tag": "administration, president",
+ "type":"building"
     },
     {
         "name": "Akin Auditorium",
@@ -244,7 +276,8 @@
         "addressZIPCode": "76308",
         "info": "Part of the original campus built in 1937. Connected to the north end of what is now known as Hardin Hall, the wing contained an auditorium adorned with arched windows, arcade aisles, wooden beams, and a vaulted ceiling.",
         "image": "http://www.mwsu.edu/maps/google/photos/akin.jpg",
-        "tag": "auditorium"
+ "tag": "auditorium",
+ "type":"building"
     },
     {
         "name": "Dillard College of Business Administration",
@@ -257,7 +290,8 @@
         "addressZIPCode": "76308",
         "info": "Fall 2006 saw the opening of the new 88,000 sq. ft. Dillard College of Business Administration building, made possible in part by donations from the A.R. Dillard family, Priddy Foundation, Bryant Edwards Foundation, and J. S. Bridwell Foundation.. The $18 million building incorporates $1.1 million in state-of-the-art technology. Besides classrooms and faculty offices, the two-story complex boasts a 140-seat auditorium, a community seminar room, auditorium dining room, faculty library, computer labs, and its very own real-time stock ticker in the Cyber Café.",
         "image": "http://www.mwsu.edu/maps/google/images/coba.jpg",
-        "tag": "business, computer labs, stock ticker"
+ "tag": "business, computer labs, stock ticker",
+ "type":"building"
     },
     {
         "name": "Martin Hall",
@@ -270,7 +304,8 @@
         "addressZIPCode": "76308",
         "info": "Martin Hall was the first library at MSU, which was then called Martin Library. It was completed in 1946 and was expanded in 1948. It housed the university library until Moffett Library was completed in 1964. Today, Martin Hall houses criminal justice, health and public administration, and social work.",
         "image": "http://www.mwsu.edu/maps/google/photos/martinhall.jpg",
-        "tag": "criminal justice, health administration, public administration, social work, computer lab"
+ "tag": "criminal justice, health administration, public administration, social work, computer lab",
+ "type":"building"
     },
     {
         "name": "University Press",
@@ -283,7 +318,8 @@
         "addressZIPCode": "76308",
         "info": "The Old University Press was the third building constructed in 1940-41 and was initially used to train precision tool operators during the war years. Today, it is utilized as the Print and Supply Shop (397-4235) as well as the University Credit Union (397-4622).",
         "image": "http://www.mwsu.edu/maps/google/photos/univpress.jpg",
-        "tag": "print shop, university credit union"
+ "tag": "print shop, university credit union",
+ "type":"building"
     },
     {
         "name": "McCoy Engineering Hall",
@@ -296,7 +332,8 @@
         "addressZIPCode": "76308",
         "info": "The McCoy Engineering Hall was completed in 1949 as the result of an original gift by Movle Fowler in memory of his wife, Darle. It was built to house the technical training programs. Today the McCoy Engineering Hall houses Manufacturing Engineering Technology, Mechanical Engineering and Physics.",
         "image": "http://www.mwsu.edu/maps/google/photos/fowler.jpg",
-        "tag": "engineering, manufacturing, technology, mechanical, physics"
+ "tag": "engineering, manufacturing, technology, mechanical, physics",
+ "type":"building"
     },
     {
         "name": "Bridwell Hall",
@@ -309,7 +346,8 @@
         "addressZIPCode": "76308",
  "info": "Construction on Bridwell Hall was complete in September 1998. The newest MSU facility is a sleek three-story building for the health sciences division complete with a 147-seat lecture hall. The building was named after J.S. Bridwell, a well-known Wichita Falls rancher and oilman, who was also instrumental in establishing Sheppard Field, later known as Sheppard Air Force Base. Bridwell Hall houses the College of Health Sciences & Human Services, dental hygiene, nursing, radiologic sciences and respiratory care.",
         "image": "http://www.mwsu.edu/maps/google/photos/bridwellhall.jpg",
-        "tag": "college of health sciences & and human services, dental hygiene, nursing, radiologic sciences, respiratory care, xray, x-ray, medical"
+ "tag": "college of health sciences & and human services, dental hygiene, nursing, radiologic sciences, respiratory care, xray, x-ray, medical",
+ "type":"building"
     },
     {
         "name": "McGaha Hall",
@@ -322,7 +360,8 @@
         "addressZIPCode": "76308",
         "info": "Originally moved from Sheppard Air Force Base, McGaha Hall was named after Charles McGaha, a civic leader who provided funds for the brick facing. McGaha Hall is now home to the Academic Support Center. Academic Support Center 397-4684",
         "image": "http://www.mwsu.edu/maps/google/photos/mcgaha.jpg",
-        "tag": "academic support center"
+ "tag": "academic support center",
+ "type":"building"
     },
     {
         "name": "University Police",
@@ -335,7 +374,8 @@
         "addressZIPCode": "76308",
         "info": "Located in the Hampstead House on the North end of Campus. To reach the MSU Police Department please call 397-4239.",
         "image": "http://www.mwsu.edu/maps/google/photos/police.jpg",
-        "tag": "police, permit, security, fine, ticket, officer, chief, emergency, parking"
+ "tag": "police, permit, security, fine, ticket, officer, chief, emergency, parking",
+ "type":"building"
     },
     {
         "name": "Counseling Center",
@@ -348,7 +388,8 @@
         "addressZIPCode": "76308",
         "info": "N/A",
         "image": "",
-        "tag": "counseling"
+ "tag": "counseling",
+ "type":"building"
     },
  {
  "name": "917 Midwestern Parkway",
@@ -361,7 +402,8 @@
  "addressZIPCode": "76308",
  "info": "North Texas Surgi-Center at 917 Midwestern Parkway.",
  "image": "",
- "tag": "offsite, North Texas Surgi Center, Surgi-Center, surgical care affiliates"
+ "tag": "offsite, North Texas Surgi Center, Surgi-Center, surgical care affiliates",
+ "type":"building"
  },
     {
         "name": "Biology House",
@@ -374,7 +416,8 @@
         "addressZIPCode": "76308",
         "info": "N/A",
         "image": "",
-        "tag": ""
+ "tag": "",
+ "type":"building"
     },
     {
         "name": "Bridwell Courts",
@@ -387,7 +430,8 @@
         "addressZIPCode": "76308",
         "info": "Each apartment has a full kitchen, a large bath, central heat/air and plenty of storage space. Our apartments come with a basic furniture package and all utilities paid. There is a laundry room on the premises for your convenience. Bridwell Courts is reserved for families, graduate students, and upperclassmen. Apartments can be rented monthly by families and graduate students. If space is available, apartments can be rented to undergraduate students.",
         "image": "http://housing.mwsu.edu/images/foto_bridwell.jpg",
-        "tag": "apartments, housing, graduate, family, residential"
+ "tag": "apartments, housing, graduate, family, residential",
+ "type":"building"
     },
     {
         "name": "Catholic Campus Center",
@@ -400,7 +444,8 @@
         "addressZIPCode": "76308",
         "info": "Make the CCC your place of worship, socialization and fun while you study.  We are a growing ministry, with over 25 years of service offered to this wonderful community and prominent university.  Our Doors are open to you!",
         "image": "",
-        "tag": "catholic, religion, christian, worship, ministry"
+ "tag": "catholic, religion, christian, worship, ministry",
+ "type":"building"
     },
     {
         "name": "McCullough Hall",
@@ -413,7 +458,8 @@
         "addressZIPCode": "76308",
         "info": "McCullough Hall was named for Mary, the wife of Everett McCullough who was a longtime member and former chairman of the Board of Directors. McCullough is now the home of manufacturing engineering technology.",
         "image": "http://www.mwsu.edu/maps/google/photos/mch.jpg",
-        "tag": "academic success center"
+ "tag": "academic success center",
+ "type":"building"
     },
     {
         "name": "Instrument Music Hall",
@@ -426,7 +472,8 @@
         "addressZIPCode": "76308",
         "info": "The building was demolished in Spring 2013 and replaced by a new student commuter parking lot.",
         "image": "",
-        "tag": ""
+ "tag": "",
+ "type":"building"
     },
     {
         "name": "Paint Shop",
@@ -439,7 +486,8 @@
         "addressZIPCode": "76308",
         "info": "N/A",
         "image": "",
-        "tag": "facility services"
+ "tag": "facility services",
+ "type":"building"
     },
     {
         "name": "Marchman Hall",
@@ -452,7 +500,8 @@
         "addressZIPCode": "76308",
         "info": "Marchman Hall offers a quieter, more intimate setting. It is a smaller co-ed hall with 31 students with a suite arrangement of private rooms with connecting bathroom facilities. Marchman is reserved for upperclassmen.",
         "image": "http://www.mwsu.edu/maps/google/photos/marchman.jpg",
-        "tag": "residential, dormitory, upperclassmen, co-ed, coed, suite"
+ "tag": "residential, dormitory, upperclassmen, co-ed, coed, suite",
+ "type":"building"
     },
     {
         "name": "Church of Christ Student Center",
@@ -465,7 +514,8 @@
         "addressZIPCode": "76308",
         "info": "We are a group of college students who are devoted to showing the love of Christ on our college campus. We are a community, devoted to each other, and we call ourselves the Mustangs for Christ. We have fun, we engage in meaningful conversations and service projects, we serve others, and we grow closer to God and one another. Join us and make the time you spend in Wichita Falls as meaningful and fun as possible!",
         "image": "",
-        "tag": "religion, christianity, church of christ, ministry"
+ "tag": "religion, christianity, church of christ, ministry",
+ "type":"building"
     },
     {
         "name": "Sunwatcher Village Apartments",
@@ -478,7 +528,8 @@
         "addressZIPCode": "76308",
         "info": "Sunwatcher Village is a garden style apartment community that caters to the needs of upper-class students. Four-bedroom/two bathroom and two- bedroom/two bathroom apartments are available. All apartments are fully furnished and are equipped with refrigerator, microwave, dishwasher, stove, washer and dryer. The monthly rental price includes all utilities plus basic cable, telephone, voice mail, and Ethernet connection.",
         "image": "http://www.mwsu.edu/maps/google/photos/sunwatchervillage.jpg",
-        "tag": "residential, apartments, housing"
+ "tag": "residential, apartments, housing",
+ "type":"building"
     },
     {
         "name": "Killingsworth Hall",
@@ -491,7 +542,8 @@
         "addressZIPCode": "76308",
         "info": "Re-opened in the Fall of 2004 after a complete renovation, Killingsworth Hall is the largest residence hall on campus. Killingsworth is a six-story, 301 bed exclusively female hall located adjacent to the Clark Student Center.\n\nFeatures of this hall include television and study lounges on every floor, two full sized kitchens, multiple laundry facilities, fitness room, chapel and several group study rooms accompanied by multiple independent study carrels.\n\nResident rooms will include nice furniture, carpet and amenities such as Micro Fridge units, vanity with sink, cable and phone hookups for each resident (including voice mail) and ethernet services.\n\nKillingsworth Hall also features private bathrooms as opposed to traditional community washrooms for added privacy and comfort. The Office of Housing and Residence Life employs one staff member for every 25 residents in Killingsworth Hall to assure a safe, comfortable and involving living environment.\n\nThe service desk located in the hall provides 24-hour access for checking-out games, equipment, cleaning supplies, providing maintenance request forms, and other services which the resident student may require.\n\nFree copies of USA Today, The Dallas Morning News, and The Wichita Falls Times-Record News are available in the Hall lobby each weekday morning.",
         "image": "http://www.mwsu.edu/maps/google/photos/khall.jpg",
-        "tag": "residential, dormitory, women, housing, female"
+ "tag": "residential, dormitory, women, housing, female",
+ "type":"building"
     },
     {
         "name": "Pierce Hall",
@@ -504,7 +556,8 @@
         "addressZIPCode": "76308",
         "info": "Pierce Hall is a three story all male, 227 bed facility built around a central courtyard. Features of this hall include a large comfort lobby and television lounge on the first floor as well as a full sized kitchen.\n\nTwo large laundry facilities are available for resident use as well as several private study carrels and group study rooms.  The second floor offers a large recreational and game area as well as big screen television lounge and small kitchen area. Each room features MicroFridge units, vanity with sink and semi-private living arrangements.\n\nAir conditioning, private phone lines complete with voice mail.  Cable TV service and Ethernet ports are also available in each room.\n\nPierce Hall features private bathrooms as opposed to traditional community washrooms to provide residents with enhanced comfort and privacy in their residence hall community.\n\nThe service desk located in the hall provides 24-hour access for checking-out games, equipment, cleaning supplies, maintenance request forms, and other services which the resident student may require.  Free copies of USA Today, The Dallas Morning News, and The Wichita Falls Times-Record News are available across from the office each weekday morning.",
         "image": "http://www.mwsu.edu/maps/google/photos/phall.jpg",
-        "tag": "residential, housing, men, male, dormitory"
+ "tag": "residential, housing, men, male, dormitory",
+ "type":"building"
     },
     {
         "name": "Band Hall",
@@ -517,7 +570,8 @@
         "addressZIPCode": "76308",
         "info": "Demolished in Spring 2013 and replaced by a commuter parking lot.",
         "image": "",
-        "tag": ""
+ "tag": "",
+ "type":"building"
     },
     {
         "name": "Fain Fine Arts Center",
@@ -530,7 +584,8 @@
         "addressZIPCode": "76308",
         "info": "The Fain Fine Arts Center was dedicated by former Texas Governor Dolph Briscoe on February 2, 1978. The Fain Fine Art Center houses art, the box office, Lamar D. Fain College of Fine Arts, mass communications, music, Fain Fine Arts Theatre, TV-2 (TV studio) and the Wichitan (campus newspaper).",
         "image": "http://www.mwsu.edu/maps/google/photos/faincenter.jpg",
-        "tag": "fine arts, mass communications, music, theatre, TV-2, Campus Watch, TV studio, Wichitan, campus newspaper, performing arts, painting, sculting, art gallery, piano, voice, choir, band, artist, digital"
+ "tag": "fine arts, mass communications, music, theatre, TV-2, Campus Watch, TV studio, Wichitan, campus newspaper, performing arts, painting, sculting, art gallery, piano, voice, choir, band, artist, digital",
+ "type":"building"
     },
     {
         "name": "Free Play Field",
@@ -543,7 +598,8 @@
         "addressZIPCode": "76308",
         "info": "N/A",
         "image": "",
-        "tag": ""
+ "tag": "",
+ "type":"building"
     },
     {
         "name": "Soccer Field",
@@ -556,7 +612,8 @@
         "addressZIPCode": "76308",
         "info": "N/A",
         "image": "",
-        "tag": ""
+ "tag": "",
+ "type":"building"
     },
     {
         "name": "Outdoor Basketball Court",
@@ -569,7 +626,8 @@
         "addressZIPCode": "76308",
         "info": "N/A",
         "image": "",
-        "tag": ""
+ "tag": "",
+ "type":"building"
     },
     {
         "name": "Recreational Sports Fields",
@@ -582,7 +640,8 @@
         "addressZIPCode": "76308",
         "info": "N/A",
         "image": "",
-        "tag": ""
+ "tag": "",
+ "type":"building"
     },
     {
         "name": "Tennis Courts",
@@ -595,7 +654,8 @@
         "addressZIPCode": "76308",
         "info": "N/A",
         "image": "",
-        "tag": ""
+ "tag": "",
+ "type":"building"
     },
     {
         "name": "Mustang Park",
@@ -608,7 +668,8 @@
         "addressZIPCode": "76308",
         "info": "N/A",
         "image": "",
-        "tag": "softball stadium field"
+ "tag": "softball stadium field",
+ "type":"building"
     },
     {
         "name": "Batting Cages",
@@ -621,7 +682,8 @@
         "addressZIPCode": "76308",
         "info": "N/A",
         "image": "",
-        "tag": "softball"
+ "tag": "softball",
+ "type":"building"
     },
     {
         "name": "Sundance Court",
@@ -634,7 +696,8 @@
         "addressZIPCode": "76308",
         "info": "Sundance Court, which opened in Fall 2009, has once again set the standard in campus housing.  Our newest apartment facility offers both 4-bedroom, 2-bath units and 2-bedroom, 2-bath units for students.  These apartments boast all modern technological amenities with spacious floorplans and walk-in closets.  Come in and take a tour and see what you might be missing!",
         "image": "http://housing.mwsu.edu/myclipart/sundanceexterior.jpg",
-        "tag": "residential, housing, apartments"
+ "tag": "residential, housing, apartments",
+ "type":"building"
     },
     {
         "name": "Vinson Health Center",
@@ -647,7 +710,8 @@
         "addressZIPCode": "76308",
         "info": "The Vinson Health Center was originally the Vinson Infirmary named for Jerry Vinson, who contributed toward its rehabilitation. The Vinson Health Center is the student health center for Midwestern State University. Ambulatory care services are provided for the exclusive benefit of MSU students. Medical services are designed to meet the needs of students with acute illnesses and/or injuries. The Health Center utilizes an emphasis on preventative medicine to enable students to focus on the university curriculum and campus life.\n\nAdditional services to promote wellness are provided to ensure each student maintains a state of optimal health. The Health Center serves as a resource for developmental programming in areas of health promotion, health maintenance, and health education.",
         "image": "http://healthcenter.mwsu.edu/images/Vinson_group.jpg",
-        "tag": "ambulatory care, medical services, illness, injury, injuries, sick, medicine, health"
+ "tag": "ambulatory care, medical services, illness, injury, injuries, sick, medicine, health",
+ "type":"building"
     },
     {
         "name": "Bruce & Graciela Redwine Student Wellness Center",
@@ -660,7 +724,8 @@
         "addressZIPCode": "76308",
         "info": "Welcome to the Midwestern State University Student Wellness Center. Your 51,000 square foot facility was built in the summer of 2009, and is completed with the best equipment available on the market (CYBEX) and (TRUE). We have over 75 pieces of free weights and machines and 50 different pieces of cardiovascular equipment each having an entertainment monitor (television) for student, faculty and staff use. In addition, there is an indoor track, state-of-the-art group fitness rooms, an outdoor aquatics area, and fully equipped gymnasium. For more information call 940-397-4838.",
         "image": "http://www.mwsu.edu/maps/google/images/new-wellness-center01.jpg",
-        "tag": "fitness, gym, weightlifting, workout, exercise, cardio, spin, treadmill, swimming pool, basketball, gymnasium, sandpit volleyball, group fitness rooms, zumba, walking track, Bruce & Graciela Redwine"
+ "tag": "fitness, gym, weightlifting, workout, exercise, cardio, spin, treadmill, swimming pool, basketball, gymnasium, sandpit volleyball, group fitness rooms, zumba, walking track, Bruce & Graciela Redwine",
+ "type":"building"
     },
     {
         "name": "Sikes House",
@@ -673,7 +738,8 @@
         "addressZIPCode": "76308",
         "info": "N/A",
         "image": "",
-        "tag": ""
+ "tag": "",
+ "type":"building"
     },
     {
         "name": "Soccer Practice Fields",
@@ -686,7 +752,8 @@
         "addressZIPCode": "76308",
         "info": "N/A",
         "image": "",
-        "tag": ""
+ "tag": "",
+ "type":"building"
     },
     {
         "name": "Museum of Art",
@@ -699,7 +766,8 @@
         "addressZIPCode": "76308",
         "info": "N/A",
         "image": "http://www.mwsu.info/wfma/files/2012/01/IMG_2778.jpg",
-        "tag": "art, museum, gallery, wfma"
+ "tag": "art, museum, gallery, wfma",
+ "type":"building"
     },
     {
         "name": "Sikes Lake Center",
@@ -712,7 +780,8 @@
         "addressZIPCode": "76308",
         "info": "The 8,836 sq. ft. metal structure next to Sikes Lake is used for university meetings, social gatherings, and fitness classes. Large windows on the west side allow a beautiful view of the lake and jogging path.",
         "image": "http://www.mwsu.edu/maps/google/photos/lakecenter.jpg",
-        "tag": "activities room, social gatherings, meetings, fitness classes"
+ "tag": "activities room, social gatherings, meetings, fitness classes",
+ "type":"building"
     },
     {
         "name": "Outdoor Recreation Center",
@@ -725,7 +794,8 @@
         "addressZIPCode": "76308",
         "info": "The Outdoor Recreation Center is a 125' X 70' metal building that allows a wide array of uses. The large classroom doubles as a meeting and activities room with a capacity for approximately 200 people. Windows and doors on the west side of the building offer a view of Sikes Lake from inside the facility.",
         "image": "http://www.mwsu.edu/maps/google/photos/outdoorrec.jpg",
-        "tag": "meetings, activities room, social gatherings"
+ "tag": "meetings, activities room, social gatherings",
+ "type":"building"
     },
     {
         "name": "Sikes Cottage",
@@ -738,7 +808,8 @@
         "addressZIPCode": "76308",
         "info": "The colonial Dutch barn building located west of the Sikes Guesthouse has served as a shop for original owner, Louis Sikes, and later as a studio for President Barker's wife Maxine. The two-story structure was also used as a guest apartment. Also known as the Carriage House.",
         "image": "http://www.mwsu.edu/maps/google/photos/carriage.jpg",
-        "tag": ""
+ "tag": "",
+ "type":"building"
     },
     {
         "name": "Carriage House",
@@ -751,7 +822,8 @@
         "addressZIPCode": "76308",
         "info": "The colonial Dutch barn building located west of the Sikes Guesthouse has served as a shop for original owner, Louis Sikes, and later as a studio for President Barker's wife Maxine. The two-story structure was also used as a guest apartment. Also known as the Sikes Cottage.",
         "image": "http://www.mwsu.edu/maps/google/photos/carriage.jpg",
-        "tag": ""
+ "tag": "",
+ "type":"building"
     },
     {
         "name": "Alumni Center",
@@ -764,7 +836,8 @@
         "addressZIPCode": "76308",
         "info": "Located on the South Campus at MSU. The mission of the Office of Alumni Relations is to identify, cultivate and strengthen relationships among former students, graduates and friends while promoting and enhancing the university's mission and commitment to academic excellence, productive scholarship, and personal growth.",
         "image": "http://www.mwsu.edu/maps/google/photos/alumni.jpg",
-        "tag": "alumni, alumnus, scholarships, graduates, Office of Alumni Relations"
+ "tag": "alumni, alumnus, scholarships, graduates, Office of Alumni Relations",
+ "type":"building"
     },
     {
         "name": "Daniel Building",
@@ -777,7 +850,8 @@
         "addressZIPCode": "76308",
         "info": "Named for Will Daniel who was a governing board member, was originally moved to campus from Sheppard Air Force Base. It served as a dormitory for years. The original building was demolished in 1981 and rebuilt in 1990. Today Daniel Hall is home to the Physical Plant and the Purchasing Office.",
         "image": "http://www.mwsu.edu/maps/google/photos/daniel.jpg",
-        "tag": "Purchasing Office, Physical Plant, Bldg"
+ "tag": "Purchasing Office, Physical Plant, Bldg",
+ "type":"building"
     },
     {
         "name": "Post Office",
@@ -790,7 +864,8 @@
         "addressZIPCode": "76308",
         "info": "N/A",
         "image": "",
-        "tag": "mail, packages, mailboxes, postal services, usps"
+ "tag": "mail, packages, mailboxes, postal services, usps",
+ "type":"building"
     },
     {
         "name": "Outdoor Swimming Pool",
@@ -803,7 +878,8 @@
         "addressZIPCode": "76308",
         "info": "N/A",
         "image": "",
-        "tag": ""
+ "tag": "",
+ "type":"building"
     },
     {
         "name": "Sand Volleyball Pit",
@@ -816,7 +892,8 @@
         "addressZIPCode": "76308",
         "info": "N/A",
         "image": "",
-        "tag": ""
+ "tag": "",
+ "type":"building"
     },
     {
         "name": "Sikes Lake",
@@ -829,7 +906,8 @@
         "addressZIPCode": "76308",
         "info": "N/A",
         "image": "",
-        "tag": ""
+ "tag": "",
+ "type":"building"
     },
     {
         "name": "Sikes Center Mall",
@@ -842,7 +920,8 @@
         "addressZIPCode": "76308",
         "info": "N/A",
         "image": "",
-        "tag": "entertainment, shopping"
+ "tag": "entertainment, shopping",
+ "type":"building"
     },
     {
         "name": "Cinemark 14 Movie Theatre",
@@ -855,6 +934,7 @@
         "addressZIPCode": "76308",
         "info": "N/A",
         "image": "",
-        "tag": "entertainment"
+ "tag": "entertainment",
+ "type":"building"
     }
 ]

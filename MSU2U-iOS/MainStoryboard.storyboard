@@ -634,29 +634,29 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="article" textLabel="Iig-8v-XlK" detailTextLabel="LfI-hY-2QR" imageView="wsj-Hs-Bjp" rowHeight="70" style="IBUITableViewCellStyleSubtitle" id="uTA-q9-zih">
-                                <rect key="frame" x="0.0" y="66" width="320" height="70"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="article" textLabel="Iig-8v-XlK" detailTextLabel="LfI-hY-2QR" imageView="wsj-Hs-Bjp" rowHeight="80" style="IBUITableViewCellStyleSubtitle" id="uTA-q9-zih">
+                                <rect key="frame" x="0.0" y="66" width="320" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uTA-q9-zih" id="vDo-28-of1">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Cubs to try to keep season tickets" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="13" preferredMaxLayoutWidth="153" id="Iig-8v-XlK">
-                                            <rect key="frame" x="99" y="8" width="153" height="41"/>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Cubs to try to keep season tickets" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="13" preferredMaxLayoutWidth="137" id="Iig-8v-XlK">
+                                            <rect key="frame" x="109" y="16" width="137" height="36"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Published 10-24-2012 by ESPN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LfI-hY-2QR">
-                                            <rect key="frame" x="99" y="49" width="149" height="12"/>
+                                            <rect key="frame" x="109" y="52" width="149" height="12"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="theWichitan.jpg" id="wsj-Hs-Bjp">
-                                            <rect key="frame" x="15" y="0.0" width="69" height="69"/>
+                                            <rect key="frame" x="15" y="0.0" width="79" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -2333,7 +2333,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="pWi-Fu-hij"/>
+        <segue reference="eB4-O5-bui"/>
         <segue reference="WdR-XJ-q9a"/>
     </inferredMetricsTieBreakers>
 </document>

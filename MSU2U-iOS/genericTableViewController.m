@@ -1239,10 +1239,21 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
         }
         
         //Download a 50x50 image
-        [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject image]] placeholderImage:[UIImage imageNamed:defaultImage] options:0 andResize:CGSizeMake(50, 50)];
+        [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject image]] placeholderImage:[UIImage imageNamed:defaultImage] options:0 andResize:CGSizeMake(60, 60)];
+        
+        
+        dispatch_queue_t imageQ = dispatch_queue_create("imageQ", NULL);
+        dispatch_async(imageQ, ^{
+            //Apply style effects on separate thread
+            CALayer *imageLayer = cell.imageView.layer;
+            [imageLayer setCornerRadius:30];
+            [imageLayer setBorderWidth:0];
+            [imageLayer setMasksToBounds:YES];
+
+        });
         
         //Ensure that the table cell image is restricted to 50x50
-        CGSize size = {50,50};
+        CGSize size = {60,60};
         cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
         
     }
@@ -1257,7 +1268,9 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
         
         [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject picture]] placeholderImage:[UIImage imageNamed:@"Unknown.jpg"] options:0 andResize:CGSizeMake(40, 50)];
         //[cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject picture]] placeholderImage:[UIImage imageNamed:@"Unknown.jpg"]];
+        
         CGSize size = {40,50};
+        
         cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
     }
     //*** Twitter
@@ -1268,8 +1281,19 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
         
         //Twitter profile images could change often, so remove from the cache and force a redownload
         [[SDImageCache sharedImageCache] removeImageForKey:[self.dataObject profile_image_url] fromDisk:YES];
-        [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject profile_image_url]] placeholderImage:[UIImage imageNamed:@"twitter.png"] options:0 andResize:CGSizeMake(50, 50)];
-        CGSize size = {50,50};
+        [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject profile_image_url]] placeholderImage:[UIImage imageNamed:@"twitter.png"] options:0 andResize:CGSizeMake(60, 60)];
+        
+        dispatch_queue_t imageQ = dispatch_queue_create("imageQ", NULL);
+        dispatch_async(imageQ, ^{
+            //Apply style effects on separate thread
+            CALayer *imageLayer = cell.imageView.layer;
+            [imageLayer setCornerRadius:30];
+            [imageLayer setBorderWidth:0];
+            [imageLayer setMasksToBounds:YES];
+            
+        });
+        
+        CGSize size = {60,60};
         cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
     }
     //*** Videos
