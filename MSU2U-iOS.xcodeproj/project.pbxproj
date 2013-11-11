@@ -88,7 +88,6 @@
 		1D2FF9FA172499C500871B7C /* track-landscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9F6172499C500871B7C /* track-landscape.jpg */; };
 		1D2FF9FC17249D7E00871B7C /* softball-portrait.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9FB17249D7E00871B7C /* softball-portrait.jpg */; };
 		1D2FF9FE1724A18100871B7C /* mens-tennis-portrait.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9FD1724A18100871B7C /* mens-tennis-portrait.jpg */; };
-		1D2FFA041724DA0C00871B7C /* ipadStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FFA011724DA0A00871B7C /* ipadStoryboard.storyboard */; };
 		1D2FFA051724DA0C00871B7C /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2FFA031724DA0B00871B7C /* Video.m */; };
 		1D3DA8DB171F26BB0020FEBB /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3DA8BF171F26BA0020FEBB /* MKAnnotationView+WebCache.m */; };
 		1D3DA8DC171F26BB0020FEBB /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3DA8C1171F26BA0020FEBB /* SDImageCache.m */; };
@@ -543,7 +542,6 @@
 		1D2FF9F6172499C500871B7C /* track-landscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "track-landscape.jpg"; sourceTree = "<group>"; };
 		1D2FF9FB17249D7E00871B7C /* softball-portrait.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "softball-portrait.jpg"; sourceTree = "<group>"; };
 		1D2FF9FD1724A18100871B7C /* mens-tennis-portrait.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mens-tennis-portrait.jpg"; sourceTree = "<group>"; };
-		1D2FFA011724DA0A00871B7C /* ipadStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ipadStoryboard.storyboard; sourceTree = "<group>"; };
 		1D2FFA021724DA0B00871B7C /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
 		1D2FFA031724DA0B00871B7C /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video.m; sourceTree = "<group>"; };
 		1D3DA8BE171F26BA0020FEBB /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
@@ -845,7 +843,6 @@
 			children = (
 				1DC539A3173232DF008BD25B /* Developer */,
 				1D50D2B21727695300DEF459 /* Podcast */,
-				1D2FFA011724DA0A00871B7C /* ipadStoryboard.storyboard */,
 				1D2FF9D1172465DB00871B7C /* About */,
 				1D2FF9CA1724519200871B7C /* TabBarController */,
 				1DA477FD17220341001CC653 /* Videos */,
@@ -1803,7 +1800,6 @@
 				1D2FF9FA172499C500871B7C /* track-landscape.jpg in Resources */,
 				1D2FF9FC17249D7E00871B7C /* softball-portrait.jpg in Resources */,
 				1D2FF9FE1724A18100871B7C /* mens-tennis-portrait.jpg in Resources */,
-				1D2FFA041724DA0C00871B7C /* ipadStoryboard.storyboard in Resources */,
 				1D986459172BAA8B00F1857F /* twitterNoAccount.png in Resources */,
 				1DC539CF173233A9008BD25B /* msu2u_devteam.png in Resources */,
 				1DC539D1173234D8008BD25B /* msu2u_v1_devteam.png in Resources */,

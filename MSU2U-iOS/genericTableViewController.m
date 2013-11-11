@@ -260,8 +260,10 @@
         
         notCurrentlyRefreshing = TRUE;
         
+        //END YOUR REFRESHES HERE!
         dispatch_async(dispatch_get_main_queue(), ^{
             [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [self.refreshControl endRefreshing];
         });
     });
 }
@@ -990,6 +992,13 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    //All views will have a refresh control displayed
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh)
+             forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
+    
     
     //Set debug to TRUE for the CoreDataTableViewController class
     self.debug = FALSE;
