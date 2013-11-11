@@ -12,6 +12,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    UIColor * msuRed = [UIColor colorWithRed:64/255.0 green:0/255.0 blue:5/255.0 alpha:1.0];
+    UIColor * msuGold = [UIColor colorWithRed:225/255.0 green:196/255.0 blue:147/255.0 alpha:1.0];
+    UIColor * msuCream = [UIColor colorWithRed:226/255.0 green:219/255.0 blue:227/255.0 alpha:1.0];
+    
+    [[UINavigationBar appearance] setBarTintColor:msuRed];
+    [[UITabBar appearance] setBarTintColor:msuRed];
+    [[UISearchBar appearance] setBarTintColor:msuGold];
+    [[UISegmentedControl appearance] setTintColor:msuGold];
+    [[UITabBar appearance] setTintColor:msuGold];
+    [[UINavigationBar appearance] setTintColor:msuGold];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : msuGold}];
+    
     //Initialize user defaults
     NSString *path = [[NSBundle mainBundle] pathForResource:@"defaults" ofType:@"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
