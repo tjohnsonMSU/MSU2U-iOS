@@ -26,6 +26,11 @@
 		1D1778861830BAEE002C1DD7 /* msu2u-spotlight2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D1778851830BAEE002C1DD7 /* msu2u-spotlight2.png */; };
 		1D1778881830BB3B002C1DD7 /* msu2u-settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D1778871830BB3B002C1DD7 /* msu2u-settings.png */; };
 		1D17788A1830BB7F002C1DD7 /* msu2u-settings2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D1778891830BB7F002C1DD7 /* msu2u-settings2.png */; };
+		1D17788F18317677002C1DD7 /* 874-newspaper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D17788B18317677002C1DD7 /* 874-newspaper@2x.png */; };
+		1D17789018317677002C1DD7 /* 851-calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D17788C18317677002C1DD7 /* 851-calendar@2x.png */; };
+		1D17789118317677002C1DD7 /* 870-smile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D17788D18317677002C1DD7 /* 870-smile@2x.png */; };
+		1D17789218317677002C1DD7 /* 852-map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D17788E18317677002C1DD7 /* 852-map@2x.png */; };
+		1D177894183176D4002C1DD7 /* 792-tv@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D177893183176D4002C1DD7 /* 792-tv@2x.png */; };
 		1D1CEAD8162B4D230059BC1F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1CEAD7162B4D230059BC1F /* UIKit.framework */; };
 		1D1CEADA162B4D230059BC1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1CEAD9162B4D230059BC1F /* Foundation.framework */; };
 		1D1CEADC162B4D230059BC1F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1CEADB162B4D230059BC1F /* CoreGraphics.framework */; };
@@ -441,6 +446,11 @@
 		1D1778851830BAEE002C1DD7 /* msu2u-spotlight2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "msu2u-spotlight2.png"; sourceTree = "<group>"; };
 		1D1778871830BB3B002C1DD7 /* msu2u-settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "msu2u-settings.png"; sourceTree = "<group>"; };
 		1D1778891830BB7F002C1DD7 /* msu2u-settings2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "msu2u-settings2.png"; sourceTree = "<group>"; };
+		1D17788B18317677002C1DD7 /* 874-newspaper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "874-newspaper@2x.png"; sourceTree = "<group>"; };
+		1D17788C18317677002C1DD7 /* 851-calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "851-calendar@2x.png"; sourceTree = "<group>"; };
+		1D17788D18317677002C1DD7 /* 870-smile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "870-smile@2x.png"; sourceTree = "<group>"; };
+		1D17788E18317677002C1DD7 /* 852-map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "852-map@2x.png"; sourceTree = "<group>"; };
+		1D177893183176D4002C1DD7 /* 792-tv@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "792-tv@2x.png"; sourceTree = "<group>"; };
 		1D1CEAD3162B4D230059BC1F /* MSU2U.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSU2U.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1CEAD7162B4D230059BC1F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1D1CEAD9162B4D230059BC1F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -883,6 +893,11 @@
 		1D1DE2601830B2350097EEC7 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				1D177893183176D4002C1DD7 /* 792-tv@2x.png */,
+				1D17788B18317677002C1DD7 /* 874-newspaper@2x.png */,
+				1D17788C18317677002C1DD7 /* 851-calendar@2x.png */,
+				1D17788D18317677002C1DD7 /* 870-smile@2x.png */,
+				1D17788E18317677002C1DD7 /* 852-map@2x.png */,
 				1D17785A1830B852002C1DD7 /* 1055-ticket@2x.png */,
 				1D1DE2611830B2350097EEC7 /* 1032-route@2x.png */,
 				1D1DE2621830B2350097EEC7 /* 1045-clapboard@2x.png */,
@@ -1607,11 +1622,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D1CEAE2162B4D230059BC1F /* InfoPlist.strings in Resources */,
+				1D17788F18317677002C1DD7 /* 874-newspaper@2x.png in Resources */,
 				1D1CEAFF162B4DBB0059BC1F /* MainStoryboard.storyboard in Resources */,
 				1D062FDA1638B61600064956 /* theWichitan.jpg in Resources */,
 				1DED1E7616521CC2003D6721 /* directoryBackdrop.png in Resources */,
 				1DDB39C81652CF6E00252053 /* footballBanner.png in Resources */,
 				1D95545A165C37DD00E9E7B9 /* star.png in Resources */,
+				1D17789018317677002C1DD7 /* 851-calendar@2x.png in Resources */,
 				1DB63E4316604EBD00A21649 /* basketball.jpeg in Resources */,
 				1DB63E4416604EBD00A21649 /* softball.jpeg in Resources */,
 				1DB63E4516604EBD00A21649 /* tennis.jpeg in Resources */,
@@ -1634,6 +1651,7 @@
 				1D1778881830BB3B002C1DD7 /* msu2u-settings.png in Resources */,
 				1D968C6316BCAA58004AB866 /* standardMap.png in Resources */,
 				1D1778841830BAEA002C1DD7 /* msu2u-spotlight.png in Resources */,
+				1D177894183176D4002C1DD7 /* 792-tv@2x.png in Resources */,
 				1D968C6416BCAA58004AB866 /* satelliteMap.png in Resources */,
 				1D968C6516BCAA58004AB866 /* hybridMap.png in Resources */,
 				1D17788A1830BB7F002C1DD7 /* msu2u-settings2.png in Resources */,
@@ -1676,10 +1694,12 @@
 				1D2FF9F0172499BC00871B7C /* womens-soccer-portrait.jpg in Resources */,
 				1D2FF9F1172499BC00871B7C /* softball-landscape.jpg in Resources */,
 				1D2FF9F2172499BC00871B7C /* womens-soccer-landscape.jpg in Resources */,
+				1D17789118317677002C1DD7 /* 870-smile@2x.png in Resources */,
 				1D2FF9F7172499C500871B7C /* womens-golf-portrait.jpg in Resources */,
 				1D2FF9F8172499C500871B7C /* womens-golf-landscape.jpg in Resources */,
 				1D2FF9F9172499C500871B7C /* track-portrait.jpg in Resources */,
 				1D2FF9FA172499C500871B7C /* track-landscape.jpg in Resources */,
+				1D17789218317677002C1DD7 /* 852-map@2x.png in Resources */,
 				1D2FF9FC17249D7E00871B7C /* softball-portrait.jpg in Resources */,
 				1D2FF9FE1724A18100871B7C /* mens-tennis-portrait.jpg in Resources */,
 				1D986459172BAA8B00F1857F /* twitterNoAccount.png in Resources */,

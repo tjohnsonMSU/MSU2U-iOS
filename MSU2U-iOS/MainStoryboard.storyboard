@@ -83,7 +83,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-12431" y="-2739"/>
+            <point key="canvasLocation" x="-12467" y="-1691"/>
         </scene>
         <!--Campus Map Info View Controller - [Building Name Here]-->
         <scene sceneID="cTL-YX-Zwf">
@@ -570,7 +570,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="3Wr-qe-r7U" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Video" image="1045-clapboard.png" id="W2W-B7-yvS"/>
+                    <tabBarItem key="tabBarItem" title="Video" image="792-tv.png" id="W2W-B7-yvS"/>
                     <navigationItem key="navigationItem" id="WX9-67-3pd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dC4-ck-BXF">
                         <autoresizingMask key="autoresizingMask"/>
@@ -588,7 +588,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="Erc-Hh-uLn" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Event" image="1055-ticket.png" id="ykS-Ca-qqw"/>
+                    <tabBarItem key="tabBarItem" title="Event" image="851-calendar.png" id="ykS-Ca-qqw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RSO-tZ-VZ6">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -605,7 +605,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="wC3-iN-wRZ" customClass="newsNavigationViewController" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="News" image="1100-list-2.png" id="VVO-zk-BjC"/>
+                    <tabBarItem key="tabBarItem" title="News" image="874-newspaper.png" id="VVO-zk-BjC"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NrL-sd-EX6">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -915,7 +915,7 @@
                             </tableViewSection>
                             <tableViewSection id="nZa-Db-DZ7">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="wmT-2S-xAU" rowHeight="55" style="IBUITableViewCellStyleDefault" id="OXr-xm-lgk">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="wmT-2S-xAU" imageView="Xhy-4v-3jC" rowHeight="55" style="IBUITableViewCellStyleDefault" id="OXr-xm-lgk">
                                         <rect key="frame" x="0.0" y="295" width="320" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OXr-xm-lgk" id="RA0-kY-eLo">
@@ -923,36 +923,38 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Get Directions to Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wmT-2S-xAU">
-                                                    <rect key="frame" x="15" y="0.0" width="270" height="54"/>
+                                                    <rect key="frame" x="58" y="0.0" width="227" height="54"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="1032-route.png" id="Xhy-4v-3jC">
+                                                    <rect key="frame" x="15" y="14" width="28" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="55" id="POS-vt-gi1">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="QTW-2N-dXQ" imageView="dJW-P0-Fhh" rowHeight="55" style="IBUITableViewCellStyleDefault" id="POS-vt-gi1">
                                         <rect key="frame" x="0.0" y="350" width="320" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="POS-vt-gi1" id="F9R-Xe-UYd">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Add Event to Calendar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oC0-NH-1wL">
-                                                    <rect key="frame" x="30" y="16" width="260" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="260" id="Ocd-aH-6tX"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Add Event to Calendar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QTW-2N-dXQ">
+                                                    <rect key="frame" x="58" y="0.0" width="247" height="54"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="851-calendar.png" id="dJW-P0-Fhh">
+                                                    <rect key="frame" x="15" y="13" width="28" height="28"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstItem="oC0-NH-1wL" firstAttribute="centerX" secondItem="POS-vt-gi1" secondAttribute="centerX" id="3hp-fP-YtG"/>
-                                            <constraint firstItem="oC0-NH-1wL" firstAttribute="top" secondItem="POS-vt-gi1" secondAttribute="top" constant="16" id="OEv-fF-gRH"/>
-                                        </constraints>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1203,7 +1205,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLF-gV-A9F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14555" y="71"/>
+            <point key="canvasLocation" x="-14567" y="63"/>
         </scene>
         <!--DevV2 View Controller - Version 2.0-->
         <scene sceneID="t9L-Zq-S8d">
@@ -1739,12 +1741,12 @@
             </objects>
             <point key="canvasLocation" x="-14398" y="1469"/>
         </scene>
-        <!--Navigation Controller - Social-->
+        <!--Navigation Controller - Twitter-->
         <scene sceneID="SMZ-u8-hgK">
             <objects>
                 <navigationController definesPresentationContext="YES" id="sTv-U5-K3B" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Social" image="906-chat-3.png" id="xan-so-di8"/>
+                    <tabBarItem key="tabBarItem" title="Twitter" image="906-chat-3.png" id="xan-so-di8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oT2-Ti-cYT">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1947,7 +1949,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="Kil-vA-Bz9" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="About" image="42-info.png" id="fB8-Sm-jku"/>
+                    <tabBarItem key="tabBarItem" title="About" image="870-smile.png" id="fB8-Sm-jku"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tUO-23-BHG">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1959,7 +1961,7 @@
             </objects>
             <point key="canvasLocation" x="-15936" y="-1543"/>
         </scene>
-        <!--Twitter View Controller-->
+        <!--Twitter View Controller - Twitter-->
         <scene sceneID="5uv-kQ-8Pw">
             <objects>
                 <tableViewController id="GJB-9a-jfJ" customClass="twitterViewController" sceneMemberID="viewController">
@@ -2015,19 +2017,7 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" id="wJb-aF-gRg">
-                        <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="JUd-xp-XKW">
-                            <rect key="frame" x="86" y="6" width="149" height="32"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="Twitter"/>
-                                <segment title="Facebook"/>
-                            </segments>
-                            <connections>
-                                <action selector="segmentedControlIndexChanged" destination="GJB-9a-jfJ" eventType="valueChanged" id="Ntb-Sn-GpP"/>
-                            </connections>
-                        </segmentedControl>
+                    <navigationItem key="navigationItem" title="Twitter" id="wJb-aF-gRg">
                         <barButtonItem key="rightBarButtonItem" title="Tweet" id="hKq-uC-QU5">
                             <connections>
                                 <action selector="tweet:" destination="GJB-9a-jfJ" id="utP-wu-Yec"/>
@@ -2038,7 +2028,6 @@
                         <outlet property="searchBar" destination="1kN-8T-ALu" id="omT-zC-xAj"/>
                         <outlet property="searchDisplayControl" destination="PvZ-4W-ytf" id="MdE-2u-6mp"/>
                         <outlet property="searchDisplayController" destination="PvZ-4W-ytf" id="KKf-4C-Wnl"/>
-                        <outlet property="segmentedControl" destination="JUd-xp-XKW" id="VNi-H2-mqw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9VT-nJ-Ii3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2271,7 +2260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iFb-gN-TyH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-13266" y="-2"/>
+            <point key="canvasLocation" x="-12574" y="-66"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="30L-jD-bg0">
@@ -2303,10 +2292,10 @@
     </scenes>
     <resources>
         <image name="1032-route.png" width="28" height="26"/>
-        <image name="1045-clapboard.png" width="28" height="28"/>
-        <image name="1055-ticket.png" width="28" height="18"/>
-        <image name="1100-list-2.png" width="28" height="22"/>
-        <image name="42-info.png" width="28" height="28"/>
+        <image name="792-tv.png" width="28" height="26"/>
+        <image name="851-calendar.png" width="28" height="28"/>
+        <image name="870-smile.png" width="28" height="28"/>
+        <image name="874-newspaper.png" width="28" height="22"/>
         <image name="906-chat-3.png" width="28" height="26"/>
         <image name="946-microphone.png" width="16" height="28"/>
         <image name="974-users.png" width="28" height="18"/>
@@ -2333,7 +2322,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="eB4-O5-bui"/>
-        <segue reference="WdR-XJ-q9a"/>
+        <segue reference="8dj-o1-oST"/>
+        <segue reference="Egf-cW-mua"/>
     </inferredMetricsTieBreakers>
 </document>
