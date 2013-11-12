@@ -12,6 +12,7 @@
 #import "overlay.h"
 #import <AddressBook/AddressBook.h>
 #import "campusMapInfoViewController.h"
+#import "campusMapSettingsViewController.h"
 
 @interface campusMapViewController : UIViewController<MKMapViewDelegate, UIActionSheetDelegate>{
     NSArray *buildings;
@@ -50,4 +51,5 @@
 @property (strong,nonatomic) NSArray * keysToSearchOn;
 
 - (void) sendLocationName:(NSString*)locationName andEmployeeName:(NSString*)employeeName;
+- (void) addAllBuildingPins;
 @end

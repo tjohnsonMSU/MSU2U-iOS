@@ -159,7 +159,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <sections>
-                            <tableViewSection headerTitle="Overlays" id="wme-Ws-P9z">
+                            <tableViewSection headerTitle=" Display Overlays" id="wme-Ws-P9z">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="VLb-L8-mLz" style="IBUITableViewCellStyleDefault" id="as0-ZI-60B">
                                         <rect key="frame" x="0.0" y="155" width="320" height="44"/>
@@ -254,6 +254,50 @@
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="standardMap.png" id="Xk4-lI-QUg">
                                                     <rect key="frame" x="15" y="0.0" width="41" height="41"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Actions" id="zej-6F-Bbc">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="W3R-st-9rU" imageView="kZC-WM-Tcc" rowHeight="42" style="IBUITableViewCellStyleDefault" id="o2M-rA-6ap">
+                                        <rect key="frame" x="0.0" y="465" width="320" height="42"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o2M-rA-6ap" id="162-bm-zpP">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="41"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Remove All Pins" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W3R-st-9rU">
+                                                    <rect key="frame" x="42" y="0.0" width="263" height="41"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="940-pin.png" id="kZC-WM-Tcc">
+                                                    <rect key="frame" x="15" y="6" width="12" height="28"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="MSh-Dz-QXG" imageView="QqX-gB-KLf" rowHeight="42" style="IBUITableViewCellStyleDefault" id="YF7-bE-7dz">
+                                        <rect key="frame" x="0.0" y="507" width="320" height="42"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YF7-bE-7dz" id="PpC-do-T9B">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="41"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Add Pins for all Buildings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MSh-Dz-QXG">
+                                                    <rect key="frame" x="53" y="0.0" width="252" height="41"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="780-building.png" id="QqX-gB-KLf">
+                                                    <rect key="frame" x="15" y="6" width="23" height="28"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -2074,11 +2118,13 @@
     </scenes>
     <resources>
         <image name="1032-route.png" width="28" height="26"/>
+        <image name="780-building.png" width="23" height="28"/>
         <image name="792-tv.png" width="28" height="26"/>
         <image name="851-calendar.png" width="28" height="28"/>
         <image name="870-smile.png" width="28" height="28"/>
         <image name="874-newspaper.png" width="28" height="22"/>
         <image name="906-chat-3.png" width="28" height="26"/>
+        <image name="940-pin.png" width="12" height="28"/>
         <image name="946-microphone.png" width="16" height="28"/>
         <image name="974-users.png" width="28" height="18"/>
         <image name="Unknown.jpg" width="161" height="184"/>

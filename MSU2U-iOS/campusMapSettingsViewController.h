@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "campusMapViewController.h"
 
-@interface campusMapSettingsViewController : UITableViewController{
+@interface campusMapSettingsViewController : UITableViewController <UIAlertViewDelegate>{
     NSUserDefaults * defaults;
 }
 
@@ -16,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UITableViewCell *parkingOverlayPressed;
 @property (strong, nonatomic) IBOutlet UITableViewCell *campusBorderPressed;
 
+-(void) sendMapview:(MKMapView*)mv;
 
 //- (IBAction)busTransitRouteFlipped:(UISwitch *)sender;
 @end

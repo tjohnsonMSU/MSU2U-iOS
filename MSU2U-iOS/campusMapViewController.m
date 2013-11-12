@@ -7,6 +7,7 @@
 //
 
 #import "campusMapViewController.h"
+#import "EDAMTypes.h"
 
 typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
 
@@ -97,6 +98,7 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
             view.canShowCallout = YES;
             view.calloutOffset = CGPointMake(-5, 5);
             view.animatesDrop = NO;
+            view.pinColor = MKPinAnnotationColorRed;
         }
         
         view.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
@@ -225,29 +227,15 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     _selectedLocation = nil;
 }
 
--(void)showRoute:(MKDirectionsResponse *)response
-{
-    for (MKRoute *route in response.routes)
-    {
-        [_campusMap addOverlay:route.polyline level:MKOverlayLevelAboveRoads];
-    }
-}
-/*
-- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id < MKOverlay >)overlay
-{
-    MKPolylineRenderer *renderer =
-    [[MKPolylineRenderer alloc] initWithOverlay:overlay];
-    renderer.strokeColor = [UIColor blueColor];
-    renderer.lineWidth = 5.0;
-    return renderer;
-}
-*/
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if(buildingInfoPressed)
     {
         [segue.destinationViewController sendBuildingName:[_selectedLocation title] andInfo:[self.buildingNameToInfoLookup objectForKey:[_selectedLocation title]] andImage:[self.buildingNameToImageLookup objectForKey:[_selectedLocation title]]];
         buildingInfoPressed = NO;
+    }else{
+        NSLog(@"Settings was pressed");
+        [segue.destinationViewController sendMapview:self.campusMap];
     }
 }
 
@@ -332,7 +320,24 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     {
         self.campusMap.mapType = MKMapTypeStandard;
     }
-    
+
+    //#####
+    //####
+    //### Should I draw all building pins?
+    //##
+    //#
+    if([defaults boolForKey:@"campusMapSettingsAddAllPins"])
+    {
+        [defaults setBool:NO forKey:@"campusMapSettingsAddAllPins"];
+        
+        //Drop all pins! But first, go ahead and clear it out of existing pins
+        [self.campusMap removeAnnotations:[self.campusMap annotations]];
+
+        for(int i=0; i<[self.buildingName count]; i++){
+            [self addPinWithTitle:[self.buildingName objectAtIndex:i] atLocation:[self.coordinateLookup objectForKey:[self.buildingName objectAtIndex:i]] atAddress:[self.addressLookup objectForKey:[self.buildingName objectAtIndex:i]]];
+        }
+    }
+
     //Should I zoom the map in?
     if(zoomedCoordinate.latitude)
     {
@@ -341,6 +346,15 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     }
     
     [super viewDidLoad];
+}
+
+-(void)addAllBuildingPins {
+    //Remove all pins
+    [self.campusMap removeAnnotations:[self.campusMap annotations]];
+    //Place pins on campus map for all buildings in buildings.json
+    for(int i=0; i<[self.buildingName count]; i++){
+        [self addPinWithTitle:[self.buildingName objectAtIndex:i] atLocation:[self.coordinateLookup objectForKey:[self.buildingName objectAtIndex:i]] atAddress:[self.addressLookup objectForKey:[self.buildingName objectAtIndex:i]]];
+    }
 }
 
 -(void)addPinWithTitle:(NSString*)title atLocation:(NSArray*)locationInfo atAddress:(NSArray*)addressInfo
@@ -476,7 +490,8 @@ shouldReloadTableForSearchString:(NSString *)searchString
     {
         [self addPinWithTitle:[searchResults objectAtIndex:indexPath.row] atLocation:[self.coordinateLookup objectForKey:[searchResults objectAtIndex:indexPath.row]] atAddress:[self.addressLookup objectForKey:[searchResults objectAtIndex:indexPath.row]]];
     }
-    
+
+    //Center the pin on the map
     float latitude = [[[self.coordinateLookup objectForKey:[searchResults objectAtIndex:indexPath.row]] objectAtIndex:0] floatValue];
     float longitude = [[[self.coordinateLookup objectForKey:[searchResults objectAtIndex:indexPath.row]]objectAtIndex:1] floatValue];
     
