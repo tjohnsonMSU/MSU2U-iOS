@@ -43,6 +43,7 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     self.keysToSearchOn = [[NSArray alloc] initWithObjects:@"buildingName",@"tag", nil];
     
     //Set map type
+    self.campusMap.delegate = self;
     self.campusMap.mapType = MKMapTypeHybrid;
     
     //Get all of the buildings loaded into memory
@@ -179,12 +180,8 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     // 1
     if (buttonIndex != actionSheet.cancelButtonIndex) {
         if (buttonIndex == 0) {
-            // Open Apple Maps and 
-            /*MKMapItem *mapItem = [_selectedLocation mapItem];
-            NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking};
-            [mapItem openInMapsWithLaunchOptions:launchOptions];
-             */
-            // Create an MKMapItem to pass to the Apple Maps app
+            // Convert the CLPlacemark to an MKPlacemark
+            // Note: There's no error checking for a failed geocode
             NSDictionary *addressDict = @{
                                           (NSString *) kABPersonAddressStreetKey : _selectedLocation.addressStreetKey,
                                           (NSString *) kABPersonAddressCityKey : _selectedLocation.addressCityKey,
@@ -192,21 +189,24 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
                                           (NSString *) kABPersonAddressZIPKey : _selectedLocation.addressZIPKey,
                                           (NSString *) kABPersonAddressCountryKey : _selectedLocation.countryKey
                                           };
+            MKPlacemark *placemark = [[MKPlacemark alloc]
+                                      initWithCoordinate:[_selectedLocation coordinate]
+                                      addressDictionary:addressDict];
             
-            MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:[_selectedLocation coordinate]
-                                                           addressDictionary:addressDict];
+            // Create a map item for the geocoded address to pass to Maps app
             MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
             [mapItem setName:[_selectedLocation title]];
             
-            // Set the directions mode to "Walking"
-            // Can use MKLaunchOptionsDirectionsModeDriving instead
+            // Set the directions mode to "Driving"
+            // Can use MKLaunchOptionsDirectionsModeWalking instead
             NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving};
+            
             // Get the "Current User Location" MKMapItem
             MKMapItem *currentLocationMapItem = [MKMapItem mapItemForCurrentLocation];
+            
             // Pass the current location and destination map items to the Maps app
             // Set the direction mode in the launchOptions dictionary
-            [MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem] 
-                           launchOptions:launchOptions];
+            [MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem] launchOptions:launchOptions];
             
         } else if (buttonIndex == 2) {
             // REMOVE PIN HERE
@@ -225,6 +225,23 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     _selectedLocation = nil;
 }
 
+-(void)showRoute:(MKDirectionsResponse *)response
+{
+    for (MKRoute *route in response.routes)
+    {
+        [_campusMap addOverlay:route.polyline level:MKOverlayLevelAboveRoads];
+    }
+}
+/*
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id < MKOverlay >)overlay
+{
+    MKPolylineRenderer *renderer =
+    [[MKPolylineRenderer alloc] initWithOverlay:overlay];
+    renderer.strokeColor = [UIColor blueColor];
+    renderer.lineWidth = 5.0;
+    return renderer;
+}
+*/
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if(buildingInfoPressed)
