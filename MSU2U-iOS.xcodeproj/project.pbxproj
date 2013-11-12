@@ -196,6 +196,7 @@
 		1DF2025416BAFE01000369C8 /* campusMapSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF2025316BAFE01000369C8 /* campusMapSettingsViewController.m */; };
 		1DF849AE16B64FB6009F7785 /* MSULocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF849AD16B64FB6009F7785 /* MSULocation.m */; };
 		1DFCFCD416B63CEC00515EFD /* campusMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFCFCD316B63CEC00515EFD /* campusMapViewController.m */; };
+		8476CDCC1832E6E70031C468 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476CDCB1832E6E70031C468 /* CalendarViewController.m */; };
 		E09A146A171DC175000CF267 /* webViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A1469171DC175000CF267 /* webViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -705,6 +706,8 @@
 		1DF849AD16B64FB6009F7785 /* MSULocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSULocation.m; sourceTree = "<group>"; };
 		1DFCFCD216B63CEC00515EFD /* campusMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = campusMapViewController.h; sourceTree = "<group>"; };
 		1DFCFCD316B63CEC00515EFD /* campusMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = campusMapViewController.m; sourceTree = "<group>"; };
+		8476CDCA1832E6E70031C468 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		8476CDCB1832E6E70031C468 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		E09A1468171DC175000CF267 /* webViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = webViewController.h; sourceTree = "<group>"; };
 		E09A1469171DC175000CF267 /* webViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = webViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -843,6 +846,7 @@
 		1D1CEADD162B4D230059BC1F /* MSU2U-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				8476CDA81832E5EC0031C468 /* Calendar */,
 				1DC539A3173232DF008BD25B /* Developer */,
 				1D50D2B21727695300DEF459 /* Podcast */,
 				1D2FFA011724DA0A00871B7C /* ipadStoryboard.storyboard */,
@@ -1386,6 +1390,15 @@
 			name = Tweet;
 			sourceTree = "<group>";
 		};
+		8476CDA81832E5EC0031C468 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				8476CDCA1832E6E70031C468 /* CalendarViewController.h */,
+				8476CDCB1832E6E70031C468 /* CalendarViewController.m */,
+			);
+			name = Calendar;
+			sourceTree = "<group>";
+		};
 		E09A1467171DC161000CF267 /* Website */ = {
 			isa = PBXGroup;
 			children = (
@@ -1866,6 +1879,7 @@
 				1D3DA8E6171F26BB0020FEBB /* UIImage+Scaling.m in Sources */,
 				1D3DA8E9171F30FC0020FEBB /* Tweet.m in Sources */,
 				1D3DA8FB17207DA20020FEBB /* SVModalWebViewController.m in Sources */,
+				8476CDCC1832E6E70031C468 /* CalendarViewController.m in Sources */,
 				1D3DA8FD17207DA20020FEBB /* SVWebViewController.m in Sources */,
 				1DA478211722035B001CC653 /* videoViewController.m in Sources */,
 				1D4FEA6A17220E0300183FFA /* Video+Create.m in Sources */,
