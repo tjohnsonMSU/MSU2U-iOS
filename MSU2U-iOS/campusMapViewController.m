@@ -248,6 +248,9 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     {
         [segue.destinationViewController sendBuildingName:[_selectedLocation title] andInfo:[self.buildingNameToInfoLookup objectForKey:[_selectedLocation title]] andImage:[self.buildingNameToImageLookup objectForKey:[_selectedLocation title]]];
         buildingInfoPressed = NO;
+    }else{
+        NSLog(@"Settings was pressed");
+        [segue.destinationViewController sendMapview:self.campusMap];
     }
 }
 
@@ -332,7 +335,22 @@ typedef void (^RWLocationCallback)(CLLocationCoordinate2D);
     {
         self.campusMap.mapType = MKMapTypeStandard;
     }
-    
+
+    //#####
+    //####
+    //### Should I drop all building pins?
+    //##
+    //#
+    if([defaults boolForKey:@"campusMapSettingsShowAllBuildings"])
+    {
+        //Show all buildings on map
+        for(int i=0; i<[buildings count];i++)
+        {
+            NSLog(@"Dropping Pins (test): %@\n",[buildings objectAtIndex:i]);
+        }
+    }
+
+
     //Should I zoom the map in?
     if(zoomedCoordinate.latitude)
     {

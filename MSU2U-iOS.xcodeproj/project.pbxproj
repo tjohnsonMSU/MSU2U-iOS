@@ -77,6 +77,8 @@
 		1D2FF9FC17249D7E00871B7C /* softball-portrait.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9FB17249D7E00871B7C /* softball-portrait.jpg */; };
 		1D2FF9FE1724A18100871B7C /* mens-tennis-portrait.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FF9FD1724A18100871B7C /* mens-tennis-portrait.jpg */; };
 		1D2FFA051724DA0C00871B7C /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2FFA031724DA0B00871B7C /* Video.m */; };
+		1D321E8E1831D65F002978C0 /* 940-pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D321E8C1831D65F002978C0 /* 940-pin@2x.png */; };
+		1D321E8F1831D65F002978C0 /* 780-building@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D321E8D1831D65F002978C0 /* 780-building@2x.png */; };
 		1D3DA8DB171F26BB0020FEBB /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3DA8BF171F26BA0020FEBB /* MKAnnotationView+WebCache.m */; };
 		1D3DA8DC171F26BB0020FEBB /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3DA8C1171F26BA0020FEBB /* SDImageCache.m */; };
 		1D3DA8DD171F26BB0020FEBB /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3DA8C5171F26BB0020FEBB /* SDWebImageDecoder.m */; };
@@ -506,6 +508,8 @@
 		1D2FF9FD1724A18100871B7C /* mens-tennis-portrait.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mens-tennis-portrait.jpg"; sourceTree = "<group>"; };
 		1D2FFA021724DA0B00871B7C /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
 		1D2FFA031724DA0B00871B7C /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video.m; sourceTree = "<group>"; };
+		1D321E8C1831D65F002978C0 /* 940-pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "940-pin@2x.png"; sourceTree = "<group>"; };
+		1D321E8D1831D65F002978C0 /* 780-building@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "780-building@2x.png"; sourceTree = "<group>"; };
 		1D3DA8BE171F26BA0020FEBB /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		1D3DA8BF171F26BA0020FEBB /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		1D3DA8C0171F26BA0020FEBB /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCache.h; sourceTree = "<group>"; };
@@ -893,6 +897,8 @@
 		1D1DE2601830B2350097EEC7 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				1D321E8C1831D65F002978C0 /* 940-pin@2x.png */,
+				1D321E8D1831D65F002978C0 /* 780-building@2x.png */,
 				1D177893183176D4002C1DD7 /* 792-tv@2x.png */,
 				1D17788B18317677002C1DD7 /* 874-newspaper@2x.png */,
 				1D17788C18317677002C1DD7 /* 851-calendar@2x.png */,
@@ -1672,6 +1678,7 @@
 				1D3DA8FA17207DA20020FEBB /* SVWebViewController.strings in Resources */,
 				1D3DA8FC17207DA20020FEBB /* SVWebViewController.bundle in Resources */,
 				1DA47823172205E3001CC653 /* 70-tv.png in Resources */,
+				1D321E8F1831D65F002978C0 /* 780-building@2x.png in Resources */,
 				1DD9F7EC172337C500754EB8 /* true_black.png in Resources */,
 				1DAD529217236010000CC658 /* podcast_default.png in Resources */,
 				1D2FF9D617247F2100871B7C /* wfma50x50.png in Resources */,
@@ -1709,6 +1716,7 @@
 				1DBA9A3417373B7300582DDA /* ncaa_default.png in Resources */,
 				1D1DE26C1830B2350097EEC7 /* 1045-clapboard@2x.png in Resources */,
 				1D519BBD1738C72100937FE0 /* parking_lot_transparent.png in Resources */,
+				1D321E8E1831D65F002978C0 /* 940-pin@2x.png in Resources */,
 				1D76473E176E976800F697AB /* buildings.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

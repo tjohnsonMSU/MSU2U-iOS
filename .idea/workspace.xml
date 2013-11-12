@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dcb9ca1-443b-4194-bcc9-001b33c47568" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MSU2U-iOS/MainStoryboard_iPad.storyboard" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MSU2U-iOS/icons/780-building@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MSU2U-iOS/icons/940-pin@2x.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Submodules/ShareKit" afterPath="$PROJECT_DIR$/Submodules/ShareKit" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MSU2U-iOS/MainStoryboard.storyboard" afterPath="$PROJECT_DIR$/MSU2U-iOS/MainStoryboard.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MSU2U-iOS/campusMapSettingsViewController.h" afterPath="$PROJECT_DIR$/MSU2U-iOS/campusMapSettingsViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MSU2U-iOS/campusMapSettingsViewController.m" afterPath="$PROJECT_DIR$/MSU2U-iOS/campusMapSettingsViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MSU2U-iOS/campusMapViewController.h" afterPath="$PROJECT_DIR$/MSU2U-iOS/campusMapViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MSU2U-iOS/campusMapViewController.m" afterPath="$PROJECT_DIR$/MSU2U-iOS/campusMapViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MSU2U-iOS/defaults.plist" afterPath="$PROJECT_DIR$/MSU2U-iOS/defaults.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/facebook_ios_sdk.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/facebook_ios_sdk.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MSU2U-iOS.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/MSU2U-iOS.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -23,45 +30,52 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_f8af6eccae9a075eaa3407927d0718a41ebcd6bc" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_1b8f33cf428be668042db196e6926ea47024bf3c" />
   <component name="FavoritesManager">
     <favorites_list name="MSU2U-iOS" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="genericTableViewController.m" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/MSU2U-iOS/genericTableViewController.m">
+      <file leaf-file-name="campusMapViewController.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MSU2U-iOS/campusMapViewController.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="612" column="34" selection-start="31645" selection-end="31645" vertical-scroll-proportion="0.6749257" vertical-offset="8499" max-vertical-offset="23115">
+            <state line="14" column="43" selection-start="369" selection-end="369" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detailDirectoryViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MSU2U-iOS/detailDirectoryViewController.m">
+      <file leaf-file-name="AppDelegate.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MSU2U-iOS/AppDelegate.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="275" column="0" selection-start="11178" selection-end="12194" vertical-scroll-proportion="0.0" vertical-offset="4125" max-vertical-offset="7470">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="twitterViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MSU2U-iOS/twitterViewController.m">
+      <file leaf-file-name="campusMapSettingsViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MSU2U-iOS/campusMapSettingsViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="57" selection-start="364" selection-end="364" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1170">
-              <folding>
-                <element signature="e#271#306#0" expanded="true" />
-              </folding>
+            <state line="159" column="80" selection-start="6941" selection-end="6941" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3015">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detailGameViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MSU2U-iOS/detailGameViewController.m">
+      <file leaf-file-name="campusMapSettingsViewController.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MSU2U-iOS/campusMapSettingsViewController.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="1" selection-start="4502" selection-end="4502" vertical-scroll-proportion="0.0" vertical-offset="1525" max-vertical-offset="3390">
+            <state line="11" column="88" selection-start="313" selection-end="313" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="campusMapViewController.m" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MSU2U-iOS/campusMapViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="348" column="40" selection-start="13590" selection-end="13590" vertical-scroll-proportion="0.63924676" vertical-offset="4575" max-vertical-offset="7710">
               <folding />
             </state>
           </provider>
@@ -87,13 +101,17 @@
       <list>
         <option value="$PROJECT_DIR$/MSU2U-iOS/detailGameViewController.m" />
         <option value="$PROJECT_DIR$/MSU2U-iOS/genericTableViewController.m" />
+        <option value="$PROJECT_DIR$/MSU2U-iOS/campusMapViewController.h" />
+        <option value="$PROJECT_DIR$/MSU2U-iOS/campusMapSettingsViewController.h" />
+        <option value="$PROJECT_DIR$/MSU2U-iOS/campusMapSettingsViewController.m" />
+        <option value="$PROJECT_DIR$/MSU2U-iOS/campusMapViewController.m" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="635" />
-    <option name="y" value="504" />
-    <option name="width" value="1874" />
+    <option name="x" value="17" />
+    <option name="y" value="98" />
+    <option name="width" value="1609" />
     <option name="height" value="1144" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -122,7 +140,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Cidr.FilesView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -164,6 +181,42 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Twitter" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Supporting Files" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Map" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -245,6 +298,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Cidr.FilesView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -257,6 +311,10 @@
       <method />
     </configuration>
     <configuration default="true" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" PROJECT_NAME="facebook-ios-sdk" TARGET_NAME="FacebookSDKTests" CONFIG_NAME="Debug" PASS_PARENT_ENVS="FALSE" TEST_MODE="SUITE_TEST">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="OCGoogleTestRunConfigurationType" factoryName="Google Test" PROJECT_NAME="MSU2U-iOS" TARGET_NAME="MSU2U" CONFIG_NAME="Debug" PASS_PARENT_ENVS="FALSE" TEST_MODE="SUITE_TEST">
       <envs />
       <method />
     </configuration>
@@ -457,13 +515,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="635" y="504" width="1874" height="1144" extended-state="0" />
+    <frame x="17" y="98" width="1609" height="1144" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18676628" sideWeight="0.7144186" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21752642" sideWeight="0.7144186" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -491,6 +549,20 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/detailDirectoryViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="275" column="0" selection-start="11178" selection-end="12194" vertical-scroll-proportion="0.0" vertical-offset="4125" max-vertical-offset="7470">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/genericTableViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="612" column="34" selection-start="31645" selection-end="31645" vertical-scroll-proportion="0.0" vertical-offset="8499" max-vertical-offset="23115">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MSU2U-iOS/genericTableViewController.m">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1203" column="8" selection-start="55123" selection-end="55427" vertical-scroll-proportion="0.0" vertical-offset="17886" max-vertical-offset="22980">
@@ -512,6 +584,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/genericTableViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="612" column="34" selection-start="31645" selection-end="31645" vertical-scroll-proportion="0.0" vertical-offset="8499" max-vertical-offset="23115">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MSU2U-iOS/detailDirectoryViewController.m">
       <provider selected="true" editor-type-id="text-editor">
         <state line="275" column="0" selection-start="11178" selection-end="12194" vertical-scroll-proportion="0.0" vertical-offset="3735" max-vertical-offset="7470">
@@ -521,23 +600,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MSU2U-iOS/detailGameViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="1" selection-start="4502" selection-end="4502" vertical-scroll-proportion="0.0" vertical-offset="1525" max-vertical-offset="3390">
+        <state line="108" column="1" selection-start="4502" selection-end="4502" vertical-scroll-proportion="0.090735435" vertical-offset="1525" max-vertical-offset="3390">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MSU2U-iOS/twitterViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="57" selection-start="364" selection-end="364" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1170">
-          <folding>
-            <element signature="e#271#306#0" expanded="true" />
-          </folding>
+        <state line="17" column="57" selection-start="364" selection-end="364" vertical-scroll-proportion="0.11508704" vertical-offset="121" max-vertical-offset="1155">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/genericTableViewController.m">
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/campusMapInfoViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="612" column="34" selection-start="31645" selection-end="31645" vertical-scroll-proportion="0.6749257" vertical-offset="8499" max-vertical-offset="23115">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1047">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/campusMapSettingsViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="88" selection-start="313" selection-end="313" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/en.lproj/InfoPlist.strings">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1047">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/AppDelegate.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/campusMapSettingsViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="159" column="80" selection-start="6941" selection-end="6941" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3015">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/campusMapViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="43" selection-start="369" selection-end="369" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/campusMapViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="348" column="40" selection-start="13590" selection-end="13590" vertical-scroll-proportion="0.63924676" vertical-offset="4575" max-vertical-offset="7710">
           <folding />
         </state>
       </provider>
