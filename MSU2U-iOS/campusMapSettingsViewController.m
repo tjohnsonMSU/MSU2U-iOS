@@ -11,6 +11,9 @@
 @interface campusMapSettingsViewController ()
 //A copy of the campus map view so I can alter the map from settings
 @property (nonatomic, weak) MKMapView * mv;
+@property (nonatomic, weak) NSDictionary * addressLookup;
+@property (nonatomic, weak) NSDictionary * buildingName;
+@property (nonatomic, weak) NSDictionary * coordinateLookup;
 @end
 
 @implementation campusMapSettingsViewController
@@ -134,7 +137,7 @@
         }
         else if(indexPath.row == 1)
         {
-            //Parking Overlays
+            //Campus Border
             if([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark)
             {
                 [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
@@ -146,29 +149,23 @@
                 [defaults setBool:YES forKey:@"campusMapSettingsCampusBorder"];
             }
         }
-        else if(indexPath.row == 2)
-        {
-            //Parking Overlays
-            if([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark)
-            {
-                [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
-                [defaults setBool:NO forKey:@"campusMapSettingsShowAllBuildings"];
-            }
-            else
-            {
-                [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
-                [defaults setBool:YES forKey:@"campusMapSettingsShowAllBuildings"];
-            }
-        }
     }
     else if(indexPath.section == 2){
+
+        NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+
         if(indexPath.row == 0){
             //Remove all pins
             UIAlertView * av = [[UIAlertView alloc] initWithTitle:@"Remove All Pins" message:@"Are you sure you want to remove all pins?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes, remove all pins",nil];
-            av.show;
+            [av show];
             av.tag = 0;
-        }else{
-            NSLog(@"Did not recognize map settings selection in section 2. Forgot to add condition?");
+        }else if(indexPath.row == 1){
+            UIAlertView * av = [[UIAlertView alloc] initWithTitle:@"Add All Buildings" message:@"Pins for every building have now been placed." delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            [av show];
+            av.tag = 1;
+
+            //The defaults flag will let the campusMapView controller know it should drop pins for all buildings in viewDidAppear
+            [defaults setBool:YES forKey:@"campusMapSettingsAddAllPins"];
         }
     }
 
@@ -182,12 +179,18 @@
             //OK, actually remove all pins.
             [self.mv removeAnnotations:[self.mv annotations]];
             UIAlertView * av = [[UIAlertView alloc] initWithTitle:@"Success" message:@"All pins have been successfully removed." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            av.show;
+            [av show];
+
+            if([defaults boolForKey:@"campusMapSettingsAddAllPins"])
+            {
+                //If the user removes all pins AFTER having pressed "Show All Buildings", I will disable the addition of all the building pins, essentially cancelling "Show All Buildings"
+                [defaults setBool:NO forKey:@"campusMapSettingsAddAllPins"];
+            }
         }
     }
 }
 
--(void)sendMapview:(MKMapView *)mv {
+-(void) sendMapview:(MKMapView*)mv {
     //Record a copy of the campus map
     self.mv = mv;
 }

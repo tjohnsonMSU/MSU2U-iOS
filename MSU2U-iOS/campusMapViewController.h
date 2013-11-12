@@ -51,4 +51,5 @@
 @property (strong,nonatomic) NSArray * keysToSearchOn;
 
 - (void) sendLocationName:(NSString*)locationName andEmployeeName:(NSString*)employeeName;
+- (void) addAllBuildingPins;
 @end
