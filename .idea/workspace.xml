@@ -2,26 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dcb9ca1-443b-4194-bcc9-001b33c47568" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MSU2U-iOS/icons/792-tv@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MSU2U-iOS/icons/851-calendar@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MSU2U-iOS/icons/852-map@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MSU2U-iOS/icons/870-smile@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MSU2U-iOS/icons/874-newspaper@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/MSU2U-iOS.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/runConfigurations/facebook_ios_sdk.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/runConfigurations/facebook_ios_sdk_tests.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/xcode.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MSU2U-iOS/MainStoryboard_iPad.storyboard" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Submodules/ShareKit" afterPath="$PROJECT_DIR$/Submodules/ShareKit" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MSU2U-iOS/MainStoryboard.storyboard" afterPath="$PROJECT_DIR$/MSU2U-iOS/MainStoryboard.storyboard" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MSU2U-iOS/buildings.json" afterPath="$PROJECT_DIR$/MSU2U-iOS/buildings.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MSU2U-iOS/detailGameViewController.m" afterPath="$PROJECT_DIR$/MSU2U-iOS/detailGameViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MSU2U-iOS/genericTableViewController.m" afterPath="$PROJECT_DIR$/MSU2U-iOS/genericTableViewController.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MSU2U-iOS.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/MSU2U-iOS.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MSU2U-iOS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -106,8 +91,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="705" />
-    <option name="y" value="33" />
+    <option name="x" value="635" />
+    <option name="y" value="504" />
     <option name="width" value="1874" />
     <option name="height" value="1144" />
   </component>
@@ -472,7 +457,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="705" y="33" width="1874" height="1144" extended-state="0" />
+    <frame x="635" y="504" width="1874" height="1144" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />

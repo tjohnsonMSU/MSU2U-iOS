@@ -785,13 +785,13 @@
 		1D1CEADD162B4D230059BC1F /* MSU2U-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				1D1CEAFE162B4DBB0059BC1F /* MainStoryboard.storyboard */,
 				1DC539A3173232DF008BD25B /* Developer */,
 				1D50D2B21727695300DEF459 /* Podcast */,
 				1D2FF9D1172465DB00871B7C /* About */,
 				1D2FF9CA1724519200871B7C /* TabBarController */,
 				1DA477FD17220341001CC653 /* Videos */,
 				E09A1467171DC161000CF267 /* Website */,
-				1D1CEAFE162B4DBB0059BC1F /* MainStoryboard.storyboard */,
 				1D1CEAE6162B4D230059BC1F /* AppDelegate.h */,
 				1D1CEAE7162B4D230059BC1F /* AppDelegate.m */,
 				1D592EA0164D5FE300CBB292 /* Core Data */,
