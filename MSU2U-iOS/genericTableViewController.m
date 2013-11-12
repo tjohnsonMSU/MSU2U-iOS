@@ -1232,7 +1232,17 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
     {
         NSString * defaultImage;
         cell.textLabel.text = [self.dataObject title];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ | %@",[self.dataObject last_changed],[self.dataObject publication]];
+
+        // Convert string to date object
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:@"yyyy-MM-dd HH:mm:ss zz"];
+        df.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"EN"];
+        [df setDateStyle:NSDateFormatterShortStyle];
+        [df setTimeStyle:NSDateFormatterShortStyle];
+
+        NSString *dateString = [df stringFromDate:[self.dataObject last_changed]];
+
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ | %@",dateString,[self.dataObject publication]];
         
         
         if([[self.dataObject publication] isEqualToString:@"The Wichitan"])
@@ -1241,7 +1251,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
         }
         else if([[self.dataObject publication] isEqualToString:@"MSU Mustangs"])
         {
-            defaultImage = @"101-gameplan.png";
+            defaultImage = @"964-gameplan@2x.png";
         }
         else if([[self.dataObject publication] isEqualToString:@"WF Museum of Art"])
         {
@@ -1282,7 +1292,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
         [[SDImageCache sharedImageCache] removeImageForKey:[self.dataObject profile_image_url] fromDisk:YES];
         [cell.imageView setImageWithURL:[NSURL URLWithString:[self.dataObject profile_image_url]] placeholderImage:[UIImage imageNamed:@"twitter.png"] options:0 andResize:CGSizeMake(60, 60)];
         
-        CGSize size = {60,60};
+        CGSize size = {50,50};
         cell.imageView.image = [self imageWithImage:cell.imageView.image scaledToSize:size];
     }
     //*** Videos
