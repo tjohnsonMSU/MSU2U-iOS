@@ -8,15 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface campusMapInfoViewController : UIViewController
+@interface campusMapInfoViewController : UITableViewController{
+    NSString * buildingImageURL;
+    NSString * buildingInfo;
+}
+@property (strong, nonatomic) IBOutlet UIImageView *buildingImage;
 
-@property (weak, nonatomic) IBOutlet UILabel *locationName;
-@property (weak, nonatomic) IBOutlet UILabel *locationAddress;
-@property (weak, nonatomic) IBOutlet UIImageView *locationPhoto;
-@property (weak, nonatomic) IBOutlet UITextView *locationDescription;
-
-@property (weak, nonatomic) IBOutlet UIButton *locationPhone;
-- (IBAction)callLocation:(UIButton *)sender;
-
--(void)sendLocationName:(NSString*)receivedLocationName;
+@property (strong, nonatomic) IBOutlet UITextView *buildingInfoTextView;
+-(void)sendBuildingName:(NSString*)receivedBuildingName andInfo:(NSString*)receivedBuildingInfo andImage:(NSString*)receivedBuildingImage;
 @end

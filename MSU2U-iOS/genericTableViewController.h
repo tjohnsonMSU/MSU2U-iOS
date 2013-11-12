@@ -57,6 +57,9 @@
     NSMutableString * currentContentEncoded;
     NSString * myCurrentPublication;
     BOOL * ignoreRSStitleAndLink;
+    
+    //TESTING REFRESH CONTORL
+    __block int tweetDownloadComplete;
 }
 
 @property (retain, nonatomic) NSMutableArray * filteredDataArray;

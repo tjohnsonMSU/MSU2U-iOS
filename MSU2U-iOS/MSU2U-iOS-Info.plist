@@ -8,12 +8,37 @@
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleGetInfoString</key>
+	<string></string>
 	<key>CFBundleIcons</key>
 	<dict>
 		<key>CFBundlePrimaryIcon</key>
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
+				<string>msu2u-settings</string>
+				<string>msu2u-spotlight</string>
+				<string>msu2u-iphone-ipod</string>
+				<string>MustangsIcon1.png</string>
+				<string>MustangsIcon2.png</string>
+				<string>MustangsIcon2-ipad-retina.png</string>
+				<string>MustangsIcon2-ipad-non-retina.png</string>
+			</array>
+		</dict>
+	</dict>
+	<key>CFBundleIcons~ipad</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>msu2u-settings2</string>
+				<string>msu2u-settings</string>
+				<string>msu2u-spotlight</string>
+				<string>msu2u-spotlight2</string>
+				<string>msu2u-ipad</string>
+				<string>msu2u-standard</string>
+				<string>msu2u-iphone-ipod</string>
 				<string>MustangsIcon1.png</string>
 				<string>MustangsIcon2.png</string>
 				<string>MustangsIcon2-ipad-retina.png</string>
@@ -35,6 +60,8 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>2.0.2</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIMainStoryboardFile</key>
@@ -46,6 +73,8 @@
 		<string>armv7</string>
 		<string>location-services</string>
 	</array>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleBlackOpaque</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -60,5 +89,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>

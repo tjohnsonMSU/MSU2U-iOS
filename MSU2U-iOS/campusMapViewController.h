@@ -15,15 +15,23 @@
 
 @interface campusMapViewController : UIViewController<MKMapViewDelegate, UIActionSheetDelegate>{
     NSArray *buildings;
-    NSArray *searchResults;
+    NSMutableArray *searchResults;
+    NSArray *tagResults;
     MKMapView * _campusMap;
     UIColor * _parkingLotColor;
     UIColor * _polylineColor;
     MSULocation * _selectedLocation;
+    bool buildingInfoPressed;
+    
+    CLLocationCoordinate2D zoomedCoordinate;
 }
 @property (strong,nonatomic) NSDictionary * coordinateLookup;
 
 @property (strong,nonatomic) NSMutableArray * buildingName;
+
+@property (strong,nonatomic) NSMutableArray * buildingImage;
+
+@property (strong,nonatomic) NSMutableArray * buildingInfo;
 
 @property (strong,nonatomic) NSMutableArray * buildingCoordinate;
 
@@ -31,6 +39,15 @@
 
 @property (strong,nonatomic) NSMutableArray * buildingAddress;
 
+@property (strong,nonatomic) NSMutableArray * tag;
+
 @property (strong,nonatomic) NSDictionary * addressLookup;
 
+@property (strong,nonatomic) NSDictionary * tagToBuildingNameLookup;
+@property (strong,nonatomic) NSDictionary * buildingNameToInfoLookup;
+@property (strong,nonatomic) NSDictionary * buildingNameToImageLookup;
+
+@property (strong,nonatomic) NSArray * keysToSearchOn;
+
+- (void) sendLocationName:(NSString*)locationName andEmployeeName:(NSString*)employeeName;
 @end
