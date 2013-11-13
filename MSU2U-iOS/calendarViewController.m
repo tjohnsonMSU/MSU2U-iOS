@@ -1,18 +1,18 @@
 //
-//  ViewController.m
+//  calendarViewController.m
 //  MSU2U-iOS
 //
-//  Created by Romando Garcia on 11/12/13.
+//  Created by Hieu Tran on 11/12/13.
 //  Copyright (c) 2013 Matthew Farmer. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "calendarViewController.h"
 
-@interface ViewController ()
+@interface calendarViewController ()
 
 @end
 
-@implementation ViewController
+@implementation calendarViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
