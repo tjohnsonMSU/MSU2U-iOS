@@ -1,18 +1,18 @@
 //
-//  CalendarViewController.m
+//  CalendarTabController.m
 //  MSU2U-iOS
 //
 //  Created by Romando Garcia on 11/12/13.
 //  Copyright (c) 2013 Matthew Farmer. All rights reserved.
 //
 
-#import "CalendarViewController.h"
+#import "CalendarTabController.h"
 
-@interface CalendarViewController ()
+@interface CalendarTabController ()
 
 @end
 
-@implementation CalendarViewController
+@implementation CalendarTabController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

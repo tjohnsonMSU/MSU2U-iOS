@@ -1,5 +1,5 @@
 //
-//  CalendarViewController.h
+//  CalendarTabController.h
 //  MSU2U-iOS
 //
 //  Created by Romando Garcia on 11/12/13.
@@ -8,6 +8,6 @@
 
 #import "tabBarViewController.h"
 
-@interface CalendarViewController : tabBarViewController
+@interface CalendarTabController : tabBarViewController
 
 @end

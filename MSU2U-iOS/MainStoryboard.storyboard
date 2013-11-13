@@ -368,7 +368,7 @@
                     <navigationItem key="navigationItem" id="BgG-DD-1Oq">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="MmP-hI-ifa">
-                            <rect key="frame" x="85" y="6" width="149" height="32"/>
+                            <rect key="frame" x="84" y="6" width="153" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="All"/>
@@ -1507,6 +1507,52 @@
             </objects>
             <point key="canvasLocation" x="-15242" y="-1162"/>
         </scene>
+        <!--Calendar Tab Controller-->
+        <scene sceneID="kJ2-Hd-ISS">
+            <objects>
+                <viewController id="Zaj-0t-kuv" customClass="CalendarTabController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sVG-Bk-tqm"/>
+                        <viewControllerLayoutGuide type="bottom" id="rny-Zc-s8f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Afd-GW-5bT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VTW-iU-Sf9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-16338" y="131"/>
+        </scene>
+        <!--Kvideo View Controller-->
+        <scene sceneID="wff-OW-o6A">
+            <objects>
+                <tableViewController id="Edx-69-dxH" customClass="kvideoViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ab1-4R-yoW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="4Dk-OG-GBJ">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Dk-OG-GBJ" id="nvQ-0i-L0o">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Edx-69-dxH" id="PiC-U6-zPj"/>
+                            <outlet property="delegate" destination="Edx-69-dxH" id="3Il-lM-vdH"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hmU-hx-hOd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-16546" y="1187"/>
+        </scene>
         <!--About View Controller - About-->
         <scene sceneID="m6D-V5-WDb">
             <objects>
@@ -1657,26 +1703,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R55-r9-J3Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-15936" y="-1543"/>
-        </scene>
-        <!--View Controller - Calendar-->
-        <scene sceneID="nd3-JQ-MON">
-            <objects>
-                <viewController id="szG-4e-jSD" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="LOH-tn-6ln"/>
-                        <viewControllerLayoutGuide type="bottom" id="zC0-SV-Ulc"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pbp-BA-d4f">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Calendar" image="83-calendar.png" id="fbq-Zb-EDc"/>
-                    <navigationItem key="navigationItem" id="cOc-gf-awO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qJj-sz-GVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-16354" y="-797"/>
         </scene>
         <!--Twitter View Controller-->
         <scene sceneID="5uv-kQ-8Pw">
@@ -2105,44 +2131,6 @@
             </objects>
             <point key="canvasLocation" x="-12462" y="610"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="CxL-lu-Vxh">
-            <objects>
-                <viewController id="Inw-Qk-hCt" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="sME-Tf-KnO"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ugt-3S-3sJ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="clX-vy-Wry">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UEG-Pi-nPt">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem id="ffT-Ln-ism"/>
-                                </items>
-                            </navigationBar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXO-8o-GQz">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                                <items/>
-                            </toolbar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="UEG-Pi-nPt" firstAttribute="trailing" secondItem="clX-vy-Wry" secondAttribute="trailing" id="C5W-iw-Vag"/>
-                            <constraint firstItem="UEG-Pi-nPt" firstAttribute="top" secondItem="clX-vy-Wry" secondAttribute="top" id="HnQ-xu-ijC"/>
-                            <constraint firstItem="UEG-Pi-nPt" firstAttribute="leading" secondItem="clX-vy-Wry" secondAttribute="leading" id="YwN-37-ct9"/>
-                            <constraint firstItem="UXO-8o-GQz" firstAttribute="leading" secondItem="clX-vy-Wry" secondAttribute="leading" id="fXr-lf-gCd"/>
-                            <constraint firstItem="UXO-8o-GQz" firstAttribute="bottom" secondItem="clX-vy-Wry" secondAttribute="bottom" id="scJ-iR-JQu"/>
-                            <constraint firstItem="UXO-8o-GQz" firstAttribute="trailing" secondItem="clX-vy-Wry" secondAttribute="trailing" id="wBl-Kx-0FY"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="siU-rq-0Iu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-16327" y="-3643"/>
-        </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="30L-jD-bg0">
             <objects>
@@ -2162,7 +2150,6 @@
                         <segue destination="kCc-ev-Vy9" kind="relationship" relationship="viewControllers" id="LE9-oO-DNa"/>
                         <segue destination="OP2-jJ-Xxs" kind="relationship" relationship="viewControllers" id="S8R-gk-qdW"/>
                         <segue destination="WTN-9a-f9M" kind="relationship" relationship="viewControllers" id="Rc1-Wr-msa"/>
-                        <segue destination="szG-4e-jSD" kind="relationship" relationship="viewControllers" id="4gk-aD-9ir"/>
                         <segue destination="Kil-vA-Bz9" kind="relationship" relationship="viewControllers" id="CTU-Tr-OAw"/>
                     </connections>
                 </tabBarController>
@@ -2180,7 +2167,6 @@
         <image name="209-twitter.png" width="22" height="22"/>
         <image name="42-info.png" width="28" height="28"/>
         <image name="70-tv.png" width="24" height="24"/>
-        <image name="83-calendar.png" width="23" height="25"/>
         <image name="BLACK.png" width="30" height="30"/>
         <image name="MustangsIcon2.png" width="114" height="114"/>
         <image name="Unknown.jpg" width="161" height="184"/>
@@ -2205,7 +2191,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="WdR-XJ-q9a"/>
-        <segue reference="9jF-L6-71y"/>
+        <segue reference="Egf-cW-mua"/>
+        <segue reference="SVv-Af-3su"/>
     </inferredMetricsTieBreakers>
 </document>
