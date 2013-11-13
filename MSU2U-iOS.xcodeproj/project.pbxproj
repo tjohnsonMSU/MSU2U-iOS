@@ -196,9 +196,8 @@
 		1DF2025416BAFE01000369C8 /* campusMapSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF2025316BAFE01000369C8 /* campusMapSettingsViewController.m */; };
 		1DF849AE16B64FB6009F7785 /* MSULocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF849AD16B64FB6009F7785 /* MSULocation.m */; };
 		1DFCFCD416B63CEC00515EFD /* campusMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFCFCD316B63CEC00515EFD /* campusMapViewController.m */; };
-		8476CDF6183300950031C468 /* CalendarTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476CDF5183300950031C468 /* CalendarTabController.m */; };
-		8476CDFA1833036A0031C468 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476CDF91833036A0031C468 /* ViewController.m */; };
 		E09A146A171DC175000CF267 /* webViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A1469171DC175000CF267 /* webViewController.m */; };
+		E3A274E2183334D7008B949E /* calendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A274E1183334D7008B949E /* calendarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -707,12 +706,10 @@
 		1DF849AD16B64FB6009F7785 /* MSULocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSULocation.m; sourceTree = "<group>"; };
 		1DFCFCD216B63CEC00515EFD /* campusMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = campusMapViewController.h; sourceTree = "<group>"; };
 		1DFCFCD316B63CEC00515EFD /* campusMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = campusMapViewController.m; sourceTree = "<group>"; };
-		8476CDF4183300950031C468 /* CalendarTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarTabController.h; sourceTree = "<group>"; };
-		8476CDF5183300950031C468 /* CalendarTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarTabController.m; sourceTree = "<group>"; };
-		8476CDF81833036A0031C468 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8476CDF91833036A0031C468 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E09A1468171DC175000CF267 /* webViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = webViewController.h; sourceTree = "<group>"; };
 		E09A1469171DC175000CF267 /* webViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = webViewController.m; sourceTree = "<group>"; };
+		E3A274E0183334D7008B949E /* calendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = calendarViewController.h; sourceTree = "<group>"; };
+		E3A274E1183334D7008B949E /* calendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = calendarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -849,7 +846,6 @@
 		1D1CEADD162B4D230059BC1F /* MSU2U-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				8476CDF7183303250031C468 /* testController */,
 				8476CDF3183300400031C468 /* Calendar */,
 				1DC539A3173232DF008BD25B /* Developer */,
 				1D50D2B21727695300DEF459 /* Podcast */,
@@ -1397,19 +1393,10 @@
 		8476CDF3183300400031C468 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				8476CDF4183300950031C468 /* CalendarTabController.h */,
-				8476CDF5183300950031C468 /* CalendarTabController.m */,
+				E3A274E0183334D7008B949E /* calendarViewController.h */,
+				E3A274E1183334D7008B949E /* calendarViewController.m */,
 			);
 			name = Calendar;
-			sourceTree = "<group>";
-		};
-		8476CDF7183303250031C468 /* testController */ = {
-			isa = PBXGroup;
-			children = (
-				8476CDF81833036A0031C468 /* ViewController.h */,
-				8476CDF91833036A0031C468 /* ViewController.m */,
-			);
-			name = testController;
 			sourceTree = "<group>";
 		};
 		E09A1467171DC161000CF267 /* Website */ = {
@@ -1882,15 +1869,14 @@
 				1D3DA8DC171F26BB0020FEBB /* SDImageCache.m in Sources */,
 				1D3DA8DD171F26BB0020FEBB /* SDWebImageDecoder.m in Sources */,
 				1D3DA8DE171F26BB0020FEBB /* SDWebImageDownloader.m in Sources */,
+				E3A274E2183334D7008B949E /* calendarViewController.m in Sources */,
 				1D3DA8DF171F26BB0020FEBB /* SDWebImageManager.m in Sources */,
 				1D3DA8E0171F26BB0020FEBB /* SDWebImagePrefetcher.m in Sources */,
 				1D3DA8E1171F26BB0020FEBB /* UIButton+WebCache.m in Sources */,
-				8476CDF6183300950031C468 /* CalendarTabController.m in Sources */,
 				1D3DA8E2171F26BB0020FEBB /* UIImageView+WebCache.m in Sources */,
 				1D3DA8E3171F26BB0020FEBB /* UIImage+Alpha.m in Sources */,
 				1D3DA8E4171F26BB0020FEBB /* UIImage+Resize.m in Sources */,
 				1D3DA8E5171F26BB0020FEBB /* UIImage+RoundedCorner.m in Sources */,
-				8476CDFA1833036A0031C468 /* ViewController.m in Sources */,
 				1D3DA8E6171F26BB0020FEBB /* UIImage+Scaling.m in Sources */,
 				1D3DA8E9171F30FC0020FEBB /* Tweet.m in Sources */,
 				1D3DA8FB17207DA20020FEBB /* SVModalWebViewController.m in Sources */,
