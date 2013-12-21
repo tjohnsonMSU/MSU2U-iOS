@@ -12,6 +12,10 @@
 
 @property (nonatomic,strong) NSArray * eventCalendar;
 @property (nonatomic,strong) NSArray * semester;
+@property (nonatomic,strong) NSArray * spring14;
+@property (nonatomic,strong) NSArray * fall13;
+@property (nonatomic,strong) NSArray * summer14;
+
 @end
 
 @implementation CalendarViewController
@@ -28,7 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.eventCalendar = [[NSArray alloc]initWithObjects:
+    self.spring14 = [[NSArray alloc]initWithObjects:
                           @{@"title":@"Application Date for Admission",@"date":@"November 1, 2013"},
                           @{@"title":@"Application Deadline",@"date":@"December 15, 2013"},
                           @{@"title":@"Reenrolling Student Registration",@"date": @"January 6 - January 7"},
@@ -76,7 +80,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.eventCalendar count];
+    return [self.spring14 count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -84,8 +88,8 @@
     static NSString *CellIdentifier = @"eventCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = [[self.eventCalendar objectAtIndex:indexPath.row]objectForKey:@"title"];
-    cell.detailTextLabel.text = [[self.eventCalendar objectAtIndex:indexPath.row]objectForKey:@"date"];
+    cell.textLabel.text = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"title"];
+    cell.detailTextLabel.text = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"date"];
     
     return cell;
 }
