@@ -1,0 +1,129 @@
+//
+//  CalendarViewController.m
+//  MSU2U-iOS
+//
+//  Created by Hieu Tran on 12/20/13.
+//  Copyright (c) 2013 Matthew Farmer. All rights reserved.
+//
+
+#import "CalendarViewController.h"
+
+@interface CalendarViewController ()
+
+@property (nonatomic,strong) NSArray * eventCalendar;
+@end
+
+@implementation CalendarViewController
+
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.eventCalendar = [[NSArray alloc]initWithObjects:
+                          @{@"title":@"Application Date for Admission",@"date":@"November 1, 2013"},
+                          @{@"title":@"Application Deadline",@"date":@"December 15, 2013"},
+                          @{@"title":@"Reenrolling Student Registration",@"date": @"January 6 - January 7"},
+                          @{@"title":@"Student Orientation, Advising and Registration",@"date": @"January 8 - January 9"},
+                          @{@"title":@"Student Advising and Registration",@"date": @"January 10"},
+                          @{@"title":@"Classes begin",@"date":@"January 11"},
+                          @{@"title":@"Change of Schedule or Late Registration",@"date": @"January 13 - January 15"},
+                          @{@"title":@"Martin Luther King's - No classes",@"date":@"January 20"},
+                          @{@"title":@"Deadline for May graduates",@"date":@"February 17"},
+                          @{@"title":@"Spring Break",@"date": @"March 15 - March 23"},
+                          @{@"title":@"Easter Break",@"date": @"April 16 - April 20"},
+                          @{@"title":@"Last day of classes",@"date":@"May 2"},
+                          @{@"title":@"Final exam",@"date": @"May 3 - May 9"},
+                          @{@"title":@"Commencement",@"date":@"May 10"},nil];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return [self.eventCalendar count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"eventCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    cell.textLabel.text = [[self.eventCalendar objectAtIndex:indexPath.row]objectForKey:@"title"];
+    cell.detailTextLabel.text = [[self.eventCalendar objectAtIndex:indexPath.row]objectForKey:@"date"];
+    
+    return cell;
+}
+
+/*
+// Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+*/
+
+/*
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }   
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }   
+}
+*/
+
+/*
+// Override to support rearranging the table view.
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+{
+}
+*/
+
+/*
+// Override to support conditional rearranging of the table view.
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the item to be re-orderable.
+    return YES;
+}
+*/
+
+/*
+#pragma mark - Navigation
+
+// In a story board-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+
+ */
+
+@end
