@@ -2,7 +2,7 @@
 //  CalendarViewController.m
 //  MSU2U-iOS
 //
-//  Created by Hieu Tran on 12/20/13.
+//  Created by Hieu Tran and Romando Garcia on 12/20/13.
 //  Copyright (c) 2013 Matthew Farmer. All rights reserved.
 //
 
@@ -11,7 +11,6 @@
 @interface CalendarViewController ()
 
 @property (nonatomic,strong) NSArray * eventCalendar;
-@property (nonatomic,strong) NSArray * semester;
 @end
 
 @implementation CalendarViewController
@@ -38,14 +37,13 @@
                           @{@"title":@"Change of Schedule or Late Registration",@"date": @"January 13 - January 15"},
                           @{@"title":@"Martin Luther King's - No classes",@"date":@"January 20"},
                           @{@"title":@"Deadline for May graduates",@"date":@"February 17"},
-                          @{@"title":@"Last Day for “W”, 4:00 p.m.",@"date":@"March 10"},
+                          @{@"title":@"Last Day for drop with a “W”, 4:00 p.m.",@"date":@"March 10"},
                           @{@"title":@"Spring Break",@"date": @"March 15 - March 23"},
                           @{@"title":@"Easter Break",@"date": @"April 16 - April 20"},
                           @{@"title":@"Last day of classes",@"date":@"May 2"},
                           @{@"title":@"Final exam",@"date": @"May 3 - May 9"},
                           @{@"title":@"Commencement",@"date":@"May 10"},nil];
 
-    self.semester = [[NSArray alloc]initWithObjects:@{@"semester":@"Spring 2014"}, nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,6 +76,7 @@
     
     return cell;
 }
+
 
 /*
 // Override to support conditional editing of the table view.
