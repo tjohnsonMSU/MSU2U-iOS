@@ -11,6 +11,7 @@
 @interface CalendarViewController ()
 
 @property (nonatomic,strong) NSArray * eventCalendar;
+@property (nonatomic,strong) NSArray * semester;
 @end
 
 @implementation CalendarViewController
@@ -43,9 +44,21 @@
                           @{@"title":@"Last day of classes",@"date":@"May 2"},
                           @{@"title":@"Final exam",@"date": @"May 3 - May 9"},
                           @{@"title":@"Commencement",@"date":@"May 10"},nil];
-
+    
 }
-
+- (NSString *) tableView:(UITableView *)tableView
+ titleForHeaderInSection:(NSInteger)section
+{
+    
+    NSString *result = nil;
+    
+    if ([tableView isEqual:self.tableView] &&
+        section == 0){
+        result = @"Spring Semester 2014";
+    }
+    
+    return result;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
