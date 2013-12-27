@@ -122,11 +122,23 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    int section = [indexPath section];
+    int row = [indexPath row];
+    
     static NSString *CellIdentifier = @"eventCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    cell.textLabel.text = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"title"];
-    cell.detailTextLabel.text = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"date"];
+    switch (section) {
+        case 0:
+            cell.textLabel.text = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"title"];
+            cell.detailTextLabel.text = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"date"];
+            break;
+        case 1:
+            cell.textLabel.text = [[self.summer14 objectAtIndex:indexPath.row]objectForKey:@"title"];
+            cell.detailTextLabel.text = [[self.summer14 objectAtIndex:indexPath.row]objectForKey:@"date"];
+            break;
+    }
+//    cell.textLabel.text = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"title"];
+//    cell.detailTextLabel.text = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"date"];
     
     return cell;
 }
