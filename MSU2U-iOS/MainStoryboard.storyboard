@@ -1646,44 +1646,27 @@
         <scene sceneID="njc-sd-osB">
             <objects>
                 <tableViewController id="Uvd-dh-K9g" customClass="CalendarViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="22" sectionFooterHeight="22" id="zpL-zA-UDD">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" id="zpL-zA-UDD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sectionHeaderID" textLabel="AA0-s9-USY" rowHeight="53" style="IBUITableViewCellStyleDefault" id="97Y-fp-6PG">
-                                <rect key="frame" x="0.0" y="86" width="320" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="97Y-fp-6PG" id="i8T-0s-bkW">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="52"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AA0-s9-USY">
-                                            <rect key="frame" x="15" y="0.0" width="290" height="52"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleAspectFit" selectionStyle="default" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="eventCell" textLabel="eMN-nH-P69" detailTextLabel="ckm-0Z-rQt" rowHeight="90" style="IBUITableViewCellStyleSubtitle" id="iGE-Kz-gkd">
-                                <rect key="frame" x="0.0" y="139" width="320" height="90"/>
+                            <tableViewCell contentMode="scaleAspectFit" selectionStyle="default" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="eventCell" textLabel="eMN-nH-P69" detailTextLabel="ckm-0Z-rQt" rowHeight="50" style="IBUITableViewCellStyleSubtitle" id="iGE-Kz-gkd">
+                                <rect key="frame" x="0.0" y="86" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iGE-Kz-gkd" id="q1U-QF-LHb">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="29" id="eMN-nH-P69">
-                                            <rect key="frame" x="15" y="28" width="29" height="18"/>
+                                            <rect key="frame" x="15" y="8" width="29" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Content goes here" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ckm-0Z-rQt">
-                                            <rect key="frame" x="15" y="46" width="103" height="15"/>
+                                            <rect key="frame" x="15" y="26" width="103" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

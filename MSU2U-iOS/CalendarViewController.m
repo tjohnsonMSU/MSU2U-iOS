@@ -45,23 +45,51 @@
                           @{@"title":@"Last Day for drop with a “W”, 4:00 p.m.",@"date":@"March 10"},
                           @{@"title":@"Spring Break",@"date": @"March 15 - March 23"},
                           @{@"title":@"Easter Break",@"date": @"April 16 - April 20"},
-                          @{@"title":@"Last day of classes",@"date":@"May 2"},
+                          @{@"title":@"Last Day of classes",@"date":@"May 2"},
                           @{@"title":@"Final exam",@"date": @"May 3 - May 9"},
                           @{@"title":@"Commencement",@"date":@"May 10"},nil];
     
+    self.summer14 = [[NSArray alloc]initWithObjects:
+                     @{@"title":@"First Term", @"date":@"June 2 - July 3"},
+                     @{@"title":@"Priority Application Date for Admission", @"date":@"May 1"},
+                     @{@"title":@"Application Deadline for Admission", @"date":@"May 15"},
+                     @{@"title":@"Memorial Day Holiday", @"date":@"May 26"},
+                     @{@"title":@"Reenrolling Student Registration", @"date":@"May 27 - May 28"},
+                     @{@"title":@"Student Orientation, Advising, and Registration", @"date":@"May 29"},
+                     @{@"title":@"Classes begin", @"date":@"June 2"},
+                     @{@"title":@"Second Term", @"date":@"July 7 - August 7"},
+                     @{@"title":@"Priority Application Date for Admission", @"date":@"June 1"},
+                     @{@"title":@"Application Deadline for Admission", @"date":@"June 15"},
+                     @{@"title":@"Student Orientation, Advising, and Registration", @"date":@"July 3"},
+                     @{@"title":@"Independence Day Holiday", @"date":@"July 4"},
+                     @{@"title":@"Class begin", @"date":@"July 7"},
+                     @{@"title":@"Deadline for August graduate to file for graduation", @"date":@"July 7"},
+                     @{@"title":@"Final exam", @"date":@"August 7"},
+                     nil];
+
 }
 - (NSString *) tableView:(UITableView *)tableView
  titleForHeaderInSection:(NSInteger)section
 {
     
     NSString *result = nil;
-    
-    if ([tableView isEqual:self.tableView] &&
-        section == 0){
-        result = @"Spring Semester 2014";
+//    
+//    if ([tableView isEqual:self.tableView] &&
+//        section == 0){
+//        result = @"Spring Semester 2014";
+//    }
+//
+//    return result;
+    switch (section) {
+        case 0:
+            result = @"Spring Semester 2014";
+            return result;
+            break;
+        case 1:
+            result = @"Summer Session 2014";
+            return result;
+            break;
     }
-    
-    return result;
 }
 - (void)didReceiveMemoryWarning
 {
@@ -74,13 +102,22 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.spring14 count];
+    switch (section)
+    {
+        case 0:
+            return [self.spring14 count];
+            break;
+        case 1:
+            return [self.summer14 count];
+            break;
+    }
+ //   return [self.spring14 count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
