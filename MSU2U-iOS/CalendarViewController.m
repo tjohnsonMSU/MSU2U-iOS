@@ -10,10 +10,7 @@
 
 @interface CalendarViewController ()
 
-@property (nonatomic,strong) NSArray * eventCalendar;
-@property (nonatomic,strong) NSArray * semester;
 @property (nonatomic,strong) NSArray * spring14;
-@property (nonatomic,strong) NSArray * fall13;
 @property (nonatomic,strong) NSArray * summer14;
 
 @end
@@ -32,6 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //load the array of spring with the object as event, key as dates
     self.spring14 = [[NSArray alloc]initWithObjects:
                           @{@"title":@"Application Date for Admission",@"date":@"November 1, 2013"},
                           @{@"title":@"Application Deadline",@"date":@"December 15, 2013"},
@@ -49,6 +48,7 @@
                           @{@"title":@"Final exam",@"date": @"May 3 - May 9"},
                           @{@"title":@"Commencement",@"date":@"May 10"},nil];
     
+    //load the summer array with object as events, key as dates
     self.summer14 = [[NSArray alloc]initWithObjects:
                      @{@"title":@"First Term", @"date":@"June 2 - July 3"},
                      @{@"title":@"Priority Application Date for Admission", @"date":@"May 1"},
@@ -62,7 +62,7 @@
                      @{@"title":@"Application Deadline for Admission", @"date":@"June 15"},
                      @{@"title":@"Student Orientation, Advising, and Registration", @"date":@"July 3"},
                      @{@"title":@"Independence Day Holiday", @"date":@"July 4"},
-                     @{@"title":@"Class begin", @"date":@"July 7"},
+                     @{@"title":@"Classes begin", @"date":@"July 7"},
                      @{@"title":@"Deadline for August graduate to file for graduation", @"date":@"July 7"},
                      @{@"title":@"Final exam", @"date":@"August 7"},
                      nil];
@@ -71,15 +71,8 @@
 - (NSString *) tableView:(UITableView *)tableView
  titleForHeaderInSection:(NSInteger)section
 {
-    
+    //return the section header for each row section
     NSString *result = nil;
-//    
-//    if ([tableView isEqual:self.tableView] &&
-//        section == 0){
-//        result = @"Spring Semester 2014";
-//    }
-//
-//    return result;
     switch (section) {
         case 0:
             result = @"Spring Semester 2014";
@@ -117,7 +110,7 @@
             return [self.summer14 count];
             break;
     }
- //   return [self.spring14 count];
+
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -127,6 +120,8 @@
     
     static NSString *CellIdentifier = @"eventCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    //using switch to set the label for the section in the table
     switch (section) {
         case 0:
             cell.textLabel.text = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"title"];
@@ -137,8 +132,6 @@
             cell.detailTextLabel.text = [[self.summer14 objectAtIndex:indexPath.row]objectForKey:@"date"];
             break;
     }
-//    cell.textLabel.text = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"title"];
-//    cell.detailTextLabel.text = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"date"];
     
     return cell;
 }
