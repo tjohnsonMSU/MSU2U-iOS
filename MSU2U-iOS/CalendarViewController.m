@@ -54,13 +54,13 @@
     self.summer14 = [[NSArray alloc]initWithObjects:
                      @{@"title":@"First Term: June 2 - July 3",@"startDate":@"June 2, 2014",@"endDate":@"July 3,2014"},
                      @{@"title":@"Priority Application Date for Admission",@"startDate":@"May 1, 2014",@"endDate":@"May 1, 2014"},
-                     @{@"title":@"Application Deadline for Admission",@"startDate":@"May 15,2014",@"endDate":@"May 15,2014",@"endDate",@"May 15, 2014"},
-                     @{@"title":@"Memorial Day Holiday",@"startDate":@"May 26, 2014",@"endDate","May 26, 2014"},
-                     @{@"title":@"Reenrolling Student Registration", @"startDate":@"May 27, 2014",@"endDate":"May 28, 2014"},
+                     @{@"title":@"Application Deadline for Admission",@"startDate":@"May 15,2014",@"endDate":@"May 15,2014",@"endDate":@"May 15, 2014"},
+                     @{@"title":@"Memorial Day Holiday",@"startDate":@"May 26, 2014",@"endDate":@"May 26, 2014"},
+                     @{@"title":@"Reenrolling Student Registration", @"startDate":@"May 27, 2014",@"endDate":@"May 28, 2014"},
                      @{@"title":@"Student Orientation, Advising, and Registration",@"startDate":@"May 29, 2014", @"endDate": @"May 29, 2014"},
-                     @{@"title":@"Classes begin", @"startDate":@"June 2, 2014",@"June 2, 2014"},
+                     @{@"title":@"Classes begin", @"startDate":@"June 2, 2014",@"endDate":@"June 2, 2014"},
                      @{@"title":@"Second Term: July 7 - August 7", @"startDate":@"July 7, 2014",@"endDate":@"August 7, 2014"},
-                     @{@"title":@"Priority Application Date for Admission", @"startDate":@"June 1, 2014",@"endDate":"June 1, 2014"},
+                     @{@"title":@"Priority Application Date for Admission", @"startDate":@"June 1, 2014",@"endDate":@"June 1, 2014"},
                      @{@"title":@"Application Deadline for Admission", @"startDate":@"June 15,2014",@"endDate":@"June 15, 2014"},
                      @{@"title":@"Student Orientation, Advising, and Registration", @"startDate":@"July 3, 2014",@"endDate":@"July 3, 2014"},
                      @{@"title":@"Independence Day Holiday", @"startDate":@"July 4, 2014",@"endDate":@"July 4, 2014"},
@@ -155,55 +155,6 @@
   
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end
