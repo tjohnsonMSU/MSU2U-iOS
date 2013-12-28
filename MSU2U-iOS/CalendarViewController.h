@@ -10,4 +10,7 @@
 
 @interface CalendarViewController : UITableViewController
 
+-(void)endDateStringtoDate;
+-(void)startDateStringtoDate;
+
 @end
