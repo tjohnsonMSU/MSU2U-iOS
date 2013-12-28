@@ -141,15 +141,15 @@
     switch (indexPath.section) {
         case 0:
             cell.textLabel.text = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"title"];
-            cell.detailTextLabel.text = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"startDate"];
+            cell.detailTextLabel.text = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"date"];
             break;
         case 1:
             cell.textLabel.text = [[self.fSummer14 objectAtIndex:indexPath.row]objectForKey:@"title"];
-            cell.detailTextLabel.text = [[self.fSummer14 objectAtIndex:indexPath.row]objectForKey:@"startDate"];
+            cell.detailTextLabel.text = [[self.fSummer14 objectAtIndex:indexPath.row]objectForKey:@"date"];
             break;
         case 2:
             cell.textLabel.text = [[self.sSummer14 objectAtIndex:indexPath.row]objectForKey:@"title"];
-            cell.detailTextLabel.text = [[self.sSummer14 objectAtIndex:indexPath.row]objectForKey:@"startDate"];
+            cell.detailTextLabel.text = [[self.sSummer14 objectAtIndex:indexPath.row]objectForKey:@"date"];
             break;
             
     }
