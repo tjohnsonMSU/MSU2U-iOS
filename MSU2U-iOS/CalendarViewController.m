@@ -68,7 +68,7 @@
                       @{@"title":@"Application Deadline for Admission", @"startDate":@"June 15,2014",@"endDate":@"June 15, 2014"},
                       @{@"title":@"Student Orientation, Advising, and Registration", @"startDate":@"July 3, 2014",@"endDate":@"July 3, 2014"},
                       @{@"title":@"Independence Day Holiday", @"startDate":@"July 4, 2014",@"endDate":@"July 4, 2014"},
-                      @{@"title":@"Classes begin", @"startDate":@"July 7, 2014",@"endDate":@"July 7,2014"},
+                      @{@"title":@"Classes begin", @"startDate":@"July 7, 2014",@"endDate":@"July 7, 2014"},
                       @{@"title":@"Deadline for August graduate to file for graduation", @"startDate":@"July 7, 2014",@"endDate":@"July 7, 2014"},
                       @{@"title":@"Final exam", @"startDate":@"August 7, 2014",@"endDate":@"August 7, 2014"},
                       nil];
@@ -176,16 +176,19 @@
 
 -(void)startDateStringtoDate
 {
-    self.sDate = [[NSArray alloc]initWithObjects:@"11-01-2013",@"12-15-2013",@"01-06-2014",@"01-08-2014",
-                  @"01-10-2014",@"01-11-2014",@"01-13-2014",@"01-20-2014",@"03-10-2014"
+    self.sDate = [[NSArray alloc]initWithObjects:
+                  @"11-01-2013",@"12-15-2013",@"01-06-2014",@"01-08-2014",@"01-10-2014",
+                  @"01-11-2014",@"01-13-2014",@"01-20-2014",@"02-17-2014",@"03-10-2014",
                   @"03-15-2014",@"04-16-2014",@"05-02-2014",@"05-03-2014",@"05-09-2014",
-                  @"06-02-2014",@"05-01-2014",@"05-26-2014",@"05-27-2014",@"05-29-2014",
-                  @"06-02-2014",@"06-03-2014",@"07-07-2014",@"",nil];
+                  @"05-01-2014",@"05-15-2014",@"05-26-2014",@"05-27-2014",@"05-29-2014",
+                  @"06-02-2014",@"06-03-2014",@"06-01-2014",@"06-15-2014",@"07-03-2014",
+                  @"07-04-2014",@"07-07-2014",@"07-07-2014",@"08-07-2014",nil];
 }
 
 -(void)endDateStringtoDate
 {
-    self.eDate = [[NSArray alloc]initWithObjects:@"", nil]
+    self.eDate = [[NSArray alloc]initWithObjects:
+                  @"", nil];
 }
 
 @end
