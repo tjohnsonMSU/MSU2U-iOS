@@ -17,7 +17,8 @@
 @property (nonatomic,strong) NSArray * sSummer14;
 @property (nonatomic,strong) NSArray * sDate;
 @property (nonatomic,strong) NSArray * eDate;
-
+@property (nonatomic,strong) NSMutableArray * arrayStartDate;
+@property (nonatomic,strong) NSMutableArray * arrayEndDate;
 @end
 
 @implementation CalendarViewController
@@ -155,18 +156,20 @@
     
     return cell;
 }
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     addEventToCalendar * event = [[addEventToCalendar alloc]init];
     event.calendarEventTitle =[[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"title"];
-    event.calendarEventStartDate = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"startDate"];
-    event.calendarEventEndDate = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"endDate"];
+    event.calendarEventStartDate = [self.arrayStartDate objectAtIndex:0];
+    event.calendarEventEndDate = [self.arrayEndDate objectAtIndex:0];
     [event addEventToMainCalendar];
   
 }
 
 -(void)startDateStringtoDate
 {
+    self.arrayStartDate = [[NSMutableArray alloc]init];
     self.sDate = [[NSArray alloc]initWithObjects:
                   @"11-01-2013",@"12-15-2013",@"01-06-2014",@"01-08-2014",@"01-10-2014",
                   @"01-11-2014",@"01-13-2014",@"01-20-2014",@"02-17-2014",@"03-10-2014",
@@ -174,10 +177,20 @@
                   @"05-01-2014",@"05-15-2014",@"05-26-2014",@"05-27-2014",@"05-29-2014",
                   @"06-02-2014",@"06-03-2014",@"06-01-2014",@"06-15-2014",@"07-03-2014",
                   @"07-04-2014",@"07-07-2014",@"07-07-2014",@"08-07-2014",nil];
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
+    [dateFormat setDateFormat:@"MM-dd-yyyy"];
+    
+    for (int i =0; i< [self.sDate count]; i++)
+    {
+        NSDate * dateFromString = [dateFormat dateFromString:[self.sDate objectAtIndex:i]];
+        [_arrayStartDate addObject:dateFromString];
+    }
 }
 
 -(void)endDateStringtoDate
 {
+    self.arrayEndDate = [[NSMutableArray alloc]init];
     self.eDate = [[NSArray alloc]initWithObjects:
                   @"11-01-2013",@"12-15-2013",@"01-07-2014",@"01-09-2014",@"01-10-2014",
                   @"01-11-2014",@"01-15-2014",@"01-20-2014",@"02-17-2014",@"03-10-2014",
@@ -185,6 +198,15 @@
                   @"05-01-2014",@"05-15-2014",@"05-26-2014",@"05-28-2014",@"05-29-2014",
                   @"06-02-2014",@"06-03-2014",@"06-01-2014",@"06-15-2014",@"07-03-2014",
                   @"07-04-2014",@"07-07-2014",@"07-07-2014",@"08-07-2014",nil];
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
+    [dateFormat setDateFormat:@"MM-dd-yyyy"];
+    
+    for (int i =0; i< [self.sDate count]; i++)
+    {
+        NSDate * dateFromString = [dateFormat dateFromString:[self.sDate objectAtIndex:i]];
+        [_arrayEndDate addObject:dateFromString];
+    }
 }
 
 @end
