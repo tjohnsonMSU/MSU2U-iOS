@@ -7,6 +7,8 @@
 //
 
 #import "CalendarViewController.h"
+#import <EventKit/EventKit.h>
+#import "addEventToCalendar.h"
 
 @interface CalendarViewController ()
 
@@ -32,39 +34,39 @@
     
     //load the array of spring with the object as event, key as dates
     self.spring14 = [[NSArray alloc]initWithObjects:
-                          @{@"title":@"Application Date for Admission",@"date":@"November 1, 2013"},
-                          @{@"title":@"Application Deadline",@"date":@"December 15, 2013"},
-                          @{@"title":@"Reenrolling Student Registration",@"date": @"January 6 - January 7"},
-                          @{@"title":@"Orientation, Advising and Registration",@"date": @"January 8 - January 9"},
-                          @{@"title":@"Student Advising and Registration",@"date": @"January 10"},
-                          @{@"title":@"Classes begin",@"date":@"January 11"},
-                          @{@"title":@"Change of Schedule or Late Registration",@"date": @"January 13 - January 15"},
-                          @{@"title":@"Martin Luther King's - No classes",@"date":@"January 20"},
-                          @{@"title":@"Deadline for May graduates",@"date":@"February 17"},
-                          @{@"title":@"Last Day for drop with a “W”, 4:00 p.m.",@"date":@"March 10"},
-                          @{@"title":@"Spring Break",@"date": @"March 15 - March 23"},
-                          @{@"title":@"Easter Break",@"date": @"April 16 - April 20"},
-                          @{@"title":@"Last Day of classes",@"date":@"May 2"},
-                          @{@"title":@"Final exam",@"date": @"May 3 - May 9"},
-                          @{@"title":@"Commencement",@"date":@"May 10"},nil];
+                          @{@"title":@"Application Date for Admission",@"startDate":@"November 1, 2013", @"endDate":@"November 1, 2013"},
+                          @{@"title":@"Application Deadline",@"startDate":@"December 15, 2013",@"endDate":@"December 15, 2013"},
+                          @{@"title":@"Reenrolling Student Registration",@"date":@"January 6, 2014",@"endDate":@"January 7, 2014"},
+                          @{@"title":@"Orientation, Advising and Registration",@"startDate":@"January 8, 2014",@"endDate":@"January 9,2014"},
+                          @{@"title":@"Student Advising and Registration",@"startDate":@"January 10, 2014",@"endDate":@"January 10 ,2014"},
+                          @{@"title":@"Classes begin",@"startDate":@"January 11, 2014",@"endDate":@"January 11,2014"},
+                          @{@"title":@"Change of Schedule or Late Registration",@"startDate":@"January 13, 2014",@"endDate":@"January 15, 2014"},
+                          @{@"title":@"Martin Luther King's - No classes",@"startDate":@"January 20, 2014",@"endDate":@"January 20, 2014"},
+                          @{@"title":@"Deadline for May graduates",@"startDate":@"February 17, 2014",@"endDate":@"February 17,2014"},
+                          @{@"title":@"Last Day for drop with a “W”, 4:00 p.m.",@"startDate":@"March 10,2014",@"endDate":@"March 10,2014"},
+                          @{@"title":@"Spring Break",@"startDate":@"March 15, 2014",@"endDate":@"March 23, 2014"},
+                          @{@"title":@"Easter Break",@"startDate":@"April 16, 2014",@"endDate":@"April 20, 2014"},
+                          @{@"title":@"Last Day of classes",@"startDate":@"May 2, 2014", @"endDate":@"May 2, 2014"},
+                          @{@"title":@"Final exam",@"startDate": @"May 3, 2014",@"endDate":@"May 9, 2014"},
+                          @{@"title":@"Commencement",@"startDate":@"May 10",@"endDate":@"May 9, 2014"},nil];
     
     //load the summer array with object as events, key as dates
     self.summer14 = [[NSArray alloc]initWithObjects:
-                     @{@"title":@"First Term", @"date":@"June 2 - July 3"},
-                     @{@"title":@"Priority Application Date for Admission", @"date":@"May 1"},
-                     @{@"title":@"Application Deadline for Admission", @"date":@"May 15"},
-                     @{@"title":@"Memorial Day Holiday", @"date":@"May 26"},
-                     @{@"title":@"Reenrolling Student Registration", @"date":@"May 27 - May 28"},
-                     @{@"title":@"Student Orientation, Advising, and Registration", @"date":@"May 29"},
-                     @{@"title":@"Classes begin", @"date":@"June 2"},
-                     @{@"title":@"Second Term", @"date":@"July 7 - August 7"},
-                     @{@"title":@"Priority Application Date for Admission", @"date":@"June 1"},
-                     @{@"title":@"Application Deadline for Admission", @"date":@"June 15"},
-                     @{@"title":@"Student Orientation, Advising, and Registration", @"date":@"July 3"},
-                     @{@"title":@"Independence Day Holiday", @"date":@"July 4"},
-                     @{@"title":@"Classes begin", @"date":@"July 7"},
-                     @{@"title":@"Deadline for August graduate to file for graduation", @"date":@"July 7"},
-                     @{@"title":@"Final exam", @"date":@"August 7"},
+                     @{@"title":@"First Term: June 2 - July 3",@"startDate":@"June 2, 2014",@"endDate":@"July 3,2014"},
+                     @{@"title":@"Priority Application Date for Admission",@"startDate":@"May 1, 2014",@"endDate":@"May 1, 2014"},
+                     @{@"title":@"Application Deadline for Admission",@"startDate":@"May 15,2014",@"endDate":@"May 15,2014",@"endDate",@"May 15, 2014"},
+                     @{@"title":@"Memorial Day Holiday",@"startDate":@"May 26, 2014",@"endDate","May 26, 2014"},
+                     @{@"title":@"Reenrolling Student Registration", @"startDate":@"May 27, 2014",@"endDate":"May 28, 2014"},
+                     @{@"title":@"Student Orientation, Advising, and Registration",@"startDate":@"May 29, 2014", @"endDate": @"May 29, 2014"},
+                     @{@"title":@"Classes begin", @"startDate":@"June 2, 2014",@"June 2, 2014"},
+                     @{@"title":@"Second Term: July 7 - August 7", @"startDate":@"July 7, 2014",@"endDate":@"August 7, 2014"},
+                     @{@"title":@"Priority Application Date for Admission", @"startDate":@"June 1, 2014",@"endDate":"June 1, 2014"},
+                     @{@"title":@"Application Deadline for Admission", @"startDate":@"June 15,2014",@"endDate":@"June 15, 2014"},
+                     @{@"title":@"Student Orientation, Advising, and Registration", @"startDate":@"July 3, 2014",@"endDate":@"July 3, 2014"},
+                     @{@"title":@"Independence Day Holiday", @"startDate":@"July 4, 2014",@"endDate":@"July 4, 2014"},
+                     @{@"title":@"Classes begin", @"startDate":@"July 7, 2014",@"endDate":@"July 7,2014"},
+                     @{@"title":@"Deadline for August graduate to file for graduation", @"startDate":@"July 7, 2014",@"endDate":@"July 7, 2014"},
+                     @{@"title":@"Final exam", @"startDate":@"August 7, 2014",@"endDate":@"August 7, 2014"},
                      nil];
 
 }
@@ -115,27 +117,43 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    int section = [indexPath section];
-    int row = [indexPath row];
+//    int section = [indexPath section];
     
     static NSString *CellIdentifier = @"eventCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     //using switch to set the label for the section in the table
-    switch (section) {
+    switch (indexPath.section) {
         case 0:
             cell.textLabel.text = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"title"];
-            cell.detailTextLabel.text = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"date"];
+            cell.detailTextLabel.text = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"startDate"];
             break;
         case 1:
             cell.textLabel.text = [[self.summer14 objectAtIndex:indexPath.row]objectForKey:@"title"];
-            cell.detailTextLabel.text = [[self.summer14 objectAtIndex:indexPath.row]objectForKey:@"date"];
+            cell.detailTextLabel.text = [[self.summer14 objectAtIndex:indexPath.row]objectForKey:@"startDate"];
             break;
     }
     
     return cell;
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    EKEventStore *eventStore = [[EKEventStore alloc]init];
+//    EKEventStore *event = [EKEvent eventWithEventStore:eventStore];
+//    
+//    event.title = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"title"];
+//    event.setdate = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"date"];
+//    
+//    UIAlertView * av = [[UIAlertView alloc] initWithTitle:@"Alert" message:[NSString stringWithFormat:@"",[[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"title"]] delegate:self cancelButtonTitle:nil otherButtonTitles:@"Awesome!", nil];
+//    
+//    [av show];
+    addEventToCalendar * event = [[addEventToCalendar alloc]init];
+    event.calendarEventTitle =[[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"title"];
+    event.calendarEventStartDate = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"startDate"];
+    event.calendarEventEndDate = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"endDate"];
+    [event addEventToMainCalendar];
+  
+}
 
 /*
 // Override to support conditional editing of the table view.
