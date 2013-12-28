@@ -51,7 +51,7 @@
                           @{@"title":@"Easter Break",@"startDate":@"April 16, 2014",@"endDate":@"April 20, 2014"},
                           @{@"title":@"Last Day of classes",@"startDate":@"May 2, 2014", @"endDate":@"May 2, 2014"},
                           @{@"title":@"Final exam",@"startDate": @"May 3, 2014",@"endDate":@"May 9, 2014"},
-                          @{@"title":@"Commencement",@"startDate":@"May 10",@"endDate":@"May 9, 2014"},nil];
+                          @{@"title":@"Commencement",@"startDate":@"May 10",@"endDate":@"May 10, 2014"},nil];
     
     //load the summer array with object as events, key as dates
     self.fSummer14 = [[NSArray alloc]initWithObjects:
@@ -106,7 +106,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -157,15 +157,6 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    EKEventStore *eventStore = [[EKEventStore alloc]init];
-//    EKEventStore *event = [EKEvent eventWithEventStore:eventStore];
-//    
-//    event.title = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"title"];
-//    event.setdate = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"date"];
-//    
-//    UIAlertView * av = [[UIAlertView alloc] initWithTitle:@"Alert" message:[NSString stringWithFormat:@"",[[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"title"]] delegate:self cancelButtonTitle:nil otherButtonTitles:@"Awesome!", nil];
-//    
-//    [av show];
     addEventToCalendar * event = [[addEventToCalendar alloc]init];
     event.calendarEventTitle =[[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"title"];
     event.calendarEventStartDate = [[self.spring14 objectAtIndex:indexPath.row]objectForKey:@"startDate"];
@@ -179,7 +170,7 @@
     self.sDate = [[NSArray alloc]initWithObjects:
                   @"11-01-2013",@"12-15-2013",@"01-06-2014",@"01-08-2014",@"01-10-2014",
                   @"01-11-2014",@"01-13-2014",@"01-20-2014",@"02-17-2014",@"03-10-2014",
-                  @"03-15-2014",@"04-16-2014",@"05-02-2014",@"05-03-2014",@"05-09-2014",
+                  @"03-15-2014",@"04-16-2014",@"05-02-2014",@"05-03-2014",@"05-10-2014",
                   @"05-01-2014",@"05-15-2014",@"05-26-2014",@"05-27-2014",@"05-29-2014",
                   @"06-02-2014",@"06-03-2014",@"06-01-2014",@"06-15-2014",@"07-03-2014",
                   @"07-04-2014",@"07-07-2014",@"07-07-2014",@"08-07-2014",nil];
@@ -188,7 +179,12 @@
 -(void)endDateStringtoDate
 {
     self.eDate = [[NSArray alloc]initWithObjects:
-                  @"", nil];
+                  @"11-01-2013",@"12-15-2013",@"01-07-2014",@"01-09-2014",@"01-10-2014",
+                  @"01-11-2014",@"01-15-2014",@"01-20-2014",@"02-17-2014",@"03-10-2014",
+                  @"03-23-2014",@"04-20-2014",@"05-02-2014",@"05-09-2014",@"05-10-2014",
+                  @"05-01-2014",@"05-15-2014",@"05-26-2014",@"05-28-2014",@"05-29-2014",
+                  @"06-02-2014",@"06-03-2014",@"06-01-2014",@"06-15-2014",@"07-03-2014",
+                  @"07-04-2014",@"07-07-2014",@"07-07-2014",@"08-07-2014",nil];
 }
 
 @end
