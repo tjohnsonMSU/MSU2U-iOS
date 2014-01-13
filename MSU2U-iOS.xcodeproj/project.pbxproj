@@ -172,6 +172,7 @@
 		1DF849AE16B64FB6009F7785 /* MSULocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF849AD16B64FB6009F7785 /* MSULocation.m */; };
 		1DFCFCD416B63CEC00515EFD /* campusMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFCFCD316B63CEC00515EFD /* campusMapViewController.m */; };
 		E09A146A171DC175000CF267 /* webViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A1469171DC175000CF267 /* webViewController.m */; };
+		E39BF7C41864D5C9003507B5 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E39BF7C31864D5C9003507B5 /* CalendarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -657,6 +658,8 @@
 		1DFCFCD316B63CEC00515EFD /* campusMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = campusMapViewController.m; sourceTree = "<group>"; };
 		E09A1468171DC175000CF267 /* webViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = webViewController.h; sourceTree = "<group>"; };
 		E09A1469171DC175000CF267 /* webViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = webViewController.m; sourceTree = "<group>"; };
+		E39BF7C21864D5C9003507B5 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		E39BF7C31864D5C9003507B5 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -790,6 +793,7 @@
 			isa = PBXGroup;
 			children = (
 				1D1CEAFE162B4DBB0059BC1F /* MainStoryboard.storyboard */,
+				E39BF7A01864D595003507B5 /* Calendar */,
 				1DC539A3173232DF008BD25B /* Developer */,
 				1D50D2B21727695300DEF459 /* Podcast */,
 				1D2FF9D1172465DB00871B7C /* About */,
@@ -1320,6 +1324,15 @@
 			name = Website;
 			sourceTree = "<group>";
 		};
+		E39BF7A01864D595003507B5 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				E39BF7C21864D5C9003507B5 /* CalendarViewController.h */,
+				E39BF7C31864D5C9003507B5 /* CalendarViewController.m */,
+			);
+			name = Calendar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1766,6 +1779,7 @@
 				1D3DA8E6171F26BB0020FEBB /* UIImage+Scaling.m in Sources */,
 				1D3DA8E9171F30FC0020FEBB /* Tweet.m in Sources */,
 				1D3DA8FB17207DA20020FEBB /* SVModalWebViewController.m in Sources */,
+				E39BF7C41864D5C9003507B5 /* CalendarViewController.m in Sources */,
 				1D3DA8FD17207DA20020FEBB /* SVWebViewController.m in Sources */,
 				1DA478211722035B001CC653 /* videoViewController.m in Sources */,
 				1D4FEA6A17220E0300183FFA /* Video+Create.m in Sources */,
