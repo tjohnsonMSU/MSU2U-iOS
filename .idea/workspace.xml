@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9dcb9ca1-443b-4194-bcc9-001b33c47568" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Submodules/ShareKit" afterPath="$PROJECT_DIR$/Submodules/ShareKit" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MSU2U-iOS/genericTableViewController.m" afterPath="$PROJECT_DIR$/MSU2U-iOS/genericTableViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
+    <ignored path="MSU2U-iOS.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_1b8f33cf428be668042db196e6926ea47024bf3c" />
+  <component name="FavoritesManager">
+    <favorites_list name="MSU2U-iOS" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="twitterViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MSU2U-iOS/twitterViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="0" selection-start="1615" selection-end="1615" vertical-scroll-proportion="0.0" vertical-offset="121" max-vertical-offset="1170">
+              <folding>
+                <element signature="e#271#306#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="News+Create.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MSU2U-iOS/News+Create.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="77" column="4" selection-start="3423" selection-end="3423" vertical-scroll-proportion="0.0" vertical-offset="736" max-vertical-offset="1770">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="genericTableViewController.m" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MSU2U-iOS/genericTableViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1232" column="32" selection-start="57269" selection-end="57269" vertical-scroll-proportion="0.49653122" vertical-offset="17979" max-vertical-offset="23265">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/MSU2U-iOS/detailGameViewController.m" />
+        <option value="$PROJECT_DIR$/MSU2U-iOS/campusMapInfoViewController.h" />
+        <option value="$PROJECT_DIR$/MSU2U-iOS/campusMapViewController.h" />
+        <option value="$PROJECT_DIR$/MSU2U-iOS/campusMapSettingsViewController.h" />
+        <option value="$PROJECT_DIR$/MSU2U-iOS/defaults.plist" />
+        <option value="$PROJECT_DIR$/MSU2U-iOS/campusMapSettingsViewController.m" />
+        <option value="$PROJECT_DIR$/MSU2U-iOS/campusMapViewController.m" />
+        <option value="$PROJECT_DIR$/MSU2U-iOS/twitterViewController.m" />
+        <option value="$PROJECT_DIR$/MSU2U-iOS/genericTableViewController.m" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="99" />
+    <option name="y" value="93" />
+    <option name="width" value="2025" />
+    <option name="height" value="1144" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Twitter" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Map" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Game" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="userDefaults" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="genericTableView" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Directory" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Core Data" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Core Data" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entities" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Core Data" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entities" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tweet" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSU2U-iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Core Data" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entities" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="News" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Cidr.FilesView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="recentsLimit" value="5" />
+    <property name="FullScreen" value="false" />
+  </component>
+  <component name="RunManager" selected="Application.MSU2U">
+    <configuration default="true" type="AppleRunConfiguration" factoryName="Application" PROJECT_NAME="MSU2U-iOS" TARGET_NAME="MSU2U" CONFIG_NAME="Debug" PASS_PARENT_ENVS="FALSE" RUN_TARGET_PROJECT_NAME="MSU2U-iOS" RUN_TARGET_NAME="MSU2U" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" PROJECT_NAME="facebook-ios-sdk" TARGET_NAME="FacebookSDKTests" CONFIG_NAME="Debug" PASS_PARENT_ENVS="FALSE" TEST_MODE="SUITE_TEST">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="OCGoogleTestRunConfigurationType" factoryName="Google Test" PROJECT_NAME="MSU2U-iOS" TARGET_NAME="MSU2U" CONFIG_NAME="Debug" PASS_PARENT_ENVS="FALSE" TEST_MODE="SUITE_TEST">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="MSU2U" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="MSU2U" PROJECT_NAME="MSU2U-iOS" TARGET_NAME="MSU2U" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" RUN_TARGET_PROJECT_NAME="MSU2U-iOS" RUN_TARGET_NAME="MSU2U" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <RunnerSettings RunnerId="AppRunner" />
+      <ConfigurationWrapper RunnerId="AppRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Copy" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Copy" PROJECT_NAME="ShareKit" TARGET_NAME="Copy" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Delicious" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Delicious" PROJECT_NAME="ShareKit" TARGET_NAME="Delicious" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Demo App" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Demo App" PROJECT_NAME="ShareKit" TARGET_NAME="Demo App" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" RUN_TARGET_PROJECT_NAME="ShareKit" RUN_TARGET_NAME="Demo App" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Diigo" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Diigo" PROJECT_NAME="ShareKit" TARGET_NAME="Diigo" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Email" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Email" PROJECT_NAME="ShareKit" TARGET_NAME="Email" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Evernote SDK" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Evernote SDK" PROJECT_NAME="ShareKit" TARGET_NAME="Evernote SDK" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Evernote" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Evernote" PROJECT_NAME="ShareKit" TARGET_NAME="Evernote" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Facebook" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Facebook" PROJECT_NAME="ShareKit" TARGET_NAME="Facebook" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Flickr SDK" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Flickr SDK" PROJECT_NAME="ShareKit" TARGET_NAME="Flickr SDK" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Flickr" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Flickr" PROJECT_NAME="ShareKit" TARGET_NAME="Flickr" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="FoursquareV2" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="FoursquareV2" PROJECT_NAME="ShareKit" TARGET_NAME="FoursquareV2" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Google Reader" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Google Reader" PROJECT_NAME="ShareKit" TARGET_NAME="Google Reader" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Instagram" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Instagram" PROJECT_NAME="ShareKit" TARGET_NAME="Instagram" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Instapaper" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Instapaper" PROJECT_NAME="ShareKit" TARGET_NAME="Instapaper" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="JSONKit" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="JSONKit" PROJECT_NAME="ShareKit" TARGET_NAME="JSONKit" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Kippt" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Kippt" PROJECT_NAME="ShareKit" TARGET_NAME="Kippt" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="LinkedIn" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="LinkedIn" PROJECT_NAME="ShareKit" TARGET_NAME="LinkedIn" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Logout" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Logout" PROJECT_NAME="ShareKit" TARGET_NAME="Logout" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="OAuth" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="OAuth" PROJECT_NAME="ShareKit" TARGET_NAME="OAuth" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Open in Safari" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Open in Safari" PROJECT_NAME="ShareKit" TARGET_NAME="Open in Safari" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pinboard" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Pinboard" PROJECT_NAME="ShareKit" TARGET_NAME="Pinboard" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Print" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Print" PROJECT_NAME="ShareKit" TARGET_NAME="Print" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Reachability" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Reachability" PROJECT_NAME="ShareKit" TARGET_NAME="Reachability" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Read It Later" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Read It Later" PROJECT_NAME="ShareKit" TARGET_NAME="Read It Later" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Readability" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Readability" PROJECT_NAME="ShareKit" TARGET_NAME="Readability" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Resource Bundle" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Resource Bundle" PROJECT_NAME="ShareKit" TARGET_NAME="Resource Bundle" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Save to Album" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Save to Album" PROJECT_NAME="ShareKit" TARGET_NAME="Save to Album" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Sina Weibo" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Sina Weibo" PROJECT_NAME="ShareKit" TARGET_NAME="Sina Weibo" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="SSKeyChain" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="SSKeyChain" PROJECT_NAME="ShareKit" TARGET_NAME="SSKeyChain" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Static Library Core" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Static Library Core" PROJECT_NAME="ShareKit" TARGET_NAME="Static Library Core" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Static Library" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Static Library" PROJECT_NAME="ShareKit" TARGET_NAME="Static Library" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Text Message" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Text Message" PROJECT_NAME="ShareKit" TARGET_NAME="Text Message" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Tumbl" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Tumbl" PROJECT_NAME="ShareKit" TARGET_NAME="Tumbl" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Twitter" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Twitter" PROJECT_NAME="ShareKit" TARGET_NAME="Twitter" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="VKontakte" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="VKontakte" PROJECT_NAME="ShareKit" TARGET_NAME="VKontakte" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <method />
+    </configuration>
+    <list size="38">
+      <item index="0" class="java.lang.String" itemvalue="Application.MSU2U" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Copy" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Delicious" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Demo App" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Diigo" />
+      <item index="5" class="java.lang.String" itemvalue="Application.Email" />
+      <item index="6" class="java.lang.String" itemvalue="Application.Evernote SDK" />
+      <item index="7" class="java.lang.String" itemvalue="Application.Evernote" />
+      <item index="8" class="java.lang.String" itemvalue="Application.Facebook" />
+      <item index="9" class="java.lang.String" itemvalue="Application.Flickr SDK" />
+      <item index="10" class="java.lang.String" itemvalue="Application.Flickr" />
+      <item index="11" class="java.lang.String" itemvalue="Application.FoursquareV2" />
+      <item index="12" class="java.lang.String" itemvalue="Application.Google Reader" />
+      <item index="13" class="java.lang.String" itemvalue="Application.Instagram" />
+      <item index="14" class="java.lang.String" itemvalue="Application.Instapaper" />
+      <item index="15" class="java.lang.String" itemvalue="Application.JSONKit" />
+      <item index="16" class="java.lang.String" itemvalue="Application.Kippt" />
+      <item index="17" class="java.lang.String" itemvalue="Application.LinkedIn" />
+      <item index="18" class="java.lang.String" itemvalue="Application.Logout" />
+      <item index="19" class="java.lang.String" itemvalue="Application.OAuth" />
+      <item index="20" class="java.lang.String" itemvalue="Application.Open in Safari" />
+      <item index="21" class="java.lang.String" itemvalue="Application.Pinboard" />
+      <item index="22" class="java.lang.String" itemvalue="Application.Print" />
+      <item index="23" class="java.lang.String" itemvalue="Application.Reachability" />
+      <item index="24" class="java.lang.String" itemvalue="Application.Read It Later" />
+      <item index="25" class="java.lang.String" itemvalue="Application.Readability" />
+      <item index="26" class="java.lang.String" itemvalue="Application.Resource Bundle" />
+      <item index="27" class="java.lang.String" itemvalue="Application.Save to Album" />
+      <item index="28" class="java.lang.String" itemvalue="Application.Sina Weibo" />
+      <item index="29" class="java.lang.String" itemvalue="Application.SSKeyChain" />
+      <item index="30" class="java.lang.String" itemvalue="Application.Static Library Core" />
+      <item index="31" class="java.lang.String" itemvalue="Application.Static Library" />
+      <item index="32" class="java.lang.String" itemvalue="Application.Text Message" />
+      <item index="33" class="java.lang.String" itemvalue="Application.Tumbl" />
+      <item index="34" class="java.lang.String" itemvalue="Application.Twitter" />
+      <item index="35" class="java.lang.String" itemvalue="Application.VKontakte" />
+      <item index="36" class="java.lang.String" itemvalue="XCTest/Kiwi.facebook-ios-sdk-tests" />
+      <item index="37" class="java.lang.String" itemvalue="Application.facebook-ios-sdk" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9dcb9ca1-443b-4194-bcc9-001b33c47568" name="Default" comment="" />
+      <created>1384198676130</created>
+      <updated>1384198676130</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="99" y="93" width="2025" height="1144" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17283951" sideWeight="0.84465116" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2855814" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15534884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/detailGameViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="108" column="1" selection-start="4502" selection-end="4502" vertical-scroll-proportion="0.090735435" vertical-offset="1525" max-vertical-offset="3390">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/en.lproj/InfoPlist.strings">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1047" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/AppDelegate.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/buildings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="14175">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/MSU2U-iOS-Prefix.pch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="6" selection-start="354" selection-end="354" vertical-scroll-proportion="0.20057307" vertical-offset="0" max-vertical-offset="1047">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/Tweet.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="880">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/campusMapInfoViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="138" selection-start="591" selection-end="591" vertical-scroll-proportion="0.28977272" vertical-offset="0" max-vertical-offset="880">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/campusMapSettingsViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="34" selection-start="612" selection-end="612" vertical-scroll-proportion="0.2722063" vertical-offset="0" max-vertical-offset="1047">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/campusMapViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="9" selection-start="1680" selection-end="1680" vertical-scroll-proportion="0.75931233" vertical-offset="0" max-vertical-offset="1047">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/defaults.plist">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="12" selection-start="226" selection-end="226" vertical-scroll-proportion="0.071633235" vertical-offset="0" max-vertical-offset="1047">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/campusMapInfoViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="35" selection-start="844" selection-end="844" vertical-scroll-proportion="0.4431818" vertical-offset="0" max-vertical-offset="880">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/campusMapSettingsViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="186" column="76" selection-start="8334" selection-end="8334" vertical-scroll-proportion="0.7421203" vertical-offset="2013" max-vertical-offset="3060">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/campusMapViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="331" column="8" selection-start="13116" selection-end="13116" vertical-scroll-proportion="0.37717602" vertical-offset="4575" max-vertical-offset="7665">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/twitterViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="0" selection-start="1615" selection-end="1615" vertical-scroll-proportion="0.0" vertical-offset="121" max-vertical-offset="1170">
+          <folding>
+            <element signature="e#271#306#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/News+Create.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="4" selection-start="3423" selection-end="3423" vertical-scroll-proportion="0.0" vertical-offset="736" max-vertical-offset="1770">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSU2U-iOS/genericTableViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1232" column="32" selection-start="57269" selection-end="57269" vertical-scroll-proportion="0.49653122" vertical-offset="17979" max-vertical-offset="23265">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+
