@@ -7,6 +7,7 @@
 //
 
 #import "aboutViewController.h"
+#import "webViewController.h"
 
 @interface aboutViewController ()
 
@@ -31,6 +32,23 @@
         
         [controller setMessageBody:openingStatement isHTML:NO];
         if (controller) [self presentModalViewController:controller animated:YES];
+    }
+    else if(indexPath.section == 3 && indexPath.row == 0)
+    {
+        NSLog(@"You hit me!");
+        [self performSegueWithIdentifier:@"toTheMsu2uWebsite" sender:self];
+    }
+    
+    NSLog(@"We hit section %i and row %i",indexPath.section,indexPath.row);
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"toTheMsu2uWebsite"])
+    {
+        //Tell the webview what url to show
+        webViewController * vc = [segue destinationViewController];
+        [vc sendURL:@"http://cs2.mwsu.edu/msu2u" andTitle:@"Homepage" andMessagePrefix:@"Check out the MSU2U homepage!"];
     }
 }
 
