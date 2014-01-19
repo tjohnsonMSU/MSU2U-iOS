@@ -628,12 +628,12 @@
             </objects>
             <point key="canvasLocation" x="-15510" y="-3626"/>
         </scene>
-        <!--Navigation Controller - Event-->
+        <!--Navigation Controller - Sports-->
         <scene sceneID="9EW-MI-DDc">
             <objects>
                 <navigationController definesPresentationContext="YES" id="Erc-Hh-uLn" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Event" image="851-calendar.png" id="ykS-Ca-qqw"/>
+                    <tabBarItem key="tabBarItem" title="Sports" image="964-game-plan.png" id="ykS-Ca-qqw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RSO-tZ-VZ6">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1031,6 +1031,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DV6-6A-Eag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-13966" y="-1066"/>
+        </scene>
+        <!--Calendar View Controller - Academic Calendar-->
+        <scene sceneID="n2p-rm-M9G">
+            <objects>
+                <tableViewController id="fGU-mo-Cr8" customClass="CalendarViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" id="lJ3-dq-YNU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleAspectFit" selectionStyle="blue" showsReorderControl="YES" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="eventCell" textLabel="ePA-f4-p1i" detailTextLabel="x8F-P9-TaQ" rowHeight="75" style="IBUITableViewCellStyleSubtitle" id="WB1-pZ-o0J">
+                                <rect key="frame" x="0.0" y="86" width="320" height="75"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WB1-pZ-o0J" id="CFo-g6-5h0">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="34" id="ePA-f4-p1i">
+                                            <rect key="frame" x="15" y="16" width="34" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Content goes here" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="135" id="x8F-P9-TaQ">
+                                            <rect key="frame" x="15" y="38" width="135" height="20"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <inset key="separatorInset" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Academic Calendar" id="sJV-YO-uCU"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uMj-6r-45J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-15974" y="291"/>
+        </scene>
+        <!--Navigation Controller - Calendar-->
+        <scene sceneID="zRV-xB-0IE">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="iIS-eJ-fwq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calendar" image="851-calendar.png" id="hjr-VW-p6n"/>
+                    <navigationItem key="navigationItem" id="HvR-3H-BL2"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xJq-ln-BZj">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fGU-mo-Cr8" kind="relationship" relationship="rootViewController" id="50d-Vw-axS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aj3-o3-MQn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-16532" y="-1081"/>
         </scene>
         <!--Table View Controller - About MSU2U-->
         <scene sceneID="pec-HL-a2j">
@@ -2082,7 +2142,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nfj-Sy-LHO">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <rect key="frame" x="2" y="0.0" width="320" height="455"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                             </webView>
@@ -2132,6 +2192,7 @@
                         <segue destination="OP2-jJ-Xxs" kind="relationship" relationship="viewControllers" id="S8R-gk-qdW"/>
                         <segue destination="WTN-9a-f9M" kind="relationship" relationship="viewControllers" id="Rc1-Wr-msa"/>
                         <segue destination="Kil-vA-Bz9" kind="relationship" relationship="viewControllers" id="CTU-Tr-OAw"/>
+                        <segue destination="iIS-eJ-fwq" kind="relationship" relationship="viewControllers" id="t17-q2-KcZ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fk7-1D-mCn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2149,6 +2210,7 @@
         <image name="906-chat-3.png" width="28" height="26"/>
         <image name="940-pin.png" width="12" height="28"/>
         <image name="946-microphone.png" width="16" height="28"/>
+        <image name="964-game-plan.png" width="28" height="28"/>
         <image name="974-users.png" width="28" height="18"/>
         <image name="Unknown.jpg" width="161" height="184"/>
         <image name="dirBg.png" width="320" height="74"/>
