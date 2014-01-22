@@ -25,7 +25,7 @@
     self.segueIdentifier = @"toGame";
     
     //Ensures that the tab always says "Event", otherwise it has a tendency to change itself to "Game"
-    self.title = @"Event";
+    self.title = @"Sport";
     
     self.keyToSearchOn = @"title";
     self.keysToSearchOn = [[NSMutableArray alloc]initWithObjects:@"title",@"category",@"location",nil];

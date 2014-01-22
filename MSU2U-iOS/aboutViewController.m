@@ -39,7 +39,7 @@
         [self performSegueWithIdentifier:@"toTheMsu2uWebsite" sender:self];
     }
     
-    NSLog(@"We hit section %i and row %i",indexPath.section,indexPath.row);
+   // NSLog(@"We hit section %i and row %i",indexPath.section,indexPath.row);
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -48,7 +48,7 @@
     {
         //Tell the webview what url to show
         webViewController * vc = [segue destinationViewController];
-        [vc sendURL:@"http://cs2.mwsu.edu/msu2u" andTitle:@"Homepage" andMessagePrefix:@"Check out the MSU2U homepage!"];
+        [vc sendURL:@"http://cs2.mwsu.edu/msu2u" andTitle:@"MSU2U" andMessagePrefix:@"Check out the MSU2U homepage!"];
     }
 }
 
