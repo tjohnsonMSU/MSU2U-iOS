@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>campusMapSettingsAddAllPins</key>
+    <false/>
+	<key>campusMapSettingsBusRoute</key>
+	<false/>
+	<key>campusMapSettingsCampusBorder</key>
+	<false/>
+	<key>campusMapSettingsParkingLot</key>
+	<true/>
+	<key>campusMapSettingsMapRowChecked</key>
+	<string>Hybrid</string>
+	<key>newsRefreshTime</key>
+	<string>Pull to Refresh</string>
+	<key>directoryRefreshTime</key>
+	<string>Pull to Refresh</string>
+	<key>twitterRefreshTime</key>
+	<string>Pull to Refresh</string>
+	<key>eventsRefreshTime</key>
+	<string>Pull to Refresh</string>
+	<key>videoRefreshTime</key>
+	<string>Pull to Refresh</string>
+	<key>podcastRefreshTime</key>
+	<string>Pull to Refresh</string>
+	<key>purgeNews_201</key>
+	<true/>
+	<key>purgePodcast_201</key>
+	<true/>
+</dict>
+</plist>

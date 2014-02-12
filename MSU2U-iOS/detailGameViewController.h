@@ -29,6 +29,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *startingDateLabel;
 @property (strong, nonatomic) IBOutlet UILabel *homeTeamName;
 @property (strong, nonatomic) IBOutlet UILabel *awayTeamName;
+@property (weak, nonatomic) IBOutlet UILabel *hostPlaceName;
 
 - (IBAction)sharePressed:(UIBarButtonItem *)sender;
 

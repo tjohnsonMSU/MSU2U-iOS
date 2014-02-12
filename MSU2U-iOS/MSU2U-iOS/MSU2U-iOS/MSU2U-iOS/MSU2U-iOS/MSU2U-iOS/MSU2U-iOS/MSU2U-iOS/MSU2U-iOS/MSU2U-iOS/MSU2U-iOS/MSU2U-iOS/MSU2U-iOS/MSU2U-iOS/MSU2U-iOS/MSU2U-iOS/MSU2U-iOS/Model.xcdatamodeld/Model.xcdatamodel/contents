@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Employee" representedClassName="Employee" syncable="YES">
+        <attribute name="deleted" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dept_id_1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dept_id_2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favorite" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fax1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fax2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fullname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="history" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="last_changed" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link_to_more_info" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="middle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name_prefix" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="office_bldg_id_1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="office_bldg_id_2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="office_rm_num_1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="office_rm_num_2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="person_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="picture" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="position_title_1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="position_title_2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="website1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="website2" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Game" representedClassName="Game" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="enddate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="gameid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isHomeGame" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="opponentlogo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startdate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="teamlogo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="News" representedClassName="News" syncable="YES">
+        <attribute name="article_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="category_1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="doc_creator" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="last_changed" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="long_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pub_date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="publication" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="short_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Podcast" representedClassName="Podcast" syncable="YES">
+        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="podcast_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pubDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Sport" representedClassName="Sport" syncable="YES">
+        <attribute name="awayTeam" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="evgameid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="evlocation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="homeTeam" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sopponentlogo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sportType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="steamlogo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Tweet" representedClassName="Tweet" syncable="YES">
+        <attribute name="created_at" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="id_str" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="max_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profile_background_image_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profile_image_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="screen_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Video" representedClassName="Video" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="source" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tags" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbnail_small" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="upload_date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_portrait_small" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="video_id" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Employee" positionX="-7445" positionY="-2439" width="128" height="463"/>
+        <element name="News" positionX="-7598" positionY="-2241" width="128" height="208"/>
+        <element name="Podcast" positionX="-7832" positionY="-2637" width="128" height="118"/>
+        <element name="Sport" positionX="-7749" positionY="-2439" width="128" height="238"/>
+        <element name="Tweet" positionX="-7749" positionY="-2175" width="128" height="163"/>
+        <element name="Video" positionX="-7598" positionY="-2016" width="128" height="208"/>
+        <element name="Game" positionX="-7947" positionY="-2421" width="128" height="208"/>
+    </elements>
+</model>

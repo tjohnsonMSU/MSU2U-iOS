@@ -172,6 +172,7 @@
 		1DF849AE16B64FB6009F7785 /* MSULocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF849AD16B64FB6009F7785 /* MSULocation.m */; };
 		1DFCFCD416B63CEC00515EFD /* campusMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFCFCD316B63CEC00515EFD /* campusMapViewController.m */; };
 		E09A146A171DC175000CF267 /* webViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A1469171DC175000CF267 /* webViewController.m */; };
+		E34535E818906DFF00C52BF2 /* detailGameType2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E34535E718906DFF00C52BF2 /* detailGameType2ViewController.m */; };
 		E3D8A67A188C7DF500D85186 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D8A679188C7DF500D85186 /* CalendarViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -658,6 +659,8 @@
 		1DFCFCD316B63CEC00515EFD /* campusMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = campusMapViewController.m; sourceTree = "<group>"; };
 		E09A1468171DC175000CF267 /* webViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = webViewController.h; sourceTree = "<group>"; };
 		E09A1469171DC175000CF267 /* webViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = webViewController.m; sourceTree = "<group>"; };
+		E34535E618906DFF00C52BF2 /* detailGameType2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailGameType2ViewController.h; sourceTree = "<group>"; };
+		E34535E718906DFF00C52BF2 /* detailGameType2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailGameType2ViewController.m; sourceTree = "<group>"; };
 		E3D8A678188C7DF500D85186 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		E3D8A679188C7DF500D85186 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1167,6 +1170,8 @@
 				1D98D0EA165202E6002F2DD4 /* gameViewController.m */,
 				1D98D0EC165202F3002F2DD4 /* detailGameViewController.h */,
 				1D98D0ED165202F3002F2DD4 /* detailGameViewController.m */,
+				E34535E618906DFF00C52BF2 /* detailGameType2ViewController.h */,
+				E34535E718906DFF00C52BF2 /* detailGameType2ViewController.m */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -1743,6 +1748,7 @@
 			files = (
 				1D1CEAE4162B4D230059BC1F /* main.m in Sources */,
 				1D1CEAE8162B4D230059BC1F /* AppDelegate.m in Sources */,
+				E34535E818906DFF00C52BF2 /* detailGameType2ViewController.m in Sources */,
 				1D2656F71639E5D500FBF6E1 /* directoryViewController.m in Sources */,
 				1DDE56F5163B023B008830A8 /* Model.xcdatamodeld in Sources */,
 				1DC4010516474FA0002BA05C /* detailDirectoryViewController.m in Sources */,

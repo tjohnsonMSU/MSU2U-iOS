@@ -45,8 +45,14 @@
         if ([receivedGame.title rangeOfString:@" at "].location==NSNotFound)
         {
             //'vs' was used
-            NSArray * components = [receivedGame.title componentsSeparatedByString:@" vs "];
+            NSArray * components = [receivedGame.title componentsSeparatedByString:@"  "];
             NSString *trimmedText = [[components objectAtIndex:1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            self.awayTeamName.text = (NSString *)trimmedText;
+        }
+        else if([receivedGame.title rangeOfString:@" at "].location== NSNotFound)
+        {
+            NSArray * components = [receivedGame.title componentsSeparatedByString:@" vs " ];
+            NSString *trimmedText = [[components objectAtIndex:1]stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
             self.awayTeamName.text = (NSString *)trimmedText;
         }
         else
@@ -68,9 +74,15 @@
         if ([receivedGame.title rangeOfString:@" at "].location==NSNotFound)
         {
             //'vs' was used
-            NSArray * components = [receivedGame.title componentsSeparatedByString:@" vs "];
+            NSArray * components = [receivedGame.title componentsSeparatedByString:@"  "];
             NSString *trimmedText = [[components objectAtIndex:1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
             self.homeTeamName.text = (NSString *)trimmedText;
+        }
+        else if([receivedGame.title rangeOfString:@" at "].location== NSNotFound)
+        {
+            NSArray * components = [receivedGame.title componentsSeparatedByString:@" vs " ];
+            NSString *trimmedText = [[components objectAtIndex:1]stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            self.awayTeamName.text = (NSString *)trimmedText;
         }
         else
         {
