@@ -1210,9 +1210,9 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
         cell.textLabel.text = [self.dataObject title];
         cell.detailTextLabel.text = [self.dataObject desc];
         
-        NSArray * sportCategories = [[NSArray alloc]initWithObjects:@"Men's Cross Country/Track",@"Women's Cross Country/Track",@"Men's Basketball",@"Women's Basketball",@"Football",@"Men's Golf",@"Women's Golf",@"Men's Soccer",@"Women's Soccer",@"Softball",@"Men's Tennis",@"Women's Tennis",@"Volleyball", nil];
-        NSArray * sportImages = [[NSArray alloc]initWithObjects:@"crossCountry.jpeg",@"crossCountry.jpeg",@"basketball.jpeg",@"basketball.jpeg",@"football.jpeg",@"golf.jpeg",@"golf.jpeg",@"soccer.jpeg",@"soccer.jpeg",@"softball.jpeg",@"tennis.jpeg",@"tennis.jpeg",@"volleyball.jpeg", nil];
-        
+        NSArray * sportCategories = [[NSArray alloc]initWithObjects:@"Women's Track",@"Men's Basketball",@"Women's Basketball",@"Football",@"Men's Golf",@"Women's Golf",@"Men's Soccer",@"Women's Soccer",@"Softball",@"Men's Tennis",@"Women's Tennis",@"Volleyball", nil];
+        NSArray * sportImages = [[NSArray alloc]initWithObjects:@"crossCountry.jpeg",@"basketball.jpeg",@"basketball.jpeg",@"football.jpeg",@"golf.jpeg",@"golf.jpeg",@"soccer.jpeg",@"soccer.jpeg",@"softball.jpeg",@"tennis.jpeg",@"tennis.jpeg",@"volleyball.jpeg", nil];
+
         for(int i=0; i<[sportCategories count]; i++)
         {
             //If I find my current sport category in the title string, then set my event category equal to the sport category that was found in the title string and break

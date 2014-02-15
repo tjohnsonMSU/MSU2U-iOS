@@ -2356,6 +2356,7 @@
                         <outlet property="hostPlaceName" destination="AEh-XP-QgQ" id="sET-lA-Hxb"/>
                         <outlet property="locationLabel" destination="mJh-RW-Tva" id="IVn-D7-HP9"/>
                         <outlet property="startingDateLabel" destination="Us7-3z-dOL" id="ypf-0O-L2g"/>
+                        <segue destination="iUY-HR-2IB" kind="push" identifier="toMapView" id="ntG-JZ-0LU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FcB-MZ-kln" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2398,7 +2399,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="8dj-o1-oST"/>
         <segue reference="Egf-cW-mua"/>
-        <segue reference="eB4-O5-bui"/>
     </inferredMetricsTieBreakers>
 </document>
