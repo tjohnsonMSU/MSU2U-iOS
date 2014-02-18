@@ -81,7 +81,7 @@
     NSLog(@"%@ %@\n",game.startdate,game.enddate);
     
     //OK, so I'd like to know what kind of sport this is. msuMustangs.com won't say in their RSS, but I can find out by looking in the title.
-    NSArray * sportCategories = [[NSArray alloc]initWithObjects:@"Men's Cross Country/Track",@"Women's Cross Country/Track",@"Men's Basketball",@"Women's Basketball",@"Football",@"Men's Golf",@"Women's Golf",@"Men's Soccer",@"Women's Soccer",@"Softball",@"Men's Tennis",@"Women's Tennis",@"Volleyball", nil];
+    NSArray * sportCategories = [[NSArray alloc]initWithObjects:@"Women's Track",@"Men's Basketball",@"Women's Basketball",@"Football",@"Men's Golf",@"Women's Golf",@"Men's Soccer",@"Women's Soccer",@"Softball",@"Men's Tennis",@"Women's Tennis",@"Volleyball", nil];
     int found = 0;
     for(int i=0; i<[sportCategories count]; i++)
     {
