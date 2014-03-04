@@ -27,89 +27,212 @@
 {
     [super viewDidLoad];
     
+    //Setup the text in the navigation bar
+    self.title = receivedGame.category;
+    
+    //Set your labels
+  //  self.titleLabel.text = receivedGame.title;
+    self.locationLabel.text = receivedGame.location;
+    NSLog(@"The date is %@\n",receivedGame.startdate);
+    self.startingDateLabel.text = [NSDateFormatter localizedStringFromDate:receivedGame.startdate dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];
+//    self.hostPlaceName.text = receivedGame.hostplace;
+    
+    //Setup the images
+    if([receivedGame.isHomeGame isEqualToString:@"yes"])
+    {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
+                                                 (unsigned long)NULL), ^(void) {
+            [self downloadImageForHome:receivedGame.teamlogo andAway:receivedGame.opponentlogo];
+        });
+        
+        //Set the home label to say 'Midwestern State'
+       // self.hostPlaceName.text = @"Midwestern State";
+        if ([receivedGame.title rangeOfString:@" at "].location==NSNotFound)
+        {
+            //'vs' was used
+            NSArray * components = [receivedGame.title componentsSeparatedByString:@"  "];
+            NSString *trimmedText = [[components objectAtIndex:1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            self.awayTeamName.text = (NSString *)trimmedText;
+        }
+/*        else if([receivedGame.title rangeOfString:@" at "].location== NSNotFound)
+        {
+            NSArray * components = [receivedGame.title componentsSeparatedByString:@" vs " ];
+            NSString *trimmedText = [[components objectAtIndex:1]stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            self.awayTeamName.text = (NSString *)trimmedText;
+        } */
+        else
+        {
+            NSArray * components = [receivedGame.title componentsSeparatedByString:@" at "];
+            NSString *trimmedText = [[components objectAtIndex:1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            self.awayTeamName.text = (NSString *)trimmedText;
+        }
+        
+    }
+    else
+    {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
+                                                 (unsigned long)NULL), ^(void) {
+            [self downloadImageForHome:receivedGame.opponentlogo andAway:receivedGame.teamlogo];
+        });
+      //  self.awayTeamName.text = @"Midwestern State";
+      //  self.awayTeamName.text = receivedGame.
+        if ([receivedGame.title rangeOfString:@" at "].location==NSNotFound)
+        {
+            //'vs' was used
+            NSArray * components = [receivedGame.title componentsSeparatedByString:@"  "];
+            NSString *trimmedText = [[components objectAtIndex:1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            self.awayTeamName.text = (NSString *)trimmedText;
+        }
+    /*    else if([receivedGame.title rangeOfString:@" at "].location== NSNotFound)
+        {
+            NSArray * components = [receivedGame.title componentsSeparatedByString:@" vs " ];
+            NSString *trimmedText = [[components objectAtIndex:1]stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            self.awayTeamName.text = (NSString *)trimmedText;
+        }*/
+        else
+        {
+            NSArray * components = [receivedGame.title componentsSeparatedByString:@" at "];
+            NSString *trimmedText = [[components objectAtIndex:1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            self.awayTeamName.text = (NSString *)trimmedText;
+        }
+    }
+
  
 }
-- (void)didReceiveMemoryWarning
+-(void)sendGameInformation:(Game*)gameInfo
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    receivedGame = gameInfo;
+    receivedGame.teamlogo = @"http://www.msumustangs.com/images/logos/m6.png";
 }
 
-#pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+-(void)downloadImageForHome:(NSString*)homeTeam andAway:(NSString *)awayTeam
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+//    homeTeam = [homeTeam stringByReplacingOccurrencesOfString:@" " withString:@""];
+    awayTeam = [awayTeam  stringByReplacingOccurrencesOfString:@" " withString:@""];
     
-    // Configure the cell...
+    //[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    NSLog(@"My hometeam URL is %@\n",homeTeam);
     
-    return cell;
+//    [self.homePhoto setImageWithURL:[NSURL URLWithString:homeTeam] placeholderImage:[UIImage imageNamed:@"ncaa_default.png"] options:0 andResize:CGSizeMake(50, 50)];
+    [self.awayPhoto setImageWithURL:[NSURL URLWithString:awayTeam] placeholderImage:[UIImage imageNamed:@"ncaa_default.png"] options:0 andResize:CGSizeMake(50,50)];
+    
+    CGSize size = {50,50};
+//    self.homePhoto.image = [self imageWithImage:self.homePhoto.image scaledToSize:size];
+    self.awayPhoto.image = [self imageWithImage:self.awayPhoto.image scaledToSize:size];
+    //[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (UIImage*)imageWithImage:(UIImage*)image
+              scaledToSize:(CGSize)newSize;
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    UIGraphicsBeginImageContext( newSize );
+    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)addToCalendar {
+    //Setup the variables for this game in the addEventToMainCalendar class
+    addEventToCalendar * myCal = [[addEventToCalendar alloc]init];
+    
+    NSLog(@"Well, the date on my end before sending to addEventToMainCalendar is %@\n",receivedGame.startdate);
+    myCal.calendarEventTitle = receivedGame.title;
+    myCal.calendarEventStartDate = receivedGame.startdate;
+    myCal.calendarEventEndDate = receivedGame.enddate;
+    [myCal addEventToMainCalendar];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    if(indexPath.section == 2)
+    {
+        switch (indexPath.row)
+        {
+            case 0:
+            {
+                //TODO
+                [self showInMap];
+                break;
+            }
+            case 1:
+            {
+                [self addToCalendar];
+                break;
+            }
+            default:
+                break;
+        }
+    }
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+
+-(void)showInMap
 {
+    // Check for iOS 6
+    
+    if(![receivedGame.location isEqualToString:@"TBA"])
+    {
+        Class mapItemClass = [MKMapItem class];
+        
+        if (mapItemClass && [mapItemClass respondsToSelector:@selector(openMapsWithItems:launchOptions:)])
+        {
+            CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+            [geocoder geocodeAddressString:receivedGame.location
+                         completionHandler:^(NSArray *placemarks, NSError *error) {
+                             
+                             // Convert the CLPlacemark to an MKPlacemark
+                             // Note: There's no error checking for a failed geocode
+                             CLPlacemark *geocodedPlacemark = [placemarks objectAtIndex:0];
+                             MKPlacemark *placemark = [[MKPlacemark alloc]
+                                                       initWithCoordinate:geocodedPlacemark.location.coordinate
+                                                       addressDictionary:geocodedPlacemark.addressDictionary];
+                             
+                             // Create a map item for the geocoded address to pass to Maps app
+                             MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+                             [mapItem setName:geocodedPlacemark.name];
+                             
+                             // Set the directions mode to "Driving"
+                             // Can use MKLaunchOptionsDirectionsModeWalking instead
+                             NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving};
+                             
+                             // Get the "Current User Location" MKMapItem
+                             MKMapItem *currentLocationMapItem = [MKMapItem mapItemForCurrentLocation];
+                             
+                             // Pass the current location and destination map items to the Maps app
+                             // Set the direction mode in the launchOptions dictionary
+                             [MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem] launchOptions:launchOptions];
+                             
+                         }];
+        }
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Location TBA #msu2u"
+                              message:@"Sorry, the event location is TBA (To Be Announced)"
+                              delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+- (IBAction)sharePressed:(UIBarButtonItem *)sender
 {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+    // Create the item to share (in this example, a url)
+    SHKItem *item = [SHKItem text:[NSString stringWithFormat:@"%@ in %@",receivedGame.title,receivedGame.location]];
+    
+    // Get the ShareKit action sheet
+    SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
+    
+    // ShareKit detects top view controller (the one intended to present ShareKit UI) automatically,
+    // but sometimes it may not find one. To be safe, set it explicitly
+    [SHK setRootViewController:self];
+    
+    // Display the action sheet
+    [actionSheet showFromTabBar:self.tabBarController.tabBar];
 }
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
-
 @end

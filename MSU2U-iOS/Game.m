@@ -22,5 +22,5 @@
 @dynamic startdate;
 @dynamic teamlogo;
 @dynamic title;
-
+@dynamic hostplace;
 @end

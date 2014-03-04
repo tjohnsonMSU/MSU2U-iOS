@@ -51,6 +51,7 @@
     game.opponentlogo = [info objectForKey:@"opponentlogo"];
     game.location = [info objectForKey:@"location"];
     
+ //   game.hostplace = [info objectForKey:@"location"];
     //Figure out if this is a home game or not
     if([game.location isEqualToString:@"Wichita Falls, TX"] || [game.location isEqualToString:@"Wichita Falls, Texas"] || [game.location isEqualToString:@"Wichita Falls"])
     {

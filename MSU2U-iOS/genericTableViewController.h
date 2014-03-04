@@ -14,6 +14,8 @@
 #import "detailDirectoryViewController.h"
 #import "detailGameViewController.h"
 #import "webViewController.h"
+//Testing Detail game controller number 2
+#import "detailGameType2ViewController.h"
 
 //Custom Libraries
 #import "CoreDataTableViewController.h"

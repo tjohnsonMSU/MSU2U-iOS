@@ -1370,7 +1370,13 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
     {
         [self performSegueWithIdentifier:self.segueIdentifier sender:tableView];
     }
-    
+    //checking to see if i can add second cell
+ /*   if (tableView == self.cellIdentifier)
+    {
+        [self performSegueWithIdentifier:@"toGame" sender:tableView];
+    }
+    */
+ 
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -1390,7 +1396,28 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
     //NSLog(@"My child number is %@\n",self.childNumber);
 
     if(self.childNumber == [NSNumber numberWithInt:2])
+    {
         [segue.destinationViewController sendGameInformation:self.dataObject];
+        
+      //Testing double game controller
+ /*       if ([segue.identifier isEqualToString:@"toGame"])
+        {
+            NSIndexPath * indexPath = [self.tableView indexPathForSelectedRow];
+            detailGameViewController *detailcontroller = segue.destinationViewController;
+   //         self.dataObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        
+    //      [segue.destinationViewController sendGameInformation:self.dataObject];
+        }
+        else if ([segue.identifier isEqualToString:@"toGame2"])
+        {
+            NSIndexPath * indexPath =
+            [self.tableView indexPathForSelectedRow];
+            detailGameType2ViewController *detailcontroller = segue.destinationViewController;
+       //     self.dataObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
+           // [segue.destinationViewController sendGameInformation:self.dataObject];
+        }*/
+
+    }
     else if(self.childNumber == [NSNumber numberWithInt:3])
     {
         //[segue.destinationViewController sendNewsInformation:self.dataObject];

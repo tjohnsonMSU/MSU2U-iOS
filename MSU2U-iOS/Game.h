@@ -23,5 +23,5 @@
 @property (nonatomic, retain) NSDate * startdate;
 @property (nonatomic, retain) NSString * teamlogo;
 @property (nonatomic, retain) NSString * title;
-
+@property (nonatomic, retain) NSString * hostplace;
 @end

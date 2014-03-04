@@ -12,6 +12,8 @@
 #import "campusMapViewController.h"
 #import "addEventToCalendar.h"
 
+//ShareKit
+#import "SHK.h"
 
 @interface detailGameType2ViewController : UITableViewController{
     Game * receivedGame;
@@ -27,7 +29,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *startingDateLabel;
 @property (strong, nonatomic) IBOutlet UILabel *homeTeamName;
 @property (strong, nonatomic) IBOutlet UILabel *awayTeamName;
-@property (weak, nonatomic) IBOutlet UILabel *hostPlaceName;
+@property (strong, nonatomic) IBOutlet UILabel *hostPlaceName;
 
 - (IBAction)sharePressed:(UIBarButtonItem *)sender;
 

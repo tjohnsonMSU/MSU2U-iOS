@@ -23,9 +23,9 @@
     self.sortDescriptorKey = @"startdate";
     self.cellIdentifier = @"game";
     self.segueIdentifier = @"toGame";
-    
+
     //Ensures that the tab always says "Event", otherwise it has a tendency to change itself to "Game"
-    self.title = @"Sport";
+    self.title = @"Sports";
     
     self.keyToSearchOn = @"title";
     self.keysToSearchOn = [[NSMutableArray alloc]initWithObjects:@"title",@"category",@"location",nil];
@@ -43,5 +43,22 @@
 {
     [self.searchDisplayControl setActive:NO];
 }
-
+//implement the cell to go both tableview
+/*
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    // Perform segue to candy detail
+    if(tableView == self.searchDisplayController.searchResultsTableView)
+    {
+        [self performSegueWithIdentifier:self.segueIdentifier sender:tableView];
+    }
+    //checking to see if i can add second cell
+       if (tableView == self.cellIdentifier)
+     {
+     [self performSegueWithIdentifier:@"toGame" sender:tableView];
+     }
+ 
+    
+}*/
 @end
