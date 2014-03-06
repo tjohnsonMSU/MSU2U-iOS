@@ -19,10 +19,6 @@
 				<string>msu2u-settings</string>
 				<string>msu2u-spotlight</string>
 				<string>msu2u-iphone-ipod</string>
-				<string>MustangsIcon1.png</string>
-				<string>MustangsIcon2.png</string>
-				<string>MustangsIcon2-ipad-retina.png</string>
-				<string>MustangsIcon2-ipad-non-retina.png</string>
 			</array>
 		</dict>
 	</dict>
@@ -39,10 +35,6 @@
 				<string>msu2u-ipad</string>
 				<string>msu2u-standard</string>
 				<string>msu2u-iphone-ipod</string>
-				<string>MustangsIcon1.png</string>
-				<string>MustangsIcon2.png</string>
-				<string>MustangsIcon2-ipad-retina.png</string>
-				<string>MustangsIcon2-ipad-non-retina.png</string>
 			</array>
 		</dict>
 	</dict>
@@ -55,11 +47,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0.2</string>
+	<string>2.0.3</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2.0.2</string>
+	<string>2.0.3</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSRequiresIPhoneOS</key>

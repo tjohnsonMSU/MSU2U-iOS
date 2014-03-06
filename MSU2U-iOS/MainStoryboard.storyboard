@@ -31,7 +31,7 @@
                         <viewControllerLayoutGuide type="bottom" id="uW4-cS-AA3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lJ8-ss-0lF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" text="" placeholder="Search by name, keyword, etc." translatesAutoresizingMaskIntoConstraints="NO" id="6pT-rQ-SsN">
@@ -42,7 +42,7 @@
                                 </connections>
                             </searchBar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cuU-oX-DP7">
-                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="411"/>
                                 <connections>
                                     <outlet property="delegate" destination="iUY-HR-2IB" id="u5W-hz-nSJ"/>
                                 </connections>
@@ -91,7 +91,7 @@
             <objects>
                 <tableViewController id="n7y-pC-ftl" customClass="campusMapInfoViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="yfs-KP-p6W">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="womens-basketball-landscape.jpg" id="DyC-6E-RJJ">
@@ -151,7 +151,7 @@
             <objects>
                 <tableViewController id="Iew-9Z-FEp" customClass="campusMapSettingsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="iF3-PE-4Ln">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="parking_lot_transparent.png" id="hjb-iA-zl4">
@@ -2399,6 +2399,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="8dj-o1-oST"/>
-        <segue reference="ntG-JZ-0LU"/>
+        <segue reference="Egf-cW-mua"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -1368,6 +1368,11 @@
 			attributes = {
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Matthew Farmer";
+				TargetAttributes = {
+					1D1CEAD2162B4D230059BC1F = {
+						DevelopmentTeam = 5759AXAR43;
+					};
+				};
 			};
 			buildConfigurationList = 1D1CEACD162B4D230059BC1F /* Build configuration list for PBXProject "MSU2U-iOS" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1899,6 +1904,8 @@
 		1D1CEAF8162B4D230059BC1F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Midwestern State University - Computer Science Department (5759AXAR43)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/MSU2U-iOS\"",
@@ -1910,6 +1917,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0E6E5D30-77DB-429A-83FA-DA02D8875D76";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "Submodules/**";
 				WRAPPER_EXTENSION = app;
@@ -1919,6 +1927,8 @@
 		1D1CEAF9162B4D230059BC1F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Midwestern State University - Computer Science Department (5759AXAR43)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/MSU2U-iOS\"",
@@ -1930,6 +1940,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0E6E5D30-77DB-429A-83FA-DA02D8875D76";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "Submodules/**";
 				WRAPPER_EXTENSION = app;
