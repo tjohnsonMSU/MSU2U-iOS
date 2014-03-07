@@ -174,6 +174,13 @@
 		E09A146A171DC175000CF267 /* webViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A1469171DC175000CF267 /* webViewController.m */; };
 		E34535E818906DFF00C52BF2 /* detailGameType2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E34535E718906DFF00C52BF2 /* detailGameType2ViewController.m */; };
 		E3D8A67A188C7DF500D85186 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D8A679188C7DF500D85186 /* CalendarViewController.m */; };
+		E3FCB15F18C95E1B00BFCFE0 /* img- 640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FCB15918C95E1B00BFCFE0 /* img- 640x960.png */; };
+		E3FCB16018C95E1B00BFCFE0 /* img- 640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FCB15A18C95E1B00BFCFE0 /* img- 640x1136.png */; };
+		E3FCB16118C95E1B00BFCFE0 /* img- 768x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FCB15B18C95E1B00BFCFE0 /* img- 768x1024.png */; };
+		E3FCB16218C95E1B00BFCFE0 /* img- 1024x768.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FCB15C18C95E1B00BFCFE0 /* img- 1024x768.png */; };
+		E3FCB16318C95E1B00BFCFE0 /* img- 1536x2048.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FCB15D18C95E1B00BFCFE0 /* img- 1536x2048.png */; };
+		E3FCB16418C95E1B00BFCFE0 /* img- 20484x1536.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FCB15E18C95E1B00BFCFE0 /* img- 20484x1536.png */; };
+		E3FCB18718C95EA700BFCFE0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3FCB18618C95EA700BFCFE0 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -663,6 +670,13 @@
 		E34535E718906DFF00C52BF2 /* detailGameType2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailGameType2ViewController.m; sourceTree = "<group>"; };
 		E3D8A678188C7DF500D85186 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		E3D8A679188C7DF500D85186 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		E3FCB15918C95E1B00BFCFE0 /* img- 640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img- 640x960.png"; sourceTree = "<group>"; };
+		E3FCB15A18C95E1B00BFCFE0 /* img- 640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img- 640x1136.png"; sourceTree = "<group>"; };
+		E3FCB15B18C95E1B00BFCFE0 /* img- 768x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img- 768x1024.png"; sourceTree = "<group>"; };
+		E3FCB15C18C95E1B00BFCFE0 /* img- 1024x768.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img- 1024x768.png"; sourceTree = "<group>"; };
+		E3FCB15D18C95E1B00BFCFE0 /* img- 1536x2048.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img- 1536x2048.png"; sourceTree = "<group>"; };
+		E3FCB15E18C95E1B00BFCFE0 /* img- 20484x1536.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img- 20484x1536.png"; sourceTree = "<group>"; };
+		E3FCB18618C95EA700BFCFE0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MSU2U/Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -742,6 +756,12 @@
 		1D1CEAC8162B4D230059BC1F = {
 			isa = PBXGroup;
 			children = (
+				E3FCB15918C95E1B00BFCFE0 /* img- 640x960.png */,
+				E3FCB15A18C95E1B00BFCFE0 /* img- 640x1136.png */,
+				E3FCB15B18C95E1B00BFCFE0 /* img- 768x1024.png */,
+				E3FCB15C18C95E1B00BFCFE0 /* img- 1024x768.png */,
+				E3FCB15D18C95E1B00BFCFE0 /* img- 1536x2048.png */,
+				E3FCB15E18C95E1B00BFCFE0 /* img- 20484x1536.png */,
 				1D1778891830BB7F002C1DD7 /* msu2u-settings2.png */,
 				1D1778871830BB3B002C1DD7 /* msu2u-settings.png */,
 				1D1778851830BAEE002C1DD7 /* msu2u-spotlight2.png */,
@@ -749,6 +769,7 @@
 				1D1778811830B8C3002C1DD7 /* msu2u-standard.png */,
 				1D17787F1830B8BE002C1DD7 /* msu2u-ipad.png */,
 				1D17787D1830B8B8002C1DD7 /* msu2u-iphone-ipod.png */,
+				E3FCB18618C95EA700BFCFE0 /* Images.xcassets */,
 				1D1216D116AD014800164FA7 /* ShareKit.xcodeproj */,
 				1D1CEADD162B4D230059BC1F /* MSU2U-iOS */,
 				1D1CEAD6162B4D230059BC1F /* Frameworks */,
@@ -1672,6 +1693,7 @@
 				1DA7B97F167A434C0046FF8F /* golf.jpeg in Resources */,
 				1DA7B981167A43540046FF8F /* crossCountry.jpeg in Resources */,
 				1D1DE26D1830B2350097EEC7 /* 1076-grid-4@2x.png in Resources */,
+				E3FCB15F18C95E1B00BFCFE0 /* img- 640x960.png in Resources */,
 				1DA92C371693A52500AB71F1 /* Midwestern_St.gif in Resources */,
 				1DA92C3B1693AD7100AB71F1 /* softball1.JPG in Resources */,
 				1DF0147F1697C77200435975 /* dirBg.png in Resources */,
@@ -1685,6 +1707,7 @@
 				1D968C6516BCAA58004AB866 /* hybridMap.png in Resources */,
 				1D17788A1830BB7F002C1DD7 /* msu2u-settings2.png in Resources */,
 				1D4BEA6716BF7FC3000CE107 /* BLACK.png in Resources */,
+				E3FCB16318C95E1B00BFCFE0 /* img- 1536x2048.png in Resources */,
 				1D24236C16E3EEC2003E731D /* Unknown.jpg in Resources */,
 				1DEC1C1516EED2380007E067 /* twitter.png in Resources */,
 				1D1778821830B8C3002C1DD7 /* msu2u-standard.png in Resources */,
@@ -1699,8 +1722,10 @@
 				1D1778801830B8BE002C1DD7 /* msu2u-ipad.png in Resources */,
 				1D2E4D77171C4B38008CBD75 /* bg-real.png in Resources */,
 				1D3DA8FA17207DA20020FEBB /* SVWebViewController.strings in Resources */,
+				E3FCB18718C95EA700BFCFE0 /* Images.xcassets in Resources */,
 				1D3DA8FC17207DA20020FEBB /* SVWebViewController.bundle in Resources */,
 				1DA47823172205E3001CC653 /* 70-tv.png in Resources */,
+				E3FCB16218C95E1B00BFCFE0 /* img- 1024x768.png in Resources */,
 				1D321E8F1831D65F002978C0 /* 780-building@2x.png in Resources */,
 				1DD9F7EC172337C500754EB8 /* true_black.png in Resources */,
 				1DAD529217236010000CC658 /* podcast_default.png in Resources */,
@@ -1718,8 +1743,10 @@
 				1D1DE26F1830B2350097EEC7 /* 906-chat-3@2x.png in Resources */,
 				1D2FF9ED172499BC00871B7C /* golf-landscape.jpg in Resources */,
 				1D17785B1830B852002C1DD7 /* 1055-ticket@2x.png in Resources */,
+				E3FCB16418C95E1B00BFCFE0 /* img- 20484x1536.png in Resources */,
 				1D1DE2711830B2350097EEC7 /* 926-photos@2x.png in Resources */,
 				1D2FF9EE172499BC00871B7C /* womens-tennis-landscape.jpg in Resources */,
+				E3FCB16018C95E1B00BFCFE0 /* img- 640x1136.png in Resources */,
 				1D2FF9EF172499BC00871B7C /* mens-tennis-landscape.jpg in Resources */,
 				1D2FF9F0172499BC00871B7C /* womens-soccer-portrait.jpg in Resources */,
 				1D2FF9F1172499BC00871B7C /* softball-landscape.jpg in Resources */,
@@ -1736,6 +1763,7 @@
 				1DC539CF173233A9008BD25B /* msu2u_devteam.png in Resources */,
 				1DC539D1173234D8008BD25B /* msu2u_v1_devteam.png in Resources */,
 				1D1DE2721830B2350097EEC7 /* 946-microphone@2x.png in Resources */,
+				E3FCB16118C95E1B00BFCFE0 /* img- 768x1024.png in Resources */,
 				1DBA9A3417373B7300582DDA /* ncaa_default.png in Resources */,
 				1D1DE26C1830B2350097EEC7 /* 1045-clapboard@2x.png in Resources */,
 				1D519BBD1738C72100937FE0 /* parking_lot_transparent.png in Resources */,
@@ -1904,6 +1932,8 @@
 		1D1CEAF8162B4D230059BC1F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Midwestern State University - Computer Science Department (5759AXAR43)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1927,6 +1957,8 @@
 		1D1CEAF9162B4D230059BC1F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Midwestern State University - Computer Science Department (5759AXAR43)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (

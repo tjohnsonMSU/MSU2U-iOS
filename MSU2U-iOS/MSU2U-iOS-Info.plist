@@ -11,33 +11,9 @@
 	<key>CFBundleGetInfoString</key>
 	<string></string>
 	<key>CFBundleIcons</key>
-	<dict>
-		<key>CFBundlePrimaryIcon</key>
-		<dict>
-			<key>CFBundleIconFiles</key>
-			<array>
-				<string>msu2u-settings</string>
-				<string>msu2u-spotlight</string>
-				<string>msu2u-iphone-ipod</string>
-			</array>
-		</dict>
-	</dict>
+	<dict/>
 	<key>CFBundleIcons~ipad</key>
-	<dict>
-		<key>CFBundlePrimaryIcon</key>
-		<dict>
-			<key>CFBundleIconFiles</key>
-			<array>
-				<string>msu2u-settings2</string>
-				<string>msu2u-settings</string>
-				<string>msu2u-spotlight</string>
-				<string>msu2u-spotlight2</string>
-				<string>msu2u-ipad</string>
-				<string>msu2u-standard</string>
-				<string>msu2u-iphone-ipod</string>
-			</array>
-		</dict>
-	</dict>
+	<dict/>
 	<key>CFBundleIdentifier</key>
 	<string>com.mwsu.edu.MSU2U</string>
 	<key>CFBundleInfoDictionaryVersion</key>
