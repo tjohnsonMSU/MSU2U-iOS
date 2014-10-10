@@ -22,4 +22,4 @@ The above command will download all of the MSU2U-iOS files and also the <a href=
 
 4. In order for the Share functionality to work in the app, consult the folder 'Share API Keys/Code' from the MSU2U Dropbox account and copy the DefaultSHKConfigurator.m file into the project. By default, this file already exists in the project but it does not have the API keys entered, so it is simply a template. If you have no desire to use the Share functionality when working with or using the app, you don't need to add this file or worry about filling in the API keys.
 
-5. If there are any questions regarding the project, please notify either Matthew Farmer (matthew.farmer@mwsu.edu) or Dr. Tina Johnson (tina.johnson@mwsu.edu). Comments/questions may also be left within GitHub.
+5. If there are any questions regarding the project, please notify Dr. Terry Griffin (terry.griffin@mwsu.edu) or Dr. Tina Johnson (tina.johnson@mwsu.edu). Comments/questions may also be left within GitHub.
